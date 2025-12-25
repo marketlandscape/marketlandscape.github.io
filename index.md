@@ -73,11 +73,11 @@ Test.
 /* interpretation rules (shared, static) */
 const interpretations = {
   box1: [
-    { max: 19, label: "Accumulate" },
-    { max: 39, label: "ADC" },
-    { max: 59, label: "Hold" },
-    { max: 79, label: "HODL" },
-    { max: 100, label: "HODL" }
+    { max: 19, label: "Entry Buy" },
+    { max: 39, label: "Probe Entry" },
+    { max: 59, label: "Hold / Wait" },
+    { max: 79, label: "Scale Out" },
+    { max: 100, label: "Exit" }
   ],
   box2: [
     { max: 19, label: "Entry Buy" },
