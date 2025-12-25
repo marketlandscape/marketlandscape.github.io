@@ -21,6 +21,7 @@ Test.
        text-align:center;
        font-size:14px;
        color:#ffffff;
+       line-height:1.0;   /* ← adjust this */
      ">
     EXAMPLE<br>
     Example Text<br>
