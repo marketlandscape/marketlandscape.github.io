@@ -84,8 +84,6 @@ layout: default
   ">
    <p>
       This index shows the current position within the broader market cycle.
-      Lower values indicate early or accumulation phases, while higher values
-      signal distribution or exit zones.
    </p>
 
    <p>
