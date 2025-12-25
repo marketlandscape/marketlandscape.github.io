@@ -22,7 +22,7 @@ Test.
        padding-left:12px;
        padding-right:12px;
        font-size:14px;
-       font-weight:600;
+       font-weight:500;
        color:#ffffff;
        line-height:1.1;
      ">
