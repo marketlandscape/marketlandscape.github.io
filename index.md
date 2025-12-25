@@ -15,8 +15,12 @@ Test.
 
   <!-- top label -->
   <div style="
-       position:absolute; top:8px; width:100%;
-       text-align:center; font-size:14px; color:#ffffff;
+       position:absolute;
+       top:8px;
+       width:100%;
+       text-align:center;
+       font-size:14px;
+       color:#ffffff;
      ">
     <strong>EXAMPLE<br>
     Example Text<br>
@@ -26,13 +30,27 @@ Test.
   <!-- center value (dynamic) -->
   <div id="centerValue" style="
        position:absolute;
-       top:48%; left:50%;
+       top:48%;
+       left:50%;
        transform:translate(-50%,-50%);
-       font-size:56px; font-weight:600;
+       font-size:56px;
+       font-weight:600;
        color:#ffffff;
        line-height:1;
      ">
     --
+  </div>
+
+  <!-- bottom label -->
+  <div style="
+       position:absolute;
+       bottom:8px;
+       width:100%;
+       text-align:center;
+       font-size:14px;
+       color:#efefef;
+     ">
+    Bottom Text
   </div>
 
   <!-- dot overlay -->
@@ -53,7 +71,6 @@ function setValue(x){
   // map x → horizontal pixel position (25 → 175)
   const cx = 25 + (x / 100) * 150;
 
-  // move dot
   document.getElementById("dotOuter").setAttribute("cx", cx);
   document.getElementById("dotInner").setAttribute("cx", cx);
 
@@ -62,9 +79,12 @@ function setValue(x){
     String(Math.round(x)).padStart(2, "0");
 }
 
-// example value
+// example
 setValue(21);
 </script>
 
 <br>
+
+
+
 
