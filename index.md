@@ -4,6 +4,7 @@ layout: default
 
 Test.
 
+<!--
 <div id="box"
      style="
        position:relative;
@@ -38,7 +39,7 @@ function setDot(x){
 // example
 setDot(63);
 </script>
-
+-->
 
 
 <div id="box"
