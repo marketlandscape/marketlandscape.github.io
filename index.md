@@ -19,12 +19,12 @@ Test.
        top:12px;
        width:100%;
        text-align:left;
-       padding-left:12px;   /* ← distance from box edge */
+       padding-left:12px;
        padding-right:12px;
        font-size:14px;
        font-weight:600;
        color:#ffffff;
-       line-height:1.0;   /* ← adjust this */
+       line-height:1.0;
      ">
     EXAMPLE<br>
     Example Text<br>
@@ -32,7 +32,7 @@ Test.
   </div>
 
   <!-- center value (dynamic) -->
-  <div id="centerValue" style="
+  <div id="centerValue1" style="
        position:absolute;
        top:50%;
        left:50%;
@@ -45,8 +45,8 @@ Test.
     --
   </div>
 
-  <!-- bottom label -->
-  <div style="
+  <!-- bottom label (dynamic; driven by interpretationFromX) -->
+  <div id="bottomText1" style="
        position:absolute;
        bottom:12px;
        width:100%;
@@ -54,7 +54,7 @@ Test.
        font-size:14px;
        color:#d9d9d9;
      ">
-    Bottom Text
+    --
   </div>
 
   <!-- dot overlay -->
@@ -62,38 +62,85 @@ Test.
        style="position:absolute;left:0;top:0;pointer-events:none;"
        xmlns="http://www.w3.org/2000/svg">
 
-    <circle id="dotOuter" cx="25" cy="146" r="15" fill="#2d2d2dff"/>
-    <circle id="dotInner" cx="25" cy="146" r="9" fill="#ffffff"/>
+    <circle id="dotOuter1" cx="25" cy="146" r="15" fill="#2d2d2dff"/>
+    <circle id="dotInner1" cx="25" cy="146" r="9" fill="#ffffff"/>
   </svg>
 </div>
 
 
+
 <script>
-function setValue(boxId, x){
+/*
+  Updates one box based on a single numeric value.
+
+  Parameters:
+  - boxKey : string
+      Logical identifier of the box ("box1", "box2", ...)
+      Used to select interpretation rules.
+  - boxId  : number
+      Numeric suffix used in DOM element IDs (1, 2, 3, ...)
+  - x      : number
+      Index value in range 0–100 (may come from JSON or API)
+*/
+function setValue(boxKey, boxId, x){
+
+  // Ensure x is a number and clamp it to 0–100
   x = Math.max(0, Math.min(100, Number(x)));
 
+  // Convert logical value x (0–100)
+  // into a horizontal pixel position inside the 200px box
+  // 25px = left limit, 175px = right limit
   const cx = 25 + (x / 100) * 150;
 
+  // Move the dot (outer ring and inner core)
   document.getElementById("dotOuter" + boxId).setAttribute("cx", cx);
   document.getElementById("dotInner" + boxId).setAttribute("cx", cx);
 
+  // Update the large numeric value in the center (always two digits)
   document.getElementById("centerValue" + boxId).textContent =
     String(Math.round(x)).padStart(2, "0");
+
+  // Update the bottom interpretation text
+  // based on box-specific rules and the current x value
+  document.getElementById("bottomText" + boxId).textContent =
+    interpretationFromX(boxKey, Math.round(x));
 }
 </script>
 
 
+
+
 <script>
+/*
+  Loads index values from a public JSON file
+  and applies them to the visual boxes.
+
+  Flow:
+  1) Fetch /data/indexes.json from the website
+  2) Parse JSON into a JS object
+  3) For each box:
+     - read its value (0–100)
+     - pass it to setValue(...)
+*/
 async function loadIndexes(){
+
+  // Fetch the published index values (no browser caching)
   const res = await fetch('/data/indexes.json', { cache: 'no-store' });
+
+  // Convert the response body to a JavaScript object
   const data = await res.json();
 
-  // map JSON keys → boxes
-  setValue(1, data.box1);
-  setValue(2, data.box2);
-  setValue(3, data.box3);
+  // Apply values to each box
+  // Arguments:
+  //  - boxKey: selects interpretation logic
+  //  - boxId: selects DOM elements (dot, text)
+  //  - value: numeric index (0–100)
+  setValue("box1", 1, data.box1);
+  setValue("box2", 2, data.box2);
+  setValue("box3", 3, data.box3);
 }
 
+// Run once when the page is loaded
 loadIndexes();
 </script>
 
