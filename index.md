@@ -68,7 +68,7 @@ layout: default
   <svg width="200" height="200"
            style="position:absolute;left:0;top:0;pointer-events:none;"
            xmlns="http://www.w3.org/2000/svg">
-        <circle id="dotOuter1" cx="25" cy="147" r="14" fill="#2d2d2dff"/>
+        <circle id="dotOuter1" cx="25" cy="147" r="12" fill="#2d2d2dff"/>
         <circle id="dotInner1" cx="25" cy="147" r="9" fill="#ffffff"/>
       </svg>
 
@@ -163,7 +163,7 @@ layout: default
    <svg width="200" height="200"
            style="position:absolute;left:0;top:0;pointer-events:none;"
            xmlns="http://www.w3.org/2000/svg">
-        <circle id="dotOuter2" cx="25" cy="147" r="14" fill="#2d2d2dff"/>
+        <circle id="dotOuter2" cx="25" cy="147" r="12" fill="#2d2d2dff"/>
         <circle id="dotInner2" cx="25" cy="147" r="9" fill="#ffffff"/>
       </svg>
 
@@ -259,7 +259,7 @@ layout: default
    <svg width="200" height="200"
            style="position:absolute;left:0;top:0;pointer-events:none;"
            xmlns="http://www.w3.org/2000/svg">
-        <circle id="dotOuter3" cx="25" cy="147" r="14" fill="#2d2d2dff"/>
+        <circle id="dotOuter3" cx="25" cy="147" r="12" fill="#2d2d2dff"/>
         <circle id="dotInner3" cx="25" cy="147" r="9" fill="#ffffff"/>
       </svg>
 
