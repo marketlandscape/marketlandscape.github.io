@@ -4,7 +4,7 @@ layout: default
 
 Test.
 
-<div id="box"
+<div id="box1"
      style="
        position:relative;
        width:200px;height:200px;
@@ -67,27 +67,35 @@ Test.
   </svg>
 </div>
 
+
 <script>
-function setValue(x){
-  // x = logical value (0–100)
+function setValue(boxId, x){
   x = Math.max(0, Math.min(100, Number(x)));
 
-  // map x → horizontal pixel position (25 → 175)
   const cx = 25 + (x / 100) * 150;
 
-  document.getElementById("dotOuter").setAttribute("cx", cx);
-  document.getElementById("dotInner").setAttribute("cx", cx);
+  document.getElementById("dotOuter" + boxId).setAttribute("cx", cx);
+  document.getElementById("dotInner" + boxId).setAttribute("cx", cx);
 
-  // update center text (two digits)
-  document.getElementById("centerValue").textContent =
+  document.getElementById("centerValue" + boxId).textContent =
     String(Math.round(x)).padStart(2, "0");
 }
-
-// example
-setValue(21);
 </script>
 
-<br>
+
+<script>
+async function loadIndexes(){
+  const res = await fetch('/data/indexes.json', { cache: 'no-store' });
+  const data = await res.json();
+
+  // map JSON keys → boxes
+  setValue(1, data.box1);
+  setValue(2, data.box2);
+  setValue(3, data.box3);
+}
+
+loadIndexes();
+</script>
 
 
 
