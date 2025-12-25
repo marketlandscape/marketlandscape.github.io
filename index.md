@@ -44,7 +44,7 @@ Test.
   <!-- bottom label -->
   <div style="
        position:absolute;
-       bottom:8px;
+       bottom:12px;
        width:100%;
        text-align:center;
        font-size:14px;
