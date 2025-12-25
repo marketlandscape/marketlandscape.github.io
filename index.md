@@ -393,6 +393,13 @@ const interpretations = {
     { max: 59, label: "Hold / Wait" },
     { max: 79, label: "Scale Out" },
     { max: 100, label: "Exit" }
+  ],
+  box3: [
+    { max: 19, label: "Entry Buy" },
+    { max: 39, label: "Probe Entry" },
+    { max: 59, label: "Hold / Wait" },
+    { max: 79, label: "Scale Out" },
+    { max: 100, label: "Exit" }
   ]
 };
 
