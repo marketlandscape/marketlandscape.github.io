@@ -17,8 +17,8 @@ Test.
        xmlns="http://www.w3.org/2000/svg">
 
     <!-- dot near bottom -->
-    <circle id="dotOuter" cx="25" cy="180" r="3.2" fill="#2d2d2dff"/>
-    <circle id="dotInner" cx="25" cy="180" r="2.8" fill="#ffffff"/>
+    <circle id="dotOuter" cx="25" cy="180" r="6" fill="#2d2d2dff"/>
+    <circle id="dotInner" cx="25" cy="180" r="5" fill="#ffffff"/>
   </svg>
 </div>
 
@@ -39,6 +39,6 @@ function setDot(x){
 setDot(63);
 </script>
 
-More text.
+
 
 Some text below.
