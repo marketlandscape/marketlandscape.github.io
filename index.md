@@ -16,7 +16,7 @@ Test.
   <!-- top label -->
   <div style="
        position:absolute; top:8px; width:100%;
-       text-align:center; font-size:12px; color:#ffffff;
+       text-align:left; font-size:14px; color:#ffffff;
      ">
     Example Text
   </div>
@@ -24,7 +24,7 @@ Test.
   <!-- center value -->
   <div id="centerValue" style="
        position:absolute;
-       top:50%; left:50%;
+       top:45%; left:50%;
        transform:translate(-50%,-50%);
        font-size:56px; font-weight:600;
        color:#ffffff;
@@ -38,8 +38,8 @@ Test.
        style="position:absolute;left:0;top:0;pointer-events:none;"
        xmlns="http://www.w3.org/2000/svg">
 
-    <circle id="dotOuter" cx="25" cy="150" r="16" fill="#2d2d2dff"/>
-    <circle id="dotInner" cx="25" cy="150" r="10" fill="#ffffff"/>
+    <circle id="dotOuter" cx="25" cy="145" r="16" fill="#2d2d2dff"/>
+    <circle id="dotInner" cx="25" cy="145" r="10" fill="#ffffff"/>
   </svg>
 </div>
 
