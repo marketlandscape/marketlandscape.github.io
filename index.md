@@ -98,6 +98,102 @@ layout: default
 
 
 
+<div style="
+  display:flex;
+  align-items:flex-start;
+  gap:24px;
+  margin-top:32px;
+">
+
+  <!-- LEFT: 200×200 box (BOX 2) -->
+  <div>
+
+    <div id="box2"
+         style="
+           position:relative;
+           width:200px;height:200px;
+           background:url('/assets/img/background.png') no-repeat;
+           background-size:200px 200px;
+           font-family: system-ui, -apple-system, sans-serif;
+         ">
+
+      <!-- top label -->
+      <div style="
+           position:absolute;
+           top:16px;
+           width:100%;
+           text-align:left;
+           padding-left:14px;
+           padding-right:12px;
+           font-size:14px;
+           font-weight:500;
+           color:#ffffff;
+           line-height:1.2;
+         ">
+        EXAMPLE<br>
+        Second Box<br>
+        Navigation Index
+      </div>
+
+      <!-- center value (dynamic) -->
+      <div id="centerValue2" style="
+           position:absolute;
+           top:50%;
+           left:50%;
+           transform:translate(-50%,-50%);
+           font-size:54px;
+           font-weight:600;
+           color:#ffffff;
+           line-height:1;
+         ">
+        --
+      </div>
+
+      <!-- bottom label (dynamic) -->
+      <div id="bottomText2" style="
+           position:absolute;
+           bottom:12px;
+           width:100%;
+           text-align:center;
+           font-size:14px;
+           color:#d9d9d9;
+         ">
+        --
+      </div>
+
+      <!-- dot overlay -->
+      <svg width="200" height="200"
+           style="position:absolute;left:0;top:0;pointer-events:none;"
+           xmlns="http://www.w3.org/2000/svg">
+        <circle id="dotOuter2" cx="25" cy="147" r="14" fill="#2d2d2dff"/>
+        <circle id="dotInner2" cx="25" cy="147" r="9" fill="#ffffff"/>
+      </svg>
+
+    </div>
+  </div>
+
+  <!-- RIGHT: comments / explanation -->
+  <div style="
+    max-width:420px;
+    font-size:14px;
+    line-height:1.5;
+    color:#333333;
+  ">
+    <p>
+      This second index represents a different dimension of the cycle.
+      Interpretation thresholds and labels may differ from the first box.
+    </p>
+
+    <p>
+      The visual scale remains identical to preserve comparability,
+      while the meaning layer is box-specific.
+    </p>
+  </div>
+
+</div>
+
+
+
 <script>
 /* interpretation rules (shared, static) */
 const interpretations = {
