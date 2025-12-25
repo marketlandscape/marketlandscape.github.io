@@ -19,6 +19,8 @@ Test.
        top:8px;
        width:100%;
        text-align:left;
+       padding-left:12px;   /* ← distance from box edge */
+       padding-right:12px;
        font-size:14px;
        color:#ffffff;
        line-height:1.0;   /* ← adjust this */
