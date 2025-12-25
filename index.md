@@ -22,9 +22,9 @@ Test.
        font-size:14px;
        color:#ffffff;
      ">
-    <strong>EXAMPLE<br>
+    EXAMPLE<br>
     Example Text<br>
-    Navigation Index</strong>
+    Navigation Index
   </div>
 
   <!-- center value (dynamic) -->
