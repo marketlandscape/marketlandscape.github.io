@@ -7,8 +7,8 @@
 
 
   <g id="scale">
-    <circle cx="25"  cy="147" r="6" fill="#d9d9d9ff"/>
-    <circle cx="175" cy="147" r="6" fill="#666666ff"/>
+    <circle cx="25"  cy="147" r="6" fill="#a4c2f4ff"/>
+    <circle cx="175" cy="147" r="6" fill="#1155ccff"/>
 
 
     <rect x="25"  y="141" width="30" height="12" fill="#a4c2f4ff"/>
