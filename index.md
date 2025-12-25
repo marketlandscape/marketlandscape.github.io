@@ -30,7 +30,7 @@ Test.
   <!-- center value (dynamic) -->
   <div id="centerValue" style="
        position:absolute;
-       top:48%;
+       top:50%;
        left:50%;
        transform:translate(-50%,-50%);
        font-size:56px;
@@ -48,7 +48,7 @@ Test.
        width:100%;
        text-align:center;
        font-size:14px;
-       color:#efefef;
+       color:#d9d9d9;
      ">
     Bottom Text
   </div>
