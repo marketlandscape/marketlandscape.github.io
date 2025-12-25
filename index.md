@@ -62,7 +62,7 @@ Test.
        style="position:absolute;left:0;top:0;pointer-events:none;"
        xmlns="http://www.w3.org/2000/svg">
 
-    <circle id="dotOuter1" cx="25" cy="146" r="15" fill="#2d2d2dff"/>
+    <circle id="dotOuter1" cx="25" cy="146" r="14" fill="#2d2d2dff"/>
     <circle id="dotInner1" cx="25" cy="146" r="9" fill="#ffffff"/>
   </svg>
 </div>
