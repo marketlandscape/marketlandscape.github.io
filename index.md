@@ -18,7 +18,9 @@ Test.
        position:absolute; top:8px; width:100%;
        text-align:center; font-size:14px; color:#ffffff;
      ">
-    Example Text
+    <strong>EXAMPLE<br>
+    Example Text<br>
+    Navigation Index</strong>
   </div>
 
   <!-- center value (dynamic) -->
