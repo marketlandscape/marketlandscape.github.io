@@ -22,6 +22,7 @@ Test.
        padding-left:12px;   /* ← distance from box edge */
        padding-right:12px;
        font-size:14px;
+       font-weight:700;
        color:#ffffff;
        line-height:1.0;   /* ← adjust this */
      ">
@@ -36,7 +37,7 @@ Test.
        top:50%;
        left:50%;
        transform:translate(-50%,-50%);
-       font-size:56px;
+       font-size:54px;
        font-weight:600;
        color:#ffffff;
        line-height:1;
