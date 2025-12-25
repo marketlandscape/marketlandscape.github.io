@@ -29,7 +29,6 @@ layout: default
            padding-left:14px;
            padding-right:12px;
            font-size:14px;
-           font-weight:500;
            color:#ffffff;
            line-height:1.2;
          ">
