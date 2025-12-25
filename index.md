@@ -39,6 +39,6 @@ function setDot(x){
 setDot(63);
 </script>
 
-
+<br>
 
 Some text below.
