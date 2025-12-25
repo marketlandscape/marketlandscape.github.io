@@ -15,7 +15,7 @@ layout: default
          style="
            position:relative;
            width:200px;height:200px;
-           background:url('/assets/img/background-yellow.svg') no-repeat;
+           background:url('/assets/img/background-yellow.png') no-repeat;
            background-size:200px 200px;
            font-family: system-ui, -apple-system, sans-serif;
          ">
