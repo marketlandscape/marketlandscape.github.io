@@ -16,10 +16,10 @@ Test.
   <!-- top label -->
   <div style="
        position:absolute;
-       top:12px;
+       top:14px;
        width:100%;
        text-align:left;
-       padding-left:12px;
+       padding-left:14px;
        padding-right:12px;
        font-size:14px;
        font-weight:500;
