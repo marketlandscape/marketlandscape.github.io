@@ -16,7 +16,7 @@ Test.
        style="position:absolute;left:0;top:0;pointer-events:none;"
        xmlns="http://www.w3.org/2000/svg">
 
-    <circle id="dotOuter" cx="50" cy="360" r="6" fill="#2d2d2dff"/>
+    <circle id="dotOuter" cx="50" cy="360" r="6.5" fill="#2d2d2dff"/>
     <circle id="dotInner" cx="50" cy="360" r="5.5" fill="#ffffff"/>
   </svg>
 </div>
