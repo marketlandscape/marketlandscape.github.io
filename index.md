@@ -399,6 +399,20 @@ const interpretations = {
     { max: 79, label: "Scale Out" },
     { max: 100, label: "Exit" }
   ]
+  box3: [
+    { max: 19, label: "Entry Buy" },
+    { max: 39, label: "Probe Entry" },
+    { max: 59, label: "Hold / Wait" },
+    { max: 79, label: "Scale Out" },
+    { max: 100, label: "Exit" }
+  ]
+  box4: [
+    { max: 19, label: "Entry Buy" },
+    { max: 39, label: "Probe Entry" },
+    { max: 59, label: "Hold / Wait" },
+    { max: 79, label: "Scale Out" },
+    { max: 100, label: "Exit" }
+  ]
 };
 
 function interpretationFromX(boxKey, x){
@@ -480,6 +494,7 @@ async function loadIndexes(){
   setValue("box1", 1, data.box1);
   setValue("box2", 2, data.box2);
   setValue("box3", 3, data.box3);
+  setValue("box4", 4, data.box4);
 }
 
 // Run once when the page is loaded
