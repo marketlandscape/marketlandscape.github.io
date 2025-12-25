@@ -2,9 +2,18 @@
 layout: default
 ---
 
-Test.
+<div style="
+  display:flex;
+  align-items:flex-start;
+  gap:24px;
+">
 
-<div id="box1"
+  <!-- LEFT: 200×200 box -->
+  <div>
+    <!-- box -->
+
+       
+    <div id="box1"
      style="
        position:relative;
        width:200px;height:200px;
@@ -66,6 +75,39 @@ Test.
     <circle id="dotInner1" cx="25" cy="147" r="9" fill="#ffffff"/>
   </svg>
 </div>
+
+
+      <!-- box content unchanged -->
+    </div>
+  </div>
+
+  <!-- RIGHT: comments / explanation -->
+  <div style="
+    max-width:420px;
+    font-size:14px;
+    line-height:1.5;
+    color:#333333;
+  ">
+    <p>
+      This index shows the current position within the broader market cycle.
+      Lower values indicate early or accumulation phases, while higher values
+      signal distribution or exit zones.
+    </p>
+
+    <p>
+      The indicator is designed to reduce emotional decision-making by providing
+      a slow-moving, cycle-aware reference point.
+    </p>
+  </div>
+
+</div>
+
+
+
+
+
+
+
 
 
 
