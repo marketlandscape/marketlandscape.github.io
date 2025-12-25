@@ -74,7 +74,6 @@ layout: default
     <circle id="dotOuter1" cx="25" cy="147" r="14" fill="#2d2d2dff"/>
     <circle id="dotInner1" cx="25" cy="147" r="9" fill="#ffffff"/>
   </svg>
-</div>
 
 
       <!-- box content unchanged -->
