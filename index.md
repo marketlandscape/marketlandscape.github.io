@@ -18,7 +18,7 @@ Test.
        position:absolute;
        top:8px;
        width:100%;
-       text-align:center;
+       text-align:left;
        font-size:14px;
        color:#ffffff;
        line-height:1.0;   /* ← adjust this */
