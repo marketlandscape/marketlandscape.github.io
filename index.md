@@ -17,8 +17,8 @@ Test.
        xmlns="http://www.w3.org/2000/svg">
 
     <!-- dot near bottom -->
-    <circle id="dotOuter" cx="25" cy="135" r="16" fill="#2d2d2dff"/>
-    <circle id="dotInner" cx="25" cy="135" r="12" fill="#ffffff"/>
+    <circle id="dotOuter" cx="25" cy="160" r="16" fill="#2d2d2dff"/>
+    <circle id="dotInner" cx="25" cy="160" r="10" fill="#ffffff"/>
   </svg>
 </div>
 
