@@ -24,7 +24,7 @@ Test.
        font-size:14px;
        font-weight:500;
        color:#ffffff;
-       line-height:1.1;
+       line-height:1.2;
      ">
     EXAMPLE<br>
     Example Text<br>
