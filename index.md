@@ -37,8 +37,8 @@ Test.
        style="position:absolute;left:0;top:0;pointer-events:none;"
        xmlns="http://www.w3.org/2000/svg">
 
-    <circle id="dotOuter" cx="25" cy="180" r="3.2" fill="#2d2d2dff"/>
-    <circle id="dotInner" cx="25" cy="180" r="2.8" fill="#ffffff"/>
+    <circle id="dotOuter" cx="25" cy="160" r="16" fill="#2d2d2dff"/>
+    <circle id="dotInner" cx="25" cy="160" r="10" fill="#ffffff"/>
   </svg>
 </div>
 
