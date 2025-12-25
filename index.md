@@ -22,7 +22,7 @@ Test.
        padding-left:12px;   /* ← distance from box edge */
        padding-right:12px;
        font-size:14px;
-       font-weight:700;
+       font-weight:600;
        color:#ffffff;
        line-height:1.0;   /* ← adjust this */
      ">
