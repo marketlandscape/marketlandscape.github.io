@@ -29,6 +29,7 @@ layout: default
            padding-left:14px;
            padding-right:12px;
            font-size:14px;
+           font-weight:500;
            color:#ffffff;
            line-height:1.2;
          ">
@@ -395,6 +396,13 @@ const interpretations = {
     { max: 100, label: "Exit" }
   ],
   box3: [
+    { max: 19, label: "Entry Buy" },
+    { max: 39, label: "Probe Entry" },
+    { max: 59, label: "Hold / Wait" },
+    { max: 79, label: "Scale Out" },
+    { max: 100, label: "Exit" }
+  ],
+  box4: [
     { max: 19, label: "Entry Buy" },
     { max: 39, label: "Probe Entry" },
     { max: 59, label: "Hold / Wait" },
