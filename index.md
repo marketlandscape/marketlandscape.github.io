@@ -2,11 +2,6 @@
 layout: default
 ---
 
-<div style="
-  display:flex;
-  align-items:flex-start;
-  gap:24px;
-">
 
 <div class="index-row">
   <!-- LEFT: 200×200 box -->
@@ -38,7 +33,7 @@ layout: default
       </div>
 
       <!-- center value (dynamic) -->
-      <div id="centerValue1" style="
+  <div id="centerValue1" style="
         position:absolute;
         top:50%;
         left:50%;
@@ -52,7 +47,7 @@ layout: default
       </div>
 
       <!-- bottom label (dynamic) -->
-      <div id="bottomText1" style="
+  <div id="bottomText1" style="
         position:absolute;
         bottom:12px;
         width:100%;
@@ -64,7 +59,7 @@ layout: default
       </div>
 
       <!-- dot overlay -->
-      <svg width="200" height="200"
+   <svg width="200" height="200"
         style="position:absolute;left:0;top:0;pointer-events:none;"
         xmlns="http://www.w3.org/2000/svg">
         <circle id="dotOuter1" cx="25" cy="147" r="13" fill="#2d2d2dff"/>
