@@ -8,90 +8,79 @@ layout: default
   gap:24px;
 ">
 
+<div class="index-row">
   <!-- LEFT: 200×200 box -->
-  <div>
-
-  <div id="box1"
-         style="
-           position:relative;
-           width:200px;height:200px;
-           background:url('/assets/img/background-yellow.svg') no-repeat;
-           background-size:200px 200px;
-           font-family: system-ui, -apple-system, sans-serif;
-         ">
-
+  <div class="left">
+    <div id="box1"
+      style="
+        position:relative;
+        width:200px;height:200px;
+        background:url('/assets/img/background-yellow.svg') no-repeat;
+        background-size:200px 200px;
+        font-family: system-ui, -apple-system, sans-serif;
+      ">
       <!-- top label -->
-  <div style="
-           position:absolute;
-           top:16px;
-           width:100%;
-           text-align:left;
-           padding-left:14px;
-           padding-right:12px;
-           font-size:14px;
-           font-weight:500;
-           color:#ffffff;
-           line-height:1.2;
-         ">
+      <div style="
+        position:absolute;
+        top:16px;
+        width:100%;
+        text-align:left;
+        padding-left:14px;
+        padding-right:12px;
+        font-size:14px;
+        font-weight:500;
+        color:#ffffff;
+        line-height:1.2;
+      ">
         EXAMPLE<br>
         Example Text<br>
         Navigation Index
       </div>
 
       <!-- center value (dynamic) -->
-  <div id="centerValue1" style="
-           position:absolute;
-           top:50%;
-           left:50%;
-           transform:translate(-50%,-50%);
-           font-size:54px;
-           font-weight:600;
-           color:#ffffff;
-           line-height:1;
-         ">
+      <div id="centerValue1" style="
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        font-size:54px;
+        font-weight:600;
+        color:#ffffff;
+        line-height:1;
+      ">
         --
       </div>
 
       <!-- bottom label (dynamic) -->
-  <div id="bottomText1" style="
-           position:absolute;
-           bottom:12px;
-           width:100%;
-           text-align:center;
-           font-size:14px;
-           color:#d9d9d9;
-         ">
+      <div id="bottomText1" style="
+        position:absolute;
+        bottom:12px;
+        width:100%;
+        text-align:center;
+        font-size:14px;
+        color:#d9d9d9;
+      ">
         --
       </div>
 
       <!-- dot overlay -->
-  <svg width="200" height="200"
-           style="position:absolute;left:0;top:0;pointer-events:none;"
-           xmlns="http://www.w3.org/2000/svg">
+      <svg width="200" height="200"
+        style="position:absolute;left:0;top:0;pointer-events:none;"
+        xmlns="http://www.w3.org/2000/svg">
         <circle id="dotOuter1" cx="25" cy="147" r="13" fill="#2d2d2dff"/>
         <circle id="dotInner1" cx="25" cy="147" r="9" fill="#ffffff"/>
       </svg>
-
     </div>
   </div>
 
   <!-- RIGHT: comments / explanation -->
-  <div style="
-    max-width:420px;
-    font-size:14px;
-    line-height:1.5;
-    color:#333333;
-  ">
-   <p>
-      This index shows the current position within the broader market cycle.
-   </p>
-
-   <p>
+  <div class="right">
+    <p>This index shows the current position within the broader market cycle.</p>
+    <p>
       The indicator is designed to reduce emotional decision-making by providing
       a slow-moving, cycle-aware reference point.
-   </p>
+    </p>
   </div>
-
 </div>
 
 
