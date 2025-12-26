@@ -9,7 +9,8 @@
 
   <!-- semicircle scale -->
   <!-- center = (100,160), radius = 75 -->
-  <g id="scale" fill="none" stroke-width="12" stroke-linecap="butt">
+  <!-- stroke-width increased to 13 to remove hairline gaps -->
+  <g id="scale" fill="none" stroke-width="13" stroke-linecap="butt">
 
 
     <!-- segment 1 -->
@@ -45,9 +46,9 @@
   </g>
 
 
-  <!-- end-cap circles -->
-  <circle cx="25"  cy="160" r="6" fill="#fff3b0ff"/>
-  <circle cx="175" cy="160" r="6" fill="#e0a800ff"/>
+  <!-- end-cap circles (match first & last segment) -->
+  <circle cx="25"  cy="160" r="6.5" fill="#fff3b0ff"/>
+  <circle cx="175" cy="160" r="6.5" fill="#e0a800ff"/>
 
 
 </svg>
