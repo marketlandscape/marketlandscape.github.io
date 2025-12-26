@@ -16,7 +16,7 @@ permalink: /index2/
          style="
            position:relative;
            width:200px;height:200px;
-           background:url('/assets/img/background-circle-grey.svg') no-repeat;
+           background:url('/assets/img/background-circle-yellow.svg') no-repeat;
            background-size:200px 200px;
            font-family: system-ui, -apple-system, sans-serif;
          ">
