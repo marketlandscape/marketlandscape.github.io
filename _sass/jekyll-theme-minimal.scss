@@ -6,16 +6,12 @@
 html { color-scheme: light dark; }
 
 html, body {
-  margin:0;                 /* removes default browser gap */
-  padding:50px;
-  background-color: #ffffff;
-  color: #111111;
+  background: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
   html, body {
-    background-color: #0f0f0f;
-    color: #e6e6e6;
+    background: #0f0f0f;
   }
 }
 
@@ -77,8 +73,9 @@ a:hover small {
 }
 
 .wrapper {
-  width:860px;
-  margin:0 auto;
+  width: 860px;
+  margin: 0 auto;
+  padding: 50px;
 }
 
 blockquote {
