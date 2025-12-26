@@ -40,7 +40,7 @@ Responsive layout for mobile added
       </div>
 
       <!-- center value (dynamic) -->
-   <div id="centerValue1" style="
+  <div id="centerValue1" style="
         position:absolute;
         top:67%;
         left:50%;
@@ -76,8 +76,24 @@ Responsive layout for mobile added
         <circle id="dotInner1" cx="25" cy="147" r="9" fill="#ffffff"/>
       </svg>
 
-   </div>
   </div>
+  </div>
+
+  <!-- RIGHT: comments / explanation -->
+  <div class="right">
+    <p>
+      This index shows the current position within the broader market cycle.
+    </p>
+
+  <p>
+      The indicator is designed to reduce emotional decision-making by providing
+      a slow-moving, cycle-aware reference point.
+    </p>
+  </div>
+
+</div>
+
+
 
 
 
