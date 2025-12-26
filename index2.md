@@ -56,7 +56,7 @@ permalink: /index2/
       <!-- bottom label (dynamic) -->
   <div id="bottomText1" style="
            position:absolute;
-           bottom:12px;
+           bottom:14px;
            width:100%;
            text-align:center;
            font-size:14px;
