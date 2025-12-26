@@ -137,7 +137,7 @@ permalink: /index2/
       <!-- center value (dynamic) -->
    <div id="centerValue2" style="
            position:absolute;
-           top:50%;
+           top:67%;
            left:50%;
            transform:translate(-50%,-50%);
            font-size:54px;
@@ -233,7 +233,7 @@ permalink: /index2/
       <!-- center value (dynamic) -->
    <div id="centerValue3" style="
            position:absolute;
-           top:50%;
+           top:67%;
            left:50%;
            transform:translate(-50%,-50%);
            font-size:54px;
