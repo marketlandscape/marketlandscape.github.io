@@ -338,37 +338,46 @@ function interpretationFromX(boxKey, x){
 
 <script>
 /*
-  Updates one box based on a single numeric value.
+  Dot moves along a semi-circle arc from (25,147) to (175,147).
 
-  Parameters:
-  - boxKey : string
-      Logical identifier of the box ("box1", "box2", ...)
-      Used to select interpretation rules.
-  - boxId  : number
-      Numeric suffix used in DOM element IDs (1, 2, 3, ...)
-  - x      : number
-      Index value in range 0–100 (may come from JSON or API)
+  Geometry:
+  - Endpoints: (25,147) and (175,147)
+  - Center of full circle would be midpoint: (100,147)
+  - Radius: 75
+  - We use the TOP semicircle (bulging upward). Flip sign to go downward.
 */
 function setValue(boxKey, boxId, x){
 
   // Ensure x is a number and clamp it to 0–100
   x = Math.max(0, Math.min(100, Number(x)));
 
-  // Convert logical value x (0–100)
-  // into a horizontal pixel position inside the 200px box
-  // 25px = left limit, 175px = right limit
-  const cx = 25 + (x / 100) * 150;
+  // Convert x (0..100) -> angle t (0..π)
+  // t=0  => left endpoint
+  // t=π  => right endpoint
+  const t = (x / 100) * Math.PI;
+
+  // Circle parameters
+  const cx0 = 100;   // circle center x
+  const cy0 = 147;   // circle center y (same as endpoints)
+  const r   = 75;    // radius (half of 175-25)
+
+  // Point on TOP semicircle:
+  // x = cx0 - r*cos(t)
+  // y = cy0 - r*sin(t)
+  const cx = cx0 - r * Math.cos(t);
+  const cy = cy0 - r * Math.sin(t);
 
   // Move the dot (outer ring and inner core)
   document.getElementById("dotOuter" + boxId).setAttribute("cx", cx);
+  document.getElementById("dotOuter" + boxId).setAttribute("cy", cy);
   document.getElementById("dotInner" + boxId).setAttribute("cx", cx);
+  document.getElementById("dotInner" + boxId).setAttribute("cy", cy);
 
   // Update the large numeric value in the center (always two digits)
   document.getElementById("centerValue" + boxId).textContent =
     String(Math.round(x)).padStart(2, "0");
 
   // Update the bottom interpretation text
-  // based on box-specific rules and the current x value
   document.getElementById("bottomText" + boxId).textContent =
     interpretationFromX(boxKey, Math.round(x));
 }
