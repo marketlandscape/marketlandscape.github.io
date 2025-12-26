@@ -7,48 +7,42 @@
         rx="15" ry="15" fill="#2d2d2dff"/>
 
 
-  <!-- semicircle scale -->
+  <!-- semicircle scale: 5 equal segments -->
   <!-- center = (100,160), radius = 75 -->
   <g id="scale" fill="none" stroke-width="12" stroke-linecap="butt">
 
 
-    <!-- segment 1 -->
+    <!-- segment 1: 180° → 144° -->
     <path d="M 25 160
              A 75 75 0 0 1 39.32 115.91"
           stroke="#d9d9d9ff"/>
 
 
-    <!-- segment 2 -->
+    <!-- segment 2: 144° → 108° -->
     <path d="M 39.32 115.91
              A 75 75 0 0 1 76.82 89.51"
           stroke="#ccccccff"/>
 
 
-    <!-- segment 3 -->
+    <!-- segment 3: 108° → 72° -->
     <path d="M 76.82 89.51
              A 75 75 0 0 1 123.18 89.51"
           stroke="#b7b7b7ff"/>
 
 
-    <!-- segment 4 -->
+    <!-- segment 4: 72° → 36° -->
     <path d="M 123.18 89.51
              A 75 75 0 0 1 160.68 115.91"
           stroke="#999999ff"/>
 
 
-    <!-- segment 5 -->
+    <!-- segment 5: 36° → 0° -->
     <path d="M 160.68 115.91
              A 75 75 0 0 1 175 160"
           stroke="#666666ff"/>
 
 
   </g>
-
-
-  <!-- end-cap circles -->
-  <!-- diameter = 12 (same as stroke width) -->
-  <circle cx="25"  cy="160" r="6" fill="#d9d9d9ff"/>
-  <circle cx="175" cy="160" r="6" fill="#666666ff"/>
 
 
 </svg>
