@@ -4,18 +4,21 @@ layout: default
 
 
 <div class="index-row">
+
   <!-- LEFT: 200×200 box -->
   <div class="left">
     <div id="box1"
       style="
         position:relative;
-        width:200px;height:200px;
+        width:200px;
+        height:200px;
         background:url('/assets/img/background-yellow.svg') no-repeat;
         background-size:200px 200px;
         font-family: system-ui, -apple-system, sans-serif;
       ">
+
       <!-- top label -->
-      <div style="
+   <div style="
         position:absolute;
         top:16px;
         width:100%;
@@ -44,7 +47,7 @@ layout: default
         line-height:1;
       ">
         --
-      </div>
+  </div>
 
       <!-- bottom label (dynamic) -->
   <div id="bottomText1" style="
@@ -56,16 +59,20 @@ layout: default
         color:#d9d9d9;
       ">
         --
-      </div>
+   </div>
 
       <!-- dot overlay -->
-   <svg width="200" height="200"
+   <svg
+        width="100%"
+        height="100%"
+        viewBox="0 0 200 200"
         style="position:absolute;left:0;top:0;pointer-events:none;"
         xmlns="http://www.w3.org/2000/svg">
         <circle id="dotOuter1" cx="25" cy="147" r="13" fill="#2d2d2dff"/>
         <circle id="dotInner1" cx="25" cy="147" r="9" fill="#ffffff"/>
       </svg>
-    </div>
+
+  </div>
   </div>
 
   <!-- RIGHT: comments / explanation -->
@@ -76,77 +83,75 @@ layout: default
       a slow-moving, cycle-aware reference point.
     </p>
   </div>
+
 </div>
 
 
 
-<div style="
-  display:flex;
-  align-items:flex-start;
-  gap:24px;
-  margin-top:32px;
-">
+<div class="index-row" style="margin-top:32px;">
 
   <!-- LEFT: 200×200 box (BOX 2) -->
-  <div>
-
-  <div id="box2"
-         style="
-           position:relative;
-           width:200px;height:200px;
-           background:url('/assets/img/background-blue.svg') no-repeat;
-           background-size:200px 200px;
-           font-family: system-ui, -apple-system, sans-serif;
-         ">
+  <div class="left">
+    <div id="box2"
+      style="
+        position:relative;
+        width:200px;
+        height:200px;
+        background:url('/assets/img/background-blue.svg') no-repeat;
+        background-size:200px 200px;
+        font-family: system-ui, -apple-system, sans-serif;
+      ">
 
       <!-- top label -->
    <div style="
-           position:absolute;
-           top:16px;
-           width:100%;
-           text-align:left;
-           padding-left:14px;
-           padding-right:12px;
-           font-size:14px;
-           font-weight:500;
-           color:#ffffff;
-           line-height:1.2;
-         ">
+        position:absolute;
+        top:16px;
+        width:100%;
+        text-align:left;
+        padding-left:14px;
+        padding-right:12px;
+        font-size:14px;
+        font-weight:500;
+        color:#ffffff;
+        line-height:1.2;
+      ">
         EXAMPLE<br>
         Second Box<br>
         Navigation Index
-      </div>
+   </div>
 
       <!-- center value (dynamic) -->
    <div id="centerValue2" style="
-           position:absolute;
-           top:50%;
-           left:50%;
-           transform:translate(-50%,-50%);
-           font-size:54px;
-           font-weight:600;
-           color:#ffffff;
-           line-height:1;
-         ">
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        font-size:54px;
+        font-weight:600;
+        color:#ffffff;
+        line-height:1;
+      ">
         --
-      </div>
+   </div>
 
       <!-- bottom label (dynamic) -->
-   <div id="bottomText2" style="
-           position:absolute;
-           bottom:12px;
-           width:100%;
-           text-align:center;
-           font-size:14px;
-           color:#d9d9d9;
-         ">
+  <div id="bottomText2" style="
+        position:absolute;
+        bottom:12px;
+        width:100%;
+        text-align:center;
+        font-size:14px;
+        color:#d9d9d9;
+      ">
         --
       </div>
 
       <!-- dot overlay -->
-   <svg width="200" height="200"
-           style="position:absolute;left:0;top:0;pointer-events:none;"
-           xmlns="http://www.w3.org/2000/svg">
+   <svg
+        width="200"
+        height="200"
+        style="position:absolute;left:0;top:0;pointer-events:none;"
+        xmlns="http://www.w3.org/2000/svg">
         <circle id="dotOuter2" cx="25" cy="147" r="13" fill="#2d2d2dff"/>
         <circle id="dotInner2" cx="25" cy="147" r="9" fill="#ffffff"/>
       </svg>
@@ -155,12 +160,7 @@ layout: default
   </div>
 
   <!-- RIGHT: comments / explanation -->
-  <div style="
-    max-width:420px;
-    font-size:14px;
-    line-height:1.5;
-    color:#333333;
-  ">
+  <div class="right">
     <p>
       This second index represents a different dimension of the cycle.
       Interpretation thresholds and labels may differ from the first box.
@@ -176,73 +176,71 @@ layout: default
 
 
 
-<div style="
-  display:flex;
-  align-items:flex-start;
-  gap:24px;
-  margin-top:32px;
-">
+<div class="index-row" style="margin-top:32px;">
 
   <!-- LEFT: 200×200 box (BOX 3) -->
-  <div>
-
- <div id="box3"
-         style="
-           position:relative;
-           width:200px;height:200px;
-           background:url('/assets/img/background-grey.svg') no-repeat;
-           background-size:200px 200px;
-           font-family: system-ui, -apple-system, sans-serif;
-         ">
+  <div class="left">
+    <div id="box3"
+      style="
+        position:relative;
+        width:200px;
+        height:200px;
+        background:url('/assets/img/background-grey.svg') no-repeat;
+        background-size:200px 200px;
+        font-family: system-ui, -apple-system, sans-serif;
+      ">
 
       <!-- top label -->
-   <div style="
-           position:absolute;
-           top:16px;
-           width:100%;
-           text-align:left;
-           padding-left:14px;
-           padding-right:12px;
-           font-size:14px;
-           font-weight:500;
-           color:#ffffff;
-           line-height:1.2;
-         ">
+      <div style="
+        position:absolute;
+        top:16px;
+        width:100%;
+        text-align:left;
+        padding-left:14px;
+        padding-right:12px;
+        font-size:14px;
+        font-weight:500;
+        color:#ffffff;
+        line-height:1.2;
+      ">
         EXAMPLE<br>
         Third Box<br>
         Navigation Index
       </div>
 
       <!-- center value (dynamic) -->
-   <div id="centerValue3" style="
-           position:absolute;
-           top:50%;
-           left:50%;
-           transform:translate(-50%,-50%);
-           font-size:54px;
-           font-weight:600;
-           color:#ffffff;
-           line-height:1;
-         ">
+      <div id="centerValue3" style="
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        font-size:54px;
+        font-weight:600;
+        color:#ffffff;
+        line-height:1;
+      ">
         --
       </div>
 
       <!-- bottom label (dynamic) -->
-   <div id="bottomText3" style="
-           position:absolute;
-           bottom:12px;
-           width:100%;
-           text-align:center;
-           font-size:14px;
-           color:#d9d9d9;
-         ">
+      <div id="bottomText3" style="
+        position:absolute;
+        bottom:12px;
+        width:100%;
+        text-align:center;
+        font-size:14px;
+        color:#d9d9d9;
+      ">
         --
       </div>
 
       <!-- dot overlay -->
-   <svg width="200" height="200"
-           style="position:absolute;left:0;top:0;pointer-events:none;"
-           xmlns="http://www.w3.org/2000/svg">
+      <svg
+        width="100%"
+        height="100%"
+        viewBox="0 0 200 200"
+        style="position:absolute;left:0;top:0;pointer-events:none;"
+        xmlns="http://www.w3.org/2000/svg">
         <circle id="dotOuter3" cx="25" cy="147" r="13" fill="#2d2d2dff"/>
         <circle id="dotInner3" cx="25" cy="147" r="9" fill="#ffffff"/>
       </svg>
@@ -251,12 +249,7 @@ layout: default
   </div>
 
   <!-- RIGHT: comments / explanation -->
-  <div style="
-    max-width:420px;
-    font-size:14px;
-    line-height:1.5;
-    color:#333333;
-  ">
+  <div class="right">
     <p>
       This third index completes the initial set of indicators.
       It follows the same visual scale while expressing a distinct
