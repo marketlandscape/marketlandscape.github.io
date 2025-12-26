@@ -7,10 +7,9 @@
         rx="15" ry="15" fill="#2d2d2dff"/>
 
 
-  <!-- semicircle scale -->
+  <!-- semicircle scale (baseline thickness) -->
   <!-- center = (100,160), radius = 75 -->
-  <!-- minimal seam-fix: stroke-width 12 -> 12.5, linecap stays butt -->
-  <g id="scale" fill="none" stroke-width="12.5" stroke-linecap="butt">
+  <g id="scale" fill="none" stroke-width="12" stroke-linecap="butt">
 
 
     <path d="M 25 160
@@ -41,9 +40,9 @@
   </g>
 
 
-  <!-- end-cap circles (match stroke-width/2) -->
-  <circle cx="25"  cy="160" r="6.25" fill="#ffe375ff"/>
-  <circle cx="175" cy="160" r="6.25" fill="#ff9900ff"/>
+  <!-- end-cap circles (baseline radius) -->
+  <circle cx="25"  cy="160" r="6" fill="#ffe375ff"/>
+  <circle cx="175" cy="160" r="6" fill="#ff9900ff"/>
 
 
 </svg>
