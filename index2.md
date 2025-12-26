@@ -45,7 +45,7 @@ permalink: /index2/
            top:67%;
            left:50%;
            transform:translate(-50%,-50%);
-           font-size:50px;
+           font-size:52px;
            font-weight:600;
            color:#ffffff;
            line-height:1;
