@@ -42,7 +42,7 @@ permalink: /index2/
       <!-- center value (dynamic) -->
   <div id="centerValue1" style="
            position:absolute;
-           top:60%;
+           top:70%;
            left:50%;
            transform:translate(-50%,-50%);
            font-size:54px;
