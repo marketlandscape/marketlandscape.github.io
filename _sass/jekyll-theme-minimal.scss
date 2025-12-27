@@ -187,6 +187,16 @@ header{
   }
 }
 
+/* Ensure menu links are neutral (override global a{} rule) */
+.site-nav a{
+  color: var(--text);
+}
+
+.site-nav a:hover,
+.site-nav a:focus{
+  color: var(--text);
+}
+
 /* =========================================================
    Sidebar footer (inside header)
    ========================================================= */
