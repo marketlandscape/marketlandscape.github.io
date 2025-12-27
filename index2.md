@@ -2,45 +2,54 @@
 layout: default
 ---
 
-<div class="index-row">
+<!-- =========================
+     180 × 180 NAVIGATION BOXES
+     ========================= -->
 
-  <!-- LEFT: 150×150 box -->
-  <div class="left">
+<div style="
+  display:flex;
+  align-items:flex-start;
+  gap:24px;
+">
+
+  <!-- LEFT: 180×180 box -->
+  <div>
+
     <div id="box1"
       style="
         position:relative;
-        width:150px;
-        height:150px;
-        background:url('/assets/img/background-yellow.svg') no-repeat;
-        background-size:150px 150px;
+        width:180px;
+        height:180px;
+        background:url('/assets/img/background-arc-grey.svg') no-repeat;
+        background-size:180px 180px;
         font-family: system-ui, -apple-system, sans-serif;
       ">
 
       <!-- top label -->
-   <div style="
+      <div style="
         position:absolute;
-        top:12px;
+        top:14px;
         width:100%;
         text-align:left;
-        padding-left:10px;
-        padding-right:10px;
-        font-size:12px;
+        padding-left:13px;
+        padding-right:11px;
+        font-size:13px;
         font-weight:500;
         color:#ffffff;
-        line-height:1.15;
+        line-height:1.2;
       ">
         EXAMPLE<br>
         Example Text<br>
         Navigation Index
       </div>
 
-      <!-- center value (dynamic) -->
-   <div id="centerValue1" style="
+      <!-- center value -->
+      <div id="centerValue1" style="
         position:absolute;
         top:50%;
         left:50%;
         transform:translate(-50%,-50%);
-        font-size:40px;
+        font-size:49px;
         font-weight:600;
         color:#ffffff;
         line-height:1;
@@ -48,248 +57,64 @@ layout: default
         --
       </div>
 
-      <!-- bottom label (dynamic) -->
-  <div id="bottomText1" style="
+      <!-- bottom label -->
+      <div id="bottomText1" style="
         position:absolute;
-        bottom:9px;
+        bottom:11px;
         width:100%;
         text-align:center;
-        font-size:12px;
-        color:#d9d9d9;
-      ">
-        --
-      </div>
-
-      <!-- dot overlay (150×150 coordinate system) -->
-  <svg
-        width="100%"
-        height="100%"
-        viewBox="0 0 150 150"
-        style="position:absolute;left:0;top:0;pointer-events:none;"
-        xmlns="http://www.w3.org/2000/svg">
-        <circle id="dotOuter1" cx="18.75" cy="110.25" r="9.75" fill="#2d2d2dff"/>
-        <circle id="dotInner1" cx="18.75" cy="110.25" r="6.75" fill="#ffffff"/>
-      </svg>
-
-   </div>
-  </div>
-
-  <!-- RIGHT: comments / explanation -->
-  <div class="right">
-    <p>This index shows the current position within the broader market cycle.</p>
-    <p>
-      The indicator is designed to reduce emotional decision-making by providing
-      a slow-moving, cycle-aware reference point.
-    </p>
-  </div>
-
-</div>
-
-
-
-<div class="index-row" style="margin-top:24px;">
-
-  <!-- LEFT: 150×150 box (BOX 2) -->
-  <div class="left">
-    <div id="box2"
-      style="
-        position:relative;
-        width:150px;
-        height:150px;
-        background:url('/assets/img/background-blue.svg') no-repeat;
-        background-size:150px 150px;
-        font-family: system-ui, -apple-system, sans-serif;
-      ">
-
-      <!-- top label -->
-  <div style="
-        position:absolute;
-        top:12px;
-        width:100%;
-        text-align:left;
-        padding-left:10px;
-        padding-right:10px;
-        font-size:12px;
-        font-weight:500;
-        color:#ffffff;
-        line-height:1.15;
-      ">
-        EXAMPLE<br>
-        Second Box<br>
-        Navigation Index
-      </div>
-
-      <!-- center value (dynamic) -->
-   <div id="centerValue2" style="
-        position:absolute;
-        top:50%;
-        left:50%;
-        transform:translate(-50%,-50%);
-        font-size:40px;
-        font-weight:600;
-        color:#ffffff;
-        line-height:1;
-      ">
-        --
-      </div>
-
-      <!-- bottom label (dynamic) -->
-  <div id="bottomText2" style="
-        position:absolute;
-        bottom:9px;
-        width:100%;
-        text-align:center;
-        font-size:12px;
+        font-size:13px;
         color:#d9d9d9;
       ">
         --
       </div>
 
       <!-- dot overlay -->
-  <svg
+      <svg
         width="100%"
         height="100%"
-        viewBox="0 0 150 150"
+        viewBox="0 0 180 180"
         style="position:absolute;left:0;top:0;pointer-events:none;"
         xmlns="http://www.w3.org/2000/svg">
-        <circle id="dotOuter2" cx="18.75" cy="110.25" r="9.75" fill="#2d2d2dff"/>
-        <circle id="dotInner2" cx="18.75" cy="110.25" r="6.75" fill="#ffffff"/>
+
+        <!-- dot start position corresponds to x = 0 -->
+        <circle id="dotOuter1" cx="22.5" cy="132.3" r="11.7" fill="#2d2d2dff"/>
+        <circle id="dotInner1" cx="22.5" cy="132.3" r="8.1" fill="#ffffff"/>
       </svg>
 
     </div>
   </div>
 
-  <!-- RIGHT: comments / explanation -->
-  <div class="right">
-    <p>
-      This second index represents a different dimension of the cycle.
-      Interpretation thresholds and labels may differ from the first box.
-    </p>
-    <p>
-      The visual scale remains identical to preserve comparability,
-      while the meaning layer is box-specific.
-    </p>
-  </div>
-
-</div>
-
-
-
-<div class="index-row" style="margin-top:24px;">
-
-  <!-- LEFT: 150×150 box (BOX 3) -->
-  <div class="left">
-    <div id="box3"
-      style="
-        position:relative;
-        width:150px;
-        height:150px;
-        background:url('/assets/img/background-grey.svg') no-repeat;
-        background-size:150px 150px;
-        font-family: system-ui, -apple-system, sans-serif;
-      ">
-
-      <!-- top label -->
+  <!-- RIGHT: explanation text -->
   <div style="
-        position:absolute;
-        top:12px;
-        width:100%;
-        text-align:left;
-        padding-left:10px;
-        padding-right:10px;
-        font-size:12px;
-        font-weight:500;
-        color:#ffffff;
-        line-height:1.15;
-      ">
-        EXAMPLE<br>
-        Third Box<br>
-        Navigation Index
-      </div>
-
-      <!-- center value (dynamic) -->
-  <div id="centerValue3" style="
-        position:absolute;
-        top:50%;
-        left:50%;
-        transform:translate(-50%,-50%);
-        font-size:40px;
-        font-weight:600;
-        color:#ffffff;
-        line-height:1;
-      ">
-        --
-      </div>
-
-      <!-- bottom label (dynamic) -->
-   <div id="bottomText3" style="
-        position:absolute;
-        bottom:9px;
-        width:100%;
-        text-align:center;
-        font-size:12px;
-        color:#d9d9d9;
-      ">
-        --
-      </div>
-
-      <!-- dot overlay -->
-   <svg
-        width="100%"
-        height="100%"
-        viewBox="0 0 150 150"
-        style="position:absolute;left:0;top:0;pointer-events:none;"
-        xmlns="http://www.w3.org/2000/svg">
-        <circle id="dotOuter3" cx="18.75" cy="110.25" r="9.75" fill="#2d2d2dff"/>
-        <circle id="dotInner3" cx="18.75" cy="110.25" r="6.75" fill="#ffffff"/>
-      </svg>
-
-  </div>
-  </div>
-
-  <!-- RIGHT: comments / explanation -->
-  <div class="right">
+    max-width:420px;
+    font-size:14px;
+    line-height:1.5;
+    color:#333333;
+  ">
     <p>
-      This third index completes the initial set of indicators.
-      It follows the same visual scale while expressing a distinct
-      interpretation layer.
+      This index shows the current position within the broader market cycle.
+      Lower values indicate early or accumulation phases, while higher values
+      indicate distribution or exit zones.
     </p>
+
     <p>
-      Together with the other boxes, it enables side-by-side
-      comparison across different market dimensions.
+      The indicator is intentionally slow-moving and cycle-aware, designed to
+      reduce emotional decision-making.
     </p>
   </div>
 
 </div>
 
 
+<!-- =========================
+     INTERPRETATION LOGIC
+     ========================= -->
 
 <script>
-/* interpretation rules (shared, static) */
 const interpretations = {
   box1: [
-    { max: 19, label: "Entry Buy" },
-    { max: 39, label: "Probe Entry" },
-    { max: 59, label: "Hold / Wait" },
-    { max: 79, label: "Scale Out" },
-    { max: 100, label: "Exit" }
-  ],
-  box2: [
-    { max: 19, label: "Entry Buy" },
-    { max: 39, label: "Probe Entry" },
-    { max: 59, label: "Hold / Wait" },
-    { max: 79, label: "Scale Out" },
-    { max: 100, label: "Exit" }
-  ],
-  box3: [
-    { max: 19, label: "Entry Buy" },
-    { max: 39, label: "Probe Entry" },
-    { max: 59, label: "Hold / Wait" },
-    { max: 79, label: "Scale Out" },
-    { max: 100, label: "Exit" }
-  ],
-  box4: [
-    { max: 19, label: "Entry Buy" },
+    { max: 19, label: "Buy" },
     { max: 39, label: "Probe Entry" },
     { max: 59, label: "Hold / Wait" },
     { max: 79, label: "Scale Out" },
@@ -306,34 +131,44 @@ function interpretationFromX(boxKey, x){
 </script>
 
 
+<!-- =========================
+     DOT POSITION SCRIPT
+     (180 × 180 geometry)
+     ========================= -->
 
 <script>
 /*
-  Updates one box based on a single numeric value.
+  Geometry for 180×180 box:
 
-  150×150 geometry (scaled from the old 200×200):
-  - old left/right: 25..175  -> new: 18.75..131.25
-  - travel width:   150      -> new: 112.5
+  left  = 22.5
+  right = 157.5
+  travel = 135
 */
 function setValue(boxKey, boxId, x){
 
+  // clamp x to 0–100
   x = Math.max(0, Math.min(100, Number(x)));
 
-  // 0..100 -> 18.75..131.25
-  const cx = 18.75 + (x / 100) * 112.5;
+  // map x → horizontal position
+  const cx = 22.5 + (x / 100) * 135;
 
   document.getElementById("dotOuter" + boxId).setAttribute("cx", cx);
   document.getElementById("dotInner" + boxId).setAttribute("cx", cx);
 
+  // update center value
   document.getElementById("centerValue" + boxId).textContent =
     String(Math.round(x)).padStart(2, "0");
 
+  // update interpretation text
   document.getElementById("bottomText" + boxId).textContent =
     interpretationFromX(boxKey, Math.round(x));
 }
 </script>
 
 
+<!-- =========================
+     DATA LOADING
+     ========================= -->
 
 <script>
 async function loadIndexes(){
@@ -341,9 +176,6 @@ async function loadIndexes(){
   const data = await res.json();
 
   setValue("box1", 1, data.box1);
-  setValue("box2", 2, data.box2);
-  setValue("box3", 3, data.box3);
-  // setValue("box4", 4, data.box4); // if you enable a 4th 150×150 box
 }
 
 loadIndexes();
