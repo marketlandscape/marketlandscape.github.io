@@ -16,7 +16,7 @@ font-size:15px;
 font-weight:500;
 letter-spacing:0.2px;
 ">
-<span id="priceText">BTC: --  |  ETH: --</span>
+BTC $84,200 · ETH $4,320   Updated 12:00 UTC
 </div>
 
 <div class="index-row">
@@ -333,19 +333,7 @@ setValue("box1", 1, data.box1);
 setValue("box2", 2, data.box2);
 setValue("box3", 3, data.box3);
 setValue("box4", 4, data.box4);
-
-const btc = (data.btc === undefined || data.btc === null) ? null : Number(data.btc);
-const eth = (data.eth === undefined || data.eth === null) ? null : Number(data.eth);
-
-const fmt0 = (n) => (n === null || Number.isNaN(n)) ? "--" : n.toLocaleString(undefined, { maximumFractionDigits: 0 });
-
-const btcTxt = (btc === null || Number.isNaN(btc)) ? "--" : "$" + fmt0(btc);
-const ethTxt = (eth === null || Number.isNaN(eth)) ? "--" : "$" + fmt0(eth);
-
-const el = document.getElementById("priceText");
-if (el) el.textContent = "BTC: " + btcTxt + "  |  ETH: " + ethTxt;
 }
 
 loadIndexes();
 </script>
-``` :contentReference[oaicite:0]{index=0}
