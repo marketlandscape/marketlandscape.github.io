@@ -123,7 +123,7 @@ a small{
     align-items:start;
   }
 
-  header, footer{
+  header{
     position: sticky;
     top: 24px;
   }
@@ -131,18 +131,17 @@ a small{
 
 /* Mobile/tablet */
 @media (max-width: 960px){
-  header, main, footer{
+  header, main{
     position:static;
     width:auto;
   }
 }
 
 /* =========================================================
-   Header / footer
+   Header / sidebar
    ========================================================= */
 
-header,
-footer{
+header{
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
@@ -177,6 +176,16 @@ footer{
 .nav-link:focus{
   color: var(--link-hover);
   border-color: var(--link-hover);
+}
+
+/* =========================================================
+   Sidebar footer (inside header)
+   ========================================================= */
+
+.sidebar-footer{
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 /* =========================================================
