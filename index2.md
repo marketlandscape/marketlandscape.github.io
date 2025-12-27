@@ -15,7 +15,7 @@ layout: default
   <!-- LEFT: 180×180 box -->
   <div>
 
-    <div id="box1"
+<div id="box1"
       style="
         position:relative;
         width:180px;
@@ -26,7 +26,7 @@ layout: default
       ">
 
       <!-- top label -->
-      <div style="
+  <div style="
         position:absolute;
         top:14px;
         width:100%;
@@ -44,7 +44,7 @@ layout: default
       </div>
 
       <!-- center value -->
-      <div id="centerValue1" style="
+<div id="centerValue1" style="
         position:absolute;
         top:50%;
         left:50%;
@@ -58,7 +58,7 @@ layout: default
       </div>
 
       <!-- bottom label -->
-      <div id="bottomText1" style="
+ <div id="bottomText1" style="
         position:absolute;
         bottom:11px;
         width:100%;
@@ -70,7 +70,7 @@ layout: default
       </div>
 
       <!-- dot overlay -->
-      <svg
+ <svg
         width="100%"
         height="100%"
         viewBox="0 0 180 180"
@@ -80,7 +80,7 @@ layout: default
         <!-- dot start position corresponds to x = 0 -->
         <circle id="dotOuter1" cx="22.5" cy="132.3" r="11.7" fill="#2d2d2dff"/>
         <circle id="dotInner1" cx="22.5" cy="132.3" r="8.1" fill="#ffffff"/>
-      </svg>
+ </svg>
 
     </div>
   </div>
@@ -98,10 +98,10 @@ layout: default
       indicate distribution or exit zones.
     </p>
 
-    <p>
+  <p>
       The indicator is intentionally slow-moving and cycle-aware, designed to
       reduce emotional decision-making.
-    </p>
+  </p>
   </div>
 
 </div>
