@@ -168,14 +168,23 @@ header{
   border:1px solid var(--border);
   border-radius:8px;
   line-height:1.2;
-  color: var(--link);
-  transition: color 0.15s ease, border-color 0.15s ease;
+  color: var(--text);
+  transition: background 0.15s ease, border-color 0.15s ease;
 }
 
 .nav-link:hover,
 .nav-link:focus{
-  color: var(--link-hover);
-  border-color: var(--link-hover);
+  color: var(--text);
+  border-color: var(--border);
+  background: rgba(0,0,0,0.04);
+}
+
+/* Dark-mode hover refinement for menu */
+@media (prefers-color-scheme: dark){
+  .nav-link:hover,
+  .nav-link:focus{
+    background: rgba(255,255,255,0.06);
+  }
 }
 
 /* =========================================================
