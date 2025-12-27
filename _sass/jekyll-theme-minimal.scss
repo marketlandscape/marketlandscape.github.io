@@ -8,11 +8,8 @@
 :root{
   color-scheme: light dark;
 
-  /* single text color everywhere */
   --bg: #ffffff;
   --text: #2b2b2b;
-
-  /* structure */
   --border: #e5e5e5;
 
   /* links only exception */
@@ -21,23 +18,18 @@
 
   /* surfaces */
   --pre-bg: #f8f8f8;
-  --downloads-bg: #f4f4f4;
-  --downloads-border: #e0e0e0;
 }
 
 @media (prefers-color-scheme: dark){
   :root{
     --bg: #0f1115;
     --text: #d9d9d9;
-
     --border: #2a2f3a;
 
     --link: #7db7ff;
     --link-hover: #a9d1ff;
 
     --pre-bg: #161a22;
-    --downloads-bg: #161a22;
-    --downloads-border: #2a2f3a;
   }
 }
 
@@ -122,7 +114,7 @@ a small{
   margin: 0 auto;
 }
 
-/* Desktop: modern grid layout + sticky sidebar */
+/* Desktop layout */
 @media (min-width: 961px){
   .wrapper{
     display:grid;
@@ -134,50 +126,62 @@ a small{
   header, footer{
     position: sticky;
     top: 24px;
-    width: auto;
-    float: none;
-  }
-
-  section{
-    width: auto;
-    float: none;
   }
 }
 
-/* Mobile/tablet: fall back to normal flow */
+/* Mobile/tablet */
 @media (max-width: 960px){
-  header, section, footer{
-    float:none;
+  header, main, footer{
     position:static;
     width:auto;
   }
 }
 
 /* =========================================================
-   Sidebar pieces (kept compatible with your existing HTML)
+   Header / footer
    ========================================================= */
 
-header{
-  -webkit-font-smoothing:subpixel-antialiased;
-}
-
+header,
 footer{
-  -webkit-font-smoothing:subpixel-antialiased;
-}
-
-/* If your theme puts nav lists inside header, keep them stable */
-@media (max-width: 960px){
-  header ul{
-    position: static;
-    margin: 12px 0 0;
-  }
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 /* =========================================================
-   Reading width
+   Menu (nav.html)
    ========================================================= */
 
-section{
+.site-nav{
+  margin: 16px 0 20px;
+}
+
+.nav-list{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.nav-link{
+  display:block;
+  padding:8px 10px;
+  border:1px solid var(--border);
+  border-radius:8px;
+  line-height:1.2;
+}
+
+/* keep menu stable on hover */
+.nav-link:hover,
+.nav-link:focus{
+  font-weight: normal;
+}
+
+/* =========================================================
+   Main content
+   ========================================================= */
+
+main{
   max-width: 90ch;
   padding-bottom:50px;
 }
@@ -206,7 +210,7 @@ pre{
   overflow-x:auto;
 }
 
-/* Tables: allow horizontal scroll on narrow screens */
+/* Tables */
 table{
   width:100%;
   border-collapse:collapse;
@@ -219,12 +223,10 @@ th, td{
   text-align:left;
   padding:5px 10px;
   border-bottom:1px solid var(--border);
-  color: var(--text);
 }
 
 dt{
   font-weight:700;
-  color: var(--text);
 }
 
 img{ max-width:100%; }
@@ -234,12 +236,9 @@ kbd{
   border:1px solid var(--border);
   border-radius:3px;
   box-shadow: inset 0 -1px 0 var(--border);
-  color: var(--text);
-  display:inline-block;
   font-size:11px;
   line-height:10px;
   padding:3px 5px;
-  vertical-align:middle;
 }
 
 hr{
@@ -247,65 +246,6 @@ hr{
   background: var(--border);
   height:1px;
   margin:0 0 20px;
-}
-
-/* =========================================================
-   Downloads box
-   ========================================================= */
-
-ul.downloads{
-  list-style:none;
-  height:40px;
-  padding:0;
-  background: var(--downloads-bg);
-  border-radius:5px;
-  border:1px solid var(--downloads-border);
-  width:170px;
-}
-
-.downloads li{
-  width:89px;
-  float:left;
-  border-right:1px solid var(--downloads-border);
-  height:40px;
-}
-
-.downloads li:first-child a{
-  border-radius:5px 0 0 5px;
-}
-
-.downloads li:last-child a{
-  border-radius:0 5px 5px 0;
-}
-
-.downloads li + li + li{
-  border-right:none;
-  width:89px;
-}
-
-.downloads a{
-  line-height:1;
-  font-size:11px;
-  color: var(--text);
-  display:block;
-  text-align:center;
-  padding-top:6px;
-  height:34px;
-}
-
-.downloads a strong{
-  font-size:14px;
-  display:block;
-  color: var(--text);
-}
-
-.downloads a:hover,
-.downloads a:focus{
-  font-weight:bold;
-}
-
-.downloads ul a:active{
-  background-color: var(--border);
 }
 
 /* =========================================================
@@ -326,31 +266,15 @@ ul.downloads{
 .index-row .right{
   flex:1 1 260px;
   max-width:420px;
-  font-size:14px;
   line-height:1.5;
-  color: var(--text);
 }
 
-/* Mobile: text goes under the box */
+/* Mobile */
 @media (max-width:520px){
   .index-row .right{
     flex-basis:100%;
     max-width:none;
   }
-}
-
-/* =========================================================
-   Additional responsive tweaks
-   ========================================================= */
-
-@media print, screen and (max-width:720px){
-  pre, code{ word-wrap:normal; }
-}
-
-@media print, screen and (max-width:480px){
-  .downloads{ width:99%; }
-  .downloads li,
-  .downloads li + li + li{ width:33%; }
 }
 
 /* =========================================================
@@ -361,6 +285,5 @@ ul.downloads{
   body{
     padding:0.4in;
     font-size:12pt;
-    color: var(--text);
   }
 }
