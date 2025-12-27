@@ -2,23 +2,6 @@
 layout: default
 ---
 
-<div id="priceBar" style="
-position:relative;
-width:100%;
-box-sizing:border-box;
-margin:0 0 22px 0;
-padding:12px 14px;
-border-radius:14px;
-background:#242424;
-color:#ffffff;
-font-family: system-ui, -apple-system, sans-serif;
-font-size:15px;
-font-weight:500;
-letter-spacing:0.2px;
-">
-BTC $84,200 · ETH $4,320   Updated 12:00 UTC
-</div>
-
 <div class="index-row">
 
 <div class="left">
