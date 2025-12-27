@@ -17,7 +17,7 @@ layout: default
       ">
 
       <!-- top label -->
-      <div style="
+   <div style="
         position:absolute;
         top:12px;
         width:100%;
@@ -35,7 +35,7 @@ layout: default
       </div>
 
       <!-- center value (dynamic) -->
-      <div id="centerValue1" style="
+   <div id="centerValue1" style="
         position:absolute;
         top:50%;
         left:50%;
@@ -49,7 +49,7 @@ layout: default
       </div>
 
       <!-- bottom label (dynamic) -->
-      <div id="bottomText1" style="
+  <div id="bottomText1" style="
         position:absolute;
         bottom:9px;
         width:100%;
@@ -61,7 +61,7 @@ layout: default
       </div>
 
       <!-- dot overlay (150×150 coordinate system) -->
-      <svg
+  <svg
         width="100%"
         height="100%"
         viewBox="0 0 150 150"
@@ -71,7 +71,7 @@ layout: default
         <circle id="dotInner1" cx="18.75" cy="110.25" r="6.75" fill="#ffffff"/>
       </svg>
 
-    </div>
+   </div>
   </div>
 
   <!-- RIGHT: comments / explanation -->
@@ -102,7 +102,7 @@ layout: default
       ">
 
       <!-- top label -->
-      <div style="
+  <div style="
         position:absolute;
         top:12px;
         width:100%;
@@ -120,7 +120,7 @@ layout: default
       </div>
 
       <!-- center value (dynamic) -->
-      <div id="centerValue2" style="
+   <div id="centerValue2" style="
         position:absolute;
         top:50%;
         left:50%;
@@ -134,7 +134,7 @@ layout: default
       </div>
 
       <!-- bottom label (dynamic) -->
-      <div id="bottomText2" style="
+  <div id="bottomText2" style="
         position:absolute;
         bottom:9px;
         width:100%;
@@ -146,7 +146,7 @@ layout: default
       </div>
 
       <!-- dot overlay -->
-      <svg
+  <svg
         width="100%"
         height="100%"
         viewBox="0 0 150 150"
@@ -190,7 +190,7 @@ layout: default
       ">
 
       <!-- top label -->
-      <div style="
+  <div style="
         position:absolute;
         top:12px;
         width:100%;
@@ -208,7 +208,7 @@ layout: default
       </div>
 
       <!-- center value (dynamic) -->
-      <div id="centerValue3" style="
+  <div id="centerValue3" style="
         position:absolute;
         top:50%;
         left:50%;
@@ -222,7 +222,7 @@ layout: default
       </div>
 
       <!-- bottom label (dynamic) -->
-      <div id="bottomText3" style="
+   <div id="bottomText3" style="
         position:absolute;
         bottom:9px;
         width:100%;
@@ -234,7 +234,7 @@ layout: default
       </div>
 
       <!-- dot overlay -->
-      <svg
+   <svg
         width="100%"
         height="100%"
         viewBox="0 0 150 150"
@@ -244,7 +244,7 @@ layout: default
         <circle id="dotInner3" cx="18.75" cy="110.25" r="6.75" fill="#ffffff"/>
       </svg>
 
-    </div>
+  </div>
   </div>
 
   <!-- RIGHT: comments / explanation -->
