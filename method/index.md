@@ -2,6 +2,6 @@
 layout: default
 ---
 
-# Interpretation
+# How it works
 
 Text.
