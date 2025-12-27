@@ -9,7 +9,7 @@ box-sizing:border-box;
 margin:0 0 22px 0;
 padding:12px 14px;
 border-radius:14px;
-background:#1a1a1a;
+background:#242424;
 color:#ffffff;
 font-family: system-ui, -apple-system, sans-serif;
 font-size:15px;
