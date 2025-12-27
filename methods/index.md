@@ -2,6 +2,6 @@
 layout: default
 ---
 
-# Method
+# Interpretation
 
 Text.
