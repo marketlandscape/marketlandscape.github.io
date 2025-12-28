@@ -313,11 +313,12 @@ hr{
 .market-mini{
   margin: 12px 0 14px 0;
   padding: 10px 0 12px 0;
-  border-top: 1px solid rgba(255,255,255,0.10);
-  border-bottom: 1px solid rgba(255,255,255,0.10);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
   font-family: system-ui, -apple-system, sans-serif;
   font-size: 14px;
   line-height: 1.2;
+  opacity: 0.65;
 }
 
 .market-mini-row{
@@ -327,15 +328,11 @@ hr{
   margin: 6px 0;
 }
 
-.market-mini-label{
-  color: var(--text);
-  letter-spacing: 0.3px;
-  font-weight: 400;
-}
-
+.market-mini-label,
 .market-mini-value{
   color: var(--text);
   font-weight: 400;
+  letter-spacing: 0.3px;
 }
 
 .market-mini-time{
@@ -343,27 +340,7 @@ hr{
   font-size: 11px;
   line-height: 1.2;
   color: var(--text);
-  opacity: 0.55;
   font-weight: 400;
-}
-
-@media (prefers-color-scheme: light){
-  .market-mini{
-    border-top: 1px solid rgba(0,0,0,0.10);
-    border-bottom: 1px solid rgba(0,0,0,0.10);
-  }
-
-  .market-mini-label{
-    color:#666;
-  }
-
-  .market-mini-value{
-    color:#222;
-  }
-
-  .market-mini-time{
-    color:#444;
-  }
 }
 
 /* =========================================================
