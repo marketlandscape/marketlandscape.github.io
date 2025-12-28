@@ -24,7 +24,7 @@ padding-left:13px;
 padding-right:11px;
 font-size:14px;
 font-weight:500;
-color:#ffffff;
+color:#d9d9d9;
 line-height:1.2;
 ">
 EXAMPLE<br>
@@ -102,7 +102,7 @@ padding-left:13px;
 padding-right:11px;
 font-size:14px;
 font-weight:500;
-color:#ffffff;
+color:#d9d9d9;
 line-height:1.2;
 ">
 EXAMPLE<br>
@@ -183,7 +183,7 @@ padding-left:13px;
 padding-right:11px;
 font-size:14px;
 font-weight:500;
-color:#ffffff;
+color:#d9d9d9;
 line-height:1.2;
 ">
 EXAMPLE<br>
