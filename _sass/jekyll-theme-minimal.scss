@@ -337,6 +337,14 @@ hr{
   font-weight:400;
 }
 
+.market-mini-time{
+  margin-top: 6px;
+  font-size: 11px;
+  line-height: 1.2;
+  color: var(--text);
+  opacity: 0.55;
+}
+
 @media (prefers-color-scheme: light){
   .market-mini{
     border-top: 1px solid rgba(0,0,0,0.10);
