@@ -39,7 +39,7 @@ left:50%;
 transform:translate(-50%,-50%);
 font-size:48px;
 font-weight:600;
-color:#d9d9d9;
+color:#ffffff;
 line-height:1;
 ">
 --
