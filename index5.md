@@ -28,9 +28,9 @@ Responsive layout for mobile added
         text-align:left;
         padding-left:13px;
         padding-right:11px;
-        font-size:13px;
+        font-size:14px;
         font-weight:500;
-        color:#ffffff;
+        color:#d9d9d9;
         line-height:1.2;
       ">
         EXAMPLE<br>
@@ -58,7 +58,7 @@ Responsive layout for mobile added
         bottom:12px;
         width:100%;
         text-align:center;
-        font-size:13px;
+        font-size:14px;
         color:#d9d9d9;
       ">
         --
