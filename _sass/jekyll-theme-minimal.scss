@@ -276,7 +276,7 @@ kbd{
 .index-row{
   display:flex;
   flex-wrap:wrap;
-  gap:14px;              /* tightened for 180px boxes */
+  gap:20px;              /* tightened for 180px boxes */
   align-items:flex-start;
 }
 
