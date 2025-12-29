@@ -22,7 +22,7 @@ Responsive layout for mobile added
       ">
 
       <!-- top label -->
-      <div style="
+  <div style="
         position:absolute;
         top:14px;
         width:100%;
@@ -40,7 +40,7 @@ Responsive layout for mobile added
       </div>
 
       <!-- center value -->
-      <div id="centerValue1" style="
+   <div id="centerValue1" style="
         position:absolute;
         top:67%;
         left:50%;
@@ -54,7 +54,7 @@ Responsive layout for mobile added
       </div>
 
       <!-- bottom label -->
-      <div id="bottomText1" style="
+  <div id="bottomText1" style="
         position:absolute;
         bottom:12px;
         width:100%;
@@ -66,7 +66,7 @@ Responsive layout for mobile added
       </div>
 
       <!-- dot overlay -->
-      <svg
+  <svg
         width="100%"
         height="100%"
         viewBox="0 0 180 180"
@@ -76,7 +76,7 @@ Responsive layout for mobile added
         <circle id="dotInner1" cx="23" cy="132" r="8" fill="#ffffff"/>
       </svg>
 
-    </div>
+  </div>
   </div>
 
   <!-- RIGHT -->
@@ -108,7 +108,7 @@ Responsive layout for mobile added
       ">
 
       <!-- top label -->
-      <div style="
+  <div style="
         position:absolute;
         top:14px;
         width:100%;
@@ -126,7 +126,7 @@ Responsive layout for mobile added
       </div>
 
       <!-- center value -->
-      <div id="centerValue2" style="
+  <div id="centerValue2" style="
         position:absolute;
         top:67%;
         left:50%;
@@ -140,7 +140,7 @@ Responsive layout for mobile added
       </div>
 
       <!-- bottom label -->
-      <div id="bottomText2" style="
+  <div id="bottomText2" style="
         position:absolute;
         bottom:12px;
         width:100%;
@@ -152,7 +152,7 @@ Responsive layout for mobile added
       </div>
 
       <!-- dot overlay -->
-      <svg
+   <svg
         width="100%"
         height="100%"
         viewBox="0 0 180 180"
@@ -193,7 +193,7 @@ Responsive layout for mobile added
       ">
 
       <!-- top label -->
-      <div style="
+  <div style="
         position:absolute;
         top:14px;
         width:100%;
@@ -211,7 +211,7 @@ Responsive layout for mobile added
       </div>
 
       <!-- center value -->
-      <div id="centerValue3" style="
+  <div id="centerValue3" style="
         position:absolute;
         top:67%;
         left:50%;
@@ -225,7 +225,7 @@ Responsive layout for mobile added
       </div>
 
       <!-- bottom label -->
-      <div id="bottomText3" style="
+  <div id="bottomText3" style="
         position:absolute;
         bottom:12px;
         width:100%;
@@ -237,7 +237,7 @@ Responsive layout for mobile added
       </div>
 
       <!-- dot overlay -->
-      <svg
+   <svg
         width="100%"
         height="100%"
         viewBox="0 0 180 180"
@@ -247,7 +247,7 @@ Responsive layout for mobile added
         <circle id="dotInner3" cx="23" cy="132" r="8" fill="#ffffff"/>
       </svg>
 
-    </div>
+   </div>
   </div>
 
   <!-- RIGHT -->
