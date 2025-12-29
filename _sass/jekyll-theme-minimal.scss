@@ -9,7 +9,7 @@
   color-scheme: light dark;
 
   --bg: #ffffff;
-  --text: #2b2b2b;
+  --text: #333333;
   --border: #e5e5e5;
 
   /* links */
@@ -78,7 +78,7 @@ strong{
 }
 
 /* =========================================================
-   Links (NO bold on hover)
+   Links
    ========================================================= */
 
 a{
@@ -185,7 +185,7 @@ header{
   background: rgba(0,0,0,0.04);
 }
 
-/* Dark-mode hover refinement for menu */
+/* Dark-mode hover refinement */
 @media (prefers-color-scheme: dark){
   .nav-link:hover,
   .nav-link:focus{
@@ -193,7 +193,7 @@ header{
   }
 }
 
-/* Ensure menu links are neutral */
+/* Ensure menu links stay neutral */
 .site-nav a{
   color: var(--text);
 }
@@ -255,7 +255,9 @@ dt{
   font-weight:700;
 }
 
-img{ max-width:100%; }
+img{
+  max-width:100%;
+}
 
 kbd{
   background-color: var(--pre-bg);
@@ -268,18 +270,18 @@ kbd{
 }
 
 /* =========================================================
-   Index row (custom)
+   Index row (custom) — 180 × 180 boxes
    ========================================================= */
 
 .index-row{
   display:flex;
   flex-wrap:wrap;
-  gap:16px;
+  gap:14px;              /* tightened for 180px boxes */
   align-items:flex-start;
 }
 
 .index-row .left{
-  flex:0 0 200px;
+  flex: 0 0 180px;       /* was 200px */
 }
 
 .index-row .right{
