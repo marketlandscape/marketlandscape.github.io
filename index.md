@@ -23,7 +23,7 @@ text-align:left;
 padding-left:13px;
 padding-right:11px;
 font-size:14px;
-font-weight:500;
+font-weight:400;
 color:#d9d9d9;
 line-height:1.2;
 ">
