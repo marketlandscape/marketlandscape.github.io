@@ -3,7 +3,7 @@
 
 
   <rect x="0" y="0" width="200" height="200"
-        rx="20" ry="20" fill="#363636ff"/>
+        rx="20" ry="20" fill="#303030ff"/>
 
 
   <g id="scale">
@@ -21,3 +21,4 @@
 
 
 </svg>
+
