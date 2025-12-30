@@ -4,7 +4,7 @@
 
   <!-- card background -->
   <rect x="0" y="0" width="200" height="200"
-        rx="15" ry="15" fill="#2d2d2dff"/>
+        rx="15" ry="15" fill="#323232ff"/>
 
 
   <!-- semicircle scale -->
@@ -49,6 +49,7 @@
   <!-- diameter = 12 (same as stroke width) -->
   <circle cx="25"  cy="160" r="6" fill="#d9d9d9ff"/>
   <circle cx="175" cy="160" r="6" fill="#666666ff"/>
+
 
 
 </svg>
