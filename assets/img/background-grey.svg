@@ -8,7 +8,31 @@
 
 
   <rect x="0" y="0" width="200" height="200"
+        rx="20" ry="20" fill="<svg width="200" height="200" viewBox="0 0 200 200"
+     xmlns="http://www.w3.org/2000/svg">
+
+
+  <rect x="0" y="0" width="200" height="200"
         rx="20" ry="20" fill="#363636ff"/>
+
+
+  <g id="scale">
+    <circle cx="25"  cy="147" r="6" fill="#a4c2f4ff"/>
+    <circle cx="175" cy="147" r="6" fill="#1155ccff"/>
+
+
+    <rect x="25"  y="141" width="30" height="12" fill="#a4c2f4ff"/>
+    <rect x="55"  y="141" width="30" height="12" fill="#7fa6e8ff"/>
+    <rect x="85"  y="141" width="30" height="12" fill="#5b8adcff"/>
+    <rect x="115" y="141" width="30" height="12" fill="#336fd1ff"/>
+    <rect x="145" y="141" width="30" height="12" fill="#1155ccff"/>
+  </g>
+
+
+
+</svg>
+
+"/>
 
 
   <g id="scale">
@@ -45,3 +69,4 @@
 
 
 </svg>
+
