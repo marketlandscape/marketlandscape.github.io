@@ -2,35 +2,26 @@
 @import "rouge-github";
 
 /* =========================================================
-   THEME CONTROL (Option A)
-   ---------------------------------------------------------
-   Default: LIGHT ONLY
-   Re-enable system dark/light later by adding:
-   <html class="theme-auto">
+   Theme + reset
    ========================================================= */
 
 :root{
-  /* force light UI for now */
-  color-scheme: light;
+  color-scheme: light dark;
 
-  /* LIGHT THEME VARIABLES */
   --bg: #ffffff;
   --text: #333333;
   --border: #e5e5e5;
 
+  /* links */
   --link: #267CB9;
   --link-hover: #174f8a;
 
+  /* surfaces */
   --pre-bg: #f8f8f8;
 }
 
-/* Auto theme hook (inactive until .theme-auto is added) */
-.theme-auto{
-  color-scheme: light dark;
-}
-
 @media (prefers-color-scheme: dark){
-  .theme-auto{
+  :root{
     --bg: #0f1115;
     --text: #cfcfcf;
     --border: #3a3f4a;
@@ -41,10 +32,6 @@
     --pre-bg: #161a22;
   }
 }
-
-/* =========================================================
-   RESET / BASE
-   ========================================================= */
 
 *, *::before, *::after{
   box-sizing: border-box;
@@ -65,7 +52,7 @@ body{
 }
 
 /* =========================================================
-   TYPOGRAPHY
+   Typography
    ========================================================= */
 
 h1, h2, h3, h4, h5, h6{
@@ -91,7 +78,7 @@ strong{
 }
 
 /* =========================================================
-   LINKS
+   Links
    ========================================================= */
 
 a{
@@ -119,7 +106,7 @@ a small{
 }
 
 /* =========================================================
-   LAYOUT
+   Layout
    ========================================================= */
 
 .wrapper{
@@ -127,7 +114,7 @@ a small{
   margin: 0 auto;
 }
 
-/* Desktop */
+/* Desktop layout */
 @media (min-width: 961px){
   .wrapper{
     display:grid;
@@ -142,7 +129,7 @@ a small{
   }
 }
 
-/* Mobile */
+/* Mobile/tablet */
 @media (max-width: 960px){
   header, main{
     position:static;
@@ -151,7 +138,7 @@ a small{
 }
 
 /* =========================================================
-   HEADER / SIDEBAR
+   Header / sidebar
    ========================================================= */
 
 header{
@@ -159,7 +146,7 @@ header{
 }
 
 /* =========================================================
-   MENU
+   Menu (nav.html)
    ========================================================= */
 
 .site-nav{
@@ -198,14 +185,15 @@ header{
   background: rgba(0,0,0,0.04);
 }
 
-/* Dark hover only when auto theme is enabled */
+/* Dark-mode hover refinement */
 @media (prefers-color-scheme: dark){
-  .theme-auto .nav-link:hover,
-  .theme-auto .nav-link:focus{
+  .nav-link:hover,
+  .nav-link:focus{
     background: rgba(255,255,255,0.06);
   }
 }
 
+/* Ensure menu links stay neutral */
 .site-nav a{
   color: var(--text);
 }
@@ -216,7 +204,7 @@ header{
 }
 
 /* =========================================================
-   MAIN CONTENT
+   Main content
    ========================================================= */
 
 main{
@@ -225,7 +213,7 @@ main{
 }
 
 /* =========================================================
-   BLOCK ELEMENTS
+   Blocks / elements
    ========================================================= */
 
 blockquote{
@@ -254,6 +242,7 @@ table{
   border-collapse:collapse;
   display:block;
   overflow-x:auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 th, td{
@@ -281,18 +270,18 @@ kbd{
 }
 
 /* =========================================================
-   INDEX ROW — 180 × 180 BOXES
+   Index row (custom) — 180 × 180 boxes
    ========================================================= */
 
 .index-row{
   display:flex;
   flex-wrap:wrap;
-  gap:20px;
+  gap:20px;              /* tightened for 180px boxes */
   align-items:flex-start;
 }
 
 .index-row .left{
-  flex: 0 0 180px;
+  flex: 0 0 180px;       /* was 200px */
 }
 
 .index-row .right{
@@ -309,7 +298,7 @@ kbd{
 }
 
 /* =========================================================
-   MARKET MINI (SIDEBAR)
+   Market context (BTC / ETH) — sidebar text only
    ========================================================= */
 
 .market-mini{
@@ -341,7 +330,7 @@ kbd{
 }
 
 /* =========================================================
-   PRINT
+   Print
    ========================================================= */
 
 @media print{
