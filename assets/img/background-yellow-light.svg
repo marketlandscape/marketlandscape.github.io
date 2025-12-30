@@ -1,0 +1,25 @@
+﻿<svg width="200" height="200" viewBox="0 0 200 200"
+     xmlns="http://www.w3.org/2000/svg">
+
+
+  <rect x="0" y="0" width="200" height="200"
+        rx="20" ry="20" fill="#323232ff"/>
+
+
+  <g id="scale">
+    <circle cx="25"  cy="147" r="6" fill="#ffe375ff"/>
+    <circle cx="175" cy="147" r="6" fill="#ff9900ff"/>
+
+
+    <rect x="25"  y="141" width="30" height="12" fill="#ffe375ff"/>
+    <rect x="55"  y="141" width="30" height="12" fill="#ffd84dff"/>
+    <rect x="85"  y="141" width="30" height="12" fill="#ffc926ff"/>
+    <rect x="115" y="141" width="30" height="12" fill="#ffb000ff"/>
+    <rect x="145" y="141" width="30" height="12" fill="#ff9900ff"/>
+  </g>
+
+
+
+</svg>
+
+
