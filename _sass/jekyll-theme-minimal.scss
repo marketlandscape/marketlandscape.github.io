@@ -18,6 +18,18 @@
 
   /* surfaces */
   --pre-bg: #f8f8f8;
+
+  /* =====================================================
+     Index boxes (LIGHT)
+     ===================================================== */
+  --box1-bg: url("/assets/img/background-yellow-light.svg");
+  --box2-bg: url("/assets/img/background-blue-light.svg");
+  --box3-bg: url("/assets/img/background-grey-light.svg");
+  --box4-bg: url("/assets/img/background-grey-light.svg");
+
+  /* dynamic dot (LIGHT) */
+  --dot-outer: #2d2d2dff;
+  --dot-inner: #ffffff;
 }
 
 @media (prefers-color-scheme: dark){
@@ -30,6 +42,18 @@
     --link-hover: #9bc8ff;
 
     --pre-bg: #161a22;
+
+    /* ===================================================
+       Index boxes (DARK)
+       =================================================== */
+    --box1-bg: url("/assets/img/background-yellow.svg");
+    --box2-bg: url("/assets/img/background-blue.svg");
+    --box3-bg: url("/assets/img/background-grey.svg");
+    --box4-bg: url("/assets/img/background-grey.svg");
+
+    /* dynamic dot (DARK) */
+    --dot-outer: #1f1f1fff;
+    --dot-inner: #eaeaea;
   }
 }
 
@@ -276,12 +300,12 @@ kbd{
 .index-row{
   display:flex;
   flex-wrap:wrap;
-  gap:20px;              /* tightened for 180px boxes */
+  gap:20px;
   align-items:flex-start;
 }
 
 .index-row .left{
-  flex: 0 0 180px;       /* was 200px */
+  flex: 0 0 180px;
 }
 
 .index-row .right{
@@ -298,7 +322,7 @@ kbd{
 }
 
 /* =========================================================
-   Market context (BTC / ETH) — sidebar text only
+   Market context (BTC / ETH)
    ========================================================= */
 
 .market-mini{
