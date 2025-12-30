@@ -22,8 +22,9 @@
       if (!res.ok) throw new Error('HTTP ' + res.status);
       const j = await res.json();
 
-      const btc = Number(j.btc);
-      const eth = Number(j.eth);
+      // Matches your prices.json: { prices: { BTC: ..., ETH: ... } }
+      const btc = Number(j?.prices?.BTC);
+      const eth = Number(j?.prices?.ETH);
 
       const fmt = new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 });
 
