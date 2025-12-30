@@ -23,8 +23,8 @@ text-align:left;
 padding-left:13px;
 padding-right:11px;
 font-size:14px;
-font-weight:400;
-color:#ffffff;
+font-weight:500;
+color:#d9d9d9;
 line-height:1.2;
 ">
 EXAMPLE<br>
@@ -101,8 +101,8 @@ text-align:left;
 padding-left:13px;
 padding-right:11px;
 font-size:14px;
-font-weight:400;
-color:#ffffff;
+font-weight:500;
+color:#d9d9d9;
 line-height:1.2;
 ">
 EXAMPLE<br>
@@ -182,8 +182,8 @@ text-align:left;
 padding-left:13px;
 padding-right:11px;
 font-size:14px;
-font-weight:400;
-color:#ffffff;
+font-weight:500;
+color:#d9d9d9;
 line-height:1.2;
 ">
 EXAMPLE<br>
