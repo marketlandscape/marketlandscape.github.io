@@ -1,0 +1,22 @@
+/* =========================================================
+   BOX BACKGROUNDS — BAR / ARC SCALE
+   Page-scoped content (not global design)
+   ========================================================= */
+
+/* Light mode */
+:root{
+  --box1-bg: url("/assets/img/background-yellow-light.svg");
+  --box2-bg: url("/assets/img/background-blue-light.svg");
+  --box3-bg: url("/assets/img/background-grey-light.svg");
+  --box4-bg: url("/assets/img/background-grey-light.svg");
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark){
+  :root{
+    --box1-bg: url("/assets/img/background-yellow.svg");
+    --box2-bg: url("/assets/img/background-blue.svg");
+    --box3-bg: url("/assets/img/background-grey.svg");
+    --box4-bg: url("/assets/img/background-grey.svg");
+  }
+}
