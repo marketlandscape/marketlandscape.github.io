@@ -1,10 +1,11 @@
-﻿<svg width="200" height="200" viewBox="0 0 200 200"
+<svg width="200" height="200" viewBox="0 0 200 200"
      xmlns="http://www.w3.org/2000/svg">
 
-
-  <!-- card background -->
-  <rect x="0" y="0" width="200" height="200"
-        rx="15" ry="15" fill="#2d2d2dff"/>
+  <rect x="2" y="2" width="196" height="196"
+        rx="18" ry="18"
+        fill="#ffffff"
+        stroke="#bdbdbd"
+        stroke-width="4"/>
 
 
   <!-- semicircle scale (baseline thickness) -->
@@ -43,6 +44,7 @@
   <!-- end-cap circles (baseline radius) -->
   <circle cx="25"  cy="160" r="6" fill="#ffe375ff"/>
   <circle cx="175" cy="160" r="6" fill="#ff9900ff"/>
+
 
 
 </svg>
