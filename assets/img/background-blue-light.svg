@@ -1,9 +1,11 @@
-﻿<svg width="200" height="200" viewBox="0 0 200 200"
+<svg width="200" height="200" viewBox="0 0 200 200"
      xmlns="http://www.w3.org/2000/svg">
 
-
-  <rect x="0" y="0" width="200" height="200"
-        rx="20" ry="20" fill="#323232ff"/>
+  <rect x="2" y="2" width="196" height="196"
+        rx="18" ry="18"
+        fill="#ffffff"
+        stroke="#bdbdbd"
+        stroke-width="4"/>
 
 
   <g id="scale">
@@ -21,5 +23,6 @@
 
 
 </svg>
+
 
 
