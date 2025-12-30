@@ -10,8 +10,7 @@ style="
 position:relative;
 width:180px;
 height:180px;
-background-image: var(--box1-bg);
-background-repeat:no-repeat;
+background:url('/assets/img/background-yellow.svg') no-repeat;
 background-size:180px 180px;
 font-family: system-ui, -apple-system, sans-serif;
 ">
@@ -63,8 +62,8 @@ height="100%"
 viewBox="0 0 180 180"
 style="position:absolute;left:0;top:0;pointer-events:none;"
 xmlns="http://www.w3.org/2000/svg">
-<circle id="dotOuter1" cx="23" cy="132" r="12" fill="var(--dot-outer)"/>
-<circle id="dotInner1" cx="23" cy="132" r="8" fill="var(--dot-inner)"/>
+<circle id="dotOuter1" cx="23" cy="132" r="12" fill="#2d2d2dff"/>
+<circle id="dotInner1" cx="23" cy="132" r="8" fill="#ffffff"/>
 </svg>
 
 </div>
@@ -89,8 +88,7 @@ style="
 position:relative;
 width:180px;
 height:180px;
-background-image: var(--box2-bg);
-background-repeat:no-repeat;
+background:url('/assets/img/background-blue.svg') no-repeat;
 background-size:180px 180px;
 font-family: system-ui, -apple-system, sans-serif;
 ">
@@ -142,8 +140,8 @@ height="100%"
 viewBox="0 0 180 180"
 style="position:absolute;left:0;top:0;pointer-events:none;"
 xmlns="http://www.w3.org/2000/svg">
-<circle id="dotOuter2" cx="23" cy="132" r="12" fill="var(--dot-outer)"/>
-<circle id="dotInner2" cx="23" cy="132" r="8" fill="var(--dot-inner)"/>
+<circle id="dotOuter2" cx="23" cy="132" r="12" fill="#2d2d2dff"/>
+<circle id="dotInner2" cx="23" cy="132" r="8" fill="#ffffff"/>
 </svg>
 
 </div>
@@ -171,8 +169,7 @@ style="
 position:relative;
 width:180px;
 height:180px;
-background-image: var(--box3-bg);
-background-repeat:no-repeat;
+background:url('/assets/img/background-grey.svg') no-repeat;
 background-size:180px 180px;
 font-family: system-ui, -apple-system, sans-serif;
 ">
@@ -224,8 +221,8 @@ height="100%"
 viewBox="0 0 180 180"
 style="position:absolute;left:0;top:0;pointer-events:none;"
 xmlns="http://www.w3.org/2000/svg">
-<circle id="dotOuter3" cx="23" cy="132" r="12" fill="var(--dot-outer)"/>
-<circle id="dotInner3" cx="23" cy="132" r="8" fill="var(--dot-inner)"/>
+<circle id="dotOuter3" cx="23" cy="132" r="12" fill="#2d2d2dff"/>
+<circle id="dotInner3" cx="23" cy="132" r="8" fill="#ffffff"/>
 </svg>
 
 </div>
