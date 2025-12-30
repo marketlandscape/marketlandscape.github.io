@@ -1,49 +1,53 @@
 <div class="market-mini">
   <div class="market-mini-row">
     <span class="market-mini-label">BTC</span>&thinsp;
-    <span id="btcPrice" class="market-mini-value">--</span>
+    <span id="btcPriceLive" class="market-mini-value">--</span>
   </div>
 
   <div class="market-mini-row">
     <span class="market-mini-label">ETH</span>&thinsp;
-    <span id="ethPrice" class="market-mini-value">--</span>
+    <span id="ethPriceLive" class="market-mini-value">--</span>
   </div>
 
-  <div id="marketUpdated" class="market-mini-time">
+  <div id="marketUpdatedLive" class="market-mini-time">
     Updated -- UTC
   </div>
 </div>
 
 <script>
-(async function () {
-  try {
-    const res = await fetch('/data/prices.json', { cache: 'no-store' });
-    if (!res.ok) throw new Error('HTTP ' + res.status);
-    const j = await res.json();
+(function () {
+  async function updateMiniMarket() {
+    try {
+      const res = await fetch('/data/prices.json', { cache: 'no-store' });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const j = await res.json();
 
-    const fmt = new Intl.NumberFormat('en-US', {
-      maximumFractionDigits: 0
-    });
+      const btc = Number(j.btc);
+      const eth = Number(j.eth);
 
-    const btcEl = document.getElementById('btcPrice');
-    const ethEl = document.getElementById('ethPrice');
-    const updEl = document.getElementById('marketUpdated');
+      const fmt = new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 });
 
-    if (btcEl && typeof j.btc === 'number') {
-      btcEl.textContent = '$' + fmt.format(j.btc);
+      const btcEl = document.getElementById('btcPriceLive');
+      const ethEl = document.getElementById('ethPriceLive');
+      const updEl = document.getElementById('marketUpdatedLive');
+
+      if (btcEl && Number.isFinite(btc)) btcEl.textContent = '$' + fmt.format(btc);
+      if (ethEl && Number.isFinite(eth)) ethEl.textContent = '$' + fmt.format(eth);
+
+      if (updEl) {
+        const t = j.updated_utc ? j.updated_utc : '-- UTC';
+        const src = j.source ? (' · ' + j.source) : '';
+        updEl.textContent = 'Updated ' + t + src;
+      }
+    } catch (e) {
+      /* silently keep placeholders */
     }
+  }
 
-    if (ethEl && typeof j.eth === 'number') {
-      ethEl.textContent = '$' + fmt.format(j.eth);
-    }
-
-    if (updEl) {
-      const t = j.updated_utc ? j.updated_utc : '-- UTC';
-      const src = j.source ? (' · ' + j.source) : '';
-      updEl.textContent = 'Updated ' + t + src;
-    }
-  } catch (e) {
-    /* silently keep placeholders */
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMiniMarket);
+  } else {
+    updateMiniMarket();
   }
 })();
 </script>
@@ -59,4 +63,3 @@
     {% endfor %}
   </ul>
 </nav>
-
