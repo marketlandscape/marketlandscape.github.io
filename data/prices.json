@@ -1,6 +1,8 @@
 {
-  "updated_utc": "test",
-  "source": "manual",
-  "btc": 87826.12,
-  "eth": 2941.55
+  "updated_utc": "2025-12-30 23:29 UTC",
+  "source": "kraken",
+  "prices": {
+    "BTC": 88453.5,
+    "ETH": 2969.62
+  }
 }
