@@ -157,7 +157,7 @@ Responsive layout for mobile added
         viewBox="0 0 180 180"
         style="position:absolute;left:0;top:0;pointer-events:none;"
         xmlns="http://www.w3.org/2000/svg">
-        <circle id="dotOuter2" cx="23" cy="132" r="12" fill="#2d2d2d"/>
+        <circle id="dotOuter2" cx="23" cy="132" r="12" fill="#323232ff"/>
         <circle id="dotInner2" cx="23" cy="132" r="8" fill="#ffffff"/>
       </svg>
 
