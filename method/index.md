@@ -10,7 +10,7 @@ The design combines three ideas:
 
 **Market phase matters more than short-term price moves**. The indexes prioritise cycle structure and regime context over daily local volatility.
 
-**Recent price behaviour is informative, but incomplete**. Observed price action is used as an empirical anchor, not as a forecasting engine.
+**Recent price behaviour is informative but incomplete**. Observed price action is used as an empirical anchor, not as a forecasting engine.
 
 <strong>Forward expectations are constrained, not speculative</strong>. Any forward-looking component is deliberately conservative and bound to avoid narrative-driven bias.
 
