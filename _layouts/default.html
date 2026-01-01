@@ -28,19 +28,35 @@
         {% endif %}
 
         <!-- =========================
-             A) INCLUDE MENU
+             PRICES (single source)
+             ========================= -->
+        <div class="market-mini" aria-live="polite">
+          <div class="market-mini-row">
+            <span class="market-mini-label">BTC</span>&thinsp;
+            <span id="btcPrice" class="market-mini-value">--</span>
+          </div>
+
+          <div class="market-mini-row">
+            <span class="market-mini-label">ETH</span>&thinsp;
+            <span id="ethPrice" class="market-mini-value">--</span>
+          </div>
+
+          <div id="marketUpdated" class="market-mini-time">
+            Updated -- UTC
+          </div>
+        </div>
+
+        <!-- =========================
+             INCLUDE MENU
              ========================= -->
         <div class="menu-variant menu-variant-include">
-          <div class="menu-variant-label">INCLUDE MENU</div>
           {% include nav.html %}
         </div>
 
         <!-- =========================
-             B) INLINE MENU
+             INLINE MENU
              ========================= -->
         <div class="menu-variant menu-variant-inline">
-          <div class="menu-variant-label">INLINE MENU</div>
-
           <nav class="site-nav">
             <ul class="nav-list">
               <li><a class="nav-link" href="{{ '/' | relative_url }}">INDEXES</a></li>
@@ -52,18 +68,16 @@
         </div>
 
         <!-- =========================
-             FOOTERS (BOTH AT END)
+             INCLUDE FOOTER
              ========================= -->
-
-        <!-- INCLUDE FOOTER -->
         <div class="menu-variant menu-variant-include-footer">
-          <div class="menu-variant-label">INCLUDE FOOTER</div>
           {% include footer.html %}
         </div>
 
-        <!-- INLINE FOOTER -->
+        <!-- =========================
+             INLINE FOOTER
+             ========================= -->
         <div class="menu-variant menu-variant-inline-footer">
-          <div class="menu-variant-label">INLINE FOOTER</div>
           <div class="site-footer">
             <p class="footer-disclaimer">
               Information is provided for educational purposes only. Not financial advice. Do your own research.
