@@ -2,7 +2,7 @@
 layout: default
 ---
 
-## Design & Logic
+# Design & Logic
 
 The indexes are intentionally not trading signals and not price-prediction models. They are designed to translate broad market conditions into a relative positioning scale.
 
