@@ -44,7 +44,7 @@ html, body{
 
 body{
   padding: clamp(14px, 4vw, 50px);
-  font: 14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 16px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: var(--text);
   font-weight:400;
   background: var(--bg);
@@ -305,7 +305,7 @@ kbd{
   margin: 0 0 14px 0;
   padding: 0 0 12px 0;
   font-family: system-ui, -apple-system, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.2;
   opacity: 0.75;
 }
