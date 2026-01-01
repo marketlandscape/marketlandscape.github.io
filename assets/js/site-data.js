@@ -15,28 +15,27 @@
 
   async function updateMiniMarket(){
     try{
-      const res = await fetch("/data/indexes.json", { cache: "no-store" });
+      const res = await fetch("/data/prices.json", { cache: "no-store" });
       if (!res.ok) return;
       const data = await res.json();
+
+      const btc = data?.prices?.BTC;
+      const eth = data?.prices?.ETH;
 
       const btcEl = $("btcPrice");
       const ethEl = $("ethPrice");
       const updEl = $("marketUpdated");
 
-      setText(btcEl, "$" + fmt0(data.btc));
-      setText(ethEl, "$" + fmt0(data.eth));
+      setText(btcEl, "$" + fmt0(btc));
+      setText(ethEl, "$" + fmt0(eth));
 
       if (updEl){
-        if (data.updated_utc){
-          const t = String(data.updated_utc);
-          const next = t.includes("UTC") ? ("Updated " + t) : ("Updated " + t + " UTC");
-          setText(updEl, next);
-        } else {
-          setText(updEl, "Updated -- UTC");
-        }
+        const t = data.updated_utc ? String(data.updated_utc) : "-- UTC";
+        const src = data.source ? (" · " + data.source) : "";
+        setText(updEl, "Updated " + t + src);
       }
     } catch (e){
-      // silently ignore
+      // keep placeholders silently
     }
   }
 
