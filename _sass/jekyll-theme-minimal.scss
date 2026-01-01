@@ -202,6 +202,27 @@ header{
   color: var(--text);
 }
 
+
+/* =========================================================
+   Sidebar footer (after menu)
+   ========================================================= */
+
+.site-footer{
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.footer-disclaimer{
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--text);
+  opacity: 0.75;   /* same as prices */
+}
+
+
+
 /* =========================================================
    Main content
    ========================================================= */
@@ -322,26 +343,6 @@ kbd{
   font-size: 11px;
   line-height: 1.2;
 }
-
-/* =========================================================
-   Footer
-   ========================================================= */
-
-.site-footer{
-  max-width: 980px;              /* align with .wrapper */
-  margin: 48px auto 24px;
-  padding: 12px 0 0;
-  border-top: 1px solid var(--border);
-}
-
-.footer-disclaimer{
-  margin: 0;
-  font-size: 11px;
-  line-height: 1.4;
-  color: var(--text);
-  opacity: 0.75;                 /* same tone as prices */
-}
-
 
 /* =========================================================
    Print
