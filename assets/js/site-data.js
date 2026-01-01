@@ -2,7 +2,6 @@
   function $(id){ return document.getElementById(id); }
 
   function fmt0(n){
-    if (n === null || n === undefined) return "--";
     const x = Number(n);
     if (!Number.isFinite(x)) return "--";
     return x.toLocaleString(undefined, { maximumFractionDigits: 0 });
@@ -13,7 +12,24 @@
     if (el.textContent !== next) el.textContent = next;
   }
 
-  async function updateMiniMarket(){
+  const KEY = "mini_market_cache_v1";
+
+  function applyCached(){
+    try{
+      const raw = sessionStorage.getItem(KEY);
+      if (!raw) return;
+      const c = JSON.parse(raw);
+
+      setText($("btcPrice"), "$" + fmt0(c?.btc));
+      setText($("ethPrice"), "$" + fmt0(c?.eth));
+
+      const t = c?.updated_utc ? String(c.updated_utc) : "-- UTC";
+      const src = c?.source ? (" · " + c.source) : "";
+      setText($("marketUpdated"), "Updated " + t + src);
+    } catch(e){}
+  }
+
+  async function fetchAndUpdate(){
     try{
       const res = await fetch("/data/prices.json", { cache: "no-store" });
       if (!res.ok) return;
@@ -21,27 +37,31 @@
 
       const btc = data?.prices?.BTC;
       const eth = data?.prices?.ETH;
+      const t = data?.updated_utc ? String(data.updated_utc) : "-- UTC";
+      const src = data?.source ? String(data.source) : "";
 
-      const btcEl = $("btcPrice");
-      const ethEl = $("ethPrice");
-      const updEl = $("marketUpdated");
+      // Update UI
+      setText($("btcPrice"), "$" + fmt0(btc));
+      setText($("ethPrice"), "$" + fmt0(eth));
+      setText($("marketUpdated"), "Updated " + t + (src ? (" · " + src) : ""));
 
-      setText(btcEl, "$" + fmt0(btc));
-      setText(ethEl, "$" + fmt0(eth));
+      // Cache for next navigation
+      try{
+        sessionStorage.setItem(KEY, JSON.stringify({
+          btc, eth, updated_utc: t, source: src
+        }));
+      } catch(e){}
+    } catch(e){}
+  }
 
-      if (updEl){
-        const t = data.updated_utc ? String(data.updated_utc) : "-- UTC";
-        const src = data.source ? (" · " + data.source) : "";
-        setText(updEl, "Updated " + t + src);
-      }
-    } catch (e){
-      // keep placeholders silently
-    }
+  function run(){
+    applyCached();        // instant stable render
+    fetchAndUpdate();     // refresh in background
   }
 
   if (document.readyState === "loading"){
-    document.addEventListener("DOMContentLoaded", updateMiniMarket);
+    document.addEventListener("DOMContentLoaded", run);
   } else {
-    updateMiniMarket();
+    run();
   }
 })();
