@@ -324,6 +324,25 @@ kbd{
 }
 
 /* =========================================================
+   Footer
+   ========================================================= */
+
+.site-footer{
+  max-width: 980px;              /* same as .wrapper */
+  margin: 48px auto 24px;
+  padding: 12px 0 0;
+  border-top: 1px solid var(--border);
+}
+
+.footer-disclaimer{
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--text);
+  opacity: 0.65;
+}
+
+/* =========================================================
    Print
    ========================================================= */
 
