@@ -29,11 +29,24 @@
 
         {% include nav.html %}
 
+
+        <!-- Sidebar menu -->
+        <nav class="site-nav">
+          <ul class="nav-list">
+            <li><a class="nav-link" href="{{ '/' | relative_url }}">INDEXES</a></li>
+            <li><a class="nav-link" href="{{ '/guide' | relative_url }}">INTERPRETATION GUIDE</a></li>
+            <li><a class="nav-link" href="{{ '/method' | relative_url }}">DESIGN & LOGIC</a></li>
+            <li><a class="nav-link" href="{{ '/about' | relative_url }}">ABOUT</a></li>
+          </ul>
+        </nav>
+
+        <!-- Sidebar footer note -->
         <div class="site-footer">
-  <p class="footer-disclaimer">
-    Information is provided for educational purposes only. Not financial advice. Do your own research.
-  </p>
-</div>
+          <p class="footer-disclaimer">
+            Information is provided for educational purposes only. Not financial advice. Do your own research.
+          </p>
+        </div>
+        
         
       </header>
 
