@@ -2,6 +2,6 @@
 layout: default
 ---
 
-## Interpretation guide
+# Interpretation guide
 
 Text
