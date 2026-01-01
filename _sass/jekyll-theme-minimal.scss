@@ -328,7 +328,7 @@ kbd{
    ========================================================= */
 
 .site-footer{
-  max-width: 980px;              /* same as .wrapper */
+  max-width: 980px;              /* align with .wrapper */
   margin: 48px auto 24px;
   padding: 12px 0 0;
   border-top: 1px solid var(--border);
@@ -339,8 +339,9 @@ kbd{
   font-size: 11px;
   line-height: 1.4;
   color: var(--text);
-  opacity: 0.65;
+  opacity: 0.75;                 /* same tone as prices */
 }
+
 
 /* =========================================================
    Print
