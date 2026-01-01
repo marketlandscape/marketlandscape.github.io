@@ -8,9 +8,9 @@ The indexes are intentionally not trading signals and not price-prediction model
 
 The design combines three ideas:
 
-<strong>Market phase matters more than short-term price moves</strong>: the indexes prioritise cycle structure and regime context over daily local volatility.
+**Market phase matters more than short-term price moves**: the indexes prioritise cycle structure and regime context over daily local volatility.
 
-<strong>Recent price behaviour is informative, but incomplete</strong>: observed price action is used as an empirical anchor, not as a forecasting engine.
+**Recent price behaviour is informative, but incomplete**: observed price action is used as an empirical anchor, not as a forecasting engine.
 
 <strong>Forward expectations are constrained, not speculative</strong>: any forward-looking component is deliberately conservative and bound to avoid narrative-driven bias.
 
