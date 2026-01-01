@@ -46,7 +46,6 @@ body{
   padding: clamp(14px, 4vw, 50px);
   font: 15px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: var(--text);
-  font-weight:400;
   background: var(--bg);
   word-wrap: break-word;
 }
@@ -72,10 +71,10 @@ small{
   opacity:0.8;
 }
 
-strong{
-  color: var(--text);
-  font-weight:500;
-}
+/* NOTE:
+   Removed strong{} override that made bold nearly invisible.
+   <strong> now uses the browser/font default bold weight.
+*/
 
 /* =========================================================
    Links
@@ -316,8 +315,6 @@ kbd{
 
 .market-mini-label,
 .market-mini-value{
-  color: var(--text);
-  font-weight: 400;
   letter-spacing: 0.3px;
 }
 
@@ -325,8 +322,6 @@ kbd{
   margin-top: 8px;
   font-size: 11px;
   line-height: 1.2;
-  color: var(--text);
-  font-weight: 400;
 }
 
 /* =========================================================
