@@ -1,7 +1,6 @@
-(async function(){
+(function () {
   function $(id){ return document.getElementById(id); }
 
-  // Format numbers like 98,234 (no decimals)
   function fmt0(n){
     if (n === null || n === undefined) return "--";
     const x = Number(n);
@@ -9,28 +8,41 @@
     return x.toLocaleString(undefined, { maximumFractionDigits: 0 });
   }
 
-  try{
-    const res = await fetch("/data/indexes.json", { cache: "no-store" });
-    if (!res.ok) return;
-    const data = await res.json();
+  function setText(el, next){
+    if (!el) return;
+    if (el.textContent !== next) el.textContent = next;
+  }
 
-    const btcEl = $("btcPrice");
-    const ethEl = $("ethPrice");
-    const updEl = $("marketUpdated");
+  async function updateMiniMarket(){
+    try{
+      const res = await fetch("/data/indexes.json", { cache: "no-store" });
+      if (!res.ok) return;
+      const data = await res.json();
 
-    if (btcEl) btcEl.textContent = "$" + fmt0(data.btc);
-    if (ethEl) ethEl.textContent = "$" + fmt0(data.eth);
+      const btcEl = $("btcPrice");
+      const ethEl = $("ethPrice");
+      const updEl = $("marketUpdated");
 
-    // updated_utc can be "12:00" or full string
-    if (updEl){
-      if (data.updated_utc){
-        const t = String(data.updated_utc);
-        updEl.textContent = t.includes("UTC") ? ("Updated " + t) : ("Updated " + t + " UTC");
-      } else {
-        updEl.textContent = "Updated -- UTC";
+      setText(btcEl, "$" + fmt0(data.btc));
+      setText(ethEl, "$" + fmt0(data.eth));
+
+      if (updEl){
+        if (data.updated_utc){
+          const t = String(data.updated_utc);
+          const next = t.includes("UTC") ? ("Updated " + t) : ("Updated " + t + " UTC");
+          setText(updEl, next);
+        } else {
+          setText(updEl, "Updated -- UTC");
+        }
       }
+    } catch (e){
+      // silently ignore
     }
-  } catch (e){
-    // silently ignore to avoid breaking pages
+  }
+
+  if (document.readyState === "loading"){
+    document.addEventListener("DOMContentLoaded", updateMiniMarket);
+  } else {
+    updateMiniMarket();
   }
 })();
