@@ -255,6 +255,7 @@ background:url('/assets/img/background-grey.svg') no-repeat;
 background-size:180px 180px;
 font-family: system-ui, -apple-system, sans-serif;
 ">
+  
 <div style="
 position:absolute;
 top:14px;
@@ -271,6 +272,7 @@ EXAMPLE<br>
 Fourth Box<br>
 Navigation Index
 </div>
+  
 <div id="centerValue4" style="
 position:absolute;
 top:50%;
@@ -283,6 +285,7 @@ line-height:1;
 ">
 --
 </div>
+  
 <div id="bottomText4" style="
 position:absolute;
 bottom:11px;
@@ -293,6 +296,7 @@ color:#d9d9d9;
 ">
 --
 </div>
+  
 <svg
 width="100%"
 height="100%"
@@ -304,6 +308,7 @@ xmlns="http://www.w3.org/2000/svg">
 </svg>
 </div>
 </div>
+  
 <div class="right">
 <p>
 This fourth index provides an additional positioning layer.
