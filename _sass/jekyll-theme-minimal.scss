@@ -314,7 +314,7 @@ kbd{
   margin: 0 0 14px 0;
   padding: 0 0 12px 0;
   font-family: system-ui, -apple-system, sans-serif;
-  font-size: 13px;
+  font-size: 0.9em;   /* ≈ 13.5px when body is 15px */
   line-height: 1.2;
   opacity: 0.75;
 }
