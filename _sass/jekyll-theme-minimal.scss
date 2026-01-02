@@ -70,7 +70,7 @@ p, ul, ol, table, pre, dl{
 
 small{
   font-size:11px;
-  opacity:0.7;
+  opacity:0.75;
 }
 
 /* =========================================================
@@ -96,7 +96,7 @@ a:focus-visible{
 
 a small{
   color: var(--text);
-  opacity:0.7;
+  opacity:0.75;
   margin-top:-0.3em;
   display:block;
 }
@@ -209,7 +209,7 @@ header{
   font-size: 11px;
   line-height: 1.4;
   color: var(--text);
-  opacity: 0.7;
+  opacity: 0.75;
 }
 
 /* =========================================================
@@ -316,7 +316,7 @@ kbd{
   font-family: system-ui, -apple-system, sans-serif;
   font-size: 11px;
   line-height: 1.2;
-  opacity: 0.7;
+  opacity: 0.75;
 }
 
 .market-mini-row{
