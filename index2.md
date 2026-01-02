@@ -2,6 +2,45 @@
 layout: default
 ---
 
+<!-- =========================
+     PRICE LINE (visual only)
+     ========================= -->
+<div class="index-price-line">
+  <span class="index-price-item">
+    BTC <span id="btcPriceIndex">--</span>
+  </span>
+  <span class="index-price-sep">·</span>
+  <span class="index-price-item">
+    ETH <span id="ethPriceIndex">--</span>
+  </span>
+</div>
+
+<script>
+(async function(){
+  try{
+    const res = await fetch("/data/prices.json", { cache: "no-store" });
+    if (!res.ok) return;
+    const data = await res.json();
+
+    const fmt = n =>
+      Number(n).toLocaleString(undefined, { maximumFractionDigits: 0 });
+
+    const btc = data?.prices?.BTC;
+    const eth = data?.prices?.ETH;
+
+    if (Number.isFinite(btc))
+      document.getElementById("btcPriceIndex").textContent = "$" + fmt(btc);
+
+    if (Number.isFinite(eth))
+      document.getElementById("ethPriceIndex").textContent = "$" + fmt(eth);
+  } catch(e){}
+})();
+</script>
+
+<!-- =========================
+     INDEX BOX 1
+     ========================= -->
+
 <div class="index-row">
 
 <div class="left">
@@ -79,6 +118,9 @@ a slow-moving, cycle-aware reference point.
 
 </div>
 
+<!-- =========================
+     INDEX BOX 2
+     ========================= -->
 
 <div class="index-row" style="margin-top:32px;">
 
@@ -152,15 +194,13 @@ xmlns="http://www.w3.org/2000/svg">
 This second index focuses on an additional market dimension,
 using the same scale for consistent positioning.
 </p>
-
-<p>
-It is designed to update slowly, reinforcing long-term
-orientation over short-term noise.
-</p>
 </div>
 
 </div>
 
+<!-- =========================
+     INDEX BOX 3
+     ========================= -->
 
 <div class="index-row" style="margin-top:32px;">
 
@@ -232,18 +272,14 @@ xmlns="http://www.w3.org/2000/svg">
 <div class="right">
 <p>
 This third index completes the initial set of indicators.
-It follows the same visual scale while expressing a distinct
-interpretation layer.
-</p>
-
-<p>
-Together with the other boxes, it enables side-by-side
-comparison across different market dimensions.
 </p>
 </div>
 
 </div>
 
+<!-- =========================
+     INDEX BOX 4
+     ========================= -->
 
 <div class="index-row" style="margin-top:32px;">
 
@@ -315,18 +351,14 @@ xmlns="http://www.w3.org/2000/svg">
 <div class="right">
 <p>
 This fourth index provides an additional positioning layer.
-It is designed to complement the other indexes while remaining
-stable and slow-moving.
-</p>
-
-<p>
-Used together, the set supports consistent long-term
-orientation across multiple market dimensions.
 </p>
 </div>
 
 </div>
 
+<!-- =========================
+     INTERPRETATION + UPDATE LOGIC
+     ========================= -->
 
 <script>
 const interpretations = {
@@ -366,12 +398,8 @@ function interpretationFromX(boxKey, x){
   }
   return "--";
 }
-</script>
 
-
-<script>
 function setValue(boxKey, boxId, x){
-
   x = Math.max(0, Math.min(100, Number(x)));
 
   const LEFT = 23;
@@ -389,8 +417,6 @@ function setValue(boxKey, boxId, x){
 }
 </script>
 
-
-<!-- Index loader: no redraw unless updated_utc changes -->
 <script>
 (function () {
   const KEY = "indexes_cache_v1";
@@ -411,33 +437,27 @@ function setValue(boxKey, boxId, x){
   }
 
   async function loadIndexes(){
-    // 1) Paint cached values immediately (no blink on navigation)
     const cached = readCache();
     if (cached && cached.boxes){
-      if (cached.boxes.box1 !== undefined) setValue("box1", 1, cached.boxes.box1);
-      if (cached.boxes.box2 !== undefined) setValue("box2", 2, cached.boxes.box2);
-      if (cached.boxes.box3 !== undefined) setValue("box3", 3, cached.boxes.box3);
-      if (cached.boxes.box4 !== undefined) setValue("box4", 4, cached.boxes.box4);
+      setValue("box1", 1, cached.boxes.box1);
+      setValue("box2", 2, cached.boxes.box2);
+      setValue("box3", 3, cached.boxes.box3);
+      setValue("box4", 4, cached.boxes.box4);
     }
 
-    // 2) Fetch fresh index data
     try{
       const res = await fetch('/data/indexes.json', { cache: 'no-store' });
       if (!res.ok) return;
       const data = await res.json();
 
       const sig = String(data.updated_utc || "");
-
-      // 3) If nothing changed, do nothing (prevents redraw)
       if (cached && cached.sig === sig) return;
 
-      // 4) Apply new values
       setValue("box1", 1, data.box1);
       setValue("box2", 2, data.box2);
       setValue("box3", 3, data.box3);
       setValue("box4", 4, data.box4);
 
-      // 5) Cache for next navigation
       writeCache({
         sig,
         boxes: {
@@ -447,9 +467,7 @@ function setValue(boxKey, boxId, x){
           box4: data.box4
         }
       });
-    } catch(e){
-      // silently keep cached values
-    }
+    } catch(e){}
   }
 
   if (document.readyState === "loading"){
