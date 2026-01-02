@@ -40,12 +40,10 @@
       const t = data?.updated_utc ? String(data.updated_utc) : "-- UTC";
       const src = data?.source ? String(data.source) : "";
 
-      // Update UI
       setText($("btcPrice"), "$" + fmt0(btc));
       setText($("ethPrice"), "$" + fmt0(eth));
       setText($("marketUpdated"), "Updated " + t + (src ? (" · " + src) : ""));
 
-      // Cache for next navigation
       try{
         sessionStorage.setItem(KEY, JSON.stringify({
           btc, eth, updated_utc: t, source: src
@@ -55,8 +53,8 @@
   }
 
   function run(){
-    applyCached();        // instant stable render
-    fetchAndUpdate();     // refresh in background
+    applyCached();
+    fetchAndUpdate();
   }
 
   if (document.readyState === "loading"){
