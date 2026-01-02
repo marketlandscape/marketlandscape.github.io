@@ -384,15 +384,11 @@ function setValue(boxKey, boxId, x){
     } catch(e){}
   }
 
-  function hasBox(n){
-    return !!document.getElementById("centerValue" + n);
-  }
-
   function applyBoxes(boxes){
     if (!boxes) return;
-    if (hasBox(1) && boxes.box1 !== undefined) setValue("box1", 1, boxes.box1);
-    if (hasBox(2) && boxes.box2 !== undefined) setValue("box2", 2, boxes.box2);
-    if (hasBox(3) && boxes.box3 !== undefined) setValue("box3", 3, boxes.box3);
+    if (boxes.box1 !== undefined) setValue("box1", 1, boxes.box1);
+    if (boxes.box2 !== undefined) setValue("box2", 2, boxes.box2);
+    if (boxes.box3 !== undefined) setValue("box3", 3, boxes.box3);
   }
 
   async function loadIndexes(){
