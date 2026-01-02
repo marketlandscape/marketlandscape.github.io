@@ -245,8 +245,8 @@ comparison across different market dimensions.
 </div>
 
 
+<!--
 <div class="index-row" style="margin-top:32px;">
-
 <div class="left">
 <div id="box4"
 style="
@@ -257,7 +257,6 @@ background:url('/assets/img/background-grey.svg') no-repeat;
 background-size:180px 180px;
 font-family: system-ui, -apple-system, sans-serif;
 ">
-
 <div style="
 position:absolute;
 top:14px;
@@ -274,7 +273,6 @@ EXAMPLE<br>
 Fourth Box<br>
 Navigation Index
 </div>
-
 <div id="centerValue4" style="
 position:absolute;
 top:50%;
@@ -287,7 +285,6 @@ line-height:1;
 ">
 --
 </div>
-
 <div id="bottomText4" style="
 position:absolute;
 bottom:11px;
@@ -298,7 +295,6 @@ color:#d9d9d9;
 ">
 --
 </div>
-
 <svg
 width="100%"
 height="100%"
@@ -308,24 +304,21 @@ xmlns="http://www.w3.org/2000/svg">
 <circle id="dotOuter4" cx="23" cy="132" r="12" fill="#323232ff"/>
 <circle id="dotInner4" cx="23" cy="132" r="8" fill="#ffffff"/>
 </svg>
-
 </div>
 </div>
-
 <div class="right">
 <p>
 This fourth index provides an additional positioning layer.
 It is designed to complement the other indexes while remaining
 stable and slow-moving.
 </p>
-
 <p>
 Used together, the set supports consistent long-term
 orientation across multiple market dimensions.
 </p>
 </div>
-
 </div>
+-->
 
 
 <script>
