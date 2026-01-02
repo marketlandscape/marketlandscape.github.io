@@ -244,8 +244,6 @@ comparison across different market dimensions.
 
 </div>
 
-
-<!--
 <div class="index-row" style="margin-top:32px;">
 <div class="left">
 <div id="box4"
@@ -318,8 +316,6 @@ orientation across multiple market dimensions.
 </p>
 </div>
 </div>
--->
-
 
 <script>
 const interpretations = {
