@@ -1,73 +1,3 @@
----
-layout: default
----
-
-<!-- =========================
-     PRICE LINE (visual only)
-     ========================= -->
-<div
-  style="
-    margin-left:13px;
-    margin-bottom:28px;
-    padding-right:16px;
-    font-size:14px;
-    opacity:0.8;
-  "
->
-  <span style="margin-right:6px; opacity:0.8;">
-    BTC <span id="btcPriceIndex">--</span>
-  </span>
-
-  <span style="margin:0 8px; opacity:0.8;">·</span>
-
-  <span style="margin-right:6px; opacity:0.8;">
-    ETH <span id="ethPriceIndex">--</span>
-  </span>
-
-  <span
-    id="priceUpdatedIndex"
-    style="
-      margin-left:14px;
-      font-size:11px;
-      opacity:0.7;
-    "
-  >
-    Updated --
-  </span>
-</div>
-
-<script>
-(async function(){
-  try{
-    const res = await fetch("/data/prices.json", { cache: "no-store" });
-    if (!res.ok) return;
-    const data = await res.json();
-
-    const fmt = n =>
-      Number(n).toLocaleString(undefined, { maximumFractionDigits: 0 });
-
-    const btc = data?.prices?.BTC;
-    const eth = data?.prices?.ETH;
-
-    if (Number.isFinite(btc))
-      document.getElementById("btcPriceIndex").textContent = "$" + fmt(btc);
-
-    if (Number.isFinite(eth))
-      document.getElementById("ethPriceIndex").textContent = "$" + fmt(eth);
-
-    const t = data?.updated_utc ? String(data.updated_utc) : "-- UTC";
-    const src = data?.source ? (" · " + data.source) : "";
-    document.getElementById("priceUpdatedIndex").textContent =
-      "Updated " + t + src;
-
-  } catch(e){}
-})();
-</script>
-
-<!-- =========================
-     INDEX BOX 1
-     ========================= -->
-
 <div class="index-row">
 
 <div class="left">
@@ -145,9 +75,6 @@ a slow-moving, cycle-aware reference point.
 
 </div>
 
-<!-- =========================
-     INDEX BOX 2
-     ========================= -->
 
 <div class="index-row" style="margin-top:32px;">
 
@@ -221,13 +148,15 @@ xmlns="http://www.w3.org/2000/svg">
 This second index focuses on an additional market dimension,
 using the same scale for consistent positioning.
 </p>
+
+<p>
+It is designed to update slowly, reinforcing long-term
+orientation over short-term noise.
+</p>
 </div>
 
 </div>
 
-<!-- =========================
-     INDEX BOX 3
-     ========================= -->
 
 <div class="index-row" style="margin-top:32px;">
 
@@ -299,14 +228,18 @@ xmlns="http://www.w3.org/2000/svg">
 <div class="right">
 <p>
 This third index completes the initial set of indicators.
+It follows the same visual scale while expressing a distinct
+interpretation layer.
+</p>
+
+<p>
+Together with the other boxes, it enables side-by-side
+comparison across different market dimensions.
 </p>
 </div>
 
 </div>
 
-<!-- =========================
-     INTERPRETATION LOGIC
-     ========================= -->
 
 <script>
 const interpretations = {
@@ -339,31 +272,29 @@ function interpretationFromX(boxKey, x){
   }
   return "--";
 }
+</script>
 
+
+<script>
 function setValue(boxKey, boxId, x){
+
   x = Math.max(0, Math.min(100, Number(x)));
 
   const LEFT = 23;
   const RANGE = 134;
   const cx = LEFT + (x / 100) * RANGE;
 
-  const o = document.getElementById("dotOuter" + boxId);
-  const i = document.getElementById("dotInner" + boxId);
-  const c = document.getElementById("centerValue" + boxId);
-  const b = document.getElementById("bottomText" + boxId);
+  document.getElementById("dotOuter" + boxId).setAttribute("cx", cx);
+  document.getElementById("dotInner" + boxId).setAttribute("cx", cx);
 
-  if (!o || !i || !c || !b) return;
+  document.getElementById("centerValue" + boxId).textContent =
+    String(Math.round(x)).padStart(2, "0");
 
-  o.setAttribute("cx", cx);
-  i.setAttribute("cx", cx);
-  c.textContent = String(Math.round(x)).padStart(2, "0");
-  b.textContent = interpretationFromX(boxKey, Math.round(x));
+  document.getElementById("bottomText" + boxId).textContent =
+    interpretationFromX(boxKey, Math.round(x));
 }
 </script>
 
-<!-- =========================
-     INDEX LOADER (no blink)
-     ========================= -->
 
 <script>
 (function () {
@@ -384,16 +315,13 @@ function setValue(boxKey, boxId, x){
     } catch(e){}
   }
 
-  function applyBoxes(boxes){
-    if (!boxes) return;
-    if (boxes.box1 !== undefined) setValue("box1", 1, boxes.box1);
-    if (boxes.box2 !== undefined) setValue("box2", 2, boxes.box2);
-    if (boxes.box3 !== undefined) setValue("box3", 3, boxes.box3);
-  }
-
   async function loadIndexes(){
     const cached = readCache();
-    if (cached && cached.boxes) applyBoxes(cached.boxes);
+    if (cached && cached.boxes){
+      if (cached.boxes.box1 !== undefined) setValue("box1", 1, cached.boxes.box1);
+      if (cached.boxes.box2 !== undefined) setValue("box2", 2, cached.boxes.box2);
+      if (cached.boxes.box3 !== undefined) setValue("box3", 3, cached.boxes.box3);
+    }
 
     try{
       const res = await fetch('/data/indexes.json', { cache: 'no-store' });
@@ -403,11 +331,9 @@ function setValue(boxKey, boxId, x){
       const sig = String(data.updated_utc || "");
       if (cached && cached.sig === sig) return;
 
-      applyBoxes({
-        box1: data.box1,
-        box2: data.box2,
-        box3: data.box3
-      });
+      setValue("box1", 1, data.box1);
+      setValue("box2", 2, data.box2);
+      setValue("box3", 3, data.box3);
 
       writeCache({
         sig,
