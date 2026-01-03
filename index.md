@@ -23,8 +23,8 @@ font-weight:500;
 color:#d9d9d9;
 line-height:1.2;
 ">
-EXAMPLE<br>
-Example Text<br>
+BTC<br>
+Market Cycle<br>
 Navigation Index
 </div>
 
@@ -66,11 +66,20 @@ xmlns="http://www.w3.org/2000/svg">
 </div>
 
 <div class="right">
-<p>This index shows the current position within the broader market cycle.</p>
-<p>
-The indicator is designed to reduce emotional decision-making by providing
-a slow-moving, cycle-aware reference point.
-</p>
+<p><strong>Entry</strong><br>
+Conditions support initial exposure even if confidence is not yet widespread. Price levels support participation despite negative or uncertain sentiment. The emphasis is on establishing exposure rather than optimising timing.</p>
+
+<p><strong>Accumulation</strong><br>
+The setup continues to favor increasing exposure. Price behavior and structure remain favorable on a longer horizon. Volatility is expected and does not undermine the broader setup.</p>
+
+<p><strong>Hold</strong><br>
+The balance is broadly neutral. Price is neither clearly undervalued nor clearly stretched on a cycle-adjusted basis. Existing exposure is typically maintained, with limited directional bias.</p>
+
+<p><strong>Conviction Hold</strong><br>
+Price levels are high relative to earlier ranges, but the broader trend and market structure remain intact. Conditions favor maintaining existing exposure rather than adding aggressively or reacting to short-term fluctuations.</p>
+
+<p><strong>HODL</strong><br>
+The asset sits at the upper end of the cycle. Valuation and cycle position dominate over short-term signals. The index reflects this context without implying a specific response.</p>
 </div>
 
 </div>
@@ -101,8 +110,8 @@ font-weight:500;
 color:#d9d9d9;
 line-height:1.2;
 ">
-EXAMPLE<br>
-Second Box<br>
+ETH / ALTS<br>
+Positioning<br>
 Navigation Index
 </div>
 
@@ -145,13 +154,7 @@ xmlns="http://www.w3.org/2000/svg">
 
 <div class="right">
 <p>
-This second index focuses on an additional market dimension,
-using the same scale for consistent positioning.
-</p>
-
-<p>
-It is designed to update slowly, reinforcing long-term
-orientation over short-term noise.
+This index focuses on positioning dynamics outside BTC, using the same scale for consistent navigation across assets.
 </p>
 </div>
 
@@ -183,8 +186,8 @@ font-weight:500;
 color:#d9d9d9;
 line-height:1.2;
 ">
-EXAMPLE<br>
-Third Box<br>
+Risk / Context<br>
+Overlay<br>
 Navigation Index
 </div>
 
@@ -227,14 +230,7 @@ xmlns="http://www.w3.org/2000/svg">
 
 <div class="right">
 <p>
-This third index completes the initial set of indicators.
-It follows the same visual scale while expressing a distinct
-interpretation layer.
-</p>
-
-<p>
-Together with the other boxes, it enables side-by-side
-comparison across different market dimensions.
+This index adds contextual information that complements the other two, enabling side-by-side navigation across multiple market dimensions.
 </p>
 </div>
 
@@ -242,7 +238,7 @@ comparison across different market dimensions.
 
 
 <script>
-/* ---- Scales / Descriptions ---- */
+/* ---- Scales / Labels ---- */
 
 const descriptions = {
   box1: [
@@ -275,85 +271,4 @@ function labelFromX(boxKey, x){
   }
   return "--";
 }
-
-/* ---- UI update ---- */
-
-function setValue(boxKey, boxId, x){
-  x = Math.max(0, Math.min(100, Number(x)));
-  const xr = Math.round(x);
-
-  const LEFT = 23;
-  const RANGE = 134;
-  const cx = LEFT + (xr / 100) * RANGE;
-
-  const outer = document.getElementById("dotOuter" + boxId);
-  const inner = document.getElementById("dotInner" + boxId);
-  if (outer) outer.setAttribute("cx", cx);
-  if (inner) inner.setAttribute("cx", cx);
-
-  const center = document.getElementById("centerValue" + boxId);
-  if (center) center.textContent = String(xr).padStart(2, "0");
-
-  const bottom = document.getElementById("bottomText" + boxId);
-  if (bottom) bottom.textContent = labelFromX(boxKey, xr);
-}
-
-/* ---- Data load (cache + fetch) ---- */
-
-(function () {
-  const KEY = "indexes_cache_v1";
-
-  function readCache(){
-    try{
-      const raw = sessionStorage.getItem(KEY);
-      return raw ? JSON.parse(raw) : null;
-    } catch(e){
-      return null;
-    }
-  }
-
-  function writeCache(obj){
-    try{
-      sessionStorage.setItem(KEY, JSON.stringify(obj));
-    } catch(e){}
-  }
-
-  async function loadIndexes(){
-    const cached = readCache();
-
-    if (cached && cached.boxes){
-      if (cached.boxes.box1 !== undefined) setValue("box1", 1, cached.boxes.box1);
-      if (cached.boxes.box2 !== undefined) setValue("box2", 2, cached.boxes.box2);
-      if (cached.boxes.box3 !== undefined) setValue("box3", 3, cached.boxes.box3);
-    }
-
-    try{
-      const res = await fetch('/data/indexes.json', { cache: 'no-store' });
-      if (!res.ok) return;
-      const data = await res.json();
-
-      const sig = String(data.updated_utc || "");
-      if (cached && cached.sig === sig) return;
-
-      setValue("box1", 1, data.box1);
-      setValue("box2", 2, data.box2);
-      setValue("box3", 3, data.box3);
-
-      writeCache({
-        sig,
-        boxes: {
-          box1: data.box1,
-          box2: data.box2,
-          box3: data.box3
-        }
-      });
-    } catch(e){}
-  }
-
-  if (document.readyState === "loading"){
-    document.addEventListener("DOMContentLoaded", loadIndexes);
-  } else {
-    loadIndexes();
-  }
-})();
 </script>
