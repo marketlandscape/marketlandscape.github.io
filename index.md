@@ -66,10 +66,7 @@ xmlns="http://www.w3.org/2000/svg">
 </div>
 
 <div class="right">
-<p>This index shows the current position within the broader market cycle.</p>
-<p>
-The indicator is designed to reduce emotional decision-making by providing
-a slow-moving, cycle-aware reference point.
+<p>This index reflects long-term cycle positioning within the market. It captures structural context and valuation across the cycle, independent of short-term price movements or sentiment.
 </p>
 </div>
 
