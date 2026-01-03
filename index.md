@@ -242,7 +242,9 @@ comparison across different market dimensions.
 
 
 <script>
-const interpretations = {
+/* ---- Scales / Descriptions ---- */
+
+const descriptions = {
   box1: [
     { max: 19, label: "Entry" },
     { max: 39, label: "Accumulation" },
@@ -266,37 +268,38 @@ const interpretations = {
   ]
 };
 
-function interpretationFromX(boxKey, x){
-  for (const step of interpretations[boxKey]) {
+function labelFromX(boxKey, x){
+  const steps = descriptions[boxKey] || [];
+  for (const step of steps){
     if (x <= step.max) return step.label;
   }
   return "--";
 }
-</script>
 
+/* ---- UI update ---- */
 
-<script>
 function setValue(boxKey, boxId, x){
-
   x = Math.max(0, Math.min(100, Number(x)));
+  const xr = Math.round(x);
 
   const LEFT = 23;
   const RANGE = 134;
-  const cx = LEFT + (x / 100) * RANGE;
+  const cx = LEFT + (xr / 100) * RANGE;
 
-  document.getElementById("dotOuter" + boxId).setAttribute("cx", cx);
-  document.getElementById("dotInner" + boxId).setAttribute("cx", cx);
+  const outer = document.getElementById("dotOuter" + boxId);
+  const inner = document.getElementById("dotInner" + boxId);
+  if (outer) outer.setAttribute("cx", cx);
+  if (inner) inner.setAttribute("cx", cx);
 
-  document.getElementById("centerValue" + boxId).textContent =
-    String(Math.round(x)).padStart(2, "0");
+  const center = document.getElementById("centerValue" + boxId);
+  if (center) center.textContent = String(xr).padStart(2, "0");
 
-  document.getElementById("bottomText" + boxId).textContent =
-    interpretationFromX(boxKey, Math.round(x));
+  const bottom = document.getElementById("bottomText" + boxId);
+  if (bottom) bottom.textContent = labelFromX(boxKey, xr);
 }
-</script>
 
+/* ---- Data load (cache + fetch) ---- */
 
-<script>
 (function () {
   const KEY = "indexes_cache_v1";
 
@@ -317,6 +320,7 @@ function setValue(boxKey, boxId, x){
 
   async function loadIndexes(){
     const cached = readCache();
+
     if (cached && cached.boxes){
       if (cached.boxes.box1 !== undefined) setValue("box1", 1, cached.boxes.box1);
       if (cached.boxes.box2 !== undefined) setValue("box2", 2, cached.boxes.box2);
