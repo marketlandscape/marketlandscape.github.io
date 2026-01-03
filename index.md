@@ -248,7 +248,7 @@ const interpretations = {
     { max: 39, label: "Accumulation" },
     { max: 59, label: "Hold" },
     { max: 79, label: "Conviction Hold" },
-    { max: 100, label: "Reserve Hold" }
+    { max: 100, label: "HODL" }
   ],
   box2: [
     { max: 19, label: "Entry Buy" },
