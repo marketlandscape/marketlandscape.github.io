@@ -24,7 +24,6 @@ color:#d9d9d9;
 line-height:1.2;
 ">
 EXAMPLE<br>
-Example Text<br>
 Navigation Index
 </div>
 
@@ -99,7 +98,6 @@ color:#d9d9d9;
 line-height:1.2;
 ">
 EXAMPLE<br>
-Second Box<br>
 Navigation Index
 </div>
 
@@ -181,7 +179,6 @@ color:#d9d9d9;
 line-height:1.2;
 ">
 EXAMPLE<br>
-Third Box<br>
 Navigation Index
 </div>
 
