@@ -244,11 +244,11 @@ comparison across different market dimensions.
 <script>
 const interpretations = {
   box1: [
-    { max: 19, label: "Accumulate" },
-    { max: 39, label: "DCA" },
+    { max: 19, label: "Entry" },
+    { max: 39, label: "Accumulation" },
     { max: 59, label: "Hold" },
-    { max: 79, label: "HODL" },
-    { max: 100, label: "HODL" }
+    { max: 79, label: "Conviction Hold" },
+    { max: 100, label: "Reserve Hold" }
   ],
   box2: [
     { max: 19, label: "Entry Buy" },
