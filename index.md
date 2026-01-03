@@ -241,14 +241,14 @@ comparison across different market dimensions.
 const descriptions = {
   box1: [
     { max: 19, label: "Entry" },
-    { max: 39, label: "Scaling In" },
+    { max: 39, label: "Accumulating" },
     { max: 59, label: "Hold" },
     { max: 79, label: "Conviction Hold" },
     { max: 100, label: "HODL" }
   ],
   box2: [
     { max: 19, label: "Entry" },
-    { max: 39, label: "Scaling In " },
+    { max: 39, label: "Probe Entry / Scaling In" },
     { max: 59, label: "Hold / Wait" },
     { max: 79, label: "Scaling Out" },
     { max: 100, label: "Exit" }
