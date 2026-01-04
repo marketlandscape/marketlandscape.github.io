@@ -13,9 +13,9 @@
            top:108px;
            width:459px;
            display:flex;
-           font-size:15px;
+           font-size:13px;
            color:#d9d9d9;
-           opacity:0.75;
+           opacity:0.5;
            letter-spacing:0.02em;
            z-index:2;
            pointer-events:none;
@@ -34,7 +34,7 @@
            top:44%;
            left:36px;
            transform:translateY(-50%);
-           font-size:15px;
+           font-size:18px;
            font-weight:600;
            color:#ffffff;
            z-index:2;
@@ -58,9 +58,9 @@
            top:108px;
            width:459px;
            display:flex;
-           font-size:15px;
+           font-size:13px;
            color:#d9d9d9;
-           opacity:0.75;
+           opacity:0.5;
            letter-spacing:0.02em;
            z-index:2;
            pointer-events:none;
@@ -78,7 +78,7 @@
            top:44%;
            left:36px;
            transform:translateY(-50%);
-           font-size:15px;
+           font-size:18px;
            font-weight:600;
            color:#ffffff;
            z-index:2;
@@ -101,9 +101,9 @@
            top:108px;
            width:459px;
            display:flex;
-           font-size:15px;
+           font-size:13px;
            color:#d9d9d9;
-           opacity:0.75;
+           opacity:0.5;
            letter-spacing:0.02em;
            z-index:2;
            pointer-events:none;
@@ -121,7 +121,7 @@
            top:44%;
            left:36px;
            transform:translateY(-50%);
-           font-size:15px;
+           font-size:18px;
            font-weight:600;
            color:#ffffff;
            z-index:2;
@@ -192,8 +192,6 @@ function setValue(boxId, x){
 }
 
 (function () {
-  const KEY = "indexes_cache_v1";
-
   async function loadIndexes(){
     try{
       const res = await fetch('/data/indexes.json', { cache: 'no-store' });
