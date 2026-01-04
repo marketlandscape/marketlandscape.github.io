@@ -76,7 +76,7 @@
         style="
           position:absolute;
           left:33.75px;
-          top:86px;
+          top:88px;
           width:382.5px;
           display:flex;
           font-size:13px;
@@ -137,7 +137,7 @@
         style="
           position:absolute;
           left:33.75px;
-          top:84px;
+          top:88px;
           width:382.5px;
           display:flex;
           font-size:13px;
