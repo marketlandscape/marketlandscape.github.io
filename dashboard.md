@@ -228,13 +228,16 @@
 
 <script>
 function setValue(boxId, x){
-  x = Math.max(0, Math.min(100, Number(x)));
+  const n = Number(x);
+  if (!Number.isFinite(n)) return; // avoid writing NaN -> prevents dot/text flicker
+
+  const pct = Math.max(0, Math.min(100, n));
 
   // 25 discrete positions (1..25)
   const TOTAL = 25;
 
   // map percent -> step (1..25)
-  const step  = Math.round((x / 100) * (TOTAL - 1)) + 1;
+  const step  = Math.round((pct / 100) * (TOTAL - 1)) + 1;
 
   // anchor to the rectangular bar span (NOT the end circles)
   // (values scaled to the 450-wide dot-layer viewBox)
@@ -259,11 +262,13 @@ function setValue(boxId, x){
     try{
       const res = await fetch('/data/indexes.json', { cache: 'no-store' });
       if (!res.ok) return;
+
       const data = await res.json();
 
-      setValue(1, data.box1);
-      setValue(2, data.box2);
-      setValue(3, data.box3);
+      // only update when keys exist (setValue also guards non-numeric values)
+      if (data && ("box1" in data)) setValue(1, data.box1);
+      if (data && ("box2" in data)) setValue(2, data.box2);
+      if (data && ("box3" in data)) setValue(3, data.box3);
     } catch(e){}
   }
 
