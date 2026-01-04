@@ -56,7 +56,7 @@
           color:#d9d9d9;
           z-index:2;
         ">
-        <span style="opacity:0.75;">Risk level:</span> 24%
+        <span style="opacity:0.5;">Risk level:</span> 24%
       </div>
 
       <!-- dot layer -->
@@ -118,7 +118,7 @@
           color:#d9d9d9;
           z-index:2;
         ">
-        <span style="opacity:0.75;">Risk level:</span> 36%
+        <span style="opacity:0.5;">Risk level:</span> 36%
       </div>
 
       <svg class="dot-layer" viewBox="0 0 450 150" xmlns="http://www.w3.org/2000/svg">
@@ -179,7 +179,7 @@
           color:#d9d9d9;
           z-index:2;
         ">
-        <span style="opacity:0.75;">Risk level:</span> 75%
+        <span style="opacity:0.5;">Risk level:</span> 75%
       </div>
 
       <svg class="dot-layer" viewBox="0 0 450 150" xmlns="http://www.w3.org/2000/svg">
