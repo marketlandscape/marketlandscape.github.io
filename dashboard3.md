@@ -230,12 +230,20 @@
 function setValue(boxId, x){
   x = Math.max(0, Math.min(100, Number(x)));
 
-  const step = Math.round((x / 100) * 19) + 1;
-  const ratio = (step - 1) / 19;
+  // 25 discrete positions (1..25)
+  const TOTAL = 25;
 
-  const LEFT = 45;
-  const RANGE = 510;
-  const cx = LEFT + ratio * RANGE;
+  // map percent -> step (1..25)
+  const step  = Math.round((x / 100) * (TOTAL - 1)) + 1;
+
+  // anchor the dot to the rectangular scale span (NOT the end circles):
+  // start at the left edge of the first rectangle, end at the right edge of the last rectangle
+  // and place each step at the center of its bin.
+  const START = 45;   // first rect x (left edge)
+  const END   = 555;  // last rect right edge
+  const BIN   = (END - START) / TOTAL;
+
+  const cx = START + (step - 0.5) * BIN;
 
   const outer = document.getElementById("dotOuter" + boxId);
   const inner = document.getElementById("dotInner" + boxId);
@@ -243,7 +251,7 @@ function setValue(boxId, x){
 
   if (outer) outer.setAttribute("cx", cx);
   if (inner) inner.setAttribute("cx", cx);
-  if (val)   val.textContent = step + "/20";
+  if (val)   val.textContent = step + "/" + TOTAL;
 }
 
 (function () {
