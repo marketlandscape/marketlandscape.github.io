@@ -48,8 +48,8 @@
 
   .box-title{
     position:absolute;
-    top:20px;        /* lowered */
-    left:40px;       /* aligned with bar start */
+    top:22px;        /* lowered */
+    left:36px;       /* aligned with bar start */
     right:20px;
     font-size:14px;
     font-weight:500;
