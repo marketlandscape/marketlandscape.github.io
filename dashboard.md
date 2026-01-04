@@ -14,8 +14,8 @@
            width:459px;
            display:flex;
            font-size:11px;
-           font-weight:500;
            color:#d9d9d9;
+           opacity:0.75;
            letter-spacing:0.02em;
            z-index:2;
            pointer-events:none;
@@ -48,7 +48,8 @@
   </div>
 
   <!-- BOX 2 -->
-  <div id="box2" class="index-box" style="background-image:url('/assets/img/bar-scale-blue.svg');">
+  <div id="box2" class="index-box"
+       style="background-image:url('/assets/img/bar-scale-blue.svg'); margin-top:-10px;">
     <div class="box-title">Navigation Index — Blue</div>
 
     <div id="zones2"
@@ -59,8 +60,8 @@
            width:459px;
            display:flex;
            font-size:11px;
-           font-weight:500;
            color:#d9d9d9;
+           opacity:0.75;
            letter-spacing:0.02em;
            z-index:2;
            pointer-events:none;
@@ -102,8 +103,8 @@
            width:459px;
            display:flex;
            font-size:11px;
-           font-weight:500;
            color:#d9d9d9;
+           opacity:0.75;
            letter-spacing:0.02em;
            z-index:2;
            pointer-events:none;
@@ -153,8 +154,8 @@
 
   .box-title{
     position:absolute;
-    top:32px;
-    left:45px;
+    top:22px;
+    left:36px;
     right:20px;
     font-size:14px;
     font-weight:500;
