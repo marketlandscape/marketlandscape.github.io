@@ -1,5 +1,9 @@
 - title: INDEXES
   url: /
+- title: DASHBOARD
+  url: /dashboard/ 
+- title: DASHBOARD 2
+  url: /dashboard2/
 - title: INDEX SCALE GUIDE
   url: /guide/
 - title: DESIGN & LOGIC
