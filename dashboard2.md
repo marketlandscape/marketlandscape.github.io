@@ -1,5 +1,4 @@
 <!-- Simplified layout: three stacked 540×180 boxes with moving dot -->
-
 <div class="indexes">
 
   <!-- BOX 1 -->
@@ -24,9 +23,9 @@
         ">
         <span style="flex:1;text-align:center;">ENTRY</span>
         <span style="flex:1;text-align:center;">SCALE IN</span>
-        <span style="flex:1;text-align:center;">HOLD</span>
-        <span style="flex:1;text-align:center;">CONVICTION</span>
-        <span style="flex:1;text-align:center;">HODL</span>
+        <span style="flex:1;text-align:center;">HOLD/WAIT</span>
+        <span style="flex:1;text-align:center;">REDUCE</span>
+        <span style="flex:1;text-align:center;">EXIT</span>
       </div>
 
       <!-- value (left) -->
@@ -230,8 +229,9 @@
 function setValue(boxId, x){
   x = Math.max(0, Math.min(100, Number(x)));
 
-  const step = Math.round((x / 100) * 19) + 1;
-  const ratio = (step - 1) / 19;
+  // Converted scale: 1..25
+  const step = Math.round((x / 100) * 24) + 1;
+  const ratio = (step - 1) / 24;
 
   const LEFT = 45;
   const RANGE = 510;
@@ -243,7 +243,7 @@ function setValue(boxId, x){
 
   if (outer) outer.setAttribute("cx", cx);
   if (inner) inner.setAttribute("cx", cx);
-  if (val)   val.textContent = step + "/20";
+  if (val)   val.textContent = step + "/25";
 }
 
 (function () {
