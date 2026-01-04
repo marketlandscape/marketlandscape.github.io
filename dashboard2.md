@@ -3,7 +3,7 @@
 
   <!-- BOX 1 -->
   <div style="margin-bottom:32px;">
-    <div id="box1" class="index-box" style="background-image:url('/assets/img/bar-scale-yellow.svg');">
+    <div id="box1" class="index-box" style="background-image:url('/assets/img/bar-scale-grey.svg');">
       <div class="box-title">Navigation Index — Yellow</div>
 
       <!-- scale zones -->
@@ -16,16 +16,16 @@
           display:flex;
           font-size:15px;
           color:#d9d9d9;
-          opacity:0.5;
+          opacity:0.6;
           letter-spacing:0.02em;
           z-index:2;
           pointer-events:none;
         ">
-        <span style="flex:1;text-align:center;">ENTRY</span>
-        <span style="flex:1;text-align:center;">SCALE IN</span>
-        <span style="flex:1;text-align:center;">HOLD/WAIT</span>
-        <span style="flex:1;text-align:center;">REDUCE</span>
-        <span style="flex:1;text-align:center;">EXIT</span>
+        <span style="flex:1;text-align:center;">Entry</span>
+        <span style="flex:1;text-align:center;">Scale In</span>
+        <span style="flex:1;text-align:center;">Hold</span>
+        <span style="flex:1;text-align:center;">Conviction</span>
+        <span style="flex:1;text-align:center;">HODL</span>
       </div>
 
       <!-- value (left) -->
@@ -68,7 +68,7 @@
 
   <!-- BOX 2 -->
   <div style="margin-bottom:32px;">
-    <div id="box2" class="index-box" style="background-image:url('/assets/img/bar-scale-blue.svg');">
+    <div id="box2" class="index-box" style="background-image:url('/assets/img/bar-scale-grey.svg');">
       <div class="box-title">Navigation Index — Blue</div>
 
       <div
@@ -80,16 +80,16 @@
           display:flex;
           font-size:15px;
           color:#d9d9d9;
-          opacity:0.5;
+          opacity:0.6;
           letter-spacing:0.02em;
           z-index:2;
           pointer-events:none;
         ">
-        <span style="flex:1;text-align:center;">ENTRY</span>
-        <span style="flex:1;text-align:center;">SCALE IN</span>
-        <span style="flex:1;text-align:center;">HOLD/WAIT</span>
-        <span style="flex:1;text-align:center;">REDUCE</span>
-        <span style="flex:1;text-align:center;">EXIT</span>
+        <span style="flex:1;text-align:center;">Entry</span>
+        <span style="flex:1;text-align:center;">Scale In</span>
+        <span style="flex:1;text-align:center;">Hold / Wait</span>
+        <span style="flex:1;text-align:center;">Reduce</span>
+        <span style="flex:1;text-align:center;">Exit</span>
       </div>
 
       <div
@@ -141,16 +141,16 @@
           display:flex;
           font-size:15px;
           color:#d9d9d9;
-          opacity:0.5;
+          opacity:0.6;
           letter-spacing:0.02em;
           z-index:2;
           pointer-events:none;
         ">
-        <span style="flex:1;text-align:center;">ENTRY</span>
-        <span style="flex:1;text-align:center;">SCALE IN</span>
-        <span style="flex:1;text-align:center;">HOLD/WAIT</span>
-        <span style="flex:1;text-align:center;">REDUCE</span>
-        <span style="flex:1;text-align:center;">EXIT</span>
+        <span style="flex:1;text-align:center;">Entry</span>
+        <span style="flex:1;text-align:center;">Scale In</span>
+        <span style="flex:1;text-align:center;">Hold / Wait</span>
+        <span style="flex:1;text-align:center;">Reduce</span>
+        <span style="flex:1;text-align:center;">Exit</span>
       </div>
 
       <div
