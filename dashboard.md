@@ -13,7 +13,7 @@
            top:108px;
            width:459px;
            display:flex;
-           font-size:11px;
+           font-size:15px;
            color:#d9d9d9;
            opacity:0.75;
            letter-spacing:0.02em;
@@ -31,10 +31,10 @@
     <div id="val1"
          style="
            position:absolute;
-           top:50%;
-           left:45px;
+           top:44%;
+           left:36px;
            transform:translateY(-50%);
-           font-size:18px;
+           font-size:15px;
            font-weight:600;
            color:#ffffff;
            z-index:2;
@@ -59,7 +59,7 @@
            top:108px;
            width:459px;
            display:flex;
-           font-size:11px;
+           font-size:15px;
            color:#d9d9d9;
            opacity:0.75;
            letter-spacing:0.02em;
@@ -76,10 +76,10 @@
     <div id="val2"
          style="
            position:absolute;
-           top:50%;
-           left:45px;
+           top:44%;
+           left:36px;
            transform:translateY(-50%);
-           font-size:18px;
+           font-size:15px;
            font-weight:600;
            color:#ffffff;
            z-index:2;
@@ -102,7 +102,7 @@
            top:108px;
            width:459px;
            display:flex;
-           font-size:11px;
+           font-size:15px;
            color:#d9d9d9;
            opacity:0.75;
            letter-spacing:0.02em;
@@ -119,10 +119,10 @@
     <div id="val3"
          style="
            position:absolute;
-           top:50%;
-           left:45px;
+           top:44%;
+           left:36px;
            transform:translateY(-50%);
-           font-size:18px;
+           font-size:15px;
            font-weight:600;
            color:#ffffff;
            z-index:2;
@@ -157,7 +157,7 @@
     top:22px;
     left:36px;
     right:20px;
-    font-size:14px;
+    font-size:15px;
     font-weight:500;
     color:#d9d9d9;
     line-height:1.2;
