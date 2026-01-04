@@ -227,14 +227,24 @@
 </style>
 
 <script>
+/*
+  Dashboard anti-blink logic = same approach as index.md:
+  - render cached values immediately (sessionStorage)
+  - fetch fresh values with cache:'no-store'
+  - only apply updates if signature (updated_utc) changed
+*/
+
 function setValue(boxId, x){
-  x = Math.max(0, Math.min(100, Number(x)));
+  const n = Number(x);
+  if (!Number.isFinite(n)) return; // keep last valid state
+
+  const pct = Math.max(0, Math.min(100, n));
 
   // 25 discrete positions (1..25)
   const TOTAL = 25;
 
   // map percent -> step (1..25)
-  const step  = Math.round((x / 100) * (TOTAL - 1)) + 1;
+  const step = Math.round((pct / 100) * (TOTAL - 1)) + 1;
 
   // anchor to the rectangular bar span (NOT the end circles)
   // (values scaled to the 450-wide dot-layer viewBox)
@@ -255,15 +265,55 @@ function setValue(boxId, x){
 }
 
 (function () {
+  const KEY = "dashboard_indexes_cache_v1";
+
+  function readCache(){
+    try{
+      const raw = sessionStorage.getItem(KEY);
+      return raw ? JSON.parse(raw) : null;
+    } catch(e){
+      return null;
+    }
+  }
+
+  function writeCache(obj){
+    try{
+      sessionStorage.setItem(KEY, JSON.stringify(obj));
+    } catch(e){}
+  }
+
   async function loadIndexes(){
+    const cached = readCache();
+
+    // 1) paint cached first (instant, stable)
+    if (cached && cached.boxes){
+      if (cached.boxes.box1 !== undefined) setValue(1, cached.boxes.box1);
+      if (cached.boxes.box2 !== undefined) setValue(2, cached.boxes.box2);
+      if (cached.boxes.box3 !== undefined) setValue(3, cached.boxes.box3);
+    }
+
+    // 2) fetch fresh; only apply if signature changed
     try{
       const res = await fetch('/data/indexes.json', { cache: 'no-store' });
       if (!res.ok) return;
+
       const data = await res.json();
 
-      setValue(1, data.box1);
-      setValue(2, data.box2);
-      setValue(3, data.box3);
+      const sig = String(data.updated_utc || "");
+      if (cached && cached.sig === sig) return;
+
+      if (data && ("box1" in data)) setValue(1, data.box1);
+      if (data && ("box2" in data)) setValue(2, data.box2);
+      if (data && ("box3" in data)) setValue(3, data.box3);
+
+      writeCache({
+        sig,
+        boxes: {
+          box1: data.box1,
+          box2: data.box2,
+          box3: data.box3
+        }
+      });
     } catch(e){}
   }
 
