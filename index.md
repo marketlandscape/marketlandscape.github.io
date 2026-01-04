@@ -1,301 +1,257 @@
-<div class="index-row">
+<!-- Simplified layout: three stacked 450×150 boxes with moving dot -->
 
-<div class="left">
-<div id="box1"
-style="
-position:relative;
-width:180px;
-height:180px;
-background:url('/assets/img/background-yellow.svg') no-repeat;
-background-size:180px 180px;
-font-family: system-ui, -apple-system, sans-serif;
-">
+<div class="indexes">
 
-<div style="
-position:absolute;
-top:14px;
-width:100%;
-text-align:left;
-padding-left:13px;
-padding-right:11px;
-font-size:14px;
-font-weight:500;
-color:#d9d9d9;
-line-height:1.2;
-">
-EXAMPLE<br>
-Navigation Index
-</div>
+  <!-- BOX 1 -->
+  <div style="margin-bottom:28px;">
+    <div id="box1" class="index-box" style="background-image:url('/assets/img/bar-scale-yellow.svg');">
+      <div class="box-title">Navigation Index — Yellow</div>
 
-<div id="centerValue1" style="
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-font-size:48px;
-font-weight:600;
-color:#ffffff;
-line-height:1;
-">
---
-</div>
+      <!-- scale zones -->
+      <div
+        style="
+          position:absolute;
+          left:33.75px;
+          top:88px;
+          width:382.5px;
+          display:flex;
+          font-size:13px;
+          color:#d9d9d9;
+          opacity:0.5;
+          letter-spacing:0.02em;
+          z-index:2;
+          pointer-events:none;
+        ">
+        <span style="flex:1;text-align:center;">Entry</span>
+        <span style="flex:1;text-align:center;">Scale In</span>
+        <span style="flex:1;text-align:center;">Hold</span>
+        <span style="flex:1;text-align:center;">Conviction</span>
+        <span style="flex:1;text-align:center;">HODL</span>
+      </div>
 
-<div id="bottomText1" style="
-position:absolute;
-bottom:11px;
-width:100%;
-text-align:center;
-font-size:14px;
-color:#d9d9d9;
-">
---
-</div>
+      <!-- value (left) -->
+      <div
+        id="val1"
+        style="
+          position:absolute;
+          top:44%;
+          left:30px;
+          transform:translateY(-50%);
+          font-size:17px;
+          font-weight:500;
+          color:#d9d9d9;
+          z-index:2;
+        ">
+        –
+      </div>
 
-<svg
-width="100%"
-height="100%"
-viewBox="0 0 180 180"
-style="position:absolute;left:0;top:0;pointer-events:none;"
-xmlns="http://www.w3.org/2000/svg">
-<circle id="dotOuter1" cx="23" cy="132" r="12" fill="#323232ff"/>
-<circle id="dotInner1" cx="23" cy="132" r="8" fill="#ffffff"/>
-</svg>
+      <!-- risk level (right) -->
+      <div
+        style="
+          position:absolute;
+          top:44%;
+          right:30px;
+          transform:translateY(-50%);
+          font-size:15px;
+          color:#d9d9d9;
+          z-index:2;
+        ">
+        <span style="opacity:0.5;">Risk level:</span> 24%
+      </div>
 
-</div>
-</div>
+      <!-- dot layer -->
+      <svg class="dot-layer" viewBox="0 0 450 150" xmlns="http://www.w3.org/2000/svg">
+        <circle id="dotOuter1" cx="34" cy="118" r="9" fill="#323232ff"/>
+        <circle id="dotInner1" cx="34" cy="118" r="6" fill="#ffffff"/>
+      </svg>
+    </div>
+  </div>
 
-<div class="right">
-<p>This index reflects long-term cycle positioning within the market. It captures structural context and valuation across the cycle, independent of short-term price movements or sentiment.
-</p>
-</div>
+  <!-- BOX 2 -->
+  <div style="margin-bottom:28px;">
+    <div id="box2" class="index-box" style="background-image:url('/assets/img/bar-scale-blue.svg');">
+      <div class="box-title">Navigation Index — Blue</div>
 
-</div>
+      <div
+        style="
+          position:absolute;
+          left:33.75px;
+          top:88px;
+          width:382.5px;
+          display:flex;
+          font-size:13px;
+          color:#d9d9d9;
+          opacity:0.5;
+          letter-spacing:0.02em;
+          z-index:2;
+          pointer-events:none;
+        ">
+        <span style="flex:1;text-align:center;">Entry</span>
+        <span style="flex:1;text-align:center;">Scale In</span>
+        <span style="flex:1;text-align:center;">Hold / Wait</span>
+        <span style="flex:1;text-align:center;">Reduce</span>
+        <span style="flex:1;text-align:center;">Exit</span>
+      </div>
 
+      <div
+        id="val2"
+        style="
+          position:absolute;
+          top:44%;
+          left:30px;
+          transform:translateY(-50%);
+          font-size:17px;
+          font-weight:500;
+          color:#d9d9d9;
+          z-index:2;
+        ">
+        –
+      </div>
 
-<div class="index-row" style="margin-top:32px;">
+      <div
+        style="
+          position:absolute;
+          top:44%;
+          right:30px;
+          transform:translateY(-50%);
+          font-size:15px;
+          color:#d9d9d9;
+          z-index:2;
+        ">
+        <span style="opacity:0.5;">Risk level:</span> 36%
+      </div>
 
-<div class="left">
-<div id="box2"
-style="
-position:relative;
-width:180px;
-height:180px;
-background:url('/assets/img/background-blue.svg') no-repeat;
-background-size:180px 180px;
-font-family: system-ui, -apple-system, sans-serif;
-">
+      <svg class="dot-layer" viewBox="0 0 450 150" xmlns="http://www.w3.org/2000/svg">
+        <circle id="dotOuter2" cx="34" cy="118" r="9" fill="#323232ff"/>
+        <circle id="dotInner2" cx="34" cy="118" r="6" fill="#ffffff"/>
+      </svg>
+    </div>
+  </div>
 
-<div style="
-position:absolute;
-top:14px;
-width:100%;
-text-align:left;
-padding-left:13px;
-padding-right:11px;
-font-size:14px;
-font-weight:500;
-color:#d9d9d9;
-line-height:1.2;
-">
-EXAMPLE<br>
-Navigation Index
-</div>
+  <!-- BOX 3 -->
+  <div>
+    <div id="box3" class="index-box" style="background-image:url('/assets/img/bar-scale-grey.svg');">
+      <div class="box-title">Navigation Index — Grey</div>
 
-<div id="centerValue2" style="
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-font-size:48px;
-font-weight:600;
-color:#ffffff;
-line-height:1;
-">
---
-</div>
+      <div
+        style="
+          position:absolute;
+          left:33.75px;
+          top:88px;
+          width:382.5px;
+          display:flex;
+          font-size:13px;
+          color:#d9d9d9;
+          opacity:0.5;
+          letter-spacing:0.02em;
+          z-index:2;
+          pointer-events:none;
+        ">
+        <span style="flex:1;text-align:center;">Entry</span>
+        <span style="flex:1;text-align:center;">Scale In</span>
+        <span style="flex:1;text-align:center;">Hold / Wait</span>
+        <span style="flex:1;text-align:center;">Reduce</span>
+        <span style="flex:1;text-align:center;">Exit</span>
+      </div>
 
-<div id="bottomText2" style="
-position:absolute;
-bottom:11px;
-width:100%;
-text-align:center;
-font-size:14px;
-color:#d9d9d9;
-">
---
-</div>
+      <div
+        id="val3"
+        style="
+          position:absolute;
+          top:44%;
+          left:30px;
+          transform:translateY(-50%);
+          font-size:17px;
+          font-weight:500;
+          color:#d9d9d9;
+          z-index:2;
+        ">
+        –
+      </div>
 
-<svg
-width="100%"
-height="100%"
-viewBox="0 0 180 180"
-style="position:absolute;left:0;top:0;pointer-events:none;"
-xmlns="http://www.w3.org/2000/svg">
-<circle id="dotOuter2" cx="23" cy="132" r="12" fill="#323232ff"/>
-<circle id="dotInner2" cx="23" cy="132" r="8" fill="#ffffff"/>
-</svg>
+      <div
+        style="
+          position:absolute;
+          top:44%;
+          right:30px;
+          transform:translateY(-50%);
+          font-size:15px;
+          color:#d9d9d9;
+          z-index:2;
+        ">
+        <span style="opacity:0.5;">Risk level:</span> 75%
+      </div>
 
-</div>
-</div>
-
-<div class="right">
-<p>
-This second index focuses on an additional market dimension,
-using the same scale for consistent positioning.
-</p>
-
-<p>
-It is designed to update slowly, reinforcing long-term
-orientation over short-term noise.
-</p>
-</div>
-
-</div>
-
-
-<div class="index-row" style="margin-top:32px;">
-
-<div class="left">
-<div id="box3"
-style="
-position:relative;
-width:180px;
-height:180px;
-background:url('/assets/img/background-grey.svg') no-repeat;
-background-size:180px 180px;
-font-family: system-ui, -apple-system, sans-serif;
-">
-
-<div style="
-position:absolute;
-top:14px;
-width:100%;
-text-align:left;
-padding-left:13px;
-padding-right:11px;
-font-size:14px;
-font-weight:500;
-color:#d9d9d9;
-line-height:1.2;
-">
-EXAMPLE<br>
-Navigation Index
-</div>
-
-<div id="centerValue3" style="
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-font-size:48px;
-font-weight:600;
-color:#ffffff;
-line-height:1;
-">
---
-</div>
-
-<div id="bottomText3" style="
-position:absolute;
-bottom:11px;
-width:100%;
-text-align:center;
-font-size:14px;
-color:#d9d9d9;
-">
---
-</div>
-
-<svg
-width="100%"
-height="100%"
-viewBox="0 0 180 180"
-style="position:absolute;left:0;top:0;pointer-events:none;"
-xmlns="http://www.w3.org/2000/svg">
-<circle id="dotOuter3" cx="23" cy="132" r="12" fill="#323232ff"/>
-<circle id="dotInner3" cx="23" cy="132" r="8" fill="#ffffff"/>
-</svg>
-
-</div>
-</div>
-
-<div class="right">
-<p>
-This third index completes the initial set of indicators.
-It follows the same visual scale while expressing a distinct
-interpretation layer.
-</p>
-
-<p>
-Together with the other boxes, it enables side-by-side
-comparison across different market dimensions.
-</p>
-</div>
+      <svg class="dot-layer" viewBox="0 0 450 150" xmlns="http://www.w3.org/2000/svg">
+        <circle id="dotOuter3" cx="34" cy="118" r="9" fill="#323232ff"/>
+        <circle id="dotInner3" cx="34" cy="118" r="6" fill="#ffffff"/>
+      </svg>
+    </div>
+  </div>
 
 </div>
 
+<style>
+  .indexes{
+    display:flex;
+    flex-direction:column;
+  }
+
+  .index-box{
+    position:relative;
+    width:450px;
+    height:150px;
+    background-repeat:no-repeat;
+    background-size:450px 150px;
+    font-family:system-ui,-apple-system,sans-serif;
+  }
+
+  .box-title{
+    position:absolute;
+    top:18px;
+    left:30px;
+    right:17px;
+    font-size:15px;
+    font-weight:500;
+    color:#d9d9d9;
+    line-height:1.2;
+    z-index:2;
+  }
+
+  .dot-layer{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    z-index:1;
+  }
+</style>
 
 <script>
-/* ---- Scales / Descriptions ---- */
+function setValue(boxId, x){
+  const n = Number(x);
+  if (!Number.isFinite(n)) return;
 
-const descriptions = {
-  box1: [
-    { max: 19, label: "Entry" },
-    { max: 39, label: "Accumulating" },
-    { max: 59, label: "Hold" },
-    { max: 79, label: "Conviction Hold" },
-    { max: 100, label: "HODL" }
-  ],
-  box2: [
-    { max: 19, label: "Entry" },
-    { max: 39, label: "Probe Entry / Scaling In" },
-    { max: 59, label: "Hold / Wait" },
-    { max: 79, label: "Scaling Out" },
-    { max: 100, label: "Exit" }
-  ],
-  box3: [
-    { max: 19, label: "Entry" },
-    { max: 39, label: "Probe Entry / Scaling In" },
-    { max: 59, label: "Hold / Wait" },
-    { max: 79, label: "Scaling Out" },
-    { max: 100, label: "Exit" }
-  ]
-};
+  const pct = Math.max(0, Math.min(100, n));
+  const TOTAL = 25;
+  const step = Math.round((pct / 100) * (TOTAL - 1)) + 1;
 
-function labelFromX(boxKey, x){
-  const steps = descriptions[boxKey] || [];
-  for (const step of steps){
-    if (x <= step.max) return step.label;
-  }
-  return "--";
-}
+  const START = 34;
+  const END   = 416;
+  const BIN   = (END - START) / TOTAL;
 
-/* ---- UI update ---- */
-
-function setValue(boxKey, boxId, x){
-  x = Math.max(0, Math.min(100, Number(x)));
-  const xr = Math.round(x);
-
-  const LEFT = 23;
-  const RANGE = 134;
-  const cx = LEFT + (xr / 100) * RANGE;
+  const cx = START + (step - 0.5) * BIN;
 
   const outer = document.getElementById("dotOuter" + boxId);
   const inner = document.getElementById("dotInner" + boxId);
+  const val   = document.getElementById("val" + boxId);
+
   if (outer) outer.setAttribute("cx", cx);
   if (inner) inner.setAttribute("cx", cx);
-
-  const center = document.getElementById("centerValue" + boxId);
-  if (center) center.textContent = String(xr).padStart(2, "0");
-
-  const bottom = document.getElementById("bottomText" + boxId);
-  if (bottom) bottom.textContent = labelFromX(boxKey, xr);
+  if (val)   val.textContent = step + "/" + TOTAL;
 }
 
-/* ---- Data load (cache + fetch) ---- */
-
 (function () {
-  const KEY = "indexes_cache_v1";
+  const KEY = "dashboard_indexes_cache_v1";
 
   function readCache(){
     try{
@@ -316,22 +272,22 @@ function setValue(boxKey, boxId, x){
     const cached = readCache();
 
     if (cached && cached.boxes){
-      if (cached.boxes.box1 !== undefined) setValue("box1", 1, cached.boxes.box1);
-      if (cached.boxes.box2 !== undefined) setValue("box2", 2, cached.boxes.box2);
-      if (cached.boxes.box3 !== undefined) setValue("box3", 3, cached.boxes.box3);
+      if (cached.boxes.box1 !== undefined) setValue(1, cached.boxes.box1);
+      if (cached.boxes.box2 !== undefined) setValue(2, cached.boxes.box2);
+      if (cached.boxes.box3 !== undefined) setValue(3, cached.boxes.box3);
     }
 
     try{
       const res = await fetch('/data/indexes.json', { cache: 'no-store' });
       if (!res.ok) return;
-      const data = await res.json();
 
+      const data = await res.json();
       const sig = String(data.updated_utc || "");
       if (cached && cached.sig === sig) return;
 
-      setValue("box1", 1, data.box1);
-      setValue("box2", 2, data.box2);
-      setValue("box3", 3, data.box3);
+      if ("box1" in data) setValue(1, data.box1);
+      if ("box2" in data) setValue(2, data.box2);
+      if ("box3" in data) setValue(3, data.box3);
 
       writeCache({
         sig,
