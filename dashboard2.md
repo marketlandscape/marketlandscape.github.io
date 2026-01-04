@@ -55,7 +55,7 @@
           color:#d9d9d9;
           z-index:2;
         ">
-        Risk level: 75%
+        Risk level: 24%
       </div>
 
       <!-- dot layer -->
@@ -117,7 +117,7 @@
           color:#d9d9d9;
           z-index:2;
         ">
-        Risk level: 75%
+        Risk level: 36%
       </div>
 
       <svg class="dot-layer" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
