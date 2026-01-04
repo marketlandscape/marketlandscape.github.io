@@ -1,4 +1,5 @@
 <!-- Simplified layout: three stacked 540×180 boxes with moving dot -->
+
 <div class="indexes">
 
   <!-- BOX 1 -->
@@ -16,7 +17,7 @@
           display:flex;
           font-size:15px;
           color:#d9d9d9;
-          opacity:0.6;
+          opacity:0.5;
           letter-spacing:0.02em;
           z-index:2;
           pointer-events:none;
@@ -55,7 +56,7 @@
           color:#d9d9d9;
           z-index:2;
         ">
-        Risk level: 24%
+        Risk level: 36%
       </div>
 
       <!-- dot layer -->
@@ -80,7 +81,7 @@
           display:flex;
           font-size:15px;
           color:#d9d9d9;
-          opacity:0.6;
+          opacity:0.5;
           letter-spacing:0.02em;
           z-index:2;
           pointer-events:none;
@@ -117,7 +118,7 @@
           color:#d9d9d9;
           z-index:2;
         ">
-        Risk level: 36%
+        Risk level: 75%
       </div>
 
       <svg class="dot-layer" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
@@ -141,7 +142,7 @@
           display:flex;
           font-size:15px;
           color:#d9d9d9;
-          opacity:0.6;
+          opacity:0.5;
           letter-spacing:0.02em;
           z-index:2;
           pointer-events:none;
@@ -178,7 +179,7 @@
           color:#d9d9d9;
           z-index:2;
         ">
-        Risk level: 75%
+        Risk level: 24%
       </div>
 
       <svg class="dot-layer" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
@@ -229,13 +230,20 @@
 function setValue(boxId, x){
   x = Math.max(0, Math.min(100, Number(x)));
 
-  // Converted scale: 1..25
-  const step = Math.round((x / 100) * 24) + 1;
-  const ratio = (step - 1) / 24;
+  // 25 discrete positions (1..25)
+  const TOTAL = 25;
 
-  const LEFT = 45;
-  const RANGE = 510;
-  const cx = LEFT + ratio * RANGE;
+  // map percent -> step (1..25)
+  const step  = Math.round((x / 100) * (TOTAL - 1)) + 1;
+
+  // anchor the dot to the rectangular scale span (NOT the end circles):
+  // start at the left edge of the first rectangle, end at the right edge of the last rectangle
+  // and place each step at the center of its bin.
+  const START = 45;   // first rect x (left edge)
+  const END   = 555;  // last rect right edge
+  const BIN   = (END - START) / TOTAL;
+
+  const cx = START + (step - 0.5) * BIN;
 
   const outer = document.getElementById("dotOuter" + boxId);
   const inner = document.getElementById("dotInner" + boxId);
@@ -243,7 +251,7 @@ function setValue(boxId, x){
 
   if (outer) outer.setAttribute("cx", cx);
   if (inner) inner.setAttribute("cx", cx);
-  if (val)   val.textContent = step + "/25";
+  if (val)   val.textContent = step + "/" + TOTAL;
 }
 
 (function () {
