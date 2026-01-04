@@ -24,9 +24,9 @@
         ">
         <span style="flex:1;text-align:center;">ENTRY</span>
         <span style="flex:1;text-align:center;">SCALE IN</span>
-        <span style="flex:1;text-align:center;">HOLD/WAIT</span>
-        <span style="flex:1;text-align:center;">REDUCE</span>
-        <span style="flex:1;text-align:center;">EXIT</span>
+        <span style="flex:1;text-align:center;">HOLD</span>
+        <span style="flex:1;text-align:center;">CONVICTION</span>
+        <span style="flex:1;text-align:center;">HODL</span>
       </div>
 
       <!-- value (left) -->
