@@ -36,6 +36,7 @@
     flex-direction:column;
     gap:20px;
   }
+
   .index-box{
     position:relative;
     width:540px;
@@ -44,17 +45,19 @@
     background-size:540px 180px;
     font-family:system-ui,-apple-system,sans-serif;
   }
+
   .box-title{
     position:absolute;
-    top:14px;
-    left:13px;
-    right:13px;
+    top:32px;        /* lowered */
+    left:45px;       /* aligned with bar start */
+    right:20px;
     font-size:14px;
     font-weight:500;
     color:#d9d9d9;
     line-height:1.2;
     z-index:2;
   }
+
   .dot-layer{
     position:absolute;
     left:0;
@@ -146,4 +149,3 @@ function setValue(boxId, x){
   }
 })();
 </script>
-
