@@ -1,136 +1,192 @@
 <!-- Simplified layout: three stacked 540×180 boxes with moving dot -->
+
 <div class="indexes">
 
   <!-- BOX 1 -->
-  <div id="box1" class="index-box" style="background-image:url('/assets/img/bar-scale-yellow.svg');">
-    <div class="box-title">Navigation Index — Yellow</div>
+  <div style="margin-bottom:32px;">
+    <div id="box1" class="index-box" style="background-image:url('/assets/img/bar-scale-yellow.svg');">
+      <div class="box-title">Navigation Index — Yellow</div>
 
-    <!-- scale zones -->
-    <div id="zones1"
-         style="
-           position:absolute;
-           left:40.5px;
-           top:108px;
-           width:459px;
-           display:flex;
-           font-size:13px;
-           color:#d9d9d9;
-           opacity:0.5;
-           letter-spacing:0.02em;
-           z-index:2;
-           pointer-events:none;
-         ">
-      <span style="flex:1;text-align:center;">ENTRY</span>
-      <span style="flex:1;text-align:center;">SCALE IN</span>
-      <span style="flex:1;text-align:center;">HOLD/WAIT</span>
-      <span style="flex:1;text-align:center;">REDUCE</span>
-      <span style="flex:1;text-align:center;">EXIT</span>
+      <!-- scale zones -->
+      <div
+        style="
+          position:absolute;
+          left:40.5px;
+          top:108px;
+          width:459px;
+          display:flex;
+          font-size:13px;
+          color:#d9d9d9;
+          opacity:0.5;
+          letter-spacing:0.02em;
+          z-index:2;
+          pointer-events:none;
+        ">
+        <span style="flex:1;text-align:center;">ENTRY</span>
+        <span style="flex:1;text-align:center;">SCALE IN</span>
+        <span style="flex:1;text-align:center;">HOLD/WAIT</span>
+        <span style="flex:1;text-align:center;">REDUCE</span>
+        <span style="flex:1;text-align:center;">EXIT</span>
+      </div>
+
+      <!-- value (left) -->
+      <div
+        id="val1"
+        style="
+          position:absolute;
+          top:44%;
+          left:36px;
+          transform:translateY(-50%);
+          font-size:18px;
+          font-weight:600;
+          color:#d9d9d9;
+          z-index:2;
+        ">
+        –
+      </div>
+
+      <!-- placeholder value (right) -->
+      <div
+        style="
+          position:absolute;
+          top:44%;
+          right:36px;
+          transform:translateY(-50%);
+          font-size:15px;
+          color:#d9d9d9;
+          z-index:2;
+        ">
+        Risk level: 75%
+      </div>
+
+      <!-- dot layer -->
+      <svg class="dot-layer" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+        <circle id="dotOuter1" cx="45" cy="157" r="12" fill="#323232ff"/>
+        <circle id="dotInner1" cx="45" cy="157" r="8" fill="#ffffff"/>
+      </svg>
     </div>
-
-    <!-- value -->
-    <div id="val1"
-         style="
-           position:absolute;
-           top:44%;
-           left:36px;
-           transform:translateY(-50%);
-           font-size:18px;
-           font-weight:600;
-           color:#ffffff;
-           z-index:2;
-         ">–</div>
-
-    <!-- dot layer -->
-    <svg class="dot-layer" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
-      <circle id="dotOuter1" cx="45" cy="157" r="12" fill="#323232ff"/>
-      <circle id="dotInner1" cx="45" cy="157" r="8" fill="#ffffff"/>
-    </svg>
   </div>
 
   <!-- BOX 2 -->
-  <div id="box2" class="index-box" style="background-image:url('/assets/img/bar-scale-blue.svg');">
-    <div class="box-title">Navigation Index — Blue</div>
+  <div style="margin-bottom:32px;">
+    <div id="box2" class="index-box" style="background-image:url('/assets/img/bar-scale-blue.svg');">
+      <div class="box-title">Navigation Index — Blue</div>
 
-    <div id="zones2"
-         style="
-           position:absolute;
-           left:40.5px;
-           top:108px;
-           width:459px;
-           display:flex;
-           font-size:13px;
-           color:#d9d9d9;
-           opacity:0.5;
-           letter-spacing:0.02em;
-           z-index:2;
-           pointer-events:none;
-         ">
-      <span style="flex:1;text-align:center;">ENTRY</span>
-      <span style="flex:1;text-align:center;">SCALE IN</span>
-      <span style="flex:1;text-align:center;">HOLD/WAIT</span>
-      <span style="flex:1;text-align:center;">REDUCE</span>
-      <span style="flex:1;text-align:center;">EXIT</span>
+      <div
+        style="
+          position:absolute;
+          left:40.5px;
+          top:108px;
+          width:459px;
+          display:flex;
+          font-size:13px;
+          color:#d9d9d9;
+          opacity:0.5;
+          letter-spacing:0.02em;
+          z-index:2;
+          pointer-events:none;
+        ">
+        <span style="flex:1;text-align:center;">ENTRY</span>
+        <span style="flex:1;text-align:center;">SCALE IN</span>
+        <span style="flex:1;text-align:center;">HOLD/WAIT</span>
+        <span style="flex:1;text-align:center;">REDUCE</span>
+        <span style="flex:1;text-align:center;">EXIT</span>
+      </div>
+
+      <div
+        id="val2"
+        style="
+          position:absolute;
+          top:44%;
+          left:36px;
+          transform:translateY(-50%);
+          font-size:18px;
+          font-weight:600;
+          color:#d9d9d9;
+          z-index:2;
+        ">
+        –
+      </div>
+
+      <div
+        style="
+          position:absolute;
+          top:44%;
+          right:36px;
+          transform:translateY(-50%);
+          font-size:15px;
+          color:#d9d9d9;
+          z-index:2;
+        ">
+        Risk level: 75%
+      </div>
+
+      <svg class="dot-layer" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+        <circle id="dotOuter2" cx="45" cy="157" r="12" fill="#323232ff"/>
+        <circle id="dotInner2" cx="45" cy="157" r="8" fill="#ffffff"/>
+      </svg>
     </div>
-
-    <div id="val2"
-         style="
-           position:absolute;
-           top:44%;
-           left:36px;
-           transform:translateY(-50%);
-           font-size:18px;
-           font-weight:600;
-           color:#ffffff;
-           z-index:2;
-         ">–</div>
-
-    <svg class="dot-layer" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
-      <circle id="dotOuter2" cx="45" cy="157" r="12" fill="#323232ff"/>
-      <circle id="dotInner2" cx="45" cy="157" r="8" fill="#ffffff"/>
-    </svg>
   </div>
 
   <!-- BOX 3 -->
-  <div id="box3" class="index-box" style="background-image:url('/assets/img/bar-scale-grey.svg');">
-    <div class="box-title">Navigation Index — Grey</div>
+  <div>
+    <div id="box3" class="index-box" style="background-image:url('/assets/img/bar-scale-grey.svg');">
+      <div class="box-title">Navigation Index — Grey</div>
 
-    <div id="zones3"
-         style="
-           position:absolute;
-           left:40.5px;
-           top:108px;
-           width:459px;
-           display:flex;
-           font-size:13px;
-           color:#d9d9d9;
-           opacity:0.5;
-           letter-spacing:0.02em;
-           z-index:2;
-           pointer-events:none;
-         ">
-      <span style="flex:1;text-align:center;">ENTRY</span>
-      <span style="flex:1;text-align:center;">SCALE IN</span>
-      <span style="flex:1;text-align:center;">HOLD/WAIT</span>
-      <span style="flex:1;text-align:center;">REDUCE</span>
-      <span style="flex:1;text-align:center;">EXIT</span>
+      <div
+        style="
+          position:absolute;
+          left:40.5px;
+          top:108px;
+          width:459px;
+          display:flex;
+          font-size:13px;
+          color:#d9d9d9;
+          opacity:0.5;
+          letter-spacing:0.02em;
+          z-index:2;
+          pointer-events:none;
+        ">
+        <span style="flex:1;text-align:center;">ENTRY</span>
+        <span style="flex:1;text-align:center;">SCALE IN</span>
+        <span style="flex:1;text-align:center;">HOLD/WAIT</span>
+        <span style="flex:1;text-align:center;">REDUCE</span>
+        <span style="flex:1;text-align:center;">EXIT</span>
+      </div>
+
+      <div
+        id="val3"
+        style="
+          position:absolute;
+          top:44%;
+          left:36px;
+          transform:translateY(-50%);
+          font-size:18px;
+          font-weight:600;
+          color:#d9d9d9;
+          z-index:2;
+        ">
+        –
+      </div>
+
+      <div
+        style="
+          position:absolute;
+          top:44%;
+          right:36px;
+          transform:translateY(-50%);
+          font-size:15px;
+          color:#d9d9d9;
+          z-index:2;
+        ">
+        Risk level: 75%
+      </div>
+
+      <svg class="dot-layer" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+        <circle id="dotOuter3" cx="45" cy="157" r="12" fill="#323232ff"/>
+        <circle id="dotInner3" cx="45" cy="157" r="8" fill="#ffffff"/>
+      </svg>
     </div>
-
-    <div id="val3"
-         style="
-           position:absolute;
-           top:44%;
-           left:36px;
-           transform:translateY(-50%);
-           font-size:18px;
-           font-weight:600;
-           color:#ffffff;
-           z-index:2;
-         ">–</div>
-
-    <svg class="dot-layer" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
-      <circle id="dotOuter3" cx="45" cy="157" r="12" fill="#323232ff"/>
-      <circle id="dotInner3" cx="45" cy="157" r="8" fill="#ffffff"/>
-    </svg>
   </div>
 
 </div>
@@ -139,7 +195,6 @@
   .indexes{
     display:flex;
     flex-direction:column;
-    gap:20px;
   }
 
   .index-box{
