@@ -48,8 +48,7 @@
   </div>
 
   <!-- BOX 2 -->
-  <div id="box2" class="index-box"
-       style="background-image:url('/assets/img/bar-scale-blue.svg'); margin-top:-10px;">
+  <div id="box2" class="index-box" style="background-image:url('/assets/img/bar-scale-blue.svg');">
     <div class="box-title">Navigation Index — Blue</div>
 
     <div id="zones2"
@@ -173,18 +172,10 @@
 </style>
 
 <script>
-/*
-  Input: 0..100
-  Converted: 1..20
-  Bar geometry (SVG space):
-    LEFT = 45
-    RANGE = 510
-*/
-
 function setValue(boxId, x){
   x = Math.max(0, Math.min(100, Number(x)));
 
-  const step = Math.round((x / 100) * 19) + 1;   // 1..20
+  const step = Math.round((x / 100) * 19) + 1;
   const ratio = (step - 1) / 19;
 
   const LEFT = 45;
@@ -200,54 +191,18 @@ function setValue(boxId, x){
   if (val)   val.textContent = step + "/20";
 }
 
-/* ---- Data load (cache + fetch) ---- */
 (function () {
   const KEY = "indexes_cache_v1";
 
-  function readCache(){
-    try{
-      const raw = sessionStorage.getItem(KEY);
-      return raw ? JSON.parse(raw) : null;
-    } catch(e){
-      return null;
-    }
-  }
-
-  function writeCache(obj){
-    try{
-      sessionStorage.setItem(KEY, JSON.stringify(obj));
-    } catch(e){}
-  }
-
   async function loadIndexes(){
-    const cached = readCache();
-
-    if (cached && cached.boxes){
-      if (cached.boxes.box1 !== undefined) setValue(1, cached.boxes.box1);
-      if (cached.boxes.box2 !== undefined) setValue(2, cached.boxes.box2);
-      if (cached.boxes.box3 !== undefined) setValue(3, cached.boxes.box3);
-    }
-
     try{
       const res = await fetch('/data/indexes.json', { cache: 'no-store' });
       if (!res.ok) return;
       const data = await res.json();
 
-      const sig = String(data.updated_utc || "");
-      if (cached && cached.sig === sig) return;
-
       setValue(1, data.box1);
       setValue(2, data.box2);
       setValue(3, data.box3);
-
-      writeCache({
-        sig,
-        boxes: {
-          box1: data.box1,
-          box2: data.box2,
-          box3: data.box3
-        }
-      });
     } catch(e){}
   }
 
