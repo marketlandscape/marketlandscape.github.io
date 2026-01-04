@@ -1,9 +1,9 @@
-<!-- Simplified layout: three stacked 540×180 boxes with moving dot -->
+<!-- Simplified layout: three stacked 450×150 boxes with moving dot -->
 
 <div class="indexes">
 
   <!-- BOX 1 -->
-  <div style="margin-bottom:32px;">
+  <div style="margin-bottom:28px;">
     <div id="box1" class="index-box" style="background-image:url('/assets/img/bar-scale-yellow.svg');">
       <div class="box-title">Navigation Index — Yellow</div>
 
@@ -11,11 +11,11 @@
       <div
         style="
           position:absolute;
-          left:40.5px;
-          top:108px;
-          width:459px;
+          left:33.75px;
+          top:90px;
+          width:382.5px;
           display:flex;
-          font-size:15px;
+          font-size:13px;
           color:#d9d9d9;
           opacity:0.5;
           letter-spacing:0.02em;
@@ -35,9 +35,9 @@
         style="
           position:absolute;
           top:44%;
-          left:36px;
+          left:30px;
           transform:translateY(-50%);
-          font-size:20px;
+          font-size:17px;
           font-weight:600;
           color:#d9d9d9;
           z-index:2;
@@ -50,9 +50,9 @@
         style="
           position:absolute;
           top:44%;
-          right:36px;
+          right:30px;
           transform:translateY(-50%);
-          font-size:17px;
+          font-size:15px;
           color:#d9d9d9;
           z-index:2;
         ">
@@ -60,26 +60,26 @@
       </div>
 
       <!-- dot layer -->
-      <svg class="dot-layer" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
-        <circle id="dotOuter1" cx="45" cy="157" r="12" fill="#323232ff"/>
-        <circle id="dotInner1" cx="45" cy="157" r="8" fill="#ffffff"/>
+      <svg class="dot-layer" viewBox="0 0 450 150" xmlns="http://www.w3.org/2000/svg">
+        <circle id="dotOuter1" cx="34" cy="118" r="9" fill="#323232ff"/>
+        <circle id="dotInner1" cx="34" cy="118" r="6" fill="#ffffff"/>
       </svg>
     </div>
   </div>
 
   <!-- BOX 2 -->
-  <div style="margin-bottom:32px;">
+  <div style="margin-bottom:28px;">
     <div id="box2" class="index-box" style="background-image:url('/assets/img/bar-scale-blue.svg');">
       <div class="box-title">Navigation Index — Blue</div>
 
       <div
         style="
           position:absolute;
-          left:40.5px;
-          top:108px;
-          width:459px;
+          left:33.75px;
+          top:90px;
+          width:382.5px;
           display:flex;
-          font-size:15px;
+          font-size:13px;
           color:#d9d9d9;
           opacity:0.5;
           letter-spacing:0.02em;
@@ -98,9 +98,9 @@
         style="
           position:absolute;
           top:44%;
-          left:36px;
+          left:30px;
           transform:translateY(-50%);
-          font-size:20px;
+          font-size:17px;
           font-weight:600;
           color:#d9d9d9;
           z-index:2;
@@ -112,18 +112,18 @@
         style="
           position:absolute;
           top:44%;
-          right:36px;
+          right:30px;
           transform:translateY(-50%);
-          font-size:17px;
+          font-size:15px;
           color:#d9d9d9;
           z-index:2;
         ">
         Risk level: 75%
       </div>
 
-      <svg class="dot-layer" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
-        <circle id="dotOuter2" cx="45" cy="157" r="12" fill="#323232ff"/>
-        <circle id="dotInner2" cx="45" cy="157" r="8" fill="#ffffff"/>
+      <svg class="dot-layer" viewBox="0 0 450 150" xmlns="http://www.w3.org/2000/svg">
+        <circle id="dotOuter2" cx="34" cy="118" r="9" fill="#323232ff"/>
+        <circle id="dotInner2" cx="34" cy="118" r="6" fill="#ffffff"/>
       </svg>
     </div>
   </div>
@@ -136,11 +136,11 @@
       <div
         style="
           position:absolute;
-          left:40.5px;
-          top:108px;
-          width:459px;
+          left:33.75px;
+          top:90px;
+          width:382.5px;
           display:flex;
-          font-size:15px;
+          font-size:13px;
           color:#d9d9d9;
           opacity:0.5;
           letter-spacing:0.02em;
@@ -159,9 +159,9 @@
         style="
           position:absolute;
           top:44%;
-          left:36px;
+          left:30px;
           transform:translateY(-50%);
-          font-size:20px;
+          font-size:17px;
           font-weight:600;
           color:#d9d9d9;
           z-index:2;
@@ -173,18 +173,18 @@
         style="
           position:absolute;
           top:44%;
-          right:36px;
+          right:30px;
           transform:translateY(-50%);
-          font-size:17px;
+          font-size:15px;
           color:#d9d9d9;
           z-index:2;
         ">
         Risk level: 75%
       </div>
 
-      <svg class="dot-layer" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
-        <circle id="dotOuter3" cx="45" cy="157" r="12" fill="#323232ff"/>
-        <circle id="dotInner3" cx="45" cy="157" r="8" fill="#ffffff"/>
+      <svg class="dot-layer" viewBox="0 0 450 150" xmlns="http://www.w3.org/2000/svg">
+        <circle id="dotOuter3" cx="34" cy="118" r="9" fill="#323232ff"/>
+        <circle id="dotInner3" cx="34" cy="118" r="6" fill="#ffffff"/>
       </svg>
     </div>
   </div>
@@ -199,19 +199,19 @@
 
   .index-box{
     position:relative;
-    width:540px;
-    height:180px;
+    width:450px;
+    height:150px;
     background-repeat:no-repeat;
-    background-size:540px 180px;
+    background-size:450px 150px;
     font-family:system-ui,-apple-system,sans-serif;
   }
 
   .box-title{
     position:absolute;
-    top:22px;
-    left:36px;
-    right:20px;
-    font-size:17px;
+    top:18px;
+    left:30px;
+    right:17px;
+    font-size:15px;
     font-weight:500;
     color:#d9d9d9;
     line-height:1.2;
@@ -236,13 +236,13 @@ function setValue(boxId, x){
   // map percent -> step (1..25)
   const step  = Math.round((x / 100) * (TOTAL - 1)) + 1;
 
-  // anchor the dot to the rectangular scale span (NOT the end circles):
-  // start at the left edge of the first rectangle, end at the right edge of the last rectangle
-  // and place each step at the center of its bin.
-  const START = 45;   // first rect x (left edge)
-  const END   = 555;  // last rect right edge
+  // anchor to the rectangular bar span (NOT the end circles)
+  // (values scaled to the 450-wide dot-layer viewBox)
+  const START = 34;   // first bar span start (scaled)
+  const END   = 416;  // last bar span end (scaled)
   const BIN   = (END - START) / TOTAL;
 
+  // center of the selected bar
   const cx = START + (step - 0.5) * BIN;
 
   const outer = document.getElementById("dotOuter" + boxId);
