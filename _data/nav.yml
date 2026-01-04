@@ -1,13 +1,14 @@
-- title: INDEXES
-  url: /
+
 - title: DASHBOARD
   url: /dashboard
 - title: DASHBOARD L
   url: /dashboard-L
-- title: DASHBOARD XL
-  url: /dashboard-XL
+- title: DASHBOARD XL 20
+  url: /dashboard-XL-20
 - title: DASHBOARD XL BW
   url: /dashboard-XL-BW
+- title: INDEXES
+  url: /
 - title: INDEX SCALE GUIDE
   url: /guide
 - title: DESIGN & LOGIC
