@@ -22,10 +22,10 @@
           z-index:2;
           pointer-events:none;
         ">
-        <span style="flex:1;text-align:center;">ENTRY</span>
-        <span style="flex:1;text-align:center;">SCALE IN</span>
-        <span style="flex:1;text-align:center;">HOLD</span>
-        <span style="flex:1;text-align:center;">CONVICTION</span>
+        <span style="flex:1;text-align:center;">Entry</span>
+        <span style="flex:1;text-align:center;">Scale In</span>
+        <span style="flex:1;text-align:center;">Hold</span>
+        <span style="flex:1;text-align:center;">Conviction</span>
         <span style="flex:1;text-align:center;">HODL</span>
       </div>
 
@@ -38,7 +38,7 @@
           left:30px;
           transform:translateY(-50%);
           font-size:17px;
-          font-weight:600;
+          font-weight:500;
           color:#d9d9d9;
           z-index:2;
         ">
@@ -56,7 +56,7 @@
           color:#d9d9d9;
           z-index:2;
         ">
-        Risk level: 75%
+        Risk level: 24%
       </div>
 
       <!-- dot layer -->
@@ -86,11 +86,11 @@
           z-index:2;
           pointer-events:none;
         ">
-        <span style="flex:1;text-align:center;">ENTRY</span>
-        <span style="flex:1;text-align:center;">SCALE IN</span>
-        <span style="flex:1;text-align:center;">HOLD/WAIT</span>
-        <span style="flex:1;text-align:center;">REDUCE</span>
-        <span style="flex:1;text-align:center;">EXIT</span>
+        <span style="flex:1;text-align:center;">Entry</span>
+        <span style="flex:1;text-align:center;">Scale In</span>
+        <span style="flex:1;text-align:center;">Hold / Wait</span>
+        <span style="flex:1;text-align:center;">Reduce</span>
+        <span style="flex:1;text-align:center;">Exit</span>
       </div>
 
       <div
@@ -101,7 +101,7 @@
           left:30px;
           transform:translateY(-50%);
           font-size:17px;
-          font-weight:600;
+          font-weight:500;
           color:#d9d9d9;
           z-index:2;
         ">
@@ -118,7 +118,7 @@
           color:#d9d9d9;
           z-index:2;
         ">
-        Risk level: 75%
+        Risk level: 36%
       </div>
 
       <svg class="dot-layer" viewBox="0 0 450 150" xmlns="http://www.w3.org/2000/svg">
@@ -147,11 +147,11 @@
           z-index:2;
           pointer-events:none;
         ">
-        <span style="flex:1;text-align:center;">ENTRY</span>
-        <span style="flex:1;text-align:center;">SCALE IN</span>
-        <span style="flex:1;text-align:center;">HOLD/WAIT</span>
-        <span style="flex:1;text-align:center;">REDUCE</span>
-        <span style="flex:1;text-align:center;">EXIT</span>
+        <span style="flex:1;text-align:center;">Entry</span>
+        <span style="flex:1;text-align:center;">Scale In</span>
+        <span style="flex:1;text-align:center;">Hold / Wait</span>
+        <span style="flex:1;text-align:center;">Reduce</span>
+        <span style="flex:1;text-align:center;">Exit</span>
       </div>
 
       <div
@@ -162,7 +162,7 @@
           left:30px;
           transform:translateY(-50%);
           font-size:17px;
-          font-weight:600;
+          font-weight:500;
           color:#d9d9d9;
           z-index:2;
         ">
