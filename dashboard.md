@@ -1,18 +1,18 @@
 <!-- Simplified layout: three stacked 540×180 boxes with moving dot -->
 <div class="indexes">
 
+  <!-- BOX 1 -->
   <div id="box1" class="index-box" style="background-image:url('/assets/img/bar-scale-yellow.svg');">
     <div class="box-title">Navigation Index — Yellow</div>
 
-    <!-- scale zone names (editable later per box) -->
+    <!-- scale zones -->
     <div id="zones1"
          style="
            position:absolute;
-           left:45px;
+           left:40.5px;
            top:108px;
-           width:460px;
+           width:459px;
            display:flex;
-           justify-content:space-between;
            font-size:11px;
            font-weight:500;
            color:#d9d9d9;
@@ -20,13 +20,14 @@
            z-index:2;
            pointer-events:none;
          ">
-      <span id="z1_1">ENTRY</span>
-      <span id="z1_2">SCALE IN</span>
-      <span id="z1_3">HOLD/WAIT</span>
-      <span id="z1_4">REDUCE</span>
-      <span id="z1_5">EXIT</span>
+      <span style="flex:1;text-align:center;">ENTRY</span>
+      <span style="flex:1;text-align:center;">SCALE IN</span>
+      <span style="flex:1;text-align:center;">HOLD/WAIT</span>
+      <span style="flex:1;text-align:center;">REDUCE</span>
+      <span style="flex:1;text-align:center;">EXIT</span>
     </div>
 
+    <!-- value -->
     <div id="val1"
          style="
            position:absolute;
@@ -37,28 +38,26 @@
            font-weight:600;
            color:#ffffff;
            z-index:2;
-         ">
-      –
-    </div>
+         ">–</div>
 
-    <svg class="dot-layer" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <!-- dot layer -->
+    <svg class="dot-layer" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
       <circle id="dotOuter1" cx="45" cy="157" r="12" fill="#323232ff"/>
       <circle id="dotInner1" cx="45" cy="157" r="8" fill="#ffffff"/>
     </svg>
   </div>
 
+  <!-- BOX 2 -->
   <div id="box2" class="index-box" style="background-image:url('/assets/img/bar-scale-blue.svg');">
     <div class="box-title">Navigation Index — Blue</div>
 
-    <!-- scale zone names (editable later per box) -->
     <div id="zones2"
          style="
            position:absolute;
-           left:45px;
+           left:40.5px;
            top:108px;
-           width:460px;
+           width:459px;
            display:flex;
-           justify-content:space-between;
            font-size:11px;
            font-weight:500;
            color:#d9d9d9;
@@ -66,11 +65,11 @@
            z-index:2;
            pointer-events:none;
          ">
-      <span id="z2_1">ENTRY</span>
-      <span id="z2_2">SCALE IN</span>
-      <span id="z2_3">HOLD/WAIT</span>
-      <span id="z2_4">REDUCE</span>
-      <span id="z2_5">EXIT</span>
+      <span style="flex:1;text-align:center;">ENTRY</span>
+      <span style="flex:1;text-align:center;">SCALE IN</span>
+      <span style="flex:1;text-align:center;">HOLD/WAIT</span>
+      <span style="flex:1;text-align:center;">REDUCE</span>
+      <span style="flex:1;text-align:center;">EXIT</span>
     </div>
 
     <div id="val2"
@@ -83,28 +82,25 @@
            font-weight:600;
            color:#ffffff;
            z-index:2;
-         ">
-      –
-    </div>
+         ">–</div>
 
-    <svg class="dot-layer" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <svg class="dot-layer" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
       <circle id="dotOuter2" cx="45" cy="157" r="12" fill="#323232ff"/>
       <circle id="dotInner2" cx="45" cy="157" r="8" fill="#ffffff"/>
     </svg>
   </div>
 
+  <!-- BOX 3 -->
   <div id="box3" class="index-box" style="background-image:url('/assets/img/bar-scale-grey.svg');">
     <div class="box-title">Navigation Index — Grey</div>
 
-    <!-- scale zone names (editable later per box) -->
     <div id="zones3"
          style="
            position:absolute;
-           left:45px;
+           left:40.5px;
            top:108px;
-           width:460px;
+           width:459px;
            display:flex;
-           justify-content:space-between;
            font-size:11px;
            font-weight:500;
            color:#d9d9d9;
@@ -112,11 +108,11 @@
            z-index:2;
            pointer-events:none;
          ">
-      <span id="z3_1">ENTRY</span>
-      <span id="z3_2">SCALE IN</span>
-      <span id="z3_3">HOLD/WAIT</span>
-      <span id="z3_4">REDUCE</span>
-      <span id="z3_5">EXIT</span>
+      <span style="flex:1;text-align:center;">ENTRY</span>
+      <span style="flex:1;text-align:center;">SCALE IN</span>
+      <span style="flex:1;text-align:center;">HOLD/WAIT</span>
+      <span style="flex:1;text-align:center;">REDUCE</span>
+      <span style="flex:1;text-align:center;">EXIT</span>
     </div>
 
     <div id="val3"
@@ -129,11 +125,9 @@
            font-weight:600;
            color:#ffffff;
            z-index:2;
-         ">
-      –
-    </div>
+         ">–</div>
 
-    <svg class="dot-layer" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <svg class="dot-layer" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
       <circle id="dotOuter3" cx="45" cy="157" r="12" fill="#323232ff"/>
       <circle id="dotInner3" cx="45" cy="157" r="8" fill="#ffffff"/>
     </svg>
@@ -171,10 +165,7 @@
 
   .dot-layer{
     position:absolute;
-    left:0;
-    top:0;
-    width:100%;
-    height:100%;
+    inset:0;
     pointer-events:none;
     z-index:1;
   }
@@ -183,8 +174,8 @@
 <script>
 /*
   Input: 0..100
-  Display scale: 1..20
-  Geometry:
+  Converted: 1..20
+  Bar geometry (SVG space):
     LEFT = 45
     RANGE = 510
 */
@@ -209,7 +200,6 @@ function setValue(boxId, x){
 }
 
 /* ---- Data load (cache + fetch) ---- */
-
 (function () {
   const KEY = "indexes_cache_v1";
 
