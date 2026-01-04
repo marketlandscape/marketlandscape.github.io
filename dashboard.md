@@ -15,7 +15,7 @@
           top:108px;
           width:459px;
           display:flex;
-          font-size:13px;
+          font-size:15px;
           color:#d9d9d9;
           opacity:0.5;
           letter-spacing:0.02em;
@@ -37,7 +37,7 @@
           top:44%;
           left:36px;
           transform:translateY(-50%);
-          font-size:18px;
+          font-size:20px;
           font-weight:600;
           color:#d9d9d9;
           z-index:2;
@@ -52,7 +52,7 @@
           top:44%;
           right:36px;
           transform:translateY(-50%);
-          font-size:15px;
+          font-size:17px;
           color:#d9d9d9;
           z-index:2;
         ">
@@ -79,7 +79,7 @@
           top:108px;
           width:459px;
           display:flex;
-          font-size:13px;
+          font-size:15px;
           color:#d9d9d9;
           opacity:0.5;
           letter-spacing:0.02em;
@@ -100,7 +100,7 @@
           top:44%;
           left:36px;
           transform:translateY(-50%);
-          font-size:18px;
+          font-size:20px;
           font-weight:600;
           color:#d9d9d9;
           z-index:2;
@@ -114,7 +114,7 @@
           top:44%;
           right:36px;
           transform:translateY(-50%);
-          font-size:15px;
+          font-size:17px;
           color:#d9d9d9;
           z-index:2;
         ">
@@ -140,7 +140,7 @@
           top:108px;
           width:459px;
           display:flex;
-          font-size:13px;
+          font-size:15px;
           color:#d9d9d9;
           opacity:0.5;
           letter-spacing:0.02em;
@@ -161,7 +161,7 @@
           top:44%;
           left:36px;
           transform:translateY(-50%);
-          font-size:18px;
+          font-size:20px;
           font-weight:600;
           color:#d9d9d9;
           z-index:2;
@@ -175,7 +175,7 @@
           top:44%;
           right:36px;
           transform:translateY(-50%);
-          font-size:15px;
+          font-size:17px;
           color:#d9d9d9;
           z-index:2;
         ">
@@ -211,7 +211,7 @@
     top:22px;
     left:36px;
     right:20px;
-    font-size:15px;
+    font-size:17px;
     font-weight:500;
     color:#d9d9d9;
     line-height:1.2;
