@@ -22,10 +22,10 @@
           z-index:2;
           pointer-events:none;
         ">
-        <span style="flex:1;text-align:center;">Entry</span>
-        <span style="flex:1;text-align:center;">Scale In</span>
-        <span style="flex:1;text-align:center;">Hold</span>
-        <span style="flex:1;text-align:center;">Conviction</span>
+        <span style="flex:1;text-align:center;">ENTRY</span>
+        <span style="flex:1;text-align:center;">SCALE IN</span>
+        <span style="flex:1;text-align:center;">HOLD</span>
+        <span style="flex:1;text-align:center;">CONVICTION</span>
         <span style="flex:1;text-align:center;">HODL</span>
       </div>
 
@@ -38,7 +38,7 @@
           left:30px;
           transform:translateY(-50%);
           font-size:17px;
-          font-weight:500;
+          font-weight:600;
           color:#d9d9d9;
           z-index:2;
         ">
@@ -56,11 +56,11 @@
           color:#d9d9d9;
           z-index:2;
         ">
-        Risk level: 24%
+        Risk level: 75%
       </div>
 
       <!-- dot layer -->
-      <svg class="dot-layer" viewBox="0 0 450 150" xmlns="http://www.w3.org/2000/svg">
+      <svg id="dotLayer1" class="dot-layer" viewBox="0 0 450 150" xmlns="http://www.w3.org/2000/svg" style="opacity:0;">
         <circle id="dotOuter1" cx="34" cy="118" r="9" fill="#323232ff"/>
         <circle id="dotInner1" cx="34" cy="118" r="6" fill="#ffffff"/>
       </svg>
@@ -86,11 +86,11 @@
           z-index:2;
           pointer-events:none;
         ">
-        <span style="flex:1;text-align:center;">Entry</span>
-        <span style="flex:1;text-align:center;">Scale In</span>
-        <span style="flex:1;text-align:center;">Hold / Wait</span>
-        <span style="flex:1;text-align:center;">Reduce</span>
-        <span style="flex:1;text-align:center;">Exit</span>
+        <span style="flex:1;text-align:center;">ENTRY</span>
+        <span style="flex:1;text-align:center;">SCALE IN</span>
+        <span style="flex:1;text-align:center;">HOLD/WAIT</span>
+        <span style="flex:1;text-align:center;">REDUCE</span>
+        <span style="flex:1;text-align:center;">EXIT</span>
       </div>
 
       <div
@@ -101,7 +101,7 @@
           left:30px;
           transform:translateY(-50%);
           font-size:17px;
-          font-weight:500;
+          font-weight:600;
           color:#d9d9d9;
           z-index:2;
         ">
@@ -118,10 +118,10 @@
           color:#d9d9d9;
           z-index:2;
         ">
-        Risk level: 36%
+        Risk level: 75%
       </div>
 
-      <svg class="dot-layer" viewBox="0 0 450 150" xmlns="http://www.w3.org/2000/svg">
+      <svg id="dotLayer2" class="dot-layer" viewBox="0 0 450 150" xmlns="http://www.w3.org/2000/svg" style="opacity:0;">
         <circle id="dotOuter2" cx="34" cy="118" r="9" fill="#323232ff"/>
         <circle id="dotInner2" cx="34" cy="118" r="6" fill="#ffffff"/>
       </svg>
@@ -147,11 +147,11 @@
           z-index:2;
           pointer-events:none;
         ">
-        <span style="flex:1;text-align:center;">Entry</span>
-        <span style="flex:1;text-align:center;">Scale In</span>
-        <span style="flex:1;text-align:center;">Hold / Wait</span>
-        <span style="flex:1;text-align:center;">Reduce</span>
-        <span style="flex:1;text-align:center;">Exit</span>
+        <span style="flex:1;text-align:center;">ENTRY</span>
+        <span style="flex:1;text-align:center;">SCALE IN</span>
+        <span style="flex:1;text-align:center;">HOLD/WAIT</span>
+        <span style="flex:1;text-align:center;">REDUCE</span>
+        <span style="flex:1;text-align:center;">EXIT</span>
       </div>
 
       <div
@@ -162,7 +162,7 @@
           left:30px;
           transform:translateY(-50%);
           font-size:17px;
-          font-weight:500;
+          font-weight:600;
           color:#d9d9d9;
           z-index:2;
         ">
@@ -182,7 +182,7 @@
         Risk level: 75%
       </div>
 
-      <svg class="dot-layer" viewBox="0 0 450 150" xmlns="http://www.w3.org/2000/svg">
+      <svg id="dotLayer3" class="dot-layer" viewBox="0 0 450 150" xmlns="http://www.w3.org/2000/svg" style="opacity:0;">
         <circle id="dotOuter3" cx="34" cy="118" r="9" fill="#323232ff"/>
         <circle id="dotInner3" cx="34" cy="118" r="6" fill="#ffffff"/>
       </svg>
@@ -223,54 +223,57 @@
     inset:0;
     pointer-events:none;
     z-index:1;
+    transition:opacity 120ms linear;
   }
 </style>
 
 <script>
+const TOTAL = 25;
+
+// bar-span anchors in the 450×150 dot-layer viewBox
+const START = 34;
+const END   = 416;
+const BIN   = (END - START) / TOTAL;
+
+function setDotCx(boxId, cx){
+  const outer = document.getElementById("dotOuter" + boxId);
+  const inner = document.getElementById("dotInner" + boxId);
+
+  // Avoid needless repaints (some browsers can look like blinking)
+  const prev = outer?.dataset?.cx;
+  const next = String(cx.toFixed(3));
+  if (prev === next) return;
+
+  if (outer){
+    outer.setAttribute("cx", cx);
+    outer.dataset.cx = next;
+  }
+  if (inner) inner.setAttribute("cx", cx);
+}
+
+function showDotLayer(boxId){
+  const layer = document.getElementById("dotLayer" + boxId);
+  if (layer && layer.style.opacity !== "1") layer.style.opacity = "1";
+}
+
 function setValue(boxId, x){
-  x = Math.max(0, Math.min(100, Number(x)));
+  const num = Number(x);
+  if (!Number.isFinite(num)) return; // prevents NaN flashes
 
-  // 25 discrete positions (1..25)
-  const TOTAL = 25;
-
-  // map percent -> step (1..25)
-  const step  = Math.round((x / 100) * (TOTAL - 1)) + 1;
-
-  // anchor to the rectangular bar span (NOT the end circles)
-  // (values scaled to the 450-wide dot-layer viewBox)
-  const START = 34;   // first bar span start (scaled)
-  const END   = 416;  // last bar span end (scaled)
-  const BIN   = (END - START) / TOTAL;
+  const pct  = Math.max(0, Math.min(100, num));
+  const step = Math.round((pct / 100) * (TOTAL - 1)) + 1;
 
   // center of the selected bar
   const cx = START + (step - 0.5) * BIN;
 
-  const outer = document.getElementById("dotOuter" + boxId);
-  const inner = document.getElementById("dotInner" + boxId);
-  const val   = document.getElementById("val" + boxId);
+  setDotCx(boxId, cx);
 
-  if (outer) outer.setAttribute("cx", cx);
-  if (inner) inner.setAttribute("cx", cx);
-  if (val)   val.textContent = step + "/" + TOTAL;
+  const val = document.getElementById("val" + boxId);
+  if (val) val.textContent = step + "/" + TOTAL;
+
+  // reveal only after first valid placement
+  showDotLayer(boxId);
 }
 
 (function () {
-  async function loadIndexes(){
-    try{
-      const res = await fetch('/data/indexes.json', { cache: 'no-store' });
-      if (!res.ok) return;
-      const data = await res.json();
-
-      setValue(1, data.box1);
-      setValue(2, data.box2);
-      setValue(3, data.box3);
-    } catch(e){}
-  }
-
-  if (document.readyState === "loading"){
-    document.addEventListener("DOMContentLoaded", loadIndexes);
-  } else {
-    loadIndexes();
-  }
-})();
-</script>
+  async function
