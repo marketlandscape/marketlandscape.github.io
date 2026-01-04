@@ -4,6 +4,29 @@
   <div id="box1" class="index-box" style="background-image:url('/assets/img/bar-scale-yellow.svg');">
     <div class="box-title">Navigation Index — Yellow</div>
 
+    <!-- scale zone names (editable later per box) -->
+    <div id="zones1"
+         style="
+           position:absolute;
+           left:45px;
+           top:108px;
+           width:460px;
+           display:flex;
+           justify-content:space-between;
+           font-size:11px;
+           font-weight:500;
+           color:#d9d9d9;
+           letter-spacing:0.02em;
+           z-index:2;
+           pointer-events:none;
+         ">
+      <span id="z1_1">ENTRY</span>
+      <span id="z1_2">SCALE IN</span>
+      <span id="z1_3">HOLD/WAIT</span>
+      <span id="z1_4">REDUCE</span>
+      <span id="z1_5">EXIT</span>
+    </div>
+
     <div id="val1"
          style="
            position:absolute;
@@ -27,6 +50,29 @@
   <div id="box2" class="index-box" style="background-image:url('/assets/img/bar-scale-blue.svg');">
     <div class="box-title">Navigation Index — Blue</div>
 
+    <!-- scale zone names (editable later per box) -->
+    <div id="zones2"
+         style="
+           position:absolute;
+           left:45px;
+           top:108px;
+           width:460px;
+           display:flex;
+           justify-content:space-between;
+           font-size:11px;
+           font-weight:500;
+           color:#d9d9d9;
+           letter-spacing:0.02em;
+           z-index:2;
+           pointer-events:none;
+         ">
+      <span id="z2_1">ENTRY</span>
+      <span id="z2_2">SCALE IN</span>
+      <span id="z2_3">HOLD/WAIT</span>
+      <span id="z2_4">REDUCE</span>
+      <span id="z2_5">EXIT</span>
+    </div>
+
     <div id="val2"
          style="
            position:absolute;
@@ -49,6 +95,29 @@
 
   <div id="box3" class="index-box" style="background-image:url('/assets/img/bar-scale-grey.svg');">
     <div class="box-title">Navigation Index — Grey</div>
+
+    <!-- scale zone names (editable later per box) -->
+    <div id="zones3"
+         style="
+           position:absolute;
+           left:45px;
+           top:108px;
+           width:460px;
+           display:flex;
+           justify-content:space-between;
+           font-size:11px;
+           font-weight:500;
+           color:#d9d9d9;
+           letter-spacing:0.02em;
+           z-index:2;
+           pointer-events:none;
+         ">
+      <span id="z3_1">ENTRY</span>
+      <span id="z3_2">SCALE IN</span>
+      <span id="z3_3">HOLD/WAIT</span>
+      <span id="z3_4">REDUCE</span>
+      <span id="z3_5">EXIT</span>
+    </div>
 
     <div id="val3"
          style="
@@ -90,8 +159,8 @@
 
   .box-title{
     position:absolute;
-    top:22px;
-    left:36px;
+    top:32px;
+    left:45px;
     right:20px;
     font-size:14px;
     font-weight:500;
