@@ -4,6 +4,20 @@
   <div id="box1" class="index-box" style="background-image:url('/assets/img/bar-scale-yellow.svg');">
     <div class="box-title">Navigation Index — Yellow</div>
 
+    <div id="val1"
+         style="
+           position:absolute;
+           top:50%;
+           left:45px;
+           transform:translateY(-50%);
+           font-size:18px;
+           font-weight:600;
+           color:#ffffff;
+           z-index:2;
+         ">
+      –
+    </div>
+
     <svg class="dot-layer" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <circle id="dotOuter1" cx="45" cy="157" r="12" fill="#323232ff"/>
       <circle id="dotInner1" cx="45" cy="157" r="8" fill="#ffffff"/>
@@ -13,6 +27,20 @@
   <div id="box2" class="index-box" style="background-image:url('/assets/img/bar-scale-blue.svg');">
     <div class="box-title">Navigation Index — Blue</div>
 
+    <div id="val2"
+         style="
+           position:absolute;
+           top:50%;
+           left:45px;
+           transform:translateY(-50%);
+           font-size:18px;
+           font-weight:600;
+           color:#ffffff;
+           z-index:2;
+         ">
+      –
+    </div>
+
     <svg class="dot-layer" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <circle id="dotOuter2" cx="45" cy="157" r="12" fill="#323232ff"/>
       <circle id="dotInner2" cx="45" cy="157" r="8" fill="#ffffff"/>
@@ -21,6 +49,20 @@
 
   <div id="box3" class="index-box" style="background-image:url('/assets/img/bar-scale-grey.svg');">
     <div class="box-title">Navigation Index — Grey</div>
+
+    <div id="val3"
+         style="
+           position:absolute;
+           top:50%;
+           left:45px;
+           transform:translateY(-50%);
+           font-size:18px;
+           font-weight:600;
+           color:#ffffff;
+           z-index:2;
+         ">
+      –
+    </div>
 
     <svg class="dot-layer" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <circle id="dotOuter3" cx="45" cy="157" r="12" fill="#323232ff"/>
@@ -48,8 +90,8 @@
 
   .box-title{
     position:absolute;
-    top:22px;        /* lowered */
-    left:36px;       /* aligned with bar start */
+    top:22px;
+    left:36px;
     right:20px;
     font-size:14px;
     font-weight:500;
@@ -70,24 +112,31 @@
 </style>
 
 <script>
-/* ---- Dot positioning (matches bar-scale-*.svg geometry) ---- */
 /*
-  Background SVG coordinate system: viewBox 0 0 600 200
-  End circles at cx=45 and cx=555  => LEFT=45, RANGE=510
+  Input: 0..100
+  Display scale: 1..20
+  Geometry:
+    LEFT = 45
+    RANGE = 510
 */
 
 function setValue(boxId, x){
   x = Math.max(0, Math.min(100, Number(x)));
-  const xr = Math.round(x);
+
+  const step = Math.round((x / 100) * 19) + 1;   // 1..20
+  const ratio = (step - 1) / 19;
 
   const LEFT = 45;
   const RANGE = 510;
-  const cx = LEFT + (xr / 100) * RANGE;
+  const cx = LEFT + ratio * RANGE;
 
   const outer = document.getElementById("dotOuter" + boxId);
   const inner = document.getElementById("dotInner" + boxId);
+  const val   = document.getElementById("val" + boxId);
+
   if (outer) outer.setAttribute("cx", cx);
   if (inner) inner.setAttribute("cx", cx);
+  if (val)   val.textContent = step + "/20";
 }
 
 /* ---- Data load (cache + fetch) ---- */
