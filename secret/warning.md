@@ -1,8 +1,7 @@
 ---
-layout: defaul
+layout: default
 permalink: /warning/
 ---
-
 
 <!-- Simplified layout: three stacked 450×150 boxes with moving dot -->
 
