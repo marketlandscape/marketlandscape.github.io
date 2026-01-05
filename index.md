@@ -56,7 +56,8 @@
           color:#d9d9d9;
           z-index:2;
         ">
-        <span style="opacity:0.5;">Risk level:</span> 24%
+        <span style="opacity:0.5;">Risk level:</span>
+        <span id="risk1" style="opacity:0.75;">–%</span>
       </div>
 
       <!-- dot layer -->
@@ -118,7 +119,8 @@
           color:#d9d9d9;
           z-index:2;
         ">
-        <span style="opacity:0.5;">Risk level:</span> 36%
+        <span style="opacity:0.5;">Risk level:</span>
+        <span id="risk2" style="opacity:0.75;">–%</span>
       </div>
 
       <svg class="dot-layer" viewBox="0 0 450 150" xmlns="http://www.w3.org/2000/svg">
@@ -179,7 +181,8 @@
           color:#d9d9d9;
           z-index:2;
         ">
-        <span style="opacity:0.5;">Risk level:</span> 75%
+        <span style="opacity:0.5;">Risk level:</span>
+        <span id="risk3" style="opacity:0.75;">–%</span>
       </div>
 
       <svg class="dot-layer" viewBox="0 0 450 150" xmlns="http://www.w3.org/2000/svg">
@@ -250,8 +253,19 @@ function setValue(boxId, x){
   if (val)   val.textContent = step + "/" + TOTAL;
 }
 
+function setRisk(boxId, r){
+  const n = Number(r);
+  if (!Number.isFinite(n)) return;
+
+  const el = document.getElementById("risk" + boxId);
+  if (!el) return;
+
+  const v = Math.max(0, Math.min(100, n));
+  el.textContent = v.toFixed(1).replace(/\.0$/, "") + "%";
+}
+
 (function () {
-  const KEY = "dashboard_indexes_cache_v1";
+  const KEY = "dashboard_indexes_cache_v2";
 
   function readCache(){
     try{
@@ -269,14 +283,18 @@ function setValue(boxId, x){
   }
 
   function signatureFrom(data){
-    // Prefer global updated_utc if ever present; otherwise use per-box timestamps.
-    // Final fallback: values (ensures updates even if timestamps are missing).
     return String(
       data.updated_utc ||
+      data.box3_risk_updated_utc ||
+      data.box2_risk_updated_utc ||
+      data.box1_risk_updated_utc ||
       data.box3_updated_utc ||
       data.box2_updated_utc ||
       data.box1_updated_utc ||
-      JSON.stringify([data.box1, data.box2, data.box3])
+      JSON.stringify([
+        data.box1, data.box2, data.box3,
+        data.box1_risk, data.box2_risk, data.box3_risk
+      ])
     );
   }
 
@@ -287,6 +305,12 @@ function setValue(boxId, x){
       if (cached.boxes.box1 !== undefined) setValue(1, cached.boxes.box1);
       if (cached.boxes.box2 !== undefined) setValue(2, cached.boxes.box2);
       if (cached.boxes.box3 !== undefined) setValue(3, cached.boxes.box3);
+    }
+
+    if (cached && cached.risks){
+      if (cached.risks.box1_risk !== undefined) setRisk(1, cached.risks.box1_risk);
+      if (cached.risks.box2_risk !== undefined) setRisk(2, cached.risks.box2_risk);
+      if (cached.risks.box3_risk !== undefined) setRisk(3, cached.risks.box3_risk);
     }
 
     try{
@@ -302,12 +326,21 @@ function setValue(boxId, x){
       if ("box2" in data) setValue(2, data.box2);
       if ("box3" in data) setValue(3, data.box3);
 
+      if ("box1_risk" in data) setRisk(1, data.box1_risk);
+      if ("box2_risk" in data) setRisk(2, data.box2_risk);
+      if ("box3_risk" in data) setRisk(3, data.box3_risk);
+
       writeCache({
         sig,
         boxes: {
           box1: data.box1,
           box2: data.box2,
           box3: data.box3
+        },
+        risks: {
+          box1_risk: data.box1_risk,
+          box2_risk: data.box2_risk,
+          box3_risk: data.box3_risk
         }
       });
     } catch(e){}
