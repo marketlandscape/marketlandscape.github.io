@@ -49,7 +49,7 @@ permalink: /risk-range/
         –
       </div>
 
-      <!-- risk level (right): Risk level: 35% (20% → 55%) ⚠ -->
+      <!-- risk level (right): Risk level: 35% (15% → 60%) ⚠ -->
       <div
         style="
           position:absolute;
@@ -63,7 +63,7 @@ permalink: /risk-range/
         ">
         <span style="opacity:0.5;">Risk level:</span>
         <span id="riskVal1" style="opacity:0.75;">–%</span>
-        <span id="riskRange1" style="opacity:0.5;">(20% → 55%)</span>
+        <span id="riskRange1" style="opacity:0.5;">(15% → 60%)</span>
         <span id="warn1" style="opacity:0.5;margin-left:6px;font-size:13px;display:none;">⚠</span>
       </div>
 
@@ -116,7 +116,7 @@ permalink: /risk-range/
         –
       </div>
 
-      <!-- Risk level: 35% (25% → 75%) ⚠ -->
+      <!-- Risk level: 35% (24% → 77%) ⚠ -->
       <div
         style="
           position:absolute;
@@ -130,7 +130,7 @@ permalink: /risk-range/
         ">
         <span style="opacity:0.5;">Risk level:</span>
         <span id="riskVal2" style="opacity:0.75;">–%</span>
-        <span id="riskRange2" style="opacity:0.5;">(25% → 75%)</span>
+        <span id="riskRange2" style="opacity:0.5;">(24% → 77%)</span>
         <span id="warn2" style="opacity:0.5;margin-left:6px;font-size:13px;display:none;">⚠</span>
       </div>
 
@@ -182,7 +182,7 @@ permalink: /risk-range/
         –
       </div>
 
-      <!-- Box3 requested order: Risk level: 35% ⚠ (35% → 85%) -->
+      <!-- Box3 requested order: Risk level: 35% ⚠ (34% → 86%) -->
       <div
         style="
           position:absolute;
@@ -197,7 +197,7 @@ permalink: /risk-range/
         <span style="opacity:0.5;">Risk level:</span>
         <span id="riskVal3" style="opacity:0.75;">–%</span>
         <span id="warn3" style="opacity:0.5;margin-left:6px;font-size:13px;display:none;">⚠</span>
-        <span id="riskRange3" style="opacity:0.5;">(35% → 85%)</span>
+        <span id="riskRange3" style="opacity:0.5;">(34% → 86%)</span>
       </div>
 
       <svg class="dot-layer" viewBox="0 0 450 150" xmlns="http://www.w3.org/2000/svg">
@@ -288,9 +288,9 @@ function setRiskLine(boxId, risk, index){
   const KEY = "secret_dashboard_cache_v1";
 
   const RANGES = {
-    1: { min: 20, max: 55, idxKey: "box1", riskKey: "box1_risk", updKey: "box1_risk_updated_utc" },
-    2: { min: 25, max: 75, idxKey: "box2", riskKey: "box2_risk", updKey: "box2_risk_updated_utc" },
-    3: { min: 35, max: 85, idxKey: "box3", riskKey: "box3_risk", updKey: "box3_risk_updated_utc" },
+    1: { min: 15, max: 60, idxKey: "box1", riskKey: "box1_risk", updKey: "box1_risk_updated_utc" },
+    2: { min: 24, max: 77, idxKey: "box2", riskKey: "box2_risk", updKey: "box2_risk_updated_utc" },
+    3: { min: 34, max: 86, idxKey: "box3", riskKey: "box3_risk", updKey: "box3_risk_updated_utc" },
   };
 
   function readCache(){
