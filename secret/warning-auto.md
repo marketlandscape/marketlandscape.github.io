@@ -12,7 +12,6 @@ permalink: /warning-auto/
     <div id="box1" class="index-box" style="background-image:url('/assets/img/bar-scale-yellow.svg');">
       <div class="box-title">Navigation Index — Yellow</div>
 
-      <!-- scale zones -->
       <div
         style="
           position:absolute;
@@ -34,7 +33,6 @@ permalink: /warning-auto/
         <span style="flex:1;text-align:center;">HODL</span>
       </div>
 
-      <!-- value (left) -->
       <div
         id="val1"
         style="
@@ -50,7 +48,6 @@ permalink: /warning-auto/
         –
       </div>
 
-      <!-- risk level (right) -->
       <div
         style="
           position:absolute;
@@ -64,11 +61,8 @@ permalink: /warning-auto/
         ">
         <span style="opacity:0.5;">Risk level:</span>
         <span id="risk1" style="opacity:0.75;">–%</span>
-        <!-- reserved icon slot (BTC stays hidden permanently) -->
-        <span id="warn1" style="opacity:0.5;margin-left:6px;font-size:13px;visibility:hidden;">⚠</span>
       </div>
 
-      <!-- dot layer -->
       <svg class="dot-layer" viewBox="0 0 450 150" xmlns="http://www.w3.org/2000/svg">
         <circle id="dotOuter1" cx="34" cy="118" r="9" fill="#323232ff"/>
         <circle id="dotInner1" cx="34" cy="118" r="6" fill="#ffffff"/>
@@ -128,10 +122,10 @@ permalink: /warning-auto/
           z-index:2;
           white-space:nowrap;
         ">
+        <!-- reserved slot before label (keeps alignment stable) -->
+        <span id="warn2" style="opacity:0.5;margin-right:6px;font-size:17px;visibility:hidden;">⚠</span>
         <span style="opacity:0.5;">Risk level:</span>
         <span id="risk2" style="opacity:0.75;">–%</span>
-        <!-- reserved icon slot (shown for ETH when index >= 80) -->
-        <span id="warn2" style="opacity:0.5;margin-left:6px;font-size:13px;visibility:hidden;">⚠</span>
       </div>
 
       <svg class="dot-layer" viewBox="0 0 450 150" xmlns="http://www.w3.org/2000/svg">
@@ -145,27 +139,6 @@ permalink: /warning-auto/
   <div>
     <div id="box3" class="index-box" style="background-image:url('/assets/img/bar-scale-grey.svg');">
       <div class="box-title">Navigation Index — Grey</div>
-
-      <div
-        style="
-          position:absolute;
-          left:33.75px;
-          top:88px;
-          width:382.5px;
-          display:flex;
-          font-size:13px;
-          color:#d9d9d9;
-          opacity:0.5;
-          letter-spacing:0.02em;
-          z-index:2;
-          pointer-events:none;
-        ">
-        <span style="flex:1;text-align:center;">Entry</span>
-        <span style="flex:1;text-align:center;">Scale In</span>
-        <span style="flex:1;text-align:center;">Hold / Wait</span>
-        <span style="flex:1;text-align:center;">Reduce</span>
-        <span style="flex:1;text-align:center;">Exit</span>
-      </div>
 
       <div
         id="val3"
@@ -193,10 +166,10 @@ permalink: /warning-auto/
           z-index:2;
           white-space:nowrap;
         ">
+        <!-- reserved slot before label (keeps alignment stable) -->
+        <span id="warn3" style="opacity:0.5;margin-right:6px;font-size:17px;visibility:hidden;">⚠</span>
         <span style="opacity:0.5;">Risk level:</span>
         <span id="risk3" style="opacity:0.75;">–%</span>
-        <!-- reserved icon slot (shown for box3 when index >= 80) -->
-        <span id="warn3" style="opacity:0.5;margin-left:6px;font-size:13px;visibility:hidden;">⚠</span>
       </div>
 
       <svg class="dot-layer" viewBox="0 0 450 150" xmlns="http://www.w3.org/2000/svg">
@@ -270,119 +243,36 @@ function setValue(boxId, x){
 function setRisk(boxId, r){
   const n = Number(r);
   if (!Number.isFinite(n)) return;
-
   const el = document.getElementById("risk" + boxId);
-  if (!el) return;
-
-  const v = Math.round(Math.max(0, Math.min(100, n)));
-  el.textContent = v + "%";
+  if (el) el.textContent = Math.round(n) + "%";
 }
 
-function setWarn(boxId, shouldShow){
+function setWarn(boxId, show){
   const el = document.getElementById("warn" + boxId);
   if (!el) return;
-  // Reserve space always; show/hide without layout shift
-  el.style.visibility = shouldShow ? "visible" : "hidden";
+  // keeps spacing stable (no layout jump)
+  el.style.visibility = show ? "visible" : "hidden";
 }
 
-(function () {
-  const KEY = "dashboard_indexes_cache_v5";
+(function(){
+  fetch("/data/indexes.json",{cache:"no-store"})
+    .then(r=>r.json())
+    .then(d=>{
+      if("box1" in d) setValue(1,d.box1);
+      if("box2" in d) setValue(2,d.box2);
+      if("box3" in d) setValue(3,d.box3);
 
-  function readCache(){
-    try{
-      const raw = sessionStorage.getItem(KEY);
-      return raw ? JSON.parse(raw) : null;
-    } catch(e){
-      return null;
-    }
-  }
+      if("box1_risk" in d) setRisk(1,d.box1_risk);
+      if("box2_risk" in d) setRisk(2,d.box2_risk);
+      if("box3_risk" in d) setRisk(3,d.box3_risk);
 
-  function writeCache(obj){
-    try{
-      sessionStorage.setItem(KEY, JSON.stringify(obj));
-    } catch(e){}
-  }
-
-  function signatureFrom(data){
-    return String(
-      data.box3_risk_updated_utc ||
-      data.box2_risk_updated_utc ||
-      data.box1_risk_updated_utc ||
-      data.box3_updated_utc ||
-      data.box2_updated_utc ||
-      data.box1_updated_utc ||
-      JSON.stringify([
-        data.box1, data.box2, data.box3,
-        data.box1_risk, data.box2_risk, data.box3_risk
-      ])
-    );
-  }
-
-  function applyWarnsFromIndexes(b1, b2, b3){
-    // BTC: always hidden
-    setWarn(1, false);
-    // ETH + Large-caps: show when index enters 80..100 zone
-    setWarn(2, Number.isFinite(Number(b2)) && Number(b2) >= 80);
-    setWarn(3, Number.isFinite(Number(b3)) && Number(b3) >= 80);
-  }
-
-  async function loadIndexes(){
-    const cached = readCache();
-
-    if (cached?.boxes){
-      if (cached.boxes.box1 !== undefined) setValue(1, cached.boxes.box1);
-      if (cached.boxes.box2 !== undefined) setValue(2, cached.boxes.box2);
-      if (cached.boxes.box3 !== undefined) setValue(3, cached.boxes.box3);
-    }
-
-    if (cached?.risks){
-      if (cached.risks.box1_risk !== undefined) setRisk(1, cached.risks.box1_risk);
-      if (cached.risks.box2_risk !== undefined) setRisk(2, cached.risks.box2_risk);
-      if (cached.risks.box3_risk !== undefined) setRisk(3, cached.risks.box3_risk);
-    }
-
-    // apply warning state from cache immediately (no flicker)
-    applyWarnsFromIndexes(cached?.boxes?.box1, cached?.boxes?.box2, cached?.boxes?.box3);
-
-    try{
-      const res = await fetch('/data/indexes.json', { cache: 'no-store' });
-      if (!res.ok) return;
-
-      const data = await res.json();
-      const sig = signatureFrom(data);
-
-      if (cached && cached.sig === sig) return;
-
-      if ("box1" in data) setValue(1, data.box1);
-      if ("box2" in data) setValue(2, data.box2);
-      if ("box3" in data) setValue(3, data.box3);
-
-      if ("box1_risk" in data) setRisk(1, data.box1_risk);
-      if ("box2_risk" in data) setRisk(2, data.box2_risk);
-      if ("box3_risk" in data) setRisk(3, data.box3_risk);
-
-      applyWarnsFromIndexes(data.box1, data.box2, data.box3);
-
-      writeCache({
-        sig,
-        boxes: {
-          box1: data.box1,
-          box2: data.box2,
-          box3: data.box3
-        },
-        risks: {
-          box1_risk: data.box1_risk,
-          box2_risk: data.box2_risk,
-          box3_risk: data.box3_risk
-        }
-      });
-    } catch(e){}
-  }
-
-  if (document.readyState === "loading"){
-    document.addEventListener("DOMContentLoaded", loadIndexes);
-  } else {
-    loadIndexes();
-  }
+      // Warning rule:
+      // show ⚠ when navigation index >= 80, only for box2 and box3
+      const b2 = Number(d.box2);
+      const b3 = Number(d.box3);
+      setWarn(2, Number.isFinite(b2) && b2 >= 80);
+      setWarn(3, Number.isFinite(b3) && b3 >= 80);
+    })
+    .catch(()=>{});
 })();
 </script>
