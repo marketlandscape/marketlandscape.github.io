@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /warning/
+permalink: /warning-after/
 ---
 
 <!-- Simplified layout: three stacked 450×150 boxes with moving dot -->
