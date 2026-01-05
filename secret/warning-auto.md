@@ -122,7 +122,6 @@ permalink: /warning-auto/
           z-index:2;
           white-space:nowrap;
         ">
-        <!-- reserved slot before label (keeps alignment stable) -->
         <span id="warn2" style="opacity:0.5;margin-right:6px;font-size:17px;visibility:hidden;">⚠</span>
         <span style="opacity:0.5;">Risk level:</span>
         <span id="risk2" style="opacity:0.75;">–%</span>
@@ -139,6 +138,28 @@ permalink: /warning-auto/
   <div>
     <div id="box3" class="index-box" style="background-image:url('/assets/img/bar-scale-grey.svg');">
       <div class="box-title">Navigation Index — Grey</div>
+
+      <!-- scale zones (RESTORED) -->
+      <div
+        style="
+          position:absolute;
+          left:33.75px;
+          top:88px;
+          width:382.5px;
+          display:flex;
+          font-size:13px;
+          color:#d9d9d9;
+          opacity:0.5;
+          letter-spacing:0.02em;
+          z-index:2;
+          pointer-events:none;
+        ">
+        <span style="flex:1;text-align:center;">Entry</span>
+        <span style="flex:1;text-align:center;">Scale In</span>
+        <span style="flex:1;text-align:center;">Hold / Wait</span>
+        <span style="flex:1;text-align:center;">Reduce</span>
+        <span style="flex:1;text-align:center;">Exit</span>
+      </div>
 
       <div
         id="val3"
@@ -166,7 +187,6 @@ permalink: /warning-auto/
           z-index:2;
           white-space:nowrap;
         ">
-        <!-- reserved slot before label (keeps alignment stable) -->
         <span id="warn3" style="opacity:0.5;margin-right:6px;font-size:17px;visibility:hidden;">⚠</span>
         <span style="opacity:0.5;">Risk level:</span>
         <span id="risk3" style="opacity:0.75;">–%</span>
@@ -250,7 +270,6 @@ function setRisk(boxId, r){
 function setWarn(boxId, show){
   const el = document.getElementById("warn" + boxId);
   if (!el) return;
-  // keeps spacing stable (no layout jump)
   el.style.visibility = show ? "visible" : "hidden";
 }
 
@@ -266,7 +285,6 @@ function setWarn(boxId, show){
       if("box2_risk" in d) setRisk(2,d.box2_risk);
       if("box3_risk" in d) setRisk(3,d.box3_risk);
 
-      // Warning rule:
       // show ⚠ when navigation index >= 80, only for box2 and box3
       const b2 = Number(d.box2);
       const b3 = Number(d.box3);
