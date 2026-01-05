@@ -7,7 +7,6 @@
     <div id="box1" class="index-box" style="background-image:url('/assets/img/bar-scale-yellow.svg');">
       <div class="box-title">Navigation Index — Yellow</div>
 
-      <!-- scale zones -->
       <div
         style="
           position:absolute;
@@ -29,7 +28,6 @@
         <span style="flex:1;text-align:center;">HODL</span>
       </div>
 
-      <!-- value (left) -->
       <div
         id="val1"
         style="
@@ -45,7 +43,6 @@
         –
       </div>
 
-      <!-- risk level (right) -->
       <div
         style="
           position:absolute;
@@ -60,7 +57,6 @@
         <span id="risk1" style="opacity:0.75;">–%</span>
       </div>
 
-      <!-- dot layer -->
       <svg class="dot-layer" viewBox="0 0 450 150" xmlns="http://www.w3.org/2000/svg">
         <circle id="dotOuter1" cx="34" cy="118" r="9" fill="#323232ff"/>
         <circle id="dotInner1" cx="34" cy="118" r="6" fill="#ffffff"/>
@@ -260,12 +256,12 @@ function setRisk(boxId, r){
   const el = document.getElementById("risk" + boxId);
   if (!el) return;
 
-  const v = Math.max(0, Math.min(100, n));
-  el.textContent = v.toFixed(1).replace(/\.0$/, "") + "%";
+  const v = Math.round(Math.max(0, Math.min(100, n)));
+  el.textContent = v + "%";
 }
 
 (function () {
-  const KEY = "dashboard_indexes_cache_v2";
+  const KEY = "dashboard_indexes_cache_v3";
 
   function readCache(){
     try{
@@ -284,7 +280,6 @@ function setRisk(boxId, r){
 
   function signatureFrom(data){
     return String(
-      data.updated_utc ||
       data.box3_risk_updated_utc ||
       data.box2_risk_updated_utc ||
       data.box1_risk_updated_utc ||
@@ -301,13 +296,13 @@ function setRisk(boxId, r){
   async function loadIndexes(){
     const cached = readCache();
 
-    if (cached && cached.boxes){
+    if (cached?.boxes){
       if (cached.boxes.box1 !== undefined) setValue(1, cached.boxes.box1);
       if (cached.boxes.box2 !== undefined) setValue(2, cached.boxes.box2);
       if (cached.boxes.box3 !== undefined) setValue(3, cached.boxes.box3);
     }
 
-    if (cached && cached.risks){
+    if (cached?.risks){
       if (cached.risks.box1_risk !== undefined) setRisk(1, cached.risks.box1_risk);
       if (cached.risks.box2_risk !== undefined) setRisk(2, cached.risks.box2_risk);
       if (cached.risks.box3_risk !== undefined) setRisk(3, cached.risks.box3_risk);
