@@ -12,6 +12,7 @@ permalink: /warning-auto/
     <div id="box1" class="index-box" style="background-image:url('/assets/img/bar-scale-yellow.svg');">
       <div class="box-title">Navigation Index — Yellow</div>
 
+      <!-- scale zones -->
       <div
         style="
           position:absolute;
@@ -33,6 +34,7 @@ permalink: /warning-auto/
         <span style="flex:1;text-align:center;">HODL</span>
       </div>
 
+      <!-- value (left) -->
       <div
         id="val1"
         style="
@@ -48,6 +50,7 @@ permalink: /warning-auto/
         –
       </div>
 
+      <!-- risk line (right) -->
       <div
         style="
           position:absolute;
@@ -59,10 +62,13 @@ permalink: /warning-auto/
           z-index:2;
           white-space:nowrap;
         ">
+        <!-- reserved warn slot to keep label alignment identical across all boxes -->
+        <span id="warn1" style="opacity:0.5;margin-right:6px;font-size:17px;visibility:hidden;">⚠</span>
         <span style="opacity:0.5;">Risk level:</span>
         <span id="risk1" style="opacity:0.75;">–%</span>
       </div>
 
+      <!-- dot layer -->
       <svg class="dot-layer" viewBox="0 0 450 150" xmlns="http://www.w3.org/2000/svg">
         <circle id="dotOuter1" cx="34" cy="118" r="9" fill="#323232ff"/>
         <circle id="dotInner1" cx="34" cy="118" r="6" fill="#ffffff"/>
@@ -75,6 +81,7 @@ permalink: /warning-auto/
     <div id="box2" class="index-box" style="background-image:url('/assets/img/bar-scale-blue.svg');">
       <div class="box-title">Navigation Index — Blue</div>
 
+      <!-- scale zones -->
       <div
         style="
           position:absolute;
@@ -96,6 +103,7 @@ permalink: /warning-auto/
         <span style="flex:1;text-align:center;">Exit</span>
       </div>
 
+      <!-- value (left) -->
       <div
         id="val2"
         style="
@@ -111,6 +119,7 @@ permalink: /warning-auto/
         –
       </div>
 
+      <!-- risk line (right) -->
       <div
         style="
           position:absolute;
@@ -127,6 +136,7 @@ permalink: /warning-auto/
         <span id="risk2" style="opacity:0.75;">–%</span>
       </div>
 
+      <!-- dot layer -->
       <svg class="dot-layer" viewBox="0 0 450 150" xmlns="http://www.w3.org/2000/svg">
         <circle id="dotOuter2" cx="34" cy="118" r="9" fill="#323232ff"/>
         <circle id="dotInner2" cx="34" cy="118" r="6" fill="#ffffff"/>
@@ -161,6 +171,7 @@ permalink: /warning-auto/
         <span style="flex:1;text-align:center;">Exit</span>
       </div>
 
+      <!-- value (left) -->
       <div
         id="val3"
         style="
@@ -176,6 +187,7 @@ permalink: /warning-auto/
         –
       </div>
 
+      <!-- risk line (right) -->
       <div
         style="
           position:absolute;
@@ -192,6 +204,7 @@ permalink: /warning-auto/
         <span id="risk3" style="opacity:0.75;">–%</span>
       </div>
 
+      <!-- dot layer -->
       <svg class="dot-layer" viewBox="0 0 450 150" xmlns="http://www.w3.org/2000/svg">
         <circle id="dotOuter3" cx="34" cy="118" r="9" fill="#323232ff"/>
         <circle id="dotInner3" cx="34" cy="118" r="6" fill="#ffffff"/>
@@ -237,18 +250,19 @@ permalink: /warning-auto/
 </style>
 
 <script>
+function clamp(v, lo, hi){ return Math.max(lo, Math.min(hi, v)); }
+
 function setValue(boxId, x){
   const n = Number(x);
   if (!Number.isFinite(n)) return;
 
-  const pct = Math.max(0, Math.min(100, n));
+  const pct = clamp(n, 0, 100);
   const TOTAL = 25;
   const step = Math.round((pct / 100) * (TOTAL - 1)) + 1;
 
   const START = 34;
   const END   = 416;
   const BIN   = (END - START) / TOTAL;
-
   const cx = START + (step - 0.5) * BIN;
 
   const outer = document.getElementById("dotOuter" + boxId);
@@ -264,33 +278,109 @@ function setRisk(boxId, r){
   const n = Number(r);
   if (!Number.isFinite(n)) return;
   const el = document.getElementById("risk" + boxId);
-  if (el) el.textContent = Math.round(n) + "%";
+  if (!el) return;
+  el.textContent = Math.round(clamp(n, 0, 100)) + "%";
 }
 
 function setWarn(boxId, show){
   const el = document.getElementById("warn" + boxId);
   if (!el) return;
+  // no layout jump; alignment is stable because warn1/2/3 always exist
   el.style.visibility = show ? "visible" : "hidden";
 }
 
-(function(){
-  fetch("/data/indexes.json",{cache:"no-store"})
-    .then(r=>r.json())
-    .then(d=>{
-      if("box1" in d) setValue(1,d.box1);
-      if("box2" in d) setValue(2,d.box2);
-      if("box3" in d) setValue(3,d.box3);
+(function () {
+  const KEY = "dashboard_indexes_cache_v6";
 
-      if("box1_risk" in d) setRisk(1,d.box1_risk);
-      if("box2_risk" in d) setRisk(2,d.box2_risk);
-      if("box3_risk" in d) setRisk(3,d.box3_risk);
+  function readCache(){
+    try{
+      const raw = sessionStorage.getItem(KEY);
+      return raw ? JSON.parse(raw) : null;
+    } catch(e){
+      return null;
+    }
+  }
 
-      // show ⚠ when navigation index >= 80, only for box2 and box3
-      const b2 = Number(d.box2);
-      const b3 = Number(d.box3);
-      setWarn(2, Number.isFinite(b2) && b2 >= 80);
-      setWarn(3, Number.isFinite(b3) && b3 >= 80);
-    })
-    .catch(()=>{});
+  function writeCache(obj){
+    try{
+      sessionStorage.setItem(KEY, JSON.stringify(obj));
+    } catch(e){}
+  }
+
+  function signatureFrom(data){
+    return String(
+      data.box3_risk_updated_utc ||
+      data.box2_risk_updated_utc ||
+      data.box1_risk_updated_utc ||
+      data.box3_updated_utc ||
+      data.box2_updated_utc ||
+      data.box1_updated_utc ||
+      JSON.stringify([
+        data.box1, data.box2, data.box3,
+        data.box1_risk, data.box2_risk, data.box3_risk
+      ])
+    );
+  }
+
+  function applyAll(d){
+    // values
+    if (d.box1 !== undefined) setValue(1, d.box1);
+    if (d.box2 !== undefined) setValue(2, d.box2);
+    if (d.box3 !== undefined) setValue(3, d.box3);
+
+    // risks
+    if (d.box1_risk !== undefined) setRisk(1, d.box1_risk);
+    if (d.box2_risk !== undefined) setRisk(2, d.box2_risk);
+    if (d.box3_risk !== undefined) setRisk(3, d.box3_risk);
+
+    // warnings: only box2 & box3 when nav index >= 80; BTC always hidden
+    setWarn(1, false);
+    const b2 = Number(d.box2);
+    const b3 = Number(d.box3);
+    setWarn(2, Number.isFinite(b2) && b2 >= 80);
+    setWarn(3, Number.isFinite(b3) && b3 >= 80);
+  }
+
+  async function load(){
+    const cached = readCache();
+
+    // paint cached immediately (prevents flicker / jump)
+    if (cached) applyAll(cached);
+
+    try{
+      const res = await fetch("/data/indexes.json", { cache: "no-store" });
+      if (!res.ok) return;
+
+      const data = await res.json();
+      const sig = signatureFrom(data);
+
+      if (cached && cached.sig === sig) return;
+
+      applyAll(data);
+
+      writeCache({
+        sig,
+        box1: data.box1,
+        box2: data.box2,
+        box3: data.box3,
+        box1_risk: data.box1_risk,
+        box2_risk: data.box2_risk,
+        box3_risk: data.box3_risk,
+        box1_risk_updated_utc: data.box1_risk_updated_utc,
+        box2_risk_updated_utc: data.box2_risk_updated_utc,
+        box3_risk_updated_utc: data.box3_risk_updated_utc,
+        box1_updated_utc: data.box1_updated_utc,
+        box2_updated_utc: data.box2_updated_utc,
+        box3_updated_utc: data.box3_updated_utc
+      });
+    } catch(e){}
+  }
+
+  if (document.readyState === "loading"){
+    document.addEventListener("DOMContentLoaded", load);
+  } else {
+    load();
+  }
 })();
 </script>
+
