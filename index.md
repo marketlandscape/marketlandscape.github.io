@@ -268,6 +268,18 @@ function setValue(boxId, x){
     } catch(e){}
   }
 
+  function signatureFrom(data){
+    // Prefer global updated_utc if ever present; otherwise use per-box timestamps.
+    // Final fallback: values (ensures updates even if timestamps are missing).
+    return String(
+      data.updated_utc ||
+      data.box3_updated_utc ||
+      data.box2_updated_utc ||
+      data.box1_updated_utc ||
+      JSON.stringify([data.box1, data.box2, data.box3])
+    );
+  }
+
   async function loadIndexes(){
     const cached = readCache();
 
@@ -282,7 +294,8 @@ function setValue(boxId, x){
       if (!res.ok) return;
 
       const data = await res.json();
-      const sig = String(data.updated_utc || "");
+      const sig = signatureFrom(data);
+
       if (cached && cached.sig === sig) return;
 
       if ("box1" in data) setValue(1, data.box1);
