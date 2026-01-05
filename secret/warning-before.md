@@ -61,7 +61,6 @@ permalink: /warning-before/
         ">
         <span style="opacity:0.5;">Risk level:</span>
         <span id="risk1" style="opacity:0.75;">–%</span>
-        <span style="opacity:0.5;margin-left:6px;font-size:17px;visibility:hidden;">⚠</span>
       </div>
 
       <svg class="dot-layer" viewBox="0 0 450 150" xmlns="http://www.w3.org/2000/svg">
@@ -125,7 +124,6 @@ permalink: /warning-before/
         ">
         <span style="opacity:0.5;">Risk level:</span>
         <span id="risk2" style="opacity:0.75;">–%</span>
-        <span style="opacity:0.5;margin-left:6px;font-size:17px;visibility:hidden;">⚠</span>
       </div>
 
       <svg class="dot-layer" viewBox="0 0 450 150" xmlns="http://www.w3.org/2000/svg">
@@ -139,27 +137,6 @@ permalink: /warning-before/
   <div>
     <div id="box3" class="index-box" style="background-image:url('/assets/img/bar-scale-grey.svg');">
       <div class="box-title">Navigation Index — Grey</div>
-
-      <div
-        style="
-          position:absolute;
-          left:33.75px;
-          top:88px;
-          width:382.5px;
-          display:flex;
-          font-size:13px;
-          color:#d9d9d9;
-          opacity:0.5;
-          letter-spacing:0.02em;
-          z-index:2;
-          pointer-events:none;
-        ">
-        <span style="flex:1;text-align:center;">Entry</span>
-        <span style="flex:1;text-align:center;">Scale In</span>
-        <span style="flex:1;text-align:center;">Hold / Wait</span>
-        <span style="flex:1;text-align:center;">Reduce</span>
-        <span style="flex:1;text-align:center;">Exit</span>
-      </div>
 
       <div
         id="val3"
@@ -187,8 +164,8 @@ permalink: /warning-before/
           z-index:2;
           white-space:nowrap;
         ">
+        <span style="opacity:0.5;margin-right:6px;font-size:17px;">⚠</span>
         <span style="opacity:0.5;">Risk level:</span>
-        <span style="opacity:0.5;margin-left:6px;font-size:17px;visibility:visible;">⚠</span>
         <span id="risk3" style="opacity:0.75;">–%</span>
       </div>
 
@@ -263,99 +240,20 @@ function setValue(boxId, x){
 function setRisk(boxId, r){
   const n = Number(r);
   if (!Number.isFinite(n)) return;
-
   const el = document.getElementById("risk" + boxId);
-  if (!el) return;
-
-  const v = Math.round(Math.max(0, Math.min(100, n)));
-  el.textContent = v + "%";
+  if (el) el.textContent = Math.round(n) + "%";
 }
 
-(function () {
-  const KEY = "dashboard_indexes_cache_v3";
-
-  function readCache(){
-    try{
-      const raw = sessionStorage.getItem(KEY);
-      return raw ? JSON.parse(raw) : null;
-    } catch(e){
-      return null;
-    }
-  }
-
-  function writeCache(obj){
-    try{
-      sessionStorage.setItem(KEY, JSON.stringify(obj));
-    } catch(e){}
-  }
-
-  function signatureFrom(data){
-    return String(
-      data.box3_risk_updated_utc ||
-      data.box2_risk_updated_utc ||
-      data.box1_risk_updated_utc ||
-      data.box3_updated_utc ||
-      data.box2_updated_utc ||
-      data.box1_updated_utc ||
-      JSON.stringify([
-        data.box1, data.box2, data.box3,
-        data.box1_risk, data.box2_risk, data.box3_risk
-      ])
-    );
-  }
-
-  async function loadIndexes(){
-    const cached = readCache();
-
-    if (cached?.boxes){
-      if (cached.boxes.box1 !== undefined) setValue(1, cached.boxes.box1);
-      if (cached.boxes.box2 !== undefined) setValue(2, cached.boxes.box2);
-      if (cached.boxes.box3 !== undefined) setValue(3, cached.boxes.box3);
-    }
-
-    if (cached?.risks){
-      if (cached.risks.box1_risk !== undefined) setRisk(1, cached.risks.box1_risk);
-      if (cached.risks.box2_risk !== undefined) setRisk(2, cached.risks.box2_risk);
-      if (cached.risks.box3_risk !== undefined) setRisk(3, cached.risks.box3_risk);
-    }
-
-    try{
-      const res = await fetch('/data/indexes.json', { cache: 'no-store' });
-      if (!res.ok) return;
-
-      const data = await res.json();
-      const sig = signatureFrom(data);
-
-      if (cached && cached.sig === sig) return;
-
-      if ("box1" in data) setValue(1, data.box1);
-      if ("box2" in data) setValue(2, data.box2);
-      if ("box3" in data) setValue(3, data.box3);
-
-      if ("box1_risk" in data) setRisk(1, data.box1_risk);
-      if ("box2_risk" in data) setRisk(2, data.box2_risk);
-      if ("box3_risk" in data) setRisk(3, data.box3_risk);
-
-      writeCache({
-        sig,
-        boxes: {
-          box1: data.box1,
-          box2: data.box2,
-          box3: data.box3
-        },
-        risks: {
-          box1_risk: data.box1_risk,
-          box2_risk: data.box2_risk,
-          box3_risk: data.box3_risk
-        }
-      });
-    } catch(e){}
-  }
-
-  if (document.readyState === "loading"){
-    document.addEventListener("DOMContentLoaded", loadIndexes);
-  } else {
-    loadIndexes();
-  }
+(function(){
+  fetch("/data/indexes.json",{cache:"no-store"})
+    .then(r=>r.json())
+    .then(d=>{
+      if("box1" in d) setValue(1,d.box1);
+      if("box2" in d) setValue(2,d.box2);
+      if("box3" in d) setValue(3,d.box3);
+      if("box1_risk" in d) setRisk(1,d.box1_risk);
+      if("box2_risk" in d) setRisk(2,d.box2_risk);
+      if("box3_risk" in d) setRisk(3,d.box3_risk);
+    });
 })();
 </script>
