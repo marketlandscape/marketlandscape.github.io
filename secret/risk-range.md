@@ -1,8 +1,7 @@
 ---
 layout: default
-permalink: /secret/
+permalink: /risk-range/
 ---
-
 <!-- Secret dashboard: same as index.md, but shows diapason + warning icon -->
 
 <div class="indexes">
