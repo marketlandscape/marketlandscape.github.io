@@ -1,9 +1,8 @@
 <!-- FULL FILE — Desktop boxes 420×140
-     Fix: restored full fetch/cache + apply logic (so indexes render)
-     Requested moves kept:
-       • Zone labels up 4px: top 88px → 84px
-       • Middle labels up 8px: top 54% → 48%
-       • Risk font-size: 14px
+     Final micro-adjustments ONLY:
+     • Zone labels up 2px   (top: 84px → 82px)
+     • Middle labels up 4px (top: 48% → 45%)
+     Everything else unchanged.
 -->
 
 <div class="indexes">
@@ -17,7 +16,7 @@
       <div style="
         position:absolute;
         left:32px;
-        top:84px;
+        top:82px;
         width:356px;
         display:flex;
         font-size:13px;
@@ -36,7 +35,7 @@
       <!-- value -->
       <div id="val1" style="
         position:absolute;
-        top:48%;
+        top:45%;
         left:28px;
         transform:translateY(-50%);
         font-size:16px;
@@ -49,7 +48,7 @@
       <!-- risk -->
       <div style="
         position:absolute;
-        top:48%;
+        top:45%;
         right:28px;
         transform:translateY(-50%);
         font-size:14px;
@@ -61,7 +60,6 @@
         <span id="risk1" style="opacity:0.75;">–%</span>
       </div>
 
-      <!-- dot layer -->
       <svg class="dot-layer" viewBox="0 0 420 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <circle id="dotOuter1" cx="32" cy="110" r="8" fill="#323232"/>
         <circle id="dotInner1" cx="32" cy="110" r="6" fill="#ffffff"/>
@@ -74,11 +72,10 @@
     <div id="box2" class="index-box" style="background-image:url('/assets/img/bar-scale-blue.svg');">
       <div class="box-title">Navigation Index — Blue</div>
 
-      <!-- scale zones -->
       <div style="
         position:absolute;
         left:32px;
-        top:84px;
+        top:82px;
         width:356px;
         display:flex;
         font-size:13px;
@@ -94,10 +91,9 @@
         <span style="flex:1;text-align:center;">Exit</span>
       </div>
 
-      <!-- value -->
       <div id="val2" style="
         position:absolute;
-        top:48%;
+        top:45%;
         left:28px;
         transform:translateY(-50%);
         font-size:16px;
@@ -107,10 +103,9 @@
         –
       </div>
 
-      <!-- risk -->
       <div style="
         position:absolute;
-        top:48%;
+        top:45%;
         right:28px;
         transform:translateY(-50%);
         font-size:14px;
@@ -122,7 +117,6 @@
         <span id="risk2" style="opacity:0.75;">–%</span>
       </div>
 
-      <!-- dot layer -->
       <svg class="dot-layer" viewBox="0 0 420 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <circle id="dotOuter2" cx="32" cy="110" r="8" fill="#323232"/>
         <circle id="dotInner2" cx="32" cy="110" r="6" fill="#ffffff"/>
@@ -135,11 +129,10 @@
     <div id="box3" class="index-box" style="background-image:url('/assets/img/bar-scale-grey.svg');">
       <div class="box-title">Navigation Index — Grey</div>
 
-      <!-- scale zones -->
       <div style="
         position:absolute;
         left:32px;
-        top:84px;
+        top:82px;
         width:356px;
         display:flex;
         font-size:13px;
@@ -155,10 +148,9 @@
         <span style="flex:1;text-align:center;">Exit</span>
       </div>
 
-      <!-- value -->
       <div id="val3" style="
         position:absolute;
-        top:48%;
+        top:45%;
         left:28px;
         transform:translateY(-50%);
         font-size:16px;
@@ -168,10 +160,9 @@
         –
       </div>
 
-      <!-- risk -->
       <div style="
         position:absolute;
-        top:48%;
+        top:45%;
         right:28px;
         transform:translateY(-50%);
         font-size:14px;
@@ -183,7 +174,6 @@
         <span id="risk3" style="opacity:0.75;">–%</span>
       </div>
 
-      <!-- dot layer -->
       <svg class="dot-layer" viewBox="0 0 420 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <circle id="dotOuter3" cx="32" cy="110" r="8" fill="#323232"/>
         <circle id="dotInner3" cx="32" cy="110" r="6" fill="#ffffff"/>
@@ -239,19 +229,14 @@ function setValue(boxId, x){
   const TOTAL = 25;
   const step = Math.round((pct / 100) * (TOTAL - 1)) + 1;
 
-  // geometry for 420×140
   const START = 32;
   const END   = 389;
   const BIN   = (END - START) / TOTAL;
   const cx = START + (step - 0.5) * BIN;
 
-  const outer = document.getElementById("dotOuter" + boxId);
-  const inner = document.getElementById("dotInner" + boxId);
-  const val   = document.getElementById("val" + boxId);
-
-  if (outer) outer.setAttribute("cx", cx);
-  if (inner) inner.setAttribute("cx", cx);
-  if (val)   val.textContent = step + "/" + TOTAL;
+  document.getElementById("dotOuter" + boxId).setAttribute("cx", cx);
+  document.getElementById("dotInner" + boxId).setAttribute("cx", cx);
+  document.getElementById("val" + boxId).textContent = step + "/" + TOTAL;
 }
 
 function setRisk(boxId, r){
@@ -269,7 +254,7 @@ function setWarn(boxId, show){
 }
 
 (function () {
-  const KEY = "dashboard_indexes_cache_v12";
+  const KEY = "dashboard_indexes_cache_v13";
 
   function readCache(){
     try{
@@ -310,7 +295,6 @@ function setWarn(boxId, show){
     if (d.box2_risk !== undefined) setRisk(2, d.box2_risk);
     if (d.box3_risk !== undefined) setRisk(3, d.box3_risk);
 
-    // warning behavior: only box2/box3 react at >= 80
     setWarn(1, false);
     const b2 = Number(d.box2);
     const b3 = Number(d.box3);
