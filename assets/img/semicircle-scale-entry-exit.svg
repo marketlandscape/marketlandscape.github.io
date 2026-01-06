@@ -1,0 +1,59 @@
+<svg width="420" height="420" viewBox="0 0 420 420"
+     xmlns="http://www.w3.org/2000/svg">
+
+  <rect x="0" y="0" width="420" height="420"
+        rx="28" ry="28" fill="#2f2f2fff"/>
+
+  <g id="semicircle-scale" transform="translate(210,345)">
+
+    <path d="M-144 0 A144 144 0 0 1 -116 -86"
+          stroke="#a4c2f4ff" stroke-width="18" fill="none"/>
+    <path d="M-116 -86 A144 144 0 0 1 -45 -137"
+          stroke="#7fa6e8ff" stroke-width="18" fill="none"/>
+    <path d="M-45 -137 A144 144 0 0 1 45 -137"
+          stroke="#5b8adcff" stroke-width="18" fill="none"/>
+    <path d="M45 -137 A144 144 0 0 1 116 -86"
+          stroke="#336fd1ff" stroke-width="18" fill="none"/>
+    <path d="M116 -86 A144 144 0 0 1 144 0"
+          stroke="#1155ccff" stroke-width="18" fill="none"/>
+
+    <circle cx="-144" cy="0" r="9" fill="#a4c2f4ff"/>
+    <circle cx="144"  cy="0" r="9" fill="#1155ccff"/>
+
+    <path id="label-arc"
+          d="M-167 0 A167 167 0 0 1 167 0"
+          fill="none"/>
+
+    <text font-size="17" fill="#e6e6e6ff" fill-opacity="0.5"
+          text-anchor="middle"
+          font-family="Arial, Helvetica, sans-serif">
+      <textPath href="#label-arc" startOffset="10%">Entry</textPath>
+    </text>
+
+    <text font-size="17" fill="#e6e6e6ff" fill-opacity="0.5"
+          text-anchor="middle"
+          font-family="Arial, Helvetica, sans-serif">
+      <textPath href="#label-arc" startOffset="30%">Scale In</textPath>
+    </text>
+
+    <text font-size="17" fill="#e6e6e6ff" fill-opacity="0.5"
+          text-anchor="middle"
+          font-family="Arial, Helvetica, sans-serif">
+      <textPath href="#label-arc" startOffset="50%">Hold / Wait</textPath>
+    </text>
+
+    <text font-size="17" fill="#e6e6e6ff" fill-opacity="0.5"
+          text-anchor="middle"
+          font-family="Arial, Helvetica, sans-serif">
+      <textPath href="#label-arc" startOffset="70%">Reduce</textPath>
+    </text>
+
+    <text font-size="17" fill="#e6e6e6ff" fill-opacity="0.5"
+          text-anchor="middle"
+          font-family="Arial, Helvetica, sans-serif">
+      <textPath href="#label-arc" startOffset="90%">Exit</textPath>
+    </text>
+
+  </g>
+
+</svg>
