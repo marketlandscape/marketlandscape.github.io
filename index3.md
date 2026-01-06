@@ -43,7 +43,7 @@
       <div class="scale-zones">
         <span>Entry</span>
         <span>Scale In</span>
-        <span>Hold / Wait</span>
+        <span>Hold/Wait</span>
         <span>Reduce</span>
         <span>Exit</span>
       </div>
@@ -75,7 +75,7 @@
       <div class="scale-zones">
         <span>Entry</span>
         <span>Scale In</span>
-        <span>Hold / Wait</span>
+        <span>Hold/Wait</span>
         <span>Reduce</span>
         <span>Exit</span>
       </div>
