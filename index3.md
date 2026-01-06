@@ -7,7 +7,6 @@
     <div id="box1" class="index-box" style="background-image:url('/assets/img/high-bar-scale-yellow.svg');">
       <div class="box-title">Navigation Index — Yellow</div>
 
-      <!-- scale zones -->
       <div class="scale-zones">
         <span>Entry</span>
         <span>Scale In</span>
@@ -16,17 +15,14 @@
         <span>HODL</span>
       </div>
 
-      <!-- value (left) -->
       <div id="val1" class="value-left">–</div>
 
-      <!-- risk line (right) -->
       <div class="risk-right">
         <span id="warn1" class="warn">⚠</span>
         <span class="risk-label">Risk level:</span>
         <span id="risk1" class="risk-val">–%</span>
       </div>
 
-      <!-- dot layer -->
       <svg class="dot-layer" viewBox="0 0 405 150" xmlns="http://www.w3.org/2000/svg">
         <circle id="dotOuter1" cx="22.5" cy="121" r="9" fill="#323232ff"/>
         <circle id="dotInner1" cx="22.5" cy="121" r="6" fill="#ffffff"/>
@@ -39,7 +35,6 @@
     <div id="box2" class="index-box" style="background-image:url('/assets/img/high-bar-scale-blue.svg');">
       <div class="box-title">Navigation Index — Blue</div>
 
-      <!-- scale zones -->
       <div class="scale-zones">
         <span>Entry</span>
         <span>Scale In</span>
@@ -48,17 +43,14 @@
         <span>Exit</span>
       </div>
 
-      <!-- value (left) -->
       <div id="val2" class="value-left">–</div>
 
-      <!-- risk line (right) -->
       <div class="risk-right">
         <span id="warn2" class="warn">⚠</span>
         <span class="risk-label">Risk level:</span>
         <span id="risk2" class="risk-val">–%</span>
       </div>
 
-      <!-- dot layer -->
       <svg class="dot-layer" viewBox="0 0 405 150" xmlns="http://www.w3.org/2000/svg">
         <circle id="dotOuter2" cx="22.5" cy="121" r="9" fill="#323232ff"/>
         <circle id="dotInner2" cx="22.5" cy="121" r="6" fill="#ffffff"/>
@@ -71,7 +63,6 @@
     <div id="box3" class="index-box" style="background-image:url('/assets/img/high-bar-scale-grey.svg');">
       <div class="box-title">Navigation Index — Grey</div>
 
-      <!-- scale zones -->
       <div class="scale-zones">
         <span>Entry</span>
         <span>Scale In</span>
@@ -80,17 +71,14 @@
         <span>Exit</span>
       </div>
 
-      <!-- value (left) -->
       <div id="val3" class="value-left">–</div>
 
-      <!-- risk line (right) -->
       <div class="risk-right">
         <span id="warn3" class="warn">⚠</span>
         <span class="risk-label">Risk level:</span>
         <span id="risk3" class="risk-val">–%</span>
       </div>
 
-      <!-- dot layer -->
       <svg class="dot-layer" viewBox="0 0 405 150" xmlns="http://www.w3.org/2000/svg">
         <circle id="dotOuter3" cx="22.5" cy="121" r="9" fill="#323232ff"/>
         <circle id="dotInner3" cx="22.5" cy="121" r="6" fill="#ffffff"/>
@@ -110,11 +98,9 @@
   position:relative;
   width:405px;
   height:150px;
-
   background-repeat:no-repeat;
   background-size:405px 150px;
   background-position:left top;
-
   font-family:system-ui,-apple-system,sans-serif;
 }
 
@@ -131,9 +117,9 @@
 
 .scale-zones{
   position:absolute;
-  left:22.5px;  /* bar region start */
+  left:22.5px;
   top:90px;
-  width:360px;  /* bar region width (382.5 - 22.5) */
+  width:360px;
   display:flex;
   font-size:13px;
   color:#d9d9d9;
@@ -198,10 +184,6 @@ function setValue(boxId, x){
   const TOTAL = 25;
   const step = Math.round((pct / 100) * (TOTAL - 1)) + 1;
 
-  /*
-    Rendered system: 405 × 150
-    Bar region (scaled from SVG): START=22.5, END=382.5 (width 360)
-  */
   const START = 22.5;
   const END   = 382.5;
   const BIN   = (END - START) / TOTAL;
@@ -209,7 +191,9 @@ function setValue(boxId, x){
 
   document.getElementById("dotOuter" + boxId)?.setAttribute("cx", cx);
   document.getElementById("dotInner" + boxId)?.setAttribute("cx", cx);
-  document.getElementById("val" + boxId).textContent = step + "/" + TOTAL;
+
+  document.getElementById("val" + boxId).innerHTML =
+    step + '<span style="opacity:0.5">/' + TOTAL + '</span>';
 }
 
 function setRisk(boxId, r){
