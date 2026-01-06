@@ -11,9 +11,9 @@
       <div
         style="
           position:absolute;
-          left:25px;
-          top:92px;
-          width:400px;
+          left:45px;
+          top:88px;
+          width:360px;
           display:flex;
           font-size:13px;
           color:#d9d9d9;
@@ -24,22 +24,50 @@
         ">
         <span style="flex:1;text-align:center;">Entry</span>
         <span style="flex:1;text-align:center;">Scale In</span>
-        <span style="flex:1;text-align:center;">Adopt</span>
-        <span style="flex:1;text-align:center;">Optimize</span>
-        <span style="flex:1;text-align:center;">Exit</span>
+        <span style="flex:1;text-align:center;">Hold</span>
+        <span style="flex:1;text-align:center;">Conviction</span>
+        <span style="flex:1;text-align:center;">HODL</span>
+      </div>
+
+      <!-- value (left) -->
+      <div
+        id="val1"
+        style="
+          position:absolute;
+          top:44%;
+          left:30px;
+          transform:translateY(-50%);
+          font-size:17px;
+          font-weight:500;
+          color:#d9d9d9;
+          z-index:2;
+        ">
+        –
+      </div>
+
+      <!-- risk line (right) -->
+      <div
+        style="
+          position:absolute;
+          top:44%;
+          right:30px;
+          transform:translateY(-50%);
+          font-size:15px;
+          color:#d9d9d9;
+          z-index:2;
+          white-space:nowrap;
+        ">
+        <!-- reserved warn slot to keep label alignment identical across all boxes -->
+        <span id="warn1" style="opacity:0.5;margin-right:6px;font-size:17px;visibility:hidden;">⚠</span>
+        <span style="opacity:0.5;">Risk level:</span>
+        <span id="risk1" style="opacity:0.75;">–%</span>
       </div>
 
       <!-- dot layer -->
-      <svg class="dot-layer" viewBox="0 0 450 150" preserveAspectRatio="none">
-        <circle id="dot1-outer" cx="34" cy="122" r="10" fill="rgba(0,0,0,0.55)"/>
-        <circle id="dot1-inner" cx="34" cy="122" r="6" fill="#ffffff"/>
+      <svg class="dot-layer" viewBox="0 0 405 150" xmlns="http://www.w3.org/2000/svg">
+        <circle id="dotOuter1" cx="22.5" cy="118" r="9" fill="#323232ff"/>
+        <circle id="dotInner1" cx="22.5" cy="118" r="6" fill="#ffffff"/>
       </svg>
-
-      <!-- bottom values -->
-      <div class="box-value-row">
-        <span class="box-value" id="value1">–</span>
-        <span class="box-risk" id="risk1">–</span>
-      </div>
     </div>
   </div>
 
@@ -52,9 +80,9 @@
       <div
         style="
           position:absolute;
-          left:25px;
-          top:92px;
-          width:400px;
+          left:45px;
+          top:88px;
+          width:360px;
           display:flex;
           font-size:13px;
           color:#d9d9d9;
@@ -65,22 +93,49 @@
         ">
         <span style="flex:1;text-align:center;">Entry</span>
         <span style="flex:1;text-align:center;">Scale In</span>
-        <span style="flex:1;text-align:center;">Adopt</span>
-        <span style="flex:1;text-align:center;">Optimize</span>
+        <span style="flex:1;text-align:center;">Hold / Wait</span>
+        <span style="flex:1;text-align:center;">Reduce</span>
         <span style="flex:1;text-align:center;">Exit</span>
       </div>
 
-      <!-- dot layer -->
-      <svg class="dot-layer" viewBox="0 0 450 150" preserveAspectRatio="none">
-        <circle id="dot2-outer" cx="34" cy="122" r="10" fill="rgba(0,0,0,0.55)"/>
-        <circle id="dot2-inner" cx="34" cy="122" r="6" fill="#ffffff"/>
-      </svg>
-
-      <!-- bottom values -->
-      <div class="box-value-row">
-        <span class="box-value" id="value2">–</span>
-        <span class="box-risk" id="risk2">–</span>
+      <!-- value (left) -->
+      <div
+        id="val2"
+        style="
+          position:absolute;
+          top:44%;
+          left:30px;
+          transform:translateY(-50%);
+          font-size:17px;
+          font-weight:500;
+          color:#d9d9d9;
+          z-index:2;
+        ">
+        –
       </div>
+
+      <!-- risk line (right) -->
+      <div
+        style="
+          position:absolute;
+          top:44%;
+          right:30px;
+          transform:translateY(-50%);
+          font-size:15px;
+          color:#d9d9d9;
+          z-index:2;
+          white-space:nowrap;
+        ">
+        <span id="warn2" style="opacity:0.5;margin-right:6px;font-size:17px;visibility:hidden;">⚠</span>
+        <span style="opacity:0.5;">Risk level:</span>
+        <span id="risk2" style="opacity:0.75;">–%</span>
+      </div>
+
+      <!-- dot layer -->
+      <svg class="dot-layer" viewBox="0 0 405 150" xmlns="http://www.w3.org/2000/svg">
+        <circle id="dotOuter2" cx="22.5" cy="118" r="9" fill="#323232ff"/>
+        <circle id="dotInner2" cx="22.5" cy="118" r="6" fill="#ffffff"/>
+      </svg>
     </div>
   </div>
 
@@ -89,13 +144,13 @@
     <div id="box3" class="index-box" style="background-image:url('/assets/img/high-bar-scale-grey.svg');">
       <div class="box-title">Navigation Index — Grey</div>
 
-      <!-- scale zones -->
+      <!-- scale zones (RESTORED) -->
       <div
         style="
           position:absolute;
-          left:25px;
-          top:92px;
-          width:400px;
+          left:45px;
+          top:88px;
+          width:360px;
           display:flex;
           font-size:13px;
           color:#d9d9d9;
@@ -106,22 +161,49 @@
         ">
         <span style="flex:1;text-align:center;">Entry</span>
         <span style="flex:1;text-align:center;">Scale In</span>
-        <span style="flex:1;text-align:center;">Adopt</span>
-        <span style="flex:1;text-align:center;">Optimize</span>
+        <span style="flex:1;text-align:center;">Hold / Wait</span>
+        <span style="flex:1;text-align:center;">Reduce</span>
         <span style="flex:1;text-align:center;">Exit</span>
       </div>
 
-      <!-- dot layer -->
-      <svg class="dot-layer" viewBox="0 0 450 150" preserveAspectRatio="none">
-        <circle id="dot3-outer" cx="34" cy="122" r="10" fill="rgba(0,0,0,0.55)"/>
-        <circle id="dot3-inner" cx="34" cy="122" r="6" fill="#ffffff"/>
-      </svg>
-
-      <!-- bottom values -->
-      <div class="box-value-row">
-        <span class="box-value" id="value3">–</span>
-        <span class="box-risk" id="risk3">–</span>
+      <!-- value (left) -->
+      <div
+        id="val3"
+        style="
+          position:absolute;
+          top:44%;
+          left:30px;
+          transform:translateY(-50%);
+          font-size:17px;
+          font-weight:500;
+          color:#d9d9d9;
+          z-index:2;
+        ">
+        –
       </div>
+
+      <!-- risk line (right) -->
+      <div
+        style="
+          position:absolute;
+          top:44%;
+          right:30px;
+          transform:translateY(-50%);
+          font-size:15px;
+          color:#d9d9d9;
+          z-index:2;
+          white-space:nowrap;
+        ">
+        <span id="warn3" style="opacity:0.5;margin-right:6px;font-size:17px;visibility:hidden;">⚠</span>
+        <span style="opacity:0.5;">Risk level:</span>
+        <span id="risk3" style="opacity:0.75;">–%</span>
+      </div>
+
+      <!-- dot layer -->
+      <svg class="dot-layer" viewBox="0 0 405 150" xmlns="http://www.w3.org/2000/svg">
+        <circle id="dotOuter3" cx="22.5" cy="118" r="9" fill="#323232ff"/>
+        <circle id="dotInner3" cx="22.5" cy="118" r="6" fill="#ffffff"/>
+      </svg>
     </div>
   </div>
 
@@ -129,110 +211,184 @@
 
 <style>
   .indexes{
-    width:450px;
-    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    display:flex;
+    flex-direction:column;
   }
+
   .index-box{
+    position:relative;
     width:450px;
     height:150px;
-    position:relative;
-    border-radius:14px;
-    overflow:hidden;
-    background-size:450px 150px;
     background-repeat:no-repeat;
+
+    /* NEW: keep height fixed; let width follow SVG aspect ratio (540×200 -> 405×150) */
+    background-size:auto 150px;
     background-position:center;
+
+    font-family:system-ui,-apple-system,sans-serif;
   }
+
   .box-title{
     position:absolute;
-    left:18px;
-    top:12px;
-    font-size:14px;
-    color:#f5f5f5;
-    letter-spacing:0.2px;
+    top:18px;
+    left:30px;
+    right:17px;
+    font-size:15px;
+    font-weight:500;
+    color:#d9d9d9;
+    line-height:1.2;
     z-index:2;
   }
+
   .dot-layer{
     position:absolute;
-    left:0;
     top:0;
-    width:450px;
+
+    /* NEW: dot coordinate system matches the rendered background image size */
+    left:22.5px;
+    width:405px;
     height:150px;
+
     pointer-events:none;
     z-index:1;
-  }
-  .box-value-row{
-    position:absolute;
-    left:18px;
-    right:18px;
-    bottom:12px;
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-end;
-    z-index:2;
-  }
-  .box-value{
-    font-size:22px;
-    color:#f5f5f5;
-    line-height:1;
-  }
-  .box-risk{
-    font-size:12px;
-    color:#bdbdbd;
-    line-height:1.1;
-    text-align:right;
-    max-width:58%;
   }
 </style>
 
 <script>
-(function(){
-  // Updated anchors for /assets/img/high-bar-scale-grey.svg rendered at 450px width:
-  // SVG viewBox width 540; scale group translate(-15,5); anchors at cx 45 and 525
-  // => effective x range 30..510 in SVG coords, scaled by 450/540 => 25..425
-  const START = 25;
-  const END   = 425;
+function clamp(v, lo, hi){ return Math.max(lo, Math.min(hi, v)); }
+
+function setValue(boxId, x){
+  const n = Number(x);
+  if (!Number.isFinite(n)) return;
+
+  const pct = clamp(n, 0, 100);
   const TOTAL = 25;
+  const step = Math.round((pct / 100) * (TOTAL - 1)) + 1;
 
-  function clamp(v, lo, hi){ return Math.min(hi, Math.max(lo, v)); }
+  /*
+    high-bar-scale-grey.svg
+    - viewBox: 0 0 540 200
+    - background rendered as: auto 150px  => scale = 150/200 = 0.75
+    - rendered image size: 540*0.75 = 405 (w) × 150 (h)
+    - centered in 450px box => left margin (22.5px) is handled by .dot-layer left:22.5px
+    - scale group has translate(-15,5), anchors at 45..525 => effective 30..510 in SVG coords
+    - in rendered-image coords (405-wide): START=30*0.75=22.5, END=510*0.75=382.5
+    NOTE: cx below is in the dot-layer viewBox coords (0..405), not the full 450px box.
+  */
+  const START = 22.5;
+  const END   = 382.5;
+  const BIN   = (END - START) / TOTAL;
+  const cx = START + (step - 0.5) * BIN;
 
-  function stepFromPercent(pct){
-    const p = clamp(pct, 0, 100);
-    return Math.round((p / 100) * (TOTAL - 1)) + 1; // 1..25
-  }
+  const outer = document.getElementById("dotOuter" + boxId);
+  const inner = document.getElementById("dotInner" + boxId);
+  const val   = document.getElementById("val" + boxId);
 
-  function cxFromStep(step){
-    const BIN = (END - START) / TOTAL;
-    return START + (step - 0.5) * BIN;
-  }
+  if (outer) outer.setAttribute("cx", cx);
+  if (inner) inner.setAttribute("cx", cx);
+  if (val)   val.textContent = step + "/" + TOTAL;
+}
 
-  function setValue(boxId, pct, valueText, riskText){
-    const step = stepFromPercent(pct);
-    const cx = cxFromStep(step);
+function setRisk(boxId, r){
+  const n = Number(r);
+  if (!Number.isFinite(n)) return;
+  const el = document.getElementById("risk" + boxId);
+  if (!el) return;
+  el.textContent = Math.round(clamp(n, 0, 100)) + "%";
+}
 
-    const outer = document.getElementById(`dot${boxId}-outer`);
-    const inner = document.getElementById(`dot${boxId}-inner`);
-    if (outer) outer.setAttribute("cx", cx);
-    if (inner) inner.setAttribute("cx", cx);
+function setWarn(boxId, show){
+  const el = document.getElementById("warn" + boxId);
+  if (!el) return;
+  // no layout jump; alignment is stable because warn1/2/3 always exist
+  el.style.visibility = show ? "visible" : "hidden";
+}
 
-    const vEl = document.getElementById(`value${boxId}`);
-    const rEl = document.getElementById(`risk${boxId}`);
-    if (vEl) vEl.textContent = valueText ?? "–";
-    if (rEl) rEl.textContent = riskText ?? "–";
-  }
+(function () {
+  const KEY = "dashboard_indexes_cache_v6";
 
-  function load(){
-    const data = window.__INDEX_DATA__ || null;
-
-    if (!data){
-      setValue(1, 10, "10", "Safe");
-      setValue(2, 45, "45", "Moderate");
-      setValue(3, 80, "80", "Severe");
-      return;
+  function readCache(){
+    try{
+      const raw = sessionStorage.getItem(KEY);
+      return raw ? JSON.parse(raw) : null;
+    } catch(e){
+      return null;
     }
+  }
 
-    setValue(1, data.box1_percent, data.box1_value, data.box1_risk);
-    setValue(2, data.box2_percent, data.box2_value, data.box2_risk);
-    setValue(3, data.box3_percent, data.box3_value, data.box3_risk);
+  function writeCache(obj){
+    try{
+      sessionStorage.setItem(KEY, JSON.stringify(obj));
+    } catch(e){}
+  }
+
+  function signatureFrom(data){
+    return String(
+      data.box3_risk_updated_utc ||
+      data.box2_risk_updated_utc ||
+      data.box1_risk_updated_utc ||
+      data.box3_updated_utc ||
+      data.box2_updated_utc ||
+      data.box1_updated_utc ||
+      JSON.stringify([
+        data.box1, data.box2, data.box3,
+        data.box1_risk, data.box2_risk, data.box3_risk
+      ])
+    );
+  }
+
+  function applyAll(d){
+    // values
+    if (d.box1 !== undefined) setValue(1, d.box1);
+    if (d.box2 !== undefined) setValue(2, d.box2);
+    if (d.box3 !== undefined) setValue(3, d.box3);
+
+    // risks
+    if (d.box1_risk !== undefined) setRisk(1, d.box1_risk);
+    if (d.box2_risk !== undefined) setRisk(2, d.box2_risk);
+    if (d.box3_risk !== undefined) setRisk(3, d.box3_risk);
+
+    // warnings: only box2 & box3 when nav index >= 80; BTC always hidden
+    setWarn(1, false);
+    const b2 = Number(d.box2);
+    const b3 = Number(d.box3);
+    setWarn(2, Number.isFinite(b2) && b2 >= 80);
+    setWarn(3, Number.isFinite(b3) && b3 >= 80);
+  }
+
+  async function load(){
+    const cached = readCache();
+
+    // paint cached immediately (prevents flicker / jump)
+    if (cached) applyAll(cached);
+
+    try{
+      const res = await fetch("/data/indexes.json", { cache: "no-store" });
+      if (!res.ok) return;
+
+      const data = await res.json();
+      const sig = signatureFrom(data);
+
+      if (cached && cached.sig === sig) return;
+
+      applyAll(data);
+
+      writeCache({
+        sig,
+        box1: data.box1,
+        box2: data.box2,
+        box3: data.box3,
+        box1_risk: data.box1_risk,
+        box2_risk: data.box2_risk,
+        box3_risk: data.box3_risk,
+        box1_risk_updated_utc: data.box1_risk_updated_utc,
+        box2_risk_updated_utc: data.box2_risk_updated_utc,
+        box3_risk_updated_utc: data.box3_risk_updated_utc,
+        box1_updated_utc: data.box1_updated_utc,
+        box2_updated_utc: data.box2_updated_utc,
+        box3_updated_utc: data.box3_updated_utc
+      });
+    } catch(e){}
   }
 
   if (document.readyState === "loading"){
