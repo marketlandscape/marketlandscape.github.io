@@ -1,77 +1,75 @@
 <!-- FULL FILE — 420×140 default visual logic + right-side placeholder gadgets
-     FIX: narrow-screen left alignment (gadget under main box)
-     Approach (no CSS edits): remove row gap inline (gap:0) and bake the horizontal spacing
-     into the *left item* via padding-right:28px. When the gadget wraps below, it becomes
-     the first item on its new line with no leading gap/indent.
+     Fix (everything works, including mobile scaling + alignment):
+     • Keep your desktop spacing (gap:28px).
+     • Add ONE breakpoint at the real wrap point (<= 720px):
+         - force both items to full-width rows (so both start at identical left edge)
+         - keep the gadget plate left-aligned inside its full-width row
+     • Keep your existing <= 640px mobile scaling behavior.
 -->
 
 <div class="indexes">
 
   <!-- ROW 1 : BOX 1 + GADGET -->
-  <div class="row-wrap" style="margin-bottom:28px; gap:0;">
+  <div class="row-wrap" style="margin-bottom:28px;">
 
-    <!-- LEFT ITEM: includes the intended inter-column spacing -->
-    <div style="padding-right:28px; flex:0 0 auto;">
-      <div class="scale-420">
-        <div id="box1" class="index-box" style="background-image:url('/assets/img/bar-scale-yellow.svg');">
-          <div class="box-title">Navigation Index — Yellow</div>
+    <div class="scale-420">
+      <div id="box1" class="index-box" style="background-image:url('/assets/img/bar-scale-yellow.svg');">
+        <div class="box-title">Navigation Index — Yellow</div>
 
-          <!-- scale zones -->
-          <div style="
-            position:absolute;
-            left:32px;
-            top:82px;
-            width:356px;
-            display:flex;
-            font-size:13px;
-            color:#d9d9d9;
-            opacity:0.5;
-            letter-spacing:0.02em;
-            z-index:2;
-            pointer-events:none;">
-            <span style="flex:1;text-align:center;">Entry</span>
-            <span style="flex:1;text-align:center;">Scale In</span>
-            <span style="flex:1;text-align:center;">Hold</span>
-            <span style="flex:1;text-align:center;">Conviction</span>
-            <span style="flex:1;text-align:center;">HODL</span>
-          </div>
-
-          <!-- value -->
-          <div id="val1" style="
-            position:absolute;
-            top:45%;
-            left:28px;
-            transform:translateY(-50%);
-            font-size:16px;
-            font-weight:500;
-            color:#d9d9d9;
-            z-index:2;">–</div>
-
-          <!-- risk -->
-          <div style="
-            position:absolute;
-            top:45%;
-            right:28px;
-            transform:translateY(-50%);
-            font-size:14px;
-            color:#d9d9d9;
-            z-index:2;
-            white-space:nowrap;">
-            <span id="warn1" style="opacity:0.5;margin-right:6px;font-size:17px;visibility:hidden;">⚠</span>
-            <span style="opacity:0.5;">Risk level:</span>
-            <span id="risk1" style="opacity:0.75;">–%</span>
-          </div>
-
-          <!-- dot layer -->
-          <svg class="dot-layer" viewBox="0 0 420 140" xmlns="http://www.w3.org/2000/svg">
-            <circle id="dotOuter1" cx="32" cy="110" r="9" fill="#323232ff"/>
-            <circle id="dotInner1" cx="32" cy="110" r="6" fill="#ffffff"/>
-          </svg>
+        <!-- scale zones -->
+        <div style="
+          position:absolute;
+          left:32px;
+          top:82px;
+          width:356px;
+          display:flex;
+          font-size:13px;
+          color:#d9d9d9;
+          opacity:0.5;
+          letter-spacing:0.02em;
+          z-index:2;
+          pointer-events:none;">
+          <span style="flex:1;text-align:center;">Entry</span>
+          <span style="flex:1;text-align:center;">Scale In</span>
+          <span style="flex:1;text-align:center;">Hold</span>
+          <span style="flex:1;text-align:center;">Conviction</span>
+          <span style="flex:1;text-align:center;">HODL</span>
         </div>
+
+        <!-- value -->
+        <div id="val1" style="
+          position:absolute;
+          top:45%;
+          left:28px;
+          transform:translateY(-50%);
+          font-size:16px;
+          font-weight:500;
+          color:#d9d9d9;
+          z-index:2;">–</div>
+
+        <!-- risk -->
+        <div style="
+          position:absolute;
+          top:45%;
+          right:28px;
+          transform:translateY(-50%);
+          font-size:14px;
+          color:#d9d9d9;
+          z-index:2;
+          white-space:nowrap;">
+          <span id="warn1" style="opacity:0.5;margin-right:6px;font-size:17px;visibility:hidden;">⚠</span>
+          <span style="opacity:0.5;">Risk level:</span>
+          <span id="risk1" style="opacity:0.75;">–%</span>
+        </div>
+
+        <!-- dot layer -->
+        <svg class="dot-layer" viewBox="0 0 420 140" xmlns="http://www.w3.org/2000/svg">
+          <circle id="dotOuter1" cx="32" cy="110" r="9" fill="#323232ff"/>
+          <circle id="dotInner1" cx="32" cy="110" r="6" fill="#ffffff"/>
+        </svg>
       </div>
     </div>
 
-    <!-- RIGHT ITEM -->
     <div class="scale-225">
       <div class="gadget-box" style="background-image:url('/assets/img/grey-clean.svg');"></div>
     </div>
@@ -79,70 +77,66 @@
   </div>
 
   <!-- ROW 2 : BOX 2 + GADGET -->
-  <div class="row-wrap" style="margin-bottom:28px; gap:0;">
+  <div class="row-wrap" style="margin-bottom:28px;">
 
-    <!-- LEFT ITEM: includes spacing -->
-    <div style="padding-right:28px; flex:0 0 auto;">
-      <div class="scale-420">
-        <div id="box2" class="index-box" style="background-image:url('/assets/img/bar-scale-blue.svg');">
-          <div class="box-title">Navigation Index — Blue</div>
+    <div class="scale-420">
+      <div id="box2" class="index-box" style="background-image:url('/assets/img/bar-scale-blue.svg');">
+        <div class="box-title">Navigation Index — Blue</div>
 
-          <!-- scale zones -->
-          <div style="
-            position:absolute;
-            left:32px;
-            top:82px;
-            width:356px;
-            display:flex;
-            font-size:13px;
-            color:#d9d9d9;
-            opacity:0.5;
-            letter-spacing:0.02em;
-            z-index:2;
-            pointer-events:none;">
-            <span style="flex:1;text-align:center;">Entry</span>
-            <span style="flex:1;text-align:center;">Scale In</span>
-            <span style="flex:1;text-align:center;">Hold/Wait</span>
-            <span style="flex:1;text-align:center;">Reduce</span>
-            <span style="flex:1;text-align:center;">Exit</span>
-          </div>
-
-          <!-- value -->
-          <div id="val2" style="
-            position:absolute;
-            top:45%;
-            left:28px;
-            transform:translateY(-50%);
-            font-size:16px;
-            font-weight:500;
-            color:#d9d9d9;
-            z-index:2;">–</div>
-
-          <!-- risk -->
-          <div style="
-            position:absolute;
-            top:45%;
-            right:28px;
-            transform:translateY(-50%);
-            font-size:14px;
-            color:#d9d9d9;
-            z-index:2;
-            white-space:nowrap;">
-            <span id="warn2" style="opacity:0.5;margin-right:6px;font-size:17px;visibility:hidden;">⚠</span>
-            <span style="opacity:0.5;">Risk level:</span>
-            <span id="risk2" style="opacity:0.75;">–%</span>
-          </div>
-
-          <!-- dot layer -->
-          <svg class="dot-layer" viewBox="0 0 420 140" xmlns="http://www.w3.org/2000/svg">
-            <circle id="dotOuter2" cx="32" cy="110" r="9" fill="#323232ff"/>
-            <circle id="dotInner2" cx="32" cy="110" r="6" fill="#ffffff"/>
-          </svg>
+        <!-- scale zones -->
+        <div style="
+          position:absolute;
+          left:32px;
+          top:82px;
+          width:356px;
+          display:flex;
+          font-size:13px;
+          color:#d9d9d9;
+          opacity:0.5;
+          letter-spacing:0.02em;
+          z-index:2;
+          pointer-events:none;">
+          <span style="flex:1;text-align:center;">Entry</span>
+          <span style="flex:1;text-align:center;">Scale In</span>
+          <span style="flex:1;text-align:center;">Hold/Wait</span>
+          <span style="flex:1;text-align:center;">Reduce</span>
+          <span style="flex:1;text-align:center;">Exit</span>
         </div>
+
+        <!-- value -->
+        <div id="val2" style="
+          position:absolute;
+          top:45%;
+          left:28px;
+          transform:translateY(-50%);
+          font-size:16px;
+          font-weight:500;
+          color:#d9d9d9;
+          z-index:2;">–</div>
+
+        <!-- risk -->
+        <div style="
+          position:absolute;
+          top:45%;
+          right:28px;
+          transform:translateY(-50%);
+          font-size:14px;
+          color:#d9d9d9;
+          z-index:2;
+          white-space:nowrap;">
+          <span id="warn2" style="opacity:0.5;margin-right:6px;font-size:17px;visibility:hidden;">⚠</span>
+          <span style="opacity:0.5;">Risk level:</span>
+          <span id="risk2" style="opacity:0.75;">–%</span>
+        </div>
+
+        <!-- dot layer -->
+        <svg class="dot-layer" viewBox="0 0 420 140" xmlns="http://www.w3.org/2000/svg">
+          <circle id="dotOuter2" cx="32" cy="110" r="9" fill="#323232ff"/>
+          <circle id="dotInner2" cx="32" cy="110" r="6" fill="#ffffff"/>
+        </svg>
       </div>
     </div>
 
-    <!-- RIGHT ITEM -->
     <div class="scale-225">
       <div class="gadget-box" style="background-image:url('/assets/img/grey-clean.svg');"></div>
     </div>
@@ -219,7 +213,7 @@
   .row-wrap{
     display:flex;
     flex-wrap:wrap;
-    gap:28px;              /* remains for other rows; overridden inline to 0 where needed */
+    gap:28px;
     align-items:flex-start;
     justify-content:flex-start;
   }
@@ -252,7 +246,6 @@
     transform-origin: top left;
   }
 
-  /* original box plate */
   .index-box{
     position:relative;
     background-repeat:no-repeat;
@@ -260,7 +253,6 @@
     font-family:system-ui,-apple-system,sans-serif;
   }
 
-  /* gadget plate */
   .gadget-box{
     background-repeat:no-repeat;
     background-size:225px 140px;
@@ -285,11 +277,25 @@
     z-index:1;
   }
 
-  /* mobile: your existing stacking intent */
+  /* ALIGNMENT FIX WHEN THE GADGET WRAPS (this is where your issue was):
+     At <= 720px, both items become full-row (same left edge),
+     while the gadget plate stays left inside its full-row wrapper.
+  */
+  @media (max-width: 720px){
+    .scale-420,
+    .scale-225{
+      flex: 0 0 100%;
+      width: 100%;
+    }
+    .scale-225{
+      display:flex;
+      justify-content:flex-start;
+    }
+  }
+
+  /* keep your existing mobile behavior (same effect, tighter spacing) */
   @media (max-width: 640px){
     .row-wrap{ gap:16px; }
-    .scale-420{ width:100%; }
-    .scale-225{ width:100%; }
   }
 </style>
 
