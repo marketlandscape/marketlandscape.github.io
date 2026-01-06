@@ -1,8 +1,8 @@
 <!-- FULL FILE – corrected mapping (1/50, 3/50, 5/50...) + scripts intact
      Scale logic:
-       - Bar span is from LEFT edge of first rectangle to RIGHT edge of last rectangle
-       - 25 bins -> 50 sub-steps
-       - step k is at (2k-1)/50 of the bar width from the left edge
+       - Dot positions are mapped ONLY inside the 5 rectangles (ignore decorative circles)
+       - Each rectangle contains 5 steps (total 25)
+       - Step 3 is the center of rectangle 1, step 8 center of rectangle 2, etc.
 -->
 
 <div class="indexes">
@@ -29,7 +29,7 @@
       </div>
 
       <svg class="dot-layer" viewBox="0 0 450 150" xmlns="http://www.w3.org/2000/svg">
-        <!-- default = step 1 => 1/50 from left -->
+        <!-- default = step 1 => center of first bin inside rectangle 1 -->
         <circle id="dotOuter1" cx="43.11" cy="122" r="9" fill="#323232ff"/>
         <circle id="dotInner1" cx="43.11" cy="122" r="6" fill="#ffffff"/>
       </svg>
@@ -198,12 +198,21 @@ function setValue(boxId, x){
   const step = toStep(x, TOTAL);
   if (step == null) return;
 
-  // Rectangle bar edges (true scale span)
-  const L = 35.53;
-  const R = 414.47;
+  // 5 scale rectangles (from high-bar-scale-grey.svg, mapped into this 450px-wide box)
+  // Ignore the decorative circles; we position within these rectangles only.
+  const RECTS = [
+    [35.53, 111.32],  // 1–5  (Entry)
+    [111.32, 187.11], // 6–10 (Scale In)
+    [187.11, 262.89], // 11–15 (Hold)
+    [262.89, 338.68], // 16–20 (Conviction)
+    [338.68, 414.47]  // 21–25 (HODL)
+  ];
 
-  // Center of bin k is at (2k-1)/50 of the bar width from L
-  const cx = L + ((2 * step - 1) / (2 * TOTAL)) * (R - L);
+  const rectIndex = Math.floor((step - 1) / 5);   // 0..4
+  const within = (step - 1) % 5;                  // 0..4
+
+  const [L, R] = RECTS[rectIndex];
+  const cx = L + ((within + 0.5) / 5) * (R - L);  // bin centers inside the rectangle
 
   const outer = document.getElementById("dotOuter" + boxId);
   const inner = document.getElementById("dotInner" + boxId);
