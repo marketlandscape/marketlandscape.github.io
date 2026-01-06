@@ -3,7 +3,7 @@
 <div class="indexes">
 
   <!-- ROW 1 : BOX 1 + GADGET -->
-  <div style="display:flex; gap:28px; margin-bottom:28px;">
+  <div style="display:flex; flex-wrap:wrap; gap:28px; row-gap:28px; margin-bottom:28px;">
 
     <!-- BOX 1 -->
     <div id="box1" class="index-box" style="background-image:url('/assets/img/bar-scale-yellow.svg');">
@@ -31,15 +31,32 @@
         <span style="flex:1;text-align:center;">HODL</span>
       </div>
 
-      <div id="val1"
-        style="position:absolute;top:44%;left:30px;transform:translateY(-50%);
-               font-size:17px;font-weight:500;color:#d9d9d9;z-index:2;">
+      <div
+        id="val1"
+        style="
+          position:absolute;
+          top:44%;
+          left:30px;
+          transform:translateY(-50%);
+          font-size:17px;
+          font-weight:500;
+          color:#d9d9d9;
+          z-index:2;
+        ">
         –
       </div>
 
       <div
-        style="position:absolute;top:44%;right:30px;transform:translateY(-50%);
-               font-size:15px;color:#d9d9d9;z-index:2;white-space:nowrap;">
+        style="
+          position:absolute;
+          top:44%;
+          right:30px;
+          transform:translateY(-50%);
+          font-size:15px;
+          color:#d9d9d9;
+          z-index:2;
+          white-space:nowrap;
+        ">
         <span id="warn1" style="opacity:0.5;margin-right:6px;font-size:17px;visibility:hidden;">⚠</span>
         <span style="opacity:0.5;">Risk level:</span>
         <span id="risk1" style="opacity:0.75;">–%</span>
@@ -55,10 +72,11 @@
     <div
       style="
         width:225px;
+        max-width:100%;
         height:150px;
         background-image:url('/assets/img/grey-clean.svg');
         background-repeat:no-repeat;
-        background-size:225px 150px;
+        background-size:100% 150px;
         flex:0 0 auto;
       ">
     </div>
@@ -66,7 +84,7 @@
   </div>
 
   <!-- ROW 2 : BOX 2 + GADGET -->
-  <div style="display:flex; gap:28px; margin-bottom:28px;">
+  <div style="display:flex; flex-wrap:wrap; gap:28px; row-gap:28px; margin-bottom:28px;">
 
     <!-- BOX 2 -->
     <div id="box2" class="index-box" style="background-image:url('/assets/img/bar-scale-blue.svg');">
@@ -93,15 +111,32 @@
         <span style="flex:1;text-align:center;">Exit</span>
       </div>
 
-      <div id="val2"
-        style="position:absolute;top:44%;left:30px;transform:translateY(-50%);
-               font-size:17px;font-weight:500;color:#d9d9d9;z-index:2;">
+      <div
+        id="val2"
+        style="
+          position:absolute;
+          top:44%;
+          left:30px;
+          transform:translateY(-50%);
+          font-size:17px;
+          font-weight:500;
+          color:#d9d9d9;
+          z-index:2;
+        ">
         –
       </div>
 
       <div
-        style="position:absolute;top:44%;right:30px;transform:translateY(-50%);
-               font-size:15px;color:#d9d9d9;z-index:2;white-space:nowrap;">
+        style="
+          position:absolute;
+          top:44%;
+          right:30px;
+          transform:translateY(-50%);
+          font-size:15px;
+          color:#d9d9d9;
+          z-index:2;
+          white-space:nowrap;
+        ">
         <span id="warn2" style="opacity:0.5;margin-right:6px;font-size:17px;visibility:hidden;">⚠</span>
         <span style="opacity:0.5;">Risk level:</span>
         <span id="risk2" style="opacity:0.75;">–%</span>
@@ -117,17 +152,18 @@
     <div
       style="
         width:225px;
+        max-width:100%;
         height:150px;
         background-image:url('/assets/img/grey-clean.svg');
         background-repeat:no-repeat;
-        background-size:225px 150px;
+        background-size:100% 150px;
         flex:0 0 auto;
       ">
     </div>
 
   </div>
 
-  <!-- BOX 3 (unchanged) -->
+  <!-- BOX 3 -->
   <div>
     <div id="box3" class="index-box" style="background-image:url('/assets/img/bar-scale-grey.svg');">
       <div class="box-title">Navigation Index — Grey</div>
@@ -153,15 +189,32 @@
         <span style="flex:1;text-align:center;">Exit</span>
       </div>
 
-      <div id="val3"
-        style="position:absolute;top:44%;left:30px;transform:translateY(-50%);
-               font-size:17px;font-weight:500;color:#d9d9d9;z-index:2;">
+      <div
+        id="val3"
+        style="
+          position:absolute;
+          top:44%;
+          left:30px;
+          transform:translateY(-50%);
+          font-size:17px;
+          font-weight:500;
+          color:#d9d9d9;
+          z-index:2;
+        ">
         –
       </div>
 
       <div
-        style="position:absolute;top:44%;right:30px;transform:translateY(-50%);
-               font-size:15px;color:#d9d9d9;z-index:2;white-space:nowrap;">
+        style="
+          position:absolute;
+          top:44%;
+          right:30px;
+          transform:translateY(-50%);
+          font-size:15px;
+          color:#d9d9d9;
+          z-index:2;
+          white-space:nowrap;
+        ">
         <span id="warn3" style="opacity:0.5;margin-right:6px;font-size:17px;visibility:hidden;">⚠</span>
         <span style="opacity:0.5;">Risk level:</span>
         <span id="risk3" style="opacity:0.75;">–%</span>
@@ -184,10 +237,11 @@
 
   .index-box{
     position:relative;
-    width:450px;
+    width:100%;
+    max-width:450px;
     height:150px;
     background-repeat:no-repeat;
-    background-size:450px 150px;
+    background-size:100% 150px;
     font-family:system-ui,-apple-system,sans-serif;
   }
 
@@ -212,8 +266,6 @@
 </style>
 
 <script>
-/* JS IS IDENTICAL TO YOUR WORKING VERSION — UNCHANGED */
-
 function clamp(v, lo, hi){ return Math.max(lo, Math.min(hi, v)); }
 
 function setValue(boxId, x){
