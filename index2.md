@@ -1,21 +1,21 @@
-<!-- Updated layout: fine vertical alignment + label text normalization -->
+<!-- Desktop-first layout: 420×140 boxes, scale labels moved 2px up -->
 
 <div class="indexes">
 
   <!-- BOX 1 -->
-  <div style="margin-bottom:20px;">
+  <div style="margin-bottom:24px;">
     <div id="box1" class="index-box" style="background-image:url('/assets/img/bar-scale-yellow.svg');">
       <div class="box-title">Navigation Index — Yellow</div>
 
-      <!-- scale zones (moved 2px up) -->
+      <!-- scale zones (moved up 2px: 90 → 88) -->
       <div
         style="
           position:absolute;
-          left:27px;
-          top:72px;
-          width:306px;
+          left:32px;
+          top:88px;
+          width:356px;
           display:flex;
-          font-size:12px;
+          font-size:13px;
           color:#d9d9d9;
           opacity:0.5;
           letter-spacing:0.02em;
@@ -29,15 +29,15 @@
         <span style="flex:1;text-align:center;">HODL</span>
       </div>
 
-      <!-- value (left) – moved 2px up -->
+      <!-- value -->
       <div
         id="val1"
         style="
           position:absolute;
-          top:46%;
-          left:24px;
+          top:54%;
+          left:28px;
           transform:translateY(-50%);
-          font-size:14px;
+          font-size:16px;
           font-weight:500;
           color:#d9d9d9;
           z-index:2;
@@ -45,160 +45,27 @@
         –
       </div>
 
-      <!-- risk line (right) – moved 2px up -->
+      <!-- risk -->
       <div
         style="
           position:absolute;
-          top:46%;
-          right:24px;
+          top:54%;
+          right:28px;
           transform:translateY(-50%);
-          font-size:14px;
+          font-size:16px;
           color:#d9d9d9;
           z-index:2;
           white-space:nowrap;
         ">
-        <span id="warn1" style="opacity:0.5;margin-right:5px;font-size:15px;visibility:hidden;">⚠</span>
-        <span style="opacity:0.5;">Risk level:</span>
+        <span id="warn1" style="font-size:17px;opacity:0.5;visibility:hidden;">⚠</span>
+        <span style="opacity:0.5;"> Risk level:</span>
         <span id="risk1" style="opacity:0.75;">–%</span>
       </div>
 
-      <svg class="dot-layer" viewBox="0 0 360 120" xmlns="http://www.w3.org/2000/svg">
-        <circle id="dotOuter1" cx="27" cy="94" r="7" fill="#323232ff"/>
-        <circle id="dotInner1" cx="27" cy="94" r="5" fill="#ffffff"/>
-      </svg>
-    </div>
-  </div>
-
-  <!-- BOX 2 -->
-  <div style="margin-bottom:20px;">
-    <div id="box2" class="index-box" style="background-image:url('/assets/img/bar-scale-blue.svg');">
-      <div class="box-title">Navigation Index — Blue</div>
-
-      <!-- scale zones -->
-      <div
-        style="
-          position:absolute;
-          left:27px;
-          top:72px;
-          width:306px;
-          display:flex;
-          font-size:12px;
-          color:#d9d9d9;
-          opacity:0.5;
-          letter-spacing:0.02em;
-          z-index:2;
-          pointer-events:none;
-        ">
-        <span style="flex:1;text-align:center;">Entry</span>
-        <span style="flex:1;text-align:center;">Scale In</span>
-        <span style="flex:1;text-align:center;">Hold/Wait</span>
-        <span style="flex:1;text-align:center;">Reduce</span>
-        <span style="flex:1;text-align:center;">Exit</span>
-      </div>
-
-      <!-- value -->
-      <div
-        id="val2"
-        style="
-          position:absolute;
-          top:46%;
-          left:24px;
-          transform:translateY(-50%);
-          font-size:14px;
-          font-weight:500;
-          color:#d9d9d9;
-          z-index:2;
-        ">
-        –
-      </div>
-
-      <!-- risk -->
-      <div
-        style="
-          position:absolute;
-          top:46%;
-          right:24px;
-          transform:translateY(-50%);
-          font-size:14px;
-          color:#d9d9d9;
-          z-index:2;
-          white-space:nowrap;
-        ">
-        <span id="warn2" style="opacity:0.5;margin-right:5px;font-size:15px;visibility:hidden;">⚠</span>
-        <span style="opacity:0.5;">Risk level:</span>
-        <span id="risk2" style="opacity:0.75;">–%</span>
-      </div>
-
-      <svg class="dot-layer" viewBox="0 0 360 120" xmlns="http://www.w3.org/2000/svg">
-        <circle id="dotOuter2" cx="27" cy="94" r="7" fill="#323232ff"/>
-        <circle id="dotInner2" cx="27" cy="94" r="5" fill="#ffffff"/>
-      </svg>
-    </div>
-  </div>
-
-  <!-- BOX 3 -->
-  <div>
-    <div id="box3" class="index-box" style="background-image:url('/assets/img/bar-scale-grey.svg');">
-      <div class="box-title">Navigation Index — Grey</div>
-
-      <!-- scale zones -->
-      <div
-        style="
-          position:absolute;
-          left:27px;
-          top:72px;
-          width:306px;
-          display:flex;
-          font-size:12px;
-          color:#d9d9d9;
-          opacity:0.5;
-          letter-spacing:0.02em;
-          z-index:2;
-          pointer-events:none;
-        ">
-        <span style="flex:1;text-align:center;">Entry</span>
-        <span style="flex:1;text-align:center;">Scale In</span>
-        <span style="flex:1;text-align:center;">Hold/Wait</span>
-        <span style="flex:1;text-align:center;">Reduce</span>
-        <span style="flex:1;text-align:center;">Exit</span>
-      </div>
-
-      <!-- value -->
-      <div
-        id="val3"
-        style="
-          position:absolute;
-          top:46%;
-          left:24px;
-          transform:translateY(-50%);
-          font-size:14px;
-          font-weight:500;
-          color:#d9d9d9;
-          z-index:2;
-        ">
-        –
-      </div>
-
-      <!-- risk -->
-      <div
-        style="
-          position:absolute;
-          top:46%;
-          right:24px;
-          transform:translateY(-50%);
-          font-size:14px;
-          color:#d9d9d9;
-          z-index:2;
-          white-space:nowrap;
-        ">
-        <span id="warn3" style="opacity:0.5;margin-right:5px;font-size:15px;visibility:hidden;">⚠</span>
-        <span style="opacity:0.5;">Risk level:</span>
-        <span id="risk3" style="opacity:0.75;">–%</span>
-      </div>
-
-      <svg class="dot-layer" viewBox="0 0 360 120" xmlns="http://www.w3.org/2000/svg">
-        <circle id="dotOuter3" cx="27" cy="94" r="7" fill="#323232ff"/>
-        <circle id="dotInner3" cx="27" cy="94" r="5" fill="#ffffff"/>
+      <!-- dot layer -->
+      <svg class="dot-layer" viewBox="0 0 420 140" xmlns="http://www.w3.org/2000/svg">
+        <circle id="dotOuter1" cx="32" cy="112" r="8" fill="#323232"/>
+        <circle id="dotInner1" cx="32" cy="112" r="6" fill="#ffffff"/>
       </svg>
     </div>
   </div>
@@ -206,42 +73,44 @@
 </div>
 
 <style>
-  .indexes{
-    display:flex;
-    flex-direction:column;
-  }
+.indexes{
+  display:flex;
+  flex-direction:column;
+}
 
-  .index-box{
-    position:relative;
-    width:360px;
-    height:120px;
-    background-repeat:no-repeat;
-    background-size:360px 120px;
-    font-family:system-ui,-apple-system,sans-serif;
-  }
+.index-box{
+  position:relative;
+  width:420px;
+  height:140px;
+  background-repeat:no-repeat;
+  background-size:420px 140px;
+  font-family:system-ui,-apple-system,sans-serif;
+}
 
-  .box-title{
-    position:absolute;
-    top:14px;
-    left:24px;
-    right:16px;
-    font-size:14px;
-    font-weight:500;
-    color:#d9d9d9;
-    line-height:1.2;
-    z-index:2;
-  }
+.box-title{
+  position:absolute;
+  top:18px;
+  left:28px;
+  right:20px;
+  font-size:16px;
+  font-weight:500;
+  color:#d9d9d9;
+  line-height:1.2;
+  z-index:2;
+}
 
-  .dot-layer{
-    position:absolute;
-    inset:0;
-    pointer-events:none;
-    z-index:1;
-  }
+.dot-layer{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:1;
+}
 </style>
 
 <script>
-function clamp(v, lo, hi){ return Math.max(lo, Math.min(hi, v)); }
+function clamp(v, lo, hi){
+  return Math.max(lo, Math.min(hi, v));
+}
 
 function setValue(boxId, x){
   const n = Number(x);
@@ -251,8 +120,9 @@ function setValue(boxId, x){
   const TOTAL = 25;
   const step = Math.round((pct / 100) * (TOTAL - 1)) + 1;
 
-  const START = 27;
-  const END   = 333;
+  // geometry for 420×140
+  const START = 32;
+  const END   = 388;
   const BIN   = (END - START) / TOTAL;
   const cx = START + (step - 0.5) * BIN;
 
@@ -264,107 +134,4 @@ function setValue(boxId, x){
   if (inner) inner.setAttribute("cx", cx);
   if (val)   val.textContent = step + "/" + TOTAL;
 }
-
-function setRisk(boxId, r){
-  const n = Number(r);
-  if (!Number.isFinite(n)) return;
-  const el = document.getElementById("risk" + boxId);
-  if (!el) return;
-  el.textContent = Math.round(clamp(n, 0, 100)) + "%";
-}
-
-function setWarn(boxId, show){
-  const el = document.getElementById("warn" + boxId);
-  if (!el) return;
-  el.style.visibility = show ? "visible" : "hidden";
-}
-
-(function () {
-  const KEY = "dashboard_indexes_cache_v9";
-
-  function readCache(){
-    try{
-      const raw = sessionStorage.getItem(KEY);
-      return raw ? JSON.parse(raw) : null;
-    } catch(e){
-      return null;
-    }
-  }
-
-  function writeCache(obj){
-    try{
-      sessionStorage.setItem(KEY, JSON.stringify(obj));
-    } catch(e){}
-  }
-
-  function signatureFrom(data){
-    return String(
-      data.box3_risk_updated_utc ||
-      data.box2_risk_updated_utc ||
-      data.box1_risk_updated_utc ||
-      data.box3_updated_utc ||
-      data.box2_updated_utc ||
-      data.box1_updated_utc ||
-      JSON.stringify([
-        data.box1, data.box2, data.box3,
-        data.box1_risk, data.box2_risk, data.box3_risk
-      ])
-    );
-  }
-
-  function applyAll(d){
-    if (d.box1 !== undefined) setValue(1, d.box1);
-    if (d.box2 !== undefined) setValue(2, d.box2);
-    if (d.box3 !== undefined) setValue(3, d.box3);
-
-    if (d.box1_risk !== undefined) setRisk(1, d.box1_risk);
-    if (d.box2_risk !== undefined) setRisk(2, d.box2_risk);
-    if (d.box3_risk !== undefined) setRisk(3, d.box3_risk);
-
-    setWarn(1, false);
-    const b2 = Number(d.box2);
-    const b3 = Number(d.box3);
-    setWarn(2, Number.isFinite(b2) && b2 >= 80);
-    setWarn(3, Number.isFinite(b3) && b3 >= 80);
-  }
-
-  async function load(){
-    const cached = readCache();
-    if (cached) applyAll(cached);
-
-    try{
-      const res = await fetch("/data/indexes.json", { cache: "no-store" });
-      if (!res.ok) return;
-
-      const data = await res.json();
-      const sig = signatureFrom(data);
-
-      if (cached && cached.sig === sig) return;
-
-      applyAll(data);
-
-      writeCache({
-        sig,
-        box1: data.box1,
-        box2: data.box2,
-        box3: data.box3,
-        box1_risk: data.box1_risk,
-        box2_risk: data.box2_risk,
-        box3_risk: data.box3_risk,
-        box1_risk_updated_utc: data.box1_risk_updated_utc,
-        box2_risk_updated_utc: data.box2_risk_updated_utc,
-        box3_risk_updated_utc: data.box3_risk_updated_utc,
-        box1_updated_utc: data.box1_updated_utc,
-        box2_updated_utc: data.box2_updated_utc,
-        box3_updated_utc: data.box3_updated_utc
-      });
-    } catch(e){}
-  }
-
-  if (document.readyState === "loading"){
-    document.addEventListener("DOMContentLoaded", load);
-  } else {
-    load();
-  }
-})();
 </script>
