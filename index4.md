@@ -1,14 +1,8 @@
-<!-- FULL FILE – fixed the real bug:
-     Your example “value = 3 should be in the middle of rectangle #3 (of 25)”
-     means the incoming value is a BIN INDEX (1..25), not a percent.
-
-     Fix:
-     - setValue() now accepts BOTH:
-         • step values 1..25  (e.g. 3 → bin 3)
-         • percent 0..100     (legacy)
-     - Dot & label geometry uses the RECTANGLE BAR edges (x=45..525 in SVG)
-     - Labels are centered over the 5 rectangles (groups of 5 bins)
-     - Titles/left value/right risk keep your inward text alignment
+<!-- FULL FILE – corrected mapping (1/50, 3/50, 5/50...) + scripts intact
+     Scale logic:
+       - Bar span is from LEFT edge of first rectangle to RIGHT edge of last rectangle
+       - 25 bins -> 50 sub-steps
+       - step k is at (2k-1)/50 of the bar width from the left edge
 -->
 
 <div class="indexes">
@@ -35,7 +29,7 @@
       </div>
 
       <svg class="dot-layer" viewBox="0 0 450 150" xmlns="http://www.w3.org/2000/svg">
-        <!-- default: bin #1 center -->
+        <!-- default = step 1 => 1/50 from left -->
         <circle id="dotOuter1" cx="43.11" cy="122" r="9" fill="#323232ff"/>
         <circle id="dotInner1" cx="43.11" cy="122" r="6" fill="#ffffff"/>
       </svg>
@@ -104,11 +98,11 @@
   .indexes{ display:flex; flex-direction:column; }
 
   .index-box{
-    /* TRUE rectangle bar edges (SVG x=45..525 mapped into 450px width) */
+    /* TRUE rectangle bar edges (scale span) */
     --scale-left: 35.53px;
     --scale-right: 414.47px;
 
-    /* your text alignment (inward) */
+    /* text alignment (your inward nudge) */
     --text-left: 39.53px;
     --text-right: 410.47px;
 
@@ -133,7 +127,7 @@
     white-space:nowrap;
   }
 
-  /* 5 labels centered over the 5 rectangles (each rectangle = 5 bins) */
+  /* 5 labels centered over 5 groups (each group = 5 bins) */
   .scale-zones{
     position:absolute;
     left:var(--scale-left);
@@ -183,24 +177,18 @@
 
 <script>
 function clamp(v, lo, hi){ return Math.max(lo, Math.min(hi, v)); }
+function isNearlyInt(x){ return Number.isFinite(x) && Math.abs(x - Math.round(x)) < 1e-6; }
 
-function isNearlyInt(x){
-  return Number.isFinite(x) && Math.abs(x - Math.round(x)) < 1e-6;
-}
-
-/*
-  Accepts:
-    - step 1..25  (EXACT bins; your “value=3” case)
-    - percent 0..100 (legacy)
+/* Accepts:
+   - step 1..25 (bin index)
+   - percent 0..100 (legacy)
 */
 function toStep(x, total){
   const n = Number(x);
   if (!Number.isFinite(n)) return null;
 
-  // Step mode (your intended behaviour)
   if (n >= 1 && n <= total && isNearlyInt(n)) return Math.round(n);
 
-  // Percent mode (backward compatible)
   const pct = clamp(n, 0, 100);
   return Math.round((pct / 100) * (total - 1)) + 1;
 }
@@ -210,13 +198,12 @@ function setValue(boxId, x){
   const step = toStep(x, TOTAL);
   if (step == null) return;
 
-  // Rectangle bar edges (circles ignored)
-  const BAR_L = 35.53;
-  const BAR_R = 414.47;
+  // Rectangle bar edges (true scale span)
+  const L = 35.53;
+  const R = 414.47;
 
-  // 25 equal bins over the bar; dot is at bin center
-  const BIN_W = (BAR_R - BAR_L) / TOTAL;
-  const cx = BAR_L + (step - 0.5) * BIN_W;
+  // Center of bin k is at (2k-1)/50 of the bar width from L
+  const cx = L + ((2 * step - 1) / (2 * TOTAL)) * (R - L);
 
   const outer = document.getElementById("dotOuter" + boxId);
   const inner = document.getElementById("dotInner" + boxId);
@@ -282,13 +269,13 @@ function setWarn(boxId, show){
     if (d.box3_risk !== undefined) setRisk(3, d.box3_risk);
 
     setWarn(1, false);
+
     const b2 = Number(d.box2);
     const b3 = Number(d.box3);
-    // Works for both step-mode and percent-mode inputs:
-    // - if step-mode (1..25), threshold 80% ~= step >= 21
-    // - if percent-mode (0..100), threshold >= 80
-    setWarn(2, (isNearlyInt(b2) && b2 <= 25) ? (b2 >= 21) : (b2 >= 80));
-    setWarn(3, (isNearlyInt(b3) && b3 <= 25) ? (b3 >= 21) : (b3 >= 80));
+
+    // Warning threshold: >=80% (legacy) OR step>=21 (80% of 25 bins)
+    setWarn(2, (isNearlyInt(b2) && b2 >= 1 && b2 <= 25) ? (b2 >= 21) : (b2 >= 80));
+    setWarn(3, (isNearlyInt(b3) && b3 >= 1 && b3 <= 25) ? (b3 >= 21) : (b3 >= 80));
   }
 
   async function load(){
@@ -331,4 +318,3 @@ function setWarn(boxId, show){
   }
 })();
 </script>
-
