@@ -1,9 +1,9 @@
-<!-- Simplified layout: three stacked 300×100 boxes with moving dot -->
+<!-- Updated layout: three stacked 360×120 boxes with synchronized dot movement -->
 
 <div class="indexes">
 
   <!-- BOX 1 -->
-  <div style="margin-bottom:18px;">
+  <div style="margin-bottom:20px;">
     <div id="box1" class="index-box" style="background-image:url('/assets/img/bar-scale-yellow.svg');">
       <div class="box-title">Navigation Index — Yellow</div>
 
@@ -11,11 +11,11 @@
       <div
         style="
           position:absolute;
-          left:22.5px;
-          top:59px;
-          width:255px;
+          left:27px;
+          top:74px;
+          width:306px;
           display:flex;
-          font-size:9px;
+          font-size:10px;
           color:#d9d9d9;
           opacity:0.5;
           letter-spacing:0.02em;
@@ -34,10 +34,10 @@
         id="val1"
         style="
           position:absolute;
-          top:44%;
-          left:20px;
+          top:52%;
+          left:24px;
           transform:translateY(-50%);
-          font-size:12px;
+          font-size:14px;
           font-weight:500;
           color:#d9d9d9;
           z-index:2;
@@ -49,29 +49,29 @@
       <div
         style="
           position:absolute;
-          top:44%;
-          right:20px;
+          top:52%;
+          right:24px;
           transform:translateY(-50%);
-          font-size:11px;
+          font-size:13px;
           color:#d9d9d9;
           z-index:2;
           white-space:nowrap;
         ">
-        <span id="warn1" style="opacity:0.5;margin-right:4px;font-size:12px;visibility:hidden;">⚠</span>
+        <span id="warn1" style="opacity:0.5;margin-right:5px;font-size:14px;visibility:hidden;">⚠</span>
         <span style="opacity:0.5;">Risk level:</span>
         <span id="risk1" style="opacity:0.75;">–%</span>
       </div>
 
       <!-- dot layer -->
-      <svg class="dot-layer" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
-        <circle id="dotOuter1" cx="23" cy="79" r="6" fill="#323232ff"/>
-        <circle id="dotInner1" cx="23" cy="79" r="4" fill="#ffffff"/>
+      <svg class="dot-layer" viewBox="0 0 360 120" xmlns="http://www.w3.org/2000/svg">
+        <circle id="dotOuter1" cx="27" cy="94" r="7" fill="#323232ff"/>
+        <circle id="dotInner1" cx="27" cy="94" r="5" fill="#ffffff"/>
       </svg>
     </div>
   </div>
 
   <!-- BOX 2 -->
-  <div style="margin-bottom:18px;">
+  <div style="margin-bottom:20px;">
     <div id="box2" class="index-box" style="background-image:url('/assets/img/bar-scale-blue.svg');">
       <div class="box-title">Navigation Index — Blue</div>
 
@@ -79,11 +79,11 @@
       <div
         style="
           position:absolute;
-          left:22.5px;
-          top:59px;
-          width:255px;
+          left:27px;
+          top:74px;
+          width:306px;
           display:flex;
-          font-size:9px;
+          font-size:10px;
           color:#d9d9d9;
           opacity:0.5;
           letter-spacing:0.02em;
@@ -102,10 +102,10 @@
         id="val2"
         style="
           position:absolute;
-          top:44%;
-          left:20px;
+          top:52%;
+          left:24px;
           transform:translateY(-50%);
-          font-size:12px;
+          font-size:14px;
           font-weight:500;
           color:#d9d9d9;
           z-index:2;
@@ -117,23 +117,23 @@
       <div
         style="
           position:absolute;
-          top:44%;
-          right:20px;
+          top:52%;
+          right:24px;
           transform:translateY(-50%);
-          font-size:11px;
+          font-size:13px;
           color:#d9d9d9;
           z-index:2;
           white-space:nowrap;
         ">
-        <span id="warn2" style="opacity:0.5;margin-right:4px;font-size:12px;visibility:hidden;">⚠</span>
+        <span id="warn2" style="opacity:0.5;margin-right:5px;font-size:14px;visibility:hidden;">⚠</span>
         <span style="opacity:0.5;">Risk level:</span>
         <span id="risk2" style="opacity:0.75;">–%</span>
       </div>
 
       <!-- dot layer -->
-      <svg class="dot-layer" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
-        <circle id="dotOuter2" cx="23" cy="79" r="6" fill="#323232ff"/>
-        <circle id="dotInner2" cx="23" cy="79" r="4" fill="#ffffff"/>
+      <svg class="dot-layer" viewBox="0 0 360 120" xmlns="http://www.w3.org/2000/svg">
+        <circle id="dotOuter2" cx="27" cy="94" r="7" fill="#323232ff"/>
+        <circle id="dotInner2" cx="27" cy="94" r="5" fill="#ffffff"/>
       </svg>
     </div>
   </div>
@@ -147,11 +147,11 @@
       <div
         style="
           position:absolute;
-          left:22.5px;
-          top:59px;
-          width:255px;
+          left:27px;
+          top:74px;
+          width:306px;
           display:flex;
-          font-size:9px;
+          font-size:10px;
           color:#d9d9d9;
           opacity:0.5;
           letter-spacing:0.02em;
@@ -170,10 +170,10 @@
         id="val3"
         style="
           position:absolute;
-          top:44%;
-          left:20px;
+          top:52%;
+          left:24px;
           transform:translateY(-50%);
-          font-size:12px;
+          font-size:14px;
           font-weight:500;
           color:#d9d9d9;
           z-index:2;
@@ -185,23 +185,23 @@
       <div
         style="
           position:absolute;
-          top:44%;
-          right:20px;
+          top:52%;
+          right:24px;
           transform:translateY(-50%);
-          font-size:11px;
+          font-size:13px;
           color:#d9d9d9;
           z-index:2;
           white-space:nowrap;
         ">
-        <span id="warn3" style="opacity:0.5;margin-right:4px;font-size:12px;visibility:hidden;">⚠</span>
+        <span id="warn3" style="opacity:0.5;margin-right:5px;font-size:14px;visibility:hidden;">⚠</span>
         <span style="opacity:0.5;">Risk level:</span>
         <span id="risk3" style="opacity:0.75;">–%</span>
       </div>
 
       <!-- dot layer -->
-      <svg class="dot-layer" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
-        <circle id="dotOuter3" cx="23" cy="79" r="6" fill="#323232ff"/>
-        <circle id="dotInner3" cx="23" cy="79" r="4" fill="#ffffff"/>
+      <svg class="dot-layer" viewBox="0 0 360 120" xmlns="http://www.w3.org/2000/svg">
+        <circle id="dotOuter3" cx="27" cy="94" r="7" fill="#323232ff"/>
+        <circle id="dotInner3" cx="27" cy="94" r="5" fill="#ffffff"/>
       </svg>
     </div>
   </div>
@@ -216,19 +216,19 @@
 
   .index-box{
     position:relative;
-    width:300px;
-    height:100px;
+    width:360px;
+    height:120px;
     background-repeat:no-repeat;
-    background-size:300px 100px;
+    background-size:360px 120px;
     font-family:system-ui,-apple-system,sans-serif;
   }
 
   .box-title{
     position:absolute;
-    top:12px;
-    left:20px;
-    right:12px;
-    font-size:11px;
+    top:14px;
+    left:24px;
+    right:16px;
+    font-size:13px;
     font-weight:500;
     color:#d9d9d9;
     line-height:1.2;
@@ -254,9 +254,9 @@ function setValue(boxId, x){
   const TOTAL = 25;
   const step = Math.round((pct / 100) * (TOTAL - 1)) + 1;
 
-  // resized geometry for 300×100
-  const START = 23;   // ~7.5% left margin
-  const END   = 277;  // 300 - START
+  // geometry for 360×120
+  const START = 27;
+  const END   = 333;
   const BIN   = (END - START) / TOTAL;
   const cx = START + (step - 0.5) * BIN;
 
@@ -284,7 +284,7 @@ function setWarn(boxId, show){
 }
 
 (function () {
-  const KEY = "dashboard_indexes_cache_v6";
+  const KEY = "dashboard_indexes_cache_v7";
 
   function readCache(){
     try{
