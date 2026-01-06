@@ -1,8 +1,13 @@
-<!-- FULL FILE (scripts restored) + latest alignment (+2px more inward)
-     - Background: high-bar-scale-grey.svg
-     - Dot geometry: START/END unchanged, cy=122
-     - Titles/left-mid/right-mid aligned via --bar-left / --bar-right
-     - Scale labels aligned to the same anchors (left + width derived)
+<!-- FULL FILE – fixed so the scale is the RECTANGLE BAR span (not the decorative circles)
+     - Dot moves over 25 equal bins from the left edge of the first rectangle to the right edge of the last rectangle.
+       Example: step=3 sits at the center of bin #3 (inside the first rectangle).
+     - Scale labels are centered over the 5 rectangles (same 5 equal-width segments).
+
+     Based on your current working file :contentReference[oaicite:0]{index=0}, the fix is:
+     - introduce separate CSS vars:
+         --scale-left / --scale-right  (true bar rectangle edges)
+         --text-left  / --text-right   (your “nudged inward” alignment for title/values/risk)
+     - setValue() uses --scale-left/right geometry (hardcoded numeric constants matching the SVG)
 -->
 
 <div class="indexes">
@@ -12,7 +17,7 @@
     <div id="box1" class="index-box" style="background-image:url('/assets/img/high-bar-scale-grey.svg');">
       <div class="box-title">Navigation Index — Yellow</div>
 
-      <!-- scale zones -->
+      <!-- scale zones (centered over the 5 rectangles) -->
       <div class="scale-zones">
         <span style="flex:1;text-align:center;">Entry</span>
         <span style="flex:1;text-align:center;">Scale In</span>
@@ -31,10 +36,10 @@
         <span id="risk1" style="opacity:0.75;">–%</span>
       </div>
 
-      <!-- dot layer -->
+      <!-- dot layer (default position = center of bin #1) -->
       <svg class="dot-layer" viewBox="0 0 450 150" xmlns="http://www.w3.org/2000/svg">
-        <circle id="dotOuter1" cx="35.53" cy="122" r="9" fill="#323232ff"/>
-        <circle id="dotInner1" cx="35.53" cy="122" r="6" fill="#ffffff"/>
+        <circle id="dotOuter1" cx="43.11" cy="122" r="9" fill="#323232ff"/>
+        <circle id="dotInner1" cx="43.11" cy="122" r="6" fill="#ffffff"/>
       </svg>
     </div>
   </div>
@@ -44,7 +49,6 @@
     <div id="box2" class="index-box" style="background-image:url('/assets/img/high-bar-scale-grey.svg');">
       <div class="box-title">Navigation Index — Blue</div>
 
-      <!-- scale zones -->
       <div class="scale-zones">
         <span style="flex:1;text-align:center;">Entry</span>
         <span style="flex:1;text-align:center;">Scale In</span>
@@ -53,20 +57,17 @@
         <span style="flex:1;text-align:center;">Exit</span>
       </div>
 
-      <!-- value (left) -->
       <div id="val2" class="mid-left">–</div>
 
-      <!-- risk line (right) -->
       <div class="mid-right">
         <span id="warn2" style="opacity:0.5;margin-right:6px;font-size:17px;visibility:hidden;">⚠</span>
         <span style="opacity:0.5;">Risk level:</span>
         <span id="risk2" style="opacity:0.75;">–%</span>
       </div>
 
-      <!-- dot layer -->
       <svg class="dot-layer" viewBox="0 0 450 150" xmlns="http://www.w3.org/2000/svg">
-        <circle id="dotOuter2" cx="35.53" cy="122" r="9" fill="#323232ff"/>
-        <circle id="dotInner2" cx="35.53" cy="122" r="6" fill="#ffffff"/>
+        <circle id="dotOuter2" cx="43.11" cy="122" r="9" fill="#323232ff"/>
+        <circle id="dotInner2" cx="43.11" cy="122" r="6" fill="#ffffff"/>
       </svg>
     </div>
   </div>
@@ -76,7 +77,6 @@
     <div id="box3" class="index-box" style="background-image:url('/assets/img/high-bar-scale-grey.svg');">
       <div class="box-title">Navigation Index — Grey</div>
 
-      <!-- scale zones -->
       <div class="scale-zones">
         <span style="flex:1;text-align:center;">Entry</span>
         <span style="flex:1;text-align:center;">Scale In</span>
@@ -85,20 +85,17 @@
         <span style="flex:1;text-align:center;">Exit</span>
       </div>
 
-      <!-- value (left) -->
       <div id="val3" class="mid-left">–</div>
 
-      <!-- risk line (right) -->
       <div class="mid-right">
         <span id="warn3" style="opacity:0.5;margin-right:6px;font-size:17px;visibility:hidden;">⚠</span>
         <span style="opacity:0.5;">Risk level:</span>
         <span id="risk3" style="opacity:0.75;">–%</span>
       </div>
 
-      <!-- dot layer -->
       <svg class="dot-layer" viewBox="0 0 450 150" xmlns="http://www.w3.org/2000/svg">
-        <circle id="dotOuter3" cx="35.53" cy="122" r="9" fill="#323232ff"/>
-        <circle id="dotInner3" cx="35.53" cy="122" r="6" fill="#ffffff"/>
+        <circle id="dotOuter3" cx="43.11" cy="122" r="9" fill="#323232ff"/>
+        <circle id="dotInner3" cx="43.11" cy="122" r="6" fill="#ffffff"/>
       </svg>
     </div>
   </div>
@@ -109,9 +106,21 @@
   .indexes{ display:flex; flex-direction:column; }
 
   .index-box{
-    /* latest inward nudge (total +4px from original 35.53/414.47) */
-    --bar-left: 39.53px;
-    --bar-right: 410.47px;
+    /*
+      TRUE SCALE EDGES (rectangle bar):
+        SVG viewBox width = 570
+        bar rects span x=45..525
+        rendered width = 450
+        => scale factor = 450/570
+        => left  = 45  * 450/570 = 35.53
+           right = 525 * 450/570 = 414.47
+    */
+    --scale-left: 35.53px;
+    --scale-right: 414.47px;
+
+    /* Your visual “nudge inward” for text only */
+    --text-left: 39.53px;
+    --text-right: 410.47px;
 
     position:relative;
     width:450px;
@@ -124,7 +133,7 @@
   .box-title{
     position:absolute;
     top:18px;
-    left:var(--bar-left);
+    left:var(--text-left);
     right:auto;
     font-size:15px;
     font-weight:500;
@@ -134,11 +143,12 @@
     white-space:nowrap;
   }
 
+  /* Labels centered over each of the 5 equal rectangles */
   .scale-zones{
     position:absolute;
-    left:var(--bar-left);
+    left:var(--scale-left);
     top:92px;
-    width:calc(var(--bar-right) - var(--bar-left));
+    width:calc(var(--scale-right) - var(--scale-left));
     display:flex;
     font-size:13px;
     color:#d9d9d9;
@@ -151,7 +161,7 @@
   .mid-left{
     position:absolute;
     top:44%;
-    left:var(--bar-left);
+    left:var(--text-left);
     transform:translateY(-50%);
     font-size:17px;
     font-weight:500;
@@ -164,7 +174,7 @@
   .mid-right{
     position:absolute;
     top:44%;
-    left:var(--bar-right);
+    left:var(--text-right);
     transform:translate(-100%, -50%);
     font-size:15px;
     color:#d9d9d9;
@@ -192,10 +202,14 @@ function setValue(boxId, x){
   const TOTAL = 25;
   const step = Math.round((pct / 100) * (TOTAL - 1)) + 1;
 
-  // dot mapping (kept matching the SVG bar geometry)
+  // Rectangle bar edges (not circles)
   const START = 35.53;
   const END   = 414.47;
-  const BIN   = (END - START) / TOTAL;
+
+  // 25 equal bins across the rectangle bar width:
+  // step=1 -> center of bin #1 (inside first rectangle)
+  // step=25 -> center of bin #25 (inside last rectangle)
+  const BIN = (END - START) / TOTAL;
   const cx = START + (step - 0.5) * BIN;
 
   const outer = document.getElementById("dotOuter" + boxId);
@@ -271,7 +285,6 @@ function setWarn(boxId, show){
   async function load(){
     const cached = readCache();
 
-    // paint cached immediately
     if (cached) applyAll(cached);
 
     try{
@@ -310,3 +323,4 @@ function setWarn(boxId, show){
   }
 })();
 </script>
+
