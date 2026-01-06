@@ -1,30 +1,23 @@
-<!-- Updated layout: fixes narrow-wrap left alignment for right-side gadgets
-     Fix: when the gadget wraps under the main box, it now starts at the SAME left edge.
-     Mechanism: force each flex item to take a full line on small widths (flex-basis:100%),
-                and remove any residual horizontal indent via flex-start + column mode.
+<!-- FIXED FILE — 420×140 visual logic + right-side placeholders + mobile scaling
+     Fix for narrow windows:
+     • Replace flex-wrap row with CSS GRID.
+       When it collapses to 1 column, the gadget sits directly under the main box
+       starting at the exact same left edge (no wrap-indent / gap artefacts).
 -->
 
 <div class="indexes">
 
   <!-- ROW 1 : BOX 1 + GADGET -->
-  <div class="row-wrap" style="margin-bottom:28px;">
+  <div class="row-grid" style="margin-bottom:28px;">
 
     <div class="scale-420">
       <div id="box1" class="index-box" style="background-image:url('/assets/img/bar-scale-yellow.svg');">
         <div class="box-title">Navigation Index — Yellow</div>
 
         <div style="
-          position:absolute;
-          left:32px;
-          top:82px;
-          width:356px;
-          display:flex;
-          font-size:13px;
-          color:#d9d9d9;
-          opacity:0.5;
-          letter-spacing:0.02em;
-          z-index:2;
-          pointer-events:none;">
+          position:absolute; left:32px; top:82px; width:356px; display:flex;
+          font-size:13px; color:#d9d9d9; opacity:0.5; letter-spacing:0.02em;
+          z-index:2; pointer-events:none;">
           <span style="flex:1;text-align:center;">Entry</span>
           <span style="flex:1;text-align:center;">Scale In</span>
           <span style="flex:1;text-align:center;">Hold</span>
@@ -33,24 +26,12 @@
         </div>
 
         <div id="val1" style="
-          position:absolute;
-          top:45%;
-          left:28px;
-          transform:translateY(-50%);
-          font-size:16px;
-          font-weight:500;
-          color:#d9d9d9;
-          z-index:2;">–</div>
+          position:absolute; top:45%; left:28px; transform:translateY(-50%);
+          font-size:16px; font-weight:500; color:#d9d9d9; z-index:2;">–</div>
 
         <div style="
-          position:absolute;
-          top:45%;
-          right:28px;
-          transform:translateY(-50%);
-          font-size:14px;
-          color:#d9d9d9;
-          z-index:2;
-          white-space:nowrap;">
+          position:absolute; top:45%; right:28px; transform:translateY(-50%);
+          font-size:14px; color:#d9d9d9; z-index:2; white-space:nowrap;">
           <span id="warn1" style="opacity:0.5;margin-right:6px;font-size:17px;visibility:hidden;">⚠</span>
           <span style="opacity:0.5;">Risk level:</span>
           <span id="risk1" style="opacity:0.75;">–%</span>
@@ -70,24 +51,16 @@
   </div>
 
   <!-- ROW 2 : BOX 2 + GADGET -->
-  <div class="row-wrap" style="margin-bottom:28px;">
+  <div class="row-grid" style="margin-bottom:28px;">
 
     <div class="scale-420">
       <div id="box2" class="index-box" style="background-image:url('/assets/img/bar-scale-blue.svg');">
         <div class="box-title">Navigation Index — Blue</div>
 
         <div style="
-          position:absolute;
-          left:32px;
-          top:82px;
-          width:356px;
-          display:flex;
-          font-size:13px;
-          color:#d9d9d9;
-          opacity:0.5;
-          letter-spacing:0.02em;
-          z-index:2;
-          pointer-events:none;">
+          position:absolute; left:32px; top:82px; width:356px; display:flex;
+          font-size:13px; color:#d9d9d9; opacity:0.5; letter-spacing:0.02em;
+          z-index:2; pointer-events:none;">
           <span style="flex:1;text-align:center;">Entry</span>
           <span style="flex:1;text-align:center;">Scale In</span>
           <span style="flex:1;text-align:center;">Hold/Wait</span>
@@ -96,24 +69,12 @@
         </div>
 
         <div id="val2" style="
-          position:absolute;
-          top:45%;
-          left:28px;
-          transform:translateY(-50%);
-          font-size:16px;
-          font-weight:500;
-          color:#d9d9d9;
-          z-index:2;">–</div>
+          position:absolute; top:45%; left:28px; transform:translateY(-50%);
+          font-size:16px; font-weight:500; color:#d9d9d9; z-index:2;">–</div>
 
         <div style="
-          position:absolute;
-          top:45%;
-          right:28px;
-          transform:translateY(-50%);
-          font-size:14px;
-          color:#d9d9d9;
-          z-index:2;
-          white-space:nowrap;">
+          position:absolute; top:45%; right:28px; transform:translateY(-50%);
+          font-size:14px; color:#d9d9d9; z-index:2; white-space:nowrap;">
           <span id="warn2" style="opacity:0.5;margin-right:6px;font-size:17px;visibility:hidden;">⚠</span>
           <span style="opacity:0.5;">Risk level:</span>
           <span id="risk2" style="opacity:0.75;">–%</span>
@@ -132,23 +93,15 @@
 
   </div>
 
-  <!-- BOX 3 -->
+  <!-- BOX 3 (no gadget on the right in your current layout) -->
   <div class="scale-420">
     <div id="box3" class="index-box" style="background-image:url('/assets/img/bar-scale-grey.svg');">
       <div class="box-title">Navigation Index — Grey</div>
 
       <div style="
-        position:absolute;
-        left:32px;
-        top:82px;
-        width:356px;
-        display:flex;
-        font-size:13px;
-        color:#d9d9d9;
-        opacity:0.5;
-        letter-spacing:0.02em;
-        z-index:2;
-        pointer-events:none;">
+        position:absolute; left:32px; top:82px; width:356px; display:flex;
+        font-size:13px; color:#d9d9d9; opacity:0.5; letter-spacing:0.02em;
+        z-index:2; pointer-events:none;">
         <span style="flex:1;text-align:center;">Entry</span>
         <span style="flex:1;text-align:center;">Scale In</span>
         <span style="flex:1;text-align:center;">Hold/Wait</span>
@@ -157,24 +110,12 @@
       </div>
 
       <div id="val3" style="
-        position:absolute;
-        top:45%;
-        left:28px;
-        transform:translateY(-50%);
-        font-size:16px;
-        font-weight:500;
-        color:#d9d9d9;
-        z-index:2;">–</div>
+        position:absolute; top:45%; left:28px; transform:translateY(-50%);
+        font-size:16px; font-weight:500; color:#d9d9d9; z-index:2;">–</div>
 
       <div style="
-        position:absolute;
-        top:45%;
-        right:28px;
-        transform:translateY(-50%);
-        font-size:14px;
-        color:#d9d9d9;
-        z-index:2;
-        white-space:nowrap;">
+        position:absolute; top:45%; right:28px; transform:translateY(-50%);
+        font-size:14px; color:#d9d9d9; z-index:2; white-space:nowrap;">
         <span id="warn3" style="opacity:0.5;margin-right:6px;font-size:17px;visibility:hidden;">⚠</span>
         <span style="opacity:0.5;">Risk level:</span>
         <span id="risk3" style="opacity:0.75;">–%</span>
@@ -195,12 +136,21 @@
     flex-direction:column;
   }
 
-  .row-wrap{
-    display:flex;
-    flex-wrap:wrap;
+  /* GRID row: stable alignment in both 2-col and 1-col states */
+  .row-grid{
+    display:grid;
+    grid-template-columns: 420px 225px;
     gap:28px;
-    align-items:flex-start;
-    justify-content:flex-start;
+    align-items:start;
+    justify-content:start;
+  }
+
+  /* collapse to one column exactly when it can no longer fit */
+  @media (max-width: 700px){
+    .row-grid{
+      grid-template-columns: 1fr;
+      gap:16px;
+    }
   }
 
   /* scale wrapper for 420×140 boxes */
@@ -208,7 +158,6 @@
     width:min(420px, 100%);
     --s: min(1, calc(100% / 420));
     height: calc(140px * var(--s));
-    flex: 0 0 auto;
   }
   .scale-420 > .index-box{
     width:420px;
@@ -222,7 +171,12 @@
     width:min(225px, 100%);
     --s: min(1, calc(100% / 225));
     height: calc(140px * var(--s));
-    flex: 0 0 auto;
+  }
+  .scale-225 > .gadget-box{
+    width:225px;
+    height:140px;
+    transform: scale(var(--s));
+    transform-origin: top left;
   }
 
   .index-box{
@@ -233,8 +187,6 @@
   }
 
   .gadget-box{
-    width:225px;
-    height:140px;
     background-repeat:no-repeat;
     background-size:225px 140px;
   }
@@ -256,22 +208,6 @@
     inset:0;
     pointer-events:none;
     z-index:1;
-  }
-
-  /* NARROW FIX:
-     When the gadget wraps under the main box, force both items to be full-line,
-     so each line starts at the same left edge (no visual indent).
-  */
-  @media (max-width: 720px){
-    .row-wrap{
-      flex-direction:column;
-      gap:16px;
-      align-items:flex-start;
-    }
-    .scale-420,
-    .scale-225{
-      width:100%;
-    }
   }
 </style>
 
@@ -327,9 +263,7 @@ function setWarn(boxId, show){
   }
 
   function writeCache(obj){
-    try{
-      sessionStorage.setItem(KEY, JSON.stringify(obj));
-    } catch(e){}
+    try{ sessionStorage.setItem(KEY, JSON.stringify(obj)); } catch(e){}
   }
 
   function signatureFrom(data){
