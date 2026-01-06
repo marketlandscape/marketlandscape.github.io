@@ -4,7 +4,7 @@
 
   <!-- BOX 1 -->
   <div style="margin-bottom:28px;">
-    <div id="box1" class="index-box" style="background-image:url('/assets/img/high-bar-scale-grey.svg');">
+    <div id="box1" class="index-box" style="background-image:url('/assets/img/high-bar-scale-yellow.svg');">
       <div class="box-title">Navigation Index — Yellow</div>
 
       <!-- scale zones -->
@@ -36,7 +36,7 @@
 
   <!-- BOX 2 -->
   <div style="margin-bottom:28px;">
-    <div id="box2" class="index-box" style="background-image:url('/assets/img/high-bar-scale-grey.svg');">
+    <div id="box2" class="index-box" style="background-image:url('/assets/img/high-bar-scale-blue.svg');">
       <div class="box-title">Navigation Index — Blue</div>
 
       <!-- scale zones -->
