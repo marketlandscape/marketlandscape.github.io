@@ -61,7 +61,7 @@
 
     <!-- PLACEHOLDER -->
     <div class="placeholder-box" aria-hidden="true">
-      <img src="/assets/img/bar-scale-grey-clean.svg" alt="" />
+      <img src="/assets/img/grey-clean.svg" alt="" />
     </div>
 
   </div>
@@ -124,7 +124,7 @@
 
     <!-- PLACEHOLDER -->
     <div class="placeholder-box" aria-hidden="true">
-      <img src="/assets/img/bar-scale-grey-clean.svg" alt="" />
+      <img src="/assets/img/grey-clean.svg" alt="" />
     </div>
 
   </div>
