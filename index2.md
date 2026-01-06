@@ -1,4 +1,4 @@
-<!-- Updated layout: font sizes + vertical alignment adjusted -->
+<!-- Updated layout: fine vertical alignment + label text normalization -->
 
 <div class="indexes">
 
@@ -7,12 +7,12 @@
     <div id="box1" class="index-box" style="background-image:url('/assets/img/bar-scale-yellow.svg');">
       <div class="box-title">Navigation Index — Yellow</div>
 
-      <!-- scale zones -->
+      <!-- scale zones (moved 2px up) -->
       <div
         style="
           position:absolute;
           left:27px;
-          top:74px;
+          top:72px;
           width:306px;
           display:flex;
           font-size:12px;
@@ -29,12 +29,12 @@
         <span style="flex:1;text-align:center;">HODL</span>
       </div>
 
-      <!-- value (left) -->
+      <!-- value (left) – moved 2px up -->
       <div
         id="val1"
         style="
           position:absolute;
-          top:48%;
+          top:46%;
           left:24px;
           transform:translateY(-50%);
           font-size:14px;
@@ -45,11 +45,11 @@
         –
       </div>
 
-      <!-- risk line (right) -->
+      <!-- risk line (right) – moved 2px up -->
       <div
         style="
           position:absolute;
-          top:48%;
+          top:46%;
           right:24px;
           transform:translateY(-50%);
           font-size:14px;
@@ -62,7 +62,6 @@
         <span id="risk1" style="opacity:0.75;">–%</span>
       </div>
 
-      <!-- dot layer -->
       <svg class="dot-layer" viewBox="0 0 360 120" xmlns="http://www.w3.org/2000/svg">
         <circle id="dotOuter1" cx="27" cy="94" r="7" fill="#323232ff"/>
         <circle id="dotInner1" cx="27" cy="94" r="5" fill="#ffffff"/>
@@ -80,7 +79,7 @@
         style="
           position:absolute;
           left:27px;
-          top:74px;
+          top:72px;
           width:306px;
           display:flex;
           font-size:12px;
@@ -92,17 +91,17 @@
         ">
         <span style="flex:1;text-align:center;">Entry</span>
         <span style="flex:1;text-align:center;">Scale In</span>
-        <span style="flex:1;text-align:center;">Hold / Wait</span>
+        <span style="flex:1;text-align:center;">Hold/Wait</span>
         <span style="flex:1;text-align:center;">Reduce</span>
         <span style="flex:1;text-align:center;">Exit</span>
       </div>
 
-      <!-- value (left) -->
+      <!-- value -->
       <div
         id="val2"
         style="
           position:absolute;
-          top:48%;
+          top:46%;
           left:24px;
           transform:translateY(-50%);
           font-size:14px;
@@ -113,11 +112,11 @@
         –
       </div>
 
-      <!-- risk line (right) -->
+      <!-- risk -->
       <div
         style="
           position:absolute;
-          top:48%;
+          top:46%;
           right:24px;
           transform:translateY(-50%);
           font-size:14px;
@@ -130,7 +129,6 @@
         <span id="risk2" style="opacity:0.75;">–%</span>
       </div>
 
-      <!-- dot layer -->
       <svg class="dot-layer" viewBox="0 0 360 120" xmlns="http://www.w3.org/2000/svg">
         <circle id="dotOuter2" cx="27" cy="94" r="7" fill="#323232ff"/>
         <circle id="dotInner2" cx="27" cy="94" r="5" fill="#ffffff"/>
@@ -148,7 +146,7 @@
         style="
           position:absolute;
           left:27px;
-          top:74px;
+          top:72px;
           width:306px;
           display:flex;
           font-size:12px;
@@ -160,17 +158,17 @@
         ">
         <span style="flex:1;text-align:center;">Entry</span>
         <span style="flex:1;text-align:center;">Scale In</span>
-        <span style="flex:1;text-align:center;">Hold / Wait</span>
+        <span style="flex:1;text-align:center;">Hold/Wait</span>
         <span style="flex:1;text-align:center;">Reduce</span>
         <span style="flex:1;text-align:center;">Exit</span>
       </div>
 
-      <!-- value (left) -->
+      <!-- value -->
       <div
         id="val3"
         style="
           position:absolute;
-          top:48%;
+          top:46%;
           left:24px;
           transform:translateY(-50%);
           font-size:14px;
@@ -181,11 +179,11 @@
         –
       </div>
 
-      <!-- risk line (right) -->
+      <!-- risk -->
       <div
         style="
           position:absolute;
-          top:48%;
+          top:46%;
           right:24px;
           transform:translateY(-50%);
           font-size:14px;
@@ -198,7 +196,6 @@
         <span id="risk3" style="opacity:0.75;">–%</span>
       </div>
 
-      <!-- dot layer -->
       <svg class="dot-layer" viewBox="0 0 360 120" xmlns="http://www.w3.org/2000/svg">
         <circle id="dotOuter3" cx="27" cy="94" r="7" fill="#323232ff"/>
         <circle id="dotInner3" cx="27" cy="94" r="5" fill="#ffffff"/>
@@ -283,7 +280,7 @@ function setWarn(boxId, show){
 }
 
 (function () {
-  const KEY = "dashboard_indexes_cache_v8";
+  const KEY = "dashboard_indexes_cache_v9";
 
   function readCache(){
     try{
