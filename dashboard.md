@@ -1,6 +1,7 @@
-<!-- Updated layout: desktop-native 420×140 boxes (new visual logic),
-     keeps right-side placeholder gadgets + keeps mobile scaling wrappers.
-     Source baseline: :contentReference[oaicite:0]{index=0}
+<!-- Updated layout: fixes narrow-wrap left alignment for right-side gadgets
+     Fix: when the gadget wraps under the main box, it now starts at the SAME left edge.
+     Mechanism: force each flex item to take a full line on small widths (flex-basis:100%),
+                and remove any residual horizontal indent via flex-start + column mode.
 -->
 
 <div class="indexes">
@@ -8,168 +9,11 @@
   <!-- ROW 1 : BOX 1 + GADGET -->
   <div class="row-wrap" style="margin-bottom:28px;">
 
-    <!-- BOX 1 (scaled as a unit) -->
     <div class="scale-420">
       <div id="box1" class="index-box" style="background-image:url('/assets/img/bar-scale-yellow.svg');">
         <div class="box-title">Navigation Index — Yellow</div>
 
-        <!-- scale zones -->
-        <div
-          style="
-            position:absolute;
-            left:32px;
-            top:82px;
-            width:356px;
-            display:flex;
-            font-size:13px;
-            color:#d9d9d9;
-            opacity:0.5;
-            letter-spacing:0.02em;
-            z-index:2;
-            pointer-events:none;
-          ">
-          <span style="flex:1;text-align:center;">Entry</span>
-          <span style="flex:1;text-align:center;">Scale In</span>
-          <span style="flex:1;text-align:center;">Hold</span>
-          <span style="flex:1;text-align:center;">Conviction</span>
-          <span style="flex:1;text-align:center;">HODL</span>
-        </div>
-
-        <!-- value (left) -->
-        <div
-          id="val1"
-          style="
-            position:absolute;
-            top:45%;
-            left:28px;
-            transform:translateY(-50%);
-            font-size:16px;
-            font-weight:500;
-            color:#d9d9d9;
-            z-index:2;
-          ">
-          –
-        </div>
-
-        <!-- risk line (right) -->
-        <div
-          style="
-            position:absolute;
-            top:45%;
-            right:28px;
-            transform:translateY(-50%);
-            font-size:14px;
-            color:#d9d9d9;
-            z-index:2;
-            white-space:nowrap;
-          ">
-          <!-- reserved warn slot to keep label alignment identical across all boxes -->
-          <span id="warn1" style="opacity:0.5;margin-right:6px;font-size:17px;visibility:hidden;">⚠</span>
-          <span style="opacity:0.5;">Risk level:</span>
-          <span id="risk1" style="opacity:0.75;">–%</span>
-        </div>
-
-        <!-- dot layer -->
-        <svg class="dot-layer" viewBox="0 0 420 140" xmlns="http://www.w3.org/2000/svg">
-          <circle id="dotOuter1" cx="32" cy="110" r="9" fill="#323232ff"/>
-          <circle id="dotInner1" cx="32" cy="110" r="6" fill="#ffffff"/>
-        </svg>
-      </div>
-    </div>
-
-    <!-- GADGET (scaled as a unit) -->
-    <div class="scale-225">
-      <div class="gadget-box" style="background-image:url('/assets/img/grey-clean.svg');"></div>
-    </div>
-
-  </div>
-
-  <!-- ROW 2 : BOX 2 + GADGET -->
-  <div class="row-wrap" style="margin-bottom:28px;">
-
-    <!-- BOX 2 (scaled as a unit) -->
-    <div class="scale-420">
-      <div id="box2" class="index-box" style="background-image:url('/assets/img/bar-scale-blue.svg');">
-        <div class="box-title">Navigation Index — Blue</div>
-
-        <!-- scale zones -->
-        <div
-          style="
-            position:absolute;
-            left:32px;
-            top:82px;
-            width:356px;
-            display:flex;
-            font-size:13px;
-            color:#d9d9d9;
-            opacity:0.5;
-            letter-spacing:0.02em;
-            z-index:2;
-            pointer-events:none;
-          ">
-          <span style="flex:1;text-align:center;">Entry</span>
-          <span style="flex:1;text-align:center;">Scale In</span>
-          <span style="flex:1;text-align:center;">Hold/Wait</span>
-          <span style="flex:1;text-align:center;">Reduce</span>
-          <span style="flex:1;text-align:center;">Exit</span>
-        </div>
-
-        <!-- value (left) -->
-        <div
-          id="val2"
-          style="
-            position:absolute;
-            top:45%;
-            left:28px;
-            transform:translateY(-50%);
-            font-size:16px;
-            font-weight:500;
-            color:#d9d9d9;
-            z-index:2;
-          ">
-          –
-        </div>
-
-        <!-- risk line (right) -->
-        <div
-          style="
-            position:absolute;
-            top:45%;
-            right:28px;
-            transform:translateY(-50%);
-            font-size:14px;
-            color:#d9d9d9;
-            z-index:2;
-            white-space:nowrap;
-          ">
-          <span id="warn2" style="opacity:0.5;margin-right:6px;font-size:17px;visibility:hidden;">⚠</span>
-          <span style="opacity:0.5;">Risk level:</span>
-          <span id="risk2" style="opacity:0.75;">–%</span>
-        </div>
-
-        <!-- dot layer -->
-        <svg class="dot-layer" viewBox="0 0 420 140" xmlns="http://www.w3.org/2000/svg">
-          <circle id="dotOuter2" cx="32" cy="110" r="9" fill="#323232ff"/>
-          <circle id="dotInner2" cx="32" cy="110" r="6" fill="#ffffff"/>
-        </svg>
-      </div>
-    </div>
-
-    <!-- GADGET (scaled as a unit) -->
-    <div class="scale-225">
-      <div class="gadget-box" style="background-image:url('/assets/img/grey-clean.svg');"></div>
-    </div>
-
-  </div>
-
-  <!-- BOX 3 (scaled for mobile correctness) -->
-  <div class="scale-420">
-    <div id="box3" class="index-box" style="background-image:url('/assets/img/bar-scale-grey.svg');">
-      <div class="box-title">Navigation Index — Grey</div>
-
-      <!-- scale zones -->
-      <div
-        style="
+        <div style="
           position:absolute;
           left:32px;
           top:82px;
@@ -180,19 +24,15 @@
           opacity:0.5;
           letter-spacing:0.02em;
           z-index:2;
-          pointer-events:none;
-        ">
-        <span style="flex:1;text-align:center;">Entry</span>
-        <span style="flex:1;text-align:center;">Scale In</span>
-        <span style="flex:1;text-align:center;">Hold/Wait</span>
-        <span style="flex:1;text-align:center;">Reduce</span>
-        <span style="flex:1;text-align:center;">Exit</span>
-      </div>
+          pointer-events:none;">
+          <span style="flex:1;text-align:center;">Entry</span>
+          <span style="flex:1;text-align:center;">Scale In</span>
+          <span style="flex:1;text-align:center;">Hold</span>
+          <span style="flex:1;text-align:center;">Conviction</span>
+          <span style="flex:1;text-align:center;">HODL</span>
+        </div>
 
-      <!-- value (left) -->
-      <div
-        id="val3"
-        style="
+        <div id="val1" style="
           position:absolute;
           top:45%;
           left:28px;
@@ -200,14 +40,9 @@
           font-size:16px;
           font-weight:500;
           color:#d9d9d9;
-          z-index:2;
-        ">
-        –
-      </div>
+          z-index:2;">–</div>
 
-      <!-- risk line (right) -->
-      <div
-        style="
+        <div style="
           position:absolute;
           top:45%;
           right:28px;
@@ -215,14 +50,136 @@
           font-size:14px;
           color:#d9d9d9;
           z-index:2;
-          white-space:nowrap;
-        ">
+          white-space:nowrap;">
+          <span id="warn1" style="opacity:0.5;margin-right:6px;font-size:17px;visibility:hidden;">⚠</span>
+          <span style="opacity:0.5;">Risk level:</span>
+          <span id="risk1" style="opacity:0.75;">–%</span>
+        </div>
+
+        <svg class="dot-layer" viewBox="0 0 420 140" xmlns="http://www.w3.org/2000/svg">
+          <circle id="dotOuter1" cx="32" cy="110" r="9" fill="#323232ff"/>
+          <circle id="dotInner1" cx="32" cy="110" r="6" fill="#ffffff"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="scale-225">
+      <div class="gadget-box" style="background-image:url('/assets/img/grey-clean.svg');"></div>
+    </div>
+
+  </div>
+
+  <!-- ROW 2 : BOX 2 + GADGET -->
+  <div class="row-wrap" style="margin-bottom:28px;">
+
+    <div class="scale-420">
+      <div id="box2" class="index-box" style="background-image:url('/assets/img/bar-scale-blue.svg');">
+        <div class="box-title">Navigation Index — Blue</div>
+
+        <div style="
+          position:absolute;
+          left:32px;
+          top:82px;
+          width:356px;
+          display:flex;
+          font-size:13px;
+          color:#d9d9d9;
+          opacity:0.5;
+          letter-spacing:0.02em;
+          z-index:2;
+          pointer-events:none;">
+          <span style="flex:1;text-align:center;">Entry</span>
+          <span style="flex:1;text-align:center;">Scale In</span>
+          <span style="flex:1;text-align:center;">Hold/Wait</span>
+          <span style="flex:1;text-align:center;">Reduce</span>
+          <span style="flex:1;text-align:center;">Exit</span>
+        </div>
+
+        <div id="val2" style="
+          position:absolute;
+          top:45%;
+          left:28px;
+          transform:translateY(-50%);
+          font-size:16px;
+          font-weight:500;
+          color:#d9d9d9;
+          z-index:2;">–</div>
+
+        <div style="
+          position:absolute;
+          top:45%;
+          right:28px;
+          transform:translateY(-50%);
+          font-size:14px;
+          color:#d9d9d9;
+          z-index:2;
+          white-space:nowrap;">
+          <span id="warn2" style="opacity:0.5;margin-right:6px;font-size:17px;visibility:hidden;">⚠</span>
+          <span style="opacity:0.5;">Risk level:</span>
+          <span id="risk2" style="opacity:0.75;">–%</span>
+        </div>
+
+        <svg class="dot-layer" viewBox="0 0 420 140" xmlns="http://www.w3.org/2000/svg">
+          <circle id="dotOuter2" cx="32" cy="110" r="9" fill="#323232ff"/>
+          <circle id="dotInner2" cx="32" cy="110" r="6" fill="#ffffff"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="scale-225">
+      <div class="gadget-box" style="background-image:url('/assets/img/grey-clean.svg');"></div>
+    </div>
+
+  </div>
+
+  <!-- BOX 3 -->
+  <div class="scale-420">
+    <div id="box3" class="index-box" style="background-image:url('/assets/img/bar-scale-grey.svg');">
+      <div class="box-title">Navigation Index — Grey</div>
+
+      <div style="
+        position:absolute;
+        left:32px;
+        top:82px;
+        width:356px;
+        display:flex;
+        font-size:13px;
+        color:#d9d9d9;
+        opacity:0.5;
+        letter-spacing:0.02em;
+        z-index:2;
+        pointer-events:none;">
+        <span style="flex:1;text-align:center;">Entry</span>
+        <span style="flex:1;text-align:center;">Scale In</span>
+        <span style="flex:1;text-align:center;">Hold/Wait</span>
+        <span style="flex:1;text-align:center;">Reduce</span>
+        <span style="flex:1;text-align:center;">Exit</span>
+      </div>
+
+      <div id="val3" style="
+        position:absolute;
+        top:45%;
+        left:28px;
+        transform:translateY(-50%);
+        font-size:16px;
+        font-weight:500;
+        color:#d9d9d9;
+        z-index:2;">–</div>
+
+      <div style="
+        position:absolute;
+        top:45%;
+        right:28px;
+        transform:translateY(-50%);
+        font-size:14px;
+        color:#d9d9d9;
+        z-index:2;
+        white-space:nowrap;">
         <span id="warn3" style="opacity:0.5;margin-right:6px;font-size:17px;visibility:hidden;">⚠</span>
         <span style="opacity:0.5;">Risk level:</span>
         <span id="risk3" style="opacity:0.75;">–%</span>
       </div>
 
-      <!-- dot layer -->
       <svg class="dot-layer" viewBox="0 0 420 140" xmlns="http://www.w3.org/2000/svg">
         <circle id="dotOuter3" cx="32" cy="110" r="9" fill="#323232ff"/>
         <circle id="dotInner3" cx="32" cy="110" r="6" fill="#ffffff"/>
@@ -243,6 +200,7 @@
     flex-wrap:wrap;
     gap:28px;
     align-items:flex-start;
+    justify-content:flex-start;
   }
 
   /* scale wrapper for 420×140 boxes */
@@ -267,7 +225,6 @@
     flex: 0 0 auto;
   }
 
-  /* original box plate */
   .index-box{
     position:relative;
     background-repeat:no-repeat;
@@ -275,7 +232,6 @@
     font-family:system-ui,-apple-system,sans-serif;
   }
 
-  /* gadget plate */
   .gadget-box{
     width:225px;
     height:140px;
@@ -302,11 +258,20 @@
     z-index:1;
   }
 
-  /* mobile: force full-width items so BOX never shares a line with gadget */
-  @media (max-width: 640px){
-    .row-wrap{ gap:16px; }
-    .scale-420{ width:100%; }
-    .scale-225{ width:100%; }
+  /* NARROW FIX:
+     When the gadget wraps under the main box, force both items to be full-line,
+     so each line starts at the same left edge (no visual indent).
+  */
+  @media (max-width: 720px){
+    .row-wrap{
+      flex-direction:column;
+      gap:16px;
+      align-items:flex-start;
+    }
+    .scale-420,
+    .scale-225{
+      width:100%;
+    }
   }
 </style>
 
@@ -321,7 +286,6 @@ function setValue(boxId, x){
   const TOTAL = 25;
   const step = Math.round((pct / 100) * (TOTAL - 1)) + 1;
 
-  // geometry for 420×140
   const START = 32;
   const END   = 389;
   const BIN   = (END - START) / TOTAL;
@@ -351,7 +315,7 @@ function setWarn(boxId, show){
 }
 
 (function () {
-  const KEY = "dashboard_indexes_cache_v16"; // keep your latest cache key
+  const KEY = "dashboard_indexes_cache_v16";
 
   function readCache(){
     try{
@@ -384,17 +348,14 @@ function setWarn(boxId, show){
   }
 
   function applyAll(d){
-    // values
     if (d.box1 !== undefined) setValue(1, d.box1);
     if (d.box2 !== undefined) setValue(2, d.box2);
     if (d.box3 !== undefined) setValue(3, d.box3);
 
-    // risks
     if (d.box1_risk !== undefined) setRisk(1, d.box1_risk);
     if (d.box2_risk !== undefined) setRisk(2, d.box2_risk);
     if (d.box3_risk !== undefined) setRisk(3, d.box3_risk);
 
-    // warnings: only box2 & box3 when nav index >= 80; box1 always hidden
     setWarn(1, false);
     const b2 = Number(d.box2);
     const b3 = Number(d.box3);
@@ -404,8 +365,6 @@ function setWarn(boxId, show){
 
   async function load(){
     const cached = readCache();
-
-    // paint cached immediately (prevents flicker / jump)
     if (cached) applyAll(cached);
 
     try{
@@ -414,7 +373,6 @@ function setWarn(boxId, show){
 
       const data = await res.json();
       const sig = signatureFrom(data);
-
       if (cached && cached.sig === sig) return;
 
       applyAll(data);
