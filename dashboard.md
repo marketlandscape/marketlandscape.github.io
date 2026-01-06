@@ -186,7 +186,6 @@
   .placeholder-box{
     width:225px;
     height:150px;
-    opacity:0.35;
     flex:0 0 auto;
     display:flex;
     align-items:center;
