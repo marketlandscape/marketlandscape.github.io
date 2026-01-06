@@ -28,8 +28,8 @@
 
       <!-- dot layer -->
       <svg class="dot-layer" viewBox="0 0 405 150" xmlns="http://www.w3.org/2000/svg">
-        <circle id="dotOuter1" cx="22.5" cy="126" r="9" fill="#323232ff"/>
-        <circle id="dotInner1" cx="22.5" cy="126" r="6" fill="#ffffff"/>
+        <circle id="dotOuter1" cx="22.5" cy="132" r="9" fill="#323232ff"/>
+        <circle id="dotInner1" cx="22.5" cy="132" r="6" fill="#ffffff"/>
       </svg>
     </div>
   </div>
@@ -60,8 +60,8 @@
 
       <!-- dot layer -->
       <svg class="dot-layer" viewBox="0 0 405 150" xmlns="http://www.w3.org/2000/svg">
-        <circle id="dotOuter2" cx="22.5" cy="126" r="9" fill="#323232ff"/>
-        <circle id="dotInner2" cx="22.5" cy="126" r="6" fill="#ffffff"/>
+        <circle id="dotOuter2" cx="22.5" cy="132" r="9" fill="#323232ff"/>
+        <circle id="dotInner2" cx="22.5" cy="132" r="6" fill="#ffffff"/>
       </svg>
     </div>
   </div>
@@ -92,8 +92,8 @@
 
       <!-- dot layer -->
       <svg class="dot-layer" viewBox="0 0 405 150" xmlns="http://www.w3.org/2000/svg">
-        <circle id="dotOuter3" cx="22.5" cy="126" r="9" fill="#323232ff"/>
-        <circle id="dotInner3" cx="22.5" cy="126" r="6" fill="#ffffff"/>
+        <circle id="dotOuter3" cx="22.5" cy="132" r="9" fill="#323232ff"/>
+        <circle id="dotInner3" cx="22.5" cy="132" r="6" fill="#ffffff"/>
       </svg>
     </div>
   </div>
@@ -131,9 +131,9 @@
 
 .scale-zones{
   position:absolute;
-  left:22.5px;     /* align to bar region start */
+  left:22.5px;  /* bar region start */
   top:88px;
-  width:360px;     /* align to bar region width (382.5-22.5) */
+  width:360px;  /* bar region width (382.5 - 22.5) */
   display:flex;
   font-size:13px;
   color:#d9d9d9;
@@ -200,7 +200,7 @@ function setValue(boxId, x){
 
   /*
     Rendered system: 405 × 150
-    Bar region: START=22.5, END=382.5 (width 360)
+    Bar region (scaled from SVG): START=22.5, END=382.5 (width 360)
   */
   const START = 22.5;
   const END   = 382.5;
@@ -260,5 +260,3 @@ function setWarn(boxId, show){
     : load();
 })();
 </script>
-
-
