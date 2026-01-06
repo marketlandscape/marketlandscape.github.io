@@ -1,4 +1,7 @@
-<!-- Simplified layout: three stacked 450×150 boxes with moving dot -->
+<!-- Updated layout: desktop-native 420×140 boxes (new visual logic),
+     keeps right-side placeholder gadgets + keeps mobile scaling wrappers.
+     Source baseline: :contentReference[oaicite:0]{index=0}
+-->
 
 <div class="indexes">
 
@@ -6,7 +9,7 @@
   <div class="row-wrap" style="margin-bottom:28px;">
 
     <!-- BOX 1 (scaled as a unit) -->
-    <div class="scale-450">
+    <div class="scale-420">
       <div id="box1" class="index-box" style="background-image:url('/assets/img/bar-scale-yellow.svg');">
         <div class="box-title">Navigation Index — Yellow</div>
 
@@ -14,9 +17,9 @@
         <div
           style="
             position:absolute;
-            left:33.75px;
-            top:88px;
-            width:382.5px;
+            left:32px;
+            top:82px;
+            width:356px;
             display:flex;
             font-size:13px;
             color:#d9d9d9;
@@ -37,10 +40,10 @@
           id="val1"
           style="
             position:absolute;
-            top:44%;
-            left:30px;
+            top:45%;
+            left:28px;
             transform:translateY(-50%);
-            font-size:17px;
+            font-size:16px;
             font-weight:500;
             color:#d9d9d9;
             z-index:2;
@@ -52,10 +55,10 @@
         <div
           style="
             position:absolute;
-            top:44%;
-            right:30px;
+            top:45%;
+            right:28px;
             transform:translateY(-50%);
-            font-size:15px;
+            font-size:14px;
             color:#d9d9d9;
             z-index:2;
             white-space:nowrap;
@@ -67,9 +70,9 @@
         </div>
 
         <!-- dot layer -->
-        <svg class="dot-layer" viewBox="0 0 450 150" xmlns="http://www.w3.org/2000/svg">
-          <circle id="dotOuter1" cx="34" cy="118" r="9" fill="#323232ff"/>
-          <circle id="dotInner1" cx="34" cy="118" r="6" fill="#ffffff"/>
+        <svg class="dot-layer" viewBox="0 0 420 140" xmlns="http://www.w3.org/2000/svg">
+          <circle id="dotOuter1" cx="32" cy="110" r="9" fill="#323232ff"/>
+          <circle id="dotInner1" cx="32" cy="110" r="6" fill="#ffffff"/>
         </svg>
       </div>
     </div>
@@ -85,7 +88,7 @@
   <div class="row-wrap" style="margin-bottom:28px;">
 
     <!-- BOX 2 (scaled as a unit) -->
-    <div class="scale-450">
+    <div class="scale-420">
       <div id="box2" class="index-box" style="background-image:url('/assets/img/bar-scale-blue.svg');">
         <div class="box-title">Navigation Index — Blue</div>
 
@@ -93,9 +96,9 @@
         <div
           style="
             position:absolute;
-            left:33.75px;
-            top:88px;
-            width:382.5px;
+            left:32px;
+            top:82px;
+            width:356px;
             display:flex;
             font-size:13px;
             color:#d9d9d9;
@@ -106,7 +109,7 @@
           ">
           <span style="flex:1;text-align:center;">Entry</span>
           <span style="flex:1;text-align:center;">Scale In</span>
-          <span style="flex:1;text-align:center;">Hold / Wait</span>
+          <span style="flex:1;text-align:center;">Hold/Wait</span>
           <span style="flex:1;text-align:center;">Reduce</span>
           <span style="flex:1;text-align:center;">Exit</span>
         </div>
@@ -116,10 +119,10 @@
           id="val2"
           style="
             position:absolute;
-            top:44%;
-            left:30px;
+            top:45%;
+            left:28px;
             transform:translateY(-50%);
-            font-size:17px;
+            font-size:16px;
             font-weight:500;
             color:#d9d9d9;
             z-index:2;
@@ -131,10 +134,10 @@
         <div
           style="
             position:absolute;
-            top:44%;
-            right:30px;
+            top:45%;
+            right:28px;
             transform:translateY(-50%);
-            font-size:15px;
+            font-size:14px;
             color:#d9d9d9;
             z-index:2;
             white-space:nowrap;
@@ -145,9 +148,9 @@
         </div>
 
         <!-- dot layer -->
-        <svg class="dot-layer" viewBox="0 0 450 150" xmlns="http://www.w3.org/2000/svg">
-          <circle id="dotOuter2" cx="34" cy="118" r="9" fill="#323232ff"/>
-          <circle id="dotInner2" cx="34" cy="118" r="6" fill="#ffffff"/>
+        <svg class="dot-layer" viewBox="0 0 420 140" xmlns="http://www.w3.org/2000/svg">
+          <circle id="dotOuter2" cx="32" cy="110" r="9" fill="#323232ff"/>
+          <circle id="dotInner2" cx="32" cy="110" r="6" fill="#ffffff"/>
         </svg>
       </div>
     </div>
@@ -160,7 +163,7 @@
   </div>
 
   <!-- BOX 3 (scaled for mobile correctness) -->
-  <div class="scale-450">
+  <div class="scale-420">
     <div id="box3" class="index-box" style="background-image:url('/assets/img/bar-scale-grey.svg');">
       <div class="box-title">Navigation Index — Grey</div>
 
@@ -168,9 +171,9 @@
       <div
         style="
           position:absolute;
-          left:33.75px;
-          top:88px;
-          width:382.5px;
+          left:32px;
+          top:82px;
+          width:356px;
           display:flex;
           font-size:13px;
           color:#d9d9d9;
@@ -181,7 +184,7 @@
         ">
         <span style="flex:1;text-align:center;">Entry</span>
         <span style="flex:1;text-align:center;">Scale In</span>
-        <span style="flex:1;text-align:center;">Hold / Wait</span>
+        <span style="flex:1;text-align:center;">Hold/Wait</span>
         <span style="flex:1;text-align:center;">Reduce</span>
         <span style="flex:1;text-align:center;">Exit</span>
       </div>
@@ -191,10 +194,10 @@
         id="val3"
         style="
           position:absolute;
-          top:44%;
-          left:30px;
+          top:45%;
+          left:28px;
           transform:translateY(-50%);
-          font-size:17px;
+          font-size:16px;
           font-weight:500;
           color:#d9d9d9;
           z-index:2;
@@ -206,10 +209,10 @@
       <div
         style="
           position:absolute;
-          top:44%;
-          right:30px;
+          top:45%;
+          right:28px;
           transform:translateY(-50%);
-          font-size:15px;
+          font-size:14px;
           color:#d9d9d9;
           z-index:2;
           white-space:nowrap;
@@ -220,9 +223,9 @@
       </div>
 
       <!-- dot layer -->
-      <svg class="dot-layer" viewBox="0 0 450 150" xmlns="http://www.w3.org/2000/svg">
-        <circle id="dotOuter3" cx="34" cy="118" r="9" fill="#323232ff"/>
-        <circle id="dotInner3" cx="34" cy="118" r="6" fill="#ffffff"/>
+      <svg class="dot-layer" viewBox="0 0 420 140" xmlns="http://www.w3.org/2000/svg">
+        <circle id="dotOuter3" cx="32" cy="110" r="9" fill="#323232ff"/>
+        <circle id="dotInner3" cx="32" cy="110" r="6" fill="#ffffff"/>
       </svg>
     </div>
   </div>
@@ -242,25 +245,25 @@
     align-items:flex-start;
   }
 
-  /* scale wrapper for 450×150 boxes */
-  .scale-450{
-    width:min(450px, 100%);
-    --s: min(1, calc(100% / 450));
-    height: calc(150px * var(--s));
+  /* scale wrapper for 420×140 boxes */
+  .scale-420{
+    width:min(420px, 100%);
+    --s: min(1, calc(100% / 420));
+    height: calc(140px * var(--s));
     flex: 0 0 auto;
   }
-  .scale-450 > .index-box{
-    width:450px;
-    height:150px;
+  .scale-420 > .index-box{
+    width:420px;
+    height:140px;
     transform: scale(var(--s));
     transform-origin: top left;
   }
 
-  /* scale wrapper for 225×150 gadgets */
+  /* scale wrapper for 225×140 gadgets */
   .scale-225{
     width:min(225px, 100%);
     --s: min(1, calc(100% / 225));
-    height: calc(150px * var(--s));
+    height: calc(140px * var(--s));
     flex: 0 0 auto;
   }
 
@@ -268,23 +271,23 @@
   .index-box{
     position:relative;
     background-repeat:no-repeat;
-    background-size:450px 150px;
+    background-size:420px 140px;
     font-family:system-ui,-apple-system,sans-serif;
   }
 
   /* gadget plate */
   .gadget-box{
     width:225px;
-    height:150px;
+    height:140px;
     background-repeat:no-repeat;
-    background-size:225px 150px;
+    background-size:225px 140px;
   }
 
   .box-title{
     position:absolute;
     top:18px;
-    left:30px;
-    right:17px;
+    left:28px;
+    right:20px;
     font-size:15px;
     font-weight:500;
     color:#d9d9d9;
@@ -302,7 +305,7 @@
   /* mobile: force full-width items so BOX never shares a line with gadget */
   @media (max-width: 640px){
     .row-wrap{ gap:16px; }
-    .scale-450{ width:100%; }
+    .scale-420{ width:100%; }
     .scale-225{ width:100%; }
   }
 </style>
@@ -318,8 +321,9 @@ function setValue(boxId, x){
   const TOTAL = 25;
   const step = Math.round((pct / 100) * (TOTAL - 1)) + 1;
 
-  const START = 34;
-  const END   = 416;
+  // geometry for 420×140
+  const START = 32;
+  const END   = 389;
   const BIN   = (END - START) / TOTAL;
   const cx = START + (step - 0.5) * BIN;
 
@@ -347,7 +351,7 @@ function setWarn(boxId, show){
 }
 
 (function () {
-  const KEY = "dashboard_indexes_cache_v6";
+  const KEY = "dashboard_indexes_cache_v16"; // keep your latest cache key
 
   function readCache(){
     try{
@@ -390,7 +394,7 @@ function setWarn(boxId, show){
     if (d.box2_risk !== undefined) setRisk(2, d.box2_risk);
     if (d.box3_risk !== undefined) setRisk(3, d.box3_risk);
 
-    // warnings: only box2 & box3 when nav index >= 80; BTC always hidden
+    // warnings: only box2 & box3 when nav index >= 80; box1 always hidden
     setWarn(1, false);
     const b2 = Number(d.box2);
     const b3 = Number(d.box3);
