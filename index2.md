@@ -1,4 +1,4 @@
-<!-- Updated layout: three stacked 360×120 boxes with synchronized dot movement -->
+<!-- Updated layout: font sizes + vertical alignment adjusted -->
 
 <div class="indexes">
 
@@ -15,7 +15,7 @@
           top:74px;
           width:306px;
           display:flex;
-          font-size:10px;
+          font-size:12px;
           color:#d9d9d9;
           opacity:0.5;
           letter-spacing:0.02em;
@@ -34,7 +34,7 @@
         id="val1"
         style="
           position:absolute;
-          top:52%;
+          top:48%;
           left:24px;
           transform:translateY(-50%);
           font-size:14px;
@@ -49,15 +49,15 @@
       <div
         style="
           position:absolute;
-          top:52%;
+          top:48%;
           right:24px;
           transform:translateY(-50%);
-          font-size:13px;
+          font-size:14px;
           color:#d9d9d9;
           z-index:2;
           white-space:nowrap;
         ">
-        <span id="warn1" style="opacity:0.5;margin-right:5px;font-size:14px;visibility:hidden;">⚠</span>
+        <span id="warn1" style="opacity:0.5;margin-right:5px;font-size:15px;visibility:hidden;">⚠</span>
         <span style="opacity:0.5;">Risk level:</span>
         <span id="risk1" style="opacity:0.75;">–%</span>
       </div>
@@ -83,7 +83,7 @@
           top:74px;
           width:306px;
           display:flex;
-          font-size:10px;
+          font-size:12px;
           color:#d9d9d9;
           opacity:0.5;
           letter-spacing:0.02em;
@@ -102,7 +102,7 @@
         id="val2"
         style="
           position:absolute;
-          top:52%;
+          top:48%;
           left:24px;
           transform:translateY(-50%);
           font-size:14px;
@@ -117,15 +117,15 @@
       <div
         style="
           position:absolute;
-          top:52%;
+          top:48%;
           right:24px;
           transform:translateY(-50%);
-          font-size:13px;
+          font-size:14px;
           color:#d9d9d9;
           z-index:2;
           white-space:nowrap;
         ">
-        <span id="warn2" style="opacity:0.5;margin-right:5px;font-size:14px;visibility:hidden;">⚠</span>
+        <span id="warn2" style="opacity:0.5;margin-right:5px;font-size:15px;visibility:hidden;">⚠</span>
         <span style="opacity:0.5;">Risk level:</span>
         <span id="risk2" style="opacity:0.75;">–%</span>
       </div>
@@ -151,7 +151,7 @@
           top:74px;
           width:306px;
           display:flex;
-          font-size:10px;
+          font-size:12px;
           color:#d9d9d9;
           opacity:0.5;
           letter-spacing:0.02em;
@@ -170,7 +170,7 @@
         id="val3"
         style="
           position:absolute;
-          top:52%;
+          top:48%;
           left:24px;
           transform:translateY(-50%);
           font-size:14px;
@@ -185,15 +185,15 @@
       <div
         style="
           position:absolute;
-          top:52%;
+          top:48%;
           right:24px;
           transform:translateY(-50%);
-          font-size:13px;
+          font-size:14px;
           color:#d9d9d9;
           z-index:2;
           white-space:nowrap;
         ">
-        <span id="warn3" style="opacity:0.5;margin-right:5px;font-size:14px;visibility:hidden;">⚠</span>
+        <span id="warn3" style="opacity:0.5;margin-right:5px;font-size:15px;visibility:hidden;">⚠</span>
         <span style="opacity:0.5;">Risk level:</span>
         <span id="risk3" style="opacity:0.75;">–%</span>
       </div>
@@ -228,7 +228,7 @@
     top:14px;
     left:24px;
     right:16px;
-    font-size:13px;
+    font-size:14px;
     font-weight:500;
     color:#d9d9d9;
     line-height:1.2;
@@ -254,7 +254,6 @@ function setValue(boxId, x){
   const TOTAL = 25;
   const step = Math.round((pct / 100) * (TOTAL - 1)) + 1;
 
-  // geometry for 360×120
   const START = 27;
   const END   = 333;
   const BIN   = (END - START) / TOTAL;
@@ -284,7 +283,7 @@ function setWarn(boxId, show){
 }
 
 (function () {
-  const KEY = "dashboard_indexes_cache_v7";
+  const KEY = "dashboard_indexes_cache_v8";
 
   function readCache(){
     try{
