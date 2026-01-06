@@ -1,7 +1,6 @@
 <!-- FULL FILE — Desktop boxes 420×140
-     Final micro-adjustments ONLY:
-     • Zone labels up 2px   (top: 84px → 82px)
-     • Middle labels up 4px (top: 48% → 45%)
+     Single change in this version:
+     • Dark-grey outer dot increased by +2px (r: 8 → 10)
      Everything else unchanged.
 -->
 
@@ -60,8 +59,9 @@
         <span id="risk1" style="opacity:0.75;">–%</span>
       </div>
 
+      <!-- dot layer -->
       <svg class="dot-layer" viewBox="0 0 420 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <circle id="dotOuter1" cx="32" cy="110" r="8" fill="#323232"/>
+        <circle id="dotOuter1" cx="32" cy="110" r="10" fill="#323232"/>
         <circle id="dotInner1" cx="32" cy="110" r="6" fill="#ffffff"/>
       </svg>
     </div>
@@ -118,7 +118,7 @@
       </div>
 
       <svg class="dot-layer" viewBox="0 0 420 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <circle id="dotOuter2" cx="32" cy="110" r="8" fill="#323232"/>
+        <circle id="dotOuter2" cx="32" cy="110" r="10" fill="#323232"/>
         <circle id="dotInner2" cx="32" cy="110" r="6" fill="#ffffff"/>
       </svg>
     </div>
@@ -175,7 +175,7 @@
       </div>
 
       <svg class="dot-layer" viewBox="0 0 420 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <circle id="dotOuter3" cx="32" cy="110" r="8" fill="#323232"/>
+        <circle id="dotOuter3" cx="32" cy="110" r="10" fill="#323232"/>
         <circle id="dotInner3" cx="32" cy="110" r="6" fill="#ffffff"/>
       </svg>
     </div>
@@ -254,7 +254,7 @@ function setWarn(boxId, show){
 }
 
 (function () {
-  const KEY = "dashboard_indexes_cache_v13";
+  const KEY = "dashboard_indexes_cache_v14";
 
   function readCache(){
     try{
