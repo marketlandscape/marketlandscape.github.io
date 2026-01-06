@@ -1,7 +1,11 @@
 <!-- FULL FILE — Desktop boxes 420×140
-     Single change in this version:
-     • Title label font size: 16px → 15px
-     Everything else unchanged.
+     Keeps ALL working logic (fetch + cache + dot + values + risk + warnings)
+     Current UI values:
+       • Title font: 15px
+       • Zone labels top: 82px
+       • Middle labels top: 45%
+       • Risk font: 14px
+       • Dot outer radius: 9 (inner 6)
 -->
 
 <div class="indexes">
@@ -11,6 +15,7 @@
     <div id="box1" class="index-box" style="background-image:url('/assets/img/bar-scale-yellow.svg');">
       <div class="box-title">Navigation Index — Yellow</div>
 
+      <!-- scale zones -->
       <div style="
         position:absolute;
         left:32px;
@@ -30,6 +35,7 @@
         <span style="flex:1;text-align:center;">HODL</span>
       </div>
 
+      <!-- value -->
       <div id="val1" style="
         position:absolute;
         top:45%;
@@ -42,6 +48,7 @@
         –
       </div>
 
+      <!-- risk -->
       <div style="
         position:absolute;
         top:45%;
@@ -56,6 +63,7 @@
         <span id="risk1" style="opacity:0.75;">–%</span>
       </div>
 
+      <!-- dot layer -->
       <svg class="dot-layer" viewBox="0 0 420 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <circle id="dotOuter1" cx="32" cy="110" r="9" fill="#323232"/>
         <circle id="dotInner1" cx="32" cy="110" r="6" fill="#ffffff"/>
@@ -68,6 +76,7 @@
     <div id="box2" class="index-box" style="background-image:url('/assets/img/bar-scale-blue.svg');">
       <div class="box-title">Navigation Index — Blue</div>
 
+      <!-- scale zones -->
       <div style="
         position:absolute;
         left:32px;
@@ -87,6 +96,7 @@
         <span style="flex:1;text-align:center;">Exit</span>
       </div>
 
+      <!-- value -->
       <div id="val2" style="
         position:absolute;
         top:45%;
@@ -99,6 +109,7 @@
         –
       </div>
 
+      <!-- risk -->
       <div style="
         position:absolute;
         top:45%;
@@ -113,6 +124,7 @@
         <span id="risk2" style="opacity:0.75;">–%</span>
       </div>
 
+      <!-- dot layer -->
       <svg class="dot-layer" viewBox="0 0 420 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <circle id="dotOuter2" cx="32" cy="110" r="9" fill="#323232"/>
         <circle id="dotInner2" cx="32" cy="110" r="6" fill="#ffffff"/>
@@ -125,6 +137,7 @@
     <div id="box3" class="index-box" style="background-image:url('/assets/img/bar-scale-grey.svg');">
       <div class="box-title">Navigation Index — Grey</div>
 
+      <!-- scale zones -->
       <div style="
         position:absolute;
         left:32px;
@@ -144,6 +157,7 @@
         <span style="flex:1;text-align:center;">Exit</span>
       </div>
 
+      <!-- value -->
       <div id="val3" style="
         position:absolute;
         top:45%;
@@ -156,6 +170,7 @@
         –
       </div>
 
+      <!-- risk -->
       <div style="
         position:absolute;
         top:45%;
@@ -170,6 +185,7 @@
         <span id="risk3" style="opacity:0.75;">–%</span>
       </div>
 
+      <!-- dot layer -->
       <svg class="dot-layer" viewBox="0 0 420 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <circle id="dotOuter3" cx="32" cy="110" r="9" fill="#323232"/>
         <circle id="dotInner3" cx="32" cy="110" r="6" fill="#ffffff"/>
@@ -199,7 +215,7 @@
     top:18px;
     left:28px;
     right:20px;
-    font-size:15px; /* was 16px */
+    font-size:15px;
     font-weight:500;
     color:#d9d9d9;
     line-height:1.2;
@@ -225,13 +241,121 @@ function setValue(boxId, x){
   const TOTAL = 25;
   const step = Math.round((pct / 100) * (TOTAL - 1)) + 1;
 
+  // geometry for 420×140
   const START = 32;
   const END   = 389;
   const BIN   = (END - START) / TOTAL;
   const cx = START + (step - 0.5) * BIN;
 
-  document.getElementById("dotOuter" + boxId).setAttribute("cx", cx);
-  document.getElementById("dotInner" + boxId).setAttribute("cx", cx);
-  document.getElementById("val" + boxId).textContent = step + "/" + TOTAL;
+  const outer = document.getElementById("dotOuter" + boxId);
+  const inner = document.getElementById("dotInner" + boxId);
+  const val   = document.getElementById("val" + boxId);
+
+  if (outer) outer.setAttribute("cx", cx);
+  if (inner) inner.setAttribute("cx", cx);
+  if (val)   val.textContent = step + "/" + TOTAL;
 }
+
+function setRisk(boxId, r){
+  const n = Number(r);
+  if (!Number.isFinite(n)) return;
+  const el = document.getElementById("risk" + boxId);
+  if (!el) return;
+  el.textContent = Math.round(clamp(n, 0, 100)) + "%";
+}
+
+function setWarn(boxId, show){
+  const el = document.getElementById("warn" + boxId);
+  if (!el) return;
+  el.style.visibility = show ? "visible" : "hidden";
+}
+
+(function () {
+  const KEY = "dashboard_indexes_cache_v16";
+
+  function readCache(){
+    try{
+      const raw = sessionStorage.getItem(KEY);
+      return raw ? JSON.parse(raw) : null;
+    } catch(e){
+      return null;
+    }
+  }
+
+  function writeCache(obj){
+    try{
+      sessionStorage.setItem(KEY, JSON.stringify(obj));
+    } catch(e){}
+  }
+
+  function signatureFrom(data){
+    return String(
+      data.box3_risk_updated_utc ||
+      data.box2_risk_updated_utc ||
+      data.box1_risk_updated_utc ||
+      data.box3_updated_utc ||
+      data.box2_updated_utc ||
+      data.box1_updated_utc ||
+      JSON.stringify([
+        data.box1, data.box2, data.box3,
+        data.box1_risk, data.box2_risk, data.box3_risk
+      ])
+    );
+  }
+
+  function applyAll(d){
+    if (d.box1 !== undefined) setValue(1, d.box1);
+    if (d.box2 !== undefined) setValue(2, d.box2);
+    if (d.box3 !== undefined) setValue(3, d.box3);
+
+    if (d.box1_risk !== undefined) setRisk(1, d.box1_risk);
+    if (d.box2_risk !== undefined) setRisk(2, d.box2_risk);
+    if (d.box3_risk !== undefined) setRisk(3, d.box3_risk);
+
+    setWarn(1, false);
+    const b2 = Number(d.box2);
+    const b3 = Number(d.box3);
+    setWarn(2, Number.isFinite(b2) && b2 >= 80);
+    setWarn(3, Number.isFinite(b3) && b3 >= 80);
+  }
+
+  async function load(){
+    const cached = readCache();
+    if (cached) applyAll(cached);
+
+    try{
+      const res = await fetch("/data/indexes.json", { cache: "no-store" });
+      if (!res.ok) return;
+
+      const data = await res.json();
+      const sig = signatureFrom(data);
+
+      if (cached && cached.sig === sig) return;
+
+      applyAll(data);
+
+      writeCache({
+        sig,
+        box1: data.box1,
+        box2: data.box2,
+        box3: data.box3,
+        box1_risk: data.box1_risk,
+        box2_risk: data.box2_risk,
+        box3_risk: data.box3_risk,
+        box1_risk_updated_utc: data.box1_risk_updated_utc,
+        box2_risk_updated_utc: data.box2_risk_updated_utc,
+        box3_risk_updated_utc: data.box3_risk_updated_utc,
+        box1_updated_utc: data.box1_updated_utc,
+        box2_updated_utc: data.box2_updated_utc,
+        box3_updated_utc: data.box3_updated_utc
+      });
+    } catch(e){}
+  }
+
+  if (document.readyState === "loading"){
+    document.addEventListener("DOMContentLoaded", load);
+  } else {
+    load();
+  }
+})();
 </script>
