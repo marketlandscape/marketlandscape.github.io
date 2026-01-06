@@ -121,8 +121,8 @@
 .box-title{
   position:absolute;
   top:18px;
-  left:30px;
-  right:30px;
+  left:22px;
+  right:22px;
   font-size:15px;
   font-weight:500;
   color:#d9d9d9;
