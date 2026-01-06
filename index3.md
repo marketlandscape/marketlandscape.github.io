@@ -132,7 +132,7 @@
 .scale-zones{
   position:absolute;
   left:22.5px;  /* bar region start */
-  top:88px;
+  top:90px;
   width:360px;  /* bar region width (382.5 - 22.5) */
   display:flex;
   font-size:13px;
