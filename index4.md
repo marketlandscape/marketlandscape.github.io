@@ -9,7 +9,7 @@
      Therefore:
      • dot cy: 128  -> 122  (128 - 6)
      • label top: 98 -> 92  (98 - 6)
-     • horizontal dot mapping unchanged (same x geometry)
+     • horizontal dot mapping unchanged (same 45..525 span in the SVG)
 -->
 
 <div class="indexes">
@@ -24,7 +24,7 @@
         style="
           position:absolute;
           left:35.53px;
-          top:92px;            /* was 98px on short-bar */
+          top:92px;
           width:378.95px;
           display:flex;
           font-size:13px;
@@ -42,33 +42,10 @@
       </div>
 
       <!-- value (left) -->
-      <div
-        id="val1"
-        style="
-          position:absolute;
-          top:44%;
-          left:30px;
-          transform:translateY(-50%);
-          font-size:17px;
-          font-weight:500;
-          color:#d9d9d9;
-          z-index:2;
-        ">
-        –
-      </div>
+      <div id="val1" class="mid-left">–</div>
 
       <!-- risk line (right) -->
-      <div
-        style="
-          position:absolute;
-          top:44%;
-          right:30px;
-          transform:translateY(-50%);
-          font-size:15px;
-          color:#d9d9d9;
-          z-index:2;
-          white-space:nowrap;
-        ">
+      <div class="mid-right">
         <span id="warn1" style="opacity:0.5;margin-right:6px;font-size:17px;visibility:hidden;">⚠</span>
         <span style="opacity:0.5;">Risk level:</span>
         <span id="risk1" style="opacity:0.75;">–%</span>
@@ -110,33 +87,10 @@
       </div>
 
       <!-- value (left) -->
-      <div
-        id="val2"
-        style="
-          position:absolute;
-          top:44%;
-          left:30px;
-          transform:translateY(-50%);
-          font-size:17px;
-          font-weight:500;
-          color:#d9d9d9;
-          z-index:2;
-        ">
-        –
-      </div>
+      <div id="val2" class="mid-left">–</div>
 
       <!-- risk line (right) -->
-      <div
-        style="
-          position:absolute;
-          top:44%;
-          right:30px;
-          transform:translateY(-50%);
-          font-size:15px;
-          color:#d9d9d9;
-          z-index:2;
-          white-space:nowrap;
-        ">
+      <div class="mid-right">
         <span id="warn2" style="opacity:0.5;margin-right:6px;font-size:17px;visibility:hidden;">⚠</span>
         <span style="opacity:0.5;">Risk level:</span>
         <span id="risk2" style="opacity:0.75;">–%</span>
@@ -178,33 +132,10 @@
       </div>
 
       <!-- value (left) -->
-      <div
-        id="val3"
-        style="
-          position:absolute;
-          top:44%;
-          left:30px;
-          transform:translateY(-50%);
-          font-size:17px;
-          font-weight:500;
-          color:#d9d9d9;
-          z-index:2;
-        ">
-        –
-      </div>
+      <div id="val3" class="mid-left">–</div>
 
       <!-- risk line (right) -->
-      <div
-        style="
-          position:absolute;
-          top:44%;
-          right:30px;
-          transform:translateY(-50%);
-          font-size:15px;
-          color:#d9d9d9;
-          z-index:2;
-          white-space:nowrap;
-        ">
+      <div class="mid-right">
         <span id="warn3" style="opacity:0.5;margin-right:6px;font-size:17px;visibility:hidden;">⚠</span>
         <span style="opacity:0.5;">Risk level:</span>
         <span id="risk3" style="opacity:0.75;">–%</span>
@@ -224,6 +155,10 @@
   .indexes{ display:flex; flex-direction:column; }
 
   .index-box{
+    /* bar anchors (single source of truth) */
+    --bar-left: 35.53px;
+    --bar-right: 414.47px;
+
     position:relative;
     width:450px;
     height:150px;
@@ -232,16 +167,43 @@
     font-family:system-ui,-apple-system,sans-serif;
   }
 
+  /* TITLE aligned to bar start */
   .box-title{
     position:absolute;
     top:18px;
-    left:30px;
-    right:17px;
+    left:var(--bar-left);
+    right:auto;
     font-size:15px;
     font-weight:500;
     color:#d9d9d9;
     line-height:1.2;
     z-index:2;
+  }
+
+  /* LEFT MID VALUE aligned to bar start */
+  .mid-left{
+    position:absolute;
+    top:44%;
+    left:var(--bar-left);
+    transform:translateY(-50%);
+    font-size:17px;
+    font-weight:500;
+    color:#d9d9d9;
+    z-index:2;
+    text-align:left;
+  }
+
+  /* RIGHT MID (RISK) aligned to bar end */
+  .mid-right{
+    position:absolute;
+    top:44%;
+    left:var(--bar-right);
+    transform:translate(-100%, -50%); /* anchor right edge to bar-right */
+    font-size:15px;
+    color:#d9d9d9;
+    z-index:2;
+    white-space:nowrap;
+    text-align:right;
   }
 
   .dot-layer{
