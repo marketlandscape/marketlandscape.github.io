@@ -28,8 +28,8 @@
 
       <!-- dot layer -->
       <svg class="dot-layer" viewBox="0 0 405 150" xmlns="http://www.w3.org/2000/svg">
-        <circle id="dotOuter1" cx="22.5" cy="120" r="9" fill="#323232ff"/>
-        <circle id="dotInner1" cx="22.5" cy="120" r="6" fill="#ffffff"/>
+        <circle id="dotOuter1" cx="22.5" cy="121" r="9" fill="#323232ff"/>
+        <circle id="dotInner1" cx="22.5" cy="121" r="6" fill="#ffffff"/>
       </svg>
     </div>
   </div>
@@ -60,8 +60,8 @@
 
       <!-- dot layer -->
       <svg class="dot-layer" viewBox="0 0 405 150" xmlns="http://www.w3.org/2000/svg">
-        <circle id="dotOuter2" cx="22.5" cy="124" r="9" fill="#323232ff"/>
-        <circle id="dotInner2" cx="22.5" cy="124" r="6" fill="#ffffff"/>
+        <circle id="dotOuter2" cx="22.5" cy="122" r="9" fill="#323232ff"/>
+        <circle id="dotInner2" cx="22.5" cy="122" r="6" fill="#ffffff"/>
       </svg>
     </div>
   </div>
