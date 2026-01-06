@@ -136,7 +136,7 @@
   left:20px;
   transform:translateY(-50%);
   font-size:16px;
-  font-weight:400;
+  font-weight:500;
   color:#d9d9d9;
   z-index:2;
 }
