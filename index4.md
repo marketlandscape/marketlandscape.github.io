@@ -1,13 +1,7 @@
-<!-- FULL FILE – fixed so the scale is the RECTANGLE BAR span (not the decorative circles)
-     - Dot moves over 25 equal bins from the left edge of the first rectangle to the right edge of the last rectangle.
-       Example: step=3 sits at the center of bin #3 (inside the first rectangle).
-     - Scale labels are centered over the 5 rectangles (same 5 equal-width segments).
-
-     Based on your current working file :contentReference[oaicite:0]{index=0}, the fix is:
-     - introduce separate CSS vars:
-         --scale-left / --scale-right  (true bar rectangle edges)
-         --text-left  / --text-right   (your “nudged inward” alignment for title/values/risk)
-     - setValue() uses --scale-left/right geometry (hardcoded numeric constants matching the SVG)
+<!-- FULL FILE – scale = rectangle bar only (circles ignored)
+     - Dot snaps to CENTER of the corresponding rectangle (25 bins)
+     - Scale labels centered over 5 groups of rectangles (5 bins each)
+     - Titles/left value/right risk keep your “nudged inward” alignment
 -->
 
 <div class="indexes">
@@ -17,7 +11,7 @@
     <div id="box1" class="index-box" style="background-image:url('/assets/img/high-bar-scale-grey.svg');">
       <div class="box-title">Navigation Index — Yellow</div>
 
-      <!-- scale zones (centered over the 5 rectangles) -->
+      <!-- scale zones (centered over 5 rectangle groups) -->
       <div class="scale-zones">
         <span style="flex:1;text-align:center;">Entry</span>
         <span style="flex:1;text-align:center;">Scale In</span>
@@ -36,7 +30,7 @@
         <span id="risk1" style="opacity:0.75;">–%</span>
       </div>
 
-      <!-- dot layer (default position = center of bin #1) -->
+      <!-- dot layer (default: center of bin #1) -->
       <svg class="dot-layer" viewBox="0 0 450 150" xmlns="http://www.w3.org/2000/svg">
         <circle id="dotOuter1" cx="43.11" cy="122" r="9" fill="#323232ff"/>
         <circle id="dotInner1" cx="43.11" cy="122" r="6" fill="#ffffff"/>
@@ -106,19 +100,11 @@
   .indexes{ display:flex; flex-direction:column; }
 
   .index-box{
-    /*
-      TRUE SCALE EDGES (rectangle bar):
-        SVG viewBox width = 570
-        bar rects span x=45..525
-        rendered width = 450
-        => scale factor = 450/570
-        => left  = 45  * 450/570 = 35.53
-           right = 525 * 450/570 = 414.47
-    */
+    /* Rectangle bar edges (true scale) */
     --scale-left: 35.53px;
     --scale-right: 414.47px;
 
-    /* Your visual “nudge inward” for text only */
+    /* Text alignment (your inward nudge) */
     --text-left: 39.53px;
     --text-right: 410.47px;
 
@@ -143,7 +129,6 @@
     white-space:nowrap;
   }
 
-  /* Labels centered over each of the 5 equal rectangles */
   .scale-zones{
     position:absolute;
     left:var(--scale-left);
@@ -200,17 +185,17 @@ function setValue(boxId, x){
 
   const pct = clamp(n, 0, 100);
   const TOTAL = 25;
+
+  // percent -> 1..25 (same as before)
   const step = Math.round((pct / 100) * (TOTAL - 1)) + 1;
 
-  // Rectangle bar edges (not circles)
-  const START = 35.53;
-  const END   = 414.47;
+  // TRUE rectangle bar edges (circles ignored)
+  const BAR_L = 35.53;
+  const BAR_R = 414.47;
 
-  // 25 equal bins across the rectangle bar width:
-  // step=1 -> center of bin #1 (inside first rectangle)
-  // step=25 -> center of bin #25 (inside last rectangle)
-  const BIN = (END - START) / TOTAL;
-  const cx = START + (step - 0.5) * BIN;
+  // Each of the 25 rectangles is one equal bin; dot sits at bin center
+  const BIN_W = (BAR_R - BAR_L) / TOTAL;
+  const cx = BAR_L + (step - 0.5) * BIN_W;
 
   const outer = document.getElementById("dotOuter" + boxId);
   const inner = document.getElementById("dotInner" + boxId);
@@ -285,6 +270,7 @@ function setWarn(boxId, show){
   async function load(){
     const cached = readCache();
 
+    // paint cached immediately
     if (cached) applyAll(cached);
 
     try{
