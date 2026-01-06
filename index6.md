@@ -12,20 +12,21 @@
         style="
           position:absolute;
           left:25px;
-          top:88px;
+          top:92px;
           width:400px;
           display:flex;
-          justify-content:space-between;
-          font-size:11px;
-          color:#bdbdbd;
+          font-size:13px;
+          color:#d9d9d9;
+          opacity:0.5;
+          letter-spacing:0.02em;
+          z-index:2;
           pointer-events:none;
-        "
-      >
-        <div style="width:20%; text-align:left;">Safe</div>
-        <div style="width:20%; text-align:center;">Low</div>
-        <div style="width:20%; text-align:center;">Moderate</div>
-        <div style="width:20%; text-align:center;">High</div>
-        <div style="width:20%; text-align:right;">Severe</div>
+        ">
+        <span style="flex:1;text-align:center;">Entry</span>
+        <span style="flex:1;text-align:center;">Scale In</span>
+        <span style="flex:1;text-align:center;">Adopt</span>
+        <span style="flex:1;text-align:center;">Optimize</span>
+        <span style="flex:1;text-align:center;">Exit</span>
       </div>
 
       <!-- dot layer -->
@@ -52,20 +53,21 @@
         style="
           position:absolute;
           left:25px;
-          top:88px;
+          top:92px;
           width:400px;
           display:flex;
-          justify-content:space-between;
-          font-size:11px;
-          color:#bdbdbd;
+          font-size:13px;
+          color:#d9d9d9;
+          opacity:0.5;
+          letter-spacing:0.02em;
+          z-index:2;
           pointer-events:none;
-        "
-      >
-        <div style="width:20%; text-align:left;">Safe</div>
-        <div style="width:20%; text-align:center;">Low</div>
-        <div style="width:20%; text-align:center;">Moderate</div>
-        <div style="width:20%; text-align:center;">High</div>
-        <div style="width:20%; text-align:right;">Severe</div>
+        ">
+        <span style="flex:1;text-align:center;">Entry</span>
+        <span style="flex:1;text-align:center;">Scale In</span>
+        <span style="flex:1;text-align:center;">Adopt</span>
+        <span style="flex:1;text-align:center;">Optimize</span>
+        <span style="flex:1;text-align:center;">Exit</span>
       </div>
 
       <!-- dot layer -->
@@ -92,20 +94,21 @@
         style="
           position:absolute;
           left:25px;
-          top:88px;
+          top:92px;
           width:400px;
           display:flex;
-          justify-content:space-between;
-          font-size:11px;
-          color:#bdbdbd;
+          font-size:13px;
+          color:#d9d9d9;
+          opacity:0.5;
+          letter-spacing:0.02em;
+          z-index:2;
           pointer-events:none;
-        "
-      >
-        <div style="width:20%; text-align:left;">Safe</div>
-        <div style="width:20%; text-align:center;">Low</div>
-        <div style="width:20%; text-align:center;">Moderate</div>
-        <div style="width:20%; text-align:center;">High</div>
-        <div style="width:20%; text-align:right;">Severe</div>
+        ">
+        <span style="flex:1;text-align:center;">Entry</span>
+        <span style="flex:1;text-align:center;">Scale In</span>
+        <span style="flex:1;text-align:center;">Adopt</span>
+        <span style="flex:1;text-align:center;">Optimize</span>
+        <span style="flex:1;text-align:center;">Exit</span>
       </div>
 
       <!-- dot layer -->
@@ -146,6 +149,7 @@
     font-size:14px;
     color:#f5f5f5;
     letter-spacing:0.2px;
+    z-index:2;
   }
   .dot-layer{
     position:absolute;
@@ -154,6 +158,7 @@
     width:450px;
     height:150px;
     pointer-events:none;
+    z-index:1;
   }
   .box-value-row{
     position:absolute;
@@ -163,6 +168,7 @@
     display:flex;
     justify-content:space-between;
     align-items:flex-end;
+    z-index:2;
   }
   .box-value{
     font-size:22px;
@@ -180,16 +186,16 @@
 
 <script>
 (function(){
-  // bar horizontal anchors in the 450×150 rendered coordinate system
-  // (based on high-bar-scale-grey.svg: viewBox width 540; scale translated -15; anchors at 45 and 525)
-  const START = 25;   // left anchor x (scaled)
-  const END   = 425;  // right anchor x (scaled)
+  // Updated anchors for /assets/img/high-bar-scale-grey.svg rendered at 450px width:
+  // SVG viewBox width 540; scale group translate(-15,5); anchors at cx 45 and 525
+  // => effective x range 30..510 in SVG coords, scaled by 450/540 => 25..425
+  const START = 25;
+  const END   = 425;
   const TOTAL = 25;
 
   function clamp(v, lo, hi){ return Math.min(hi, Math.max(lo, v)); }
 
   function stepFromPercent(pct){
-    // pct expected 0..100
     const p = clamp(pct, 0, 100);
     return Math.round((p / 100) * (TOTAL - 1)) + 1; // 1..25
   }
@@ -214,32 +220,19 @@
     if (rEl) rEl.textContent = riskText ?? "–";
   }
 
-  // Example defaults (replace with your real data wiring)
   function load(){
-    // If your site injects data via window.__INDEX_DATA__, keep using it:
     const data = window.__INDEX_DATA__ || null;
 
     if (!data){
-      // demo values
       setValue(1, 10, "10", "Safe");
       setValue(2, 45, "45", "Moderate");
       setValue(3, 80, "80", "Severe");
       return;
     }
 
-    // expected fields (same as before)
     setValue(1, data.box1_percent, data.box1_value, data.box1_risk);
     setValue(2, data.box2_percent, data.box2_value, data.box2_risk);
     setValue(3, data.box3_percent, data.box3_value, data.box3_risk);
-
-    // if you had timestamp fields before, keep them (no UI shown here)
-    try{
-      console.log("updated_utc", {
-        box1_updated_utc: data.box1_updated_utc,
-        box2_updated_utc: data.box2_updated_utc,
-        box3_updated_utc: data.box3_updated_utc
-      });
-    } catch(e){}
   }
 
   if (document.readyState === "loading"){
@@ -249,4 +242,3 @@
   }
 })();
 </script>
-
