@@ -1,7 +1,14 @@
-<!-- FULL FILE – scale = rectangle bar only (circles ignored)
-     - Dot snaps to CENTER of the corresponding rectangle (25 bins)
-     - Scale labels centered over 5 groups of rectangles (5 bins each)
-     - Titles/left value/right risk keep your “nudged inward” alignment
+<!-- FULL FILE – fixed the real bug:
+     Your example “value = 3 should be in the middle of rectangle #3 (of 25)”
+     means the incoming value is a BIN INDEX (1..25), not a percent.
+
+     Fix:
+     - setValue() now accepts BOTH:
+         • step values 1..25  (e.g. 3 → bin 3)
+         • percent 0..100     (legacy)
+     - Dot & label geometry uses the RECTANGLE BAR edges (x=45..525 in SVG)
+     - Labels are centered over the 5 rectangles (groups of 5 bins)
+     - Titles/left value/right risk keep your inward text alignment
 -->
 
 <div class="indexes">
@@ -11,7 +18,6 @@
     <div id="box1" class="index-box" style="background-image:url('/assets/img/high-bar-scale-grey.svg');">
       <div class="box-title">Navigation Index — Yellow</div>
 
-      <!-- scale zones (centered over 5 rectangle groups) -->
       <div class="scale-zones">
         <span style="flex:1;text-align:center;">Entry</span>
         <span style="flex:1;text-align:center;">Scale In</span>
@@ -20,18 +26,16 @@
         <span style="flex:1;text-align:center;">HODL</span>
       </div>
 
-      <!-- value (left) -->
       <div id="val1" class="mid-left">–</div>
 
-      <!-- risk line (right) -->
       <div class="mid-right">
         <span id="warn1" style="opacity:0.5;margin-right:6px;font-size:17px;visibility:hidden;">⚠</span>
         <span style="opacity:0.5;">Risk level:</span>
         <span id="risk1" style="opacity:0.75;">–%</span>
       </div>
 
-      <!-- dot layer (default: center of bin #1) -->
       <svg class="dot-layer" viewBox="0 0 450 150" xmlns="http://www.w3.org/2000/svg">
+        <!-- default: bin #1 center -->
         <circle id="dotOuter1" cx="43.11" cy="122" r="9" fill="#323232ff"/>
         <circle id="dotInner1" cx="43.11" cy="122" r="6" fill="#ffffff"/>
       </svg>
@@ -100,11 +104,11 @@
   .indexes{ display:flex; flex-direction:column; }
 
   .index-box{
-    /* Rectangle bar edges (true scale) */
+    /* TRUE rectangle bar edges (SVG x=45..525 mapped into 450px width) */
     --scale-left: 35.53px;
     --scale-right: 414.47px;
 
-    /* Text alignment (your inward nudge) */
+    /* your text alignment (inward) */
     --text-left: 39.53px;
     --text-right: 410.47px;
 
@@ -129,6 +133,7 @@
     white-space:nowrap;
   }
 
+  /* 5 labels centered over the 5 rectangles (each rectangle = 5 bins) */
   .scale-zones{
     position:absolute;
     left:var(--scale-left);
@@ -179,21 +184,37 @@
 <script>
 function clamp(v, lo, hi){ return Math.max(lo, Math.min(hi, v)); }
 
-function setValue(boxId, x){
+function isNearlyInt(x){
+  return Number.isFinite(x) && Math.abs(x - Math.round(x)) < 1e-6;
+}
+
+/*
+  Accepts:
+    - step 1..25  (EXACT bins; your “value=3” case)
+    - percent 0..100 (legacy)
+*/
+function toStep(x, total){
   const n = Number(x);
-  if (!Number.isFinite(n)) return;
+  if (!Number.isFinite(n)) return null;
 
+  // Step mode (your intended behaviour)
+  if (n >= 1 && n <= total && isNearlyInt(n)) return Math.round(n);
+
+  // Percent mode (backward compatible)
   const pct = clamp(n, 0, 100);
+  return Math.round((pct / 100) * (total - 1)) + 1;
+}
+
+function setValue(boxId, x){
   const TOTAL = 25;
+  const step = toStep(x, TOTAL);
+  if (step == null) return;
 
-  // percent -> 1..25 (same as before)
-  const step = Math.round((pct / 100) * (TOTAL - 1)) + 1;
-
-  // TRUE rectangle bar edges (circles ignored)
+  // Rectangle bar edges (circles ignored)
   const BAR_L = 35.53;
   const BAR_R = 414.47;
 
-  // Each of the 25 rectangles is one equal bin; dot sits at bin center
+  // 25 equal bins over the bar; dot is at bin center
   const BIN_W = (BAR_R - BAR_L) / TOTAL;
   const cx = BAR_L + (step - 0.5) * BIN_W;
 
@@ -263,14 +284,15 @@ function setWarn(boxId, show){
     setWarn(1, false);
     const b2 = Number(d.box2);
     const b3 = Number(d.box3);
-    setWarn(2, Number.isFinite(b2) && b2 >= 80);
-    setWarn(3, Number.isFinite(b3) && b3 >= 80);
+    // Works for both step-mode and percent-mode inputs:
+    // - if step-mode (1..25), threshold 80% ~= step >= 21
+    // - if percent-mode (0..100), threshold >= 80
+    setWarn(2, (isNearlyInt(b2) && b2 <= 25) ? (b2 >= 21) : (b2 >= 80));
+    setWarn(3, (isNearlyInt(b3) && b3 <= 25) ? (b3 >= 21) : (b3 >= 80));
   }
 
   async function load(){
     const cached = readCache();
-
-    // paint cached immediately
     if (cached) applyAll(cached);
 
     try{
