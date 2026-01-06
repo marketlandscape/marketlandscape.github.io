@@ -1,4 +1,5 @@
-<!-- Simplified layout: three stacked 450×150 boxes with moving dot + per-box risk line -->
+<!-- Simplified layout: three stacked 450×150 boxes with moving dot -->
+
 <div class="indexes">
 
   <!-- BOX 1 -->
@@ -22,9 +23,26 @@
           pointer-events:none;
         ">
         <span style="flex:1;text-align:center;">Entry</span>
-        <span style="flex:1;text-align:center;">Stabilize</span>
-        <span style="flex:1;text-align:center;">Advance</span>
-        <span style="flex:1;text-align:center;">Reduce</span>
+        <span style="flex:1;text-align:center;">Scale In</span>
+        <span style="flex:1;text-align:center;">Hold</span>
+        <span style="flex:1;text-align:center;">Conviction</span>
+        <span style="flex:1;text-align:center;">HODL</span>
+      </div>
+
+      <!-- value (left) -->
+      <div
+        id="val1"
+        style="
+          position:absolute;
+          top:44%;
+          left:30px;
+          transform:translateY(-50%);
+          font-size:17px;
+          font-weight:500;
+          color:#d9d9d9;
+          z-index:2;
+        ">
+        –
       </div>
 
       <!-- risk line (right) -->
@@ -39,15 +57,16 @@
           z-index:2;
           white-space:nowrap;
         ">
-        <!-- reserved width so layout won't jump -->
-        <span id="warn1" style="visibility:hidden;color:#ffcc00;margin-right:8px;">⚠</span>
-        <span id="risk1">0%</span>
+        <!-- reserved warn slot to keep label alignment identical across all boxes -->
+        <span id="warn1" style="opacity:0.5;margin-right:6px;font-size:17px;visibility:hidden;">⚠</span>
+        <span style="opacity:0.5;">Risk level:</span>
+        <span id="risk1" style="opacity:0.75;">–%</span>
       </div>
 
       <!-- dot layer -->
       <svg class="dot-layer" viewBox="0 0 450 150" xmlns="http://www.w3.org/2000/svg">
-        <circle id="dotOuter1" cx="36" cy="118" r="9" fill="#323232ff"/>
-        <circle id="dotInner1" cx="36" cy="118" r="6" fill="#ffffff"/>
+        <circle id="dotOuter1" cx="35.53" cy="128" r="9" fill="#323232ff"/>
+        <circle id="dotInner1" cx="35.53" cy="128" r="6" fill="#ffffff"/>
       </svg>
     </div>
   </div>
@@ -73,9 +92,26 @@
           pointer-events:none;
         ">
         <span style="flex:1;text-align:center;">Entry</span>
-        <span style="flex:1;text-align:center;">Stabilize</span>
-        <span style="flex:1;text-align:center;">Advance</span>
+        <span style="flex:1;text-align:center;">Scale In</span>
+        <span style="flex:1;text-align:center;">Hold / Wait</span>
         <span style="flex:1;text-align:center;">Reduce</span>
+        <span style="flex:1;text-align:center;">Exit</span>
+      </div>
+
+      <!-- value (left) -->
+      <div
+        id="val2"
+        style="
+          position:absolute;
+          top:44%;
+          left:30px;
+          transform:translateY(-50%);
+          font-size:17px;
+          font-weight:500;
+          color:#d9d9d9;
+          z-index:2;
+        ">
+        –
       </div>
 
       <!-- risk line (right) -->
@@ -90,15 +126,15 @@
           z-index:2;
           white-space:nowrap;
         ">
-        <!-- reserved width so layout won't jump -->
-        <span id="warn2" style="visibility:hidden;color:#ffcc00;margin-right:8px;">⚠</span>
-        <span id="risk2">0%</span>
+        <span id="warn2" style="opacity:0.5;margin-right:6px;font-size:17px;visibility:hidden;">⚠</span>
+        <span style="opacity:0.5;">Risk level:</span>
+        <span id="risk2" style="opacity:0.75;">–%</span>
       </div>
 
       <!-- dot layer -->
       <svg class="dot-layer" viewBox="0 0 450 150" xmlns="http://www.w3.org/2000/svg">
-        <circle id="dotOuter2" cx="36" cy="118" r="9" fill="#323232ff"/>
-        <circle id="dotInner2" cx="36" cy="118" r="6" fill="#ffffff"/>
+        <circle id="dotOuter2" cx="35.53" cy="128" r="9" fill="#323232ff"/>
+        <circle id="dotInner2" cx="35.53" cy="128" r="6" fill="#ffffff"/>
       </svg>
     </div>
   </div>
@@ -124,9 +160,26 @@
           pointer-events:none;
         ">
         <span style="flex:1;text-align:center;">Entry</span>
-        <span style="flex:1;text-align:center;">Stabilize</span>
-        <span style="flex:1;text-align:center;">Advance</span>
+        <span style="flex:1;text-align:center;">Scale In</span>
+        <span style="flex:1;text-align:center;">Hold / Wait</span>
         <span style="flex:1;text-align:center;">Reduce</span>
+        <span style="flex:1;text-align:center;">Exit</span>
+      </div>
+
+      <!-- value (left) -->
+      <div
+        id="val3"
+        style="
+          position:absolute;
+          top:44%;
+          left:30px;
+          transform:translateY(-50%);
+          font-size:17px;
+          font-weight:500;
+          color:#d9d9d9;
+          z-index:2;
+        ">
+        –
       </div>
 
       <!-- risk line (right) -->
@@ -141,14 +194,15 @@
           z-index:2;
           white-space:nowrap;
         ">
-        <span id="warn3" style="visibility:hidden;color:#ffcc00;margin-right:8px;">⚠</span>
-        <span id="risk3">0%</span>
+        <span id="warn3" style="opacity:0.5;margin-right:6px;font-size:17px;visibility:hidden;">⚠</span>
+        <span style="opacity:0.5;">Risk level:</span>
+        <span id="risk3" style="opacity:0.75;">–%</span>
       </div>
 
       <!-- dot layer -->
       <svg class="dot-layer" viewBox="0 0 450 150" xmlns="http://www.w3.org/2000/svg">
-        <circle id="dotOuter3" cx="36" cy="118" r="9" fill="#323232ff"/>
-        <circle id="dotInner3" cx="36" cy="118" r="6" fill="#ffffff"/>
+        <circle id="dotOuter3" cx="35.53" cy="128" r="9" fill="#323232ff"/>
+        <circle id="dotInner3" cx="35.53" cy="128" r="6" fill="#ffffff"/>
       </svg>
     </div>
   </div>
@@ -191,7 +245,7 @@
 </style>
 
 <script>
-function clamp(x, a, b){ return Math.min(b, Math.max(a, x)); }
+function clamp(v, lo, hi){ return Math.max(lo, Math.min(hi, v)); }
 
 function setValue(boxId, x){
   const n = Number(x);
@@ -201,7 +255,7 @@ function setValue(boxId, x){
   const TOTAL = 25;
   const step = Math.round((pct / 100) * (TOTAL - 1)) + 1;
 
-  // bar geometry (short scale asset)
+  // short-bar-scale-grey.svg geometry when rendered at 450×150
   const START = 35.53;
   const END   = 414.47;
   const BIN   = (END - START) / TOTAL;
@@ -209,8 +263,11 @@ function setValue(boxId, x){
 
   const outer = document.getElementById("dotOuter" + boxId);
   const inner = document.getElementById("dotInner" + boxId);
+  const val   = document.getElementById("val" + boxId);
+
   if (outer) outer.setAttribute("cx", cx.toFixed(2));
   if (inner) inner.setAttribute("cx", cx.toFixed(2));
+  if (val)   val.textContent = step + "/" + TOTAL;
 }
 
 function setRisk(boxId, r){
@@ -228,9 +285,97 @@ function setWarn(boxId, show){
   el.style.visibility = show ? "visible" : "hidden";
 }
 
-/* Example usage:
-setValue(1, 0);   setRisk(1, 12); setWarn(1, true);
-setValue(2, 55);  setRisk(2, 40); setWarn(2, false);
-setValue(3, 100); setRisk(3, 88); setWarn(3, true);
-*/
+(function () {
+  const KEY = "dashboard_indexes_cache_v6";
+
+  function readCache(){
+    try{
+      const raw = sessionStorage.getItem(KEY);
+      return raw ? JSON.parse(raw) : null;
+    } catch(e){
+      return null;
+    }
+  }
+
+  function writeCache(obj){
+    try{
+      sessionStorage.setItem(KEY, JSON.stringify(obj));
+    } catch(e){}
+  }
+
+  function signatureFrom(data){
+    return String(
+      data.box3_risk_updated_utc ||
+      data.box2_risk_updated_utc ||
+      data.box1_risk_updated_utc ||
+      data.box3_updated_utc ||
+      data.box2_updated_utc ||
+      data.box1_updated_utc ||
+      JSON.stringify([
+        data.box1, data.box2, data.box3,
+        data.box1_risk, data.box2_risk, data.box3_risk
+      ])
+    );
+  }
+
+  function applyAll(d){
+    // values
+    if (d.box1 !== undefined) setValue(1, d.box1);
+    if (d.box2 !== undefined) setValue(2, d.box2);
+    if (d.box3 !== undefined) setValue(3, d.box3);
+
+    // risks
+    if (d.box1_risk !== undefined) setRisk(1, d.box1_risk);
+    if (d.box2_risk !== undefined) setRisk(2, d.box2_risk);
+    if (d.box3_risk !== undefined) setRisk(3, d.box3_risk);
+
+    // warnings: only box2 & box3 when nav index >= 80; BTC always hidden
+    setWarn(1, false);
+    const b2 = Number(d.box2);
+    const b3 = Number(d.box3);
+    setWarn(2, Number.isFinite(b2) && b2 >= 80);
+    setWarn(3, Number.isFinite(b3) && b3 >= 80);
+  }
+
+  async function load(){
+    const cached = readCache();
+
+    // paint cached immediately (prevents flicker / jump)
+    if (cached) applyAll(cached);
+
+    try{
+      const res = await fetch("/data/indexes.json", { cache: "no-store" });
+      if (!res.ok) return;
+
+      const data = await res.json();
+      const sig = signatureFrom(data);
+
+      if (cached && cached.sig === sig) return;
+
+      applyAll(data);
+
+      writeCache({
+        sig,
+        box1: data.box1,
+        box2: data.box2,
+        box3: data.box3,
+        box1_risk: data.box1_risk,
+        box2_risk: data.box2_risk,
+        box3_risk: data.box3_risk,
+        box1_risk_updated_utc: data.box1_risk_updated_utc,
+        box2_risk_updated_utc: data.box2_risk_updated_utc,
+        box3_risk_updated_utc: data.box3_risk_updated_utc,
+        box1_updated_utc: data.box1_updated_utc,
+        box2_updated_utc: data.box2_updated_utc,
+        box3_updated_utc: data.box3_updated_utc
+      });
+    } catch(e){}
+  }
+
+  if (document.readyState === "loading"){
+    document.addEventListener("DOMContentLoaded", load);
+  } else {
+    load();
+  }
+})();
 </script>
