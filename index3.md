@@ -121,8 +121,8 @@
 .box-title{
   position:absolute;
   top:18px;
-  left:22px;
-  right:22px;
+  left:20px;
+  right:20px;
   font-size:15px;
   font-weight:500;
   color:#d9d9d9;
@@ -147,7 +147,7 @@
 .value-left{
   position:absolute;
   top:44%;
-  left:30px;
+  left:20px;
   transform:translateY(-50%);
   font-size:17px;
   font-weight:500;
@@ -158,7 +158,7 @@
 .risk-right{
   position:absolute;
   top:44%;
-  right:30px;
+  right:20px;
   transform:translateY(-50%);
   font-size:15px;
   color:#d9d9d9;
