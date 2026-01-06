@@ -135,7 +135,7 @@
   top:90px;
   width:360px;  /* bar region width (382.5 - 22.5) */
   display:flex;
-  font-size:14px;
+  font-size:13px;
   color:#d9d9d9;
   opacity:0.5;
   letter-spacing:0.02em;
