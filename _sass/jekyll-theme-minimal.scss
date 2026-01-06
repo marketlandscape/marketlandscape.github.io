@@ -46,7 +46,7 @@ html{
 body{
   margin:0;
   padding: clamp(14px, 4vw, 50px);
-  font: 15px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: var(--text);
   background: var(--bg);
   word-wrap: break-word;
@@ -314,7 +314,7 @@ kbd{
   margin: 0 0 14px 0;
   padding: 0 0 12px 0;
   font-family: system-ui, -apple-system, sans-serif;
-  font-size: 0.9em;   /* ≈ 13.5px when body is 15px */
+  font-size: 0.9em;   /* ≈ 13px when body is 14px */
   line-height: 1.2;
   opacity: 0.75;
 }
