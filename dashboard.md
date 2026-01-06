@@ -159,12 +159,12 @@
 
   </div>
 
-  <!-- BOX 3 (unchanged content, but scaled same way for mobile correctness) -->
+  <!-- BOX 3 (scaled for mobile correctness) -->
   <div class="scale-450">
     <div id="box3" class="index-box" style="background-image:url('/assets/img/bar-scale-grey.svg');">
       <div class="box-title">Navigation Index — Grey</div>
 
-      <!-- scale zones (RESTORED) -->
+      <!-- scale zones -->
       <div
         style="
           position:absolute;
@@ -235,7 +235,6 @@
     flex-direction:column;
   }
 
-  /* rows that may contain a main box + gadget */
   .row-wrap{
     display:flex;
     flex-wrap:wrap;
@@ -243,10 +242,7 @@
     align-items:flex-start;
   }
 
-  /* === SCALE WRAPPERS ===
-     They set the available width, compute a scale factor from that width,
-     and reserve the correct scaled height so nothing overlaps. */
-
+  /* scale wrapper for 450×150 boxes */
   .scale-450{
     width:min(450px, 100%);
     --s: min(1, calc(100% / 450));
@@ -260,6 +256,7 @@
     transform-origin: top left;
   }
 
+  /* scale wrapper for 225×150 gadgets */
   .scale-225{
     width:min(225px, 100%);
     --s: min(1, calc(100% / 225));
@@ -267,7 +264,7 @@
     flex: 0 0 auto;
   }
 
-  /* your original box */
+  /* original box plate */
   .index-box{
     position:relative;
     background-repeat:no-repeat;
@@ -275,7 +272,7 @@
     font-family:system-ui,-apple-system,sans-serif;
   }
 
-  /* gadget tile uses same model: background image plate */
+  /* gadget plate */
   .gadget-box{
     width:225px;
     height:150px;
@@ -300,6 +297,13 @@
     inset:0;
     pointer-events:none;
     z-index:1;
+  }
+
+  /* mobile: force full-width items so BOX never shares a line with gadget */
+  @media (max-width: 640px){
+    .row-wrap{ gap:16px; }
+    .scale-450{ width:100%; }
+    .scale-225{ width:100%; }
   }
 </style>
 
@@ -376,14 +380,17 @@ function setWarn(boxId, show){
   }
 
   function applyAll(d){
+    // values
     if (d.box1 !== undefined) setValue(1, d.box1);
     if (d.box2 !== undefined) setValue(2, d.box2);
     if (d.box3 !== undefined) setValue(3, d.box3);
 
+    // risks
     if (d.box1_risk !== undefined) setRisk(1, d.box1_risk);
     if (d.box2_risk !== undefined) setRisk(2, d.box2_risk);
     if (d.box3_risk !== undefined) setRisk(3, d.box3_risk);
 
+    // warnings: only box2 & box3 when nav index >= 80; BTC always hidden
     setWarn(1, false);
     const b2 = Number(d.box2);
     const b3 = Number(d.box3);
@@ -393,6 +400,8 @@ function setWarn(boxId, show){
 
   async function load(){
     const cached = readCache();
+
+    // paint cached immediately (prevents flicker / jump)
     if (cached) applyAll(cached);
 
     try{
@@ -401,6 +410,7 @@ function setWarn(boxId, show){
 
       const data = await res.json();
       const sig = signatureFrom(data);
+
       if (cached && cached.sig === sig) return;
 
       applyAll(data);
