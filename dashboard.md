@@ -2,7 +2,7 @@
 
 <div class="indexes">
 
-  <!-- ROW 1: BOX 1 + PLACEHOLDER (150×150) -->
+  <!-- ROW 1 : BOX 1 + PLACEHOLDER -->
   <div class="index-row" style="margin-bottom:28px;">
 
     <!-- BOX 1 -->
@@ -59,7 +59,6 @@
           z-index:2;
           white-space:nowrap;
         ">
-        <!-- reserved warn slot to keep label alignment identical across all boxes -->
         <span id="warn1" style="opacity:0.5;margin-right:6px;font-size:17px;visibility:hidden;">⚠</span>
         <span style="opacity:0.5;">Risk level:</span>
         <span id="risk1" style="opacity:0.75;">–%</span>
@@ -72,7 +71,7 @@
       </svg>
     </div>
 
-    <!-- PLACEHOLDER BOX -->
+    <!-- PLACEHOLDER BOX (225×150) -->
     <div class="placeholder-box" aria-hidden="true">
       <img src="/assets/img/background-grey.svg" alt="" />
     </div>
@@ -152,7 +151,7 @@
     <div id="box3" class="index-box" style="background-image:url('/assets/img/bar-scale-grey.svg');">
       <div class="box-title">Navigation Index — Grey</div>
 
-      <!-- scale zones (RESTORED) -->
+      <!-- scale zones -->
       <div
         style="
           position:absolute;
@@ -223,7 +222,6 @@
     flex-direction:column;
   }
 
-  /* NEW: row wrapper so we can place a tile to the right of BOX 1 */
   .index-row{
     display:flex;
     gap:28px;
@@ -239,9 +237,8 @@
     font-family:system-ui,-apple-system,sans-serif;
   }
 
-  /* NEW: 150×150 placeholder tile */
   .placeholder-box{
-    width:150px;
+    width:225px;
     height:150px;
     opacity:0.35;
     flex:0 0 auto;
@@ -251,10 +248,10 @@
   }
 
   .placeholder-box img{
-    width:150px;
+    width:225px;
     height:150px;
-    display:block;
     object-fit:contain;
+    display:block;
   }
 
   .box-title{
@@ -313,7 +310,6 @@ function setRisk(boxId, r){
 function setWarn(boxId, show){
   const el = document.getElementById("warn" + boxId);
   if (!el) return;
-  // no layout jump; alignment is stable because warn1/2/3 always exist
   el.style.visibility = show ? "visible" : "hidden";
 }
 
@@ -351,17 +347,14 @@ function setWarn(boxId, show){
   }
 
   function applyAll(d){
-    // values
     if (d.box1 !== undefined) setValue(1, d.box1);
     if (d.box2 !== undefined) setValue(2, d.box2);
     if (d.box3 !== undefined) setValue(3, d.box3);
 
-    // risks
     if (d.box1_risk !== undefined) setRisk(1, d.box1_risk);
     if (d.box2_risk !== undefined) setRisk(2, d.box2_risk);
     if (d.box3_risk !== undefined) setRisk(3, d.box3_risk);
 
-    // warnings: only box2 & box3 when nav index >= 80; BTC always hidden
     setWarn(1, false);
     const b2 = Number(d.box2);
     const b3 = Number(d.box3);
@@ -371,8 +364,6 @@ function setWarn(boxId, show){
 
   async function load(){
     const cached = readCache();
-
-    // paint cached immediately (prevents flicker / jump)
     if (cached) applyAll(cached);
 
     try{
@@ -381,7 +372,6 @@ function setWarn(boxId, show){
 
       const data = await res.json();
       const sig = signatureFrom(data);
-
       if (cached && cached.sig === sig) return;
 
       applyAll(data);
