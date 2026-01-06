@@ -2,8 +2,8 @@
 
 <div class="indexes">
 
-  <!-- ROW 1 : BOX 1 + GREY CLEAN -->
-  <div class="index-row" style="margin-bottom:28px;">
+  <!-- ROW 1 : BOX 1 + GADGET -->
+  <div style="display:flex; gap:28px; margin-bottom:28px;">
 
     <!-- BOX 1 -->
     <div id="box1" class="index-box" style="background-image:url('/assets/img/bar-scale-yellow.svg');">
@@ -51,15 +51,22 @@
       </svg>
     </div>
 
-    <!-- GREY CLEAN TILE -->
-    <div class="placeholder-box" aria-hidden="true">
-      <img src="/assets/img/grey-clean.svg" alt="" />
+    <!-- INLINE GADGET -->
+    <div
+      style="
+        width:225px;
+        height:150px;
+        background-image:url('/assets/img/grey-clean.svg');
+        background-repeat:no-repeat;
+        background-size:225px 150px;
+        flex:0 0 auto;
+      ">
     </div>
 
   </div>
 
-  <!-- ROW 2 : BOX 2 + GREY CLEAN -->
-  <div class="index-row" style="margin-bottom:28px;">
+  <!-- ROW 2 : BOX 2 + GADGET -->
+  <div style="display:flex; gap:28px; margin-bottom:28px;">
 
     <!-- BOX 2 -->
     <div id="box2" class="index-box" style="background-image:url('/assets/img/bar-scale-blue.svg');">
@@ -106,9 +113,16 @@
       </svg>
     </div>
 
-    <!-- GREY CLEAN TILE -->
-    <div class="placeholder-box" aria-hidden="true">
-      <img src="/assets/img/grey-clean.svg" alt="" />
+    <!-- INLINE GADGET -->
+    <div
+      style="
+        width:225px;
+        height:150px;
+        background-image:url('/assets/img/grey-clean.svg');
+        background-repeat:no-repeat;
+        background-size:225px 150px;
+        flex:0 0 auto;
+      ">
     </div>
 
   </div>
@@ -168,12 +182,6 @@
     flex-direction:column;
   }
 
-  .index-row{
-    display:flex;
-    gap:28px;
-    align-items:flex-start;
-  }
-
   .index-box{
     position:relative;
     width:450px;
@@ -181,22 +189,6 @@
     background-repeat:no-repeat;
     background-size:450px 150px;
     font-family:system-ui,-apple-system,sans-serif;
-  }
-
-  .placeholder-box{
-    width:225px;
-    height:150px;
-    flex:0 0 auto;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-  }
-
-  .placeholder-box img{
-    width:225px;
-    height:150px;
-    object-fit:contain;
-    display:block;
   }
 
   .box-title{
@@ -220,7 +212,7 @@
 </style>
 
 <script>
-/* === JS BELOW IS IDENTICAL TO YOUR WORKING VERSION — DO NOT MODIFY === */
+/* JS IS IDENTICAL TO YOUR WORKING VERSION — UNCHANGED */
 
 function clamp(v, lo, hi){ return Math.max(lo, Math.min(hi, v)); }
 
