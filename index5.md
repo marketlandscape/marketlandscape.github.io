@@ -7,7 +7,7 @@
     <div id="box1" class="index-box" style="background-image:url('/assets/img/mobile-bar-scale-grey.svg');">
       <div class="box-title">Navigation Index — Yellow</div>
 
-   <div style="position:absolute;left:22px;top:90px;width:316px;display:flex;font-size:13px;color:#d9d9d9;opacity:0.5;letter-spacing:0.02em;z-index:2;pointer-events:none;">
+   <div style="position:absolute;left:20px;top:90px;width:320px;display:flex;font-size:13px;color:#d9d9d9;opacity:0.5;letter-spacing:0.02em;z-index:2;pointer-events:none;">
         <span style="flex:1;text-align:center;">Entry</span>
         <span style="flex:1;text-align:center;">Scale In</span>
         <span style="flex:1;text-align:center;">Hold</span>
@@ -15,9 +15,9 @@
         <span style="flex:1;text-align:center;">HODL</span>
       </div>
 
-  <div id="val1" style="position:absolute;top:44%;left:22px;transform:translateY(-50%);font-size:16px;font-weight:500;color:#d9d9d9;z-index:2;">–</div>
+  <div id="val1" style="position:absolute;top:44%;left:20px;transform:translateY(-50%);font-size:16px;font-weight:500;color:#d9d9d9;z-index:2;">–</div>
 
-   <div style="position:absolute;top:44%;right:22px;transform:translateY(-50%);font-size:14px;color:#d9d9d9;z-index:2;white-space:nowrap;">
+   <div style="position:absolute;top:44%;right:20px;transform:translateY(-50%);font-size:14px;color:#d9d9d9;z-index:2;white-space:nowrap;">
         <span id="warn1" style="opacity:0.5;margin-right:6px;font-size:16px;visibility:hidden;">⚠</span>
         <span style="opacity:0.5;">Risk level:</span>
         <span id="risk1" style="opacity:0.75;">–%</span>
@@ -35,7 +35,7 @@
     <div id="box2" class="index-box" style="background-image:url('/assets/img/mobile-bar-scale-grey.svg');">
       <div class="box-title">Navigation Index — Blue</div>
 
-   <div style="position:absolute;left:22px;top:90px;width:316px;display:flex;font-size:13px;color:#d9d9d9;opacity:0.5;letter-spacing:0.02em;z-index:2;pointer-events:none;">
+   <div style="position:absolute;left:20px;top:90px;width:320px;display:flex;font-size:13px;color:#d9d9d9;opacity:0.5;letter-spacing:0.02em;z-index:2;pointer-events:none;">
         <span style="flex:1;text-align:center;">Entry</span>
         <span style="flex:1;text-align:center;">Scale In</span>
         <span style="flex:1;text-align:center;">Hold/Wait</span>
@@ -43,9 +43,9 @@
         <span style="flex:1;text-align:center;">Exit</span>
       </div>
 
-   <div id="val2" style="position:absolute;top:44%;left:22px;transform:translateY(-50%);font-size:16px;font-weight:500;color:#d9d9d9;z-index:2;">–</div>
+   <div id="val2" style="position:absolute;top:44%;left:20px;transform:translateY(-50%);font-size:16px;font-weight:500;color:#d9d9d9;z-index:2;">–</div>
 
-   <div style="position:absolute;top:44%;right:22px;transform:translateY(-50%);font-size:14px;color:#d9d9d9;z-index:2;white-space:nowrap;">
+   <div style="position:absolute;top:44%;right:20px;transform:translateY(-50%);font-size:14px;color:#d9d9d9;z-index:2;white-space:nowrap;">
         <span id="warn2" style="opacity:0.5;margin-right:6px;font-size:16px;visibility:hidden;">⚠</span>
         <span style="opacity:0.5;">Risk level:</span>
         <span id="risk2" style="opacity:0.75;">–%</span>
@@ -63,7 +63,7 @@
     <div id="box3" class="index-box" style="background-image:url('/assets/img/mobile-bar-scale-grey.svg');">
       <div class="box-title">Navigation Index — Grey</div>
 
-   <div style="position:absolute;left:22px;top:90px;width:316px;display:flex;font-size:13px;color:#d9d9d9;opacity:0.5;letter-spacing:0.02em;z-index:2;pointer-events:none;">
+   <div style="position:absolute;left:20px;top:90px;width:320px;display:flex;font-size:13px;color:#d9d9d9;opacity:0.5;letter-spacing:0.02em;z-index:2;pointer-events:none;">
         <span style="flex:1;text-align:center;">Entry</span>
         <span style="flex:1;text-align:center;">Scale In</span>
         <span style="flex:1;text-align:center;">Hold/Wait</span>
@@ -71,9 +71,9 @@
         <span style="flex:1;text-align:center;">Exit</span>
       </div>
 
-  <div id="val3" style="position:absolute;top:44%;left:22px;transform:translateY(-50%);font-size:16px;font-weight:500;color:#d9d9d9;z-index:2;">–</div>
+  <div id="val3" style="position:absolute;top:44%;left:20px;transform:translateY(-50%);font-size:16px;font-weight:500;color:#d9d9d9;z-index:2;">–</div>
 
-   <div style="position:absolute;top:44%;right:22px;transform:translateY(-50%);font-size:14px;color:#d9d9d9;z-index:2;white-space:nowrap;">
+   <div style="position:absolute;top:44%;right:20px;transform:translateY(-50%);font-size:14px;color:#d9d9d9;z-index:2;white-space:nowrap;">
         <span id="warn3" style="opacity:0.5;margin-right:6px;font-size:16px;visibility:hidden;">⚠</span>
         <span style="opacity:0.5;">Risk level:</span>
         <span id="risk3" style="opacity:0.75;">–%</span>
@@ -104,7 +104,7 @@
 .box-title{
   position:absolute;
   top:18px;
-  left:22px;
+  left:20px;
   right:17px;
   font-size:15px;
   font-weight:500;
