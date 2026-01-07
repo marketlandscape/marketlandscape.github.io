@@ -4,26 +4,37 @@
   <rect x="0" y="0" width="480" height="200"
         rx="16" ry="16" fill="#323232ff"/>
 
+  <!--
+    Automatic perceptual steps:
+    Δ1–2 = −18%
+    Δ2–3 = −18%
+    Δ3–4 = −16%
+    Δ4–5 = −10%
+
+    Base reference = original segment 1 (#ffe375)
+    Lightness-driven darkening, hue allowed to drift yellow → orange (no black, no opacity)
+  -->
+
   <g id="scale" transform="translate(-13.33, 5)">
 
     <!-- segment 1 -->
-    <rect x="44.8"    y="151" width="83.63" height="12" fill="#fff1a3ff"/>
+    <rect x="44.8"    y="151" width="83.63" height="12" fill="#ffe375ff"/>
 
     <!-- segment 2 -->
-    <rect x="128.43"  y="151" width="83.63" height="12" fill="#ffd94dff"/>
+    <rect x="128.43"  y="151" width="83.63" height="12" fill="#ffcf44ff"/>
 
     <!-- segment 3 -->
-    <rect x="212.06"  y="151" width="83.63" height="12" fill="#ffc13aff"/>
+    <rect x="212.06"  y="151" width="83.63" height="12" fill="#ffb31eff"/>
 
-    <!-- segment 4 -->
-    <rect x="295.69"  y="151" width="83.63" height="12" fill="#ffa61aff"/>
+    <!-- segment 4 (bigger drop here: −16%) -->
+    <rect x="295.69"  y="151" width="83.63" height="12" fill="#ff9613ff"/>
 
-    <!-- segment 5 (slightly darker, minimal step) -->
-    <rect x="379.32"  y="151" width="83.63" height="12" fill="#ff8f10ff"/>
+    <!-- segment 5 (final −10%) -->
+    <rect x="379.32"  y="151" width="83.63" height="12" fill="#ff860dff"/>
 
     <!-- circles -->
-    <circle cx="44.8"    cy="157" r="6" fill="#fff1a3ff"/>
-    <circle cx="462.95"  cy="157" r="6" fill="#ff8f10ff"/>
+    <circle cx="44.8"    cy="157" r="6" fill="#ffe375ff"/>
+    <circle cx="462.95"  cy="157" r="6" fill="#ff860dff"/>
   </g>
 
 </svg>
