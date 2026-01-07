@@ -7,7 +7,7 @@
     <div id="box1" class="index-box" style="background-image:url('/assets/img/mobile-bar-scale-grey.svg');">
       <div class="box-title">Navigation Index — Yellow</div>
 
-   <div style="position:absolute;left:24px;top:88px;width:312px;display:flex;font-size:13px;color:#d9d9d9;opacity:0.5;letter-spacing:0.02em;z-index:2;pointer-events:none;">
+   <div style="position:absolute;left:22px;top:90px;width:316px;display:flex;font-size:13px;color:#d9d9d9;opacity:0.5;letter-spacing:0.02em;z-index:2;pointer-events:none;">
         <span style="flex:1;text-align:center;">Entry</span>
         <span style="flex:1;text-align:center;">Scale In</span>
         <span style="flex:1;text-align:center;">Hold</span>
@@ -35,7 +35,7 @@
     <div id="box2" class="index-box" style="background-image:url('/assets/img/mobile-bar-scale-grey.svg');">
       <div class="box-title">Navigation Index — Blue</div>
 
-   <div style="position:absolute;left:24px;top:88px;width:312px;display:flex;font-size:13px;color:#d9d9d9;opacity:0.5;letter-spacing:0.02em;z-index:2;pointer-events:none;">
+   <div style="position:absolute;left:22px;top:90px;width:316px;display:flex;font-size:13px;color:#d9d9d9;opacity:0.5;letter-spacing:0.02em;z-index:2;pointer-events:none;">
         <span style="flex:1;text-align:center;">Entry</span>
         <span style="flex:1;text-align:center;">Scale In</span>
         <span style="flex:1;text-align:center;">Hold/Wait</span>
@@ -63,7 +63,7 @@
     <div id="box3" class="index-box" style="background-image:url('/assets/img/mobile-bar-scale-grey.svg');">
       <div class="box-title">Navigation Index — Grey</div>
 
-   <div style="position:absolute;left:24px;top:88px;width:312px;display:flex;font-size:13px;color:#d9d9d9;opacity:0.5;letter-spacing:0.02em;z-index:2;pointer-events:none;">
+   <div style="position:absolute;left:22px;top:90px;width:316px;display:flex;font-size:13px;color:#d9d9d9;opacity:0.5;letter-spacing:0.02em;z-index:2;pointer-events:none;">
         <span style="flex:1;text-align:center;">Entry</span>
         <span style="flex:1;text-align:center;">Scale In</span>
         <span style="flex:1;text-align:center;">Hold/Wait</span>
