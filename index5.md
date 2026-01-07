@@ -24,8 +24,8 @@
       </div>
 
       <svg class="dot-layer" viewBox="0 0 360 150" xmlns="http://www.w3.org/2000/svg">
-        <circle id="dotOuter1" cx="24" cy="121" r="9" fill="#323232ff"/>
-        <circle id="dotInner1" cx="24" cy="121" r="6" fill="#ffffff"/>
+        <circle id="dotOuter1" cx="34" cy="121" r="9" fill="#323232ff"/>
+        <circle id="dotInner1" cx="34" cy="121" r="6" fill="#ffffff"/>
       </svg>
     </div>
   </div>
