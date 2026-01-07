@@ -1,426 +1,259 @@
-<!-- FULL FILE — 420×140 default visual logic + right-side placeholder gadgets
-     Fix (everything works, including mobile scaling + alignment):
-     • Keep your desktop spacing (gap:28px).
-     • Add ONE breakpoint at the real wrap point (<= 720px):
-         - force both items to full-width rows (so both start at identical left edge)
-         - keep the gadget plate left-aligned inside its full-width row
-     • Keep your existing <= 640px mobile scaling behavior.
--->
+<!-- FULL FILE -->
 
-<div class="indexes">
+<div class="indexes-grid">
 
-  <!-- ROW 1 : BOX 1 + GADGET -->
-  <div class="row-wrap" style="margin-bottom:28px;">
+  <!-- ROW 1 -->
+  <div class="row">
+    <div id="box1" class="index-box main" style="background-image:url('/assets/img/mobile-bar-scale-yellow.svg');">
+      <div class="box-title">Navigation Index — Yellow</div>
 
-    <div class="scale-420">
-      <div id="box1" class="index-box" style="background-image:url('/assets/img/bar-scale-yellow.svg');">
-        <div class="box-title">Navigation Index — Yellow</div>
-
-        <!-- scale zones -->
-        <div style="
-          position:absolute;
-          left:32px;
-          top:82px;
-          width:356px;
-          display:flex;
-          font-size:13px;
-          color:#d9d9d9;
-          opacity:0.5;
-          letter-spacing:0.02em;
-          z-index:2;
-          pointer-events:none;">
-          <span style="flex:1;text-align:center;">Entry</span>
-          <span style="flex:1;text-align:center;">Scale In</span>
-          <span style="flex:1;text-align:center;">Hold</span>
-          <span style="flex:1;text-align:center;">Conviction</span>
-          <span style="flex:1;text-align:center;">HODL</span>
-        </div>
-
-        <!-- value -->
-        <div id="val1" style="
-          position:absolute;
-          top:45%;
-          left:28px;
-          transform:translateY(-50%);
-          font-size:16px;
-          font-weight:500;
-          color:#d9d9d9;
-          z-index:2;">–</div>
-
-        <!-- risk -->
-        <div style="
-          position:absolute;
-          top:45%;
-          right:28px;
-          transform:translateY(-50%);
-          font-size:14px;
-          color:#d9d9d9;
-          z-index:2;
-          white-space:nowrap;">
-          <span id="warn1" style="opacity:0.5;margin-right:6px;font-size:17px;visibility:hidden;">⚠</span>
-          <span style="opacity:0.5;">Risk level:</span>
-          <span id="risk1" style="opacity:0.75;">–%</span>
-        </div>
-
-        <!-- dot layer -->
-        <svg class="dot-layer" viewBox="0 0 420 140" xmlns="http://www.w3.org/2000/svg">
-          <circle id="dotOuter1" cx="32" cy="110" r="9" fill="#323232ff"/>
-          <circle id="dotInner1" cx="32" cy="110" r="6" fill="#ffffff"/>
-        </svg>
+      <div class="labels">
+        <span>Entry</span>
+        <span>Scale In</span>
+        <span>Hold</span>
+        <span>Conviction</span>
+        <span>HODL</span>
       </div>
+
+      <div id="val1" class="val">–</div>
+
+      <div class="risk">
+        <span id="warn1" class="warn">⚠</span>
+        <span class="risk-label">Risk level:</span>
+        <span id="risk1">–%</span>
+      </div>
+
+      <svg class="dot-layer" viewBox="0 0 360 150">
+        <circle id="dotOuter1" cx="34" cy="121.2" r="9" fill="#323232"/>
+        <circle id="dotInner1" cx="34" cy="121.2" r="6" fill="#ffffff"/>
+      </svg>
     </div>
 
-    <div class="scale-225">
-      <div class="gadget-box" style="background-image:url('/assets/img/grey-clean.svg');"></div>
+    <div class="index-box side"
+         style="background-image:url('/assets/img/mobile-grey-280.svg');">
     </div>
-
   </div>
 
-  <!-- ROW 2 : BOX 2 + GADGET -->
-  <div class="row-wrap" style="margin-bottom:28px;">
+  <!-- ROW 2 -->
+  <div class="row">
+    <div id="box2" class="index-box main" style="background-image:url('/assets/img/mobile-bar-scale-blue.svg');">
+      <div class="box-title">Navigation Index — Blue</div>
 
-    <div class="scale-420">
-      <div id="box2" class="index-box" style="background-image:url('/assets/img/bar-scale-blue.svg');">
-        <div class="box-title">Navigation Index — Blue</div>
-
-        <!-- scale zones -->
-        <div style="
-          position:absolute;
-          left:32px;
-          top:82px;
-          width:356px;
-          display:flex;
-          font-size:13px;
-          color:#d9d9d9;
-          opacity:0.5;
-          letter-spacing:0.02em;
-          z-index:2;
-          pointer-events:none;">
-          <span style="flex:1;text-align:center;">Entry</span>
-          <span style="flex:1;text-align:center;">Scale In</span>
-          <span style="flex:1;text-align:center;">Hold/Wait</span>
-          <span style="flex:1;text-align:center;">Reduce</span>
-          <span style="flex:1;text-align:center;">Exit</span>
-        </div>
-
-        <!-- value -->
-        <div id="val2" style="
-          position:absolute;
-          top:45%;
-          left:28px;
-          transform:translateY(-50%);
-          font-size:16px;
-          font-weight:500;
-          color:#d9d9d9;
-          z-index:2;">–</div>
-
-        <!-- risk -->
-        <div style="
-          position:absolute;
-          top:45%;
-          right:28px;
-          transform:translateY(-50%);
-          font-size:14px;
-          color:#d9d9d9;
-          z-index:2;
-          white-space:nowrap;">
-          <span id="warn2" style="opacity:0.5;margin-right:6px;font-size:17px;visibility:hidden;">⚠</span>
-          <span style="opacity:0.5;">Risk level:</span>
-          <span id="risk2" style="opacity:0.75;">–%</span>
-        </div>
-
-        <!-- dot layer -->
-        <svg class="dot-layer" viewBox="0 0 420 140" xmlns="http://www.w3.org/2000/svg">
-          <circle id="dotOuter2" cx="32" cy="110" r="9" fill="#323232ff"/>
-          <circle id="dotInner2" cx="32" cy="110" r="6" fill="#ffffff"/>
-        </svg>
+      <div class="labels">
+        <span>Entry</span>
+        <span>Scale In</span>
+        <span>Hold/Wait</span>
+        <span>Reduce</span>
+        <span>Exit</span>
       </div>
+
+      <div id="val2" class="val">–</div>
+
+      <div class="risk">
+        <span id="warn2" class="warn">⚠</span>
+        <span class="risk-label">Risk level:</span>
+        <span id="risk2">–%</span>
+      </div>
+
+      <svg class="dot-layer" viewBox="0 0 360 150">
+        <circle id="dotOuter2" cx="24" cy="121.2" r="9" fill="#323232"/>
+        <circle id="dotInner2" cx="24" cy="121.2" r="6" fill="#ffffff"/>
+      </svg>
     </div>
 
-    <div class="scale-225">
-      <div class="gadget-box" style="background-image:url('/assets/img/grey-clean.svg');"></div>
+    <div class="index-box side"
+         style="background-image:url('/assets/img/mobile-grey-280.svg');">
     </div>
-
   </div>
 
-  <!-- BOX 3 -->
-  <div class="scale-420">
-    <div id="box3" class="index-box" style="background-image:url('/assets/img/bar-scale-grey.svg');">
+  <!-- ROW 3 -->
+  <div class="row">
+    <div id="box3" class="index-box main" style="background-image:url('/assets/img/mobile-bar-scale-grey.svg');">
       <div class="box-title">Navigation Index — Grey</div>
 
-      <!-- scale zones -->
-      <div style="
-        position:absolute;
-        left:32px;
-        top:82px;
-        width:356px;
-        display:flex;
-        font-size:13px;
-        color:#d9d9d9;
-        opacity:0.5;
-        letter-spacing:0.02em;
-        z-index:2;
-        pointer-events:none;">
-        <span style="flex:1;text-align:center;">Entry</span>
-        <span style="flex:1;text-align:center;">Scale In</span>
-        <span style="flex:1;text-align:center;">Hold/Wait</span>
-        <span style="flex:1;text-align:center;">Reduce</span>
-        <span style="flex:1;text-align:center;">Exit</span>
+      <div class="labels">
+        <span>Entry</span>
+        <span>Scale In</span>
+        <span>Hold/Wait</span>
+        <span>Reduce</span>
+        <span>Exit</span>
       </div>
 
-      <!-- value -->
-      <div id="val3" style="
-        position:absolute;
-        top:45%;
-        left:28px;
-        transform:translateY(-50%);
-        font-size:16px;
-        font-weight:500;
-        color:#d9d9d9;
-        z-index:2;">–</div>
+      <div id="val3" class="val">–</div>
 
-      <!-- risk -->
-      <div style="
-        position:absolute;
-        top:45%;
-        right:28px;
-        transform:translateY(-50%);
-        font-size:14px;
-        color:#d9d9d9;
-        z-index:2;
-        white-space:nowrap;">
-        <span id="warn3" style="opacity:0.5;margin-right:6px;font-size:17px;visibility:hidden;">⚠</span>
-        <span style="opacity:0.5;">Risk level:</span>
-        <span id="risk3" style="opacity:0.75;">–%</span>
+      <div class="risk">
+        <span id="warn3" class="warn">⚠</span>
+        <span class="risk-label">Risk level:</span>
+        <span id="risk3">–%</span>
       </div>
 
-      <!-- dot layer -->
-      <svg class="dot-layer" viewBox="0 0 420 140" xmlns="http://www.w3.org/2000/svg">
-        <circle id="dotOuter3" cx="32" cy="110" r="9" fill="#323232ff"/>
-        <circle id="dotInner3" cx="32" cy="110" r="6" fill="#ffffff"/>
+      <svg class="dot-layer" viewBox="0 0 360 150">
+        <circle id="dotOuter3" cx="24" cy="121.2" r="9" fill="#323232"/>
+        <circle id="dotInner3" cx="24" cy="121.2" r="6" fill="#ffffff"/>
       </svg>
+    </div>
+
+    <div class="index-box side"
+         style="background-image:url('/assets/img/mobile-grey-280.svg');">
     </div>
   </div>
 
 </div>
 
 <style>
-  .indexes{
-    display:flex;
+.indexes-grid{
+  display:flex;
+  flex-direction:column;
+  gap:28px;
+  font-family:system-ui,-apple-system,sans-serif;
+}
+
+.row{
+  display:flex;
+  gap:20px;
+  align-items:flex-start;
+}
+
+.index-box{
+  position:relative;
+  height:150px;
+  background-repeat:no-repeat;
+}
+
+.index-box.main{
+  width:360px;
+  background-size:360px 150px;
+}
+
+.index-box.side{
+  width:280px;
+  background-size:280px 150px;
+  flex-shrink:0;
+}
+
+.box-title{
+  position:absolute;
+  top:18px;
+  left:20px;
+  font-size:15px;
+  font-weight:500;
+  color:#d9d9d9;
+}
+
+.labels{
+  position:absolute;
+  left:20px;
+  top:92px;
+  width:320px;
+  display:flex;
+  font-size:12px;
+  color:#d9d9d9;
+  opacity:0.5;
+}
+
+.labels span{
+  flex:1;
+  text-align:center;
+}
+
+.val{
+  position:absolute;
+  top:44%;
+  left:20px;
+  transform:translateY(-50%);
+  font-size:16px;
+  color:#d9d9d9;
+}
+
+.risk{
+  position:absolute;
+  top:44%;
+  right:20px;
+  transform:translateY(-50%);
+  font-size:14px;
+  color:#d9d9d9;
+  white-space:nowrap;
+}
+
+.warn{
+  margin-right:6px;
+  visibility:hidden;
+  opacity:0.5;
+}
+
+.dot-layer{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+}
+
+@media (max-width:720px){
+  .row{
     flex-direction:column;
   }
 
-  .row-wrap{
-    display:flex;
-    flex-wrap:wrap;
-    gap:28px;
-    align-items:flex-start;
-    justify-content:flex-start;
+  .index-box.side{
+    margin-top:12px;
   }
-
-  /* scale wrapper for 420×140 boxes */
-  .scale-420{
-    width:min(420px, 100%);
-    --s: min(1, calc(100% / 420));
-    height: calc(140px * var(--s));
-    flex: 0 0 auto;
-  }
-  .scale-420 > .index-box{
-    width:420px;
-    height:140px;
-    transform: scale(var(--s));
-    transform-origin: top left;
-  }
-
-  /* scale wrapper for 225×140 gadgets */
-  .scale-225{
-    width:min(225px, 100%);
-    --s: min(1, calc(100% / 225));
-    height: calc(140px * var(--s));
-    flex: 0 0 auto;
-  }
-  .scale-225 > .gadget-box{
-    width:225px;
-    height:140px;
-    transform: scale(var(--s));
-    transform-origin: top left;
-  }
-
-  .index-box{
-    position:relative;
-    background-repeat:no-repeat;
-    background-size:420px 140px;
-    font-family:system-ui,-apple-system,sans-serif;
-  }
-
-  .gadget-box{
-    background-repeat:no-repeat;
-    background-size:225px 140px;
-  }
-
-  .box-title{
-    position:absolute;
-    top:18px;
-    left:28px;
-    right:20px;
-    font-size:15px;
-    font-weight:500;
-    color:#d9d9d9;
-    line-height:1.2;
-    z-index:2;
-  }
-
-  .dot-layer{
-    position:absolute;
-    inset:0;
-    pointer-events:none;
-    z-index:1;
-  }
-
-  /* ALIGNMENT FIX WHEN THE GADGET WRAPS (this is where your issue was):
-     At <= 720px, both items become full-row (same left edge),
-     while the gadget plate stays left inside its full-row wrapper.
-  */
-  @media (max-width: 720px){
-    .scale-420,
-    .scale-225{
-      flex: 0 0 100%;
-      width: 100%;
-    }
-    .scale-225{
-      display:flex;
-      justify-content:flex-start;
-    }
-  }
-
-  /* keep your existing mobile behavior (same effect, tighter spacing) */
-  @media (max-width: 640px){
-    .row-wrap{ gap:16px; }
-  }
+}
 </style>
 
 <script>
-function clamp(v, lo, hi){ return Math.max(lo, Math.min(hi, v)); }
+function clamp(v,l,h){return Math.max(l,Math.min(h,v));}
 
-function setValue(boxId, x){
-  const n = Number(x);
-  if (!Number.isFinite(n)) return;
+function setValue(id,x){
+  const n=Number(x); if(!Number.isFinite(n)) return;
+  const pct=clamp(n,0,100);
+  const TOTAL=25;
+  const step=Math.round((pct/100)*(TOTAL-1))+1;
+  const START=23.5, END=336.5;
+  const BIN=(END-START)/TOTAL;
+  const cx=START+(step-0.5)*BIN;
 
-  const pct = clamp(n, 0, 100);
-  const TOTAL = 25;
-  const step = Math.round((pct / 100) * (TOTAL - 1)) + 1;
-
-  const START = 32;
-  const END   = 389;
-  const BIN   = (END - START) / TOTAL;
-  const cx = START + (step - 0.5) * BIN;
-
-  const outer = document.getElementById("dotOuter" + boxId);
-  const inner = document.getElementById("dotInner" + boxId);
-  const val   = document.getElementById("val" + boxId);
-
-  if (outer) outer.setAttribute("cx", cx);
-  if (inner) inner.setAttribute("cx", cx);
-  if (val)   val.textContent = step + "/" + TOTAL;
+  document.getElementById("dotOuter"+id).setAttribute("cx",cx);
+  document.getElementById("dotInner"+id).setAttribute("cx",cx);
+  document.getElementById("val"+id).innerHTML=
+    step+'<span style="opacity:0.5">/'+TOTAL+'</span>';
 }
 
-function setRisk(boxId, r){
-  const n = Number(r);
-  if (!Number.isFinite(n)) return;
-  const el = document.getElementById("risk" + boxId);
-  if (!el) return;
-  el.textContent = Math.round(clamp(n, 0, 100)) + "%";
+function setRisk(id,r){
+  document.getElementById("risk"+id).textContent=
+    Math.round(clamp(r,0,100))+"%";
 }
 
-function setWarn(boxId, show){
-  const el = document.getElementById("warn" + boxId);
-  if (!el) return;
-  el.style.visibility = show ? "visible" : "hidden";
+function setWarn(id,show){
+  document.getElementById("warn"+id).style.visibility=
+    show?"visible":"hidden";
 }
 
-(function () {
-  const KEY = "dashboard_indexes_cache_v16";
+(function(){
+  const KEY="dashboard_indexes_cache_v6";
 
-  function readCache(){
-    try{
-      const raw = sessionStorage.getItem(KEY);
-      return raw ? JSON.parse(raw) : null;
-    } catch(e){
-      return null;
-    }
-  }
-
-  function writeCache(obj){
-    try{ sessionStorage.setItem(KEY, JSON.stringify(obj)); } catch(e){}
-  }
-
-  function signatureFrom(data){
-    return String(
-      data.box3_risk_updated_utc ||
-      data.box2_risk_updated_utc ||
-      data.box1_risk_updated_utc ||
-      data.box3_updated_utc ||
-      data.box2_updated_utc ||
-      data.box1_updated_utc ||
-      JSON.stringify([
-        data.box1, data.box2, data.box3,
-        data.box1_risk, data.box2_risk, data.box3_risk
-      ])
-    );
-  }
-
-  function applyAll(d){
-    if (d.box1 !== undefined) setValue(1, d.box1);
-    if (d.box2 !== undefined) setValue(2, d.box2);
-    if (d.box3 !== undefined) setValue(3, d.box3);
-
-    if (d.box1_risk !== undefined) setRisk(1, d.box1_risk);
-    if (d.box2_risk !== undefined) setRisk(2, d.box2_risk);
-    if (d.box3_risk !== undefined) setRisk(3, d.box3_risk);
-
-    setWarn(1, false);
-    const b2 = Number(d.box2);
-    const b3 = Number(d.box3);
-    setWarn(2, Number.isFinite(b2) && b2 >= 80);
-    setWarn(3, Number.isFinite(b3) && b3 >= 80);
+  function apply(d){
+    if(d.box1!=null) setValue(1,d.box1);
+    if(d.box2!=null) setValue(2,d.box2);
+    if(d.box3!=null) setValue(3,d.box3);
+    if(d.box1_risk!=null) setRisk(1,d.box1_risk);
+    if(d.box2_risk!=null) setRisk(2,d.box2_risk);
+    if(d.box3_risk!=null) setRisk(3,d.box3_risk);
+    setWarn(2,Number(d.box2)>=80);
+    setWarn(3,Number(d.box3)>=80);
   }
 
   async function load(){
-    const cached = readCache();
-    if (cached) applyAll(cached);
-
     try{
-      const res = await fetch("/data/indexes.json", { cache: "no-store" });
-      if (!res.ok) return;
-
-      const data = await res.json();
-      const sig = signatureFrom(data);
-      if (cached && cached.sig === sig) return;
-
-      applyAll(data);
-
-      writeCache({
-        sig,
-        box1: data.box1,
-        box2: data.box2,
-        box3: data.box3,
-        box1_risk: data.box1_risk,
-        box2_risk: data.box2_risk,
-        box3_risk: data.box3_risk,
-        box1_risk_updated_utc: data.box1_risk_updated_utc,
-        box2_risk_updated_utc: data.box2_risk_updated_utc,
-        box3_risk_updated_utc: data.box3_risk_updated_utc,
-        box1_updated_utc: data.box1_updated_utc,
-        box2_updated_utc: data.box2_updated_utc,
-        box3_updated_utc: data.box3_updated_utc
-      });
-    } catch(e){}
+      const c=sessionStorage.getItem(KEY);
+      if(c) apply(JSON.parse(c));
+      const r=await fetch("/data/indexes.json",{cache:"no-store"});
+      if(!r.ok) return;
+      const d=await r.json();
+      apply(d);
+      sessionStorage.setItem(KEY,JSON.stringify(d));
+    }catch(e){}
   }
 
-  if (document.readyState === "loading"){
-    document.addEventListener("DOMContentLoaded", load);
-  } else {
-    load();
-  }
+  document.readyState==="loading"
+    ? document.addEventListener("DOMContentLoaded",load)
+    : load();
 })();
 </script>
