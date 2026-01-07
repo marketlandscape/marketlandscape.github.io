@@ -131,8 +131,8 @@ function setValue(boxId, x){
   const TOTAL = 25; // unchanged
   const step = Math.round((pct / 100) * (TOTAL - 1)) + 1;
 
-  const START = 22;
-  const END   = 338;
+  const START = 23.5;
+  const END   = 336.5;
   const BIN   = (END - START) / TOTAL;
   const cx = START + (step - 0.5) * BIN;
 
