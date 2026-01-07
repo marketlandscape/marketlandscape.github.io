@@ -1,5 +1,4 @@
-<!-- FULL FILE (dashboard.md) — box1/box2/box3 visuals matched to index.md, additional side boxes preserved -->
-<!-- Source refs: index.md :contentReference[oaicite:0]{index=0}  dashboard.md :contentReference[oaicite:1]{index=1} -->
+<!-- FULL FILE — unified 28px spacing everywhere -->
 
 <div class="indexes-grid">
 
@@ -111,7 +110,7 @@
 
 .row{
   display:flex;
-  gap:20px;
+  gap:28px;
   align-items:flex-start;
 }
 
@@ -132,7 +131,7 @@
   flex-shrink:0;
 }
 
-/* MATCH index.md */
+/* MATCH index visuals exactly */
 .box-title{
   position:absolute;
   top:18px;
@@ -211,10 +210,11 @@
 @media (max-width:720px){
   .row{
     flex-direction:column;
+    gap:28px;          /* vertical spacing = 28 */
   }
 
   .index-box.side{
-    margin-top:12px;
+    margin-top:0;      /* remove extra spacing */
   }
 }
 </style>
