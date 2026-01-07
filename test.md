@@ -1,4 +1,4 @@
-<!-- FULL FILE — unified 28px spacing everywhere -->
+<!-- FULL FILE — secondary boxes updated to 360×150 with mobile-grey-360.svg -->
 
 <div class="indexes-grid">
 
@@ -30,7 +30,7 @@
     </div>
 
     <div class="index-box side"
-         style="background-image:url('/assets/img/mobile-grey-280.svg');">
+         style="background-image:url('/assets/img/mobile-grey-360.svg');">
     </div>
   </div>
 
@@ -62,7 +62,7 @@
     </div>
 
     <div class="index-box side"
-         style="background-image:url('/assets/img/mobile-grey-280.svg');">
+         style="background-image:url('/assets/img/mobile-grey-360.svg');">
     </div>
   </div>
 
@@ -94,7 +94,7 @@
     </div>
 
     <div class="index-box side"
-         style="background-image:url('/assets/img/mobile-grey-280.svg');">
+         style="background-image:url('/assets/img/mobile-grey-360.svg');">
     </div>
   </div>
 
@@ -126,12 +126,11 @@
 }
 
 .index-box.side{
-  width:280px;
-  background-size:280px 150px;
+  width:360px;
+  background-size:360px 150px;
   flex-shrink:0;
 }
 
-/* MATCH index visuals exactly */
 .box-title{
   position:absolute;
   top:18px;
@@ -210,11 +209,7 @@
 @media (max-width:720px){
   .row{
     flex-direction:column;
-    gap:28px;          /* vertical spacing = 28 */
-  }
-
-  .index-box.side{
-    margin-top:0;      /* remove extra spacing */
+    gap:28px;
   }
 }
 </style>
