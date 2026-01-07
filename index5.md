@@ -104,7 +104,7 @@
 .box-title{
   position:absolute;
   top:18px;
-  left:30px;
+  left:22px;
   right:17px;
   font-size:15px;
   font-weight:500;
