@@ -96,7 +96,7 @@ function setValue(boxId, x){
   if (!Number.isFinite(n)) return;
 
   const pct = clamp(n, 0, 100);
-  const TOTAL = 25;
+  const TOTAL = 24;
   const step = Math.round((pct / 100) * (TOTAL - 1)) + 1;
 
   const START = 34;
