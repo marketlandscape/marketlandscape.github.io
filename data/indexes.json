@@ -1,15 +1,15 @@
 {
-  "box1": 29.95,
-  "box2": 40.98,
+  "box1": 30.2,
+  "box2": 40.78,
   "box3": 29.14,
   "box4": 29,
-  "box1_updated_utc": "2026-01-07 09:46 UTC",
-  "box2_updated_utc": "2026-01-07 09:46 UTC",
+  "box1_updated_utc": "2026-01-07 15:00 UTC",
+  "box2_updated_utc": "2026-01-07 15:00 UTC",
   "box3_updated_utc": "2026-01-07 09:47 UTC",
   "box1_risk": 15.0,
   "box1_risk_updated_utc": "2026-01-05 17:15 UTC",
-  "box2_risk": 24.3,
-  "box2_risk_updated_utc": "2026-01-05 20:56 UTC",
+  "box2_risk": 24.2,
+  "box2_risk_updated_utc": "2026-01-07 15:00 UTC",
   "box3_risk": 34.0,
   "box3_risk_updated_utc": "2026-01-05 17:15 UTC"
 }
