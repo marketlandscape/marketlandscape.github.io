@@ -15,10 +15,10 @@
         <span style="flex:1;text-align:center;">HODL</span>
       </div>
 
-  <div id="val1" style="position:absolute;top:44%;left:24px;transform:translateY(-50%);font-size:17px;font-weight:500;color:#d9d9d9;z-index:2;">–</div>
+  <div id="val1" style="position:absolute;top:44%;left:22px;transform:translateY(-50%);font-size:16px;font-weight:500;color:#d9d9d9;z-index:2;">–</div>
 
-   <div style="position:absolute;top:44%;right:30px;transform:translateY(-50%);font-size:15px;color:#d9d9d9;z-index:2;white-space:nowrap;">
-        <span id="warn1" style="opacity:0.5;margin-right:6px;font-size:17px;visibility:hidden;">⚠</span>
+   <div style="position:absolute;top:44%;right:22px;transform:translateY(-50%);font-size:14px;color:#d9d9d9;z-index:2;white-space:nowrap;">
+        <span id="warn1" style="opacity:0.5;margin-right:6px;font-size:16px;visibility:hidden;">⚠</span>
         <span style="opacity:0.5;">Risk level:</span>
         <span id="risk1" style="opacity:0.75;">–%</span>
       </div>
@@ -43,10 +43,10 @@
         <span style="flex:1;text-align:center;">Exit</span>
       </div>
 
-   <div id="val2" style="position:absolute;top:44%;left:24px;transform:translateY(-50%);font-size:17px;font-weight:500;color:#d9d9d9;z-index:2;">–</div>
+   <div id="val2" style="position:absolute;top:44%;left:22px;transform:translateY(-50%);font-size:16px;font-weight:500;color:#d9d9d9;z-index:2;">–</div>
 
-   <div style="position:absolute;top:44%;right:30px;transform:translateY(-50%);font-size:15px;color:#d9d9d9;z-index:2;white-space:nowrap;">
-        <span id="warn2" style="opacity:0.5;margin-right:6px;font-size:17px;visibility:hidden;">⚠</span>
+   <div style="position:absolute;top:44%;right:22px;transform:translateY(-50%);font-size:14px;color:#d9d9d9;z-index:2;white-space:nowrap;">
+        <span id="warn2" style="opacity:0.5;margin-right:6px;font-size:16px;visibility:hidden;">⚠</span>
         <span style="opacity:0.5;">Risk level:</span>
         <span id="risk2" style="opacity:0.75;">–%</span>
       </div>
@@ -71,10 +71,10 @@
         <span style="flex:1;text-align:center;">Exit</span>
       </div>
 
-  <div id="val3" style="position:absolute;top:44%;left:24px;transform:translateY(-50%);font-size:17px;font-weight:500;color:#d9d9d9;z-index:2;">–</div>
+  <div id="val3" style="position:absolute;top:44%;left:22px;transform:translateY(-50%);font-size:16px;font-weight:500;color:#d9d9d9;z-index:2;">–</div>
 
-   <div style="position:absolute;top:44%;right:30px;transform:translateY(-50%);font-size:15px;color:#d9d9d9;z-index:2;white-space:nowrap;">
-        <span id="warn3" style="opacity:0.5;margin-right:6px;font-size:17px;visibility:hidden;">⚠</span>
+   <div style="position:absolute;top:44%;right:22px;transform:translateY(-50%);font-size:14px;color:#d9d9d9;z-index:2;white-space:nowrap;">
+        <span id="warn3" style="opacity:0.5;margin-right:6px;font-size:16px;visibility:hidden;">⚠</span>
         <span style="opacity:0.5;">Risk level:</span>
         <span id="risk3" style="opacity:0.75;">–%</span>
       </div>
