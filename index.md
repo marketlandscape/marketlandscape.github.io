@@ -88,6 +88,38 @@
 
 </div>
 
+<style>
+.indexes{
+  display:flex;
+  flex-direction:column;
+}
+.index-box{
+  position:relative;
+  width:450px;
+  height:150px;
+  background-repeat:no-repeat;
+  background-size:450px 150px;
+  font-family:system-ui,-apple-system,sans-serif;
+}
+.box-title{
+  position:absolute;
+  top:18px;
+  left:30px;
+  right:17px;
+  font-size:15px;
+  font-weight:500;
+  color:#d9d9d9;
+  line-height:1.2;
+  z-index:2;
+}
+.dot-layer{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:1;
+}
+</style>
+
 <script>
 function clamp(v, lo, hi){ return Math.max(lo, Math.min(hi, v)); }
 
@@ -96,7 +128,7 @@ function setValue(boxId, x){
   if (!Number.isFinite(n)) return;
 
   const pct = clamp(n, 0, 100);
-  const TOTAL = 24;
+  const TOTAL = 25; // unchanged
   const step = Math.round((pct / 100) * (TOTAL - 1)) + 1;
 
   const START = 34;
@@ -112,4 +144,52 @@ function setValue(boxId, x){
     val.innerHTML = step + '<span style="opacity:0.5">/' + TOTAL + '</span>';
   }
 }
+
+function setRisk(boxId, r){
+  const n = Number(r);
+  if (!Number.isFinite(n)) return;
+  document.getElementById("risk" + boxId).textContent =
+    Math.round(clamp(n, 0, 100)) + "%";
+}
+
+function setWarn(boxId, show){
+  const el = document.getElementById("warn" + boxId);
+  if (el) el.style.visibility = show ? "visible" : "hidden";
+}
+
+(function(){
+  const KEY = "dashboard_indexes_cache_v6";
+
+  function applyAll(d){
+    if (d.box1 !== undefined) setValue(1, d.box1);
+    if (d.box2 !== undefined) setValue(2, d.box2);
+    if (d.box3 !== undefined) setValue(3, d.box3);
+
+    if (d.box1_risk !== undefined) setRisk(1, d.box1_risk);
+    if (d.box2_risk !== undefined) setRisk(2, d.box2_risk);
+    if (d.box3_risk !== undefined) setRisk(3, d.box3_risk);
+
+    setWarn(1, false);
+    setWarn(2, Number(d.box2) >= 80);
+    setWarn(3, Number(d.box3) >= 80);
+  }
+
+  async function load(){
+    try{
+      const cached = sessionStorage.getItem(KEY);
+      if (cached) applyAll(JSON.parse(cached));
+
+      const res = await fetch("/data/indexes.json", { cache:"no-store" });
+      if (!res.ok) return;
+      const data = await res.json();
+
+      applyAll(data);
+      sessionStorage.setItem(KEY, JSON.stringify(data));
+    }catch(e){}
+  }
+
+  document.readyState === "loading"
+    ? document.addEventListener("DOMContentLoaded", load)
+    : load();
+})();
 </script>
