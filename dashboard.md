@@ -4,7 +4,7 @@
 
   <!-- ROW 1 -->
   <div class="row">
-    <div id="box1" class="index-box main" style="background-image:url('/assets/img/mobile-bar-scale-yellow.svg');">
+    <div id="box1" class="index-box main" style="background-image:url('/assets/img/mobile-bar-updated-yellow.svg');">
       <div class="box-title">Navigation Index — Yellow</div>
 
       <div class="labels">
@@ -68,7 +68,7 @@
 
   <!-- ROW 3 -->
   <div class="row">
-    <div id="box3" class="index-box main" style="background-image:url('/assets/img/mobile-bar-scale-grey.svg');">
+    <div id="box3" class="index-box main" style="background-image:url('/assets/img/mobile-bar-updated-grey.svg');">
       <div class="box-title">Navigation Index — Grey</div>
 
       <div class="labels">
