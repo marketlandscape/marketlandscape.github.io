@@ -60,7 +60,7 @@
 
   <!-- BOX 3 -->
   <div>
-    <div id="box3" class="index-box" style="background-image:url('/assets/img/mobile-bar-scale-grey.svg');">
+    <div id="box3" class="index-box" style="background-image:url('/assets/img/mobile-bar-updated-grey.svg');">
       <div class="box-title">Navigation Index — Grey</div>
 
    <div style="position:absolute;left:20px;top:92px;width:320px;display:flex;font-size:12px;color:#d9d9d9;opacity:0.5;letter-spacing:0.02em;z-index:2;pointer-events:none;">
