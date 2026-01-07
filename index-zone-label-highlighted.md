@@ -7,7 +7,7 @@
     <div id="box1" class="index-box" style="background-image:url('/assets/img/mobile-bar-scale-yellow.svg');">
       <div class="box-title">Navigation Index — Yellow</div>
 
-      <!-- labels: inactive 50%, active becomes 100% via JS -->
+      <!-- CHANGED: added id="labels1", removed container opacity, moved opacity to spans -->
       <div id="labels1" style="position:absolute;left:20px;top:92px;width:320px;display:flex;font-size:12px;color:#d9d9d9;letter-spacing:0.02em;z-index:2;pointer-events:none;">
         <span style="flex:1;text-align:center;opacity:0.5;">Entry</span>
         <span style="flex:1;text-align:center;opacity:0.5;">Scale In</span>
@@ -16,7 +16,7 @@
         <span style="flex:1;text-align:center;opacity:0.5;">HODL</span>
       </div>
 
-      <div id="val1" style="position:absolute;top:44%;left:20px;transform:translateY(-50%);font-size:42px;font-weight:700;color:#fff;z-index:2;">–</div>
+      <div id="val1" style="position:absolute;top:44%;left:20px;transform:translateY(-50%);font-size:16px;font-weight:500;color:#d9d9d9;z-index:2;">–</div>
 
       <div style="position:absolute;top:44%;right:20px;transform:translateY(-50%);font-size:14px;color:#d9d9d9;z-index:2;white-space:nowrap;">
         <span id="warn1" style="opacity:0.5;margin-right:6px;font-size:16px;visibility:hidden;">⚠</span>
@@ -24,20 +24,19 @@
         <span id="risk1" style="opacity:0.75;">–%</span>
       </div>
 
-      <svg class="dot-layer" width="360" height="150" viewBox="0 0 360 150" aria-hidden="true">
-        <circle id="dotOuter1" cx="23.5" cy="112" r="9" fill="#FFE600" opacity="0.65"></circle>
-        <circle id="dotInner1" cx="23.5" cy="112" r="4.2" fill="#FFFFFF"></circle>
+      <svg class="dot-layer" viewBox="0 0 360 150" xmlns="http://www.w3.org/2000/svg">
+        <circle id="dotOuter1" cx="34" cy="121.2" r="9" fill="#323232ff"/>
+        <circle id="dotInner1" cx="34" cy="121.2" r="6" fill="#ffffff"/>
       </svg>
-
     </div>
   </div>
 
   <!-- BOX 2 -->
   <div style="margin-bottom:28px;">
-    <div id="box2" class="index-box" style="background-image:url('/assets/img/mobile-bar-scale-green.svg');">
-      <div class="box-title">Momentum Index — Green</div>
+    <div id="box2" class="index-box" style="background-image:url('/assets/img/mobile-bar-scale-blue.svg');">
+      <div class="box-title">Navigation Index — Blue</div>
 
-      <!-- labels: inactive 50%, active becomes 100% via JS -->
+      <!-- CHANGED: added id="labels2", removed container opacity, moved opacity to spans -->
       <div id="labels2" style="position:absolute;left:20px;top:92px;width:320px;display:flex;font-size:12px;color:#d9d9d9;letter-spacing:0.02em;z-index:2;pointer-events:none;">
         <span style="flex:1;text-align:center;opacity:0.5;">Entry</span>
         <span style="flex:1;text-align:center;opacity:0.5;">Scale In</span>
@@ -46,7 +45,7 @@
         <span style="flex:1;text-align:center;opacity:0.5;">Exit</span>
       </div>
 
-      <div id="val2" style="position:absolute;top:44%;left:20px;transform:translateY(-50%);font-size:42px;font-weight:700;color:#fff;z-index:2;">–</div>
+      <div id="val2" style="position:absolute;top:44%;left:20px;transform:translateY(-50%);font-size:16px;font-weight:500;color:#d9d9d9;z-index:2;">–</div>
 
       <div style="position:absolute;top:44%;right:20px;transform:translateY(-50%);font-size:14px;color:#d9d9d9;z-index:2;white-space:nowrap;">
         <span id="warn2" style="opacity:0.5;margin-right:6px;font-size:16px;visibility:hidden;">⚠</span>
@@ -54,20 +53,19 @@
         <span id="risk2" style="opacity:0.75;">–%</span>
       </div>
 
-      <svg class="dot-layer" width="360" height="150" viewBox="0 0 360 150" aria-hidden="true">
-        <circle id="dotOuter2" cx="23.5" cy="112" r="9" fill="#19FF4B" opacity="0.65"></circle>
-        <circle id="dotInner2" cx="23.5" cy="112" r="4.2" fill="#FFFFFF"></circle>
+      <svg class="dot-layer" viewBox="0 0 360 150" xmlns="http://www.w3.org/2000/svg">
+        <circle id="dotOuter2" cx="24" cy="121.2" r="9" fill="#323232ff"/>
+        <circle id="dotInner2" cx="24" cy="121.2" r="6" fill="#ffffff"/>
       </svg>
-
     </div>
   </div>
 
   <!-- BOX 3 -->
   <div>
-    <div id="box3" class="index-box" style="background-image:url('/assets/img/mobile-bar-scale-red.svg');">
-      <div class="box-title">Risk Index — Red</div>
+    <div id="box3" class="index-box" style="background-image:url('/assets/img/mobile-bar-scale-grey.svg');">
+      <div class="box-title">Navigation Index — Grey</div>
 
-      <!-- labels: inactive 50%, active becomes 100% via JS -->
+      <!-- CHANGED: added id="labels3", removed container opacity, moved opacity to spans -->
       <div id="labels3" style="position:absolute;left:20px;top:92px;width:320px;display:flex;font-size:12px;color:#d9d9d9;letter-spacing:0.02em;z-index:2;pointer-events:none;">
         <span style="flex:1;text-align:center;opacity:0.5;">Entry</span>
         <span style="flex:1;text-align:center;opacity:0.5;">Scale In</span>
@@ -76,7 +74,7 @@
         <span style="flex:1;text-align:center;opacity:0.5;">Exit</span>
       </div>
 
-      <div id="val3" style="position:absolute;top:44%;left:20px;transform:translateY(-50%);font-size:42px;font-weight:700;color:#fff;z-index:2;">–</div>
+      <div id="val3" style="position:absolute;top:44%;left:20px;transform:translateY(-50%);font-size:16px;font-weight:500;color:#d9d9d9;z-index:2;">–</div>
 
       <div style="position:absolute;top:44%;right:20px;transform:translateY(-50%);font-size:14px;color:#d9d9d9;z-index:2;white-space:nowrap;">
         <span id="warn3" style="opacity:0.5;margin-right:6px;font-size:16px;visibility:hidden;">⚠</span>
@@ -84,11 +82,10 @@
         <span id="risk3" style="opacity:0.75;">–%</span>
       </div>
 
-      <svg class="dot-layer" width="360" height="150" viewBox="0 0 360 150" aria-hidden="true">
-        <circle id="dotOuter3" cx="23.5" cy="112" r="9" fill="#FF3B3B" opacity="0.65"></circle>
-        <circle id="dotInner3" cx="23.5" cy="112" r="4.2" fill="#FFFFFF"></circle>
+      <svg class="dot-layer" viewBox="0 0 360 150" xmlns="http://www.w3.org/2000/svg">
+        <circle id="dotOuter3" cx="24" cy="121.2" r="9" fill="#323232ff"/>
+        <circle id="dotInner3" cx="24" cy="121.2" r="6" fill="#ffffff"/>
       </svg>
-
     </div>
   </div>
 
@@ -98,17 +95,14 @@
 .indexes{
   display:flex;
   flex-direction:column;
-  gap:0;
-  max-width:360px;
 }
 .index-box{
   position:relative;
   width:360px;
   height:150px;
-  border-radius:18px;
-  background-size:cover;
-  background-position:center;
-  overflow:hidden;
+  background-repeat:no-repeat;
+  background-size:360px 150px;
+  font-family:system-ui,-apple-system,sans-serif;
 }
 .box-title{
   position:absolute;
@@ -132,9 +126,12 @@
 <script>
 function clamp(v, lo, hi){ return Math.max(lo, Math.min(hi, v)); }
 
-function highlightLabel(boxId, step){
-  // 5 zones across steps 1..25:
-  // 1-5, 6-10, 11-15, 16-20, 21-25
+/* ADDED: zone label highlight logic only
+   - inactive labels stay at opacity 0.5
+   - active zone label becomes opacity 1
+   Zones: 1-5, 6-10, 11-15, 16-20, 21-25
+*/
+function highlightZoneLabel(boxId, step){
   const zone = clamp(Math.floor((step - 1) / 5), 0, 4);
 
   const row = document.getElementById("labels" + boxId);
@@ -142,7 +139,6 @@ function highlightLabel(boxId, step){
 
   const spans = row.querySelectorAll("span");
   spans.forEach((s, i) => {
-    // inactive labels at 50%, active label at full opacity
     s.style.opacity = (i === zone) ? "1" : "0.5";
   });
 }
@@ -163,7 +159,8 @@ function setValue(boxId, x){
   document.getElementById("dotOuter" + boxId)?.setAttribute("cx", cx);
   document.getElementById("dotInner" + boxId)?.setAttribute("cx", cx);
 
-  highlightLabel(boxId, step);
+  /* ADDED: apply the zone label highlighting */
+  highlightZoneLabel(boxId, step);
 
   const val = document.getElementById("val" + boxId);
   if (val){
