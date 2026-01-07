@@ -38,7 +38,7 @@
       <div style="position:absolute;left:33.75px;top:88px;width:382.5px;display:flex;font-size:13px;color:#d9d9d9;opacity:0.5;letter-spacing:0.02em;z-index:2;pointer-events:none;">
         <span style="flex:1;text-align:center;">Entry</span>
         <span style="flex:1;text-align:center;">Scale In</span>
-        <span style="flex:1;text-align:center;">Hold / Wait</span>
+        <span style="flex:1;text-align:center;">Hold/Wait</span>
         <span style="flex:1;text-align:center;">Reduce</span>
         <span style="flex:1;text-align:center;">Exit</span>
       </div>
@@ -66,7 +66,7 @@
       <div style="position:absolute;left:33.75px;top:88px;width:382.5px;display:flex;font-size:13px;color:#d9d9d9;opacity:0.5;letter-spacing:0.02em;z-index:2;pointer-events:none;">
         <span style="flex:1;text-align:center;">Entry</span>
         <span style="flex:1;text-align:center;">Scale In</span>
-        <span style="flex:1;text-align:center;">Hold / Wait</span>
+        <span style="flex:1;text-align:center;">Hold/Wait</span>
         <span style="flex:1;text-align:center;">Reduce</span>
         <span style="flex:1;text-align:center;">Exit</span>
       </div>
