@@ -1,4 +1,5 @@
-<!-- FULL FILE -->
+<!-- FULL FILE (dashboard.md) — box1/box2/box3 visuals matched to index.md, additional side boxes preserved -->
+<!-- Source refs: index.md :contentReference[oaicite:0]{index=0}  dashboard.md :contentReference[oaicite:1]{index=1} -->
 
 <div class="indexes-grid">
 
@@ -23,8 +24,8 @@
         <span id="risk1">–%</span>
       </div>
 
-      <svg class="dot-layer" viewBox="0 0 360 150">
-        <circle id="dotOuter1" cx="34" cy="121.2" r="9" fill="#323232"/>
+      <svg class="dot-layer" viewBox="0 0 360 150" xmlns="http://www.w3.org/2000/svg">
+        <circle id="dotOuter1" cx="34" cy="121.2" r="9" fill="#323232ff"/>
         <circle id="dotInner1" cx="34" cy="121.2" r="6" fill="#ffffff"/>
       </svg>
     </div>
@@ -55,8 +56,8 @@
         <span id="risk2">–%</span>
       </div>
 
-      <svg class="dot-layer" viewBox="0 0 360 150">
-        <circle id="dotOuter2" cx="24" cy="121.2" r="9" fill="#323232"/>
+      <svg class="dot-layer" viewBox="0 0 360 150" xmlns="http://www.w3.org/2000/svg">
+        <circle id="dotOuter2" cx="24" cy="121.2" r="9" fill="#323232ff"/>
         <circle id="dotInner2" cx="24" cy="121.2" r="6" fill="#ffffff"/>
       </svg>
     </div>
@@ -87,8 +88,8 @@
         <span id="risk3">–%</span>
       </div>
 
-      <svg class="dot-layer" viewBox="0 0 360 150">
-        <circle id="dotOuter3" cx="24" cy="121.2" r="9" fill="#323232"/>
+      <svg class="dot-layer" viewBox="0 0 360 150" xmlns="http://www.w3.org/2000/svg">
+        <circle id="dotOuter3" cx="24" cy="121.2" r="9" fill="#323232ff"/>
         <circle id="dotInner3" cx="24" cy="121.2" r="6" fill="#ffffff"/>
       </svg>
     </div>
@@ -131,13 +132,17 @@
   flex-shrink:0;
 }
 
+/* MATCH index.md */
 .box-title{
   position:absolute;
   top:18px;
   left:20px;
+  right:17px;
   font-size:15px;
   font-weight:500;
   color:#d9d9d9;
+  line-height:1.2;
+  z-index:2;
 }
 
 .labels{
@@ -149,6 +154,9 @@
   font-size:12px;
   color:#d9d9d9;
   opacity:0.5;
+  letter-spacing:0.02em;
+  z-index:2;
+  pointer-events:none;
 }
 
 .labels span{
@@ -162,7 +170,9 @@
   left:20px;
   transform:translateY(-50%);
   font-size:16px;
+  font-weight:500;
   color:#d9d9d9;
+  z-index:2;
 }
 
 .risk{
@@ -173,18 +183,29 @@
   font-size:14px;
   color:#d9d9d9;
   white-space:nowrap;
+  z-index:2;
 }
 
 .warn{
   margin-right:6px;
+  font-size:16px;
   visibility:hidden;
   opacity:0.5;
+}
+
+.risk-label{
+  opacity:0.5;
+}
+
+#risk1,#risk2,#risk3{
+  opacity:0.75;
 }
 
 .dot-layer{
   position:absolute;
   inset:0;
   pointer-events:none;
+  z-index:1;
 }
 
 @media (max-width:720px){
