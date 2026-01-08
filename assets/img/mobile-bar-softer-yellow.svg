@@ -6,7 +6,7 @@
 
   <g id="scale" transform="translate(-13.33, 5)">
 
-    <!-- segment 1 (tiny darker) -->
+    <!-- segment 1 -->
     <rect x="44.8"    y="151" width="83.63" height="12" fill="#ffefbcff"/>
 
     <!-- segment 2 -->
@@ -18,12 +18,12 @@
     <!-- segment 4 -->
     <rect x="295.69"  y="151" width="83.63" height="12" fill="#ffa500ff"/>
 
-    <!-- segment 5 -->
-    <rect x="379.32"  y="151" width="83.63" height="12" fill="#e28f00ff"/>
+    <!-- segment 5 (tiny lighter) -->
+    <rect x="379.32"  y="151" width="83.63" height="12" fill="#de8700ff"/>
 
     <!-- circles -->
     <circle cx="44.8"    cy="157" r="6" fill="#ffefbcff"/>
-    <circle cx="462.95"  cy="157" r="6" fill="#e28f00ff"/>
+    <circle cx="462.95"  cy="157" r="6" fill="#de8700ff"/>
   </g>
 
 </svg>
