@@ -4,7 +4,7 @@
 
   <!-- BOX 1 -->
   <div style="margin-bottom:28px;">
-    <div id="box1" class="index-box" style="background-image:url('/assets/img/mobile-bar-highcontast-yellow.svg');">
+    <div id="box1" class="index-box" style="background-image:url('/assets/img/mobile-bar-highcontrast-yellow.svg');">
       <div class="box-title">Navigation Index — Yellow</div>
 
    <div style="position:absolute;left:20px;top:92px;width:320px;display:flex;font-size:12px;color:#d9d9d9;opacity:0.5;letter-spacing:0.02em;z-index:2;pointer-events:none;">
@@ -32,7 +32,7 @@
 
   <!-- BOX 2 -->
   <div style="margin-bottom:28px;">
-    <div id="box2" class="index-box" style="background-image:url('/assets/img/mobile-bar-highcontast-blue.svg');">
+    <div id="box2" class="index-box" style="background-image:url('/assets/img/mobile-bar-highcontrast-blue.svg');">
       <div class="box-title">Navigation Index — Blue</div>
 
    <div style="position:absolute;left:20px;top:92px;width:320px;display:flex;font-size:12px;color:#d9d9d9;opacity:0.5;letter-spacing:0.02em;z-index:2;pointer-events:none;">
@@ -60,7 +60,7 @@
 
   <!-- BOX 3 -->
   <div>
-    <div id="box3" class="index-box" style="background-image:url('/assets/img/mobile-bar-highcontast-grey.svg');">
+    <div id="box3" class="index-box" style="background-image:url('/assets/img/mobile-bar-highcontrast-grey.svg');">
       <div class="box-title">Navigation Index — Grey</div>
 
    <div style="position:absolute;left:20px;top:92px;width:320px;display:flex;font-size:12px;color:#d9d9d9;opacity:0.5;letter-spacing:0.02em;z-index:2;pointer-events:none;">
