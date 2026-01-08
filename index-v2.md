@@ -30,7 +30,7 @@ permalink: /index-v2/
             srcset="/assets/img/bar-updated-yellow.svg"
           >
           <img
-            src="/assets/img/bar-updated-yellow.svg"
+            src="/assets/img/bar-yellow-light.svg"
             alt=""
             style="position:absolute; left:19.1025px; top:116.7px; width:322.6125px; height:9px;"
           >
