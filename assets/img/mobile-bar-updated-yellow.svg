@@ -6,24 +6,24 @@
 
   <g id="scale" transform="translate(-13.33, 5)">
 
-    <!-- segment 1 -->
-    <rect x="44.8"    y="151" width="83.63" height="12" fill="#ffeaa0ff"/>
+    <!-- segment 1 (tiny lift) -->
+    <rect x="44.8"    y="151" width="83.63" height="12" fill="#fff0b3ff"/>
 
     <!-- segment 2 -->
-    <rect x="128.43"  y="151" width="83.63" height="12" fill="#ffcf44ff"/>
+    <rect x="128.43"  y="151" width="83.63" height="12" fill="#ffe06cff"/>
 
     <!-- segment 3 -->
-    <rect x="212.06"  y="151" width="83.63" height="12" fill="#ffad2cff"/>
+    <rect x="212.06"  y="151" width="83.63" height="12" fill="#ffc04aff"/>
 
     <!-- segment 4 -->
-    <rect x="295.69"  y="151" width="83.63" height="12" fill="#ff8d0eff"/>
+    <rect x="295.69"  y="151" width="83.63" height="12" fill="#ffa124ff"/>
 
-    <!-- segment 5 (tiny additional darkening, minimal step) -->
-    <rect x="379.32"  y="151" width="83.63" height="12" fill="#ff7004ff"/>
+    <!-- segment 5 -->
+    <rect x="379.32"  y="151" width="83.63" height="12" fill="#ff7f10ff"/>
 
     <!-- circles -->
-    <circle cx="44.8"    cy="157" r="6" fill="#ffeaa0ff"/>
-    <circle cx="462.95"  cy="157" r="6" fill="#ff7004ff"/>
+    <circle cx="44.8"    cy="157" r="6" fill="#fff0b3ff"/>
+    <circle cx="462.95"  cy="157" r="6" fill="#ff7f10ff"/>
   </g>
 
 </svg>
