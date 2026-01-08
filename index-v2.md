@@ -9,32 +9,44 @@ permalink: /index-v2/
   <div class="indexes">
 
     <!-- =====================================================
+         Geometry notes (from your two SVGs)
+         - old "mobile" bar asset: 480 × 200  (viewBox 0 0 480 200)
+         - new bar strip asset:   430.15 × 12 (viewBox 25.47 156 430.15 12)
+         - box resize ratio: 3/4 = 0.75  (480→360, 200→150)
+         - scaled bar size: 430.15*0.75 = 322.6125  ; 12*0.75 = 9
+         - old bar center in 480×200 coords:
+             cx = 25.47 + 430.15/2 = 240.545  → *0.75 = 180.40875
+             cy = 156   + 12/2     = 162      → *0.75 = 121.5
+         - dot line is at cy=121.2, so we center bar at 121.2:
+             y = 121.2 - 9/2 = 116.7
+             x = 180.40875 - 322.6125/2 = 19.1025
+       ===================================================== -->
+
+    <!-- =========================
          BOX 1 — YELLOW
-         ===================================================== -->
+         ========================= -->
     <div style="margin-bottom:28px;">
       <div class="entity-box" data-box="1">
 
         <div class="entity-title">Navigation Index — Yellow</div>
 
-        <!-- bar scale (small, identical geometry for all boxes) -->
+        <!-- bar scale (new strip, positioned in-page; not CSS) -->
         <svg class="entity-scale" viewBox="0 0 360 150" aria-hidden="true">
           <image
             href="/assets/img/bar-updated-yellow.svg"
-            x="18"
-            y="88"
-            width="324"
-            height="18"
+            x="19.1025"
+            y="116.7"
+            width="322.6125"
+            height="9"
             preserveAspectRatio="none"
           />
         </svg>
 
-        <!-- internal SVG frame -->
         <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true">
           <rect class="entity-frame-bg" x="0.5" y="0.5" width="359" height="149" rx="14"></rect>
           <rect class="entity-frame-stroke" x="0.5" y="0.5" width="359" height="149" rx="14"></rect>
         </svg>
 
-        <!-- steps -->
         <div class="entity-steps">
           <span>Entry</span>
           <span>Scale In</span>
@@ -43,17 +55,14 @@ permalink: /index-v2/
           <span>HODL</span>
         </div>
 
-        <!-- value -->
         <div class="entity-value" data-role="val">–</div>
 
-        <!-- risk -->
         <div class="entity-risk">
           <span class="entity-warn" data-role="warn">⚠</span>
           <span class="entity-risk-label">Risk level:</span>
           <span class="entity-risk-val" data-role="risk">–%</span>
         </div>
 
-        <!-- moving dot -->
         <svg class="entity-dot-layer" viewBox="0 0 360 150" aria-hidden="true">
           <circle class="entity-dot-outer" cx="34" cy="121.2" r="9"></circle>
           <circle class="entity-dot-inner" cx="34" cy="121.2" r="6"></circle>
@@ -62,9 +71,9 @@ permalink: /index-v2/
       </div>
     </div>
 
-    <!-- =====================================================
+    <!-- =========================
          BOX 2 — BLUE
-         ===================================================== -->
+         ========================= -->
     <div style="margin-bottom:28px;">
       <div class="entity-box" data-box="2">
 
@@ -73,10 +82,10 @@ permalink: /index-v2/
         <svg class="entity-scale" viewBox="0 0 360 150" aria-hidden="true">
           <image
             href="/assets/img/bar-updated-blue.svg"
-            x="18"
-            y="88"
-            width="324"
-            height="18"
+            x="19.1025"
+            y="116.7"
+            width="322.6125"
+            height="9"
             preserveAspectRatio="none"
           />
         </svg>
@@ -110,9 +119,9 @@ permalink: /index-v2/
       </div>
     </div>
 
-    <!-- =====================================================
+    <!-- =========================
          BOX 3 — GREY
-         ===================================================== -->
+         ========================= -->
     <div>
       <div class="entity-box" data-box="3">
 
@@ -121,10 +130,10 @@ permalink: /index-v2/
         <svg class="entity-scale" viewBox="0 0 360 150" aria-hidden="true">
           <image
             href="/assets/img/bar-updated-grey.svg"
-            x="18"
-            y="88"
-            width="324"
-            height="18"
+            x="19.1025"
+            y="116.7"
+            width="322.6125"
+            height="9"
             preserveAspectRatio="none"
           />
         </svg>
