@@ -1,0 +1,17 @@
+<svg viewBox="25.47 156 430.15 12" width="430.15" height="12"
+     xmlns="http://www.w3.org/2000/svg">
+<g id="scale" transform="translate(-13.33, 5)">
+
+    <rect x="44.8"    y="151" width="83.63" height="12" fill="#ffe08cff"/>
+    <rect x="128.43"  y="151" width="83.63" height="12" fill="#ffd452ff"/>
+    <rect x="212.06"  y="151" width="83.63" height="12" fill="#ffc04dff"/>
+    <rect x="295.69"  y="151" width="83.63" height="12" fill="#ffad47ff"/>
+
+    <!-- segment 5 (one more tiny dark step) -->
+    <rect x="379.32"  y="151" width="83.63" height="12" fill="#ff9b3aff"/>
+
+    <circle cx="44.8"    cy="157" r="6" fill="#ffe08cff"/>
+    <circle cx="462.95"  cy="157" r="6" fill="#ff9b3aff"/>
+  </g>
+
+</svg>
