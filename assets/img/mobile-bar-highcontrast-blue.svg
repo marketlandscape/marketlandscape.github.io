@@ -1,0 +1,23 @@
+<svg width="480" height="200" viewBox="0 0 480 200"
+     xmlns="http://www.w3.org/2000/svg">
+
+  <rect x="0" y="0" width="480" height="200"
+        rx="16" ry="16" fill="#323232ff"/>
+
+  <!-- bar shrunk 2% from both sides (no scaling, circles stay perfect) -->
+  <g id="scale" transform="translate(-13.33, 5)">
+
+    <!-- rectangles -->
+    <rect x="44.8"    y="151" width="83.63" height="12" fill="#a4c2f4ff"/>
+    <rect x="128.43"  y="151" width="83.63" height="12" fill="#7fa6e8ff"/>
+    <rect x="212.06"  y="151" width="83.63" height="12" fill="#5b8adcff"/>
+    <rect x="295.69"  y="151" width="83.63" height="12" fill="#336fd1ff"/>
+    <rect x="379.32"  y="151" width="83.63" height="12" fill="#1155ccff"/>
+
+    <!-- circle centers exactly on the outer rectangle edges -->
+    <circle cx="44.8"    cy="157" r="6" fill="#a4c2f4ff"/>
+    <circle cx="462.95"  cy="157" r="6" fill="#1155ccff"/>
+    <!-- 462.95 = 379.32 + 83.63 (right edge of last rect) -->
+  </g>
+
+</svg>

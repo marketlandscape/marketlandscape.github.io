@@ -1,0 +1,21 @@
+<svg width="480" height="200" viewBox="0 0 480 200"
+     xmlns="http://www.w3.org/2000/svg">
+
+  <rect x="0" y="0" width="480" height="200"
+        rx="16" ry="16" fill="#323232ff"/>
+
+  <g id="scale" transform="translate(-13.33, 5)">
+
+    <rect x="44.8"    y="151" width="83.63" height="12" fill="#ffe8a6ff"/>
+    <rect x="128.43"  y="151" width="83.63" height="12" fill="#ffd452ff"/>
+    <rect x="212.06"  y="151" width="83.63" height="12" fill="#ffb93fff"/>
+    <rect x="295.69"  y="151" width="83.63" height="12" fill="#ff9a1eff"/>
+
+    <!-- segment 5 (slightly darker) -->
+    <rect x="379.32"  y="151" width="83.63" height="12" fill="#ff7a12ff"/>
+
+    <circle cx="44.8"    cy="157" r="6" fill="#ffe8a6ff"/>
+    <circle cx="462.95"  cy="157" r="6" fill="#ff7a12ff"/>
+  </g>
+
+</svg>
