@@ -4,7 +4,7 @@
 
   <!-- BOX 1 -->
   <div style="margin-bottom:28px;">
-    <div id="box1" class="index-box" style="background-image:url('/assets/img/mobile-bar-highcontrast-yellow.svg');">
+    <div id="box1" class="index-box" style="background-image:url('/assets/img/mobile-bar-soft-yellow.svg');">
       <div class="box-title">Navigation Index — Yellow</div>
 
    <div style="position:absolute;left:20px;top:92px;width:320px;display:flex;font-size:12px;color:#d9d9d9;opacity:0.5;letter-spacing:0.02em;z-index:2;pointer-events:none;">
