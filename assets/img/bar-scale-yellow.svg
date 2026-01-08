@@ -1,18 +1,30 @@
-<svg width="600" height="200" viewBox="0 0 600 200"
-     xmlns="http://www.w3.org/2000/svg">
+<svg
+  width="430.15"
+  height="12"
+  viewBox="25.47 156 430.15 12"
+  xmlns="http://www.w3.org/2000/svg">
 
-  <rect x="0" y="0" width="600" height="200"
-        rx="18" ry="18" fill="#323232ff"/>
+  <g id="scale" transform="translate(-13.33, 5)">
 
-  <g id="scale">
-    <circle cx="45"  cy="157" r="6" fill="#ffe375ff"/>
-    <circle cx="555" cy="157" r="6" fill="#ff9900ff"/>
+    <!-- segment 1 -->
+    <rect x="44.8"    y="151" width="83.63" height="12" fill="#fff3a0"/>
 
-    <rect x="45"  y="151" width="102" height="12" fill="#ffe375ff"/>
-    <rect x="147" y="151" width="102" height="12" fill="#ffd84dff"/>
-    <rect x="249" y="151" width="102" height="12" fill="#ffc926ff"/>
-    <rect x="351" y="151" width="102" height="12" fill="#ffb000ff"/>
-    <rect x="453" y="151" width="102" height="12" fill="#ff9900ff"/>
+    <!-- segment 2 -->
+    <rect x="128.43"  y="151" width="83.63" height="12" fill="#ffe066"/>
+
+    <!-- segment 3 -->
+    <rect x="212.06"  y="151" width="83.63" height="12" fill="#ffd23f"/>
+
+    <!-- segment 4 -->
+    <rect x="295.69"  y="151" width="83.63" height="12" fill="#ffbf00"/>
+
+    <!-- segment 5 -->
+    <rect x="379.32"  y="151" width="83.63" height="12" fill="#e6a800"/>
+
+    <!-- circles -->
+    <circle cx="44.8"   cy="157" r="6" fill="#fff3a0"/>
+    <circle cx="462.95" cy="157" r="6" fill="#e6a800"/>
+
   </g>
 
 </svg>
