@@ -6,24 +6,14 @@
 
   <g id="scale" transform="translate(-13.33, 5)">
 
-    <!-- segment 1 -->
-    <rect x="44.8"    y="151" width="83.63" height="12" fill="#cfe8ff"/>
+    <rect x="44.8"    y="151" width="83.63" height="12" fill="#a4c2f4ff"/>
+    <rect x="128.43"  y="151" width="83.63" height="12" fill="#7fa6e8ff"/>
+    <rect x="212.06"  y="151" width="83.63" height="12" fill="#5b8adcff"/>
+    <rect x="295.69"  y="151" width="83.63" height="12" fill="#336fd1ff"/>
+    <rect x="379.32"  y="151" width="83.63" height="12" fill="#1155ccff"/>
 
-    <!-- segment 2 -->
-    <rect x="128.43"  y="151" width="83.63" height="12" fill="#9fd0ff"/>
-
-    <!-- segment 3 -->
-    <rect x="212.06"  y="151" width="83.63" height="12" fill="#6bb8ff"/>
-
-    <!-- segment 4 -->
-    <rect x="295.69"  y="151" width="83.63" height="12" fill="#3a9cff"/>
-
-    <!-- segment 5 -->
-    <rect x="379.32"  y="151" width="83.63" height="12" fill="#1f7ae0"/>
-
-    <!-- circles -->
-    <circle cx="44.8"   cy="157" r="6" fill="#cfe8ff"/>
-    <circle cx="462.95" cy="157" r="6" fill="#1f7ae0"/>
+    <circle cx="44.8"   cy="157" r="6" fill="#a4c2f4ff"/>
+    <circle cx="462.95" cy="157" r="6" fill="#1155ccff"/>
 
   </g>
 
