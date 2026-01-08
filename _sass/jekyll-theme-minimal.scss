@@ -21,7 +21,6 @@
 
   /* ---------------------------------------------------------
      V1 (existing index.md boxes) tokens
-     (kept identical to current inline colors so nothing breaks)
      --------------------------------------------------------- */
   --index-ui-text: #d9d9d9;
   --index-dot-outer: #323232ff;
@@ -29,16 +28,20 @@
 
   /* ---------------------------------------------------------
      V2 (new internal-SVG entity boxes) tokens
-     (only used under .v2 so safe to remove)
      --------------------------------------------------------- */
+
+  /* entity box (LIGHT) */
   --entity-box-bg: #ffffff;
   --entity-box-stroke: #e5e5e5;
   --entity-box-title: #2B2F36;
   --entity-box-muted: color-mix(in srgb, var(--entity-box-title), transparent 45%);
 
-  /* dot (v2) */
-  --entity-dot-outer: #2B2F36; /* light scheme dot outer */
-  --entity-dot-inner: #ffffff; /* light scheme dot inner */
+  /* entity dot (LIGHT)
+     - outer: white
+     - inner: dark page background (the dark-mode page bg)
+  */
+  --entity-dot-outer: #ffffff;
+  --entity-dot-inner: #242424ff;
 }
 
 @media (prefers-color-scheme: dark){
@@ -52,17 +55,24 @@
 
     --pre-bg: #161a22;
 
-    /* V1 stays the same by default (matches existing markup) */
+    /* V1 stays consistent */
     --index-ui-text: #d9d9d9;
     --index-dot-outer: #323232ff;
     --index-dot-inner: #ffffff;
 
-    /* V2 dark */
-    --entity-box-bg: #242424ff;
-    --entity-box-stroke: #3a3f4a;
+    /* entity box (DARK)
+       - background: #323232ff
+       - no border line
+    */
+    --entity-box-bg: #323232ff;
+    --entity-box-stroke: transparent;
     --entity-box-title: #e3e3e3;
     --entity-box-muted: color-mix(in srgb, var(--entity-box-title), transparent 50%);
 
+    /* entity dot (DARK)
+       - outer: match box (#323232ff)
+       - inner: white
+    */
     --entity-dot-outer: #323232ff;
     --entity-dot-inner: #ffffff;
   }
@@ -371,7 +381,6 @@ kbd{
 
 /* =========================================================
    V1 (existing index.md) — move inline <style> here
-   Safe: matches the inline rules + keeps existing functionality
    ========================================================= */
 
 .indexes{
@@ -413,12 +422,8 @@ kbd{
 
 /* =========================================================
    V2 (new internal-SVG entity boxes)
-   Everything is gated by .v2 so it can be removed cleanly
+   Everything is gated by .v2
    ========================================================= */
-
-.v2{
-  /* variables are already in :root; this gate exists for scoping rules */
-}
 
 .v2 .entity-box{
   position:relative;
