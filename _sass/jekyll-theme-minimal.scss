@@ -30,11 +30,12 @@
      V2 (new internal-SVG entity boxes) tokens
      --------------------------------------------------------- */
 
+.v2{ color: var(--text); }
+
+
   /* entity box (LIGHT) */
   --entity-box-bg: #ffffff;
   --entity-box-stroke: #e5e5e5;
-  --entity-box-title: #2B2F36;
-  --entity-box-muted: color-mix(in srgb, var(--entity-box-title), transparent 45%);
 
   /* entity dot (LIGHT)
      - outer: white
@@ -66,8 +67,6 @@
     */
     --entity-box-bg: #323232ff;
     --entity-box-stroke: transparent;
-    --entity-box-title: #e3e3e3;
-    --entity-box-muted: color-mix(in srgb, var(--entity-box-title), transparent 50%);
 
     /* entity dot (DARK)
        - outer: match box (#323232ff)
@@ -473,7 +472,7 @@ kbd{
   right:17px;
   font-size:15px;
   font-weight:500;
-  color: var(--entity-box-title);
+  color: inherit;
   line-height:1.2;
 }
 
@@ -483,7 +482,7 @@ kbd{
   width:320px;
   display:flex;
   font-size:12px;
-  color: var(--entity-box-title);
+  color: inherit;
   opacity:0.5;
   letter-spacing:0.02em;
   pointer-events:none;
@@ -500,15 +499,20 @@ kbd{
   transform:translateY(-50%);
   font-size:16px;
   font-weight:500;
-  color: var(--entity-box-title);
+  color: inherit;
 }
+
+.v2 .entity-value .entity-total{
+  opacity:0.5;
+}
+
 
 .v2 .entity-risk{
   top:44%;
   right:20px;
   transform:translateY(-50%);
   font-size:14px;
-  color: var(--entity-box-title);
+  color: inherit;
   white-space:nowrap;
 }
 
