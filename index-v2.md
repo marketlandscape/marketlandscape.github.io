@@ -4,25 +4,32 @@ title: Index V2
 permalink: /index-v2/
 ---
 
-<!-- V2 wrapper gates all new CSS -->
 <div class="v2">
 
-  <!-- Equivalent layout: three stacked 360×150 boxes with moving dot -->
   <div class="indexes">
 
-    <!-- =========================
-         BOX 1 (Yellow scale)
-         ========================= -->
+    <!-- =====================================================
+         BOX 1 — YELLOW
+         ===================================================== -->
     <div style="margin-bottom:28px;">
       <div class="entity-box" data-box="1">
 
         <div class="entity-title">Navigation Index — Yellow</div>
 
-        <!-- external bar scale image (unchanged, not theme-driven) -->
-        <img class="entity-scale" src="/assets/img/mobile-bar-scale-yellow.svg" alt="" aria-hidden="true">
+        <!-- bar scale (small, identical geometry for all boxes) -->
+        <svg class="entity-scale" viewBox="0 0 360 150" aria-hidden="true">
+          <image
+            href="/assets/img/bar-updated-yellow.svg"
+            x="18"
+            y="88"
+            width="324"
+            height="18"
+            preserveAspectRatio="none"
+          />
+        </svg>
 
-        <!-- internal SVG frame (theme-driven) -->
-        <svg class="entity-frame" viewBox="0 0 360 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <!-- internal SVG frame -->
+        <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true">
           <rect class="entity-frame-bg" x="0.5" y="0.5" width="359" height="149" rx="14"></rect>
           <rect class="entity-frame-stroke" x="0.5" y="0.5" width="359" height="149" rx="14"></rect>
         </svg>
@@ -46,8 +53,8 @@ permalink: /index-v2/
           <span class="entity-risk-val" data-role="risk">–%</span>
         </div>
 
-        <!-- moving dot (theme-driven) -->
-        <svg class="entity-dot-layer" viewBox="0 0 360 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <!-- moving dot -->
+        <svg class="entity-dot-layer" viewBox="0 0 360 150" aria-hidden="true">
           <circle class="entity-dot-outer" cx="34" cy="121.2" r="9"></circle>
           <circle class="entity-dot-inner" cx="34" cy="121.2" r="6"></circle>
         </svg>
@@ -55,17 +62,26 @@ permalink: /index-v2/
       </div>
     </div>
 
-    <!-- =========================
-         BOX 2 (Blue scale)
-         ========================= -->
+    <!-- =====================================================
+         BOX 2 — BLUE
+         ===================================================== -->
     <div style="margin-bottom:28px;">
       <div class="entity-box" data-box="2">
 
         <div class="entity-title">Navigation Index — Blue</div>
 
-        <img class="entity-scale" src="/assets/img/mobile-bar-scale-blue.svg" alt="" aria-hidden="true">
+        <svg class="entity-scale" viewBox="0 0 360 150" aria-hidden="true">
+          <image
+            href="/assets/img/bar-updated-blue.svg"
+            x="18"
+            y="88"
+            width="324"
+            height="18"
+            preserveAspectRatio="none"
+          />
+        </svg>
 
-        <svg class="entity-frame" viewBox="0 0 360 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true">
           <rect class="entity-frame-bg" x="0.5" y="0.5" width="359" height="149" rx="14"></rect>
           <rect class="entity-frame-stroke" x="0.5" y="0.5" width="359" height="149" rx="14"></rect>
         </svg>
@@ -73,7 +89,7 @@ permalink: /index-v2/
         <div class="entity-steps">
           <span>Entry</span>
           <span>Scale In</span>
-          <span>Hold/Wait</span>
+          <span>Hold / Wait</span>
           <span>Reduce</span>
           <span>Exit</span>
         </div>
@@ -86,7 +102,7 @@ permalink: /index-v2/
           <span class="entity-risk-val" data-role="risk">–%</span>
         </div>
 
-        <svg class="entity-dot-layer" viewBox="0 0 360 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <svg class="entity-dot-layer" viewBox="0 0 360 150" aria-hidden="true">
           <circle class="entity-dot-outer" cx="24" cy="121.2" r="9"></circle>
           <circle class="entity-dot-inner" cx="24" cy="121.2" r="6"></circle>
         </svg>
@@ -94,17 +110,26 @@ permalink: /index-v2/
       </div>
     </div>
 
-    <!-- =========================
-         BOX 3 (Grey scale)
-         ========================= -->
+    <!-- =====================================================
+         BOX 3 — GREY
+         ===================================================== -->
     <div>
       <div class="entity-box" data-box="3">
 
         <div class="entity-title">Navigation Index — Grey</div>
 
-        <img class="entity-scale" src="/assets/img/mobile-bar-updated-grey.svg" alt="" aria-hidden="true">
+        <svg class="entity-scale" viewBox="0 0 360 150" aria-hidden="true">
+          <image
+            href="/assets/img/bar-updated-grey.svg"
+            x="18"
+            y="88"
+            width="324"
+            height="18"
+            preserveAspectRatio="none"
+          />
+        </svg>
 
-        <svg class="entity-frame" viewBox="0 0 360 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true">
           <rect class="entity-frame-bg" x="0.5" y="0.5" width="359" height="149" rx="14"></rect>
           <rect class="entity-frame-stroke" x="0.5" y="0.5" width="359" height="149" rx="14"></rect>
         </svg>
@@ -112,7 +137,7 @@ permalink: /index-v2/
         <div class="entity-steps">
           <span>Entry</span>
           <span>Scale In</span>
-          <span>Hold/Wait</span>
+          <span>Hold / Wait</span>
           <span>Reduce</span>
           <span>Exit</span>
         </div>
@@ -125,7 +150,7 @@ permalink: /index-v2/
           <span class="entity-risk-val" data-role="risk">–%</span>
         </div>
 
-        <svg class="entity-dot-layer" viewBox="0 0 360 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <svg class="entity-dot-layer" viewBox="0 0 360 150" aria-hidden="true">
           <circle class="entity-dot-outer" cx="24" cy="121.2" r="9"></circle>
           <circle class="entity-dot-inner" cx="24" cy="121.2" r="6"></circle>
         </svg>
@@ -214,4 +239,3 @@ function setEntityWarn(boxEl, show){
     : load();
 })();
 </script>
-
