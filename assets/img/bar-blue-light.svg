@@ -1,0 +1,19 @@
+<svg viewBox="25.47 156 430.15 12" width="430.15" height="12"
+     xmlns="http://www.w3.org/2000/svg">
+<!-- bar shrunk 2% from both sides (no scaling, circles stay perfect) -->
+  <g id="scale" transform="translate(-13.33, 5)">
+
+    <!-- rectangles -->
+    <rect x="44.8"    y="151" width="83.63" height="12" fill="#9bbaf0ff"/>
+    <rect x="128.43"  y="151" width="83.63" height="12" fill="#7fa6e8ff"/>
+    <rect x="212.06"  y="151" width="83.63" height="12" fill="#6a95e8ff"/>
+    <rect x="295.69"  y="151" width="83.63" height="12" fill="#4a7fe0ff"/>
+    <rect x="379.32"  y="151" width="83.63" height="12" fill="#2f6fd8ff"/>
+
+    <!-- circle centers exactly on the outer rectangle edges -->
+    <circle cx="44.8"    cy="157" r="6" fill="#9bbaf0ff"/>
+    <circle cx="462.95"  cy="157" r="6" fill="#2f6fd8ff"/>
+    <!-- 462.95 = 379.32 + 83.63 (right edge of last rect) -->
+  </g>
+
+</svg>
