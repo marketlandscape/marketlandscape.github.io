@@ -24,8 +24,10 @@
       setText($("ethPrice"), "$" + fmt0(c?.eth));
 
       const t = c?.updated_utc ? String(c.updated_utc) : "-- UTC";
-      const src = c?.source ? (" · " + c.source) : "";
-      setText($("marketUpdated"), "Updated " + t + src);
+      const src = c?.source ? String(c.source) : "";
+      const el = $("marketUpdated");
+      const showSource = (el?.dataset?.showSource === "true");
+      setText(el, "Updated " + t + (showSource && src ? (" · " + src) : ""));
     } catch(e){}
   }
 
@@ -42,7 +44,9 @@
 
       setText($("btcPrice"), "$" + fmt0(btc));
       setText($("ethPrice"), "$" + fmt0(eth));
-      setText($("marketUpdated"), "Updated " + t + (src ? (" · " + src) : ""));
+      const el = $("marketUpdated");
+      const showSource = (el?.dataset?.showSource === "true");
+      setText(el, "Updated " + t + (showSource && src ? (" · " + src) : ""));
 
       try{
         sessionStorage.setItem(KEY, JSON.stringify({
