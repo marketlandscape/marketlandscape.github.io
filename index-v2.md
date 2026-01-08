@@ -82,7 +82,7 @@ permalink: /index-v2/
             srcset="/assets/img/bar-updated-blue.svg"
           >
           <img
-            src="/assets/img/bar-updated-blue.svg"
+            src="/assets/img/bar-blue-light.svg"
             alt=""
             style="position:absolute; left:19.1025px; top:116.7px; width:322.6125px; height:9px;"
           >
