@@ -18,6 +18,27 @@
 
   /* surfaces */
   --pre-bg: #f8f8f8;
+
+  /* ---------------------------------------------------------
+     V1 (existing index.md boxes) tokens
+     (kept identical to current inline colors so nothing breaks)
+     --------------------------------------------------------- */
+  --index-ui-text: #d9d9d9;
+  --index-dot-outer: #323232ff;
+  --index-dot-inner: #ffffff;
+
+  /* ---------------------------------------------------------
+     V2 (new internal-SVG entity boxes) tokens
+     (only used under .v2 so safe to remove)
+     --------------------------------------------------------- */
+  --entity-box-bg: #ffffff;
+  --entity-box-stroke: #e5e5e5;
+  --entity-box-title: #2B2F36;
+  --entity-box-muted: color-mix(in srgb, var(--entity-box-title), transparent 45%);
+
+  /* dot (v2) */
+  --entity-dot-outer: #2B2F36; /* light scheme dot outer */
+  --entity-dot-inner: #ffffff; /* light scheme dot inner */
 }
 
 @media (prefers-color-scheme: dark){
@@ -30,6 +51,20 @@
     --link-hover: #9bc8ff;
 
     --pre-bg: #161a22;
+
+    /* V1 stays the same by default (matches existing markup) */
+    --index-ui-text: #d9d9d9;
+    --index-dot-outer: #323232ff;
+    --index-dot-inner: #ffffff;
+
+    /* V2 dark */
+    --entity-box-bg: #242424ff;
+    --entity-box-stroke: #3a3f4a;
+    --entity-box-title: #e3e3e3;
+    --entity-box-muted: color-mix(in srgb, var(--entity-box-title), transparent 50%);
+
+    --entity-dot-outer: #323232ff;
+    --entity-dot-inner: #ffffff;
   }
 }
 
@@ -314,7 +349,7 @@ kbd{
   margin: 0 0 14px 0;
   padding: 0 0 12px 0;
   font-family: system-ui, -apple-system, sans-serif;
-  font-size: 0.9em;   /* ≈ 13px when body is 14px */
+  font-size: 0.9em;
   line-height: 1.2;
   opacity: 0.75;
 }
@@ -333,6 +368,163 @@ kbd{
   font-size: 11px;
   line-height: 1.2;
 }
+
+/* =========================================================
+   V1 (existing index.md) — move inline <style> here
+   Safe: matches the inline rules + keeps existing functionality
+   ========================================================= */
+
+.indexes{
+  display:flex;
+  flex-direction:column;
+}
+
+.index-box{
+  position:relative;
+  width:360px;
+  height:150px;
+  background-repeat:no-repeat;
+  background-size:360px 150px;
+  font-family:system-ui,-apple-system,sans-serif;
+}
+
+.box-title{
+  position:absolute;
+  top:18px;
+  left:20px;
+  right:17px;
+  font-size:15px;
+  font-weight:500;
+  color: var(--index-ui-text);
+  line-height:1.2;
+  z-index:2;
+}
+
+.dot-layer{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:1;
+}
+
+/* Optional: force dot colors via CSS (overrides inline fill if present) */
+.dot-layer circle[id^="dotOuter"]{ fill: var(--index-dot-outer) !important; }
+.dot-layer circle[id^="dotInner"]{ fill: var(--index-dot-inner) !important; }
+
+/* =========================================================
+   V2 (new internal-SVG entity boxes)
+   Everything is gated by .v2 so it can be removed cleanly
+   ========================================================= */
+
+.v2{
+  /* variables are already in :root; this gate exists for scoping rules */
+}
+
+.v2 .entity-box{
+  position:relative;
+  width:360px;
+  height:150px;
+  font-family:system-ui,-apple-system,sans-serif;
+}
+
+/* Layers */
+.v2 .entity-frame,
+.v2 .entity-scale,
+.v2 .entity-dot-layer{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+}
+
+.v2 .entity-frame{ z-index:0; }
+.v2 .entity-scale{ z-index:1; }
+.v2 .entity-dot-layer{ z-index:2; }
+
+.v2 .entity-title,
+.v2 .entity-value,
+.v2 .entity-risk,
+.v2 .entity-steps{
+  position:absolute;
+  z-index:3;
+}
+
+/* Internal SVG theming */
+.v2 .entity-frame-bg{
+  fill: var(--entity-box-bg);
+}
+
+.v2 .entity-frame-stroke{
+  fill: transparent;
+  stroke: var(--entity-box-stroke);
+  stroke-width: 1;
+}
+
+/* Text blocks */
+.v2 .entity-title{
+  top:18px;
+  left:20px;
+  right:17px;
+  font-size:15px;
+  font-weight:500;
+  color: var(--entity-box-title);
+  line-height:1.2;
+}
+
+.v2 .entity-steps{
+  left:20px;
+  top:92px;
+  width:320px;
+  display:flex;
+  font-size:12px;
+  color: var(--entity-box-title);
+  opacity:0.5;
+  letter-spacing:0.02em;
+  pointer-events:none;
+}
+
+.v2 .entity-steps > span{
+  flex:1;
+  text-align:center;
+}
+
+.v2 .entity-value{
+  top:44%;
+  left:20px;
+  transform:translateY(-50%);
+  font-size:16px;
+  font-weight:500;
+  color: var(--entity-box-title);
+}
+
+.v2 .entity-risk{
+  top:44%;
+  right:20px;
+  transform:translateY(-50%);
+  font-size:14px;
+  color: var(--entity-box-title);
+  white-space:nowrap;
+}
+
+.v2 .entity-warn{
+  opacity:0.5;
+  margin-right:6px;
+  font-size:16px;
+  visibility:hidden;
+}
+
+.v2 .entity-risk-label{
+  opacity:0.5;
+}
+
+.v2 .entity-risk-val{
+  opacity:0.75;
+}
+
+/* Dot colors (theme-controlled) */
+.v2 .entity-dot-outer{ fill: var(--entity-dot-outer); }
+.v2 .entity-dot-inner{ fill: var(--entity-dot-inner); }
 
 /* =========================================================
    Print
