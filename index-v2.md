@@ -194,7 +194,7 @@ function setEntityValue(boxEl, x){
 
   const val = boxEl.querySelector('[data-role="val"]');
   if (val){
-    val.innerHTML = step + '<span style="opacity:0.5">/' + TOTAL + '</span>';
+    val.innerHTML = step + '<span class="entity-total">/' + TOTAL + '</span>';
   }
 }
 
