@@ -9,18 +9,8 @@ permalink: /index-v2/
   <div class="indexes">
 
     <!-- =====================================================
-         Geometry notes (from your two SVGs)
-         - old "mobile" bar asset: 480 × 200  (viewBox 0 0 480 200)
-         - new bar strip asset:   430.15 × 12 (viewBox 25.47 156 430.15 12)
-         - box resize ratio: 3/4 = 0.75  (480→360, 200→150)
-         - scaled bar size: 430.15*0.75 = 322.6125  ; 12*0.75 = 9
-         - old bar center in 480×200 coords:
-             cx = 25.47 + 430.15/2 = 240.545  → *0.75 = 180.40875
-             cy = 156   + 12/2     = 162      → *0.75 = 121.5
-         - dot line is at cy=121.2, so we center bar at 121.2:
-             y = 121.2 - 9/2 = 116.7
-             x = 180.40875 - 322.6125/2 = 19.1025
-       ===================================================== -->
+         Geometry (fixed, do not touch in CSS)
+         ===================================================== -->
 
     <!-- =========================
          BOX 1 — YELLOW
@@ -30,17 +20,21 @@ permalink: /index-v2/
 
         <div class="entity-title">Navigation Index — Yellow</div>
 
-        <!-- bar scale (new strip, positioned in-page; not CSS) -->
-        <svg class="entity-scale" viewBox="0 0 360 150" aria-hidden="true">
-          <image
-            href="/assets/img/bar-updated-yellow.svg"
-            x="19.1025"
-            y="116.7"
-            width="322.6125"
-            height="9"
-            preserveAspectRatio="none"
-          />
-        </svg>
+        <!-- bar scale (picture, theme-ready; same image for now) -->
+        <picture
+          style="position:absolute; inset:0; width:360px; height:150px; z-index:1; pointer-events:none;"
+          aria-hidden="true"
+        >
+          <source
+            media="(prefers-color-scheme: dark)"
+            srcset="/assets/img/bar-updated-yellow.svg"
+          >
+          <img
+            src="/assets/img/bar-updated-yellow.svg"
+            alt=""
+            style="position:absolute; left:19.1025px; top:116.7px; width:322.6125px; height:9px;"
+          >
+        </picture>
 
         <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true">
           <rect class="entity-frame-bg" x="0.5" y="0.5" width="359" height="149" rx="14"></rect>
@@ -79,16 +73,20 @@ permalink: /index-v2/
 
         <div class="entity-title">Navigation Index — Blue</div>
 
-        <svg class="entity-scale" viewBox="0 0 360 150" aria-hidden="true">
-          <image
-            href="/assets/img/bar-updated-blue.svg"
-            x="19.1025"
-            y="116.7"
-            width="322.6125"
-            height="9"
-            preserveAspectRatio="none"
-          />
-        </svg>
+        <picture
+          style="position:absolute; inset:0; width:360px; height:150px; z-index:1; pointer-events:none;"
+          aria-hidden="true"
+        >
+          <source
+            media="(prefers-color-scheme: dark)"
+            srcset="/assets/img/bar-updated-blue.svg"
+          >
+          <img
+            src="/assets/img/bar-updated-blue.svg"
+            alt=""
+            style="position:absolute; left:19.1025px; top:116.7px; width:322.6125px; height:9px;"
+          >
+        </picture>
 
         <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true">
           <rect class="entity-frame-bg" x="0.5" y="0.5" width="359" height="149" rx="14"></rect>
@@ -127,16 +125,20 @@ permalink: /index-v2/
 
         <div class="entity-title">Navigation Index — Grey</div>
 
-        <svg class="entity-scale" viewBox="0 0 360 150" aria-hidden="true">
-          <image
-            href="/assets/img/bar-updated-grey.svg"
-            x="19.1025"
-            y="116.7"
-            width="322.6125"
-            height="9"
-            preserveAspectRatio="none"
-          />
-        </svg>
+        <picture
+          style="position:absolute; inset:0; width:360px; height:150px; z-index:1; pointer-events:none;"
+          aria-hidden="true"
+        >
+          <source
+            media="(prefers-color-scheme: dark)"
+            srcset="/assets/img/bar-updated-grey.svg"
+          >
+          <img
+            src="/assets/img/bar-updated-grey.svg"
+            alt=""
+            style="position:absolute; left:19.1025px; top:116.7px; width:322.6125px; height:9px;"
+          >
+        </picture>
 
         <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true">
           <rect class="entity-frame-bg" x="0.5" y="0.5" width="359" height="149" rx="14"></rect>
