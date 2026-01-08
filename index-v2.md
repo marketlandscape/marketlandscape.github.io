@@ -98,7 +98,7 @@ permalink: /index-v2/
         <div class="entity-steps">
           <span>Entry</span>
           <span>Scale In</span>
-          <span>Hold / Wait</span>
+          <span>Hold/Wait</span>
           <span>Reduce</span>
           <span>Exit</span>
         </div>
@@ -146,7 +146,7 @@ permalink: /index-v2/
         <div class="entity-steps">
           <span>Entry</span>
           <span>Scale In</span>
-          <span>Hold / Wait</span>
+          <span>Hold/Wait</span>
           <span>Reduce</span>
           <span>Exit</span>
         </div>
