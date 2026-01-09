@@ -37,6 +37,9 @@
   --entity-box-bg: #ffffff;
   --entity-box-stroke: #e5e5e5;
 
+  /* entity shadow (LIGHT only) */
+  --entity-box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+
   /* entity dot (LIGHT)
      - outer: white
      - inner: follow text, but softened
@@ -459,6 +462,7 @@ kbd{
 /* Internal SVG theming */
 .v2 .entity-frame-bg{
   fill: var(--entity-box-bg);
+  filter: drop-shadow(var(--entity-box-shadow));
 }
 
 .v2 .entity-frame-stroke{
