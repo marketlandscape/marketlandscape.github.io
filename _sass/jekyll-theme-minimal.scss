@@ -39,10 +39,11 @@
 
   /* entity dot (LIGHT)
      - outer: white
-     - inner: dark page background (the dark-mode page bg)
+     - inner: follow text, but softened
   */
   --entity-dot-outer: #ffffff;
-  --entity-dot-inner: #242424ff;
+  --entity-dot-inner: var(--text);
+  --entity-dot-inner-opacity: .75;
 }
 
 @media (prefers-color-scheme: dark){
