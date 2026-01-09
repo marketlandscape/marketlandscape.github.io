@@ -1,8 +1,4 @@
----
-layout: default
-title: Index V2
-permalink: /index-v2/
----
+
 
 <div class="v2">
 
