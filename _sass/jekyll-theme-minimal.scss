@@ -534,7 +534,10 @@ kbd{
 
 /* Dot colors (theme-controlled) */
 .v2 .entity-dot-outer{ fill: var(--entity-dot-outer); }
-.v2 .entity-dot-inner{ fill: var(--entity-dot-inner); }
+.v2 .entity-dot-inner{
+  fill: var(--entity-dot-inner);
+  fill-opacity: var(--entity-dot-inner-opacity);
+}
 
 /* =========================================================
    Print
