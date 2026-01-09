@@ -1,134 +1,187 @@
-<!-- Simplified layout: three stacked 360×150 boxes with moving dot -->
+---
+layout: default
+title: Index V2
+permalink: /index-v2/
+---
 
-<div class="indexes">
+<div class="v2">
 
-  <!-- BOX 1 -->
-  <div style="margin-bottom:28px;">
-    <div id="box1" class="index-box" style="background-image:url('/assets/img/mobile-bar-scale-yellow.svg');">
-      <div class="box-title">Navigation Index — Yellow</div>
+  <div class="indexes">
 
-   <div style="position:absolute;left:20px;top:92px;width:320px;display:flex;font-size:12px;color:#d9d9d9;opacity:0.5;letter-spacing:0.02em;z-index:2;pointer-events:none;">
-        <span style="flex:1;text-align:center;">Entry</span>
-        <span style="flex:1;text-align:center;">Scale In</span>
-        <span style="flex:1;text-align:center;">Hold</span>
-        <span style="flex:1;text-align:center;">Conviction</span>
-        <span style="flex:1;text-align:center;">HODL</span>
+    <!-- =====================================================
+         Geometry (fixed, do not touch in CSS)
+         ===================================================== -->
+
+    <!-- =========================
+         BOX 1 — YELLOW
+         ========================= -->
+    <div style="margin-bottom:28px;">
+      <div class="entity-box" data-box="1">
+
+        <div class="entity-title">Navigation Index — Yellow</div>
+
+        <!-- bar scale (picture, theme-ready; same image for now) -->
+        <picture
+          style="position:absolute; inset:0; width:360px; height:150px; z-index:1; pointer-events:none;"
+          aria-hidden="true"
+        >
+          <source
+            media="(prefers-color-scheme: dark)"
+            srcset="/assets/img/bar-updated-yellow.svg"
+          >
+          <img
+            src="/assets/img/bar-yellow-light.svg"
+            alt=""
+            style="position:absolute; left:19.1025px; top:116.7px; width:322.6125px; height:9px;"
+          >
+        </picture>
+
+        <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true">
+          <rect class="entity-frame-bg" x="0.5" y="0.5" width="359" height="149" rx="14"></rect>
+          <rect class="entity-frame-stroke" x="0.5" y="0.5" width="359" height="149" rx="14"></rect>
+        </svg>
+
+        <div class="entity-steps">
+          <span>Entry</span>
+          <span>Scale In</span>
+          <span>Hold</span>
+          <span>Conviction</span>
+          <span>HODL</span>
+        </div>
+
+        <div class="entity-value" data-role="val">–</div>
+
+        <div class="entity-risk">
+          <span class="entity-warn" data-role="warn">⚠</span>
+          <span class="entity-risk-label">Risk level:</span>
+          <span class="entity-risk-val" data-role="risk">–%</span>
+        </div>
+
+        <svg class="entity-dot-layer" viewBox="0 0 360 150" aria-hidden="true">
+          <circle class="entity-dot-outer" cx="34" cy="121.2" r="9"></circle>
+          <circle class="entity-dot-inner" cx="34" cy="121.2" r="6"></circle>
+        </svg>
+
       </div>
-
-  <div id="val1" style="position:absolute;top:44%;left:20px;transform:translateY(-50%);font-size:16px;font-weight:500;color:#d9d9d9;z-index:2;">–</div>
-
-   <div style="position:absolute;top:44%;right:20px;transform:translateY(-50%);font-size:14px;color:#d9d9d9;z-index:2;white-space:nowrap;">
-        <span id="warn1" style="opacity:0.5;margin-right:6px;font-size:16px;visibility:hidden;">⚠</span>
-        <span style="opacity:0.5;">Risk level:</span>
-        <span id="risk1" style="opacity:0.75;">–%</span>
-      </div>
-
-   <svg class="dot-layer" viewBox="0 0 360 150" xmlns="http://www.w3.org/2000/svg">
-        <circle id="dotOuter1" cx="34" cy="121.2" r="9" fill="#323232ff"/>
-        <circle id="dotInner1" cx="34" cy="121.2" r="6" fill="#ffffff"/>
-      </svg>
     </div>
-  </div>
 
-  <!-- BOX 2 -->
-  <div style="margin-bottom:28px;">
-    <div id="box2" class="index-box" style="background-image:url('/assets/img/mobile-bar-scale-blue.svg');">
-      <div class="box-title">Navigation Index — Blue</div>
+    <!-- =========================
+         BOX 2 — BLUE
+         ========================= -->
+    <div style="margin-bottom:28px;">
+      <div class="entity-box" data-box="2">
 
-   <div style="position:absolute;left:20px;top:92px;width:320px;display:flex;font-size:12px;color:#d9d9d9;opacity:0.5;letter-spacing:0.02em;z-index:2;pointer-events:none;">
-        <span style="flex:1;text-align:center;">Entry</span>
-        <span style="flex:1;text-align:center;">Scale In</span>
-        <span style="flex:1;text-align:center;">Hold/Wait</span>
-        <span style="flex:1;text-align:center;">Reduce</span>
-        <span style="flex:1;text-align:center;">Exit</span>
+        <div class="entity-title">Navigation Index — Blue</div>
+
+        <picture
+          style="position:absolute; inset:0; width:360px; height:150px; z-index:1; pointer-events:none;"
+          aria-hidden="true"
+        >
+          <source
+            media="(prefers-color-scheme: dark)"
+            srcset="/assets/img/bar-updated-blue.svg"
+          >
+          <img
+            src="/assets/img/bar-blue-light.svg"
+            alt=""
+            style="position:absolute; left:19.1025px; top:116.7px; width:322.6125px; height:9px;"
+          >
+        </picture>
+
+        <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true">
+          <rect class="entity-frame-bg" x="0.5" y="0.5" width="359" height="149" rx="14"></rect>
+          <rect class="entity-frame-stroke" x="0.5" y="0.5" width="359" height="149" rx="14"></rect>
+        </svg>
+
+        <div class="entity-steps">
+          <span>Entry</span>
+          <span>Scale In</span>
+          <span>Hold/Wait</span>
+          <span>Reduce</span>
+          <span>Exit</span>
+        </div>
+
+        <div class="entity-value" data-role="val">–</div>
+
+        <div class="entity-risk">
+          <span class="entity-warn" data-role="warn">⚠</span>
+          <span class="entity-risk-label">Risk level:</span>
+          <span class="entity-risk-val" data-role="risk">–%</span>
+        </div>
+
+        <svg class="entity-dot-layer" viewBox="0 0 360 150" aria-hidden="true">
+          <circle class="entity-dot-outer" cx="24" cy="121.2" r="9"></circle>
+          <circle class="entity-dot-inner" cx="24" cy="121.2" r="6"></circle>
+        </svg>
+
       </div>
-
-   <div id="val2" style="position:absolute;top:44%;left:20px;transform:translateY(-50%);font-size:16px;font-weight:500;color:#d9d9d9;z-index:2;">–</div>
-
-   <div style="position:absolute;top:44%;right:20px;transform:translateY(-50%);font-size:14px;color:#d9d9d9;z-index:2;white-space:nowrap;">
-        <span id="warn2" style="opacity:0.5;margin-right:6px;font-size:16px;visibility:hidden;">⚠</span>
-        <span style="opacity:0.5;">Risk level:</span>
-        <span id="risk2" style="opacity:0.75;">–%</span>
-      </div>
-
-   <svg class="dot-layer" viewBox="0 0 360 150" xmlns="http://www.w3.org/2000/svg">
-        <circle id="dotOuter2" cx="24" cy="121.2" r="9" fill="#323232ff"/>
-        <circle id="dotInner2" cx="24" cy="121.2" r="6" fill="#ffffff"/>
-      </svg>
     </div>
-  </div>
 
-  <!-- BOX 3 -->
-  <div>
-    <div id="box3" class="index-box" style="background-image:url('/assets/img/mobile-bar-updated-grey.svg');">
-      <div class="box-title">Navigation Index — Grey</div>
+    <!-- =========================
+         BOX 3 — GREY
+         ========================= -->
+    <div>
+      <div class="entity-box" data-box="3">
 
-   <div style="position:absolute;left:20px;top:92px;width:320px;display:flex;font-size:12px;color:#d9d9d9;opacity:0.5;letter-spacing:0.02em;z-index:2;pointer-events:none;">
-        <span style="flex:1;text-align:center;">Entry</span>
-        <span style="flex:1;text-align:center;">Scale In</span>
-        <span style="flex:1;text-align:center;">Hold/Wait</span>
-        <span style="flex:1;text-align:center;">Reduce</span>
-        <span style="flex:1;text-align:center;">Exit</span>
+        <div class="entity-title">Navigation Index — Grey</div>
+
+        <picture
+          style="position:absolute; inset:0; width:360px; height:150px; z-index:1; pointer-events:none;"
+          aria-hidden="true"
+        >
+          <source
+            media="(prefers-color-scheme: dark)"
+            srcset="/assets/img/bar-updated-grey.svg"
+          >
+          <img
+            src="/assets/img/bar-grey-light.svg"
+            alt=""
+            style="position:absolute; left:19.1025px; top:116.7px; width:322.6125px; height:9px;"
+          >
+        </picture>
+
+        <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true">
+          <rect class="entity-frame-bg" x="0.5" y="0.5" width="359" height="149" rx="14"></rect>
+          <rect class="entity-frame-stroke" x="0.5" y="0.5" width="359" height="149" rx="14"></rect>
+        </svg>
+
+        <div class="entity-steps">
+          <span>Entry</span>
+          <span>Scale In</span>
+          <span>Hold/Wait</span>
+          <span>Reduce</span>
+          <span>Exit</span>
+        </div>
+
+        <div class="entity-value" data-role="val">–</div>
+
+        <div class="entity-risk">
+          <span class="entity-warn" data-role="warn">⚠</span>
+          <span class="entity-risk-label">Risk level:</span>
+          <span class="entity-risk-val" data-role="risk">–%</span>
+        </div>
+
+        <svg class="entity-dot-layer" viewBox="0 0 360 150" aria-hidden="true">
+          <circle class="entity-dot-outer" cx="24" cy="121.2" r="9"></circle>
+          <circle class="entity-dot-inner" cx="24" cy="121.2" r="6"></circle>
+        </svg>
+
       </div>
-
-  <div id="val3" style="position:absolute;top:44%;left:20px;transform:translateY(-50%);font-size:16px;font-weight:500;color:#d9d9d9;z-index:2;">–</div>
-
-   <div style="position:absolute;top:44%;right:20px;transform:translateY(-50%);font-size:14px;color:#d9d9d9;z-index:2;white-space:nowrap;">
-        <span id="warn3" style="opacity:0.5;margin-right:6px;font-size:16px;visibility:hidden;">⚠</span>
-        <span style="opacity:0.5;">Risk level:</span>
-        <span id="risk3" style="opacity:0.75;">–%</span>
-      </div>
-
-   <svg class="dot-layer" viewBox="0 0 360 150" xmlns="http://www.w3.org/2000/svg">
-        <circle id="dotOuter3" cx="24" cy="121.2" r="9" fill="#323232ff"/>
-        <circle id="dotInner3" cx="24" cy="121.2" r="6" fill="#ffffff"/>
-      </svg>
     </div>
+
   </div>
 
 </div>
 
-<style>
-.indexes{
-  display:flex;
-  flex-direction:column;
-}
-.index-box{
-  position:relative;
-  width:360px;
-  height:150px;
-  background-repeat:no-repeat;
-  background-size:360px 150px;
-  font-family:system-ui,-apple-system,sans-serif;
-}
-.box-title{
-  position:absolute;
-  top:18px;
-  left:20px;
-  right:17px;
-  font-size:15px;
-  font-weight:500;
-  color:#d9d9d9;
-  line-height:1.2;
-  z-index:2;
-}
-.dot-layer{
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  z-index:1;
-}
-</style>
-
 <script>
 function clamp(v, lo, hi){ return Math.max(lo, Math.min(hi, v)); }
 
-function setValue(boxId, x){
+function setEntityValue(boxEl, x){
   const n = Number(x);
   if (!Number.isFinite(n)) return;
 
   const pct = clamp(n, 0, 100);
-  const TOTAL = 25; // unchanged
+  const TOTAL = 25;
   const step = Math.round((pct / 100) * (TOTAL - 1)) + 1;
 
   const START = 23.5;
@@ -136,24 +189,24 @@ function setValue(boxId, x){
   const BIN   = (END - START) / TOTAL;
   const cx = START + (step - 0.5) * BIN;
 
-  document.getElementById("dotOuter" + boxId)?.setAttribute("cx", cx);
-  document.getElementById("dotInner" + boxId)?.setAttribute("cx", cx);
+  boxEl.querySelector(".entity-dot-outer")?.setAttribute("cx", cx);
+  boxEl.querySelector(".entity-dot-inner")?.setAttribute("cx", cx);
 
-  const val = document.getElementById("val" + boxId);
+  const val = boxEl.querySelector('[data-role="val"]');
   if (val){
-    val.innerHTML = step + '<span style="opacity:0.5">/' + TOTAL + '</span>';
+    val.innerHTML = step + '<span class="entity-total">/' + TOTAL + '</span>';
   }
 }
 
-function setRisk(boxId, r){
+function setEntityRisk(boxEl, r){
   const n = Number(r);
   if (!Number.isFinite(n)) return;
-  document.getElementById("risk" + boxId).textContent =
-    Math.round(clamp(n, 0, 100)) + "%";
+  const el = boxEl.querySelector('[data-role="risk"]');
+  if (el) el.textContent = Math.round(clamp(n, 0, 100)) + "%";
 }
 
-function setWarn(boxId, show){
-  const el = document.getElementById("warn" + boxId);
+function setEntityWarn(boxEl, show){
+  const el = boxEl.querySelector('[data-role="warn"]');
   if (el) el.style.visibility = show ? "visible" : "hidden";
 }
 
@@ -161,17 +214,21 @@ function setWarn(boxId, show){
   const KEY = "dashboard_indexes_cache_v6";
 
   function applyAll(d){
-    if (d.box1 !== undefined) setValue(1, d.box1);
-    if (d.box2 !== undefined) setValue(2, d.box2);
-    if (d.box3 !== undefined) setValue(3, d.box3);
+    const b1 = document.querySelector('.v2 .entity-box[data-box="1"]');
+    const b2 = document.querySelector('.v2 .entity-box[data-box="2"]');
+    const b3 = document.querySelector('.v2 .entity-box[data-box="3"]');
 
-    if (d.box1_risk !== undefined) setRisk(1, d.box1_risk);
-    if (d.box2_risk !== undefined) setRisk(2, d.box2_risk);
-    if (d.box3_risk !== undefined) setRisk(3, d.box3_risk);
+    if (b1 && d.box1 !== undefined) setEntityValue(b1, d.box1);
+    if (b2 && d.box2 !== undefined) setEntityValue(b2, d.box2);
+    if (b3 && d.box3 !== undefined) setEntityValue(b3, d.box3);
 
-    setWarn(1, false);
-    setWarn(2, Number(d.box2) >= 80);
-    setWarn(3, Number(d.box3) >= 80);
+    if (b1 && d.box1_risk !== undefined) setEntityRisk(b1, d.box1_risk);
+    if (b2 && d.box2_risk !== undefined) setEntityRisk(b2, d.box2_risk);
+    if (b3 && d.box3_risk !== undefined) setEntityRisk(b3, d.box3_risk);
+
+    if (b1) setEntityWarn(b1, false);
+    if (b2) setEntityWarn(b2, Number(d.box2) >= 80);
+    if (b3) setEntityWarn(b3, Number(d.box3) >= 80);
   }
 
   async function load(){
