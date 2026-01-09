@@ -435,6 +435,15 @@ kbd{
   font-family:system-ui,-apple-system,sans-serif;
 }
 
+
+@media (prefers-color-scheme: light){
+  .v2 .entity-box{
+    border-radius: 14px;
+    box-shadow: var(--entity-box-shadow);
+  }
+}
+
+
 /* Layers */
 .v2 .entity-frame,
 .v2 .entity-scale,
@@ -446,11 +455,7 @@ kbd{
   pointer-events:none;
 }
 
-.v2 .entity-frame{
-z-index:0;
-  overflow: visible;
-  filter: drop-shadow(var(--entity-box-shadow));
-}
+.v2 .entity-frame{ z-index:0; }
 .v2 .entity-scale{ z-index:1; }
 .v2 .entity-dot-layer{ z-index:2; }
 
