@@ -1,0 +1,15 @@
+<svg viewBox="25.47 156 430.15 12" width="430.15" height="12"
+     xmlns="http://www.w3.org/2000/svg">
+  <g id="scale-yellow-leaning" transform="translate(-13.33, 5)">
+
+    <rect x="44.8"   y="151" width="83.63" height="12" fill="#FFEDC9"/>
+    <rect x="128.43" y="151" width="83.63" height="12" fill="#FFE0A3"/>
+    <rect x="212.06" y="151" width="83.63" height="12" fill="#FFCC78"/>
+    <rect x="295.69" y="151" width="83.63" height="12" fill="#FFB55A"/>
+    <rect x="379.32" y="151" width="83.63" height="12" fill="#FF9A2E"/>
+
+    <circle cx="44.8"   cy="157" r="6" fill="#FFEDC9"/>
+    <circle cx="462.95" cy="157" r="6" fill="#FF9A2E"/>
+
+  </g>
+</svg>
