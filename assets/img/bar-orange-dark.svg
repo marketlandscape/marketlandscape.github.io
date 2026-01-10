@@ -1,14 +1,14 @@
 <svg viewBox="25.47 156 430.15 12" width="430.15" height="12"
      xmlns="http://www.w3.org/2000/svg">
-  <g id="scale-yellow-orange" transform="translate(-13.33, 5)">
+  <g id="scale-yellow-orange-grey-weighted" transform="translate(-13.33, 5)">
 
-    <rect x="44.8"   y="151" width="83.63" height="12" fill="#FFECB8"/>
-    <rect x="128.43" y="151" width="83.63" height="12" fill="#FFD98A"/>
-    <rect x="212.06" y="151" width="83.63" height="12" fill="#FFC35F"/>
-    <rect x="295.69" y="151" width="83.63" height="12" fill="#FFAB43"/>
+    <rect x="44.8"   y="151" width="83.63" height="12" fill="#FFF3B5"/>
+    <rect x="128.43" y="151" width="83.63" height="12" fill="#FFE181"/>
+    <rect x="212.06" y="151" width="83.63" height="12" fill="#FFC557"/>
+    <rect x="295.69" y="151" width="83.63" height="12" fill="#FFA037"/>
     <rect x="379.32" y="151" width="83.63" height="12" fill="#FF8C1A"/>
 
-    <circle cx="44.8"   cy="157" r="6" fill="#FFECB8"/>
+    <circle cx="44.8"   cy="157" r="6" fill="#FFF3B5"/>
     <circle cx="462.95" cy="157" r="6" fill="#FF8C1A"/>
 
   </g>
