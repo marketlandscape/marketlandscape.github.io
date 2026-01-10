@@ -23,10 +23,10 @@
         >
           <source
             media="(prefers-color-scheme: dark)"
-            srcset="/assets/img/bar-yellow-dark.svg"
+            srcset="/assets/img/bar-orange-dark.svg"
           >
           <img
-            src="/assets/img/bar-yellow-light.svg"
+            src="/assets/img/bar-orange-light.svg"
             alt=""
             style="position:absolute; left:19.1025px; top:116.7px; width:322.6125px; height:9px;"
           >
