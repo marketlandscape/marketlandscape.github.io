@@ -23,7 +23,7 @@
         >
           <source
             media="(prefers-color-scheme: dark)"
-            srcset="/assets/img/bar-updated-yellow.svg"
+            srcset="/assets/img/bar-yellow-dark.svg"
           >
           <img
             src="/assets/img/bar-yellow-light.svg"
