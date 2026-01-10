@@ -92,7 +92,7 @@
         <div class="entity-steps">
           <span>Entry</span>
           <span>Scale In</span>
-          <span>Hold/Wait</span>
+          <span>Hold</span>
           <span>Reduce</span>
           <span>Exit</span>
         </div>
@@ -144,7 +144,7 @@
         <div class="entity-steps">
           <span>Entry</span>
           <span>Scale In</span>
-          <span>Hold/Wait</span>
+          <span>Hold</span>
           <span>Reduce</span>
           <span>Exit</span>
         </div>
