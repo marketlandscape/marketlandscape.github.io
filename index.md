@@ -75,7 +75,7 @@
         >
           <source
             media="(prefers-color-scheme: dark)"
-            srcset="/assets/img/bar-updated-blue.svg"
+            srcset="/assets/img/bar-blue-dark.svg"
           >
           <img
             src="/assets/img/bar-blue-light.svg"
