@@ -1,0 +1,15 @@
+<svg viewBox="25.47 156 430.15 12" width="430.15" height="12"
+     xmlns="http://www.w3.org/2000/svg">
+  <g id="scale-yellow-orange-mid" transform="translate(-13.33, 5)">
+
+    <rect x="44.8"   y="151" width="83.63" height="12" fill="#FFF4D9"/>
+    <rect x="128.43" y="151" width="83.63" height="12" fill="#FFE6AD"/>
+    <rect x="212.06" y="151" width="83.63" height="12" fill="#FFD07A"/>
+    <rect x="295.69" y="151" width="83.63" height="12" fill="#F2B15A"/>
+    <rect x="379.32" y="151" width="83.63" height="12" fill="#E6953A"/>
+
+    <circle cx="44.8"   cy="157" r="6" fill="#FFF4D9"/>
+    <circle cx="462.95" cy="157" r="6" fill="#E6953A"/>
+
+  </g>
+</svg>
