@@ -32,9 +32,9 @@
           >
         </picture>
 
-        <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true">
-          <rect class="entity-frame-bg" x="0.5" y="0.5" width="359" height="149" rx="14"></rect>
-          <rect class="entity-frame-stroke" x="0.5" y="0.5" width="359" height="149" rx="14"></rect>
+        <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true"> 
+        <rect class="entity-frame-bg" x="0" y="0" width="360" height="150" rx="14"></rect> 
+        <rect class="entity-frame-stroke" x="0.5" y="0.5" width="359" height="149" rx="14"></rect> 
         </svg>
 
         <div class="entity-steps">
@@ -84,9 +84,9 @@
           >
         </picture>
 
-        <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true">
-          <rect class="entity-frame-bg" x="0.5" y="0.5" width="359" height="149" rx="14"></rect>
-          <rect class="entity-frame-stroke" x="0.5" y="0.5" width="359" height="149" rx="14"></rect>
+        <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true"> 
+        <rect class="entity-frame-bg" x="0" y="0" width="360" height="150" rx="14"></rect> 
+        <rect class="entity-frame-stroke" x="0.5" y="0.5" width="359" height="149" rx="14"></rect> 
         </svg>
 
         <div class="entity-steps">
@@ -136,9 +136,9 @@
           >
         </picture>
 
-        <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true">
-          <rect class="entity-frame-bg" x="0.5" y="0.5" width="359" height="149" rx="14"></rect>
-          <rect class="entity-frame-stroke" x="0.5" y="0.5" width="359" height="149" rx="14"></rect>
+        <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true"> 
+        <rect class="entity-frame-bg" x="0" y="0" width="360" height="150" rx="14"></rect> 
+        <rect class="entity-frame-stroke" x="0.5" y="0.5" width="359" height="149" rx="14"></rect> 
         </svg>
 
         <div class="entity-steps">
