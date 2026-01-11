@@ -47,7 +47,7 @@
 
       </div>
 
-      <!-- NEW: text area for box 1 -->
+      <!-- Text for box 1 (no box visuals; content set by JS) -->
       <div class="entity-text" data-text="1">text1</div>
     </div>
 
@@ -87,7 +87,7 @@
 
       </div>
 
-      <!-- NEW: text area for box 2 -->
+      <!-- Text for box 2 -->
       <div class="entity-text" data-text="2">text2</div>
     </div>
 
@@ -127,7 +127,7 @@
 
       </div>
 
-      <!-- NEW: text area for box 3 -->
+      <!-- Text for box 3 -->
       <div class="entity-text" data-text="3">text3</div>
     </div>
 
@@ -170,6 +170,50 @@
 <script>
 function clamp(v, lo, hi){ return Math.max(lo, Math.min(hi, v)); }
 
+/* 1-25 -> 5 buckets */
+function bucketForStep(step){
+  if (step <= 5)  return 1;   // 1-5
+  if (step <= 10) return 2;   // 6-10
+  if (step <= 15) return 3;   // 11-15
+  if (step <= 20) return 4;   // 16-20
+  return 5;                  // 21-25
+}
+
+/* Per-box interpretation texts (edit these) */
+const INTERP = {
+  1: {
+    1: "Yellow: interpretation for 1-5",
+    2: "Yellow: interpretation for 6-10",
+    3: "Yellow: interpretation for 11-15",
+    4: "Yellow: interpretation for 16-20",
+    5: "Yellow: interpretation for 21-25"
+  },
+  2: {
+    1: "Blue: interpretation for 1-5",
+    2: "Blue: interpretation for 6-10",
+    3: "Blue: interpretation for 11-15",
+    4: "Blue: interpretation for 16-20",
+    5: "Blue: interpretation for 21-25"
+  },
+  3: {
+    1: "Grey: interpretation for 1-5",
+    2: "Grey: interpretation for 6-10",
+    3: "Grey: interpretation for 11-15",
+    4: "Grey: interpretation for 16-20",
+    5: "Grey: interpretation for 21-25"
+  }
+};
+
+function setEntityInterpretationText(boxEl, step){
+  const boxId = Number(boxEl.getAttribute("data-box"));
+  const textEl = document.querySelector('.v2 .entity-text[data-text="' + boxId + '"]');
+  if (!textEl) return;
+
+  const bucket = bucketForStep(step);
+  const msg = INTERP?.[boxId]?.[bucket];
+  textEl.textContent = (msg !== undefined && msg !== null) ? String(msg) : "";
+}
+
 function setEntityValue(boxEl, x){
   const n = Number(x);
   if (!Number.isFinite(n)) return;
@@ -190,6 +234,9 @@ function setEntityValue(boxEl, x){
   if (val){
     val.textContent = String(step) + "/" + String(TOTAL);
   }
+
+  /* update the text based on the computed step (1-25) */
+  setEntityInterpretationText(boxEl, step);
 }
 
 function setEntityRisk(boxEl, r){
@@ -212,6 +259,17 @@ function setEntityWarn(boxEl, show){
     const b2 = document.querySelector('.v2 .entity-box[data-box="2"]');
     const b3 = document.querySelector('.v2 .entity-box[data-box="3"]');
 
+    /* Optional override from indexes.json:
+       d.text_map_box1 = { "1":"...", "2":"...", "3":"...", "4":"...", "5":"..." }
+       d.text_map_box2 = ...
+       d.text_map_box3 = ...
+    */
+    if (d && typeof d === "object"){
+      if (d.text_map_box1) INTERP[1] = d.text_map_box1;
+      if (d.text_map_box2) INTERP[2] = d.text_map_box2;
+      if (d.text_map_box3) INTERP[3] = d.text_map_box3;
+    }
+
     if (b1 && d.box1 !== undefined) setEntityValue(b1, d.box1);
     if (b2 && d.box2 !== undefined) setEntityValue(b2, d.box2);
     if (b3 && d.box3 !== undefined) setEntityValue(b3, d.box3);
@@ -223,15 +281,6 @@ function setEntityWarn(boxEl, show){
     if (b1) setEntityWarn(b1, false);
     if (b2) setEntityWarn(b2, Number(d.box2) >= 80);
     if (b3) setEntityWarn(b3, Number(d.box3) >= 80);
-
-    /* Optional: allow indexes.json to also override the texts:
-       { "text1":"...", "text2":"...", "text3":"..." } */
-    const t1 = document.querySelector('.v2 .entity-text[data-text="1"]');
-    const t2 = document.querySelector('.v2 .entity-text[data-text="2"]');
-    const t3 = document.querySelector('.v2 .entity-text[data-text="3"]');
-    if (t1 && d.text1 !== undefined) t1.textContent = String(d.text1);
-    if (t2 && d.text2 !== undefined) t2.textContent = String(d.text2);
-    if (t3 && d.text3 !== undefined) t3.textContent = String(d.text3);
   }
 
   async function load(){
