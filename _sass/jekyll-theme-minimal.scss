@@ -563,3 +563,9 @@ kbd{
     font-size:12pt;
   }
 }
+
+@media (prefers-color-scheme: light) {
+  .entity-frame-stroke {
+    stroke: none;
+  }
+}
