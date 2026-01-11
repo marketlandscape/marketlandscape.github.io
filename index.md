@@ -83,10 +83,10 @@
           >
         </picture>
 
-        <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true"> 
-        <rect class="entity-frame-bg" x="0" y="0" width="360" height="150" rx="14"></rect> 
-        <rect class="entity-frame-stroke" x="0.5" y="0.5" width="360" height="150" rx="14"></rect> 
-        </svg>
+        <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true"> <rect class="entity-frame-bg" x="0" y="0" width="360" height="150" rx="14" ry="14"></rect>
+
+<rect class="entity-frame-stroke" x="0.5" y="0.5" width="359" height="149" rx="13.5" ry="13.5"></rect>
+</svg>
 
         <div class="entity-steps">
           <span>Entry</span>
