@@ -4,8 +4,13 @@
 
 {%- if lang == "ja" and site.data.nav_ja -%}
   {%- assign nav_items = site.data.nav_ja -%}
+
+{%- elsif lang == "ru" and site.data.nav_ru -%}
+  {%- assign nav_items = site.data.nav_ru -%}
+
 {%- elsif site.data.nav_en -%}
   {%- assign nav_items = site.data.nav_en -%}
+
 {%- else -%}
   {%- assign nav_items = site.data.nav -%}
 {%- endif -%}
