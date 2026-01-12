@@ -1,1 +1,7 @@
+home:
+  title: "Market Landscape (v3)"
+  intro: "This is the v3 home page. Text is loaded from i18n dictionaries."
+  switch_label: "Language:"
+  switch_en: "EN"
+  switch_ja: "JA"
 
