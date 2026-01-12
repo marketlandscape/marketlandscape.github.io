@@ -41,9 +41,20 @@
             <span id="ethPrice" class="market-mini-value">--</span>
           </div>
 
-          <div id="marketUpdated" class="market-mini-time" data-show-source="false">
-            Updated -- UTC
-          </div>
+          {%- assign lang = page.lang | default: site.lang | default: "en" -%}
+
+<div id="marketUpdated" class="market-mini-time" data-show-source="false">
+  {%- if lang == "ja"
+        and site.data.i18n
+        and site.data.i18n.ja
+        and site.data.i18n.ja.ui
+        and site.data.i18n.ja.ui.updated -%}
+    {{ site.data.i18n.ja.ui.updated }} -- UTC
+  {%- else -%}
+    Updated -- UTC
+  {%- endif -%}
+</div>
+
         </div>
 
         <!-- =========================
