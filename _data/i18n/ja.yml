@@ -1,0 +1,6 @@
+home:
+  title: "マーケット・ランドスケープ (v3)"
+  intro: "これは v3 のホームページです。テキストは i18n 辞書から読み込まれます。"
+  switch_label: "言語:"
+  switch_en: "EN"
+  switch_ja: "JA"
