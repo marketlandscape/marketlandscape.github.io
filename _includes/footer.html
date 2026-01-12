@@ -1,5 +1,17 @@
 <footer class="site-footer">
   <p class="footer-disclaimer">
-    Not financial advice. Information is provided for educational purposes only. Do your own research.
+    {%- if page.lang == "ja"
+          and site.data.i18n
+          and site.data.i18n.ja
+          and site.data.i18n.ja.footer
+          and site.data.i18n.ja.footer.disclaimer -%}
+
+      {{ site.data.i18n.ja.footer.disclaimer }}
+
+    {%- else -%}
+
+      Not financial advice. Information is provided for educational purposes only. Do your own research.
+
+    {%- endif -%}
   </p>
 </footer>
