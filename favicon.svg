@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="464" height="464"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="464" height="464"><svg xmlns="http://www.w3.org/2000/svg" width="464" height="464" viewBox="0 0 464 464">
+  <title>mark ket land scape</title>
+  <rect x="0" y="0" width="464" height="464" rx="48" fill="#2d2d2d"></rect>
+  <defs>
+    <style>
+      .t {
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 700;
+        fill: #ffffff;
+        letter-spacing: -0.5px;
+        text-anchor: middle;
+      }
+      .box { fill: #999999; }
+    </style>
+  </defs>
+  <g class="t" font-size="108">
+    <rect class="box" x="96" y="52" width="272" height="136"></rect>
+    <text x="232" y="142">mar</text>
+  </g>
+  <g class="t" font-size="96">
+    <text x="120" y="290">land</text>
+    <rect class="box" x="264" y="188" width="200" height="136"></rect>
+    <text x="364" y="290">ket</text>
+  </g>
+  <g class="t" font-size="96">
+    <text x="232" y="408">scape</text>
+  </g>
+</svg></svg><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
+@media (prefers-color-scheme: dark) { :root { filter: none; } }
+</style></svg>
