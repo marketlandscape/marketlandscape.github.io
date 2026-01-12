@@ -1,0 +1,18 @@
+{%- assign lang = page.lang | default: site.lang | default: "en" -%}
+{%- assign dict = site.data.i18n[lang] -%}
+{%- if dict == nil -%}
+  {%- assign dict = site.data.i18n.en -%}
+{%- endif -%}
+
+{%- assign parts = include.key | split: "." -%}
+{%- assign value = dict -%}
+{%- for p in parts -%}
+  {%- if value == nil -%}{%- break -%}{%- endif -%}
+  {%- assign value = value[p] -%}
+{%- endfor -%}
+
+{%- if value == nil -%}
+  {{ include.key }}
+{%- else -%}
+  {{ value }}
+{%- endif -%}
