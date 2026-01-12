@@ -1,0 +1,19 @@
+index:
+  box1:
+    title: "Navigation Index — Yellow"
+  box2:
+    title: "Navigation Index — Blue"
+  box3:
+    title: "Navigation Index — Grey"
+
+  step:
+    entry: "Entry"
+    scale_in: "Scale In"
+    hold: "Hold"
+    conviction: "Conviction"
+    hodl: "HODL"
+    reduce: "Reduce"
+    exit: "Exit"
+
+  risk:
+    label: "Risk level:"
