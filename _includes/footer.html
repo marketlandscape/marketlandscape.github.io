@@ -1,17 +1,26 @@
+{%- assign lang = page.lang | default: site.lang | default: "en" -%}
+
+{%- assign footer_text = nil -%}
+
+{%- if lang == "ja"
+      and site.data.i18n
+      and site.data.i18n.ja
+      and site.data.i18n.ja.footer
+      and site.data.i18n.ja.footer.disclaimer -%}
+  {%- assign footer_text = site.data.i18n.ja.footer.disclaimer -%}
+{%- elsif site.data.i18n
+      and site.data.i18n.en
+      and site.data.i18n.en.footer
+      and site.data.i18n.en.footer.disclaimer -%}
+  {%- assign footer_text = site.data.i18n.en.footer.disclaimer -%}
+{%- endif -%}
+
 <footer class="site-footer">
   <p class="footer-disclaimer">
-    {%- if page.lang == "ja"
-          and site.data.i18n
-          and site.data.i18n.ja
-          and site.data.i18n.ja.footer
-          and site.data.i18n.ja.footer.disclaimer -%}
-
-      {{ site.data.i18n.ja.footer.disclaimer }}
-
+    {%- if footer_text -%}
+      {{ footer_text }}
     {%- else -%}
-
       Not financial advice. Information is provided for educational purposes only. Do your own research.
-
     {%- endif -%}
   </p>
 </footer>
