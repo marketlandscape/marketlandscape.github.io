@@ -1,11 +1,23 @@
+{%- assign lang = page.lang | default: site.lang | default: "en" -%}
+
+{%- assign nav_items = nil -%}
+
+{%- if lang == "ja" and site.data.nav_ja -%}
+  {%- assign nav_items = site.data.nav_ja -%}
+{%- elsif site.data.nav_en -%}
+  {%- assign nav_items = site.data.nav_en -%}
+{%- else -%}
+  {%- assign nav_items = site.data.nav -%}
+{%- endif -%}
+
 <nav class="site-nav">
   <ul class="nav-list">
-    {% for item in site.data.nav %}
+    {%- for item in nav_items -%}
       <li>
         <a class="nav-link" href="{{ item.url | relative_url }}">
           {{ item.title }}
         </a>
       </li>
-    {% endfor %}
+    {%- endfor -%}
   </ul>
 </nav>
