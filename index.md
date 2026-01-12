@@ -53,8 +53,8 @@
         </div>
 
         <svg class="entity-dot-layer" viewBox="0 0 360 150" aria-hidden="true">
-          <circle class="entity-dot-outer" cx="34" cy="121.2" r="9"></circle>
-          <circle class="entity-dot-inner" cx="34" cy="121.2" r="6"></circle>
+          <circle class="entity-dot-outer" cx="29.76" cy="121.2" r="9"></circle>
+          <circle class="entity-dot-inner" cx="29.76" cy="121.2" r="6"></circle>
         </svg>
 
       </div>
@@ -105,8 +105,8 @@
         </div>
 
         <svg class="entity-dot-layer" viewBox="0 0 360 150" aria-hidden="true">
-          <circle class="entity-dot-outer" cx="24" cy="121.2" r="9"></circle>
-          <circle class="entity-dot-inner" cx="24" cy="121.2" r="6"></circle>
+          <circle class="entity-dot-outer" cx="29.76" cy="121.2" r="9"></circle>
+          <circle class="entity-dot-inner" cx="29.76" cy="121.2" r="6"></circle>
         </svg>
 
       </div>
@@ -157,8 +157,8 @@
         </div>
 
         <svg class="entity-dot-layer" viewBox="0 0 360 150" aria-hidden="true">
-          <circle class="entity-dot-outer" cx="24" cy="121.2" r="9"></circle>
-          <circle class="entity-dot-inner" cx="24" cy="121.2" r="6"></circle>
+          <circle class="entity-dot-outer" cx="29.76" cy="121.2" r="9"></circle>
+          <circle class="entity-dot-inner" cx="29.76" cy="121.2" r="6"></circle>
         </svg>
 
       </div>
