@@ -37,10 +37,10 @@
         </svg>
 
         <div class="entity-steps">
-          <span>ENTRY</span>
-          <span>SCALE IN</span>
-          <span>HOLD</span>
-          <span>CONVICTION</span>
+          <span>Entry</span>
+          <span>Scale In</span>
+          <span>Hold</span>
+          <span>Conviction</span>
           <span>HODL</span>
         </div>
 
