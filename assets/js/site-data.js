@@ -27,7 +27,7 @@
       const src = c?.source ? String(c.source) : "";
       const el = $("marketUpdated");
       const showSource = (el?.dataset?.showSource === "true");
-      setText(el, "Updated " + t + (showSource && src ? (" · " + src) : ""));
+      setText(el, t + (showSource && src ? (" · " + src) : ""));
     } catch(e){}
   }
 
@@ -46,7 +46,7 @@
       setText($("ethPrice"), "$" + fmt0(eth));
       const el = $("marketUpdated");
       const showSource = (el?.dataset?.showSource === "true");
-      setText(el, "Updated " + t + (showSource && src ? (" · " + src) : ""));
+      setText(el, t + (showSource && src ? (" · " + src) : ""));
 
       try{
         sessionStorage.setItem(KEY, JSON.stringify({
