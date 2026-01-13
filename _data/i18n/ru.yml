@@ -19,7 +19,7 @@ index:
     label: "Уровень риска:"
 
   footnotes: 
-    footnote1: "Классы альткоинов по рыночной капитализации (market cap): крупные алькоины >$10B (large-cap altcoins), средние альткоины $1B-$10B (mid-cap altcoins), малые алькоины $50M-$1B (small-cap altcoins), микро <$50M (micro-cap altcoins)."
+    footnote1: "Классы альткоинов по рыночной капитализации (market cap): крупные >$10B (large-cap altcoins), средние $1B-$10B (mid-cap altcoins), малые $50M-$1B (small-cap altcoins), микро <$50M (micro-cap altcoins)."
 
 footer:
   disclaimer: "Информация на сайте не является инвестиционной рекомендацией. Материал предоставлен в образовательных целях."
