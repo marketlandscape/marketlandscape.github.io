@@ -564,3 +564,20 @@ kbd{
   }
 }
 
+
+
+/* =========================================================
+   V2 scale label bottom alignment
+   ========================================================= */
+
+.v2 .entity-steps{
+  height:32px;
+  align-items:flex-end;
+}
+
+.v2 .entity-steps > span{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  line-height:1.05;
+}
