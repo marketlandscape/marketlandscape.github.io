@@ -8,6 +8,14 @@
       and site.data.i18n.ja.footer
       and site.data.i18n.ja.footer.disclaimer -%}
   {%- assign footer_text = site.data.i18n.ja.footer.disclaimer -%}
+
+{%- elsif lang == "ru"
+      and site.data.i18n
+      and site.data.i18n.ru
+      and site.data.i18n.ru.footer
+      and site.data.i18n.ru.footer.disclaimer -%}
+  {%- assign footer_text = site.data.i18n.ru.footer.disclaimer -%}
+
 {%- elsif site.data.i18n
       and site.data.i18n.en
       and site.data.i18n.en.footer
