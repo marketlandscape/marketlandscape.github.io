@@ -12,7 +12,12 @@
 {%- endfor -%}
 
 {%- if value == nil -%}
-  {{ include.key }}
+  {%- if include.default != nil -%}
+    {{ include.default }}
+  {%- elsif include.silent == true -%}
+  {%- else -%}
+    {{ include.key }}
+  {%- endif -%}
 {%- else -%}
   {{ value }}
 {%- endif -%}
