@@ -34,11 +34,11 @@
   --entity-box-bg: #ffffff;
   --entity-box-stroke: #e5e5e5;
 
-  
   --entity-box-shadow:
     0 1px 2px rgba(0, 0, 0, 0.06),
     0 4px 12px rgba(0, 0, 0, 0.08);
-/* entity dot (LIGHT)
+
+  /* entity dot (LIGHT)
      - outer: white
      - inner: follow text, but softened
   */
@@ -46,9 +46,9 @@
   --entity-dot-inner: var(--text);
   --entity-dot-inner-opacity: .95;
 }
+
 /* V2 wrapper inherits theme text color */
 .v2{ color: var(--text); }
-
 
 @media (prefers-color-scheme: dark){
   :root{
@@ -437,14 +437,12 @@ kbd{
   font-family:system-ui,-apple-system,sans-serif;
 }
 
-
 @media (prefers-color-scheme: light){
   .v2 .entity-box{
     border-radius: 14px;
     box-shadow: var(--entity-box-shadow);
   }
 }
-
 
 /* Layers */
 .v2 .entity-frame,
@@ -491,10 +489,17 @@ kbd{
   line-height:1.2;
 }
 
+/* =========================================================
+   V2 scale labels
+   - anchored to the bar via bottom
+   - fixed label row height (headroom for wraps)
+   - multi-line labels grow upward, baseline stays consistent
+   ========================================================= */
+
 .v2 .entity-steps{
   left:20px;
   top:auto;
-  bottom:41px;
+  bottom:41px;          /* increase to move labels higher */
   width:320px;
   display:flex;
   font-size:13px;
@@ -502,11 +507,19 @@ kbd{
   opacity:0.5;
   letter-spacing:0.02em;
   pointer-events:none;
+
+  height:36px;          /* vertical room for wrapping */
+  align-items:flex-end; /* bottom-align each label block */
 }
 
 .v2 .entity-steps > span{
   flex:1;
   text-align:center;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end; /* make wrapped lines stack upward */
+  line-height:1.05;
 }
 
 .v2 .entity-value{
@@ -521,7 +534,6 @@ kbd{
 .v2 .entity-value .entity-total{
   opacity:0.5;
 }
-
 
 .v2 .entity-risk{
   top:44%;
@@ -563,22 +575,4 @@ kbd{
     padding:0.4in;
     font-size:12pt;
   }
-}
-
-
-
-/* =========================================================
-   V2 scale label bottom alignment
-   ========================================================= */
-
-.v2 .entity-steps{
-  height:36px;
-  align-items:flex-end;
-}
-
-.v2 .entity-steps > span{
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-  line-height:1.05;
 }
