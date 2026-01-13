@@ -38,17 +38,14 @@
   --entity-box-shadow:
     0 1px 2px rgba(0, 0, 0, 0.06),
     0 4px 12px rgba(0, 0, 0, 0.08);
-/* entity dot (LIGHT)
-     - outer: white
-     - inner: follow text, but softened
-  */
+
+  /* entity dot (LIGHT) */
   --entity-dot-outer: #ffffff;
   --entity-dot-inner: var(--text);
   --entity-dot-inner-opacity: .95;
 }
-/* V2 wrapper inherits theme text color */
-.v2{ color: var(--text); }
 
+.v2{ color: var(--text); }
 
 @media (prefers-color-scheme: dark){
   :root{
@@ -61,22 +58,13 @@
 
     --pre-bg: #161a22;
 
-    /* V1 stays consistent */
     --index-ui-text: #d9d9d9;
     --index-dot-outer: #323232ff;
     --index-dot-inner: #ffffff;
 
-    /* entity box (DARK)
-       - background: #323232ff
-       - no border line
-    */
     --entity-box-bg: #323232ff;
     --entity-box-stroke: transparent;
 
-    /* entity dot (DARK)
-       - outer: match box (#323232ff)
-       - inner: white
-    */
     --entity-dot-outer: #323232ff;
     --entity-dot-inner: #ffffff;
     --entity-dot-inner-opacity: 1.00;
@@ -87,7 +75,6 @@
   box-sizing: border-box;
 }
 
-/* Explicit first-paint stability */
 html{
   margin:0;
   background: var(--bg);
@@ -160,7 +147,6 @@ a small{
   margin: 0 auto;
 }
 
-/* Desktop layout */
 @media (min-width: 961px){
   .wrapper{
     display:grid;
@@ -175,7 +161,6 @@ a small{
   }
 }
 
-/* Mobile/tablet */
 @media (max-width: 960px){
   header, main{
     position:static;
@@ -184,7 +169,7 @@ a small{
 }
 
 /* =========================================================
-   Header / sidebar
+   Sidebar
    ========================================================= */
 
 header{
@@ -192,242 +177,7 @@ header{
 }
 
 /* =========================================================
-   Menu (nav.html)
-   ========================================================= */
-
-.site-nav{
-  margin: 16px 0 20px;
-}
-
-@media (max-width: 960px){
-  .site-nav{
-    margin-bottom: 36px;
-  }
-}
-
-.nav-list{
-  list-style:none;
-  padding:0;
-  margin:0;
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-}
-
-/* Option A: simple text links (no "button" styling) */
-.nav-link{
-  display:inline;
-  padding:0;
-  border:none;
-  border-radius:0;
-  line-height:1.4;
-  color: var(--text);
-  background:none;
-  transition:none;
-}
-
-.nav-link:hover,
-.nav-link:focus{
-  color: var(--text);
-  background:none;
-  text-decoration: none;
-}
-
-/* Ensure menu links stay neutral */
-.site-nav a{
-  color: var(--text);
-}
-
-.site-nav a:hover,
-.site-nav a:focus{
-  color: var(--text);
-}
-
-/* =========================================================
-   Sidebar footer (after menu)
-   ========================================================= */
-
-.site-footer{
-  margin-top: 40px;
-  margin-bottom: 40px;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-}
-
-.footer-disclaimer{
-  margin: 0;
-  font-size: 11px;
-  line-height: 1.4;
-  color: var(--text);
-  opacity: 0.75;
-}
-
-/* =========================================================
-   Main content
-   ========================================================= */
-
-main{
-  max-width: none;
-  padding-bottom:50px;
-}
-
-/* =========================================================
-   Blocks / elements
-   ========================================================= */
-
-blockquote{
-  border-left:1px solid var(--border);
-  margin:0;
-  padding:0 0 0 20px;
-  font-style:italic;
-}
-
-code, pre{
-  font-family: Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  color: var(--text);
-}
-
-pre{
-  padding:8px 15px;
-  background: var(--pre-bg);
-  border-radius:5px;
-  border:1px solid var(--border);
-  overflow-x:auto;
-}
-
-/* Tables */
-table{
-  width:100%;
-  border-collapse:collapse;
-  display:block;
-  overflow-x:auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-th, td{
-  text-align:left;
-  padding:5px 10px;
-  border-bottom:1px solid var(--border);
-}
-
-dt{
-  font-weight:700;
-}
-
-img{
-  max-width:100%;
-}
-
-kbd{
-  background-color: var(--pre-bg);
-  border:1px solid var(--border);
-  border-radius:3px;
-  box-shadow: inset 0 -1px 0 var(--border);
-  font-size:11px;
-  line-height:10px;
-  padding:3px 5px;
-}
-
-/* =========================================================
-   Index row (custom) — 180 × 180 boxes
-   ========================================================= */
-
-.index-row{
-  display:flex;
-  flex-wrap:wrap;
-  gap:20px;
-  align-items:flex-start;
-}
-
-.index-row .left{
-  flex: 0 0 180px;
-}
-
-.index-row .right{
-  flex:1 1 260px;
-  max-width:420px;
-  line-height:1.5;
-}
-
-@media (max-width:520px){
-  .index-row .right{
-    flex-basis:100%;
-    max-width:none;
-  }
-}
-
-/* =========================================================
-   Market context (BTC / ETH) — sidebar text only
-   ========================================================= */
-
-.market-mini{
-  margin: 0 0 14px 0;
-  padding: 0 0 12px 0;
-  font-family: system-ui, -apple-system, sans-serif;
-  font-size: 0.9em;
-  line-height: 1.2;
-  opacity: 0.75;
-}
-
-.market-mini-row{
-  margin: 6px 0;
-}
-
-.market-mini-label,
-.market-mini-value{
-  letter-spacing: 0.3px;
-}
-
-.market-mini-time{
-  margin-top: 8px;
-  font-size: 11px;
-  line-height: 1.2;
-}
-
-/* =========================================================
-   V1 (existing index.md) — move inline <style> here
-   ========================================================= */
-
-.indexes{
-  display:flex;
-  flex-direction:column;
-}
-
-.index-box{
-  position:relative;
-  width:360px;
-  height:150px;
-  background-repeat:no-repeat;
-  background-size:360px 150px;
-  font-family:system-ui,-apple-system,sans-serif;
-}
-
-.box-title{
-  position:absolute;
-  top:18px;
-  left:20px;
-  right:17px;
-  font-size:15px;
-  font-weight:500;
-  color: var(--index-ui-text);
-  line-height:1.2;
-  z-index:2;
-}
-
-.dot-layer{
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  z-index:1;
-}
-
-/* Optional: force dot colors via CSS (overrides inline fill if present) */
-.dot-layer circle[id^="dotOuter"]{ fill: var(--index-dot-outer) !important; }
-.dot-layer circle[id^="dotInner"]{ fill: var(--index-dot-inner) !important; }
-
-/* =========================================================
-   V2 (new internal-SVG entity boxes)
-   Everything is gated by .v2
+   V2 entity boxes
    ========================================================= */
 
 .v2 .entity-box{
@@ -437,7 +187,6 @@ kbd{
   font-family:system-ui,-apple-system,sans-serif;
 }
 
-
 @media (prefers-color-scheme: light){
   .v2 .entity-box{
     border-radius: 14px;
@@ -445,8 +194,6 @@ kbd{
   }
 }
 
-
-/* Layers */
 .v2 .entity-frame,
 .v2 .entity-scale,
 .v2 .entity-dot-layer{
@@ -469,7 +216,6 @@ kbd{
   z-index:3;
 }
 
-/* Internal SVG theming */
 .v2 .entity-frame-bg{
   fill: var(--entity-box-bg);
 }
@@ -480,14 +226,12 @@ kbd{
   stroke-width: 1;
 }
 
-/* Text blocks */
 .v2 .entity-title{
   top:18px;
   left:20px;
   right:17px;
   font-size:15px;
   font-weight:500;
-  color: inherit;
   line-height:1.2;
 }
 
@@ -497,15 +241,24 @@ kbd{
   width:320px;
   display:flex;
   font-size:13px;
-  color: inherit;
   opacity:0.5;
   letter-spacing:0.02em;
   pointer-events:none;
+
+  /* ===== CHANGED ===== */
+  height:32px;
+  align-items:flex-end;
 }
 
 .v2 .entity-steps > span{
   flex:1;
   text-align:center;
+
+  /* ===== CHANGED ===== */
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  line-height:1.05;
 }
 
 .v2 .entity-value{
@@ -514,20 +267,17 @@ kbd{
   transform:translateY(-50%);
   font-size:16px;
   font-weight:500;
-  color: inherit;
 }
 
 .v2 .entity-value .entity-total{
   opacity:0.5;
 }
 
-
 .v2 .entity-risk{
   top:44%;
   right:20px;
   transform:translateY(-50%);
   font-size:14px;
-  color: inherit;
   white-space:nowrap;
 }
 
@@ -546,21 +296,8 @@ kbd{
   opacity:0.75;
 }
 
-/* Dot colors (theme-controlled) */
 .v2 .entity-dot-outer{ fill: var(--entity-dot-outer); }
 .v2 .entity-dot-inner{
   fill: var(--entity-dot-inner);
   fill-opacity: var(--entity-dot-inner-opacity);
 }
-
-/* =========================================================
-   Print
-   ========================================================= */
-
-@media print{
-  body{
-    padding:0.4in;
-    font-size:12pt;
-  }
-}
-
