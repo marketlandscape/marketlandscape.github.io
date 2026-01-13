@@ -164,10 +164,14 @@
 
   </div>
 
+  {%- capture fn -%}{% include t.html key="index.footnotes.footnote1" default="" %}{%- endcapture -%}
+{%- assign fn = fn | strip -%}
+{%- if fn != "" -%}
   <div class="index-footnote">
     <span class="fn-mark">*</span>
-    {% include t.html key="index.footnotes.footnote1" %}
+    {{ fn }}
   </div>
+{%- endif -%}
 
 </div>
 
