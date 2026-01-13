@@ -1,5 +1,6 @@
 ---
 layout: default
+lang: ru
 ---
 
 # Дизайн и логика
