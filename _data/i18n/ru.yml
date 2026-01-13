@@ -8,11 +8,11 @@ index:
 
   step:
     entry: "Вход"
-    scale_in: "Наращивание"
+    scale_in: "Ступен+"
     hold: "Держать"
-    conviction: "Уверенность"
+    conviction: "Резерв"
     hodl: "HODL"
-    reduce: "Сокращение"
+    reduce: "Ступен-"
     exit: "Выход"
 
   risk:
