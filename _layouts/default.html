@@ -43,27 +43,15 @@
 
           {%- assign lang = page.lang | default: site.lang | default: "en" -%}
 
-{%- assign updated_label = nil -%}
-{%- if lang == "ja"
-      and site.data.i18n
-      and site.data.i18n.ja
-      and site.data.i18n.ja.ui
-      and site.data.i18n.ja.ui.updated -%}
-  {%- assign updated_label = site.data.i18n.ja.ui.updated -%}
-{%- elsif lang == "ru"
-      and site.data.i18n
-      and site.data.i18n.ru
-      and site.data.i18n.ru.ui
-      and site.data.i18n.ru.ui.updated -%}
-  {%- assign updated_label = site.data.i18n.ru.ui.updated -%}
-{%- endif -%}
+{%- assign lang = page.lang | default: site.lang | default: "en" -%}
 
-<div id="marketUpdated" class="market-mini-time" data-show-source="false">
-  {%- if updated_label -%}
-    {{ updated_label }} -- UTC
-  {%- else -%}
-    Updated -- UTC
-  {%- endif -%}
+<div
+  id="marketUpdated"
+  class="market-mini-time"
+  data-show-source="false"
+  data-updated-label="{%- if site.data.i18n and site.data.i18n[lang] and site.data.i18n[lang].ui and site.data.i18n[lang].ui.updated -%}{{ site.data.i18n[lang].ui.updated }}{%- else -%}Updated{%- endif -%}"
+>
+  Updated -- UTC
 </div>
 
         </div>
