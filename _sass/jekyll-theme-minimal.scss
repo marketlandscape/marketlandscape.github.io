@@ -566,6 +566,25 @@ kbd{
   fill-opacity: var(--entity-dot-inner-opacity);
 }
 
+
+
+.v2 .index-footnote{
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  font-size: 14px;
+  line-height: 1.35;
+  color: inherit;
+  opacity: 0.75;
+}
+
+.v2 .index-footnote .fn-mark{
+  margin-right: 6px;
+}
+
+
+
+
 /* =========================================================
    Print
    ========================================================= */
