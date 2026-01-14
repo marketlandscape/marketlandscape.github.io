@@ -27,8 +27,6 @@ Market Landscape における主要なフレームワークは Market Navigation
 現在のバージョン: v0.1  
 ステータス: 初期版  
 
-過去のバージョンは、それぞれの時点における参照資料として有効です。変更は、解釈上の意味に影響がある場合に限り記録されます。
-
 ## 連絡先
 
 marketlandscape [at] proton [dot] me
