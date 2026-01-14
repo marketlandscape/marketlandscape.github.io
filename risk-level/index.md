@@ -15,15 +15,15 @@ Different coin classes carry different baseline risks by design. This reflects a
 
 ## Bitcoin as anchor and reference  
 
-Bitcoin serves both as an asset within the framework and as the reference point for it. For Bitcoin, risk level measures timing downside risk: the size of a drawdown from the current price that is historically plausible before the next durable recovery. Historically, a Bitcoin pullback of around 30% is a normal stress event that occurs in many phases of the cycle, while deeper declines of 40 to 60% tend to appear near major cycle transitions.  This observed behavior anchors the entire scale.
+Bitcoin serves both as an asset within the framework and as the reference point for it. For Bitcoin, risk level measures timing downside risk: the size of a drawdown from the current price that is historically plausible before the next durable recovery. Historically, a Bitcoin pullback of around 30% is a normal stress event that occurs in many phases of the cycle, while deeper declines of 40-60% tend to appear near major cycle transitions.  This observed behavior anchors the entire scale.
 
 ## How risk for other assets is expressed  
 
-Risk levels for other assets are expressed relative to Bitcoin stress. When Bitcoin falls by roughly 30%, Ethereum has historically tended to fall more than Bitcoin, often on the order of 35 to 50%. Large-cap altcoins typically experience deeper declines under the same conditions, frequently in the 45 to 60% range, as liquidity thins and capital rotates out.
+Risk levels for other assets are expressed relative to Bitcoin stress. When Bitcoin falls by roughly 30%, Ethereum has historically tended to fall more than Bitcoin, often on the order of 35-50%. Large-cap altcoins typically experience deeper declines under the same conditions, frequently in the 45-60% range, as liquidity thins and capital rotates out.
 
 ## Why lower-cap assets dominate the upper end  
 
-Lower-cap assets amplify Bitcoin downside most aggressively. In comparable Bitcoin drawdowns, mid-cap altcoins have often fallen by 60 to 75%, while small-cap altcoins have repeatedly suffered losses of 70 to 90% or more, especially near late-cycle and post-peak conditions. These outcomes are not rare tail events but recurring patterns across cycles, which is why lower-cap assets occupy the extreme end of the risk spectrum.
+Lower-cap assets amplify Bitcoin downside most aggressively. In comparable Bitcoin drawdowns, mid-cap altcoins have often fallen by 60-75%, while small-cap altcoins have repeatedly suffered losses of 70-90% or more, especially near late-cycle and post-peak conditions. These outcomes are not rare tail events but recurring patterns across cycles, which is why lower-cap assets occupy the extreme end of the risk spectrum.
 
 ## How the risk level is calculated in practice  
 
