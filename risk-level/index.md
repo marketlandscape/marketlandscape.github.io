@@ -1,3 +1,8 @@
+---
+layout: default
+lang: en
+---
+
 # Risk level
 
 ##Purpose of the risk level indicator
