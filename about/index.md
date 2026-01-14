@@ -15,7 +15,7 @@ The tools published on this site focus on market context and positioning within 
 
 ## Framework
 
-The primary framework developed within Market Landscape is the Market Navigation Index. It expresses market positioning on a 25-point contextual scale, describing where the market sits relative to its own historical structure rather than to absolute price levels. The index is intended as a reference tool for understanding cycle phases and regime transitions, not as a trading system.
+The primary framework developed within Market Landscape is the Market Navigation Index. It expresses market positioning on a 25-point contextual scale, describing where the market sits relative to its own historical structure rather than to absolute price levels. The index is intended as a reference tool for understanding cycle phases and regime transitions and functions as a contextual navigation model.
 
 ## Scope and limitations
 
