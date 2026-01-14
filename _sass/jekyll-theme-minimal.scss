@@ -118,6 +118,13 @@ p, ul, ol, table, pre, dl{
   margin:0 0 20px;
 }
 
+
+main p{
+  text-align: justify;
+  hyphens: auto;
+}
+
+
 small{
   font-size:11px;
   opacity:0.75;
