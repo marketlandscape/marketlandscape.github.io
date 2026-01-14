@@ -7,12 +7,12 @@ lang: en
 
 The indexes are intentionally not trading signals and not price-prediction models. They are designed to translate broad market conditions into a relative positioning scale.
 
-The design combines three ideas:
+The design rests on three principles.
 
-**Market phase matters more than short-term price moves**. The indexes prioritise cycle structure and regime context over daily local volatility.
+First, market phase outweighs short-term price movement. Cycle structure and prevailing market regimes take priority over daily volatility and local price noise.
 
-**Recent price behaviour is informative but incomplete**. Observed price action is used as an empirical anchor, not as a forecasting engine.
+Second, price behaviour offers context, not certainty. Recent price action serves as an empirical reference point rather than a mechanism for forecasting future moves.
 
-<strong>Forward expectations are constrained, not speculative</strong>. Any forward-looking component is deliberately conservative and bound to avoid narrative-driven bias.
+Third, forward expectations are deliberately constrained. Any forward-looking element is conservative by design, bounded to reduce narrative influence and speculative bias.
 
-The indexes may inform directional positioning but they do not aim to time trades with execution-level precision. The logic emphasises stability over reactivity. Values change slowly by design, supporting a predefined long-term strategy while limiting reactions to emotionally driven market sentiment.
+The indexes may inform directional positioning but do not attempt execution-level timing. The logic prioritises stability over responsiveness. Values evolve slowly by intent, reinforcing a predefined long-term framework while limiting reactions to emotionally driven market sentiment.
