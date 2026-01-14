@@ -19,6 +19,6 @@ defaults:
       lang: ja
 
   - scope:
-      path: "en"
+      path: ""
     values:
       lang: en
