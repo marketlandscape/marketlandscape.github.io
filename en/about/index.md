@@ -27,12 +27,6 @@ First published: 2026-01
 Current version: v0.1  
 Status: Initial release  
 
-Earlier versions remain valid as historical references. Updates prioritize interpretive stability and are documented when changes affect meaning.
-
-## Maintenance
-
-The project is developed and maintained independently, with emphasis on methodology, continuity, and long-term consistency.
-
 ## Contact
 
 marketlandscape [at] proton [dot] me
