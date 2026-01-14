@@ -1,10 +1,10 @@
 index:
   box1:
-    title: "Navigation Index — Yellow"
+    title: "BTC Navigation Index"
   box2:
-    title: "Navigation Index — Blue"
+    title: "ETH Navigation Index"
   box3:
-    title: "Navigation Index — Grey"
+    title: "Large-Cap Altcoin Navigation Index"
 
   step:
     entry: "Entry"
