@@ -118,7 +118,7 @@
   <div>
       <div class="entity-box" data-box="3">
 
-   <div class="entity-title">Large-Cap Altcoin Navigation Index</div>
+   <div class="entity-title">Altcoin Navigation Index</div>
 
    <picture
           style="position:absolute; inset:0; width:360px; height:150px; z-index:1; pointer-events:none;"
