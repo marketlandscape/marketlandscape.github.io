@@ -11,13 +11,13 @@
     <!-- =========================
          BOX 1 — YELLOW
          ========================= -->
-    <div style="margin-bottom:28px;">
+   <div style="margin-bottom:28px;">
       <div class="entity-box" data-box="1">
 
-        <div class="entity-title">Navigation Index — Yellow</div>
+   <div class="entity-title">BTC Navigation Index</div>
 
         <!-- bar scale (picture, theme-ready; same image for now) -->
-        <picture
+  <picture
           style="position:absolute; inset:0; width:360px; height:150px; z-index:1; pointer-events:none;"
           aria-hidden="true"
         >
@@ -32,11 +32,11 @@
           >
         </picture>
 
-        <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true"> <rect class="entity-frame-bg" x="0" y="0" width="360" height="150" rx="14" ry="14"></rect>
+  <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true"> <rect class="entity-frame-bg" x="0" y="0" width="360" height="150" rx="14" ry="14"></rect>
         <rect class="entity-frame-stroke" x="0.5" y="0.5" width="359" height="149" rx="13.5" ry="13.5"></rect>
         </svg>
 
-        <div class="entity-steps">
+   <div class="entity-steps">
           <span>Entry</span>
           <span>Scale In</span>
           <span>Hold</span>
@@ -44,31 +44,31 @@
           <span>HODL</span>
         </div>
 
-        <div class="entity-value" data-role="val">–</div>
+   <div class="entity-value" data-role="val">–</div>
 
-        <div class="entity-risk">
+  <div class="entity-risk">
           <span class="entity-warn" data-role="warn">⚠</span>
           <span class="entity-risk-label">Risk level:</span>
           <span class="entity-risk-val" data-role="risk">–%</span>
         </div>
 
-        <svg class="entity-dot-layer" viewBox="0 0 360 150" aria-hidden="true">
+   <svg class="entity-dot-layer" viewBox="0 0 360 150" aria-hidden="true">
           <circle class="entity-dot-outer" cx="29.76" cy="121.2" r="9"></circle>
           <circle class="entity-dot-inner" cx="29.76" cy="121.2" r="6"></circle>
         </svg>
 
-      </div>
-    </div>
+  </div>
+  </div>
 
     <!-- =========================
          BOX 2 — BLUE
          ========================= -->
-    <div style="margin-bottom:28px;">
+   <div style="margin-bottom:28px;">
       <div class="entity-box" data-box="2">
 
-        <div class="entity-title">Navigation Index — Blue</div>
+   <div class="entity-title">ETH Navigation Index</div>
 
-        <picture
+   <picture
           style="position:absolute; inset:0; width:360px; height:150px; z-index:1; pointer-events:none;"
           aria-hidden="true"
         >
@@ -83,12 +83,12 @@
           >
         </picture>
 
-        <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true"> <rect class="entity-frame-bg" x="0" y="0" width="360" height="150" rx="14" ry="14"></rect>
+  <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true"> <rect class="entity-frame-bg" x="0" y="0" width="360" height="150" rx="14" ry="14"></rect>
 
 <rect class="entity-frame-stroke" x="0.5" y="0.5" width="359" height="149" rx="13.5" ry="13.5"></rect>
 </svg>
 
-        <div class="entity-steps">
+   <div class="entity-steps">
           <span>Entry</span>
           <span>Scale In</span>
           <span>Hold</span>
@@ -96,31 +96,31 @@
           <span>Exit</span>
         </div>
 
-        <div class="entity-value" data-role="val">–</div>
+  <div class="entity-value" data-role="val">–</div>
 
-        <div class="entity-risk">
+  <div class="entity-risk">
           <span class="entity-warn" data-role="warn">⚠</span>
           <span class="entity-risk-label">Risk level:</span>
           <span class="entity-risk-val" data-role="risk">–%</span>
         </div>
 
-        <svg class="entity-dot-layer" viewBox="0 0 360 150" aria-hidden="true">
+  <svg class="entity-dot-layer" viewBox="0 0 360 150" aria-hidden="true">
           <circle class="entity-dot-outer" cx="29.76" cy="121.2" r="9"></circle>
           <circle class="entity-dot-inner" cx="29.76" cy="121.2" r="6"></circle>
         </svg>
 
-      </div>
-    </div>
+  </div>
+  </div>
 
     <!-- =========================
          BOX 3 — GREY
          ========================= -->
-    <div>
+  <div>
       <div class="entity-box" data-box="3">
 
-        <div class="entity-title">Navigation Index — Grey</div>
+   <div class="entity-title">Large-Cap Altcoin Navigation Index</div>
 
-        <picture
+   <picture
           style="position:absolute; inset:0; width:360px; height:150px; z-index:1; pointer-events:none;"
           aria-hidden="true"
         >
@@ -135,12 +135,12 @@
           >
         </picture>
 
-        <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true"> <rect class="entity-frame-bg" x="0" y="0" width="360" height="150" rx="14" ry="14"></rect>
+   <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true"> <rect class="entity-frame-bg" x="0" y="0" width="360" height="150" rx="14" ry="14"></rect>
 
 <rect class="entity-frame-stroke" x="0.5" y="0.5" width="359" height="149" rx="13.5" ry="13.5"></rect>
 </svg>
 
-        <div class="entity-steps">
+  <div class="entity-steps">
           <span>Entry</span>
           <span>Scale In</span>
           <span>Hold</span>
@@ -148,21 +148,21 @@
           <span>Exit</span>
         </div>
 
-        <div class="entity-value" data-role="val">–</div>
+ <div class="entity-value" data-role="val">–</div>
 
-        <div class="entity-risk">
+  <div class="entity-risk">
           <span class="entity-warn" data-role="warn">⚠</span>
           <span class="entity-risk-label">Risk level:</span>
           <span class="entity-risk-val" data-role="risk">–%</span>
         </div>
 
-        <svg class="entity-dot-layer" viewBox="0 0 360 150" aria-hidden="true">
+  <svg class="entity-dot-layer" viewBox="0 0 360 150" aria-hidden="true">
           <circle class="entity-dot-outer" cx="29.76" cy="121.2" r="9"></circle>
           <circle class="entity-dot-inner" cx="29.76" cy="121.2" r="6"></circle>
         </svg>
 
-      </div>
-    </div>
+  </div>
+  </div>
 
   </div>
 
