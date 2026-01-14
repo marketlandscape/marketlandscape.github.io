@@ -1,19 +1,19 @@
 index:
   box1:
-    title: "ナビ指数 - イエロー"
+    title: "BTC ナビ指数"
   box2:
-    title: "ナビ指数 - ブルー"
+    title: "ETH ナビ指数"
   box3:
-    title: "ナビ指数 - グレー"
+    title: "大型アルト ナビ指数"
 
   step:
-    entry: "エントリー"
-    scale_in: "買い増し"
+    entry: "開始"
+    scale_in: "段階追加"
     hold: "保有"
-    conviction: "高確信"
+    conviction: "コア保有"
     hodl: "HODL"
-    reduce: "縮小"
-    exit: "退出"
+    reduce: "段階縮小"
+    exit: "手仕舞い"
 
   risk:
     label: "リスク水準:"
