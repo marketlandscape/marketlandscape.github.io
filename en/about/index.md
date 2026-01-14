@@ -24,7 +24,7 @@ This project is not a trading platform and does not provide financial or investm
 ## Publication and versioning
 
 First published: 2026-01  
-Current version: v0.1  
+Version: v0.1  
 Status: Initial release  
 
 ## Contact
