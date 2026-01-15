@@ -29,7 +29,7 @@ Status: Initial release
 
 ## Official presence
 
-This project is published exclusively at [https://marketlandscape.github.io/](https://marketlandscape.github.io/). No other websites or domains including .com, .io, or similar represent this project.
+This project is published exclusively at [marketlandscape.github.io](https://marketlandscape.github.io/). No other websites or domains, including .com, .io, or similar, represent this project.
 
 <!--There are no other official websites or domains including .com, .io, or similar, social media accounts, or communication channels associated with this project. Any content published elsewhere should be considered unaffiliated.-->
 
