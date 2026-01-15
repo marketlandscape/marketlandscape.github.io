@@ -40,15 +40,11 @@ Key examples include:
 
 These inputs operate as secondary constraints. They adjust the positioning range only when sustained macro divergence is observed.
 
-## 7. Adaptive, path-dependent structure
+## 7. Adaptive structure
 
-Market Navigator is designed as a dynamic framework rather than a fixed model. As market structure evolves, the framework may incorporate new regime-relevant information, while preserving historical continuity. Adjustments are selective and constrained. They are introduced only when broader market structure changes in a way that materially affects interpretation, rather than in response to short-term conditions.
-
-Two characteristics define this process:
-Continuity over replacement: updates refine the existing structure instead of resetting it, ensuring that historical positioning remains interpretable over time.
-Path dependence: changes accumulate gradually, allowing the framework to adapt without abrupt shifts in behaviour or meaning.
-
-As a result, positioning values reflect not only current market data, but also the evolving understanding of which factors matter structurally at each stage of the market cycle.
+Market Navigator is designed as a dynamic framework. As market structure evolves, the framework incorporate regime-relevant information, while preserving historical continuity. Adjustments are introduced only when broader market structure changes. Two characteristics define this process:
+- Continuity over replacement: updates refine the existing structure instead of resetting it, ensuring that historical positioning remains interpretable over time.
+- Path dependence: changes accumulate gradually, allowing the framework to adapt without abrupt shifts in behaviour or meaning.
 
 ## Cycle-dependent interpretation
 
