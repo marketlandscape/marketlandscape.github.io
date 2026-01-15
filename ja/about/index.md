@@ -27,6 +27,10 @@ Market Landscape における主要なフレームワークは Market Navigation
 バージョン: v0.1  
 ステータス: 初期版  
 
+## 公式な掲載先
+
+本プロジェクトは https://marketlandscape.github.io/ にのみ正式に公開されています。.com、.io、その他類似のドメインを含むいかなるウェブサイトも、本プロジェクトを代表するものではありません。
+
 ## 連絡先
 
 marketlandscape [at] proton [dot] me
