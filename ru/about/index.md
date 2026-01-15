@@ -29,9 +29,9 @@ Market Landscape создан для спокойного и взвешенно�
 BTC v0.1 · ETH v0.1 · Altcoin v0.1  
 
 Активные версии индексов:  
-BTC – v0.1 · Initial release · 2026-01  
-ETH – v0.1 · Initial release · 2026-01  
-Altcoin – v0.1 · Initial release · 2026-01
+BTC — v0.1 · Initial release · 2026-01  
+ETH — v0.1 · Initial release · 2026-01  
+Altcoin — v0.1 · Initial release · 2026-01
 
 ## Официальный сайт
 
