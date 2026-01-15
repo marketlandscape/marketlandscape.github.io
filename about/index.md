@@ -7,6 +7,7 @@ lang: en
 
 ## Purpose
 
+
 Market Landscape exists to provide a calmer way of looking at markets. Many decisions made by retail participants are shaped by pressure rather than analysis: fear during drawdowns, excitement near peaks, and constant noise in between. The aim here is to reduce that pressure by offering stable reference points instead of fast reactions.
 
 ## Approach
