@@ -16,7 +16,7 @@ index:
     exit: "手仕舞い"
 
   risk:
-    label: "リスク水準:"
+    label: "リスクレベル:"
 
 footer:
   disclaimer: "本サイトの情報は情報提供を目的としたものであり、投資助言を行うものではありません。"
