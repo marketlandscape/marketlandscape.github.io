@@ -7,7 +7,7 @@ lang: en
 
 The indexes are intentionally not trading signals and not price-prediction models. They are designed to translate broad market conditions into a relative positioning scale.
 
-The design rests on three principles.
+The design is based on three principles.
 
 First, market phase outweighs short-term price movement. Cycle structure and prevailing market regimes take priority over daily volatility and local price noise.
 
