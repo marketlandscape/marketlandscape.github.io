@@ -24,8 +24,14 @@ This project is not a trading platform and does not provide financial or investm
 ## Publication and versioning
 
 First published: 2026-01  
-Version: v0.1  
-Status: Initial release  
+
+Included in the first publication  
+BTC Index v0.1 · ETH Index v0.1 · Altcoin Index v0.1  
+
+Active index versions  
+BTC — v0.1 · Initial release · 2026-01  
+ETH — v0.1 · Initial release · 2026-01  
+Altcoin — v0.1 · Initial release · 2026-01
 
 ## Official presence
 
