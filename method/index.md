@@ -42,7 +42,7 @@ These inputs operate as secondary constraints. They adjust the positioning range
 
 ## 7. Adaptive structure
 
-Market Navigator is designed as a dynamic framework. As market structure evolves, the framework incorporate regime-relevant information, while preserving historical continuity. Adjustments are introduced only when broader market structure changes. Two characteristics define this process:
+Market Navigator is designed as a dynamic framework. As market structure evolves, the framework incorporates regime-relevant information, while preserving historical continuity. Adjustments are introduced only when broader market structure changes. Two characteristics define this process:
 - Continuity over replacement: updates refine the existing structure instead of resetting it, ensuring that historical positioning remains interpretable over time.
 - Path dependence: changes accumulate gradually, allowing the framework to adapt without abrupt shifts in behaviour or meaning.
 
@@ -53,3 +53,4 @@ Positioning values are not absolute. Interpretation depends on the identified ma
 ## Summary
 
 The method is intentionally context-first, conservative, and slow-moving. It prioritises cycle structure and strategic orientation over short-term responsiveness, providing a stable interpretive layer rather than a reactive decision mechanism.
+
