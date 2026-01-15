@@ -29,9 +29,9 @@ Included in the first publication:
 BTC Index v0.1 · ETH Index v0.1 · Altcoin Index v0.1  
 
 Active index versions:  
-BTC – v0.1 · Initial release · 2026-01  
-ETH – v0.1 · Initial release · 2026-01  
-Altcoin – v0.1 · Initial release · 2026-01
+BTC — v0.1 · Initial release · 2026-01  
+ETH — v0.1 · Initial release · 2026-01  
+Altcoin — v0.1 · Initial release · 2026-01
 
 ## Official presence
 
