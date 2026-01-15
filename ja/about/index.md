@@ -29,9 +29,9 @@ Market Landscape における主要なフレームワークは Market Navigation
 BTC v0.1 ・ ETH v0.1 ・ Altcoin v0.1  
 
 有効なインデックスのバージョン：
-BTC – v0.1 ・ Initial release ・ 2026-01  
-ETH – v0.1 ・ Initial release ・ 2026-01  
-Altcoin – v0.1 ・ Initial release ・ 2026-01
+BTC — v0.1 ・ Initial release ・ 2026-01  
+ETH — v0.1 ・ Initial release ・ 2026-01  
+Altcoin — v0.1 ・ Initial release ・ 2026-01
 
 ## 公式な掲載先
 
