@@ -23,9 +23,15 @@ Market Landscape における主要なフレームワークは Market Navigation
 
 ## 公開情報とバージョン管理
 
-初回公開: 2026-01  
-バージョン: v0.1  
-ステータス: 初期版  
+初回公開：2026-01  
+
+初回公開時に含まれていた内容  
+BTC v0.1 ・ ETH v0.1 ・ Altcoin v0.1  
+
+有効なインデックスのバージョン  
+BTC — v0.1 ・ Initial release ・ 2026-01  
+ETH — v0.1 ・ Initial release ・ 2026-01  
+Altcoin — v0.1 ・ Initial release ・ 2026-01
 
 ## 公式な掲載先
 
