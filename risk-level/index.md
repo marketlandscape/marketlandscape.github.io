@@ -7,7 +7,7 @@ lang: en
 
 ## Purpose of the risk level indicator
 
-Risk level expresses situational downside risk in the current market context.  It answers a practical question: if Bitcoin were to experience a meaningful drawdown (on the order of about 30%) from current levels, how severe could the downside be for a specific asset or asset class under current market conditions? It is not probability, not volatility, and not a trading signal. It describes downside amplification under stress, rather than predicting price movements.
+Risk level expresses situational downside risk in the current market context. It answers, in particular, a practical question: if Bitcoin were to experience a meaningful drawdown on the order of about 30 percent from current levels, how severe could the downside be for a specific asset or asset class under current market conditions? It is not probability, not volatility, and not a trading signal. It describes downside amplification under stress, rather than predicting price movements.
 
 ## Why different assets have different baseline risk
 
