@@ -15,8 +15,8 @@
 
   /* light */
   /* links */
-  --link: var(--heading);
-  --link-hover: var(--link);
+  --link: var(--text);
+  --link-hover: var(--text);
 
   /* surfaces */
   --pre-bg: #f8f8f8;
@@ -60,8 +60,8 @@
     --border: #3a3f4a;
     
     /* dark */
-    --link: var(--heading);
-    --link-hover: var(--link);
+    --link: var(--text);
+    --link-hover: var(--text);
 
     --pre-bg: #161a22;
 
@@ -140,8 +140,9 @@ small{
 
 a{
   color: var(--link);
-  text-decoration:none;
-  transition: color 0.15s ease;
+  font-weight: 500;
+  text-decoration: none;
+  transition: none;
 }
 
 a:hover,
