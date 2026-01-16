@@ -27,7 +27,7 @@ Lower-cap assets amplify Bitcoin downside most aggressively. In comparable Bitco
 
 ## How the risk level is calculated in practice  
 
-In practical terms, risk level combines structural sensitivity - how strongly an asset class has historically reacted to Bitcoin drawdowns - with current market conditions - how stretched, crowded, and reflexive positioning appears. Risk tends to remain relatively stable through much of the cycle and increases non-linearly as conditions deteriorate, keeping the measure focused on context and severity rather than short-term price noise.
+In practical terms, risk level combines structural sensitivity — how strongly an asset class has historically reacted to Bitcoin drawdowns — with current market conditions — how stretched, crowded, and reflexive positioning appears. Risk tends to remain relatively stable through much of the cycle and increases non-linearly as conditions deteriorate, keeping the measure focused on context and severity rather than short-term price noise.
 
 
 
