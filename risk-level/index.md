@@ -15,7 +15,7 @@ Bitcoin serves both as an asset within the framework and as its reference point.
 
 ## Structural risk differences across assets
 
-Risk is structurally uneven across crypto assets. When Bitcoin weakens, assets with lower liquidity and smaller market capitalization tend to fall more, and faster. Under comparable Bitcoin drawdowns, Ethereum has historically declined more than Bitcoin, large-cap altcoins more than Ethereum, and lower-cap assets most aggressively. Mid- and small-cap altcoins have repeatedly experienced losses of 60–90% or more in similar stress events, particularly in late-cycle conditions. These are recurring patterns across cycles, not rare outliers. These relationships have repeated across multiple post-2013 market cycles.
+Risk is structurally uneven across crypto assets. When Bitcoin weakens, assets with lower liquidity and smaller market capitalization tend to fall more, and faster. Under comparable Bitcoin drawdowns, Ethereum has historically declined more than Bitcoin, large-cap altcoins more than Ethereum, and lower-cap assets most aggressively. Mid- and small-cap altcoins have repeatedly experienced losses of 60–90% or more in similar stress events, particularly in late-cycle conditions. These relationships have repeated across multiple post-2013 market cycles.
 
 ## How the risk level is formed
 
