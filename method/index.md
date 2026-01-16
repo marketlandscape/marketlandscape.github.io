@@ -9,46 +9,29 @@ lang: en
 
 The indexes are not trading signals and not price-prediction models. They translate broad market conditions into a relative positioning scale. They describe where the market sits within its own historical structure, rather than attempting to forecast future price paths. Below are the core design principles.
 
-## 1. Market phase over short-term noise
+## Market cycle priority
 
-Cycle structure and regime context dominate interpretation. Daily and weekly volatility is intentionally down-weighted to prevent local price fluctuations from distorting structural positioning.
+The phase of the market cycle takes precedence over short-term price fluctuations. In the crypto market, the structure of the cycle and the current regime often carry more informational value than daily volatility or isolated price movements.
 
-## 2. Price as an anchor, not a forecast
+## Role of historical price behavior
 
-Recent price behaviour is used empirically. It anchors the framework to observed market reality, but is never treated as a predictive engine or extrapolated into future expectations.
+Historical price behavior provides useful signals, though it is not sufficient on its own to form a complete assessment. Past data serve as an empirical reference, helping to contextualize the current market state relative to previously observed regimes rather than to forecast future outcomes.
 
-## 3. Constrained forward expectations
+## Conservative use of price ranges
 
-Any forward-looking component is deliberately conservative and bounded. The method avoids narrative amplification, trend extrapolation, and speculative bias, especially in emotionally charged market phases.
+Any expected price ranges are intentionally constrained and non-speculative. Forecast-related elements are kept deliberately conservative to minimize the impact of narratives, noise, and hype on index calculations.
 
-## 4. Positioning, not execution
+## Structural adjustments
 
-The indexes inform directional positioning across market cycles. They do not attempt trade-level timing, entry optimisation, or execution precision.
+In addition to the primary cycle framework, macro-level adjustment layers may be applied when broader market conditions materially change. These layers refine positioning without overriding the core structure. Key examples include global M2 and related liquidity measures. 
 
-## 5. Stability over reactivity
+## Adaptive structure
 
-Index values evolve slowly by design. Persistence is favoured over responsiveness to sharp moves, supporting long-horizon strategies and reducing sensitivity to sentiment-driven market swings.
-
-## 6. Structural adjustments
-
-In addition to the primary cycle framework, explicit macro-level adjustment layers are applied when broader conditions materially change. These layers fine-tune positioning without overriding the core structure.
-
-Key examples include:
-- Global M2 and related liquidity aggregates, used to contextualise expansionary or contractionary liquidity regimes.
-- Macro regime indicators, capturing shifts in monetary or financial conditions.
-- Structural stress or compression measures, reflecting system-level pressure rather than asset-specific moves.
-
-These inputs operate as secondary constraints. They adjust the positioning range only when sustained macro divergence is observed.
-
-## 7. Adaptive structure
-
-Market Navigator is designed as a dynamic framework. As market structure evolves, the framework incorporates regime-relevant information, while preserving historical continuity. Adjustments are introduced only when broader market structure changes. Two characteristics define this process:
-- Continuity over replacement: updates refine the existing structure instead of resetting it, ensuring that historical positioning remains interpretable over time.
-- Path dependence: changes accumulate gradually, allowing the framework to adapt without abrupt shifts in behaviour or meaning.
+Market Navigator is designed as a dynamic model. As market structure evolves, the model incorporates information relevant to the market phase while preserving historical continuity. 
 
 ## Cycle-dependent interpretation
 
-Positioning values are not absolute. Interpretation depends on the identified market phase. The same numeric level may imply different risk characteristics in early expansion, late expansion, or contraction regimes. External phase identifiers ensure that readings are evaluated within the correct structural context.
+Interpretation depends on the identified market phase. The same numeric level may imply different risk characteristics in early expansion, late expansion, or contraction regimes. External phase identifiers ensure that readings are evaluated within the correct structural context.
 
 ## Summary
 
