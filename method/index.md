@@ -11,12 +11,12 @@ They translate broad market conditions into a relative positioning scale designe
 
 ## Cycle-first construction
 
-Index construction is anchored in market cycle structure. Cycle identification takes precedence over short-term volatility, local price patterns, or isolated events. In crypto markets, cycle phase has consistently carried more durable information than high-frequency price behavior. Historical price behavior is used as an empirical reference set. Liquidity and monetary aggregates such as global M2 are included to assess cycle strength and persistence, allowing the index to reflect meaningful structural shifts. The scale also embeds forward-looking ranges that reflect what is possible under comparable market conditions.
+Index construction is anchored in market cycle structure. Cycle identification takes precedence over short-term volatility, local price patterns or isolated events. In crypto markets, cycle phase has consistently carried more durable information than high-frequency price behavior. Historical price behavior is used as an empirical reference set. Liquidity and monetary aggregates such as global M2 are included to assess cycle phases, allowing the index to reflect meaningful shifts. The scale also embeds forward-looking ranges that reflect what is possible under comparable market conditions.
 
 ## Risk–reward asymmetries
 
-Different regions of the scale imply structurally different risk–reward asymmetries. Early-cycle positioning has historically compressed downside while expanding optionality; late-cycle positioning tends to narrow upside while increasing fragility. The index makes these asymmetries visible without prescribing actions.
+Different regions of the scale imply structurally different risk–reward asymmetries. Early-cycle positioning has historically compressed downside while expanding optionality; late-cycle positioning tends to narrow upside while increasing fragility. The index makes these asymmetries visible.
 
 ## Interpretation and use
 
-The practical role of the scale is decision framing rather than decision execution. By anchoring interpretation in cycle context, it helps reduce common contextual errors — such as over-commitment during extended conditions or under-exposure during recovery phases — and supports more consistent reasoning across market phases.
+The practical role of the scale is decision framing rather than decision execution. By anchoring interpretation in cycle context, it helps reduce common contextual errors — such as over-commitment during extended conditions or under-exposure during recovery phases — and supports more consistent reasoning.
