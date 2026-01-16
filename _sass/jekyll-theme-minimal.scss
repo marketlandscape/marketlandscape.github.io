@@ -15,7 +15,7 @@
 
   /* light */
   /* links */
-  --link: color-mix(in srgb, var(--text) 85%, transparent);
+  --link: color-mix(in srgb, var(--text) 75%, transparent);
   --link-hover: var(--link);
 
   /* surfaces */
@@ -60,7 +60,7 @@
     --border: #3a3f4a;
     
     /* dark */
-    --link: color-mix(in srgb, var(--text) 85%, transparent);
+    --link: color-mix(in srgb, var(--text) 75%, transparent);
     --link-hover: var(--link);
 
     --pre-bg: #161a22;
