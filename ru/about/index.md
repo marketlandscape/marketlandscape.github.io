@@ -35,7 +35,7 @@ Altcoin — v0.1 · Initial release · 2026-01
 
 ## Официальный сайт
 
-Этот проект публикуется исключительно на **[marketlandscape.github.io](https://marketlandscape.github.io/ru/)**. Никакие другие веб-сайты или домены, включая .com, .io и т. д., не представляют данный проект.
+Этот проект публикуется исключительно на [marketlandscape.github.io](https://marketlandscape.github.io/ru/). Никакие другие веб-сайты или домены, включая .com, .io и т. д., не представляют данный проект.
 
 ## Контакт
 
