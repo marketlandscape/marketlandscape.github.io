@@ -1,6 +1,10 @@
 
 - title: DASHBOARD
   url: /
+- title: SCALE
+  url: /scale/
+- title: RISK LEVEL
+  url: /risk-level/
 - title: METHOD
   url: /method/
 - title: ABOUT
