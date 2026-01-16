@@ -5,7 +5,7 @@ lang: en
 
 # Scale
 
-The index uses a 1–25 scale organised into five zones, designed to describe market conditions within a broader cycle rather than fine-grained timing. The scale is read directionally and comparatively, with emphasis on regime context. The five zones:  
+The index uses a 1–25 scale organised into five zones, designed to describe market conditions within a broader cycle rather than fine-grained timing. The scale is read directionally and comparatively, with emphasis on regime context. The five zones are described below. 
 
 - Favorable (1–5) — historically strong risk–reward conditions, where downside is more contained and conditions have tended to favour patient positioning.
 - Improving (6–10) — conditions are strengthening; participation and confidence build gradually.
