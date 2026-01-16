@@ -5,15 +5,15 @@ lang: en
 
 # About
 
-## Purpose
+### Purpose
 
 Market Landscape is intended to provide a calmer, context-oriented way of looking at markets, with the aim of reducing common behavioural mistakes such as panic-selling during drawdowns or buying into market euphoria. Many decisions made by retail participants are shaped by pressure rather than analysis: fear, excitement, and constant noise in between. The goal is to reduce that pressure by offering stable reference points rather than fast reactions.
 
-## Approach
+### Approach
 
 The tools published on this site focus on market context and broad positioning within longer cycles. They are designed to move slowly and to be read as ranges, not precise signals. This is intentional. Excess precision and frequent updates often encourage unnecessary action, while slower frameworks support patience and proportional thinking.
 
-## Framework
+### Framework
 
 The primary framework developed within Market Landscape is the Market Navigation Index. It expresses market positioning on a 25-point contextual scale, describing where the market sits relative to its own historical structure rather than to absolute price levels. The index functions as a navigation and orientation tool for understanding cycle phases and regime transitions.
 
