@@ -7,7 +7,7 @@ lang: en
 
 ## What the risk level measures
 
-Risk level expresses situational downside risk in the current market context. It answers a practical question: if Bitcoin were to experience a drawdown on the order of 30% from current levels, how severe could the downside be for a given asset or asset class under current conditions? It is not a probability estimate, not a volatility measure, and not a trading signal. It describes downside amplification under stress rather than forecasting price movements.
+Risk level expresses situational downside risk in the current market context. It answers a practical question: if Bitcoin were to experience a drawdown on the order of 30% from current levels, how severe could the downside be for a given asset or asset class under current conditions? It is not a probability estimate, not a volatility measure, and not a trading signal. It describes downside amplification under stress rather than forecasting price movements. The risk level is a complementary indicator that adds downside severity context to the navigation index and sharpens its interpretation.
 
 ## Bitcoin as the stress anchor
 
