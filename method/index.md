@@ -19,4 +19,4 @@ Different regions of the scale imply structurally different risk–reward asymme
 
 ## Interpretation and use
 
-The practical role of the scale is decision framing rather than decision execution. It situates market interpretation within a cycle-based context, reducing common contextual errors such as under-exposure during recovery phases or over-commitment during extended conditions, and supporting more consistent reasoning. By expressing market conditions through structured ranges, the scale lowers the barrier for retail investors to interpret how different price levels relate to cycle positioning and long-term investment context.
+The practical role of the scale is decision framing within a cycle-based structure, reducing common contextual errors such as under-exposure early in the market cycle or over-commitment in later mature phases. By expressing market conditions through structured ranges, the scale links price levels to cycle positioning.
