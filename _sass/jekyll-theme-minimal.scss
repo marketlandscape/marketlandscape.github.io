@@ -16,7 +16,7 @@
   /* light */
   /* links */
   --link: #0969DA;
-  --link-hover: #0550AE;
+  --link-hover: var(--link);
 
   /* surfaces */
   --pre-bg: #f8f8f8;
@@ -61,7 +61,7 @@
     
     /* dark */
     --link: #58A6FF;
-    --link-hover: #79C0FF;
+    --link-hover: var(--link);
 
     --pre-bg: #161a22;
 
