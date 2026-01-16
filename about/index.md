@@ -7,7 +7,7 @@ lang: en
 
 ## Purpose
 
-Market Landscape is intended to provide a calmer, context-oriented way of looking at markets, with the aim of reducing common behavioural mistakes such as panic-selling during drawdowns or buying into market euphoria. Many decisions made by retail participants are shaped by pressure rather than analysis: fear, excitement, and constant noise in between. The goal is to reduce that pressure by offering stable reference points rather than fast reactions.
+Market Landscape is intended to provide a calmer, context-oriented way of looking at markets, where decision pressure and behavioural distortions tend to increase during both drawdowns and late-cycle advances. Many decisions made by retail participants are shaped by pressure rather than analysis: fear, excitement, and constant noise in between. The goal is to reduce that pressure by offering stable reference points rather than fast reactions.
 
 ## Approach
 
@@ -19,7 +19,7 @@ The primary framework developed within Market Landscape is the Market Navigation
 
 ## Scope and limitations
 
-This project is not a trading platform and does not provide financial or investment advice. Nothing published here is intended to indicate specific buying or selling decisions. The purpose is to support interpretation, not execution, and to help reduce common behavioural errors by anchoring market reading in context rather than emotion.
+This project is not a trading platform and does not provide financial or investment advice. The purpose is to support interpretation, not execution, and to help reduce common behavioural errors by anchoring market reading in context rather than emotion.
 
 ## Publication and versioning
 
