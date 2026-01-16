@@ -15,11 +15,11 @@ The phase of the market cycle takes precedence over short-term price fluctuation
 
 ## Role of historical price behavior
 
-Historical price behavior provides useful signals, though it is not sufficient on its own to form a complete assessment. Past data serve as an empirical reference, helping to contextualize the current market state relative to previously observed regimes rather than to forecast future outcomes.
+Historical price behavior provides useful signals, though it is not sufficient on its own to form a complete assessment. Past data serve as an empirical reference, helping to contextualize the current market state relative to previously observed price behaviour rather than to forecast future outcomes.
 
 ## Conservative use of price ranges
 
-Any expected price ranges are intentionally constrained and non-speculative. Forecast-related elements are kept deliberately conservative to minimize the impact of narratives, noise, and hype on index calculations.
+Any expected price ranges are intentionally constrained and non-speculative. Forecast-related elements are kept deliberately conservative to minimize the impact of narratives, noise and hype on index calculations.
 
 ## Structural adjustments
 
