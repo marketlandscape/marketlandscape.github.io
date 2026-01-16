@@ -5,35 +5,18 @@ lang: en
 
 # Method
 
-## What the indexes are – and are not
+## What the indexes represent  
 
-The indexes are not trading signals and not price-prediction models. They translate broad market conditions into a relative positioning scale. They describe where the market sits within its own historical structure, rather than attempting to forecast future price paths. Below are the core design principles.
+They translate broad market conditions into a relative positioning scale designed to orient users within the market cycle. The scale provides a common reference framework for interpreting current conditions by situating them within their historical and cyclical structure.
 
-## Market cycle priority
+## Risk–reward asymmetries
 
-The phase of the market cycle takes precedence over short-term price fluctuations. In the crypto market, the structure of the cycle and the current regime often carry more informational value than daily volatility or isolated price movements.
+Different regions of the scale imply structurally different risk–reward asymmetries. Early-cycle positioning has historically compressed downside while expanding optionality; late-cycle positioning tends to narrow upside while increasing fragility. The index makes these asymmetries visible without prescribing actions.
 
-## Role of historical price behavior
+## Cycle-first construction
 
-Historical price behavior provides useful signals, though it is not sufficient on its own to form a complete assessment. Past data serve as an empirical reference, helping to contextualize the current market state relative to previously observed price behaviour rather than to forecast future outcomes.
+Index construction is anchored in market cycle structure. Cycle identification takes precedence over short-term volatility, local price patterns, or isolated events. In crypto markets, cycle phase has consistently carried more durable information than high-frequency price behavior. Historical price behavior is used as an empirical reference set. Liquidity and monetary aggregates such as global M2 are included to assess cycle strength and persistence, allowing the index to reflect meaningful structural shifts. The scale also embeds forward-looking ranges that reflect what is possible under comparable market conditions.
 
-## Conservative use of price ranges
+## Interpretation and use
 
-Any expected price ranges are intentionally constrained and non-speculative. Forecast-related elements are kept deliberately conservative to minimize the impact of narratives, noise and hype on index calculations.
-
-## Structural adjustments
-
-In addition to the primary cycle framework, macro-level adjustment layers may be applied when broader market conditions materially change. These layers refine positioning without overriding the core structure. Key examples include global M2 and related liquidity measures. 
-
-## Adaptive structure
-
-Market Navigator is designed as a dynamic model. As market structure evolves, the model incorporates information relevant to the market phase while preserving historical continuity. 
-
-## Cycle-dependent interpretation
-
-Interpretation depends on the identified market phase. The same numeric level may imply different risk characteristics in early expansion, late expansion, or contraction regimes. External phase identifiers ensure that readings are evaluated within the correct structural context.
-
-## Summary
-
-The method is intentionally context-first, conservative, and slow-moving. It prioritises cycle structure and strategic orientation over short-term responsiveness, providing a stable interpretive layer rather than a reactive decision mechanism.
-
+The practical role of the scale is decision framing rather than decision execution. By anchoring interpretation in cycle context, it helps reduce common contextual errors — such as over-commitment during extended conditions or under-exposure during recovery phases — and supports more consistent reasoning across market phases.
