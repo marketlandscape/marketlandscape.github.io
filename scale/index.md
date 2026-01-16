@@ -14,8 +14,8 @@ The five zones:
 - Elevated Risk (16–20) — conditions become stretched; sensitivity to volatility and adverse moves rises.
 - Excess (21–25) — increasingly speculative environments where fragility dominates despite strong narratives.
 
-On the altcoin scale, these zones are expressed through practical positioning labels that mirror this progression: entry, scale in, hold, reduce, and exit. The labels do not prescribe action, but reflect how exposure is typically managed as conditions move from favorable toward excess.
+On the altcoin scale, these zones are expressed through practical positioning labels that mirror this progression: entry, scale in, hold, reduce, and exit. 
 
 Within this structure, each zone spans five positions, which indicate how mature the current environment is. Early values reflect entry into a zone, mid-zone values typically capture consolidation or digestion where conditions persist without directional progress, and later values signal increasing proximity to a transition into the next zone.
 
-For Bitcoin, the same structural scale is used, though the upper-zone labels are framed differently to reflect its distinct role. Instead of reduce and exit, the later stages emphasise conviction and HODL, aligning with the never sell your Bitcoin long-term holding principle across cycles while still leaving room for individual strategy and interpretation.
+For Bitcoin, the same structural scale is used, though the upper-zone labels are framed differently to reflect its distinct role. Instead of reduce and exit, the later stages emphasise conviction and HODL, aligning with the never sell your Bitcoin long-term holding principle across cycles.
