@@ -13,12 +13,14 @@ title: Logo Preview
   width: 150px;
   height: 150px;
   display: flex;
-  align-items: center;      /* vertical centering */
-  justify-content: center;  /* horizontal centering */
+  align-items: center;
+  justify-content: center;
+  border-radius: 10%;
+  box-sizing: border-box;
 }
 
 .logo-box.dark {
-  background-color: #242424ff;
+  background-color: #323232ff;
 }
 
 .logo-box.light {
