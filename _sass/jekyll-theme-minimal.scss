@@ -100,7 +100,7 @@ html{
 body{
   margin:0;
   padding: clamp(14px, 4vw, 50px);
-  font: 15px/1.5 "Bitter", serif;
+  font: 15px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: var(--text);
   background: var(--bg);
   word-wrap: break-word;
@@ -374,6 +374,7 @@ kbd{
 .market-mini{
   margin: 0 0 14px 0;
   padding: 0 0 12px 0;
+  font-family: system-ui, -apple-system, sans-serif;
   font-size: 0.9em;
   line-height: 1.2;
   opacity: 0.75;
@@ -409,6 +410,7 @@ kbd{
   height:150px;
   background-repeat:no-repeat;
   background-size:360px 150px;
+  font-family:system-ui,-apple-system,sans-serif;
 }
 
 .box-title{
@@ -443,6 +445,7 @@ kbd{
   position:relative;
   width:360px;
   height:150px;
+  font-family:system-ui,-apple-system,sans-serif;
 }
 
 @media (prefers-color-scheme: light){
