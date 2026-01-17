@@ -17,6 +17,10 @@ title: Logo Preview
   justify-content: center;
   border-radius: 10%;
   box-sizing: border-box;
+
+  border: none;
+  outline: none;
+  box-shadow: none;
 }
 
 .logo-box.dark {
@@ -25,7 +29,6 @@ title: Logo Preview
 
 .logo-box.light {
   background-color: #ffffff;
-  border: 1px solid #e0e0e0;
 }
 
 .logo-box img {
