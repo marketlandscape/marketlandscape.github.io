@@ -7,7 +7,7 @@ lang: en
 
 ## What the indexes represent  
 
-They translate broad market conditions into a relative positioning scale designed to orient users within the market cycle. The scale provides a common reference framework for interpreting current conditions by situating them within their historical and cyclical structure.
+They translate broad market conditions into a relative positioning scale designed to orient users within the market cycle. The scale provides a common reference framework for interpreting current conditions by situating them within their historical and cyclical context.
 
 ## Cycle-first construction
 
