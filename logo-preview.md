@@ -19,7 +19,7 @@ title: Logo Preview
     <img
       src="assets/img/logo-light.svg"
       alt="Theme-aware logo"
-      style="max-width:100%;max-height:100%;opacity:0.75;display:block;"
+      style="max-width:100%;max-height:100%;opacity:0.9;display:block;"
     >
   </picture>
 </div>
