@@ -24,7 +24,7 @@ title: Logo Preview
 }
 
 .logo-box.dark {
-  background-color: #242424ff;
+  background-color: #242424;
 }
 
 .logo-box.light {
