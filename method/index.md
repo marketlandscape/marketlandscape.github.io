@@ -11,7 +11,7 @@ They translate broad market conditions into a relative positioning scale designe
 
 ## Cycle-first construction
 
-Index construction is anchored in market cycle structure. Cycle identification takes precedence over short-term volatility, local price patterns or isolated events. In crypto markets, cycle phase has consistently carried more durable information than high-frequency price behavior. Historical price behavior is used as an empirical reference set. Liquidity and monetary aggregates such as global M2 are included to assess cycle phases, allowing the index to reflect meaningful shifts. The scale also embeds ranges derived from historically observed outcomes under comparable market conditions, defining plausible envelopes.
+Index construction is based on the market cycle structure. Cycle identification takes precedence over short-term volatility, local price patterns or isolated events. In crypto markets, cycle phase has consistently carried more durable information than high-frequency price behavior. Historical price behavior is used as an empirical reference set. Liquidity and monetary aggregates such as global M2 are included to assess cycle phases, allowing the index to reflect meaningful shifts. The scale also embeds ranges derived from historically observed outcomes under comparable market conditions, defining plausible envelopes.
 
 ## Interpretation and use
 
