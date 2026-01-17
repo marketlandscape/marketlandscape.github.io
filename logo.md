@@ -38,6 +38,6 @@ title: Logo Preview
     <img src="assets/img/logo-dark.svg" alt="Logo on dark background">
   </div>
   <div class="logo-box light">
-    <img src="assets/img/logo-dark.svg" alt="Logo on light background">
+    <img src="assets/img/logo-light.svg" alt="Logo on light background">
   </div>
 </div>
