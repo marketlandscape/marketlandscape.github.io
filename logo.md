@@ -10,25 +10,32 @@ title: Logo Preview
 }
 
 .logo-box {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 10%;
   box-sizing: border-box;
-
   border: none;
   outline: none;
   box-shadow: none;
 }
 
 .logo-box.dark {
-  background-color: #242424;
+  background-color: #323232ff;
 }
 
 .logo-box.light {
   background-color: #ffffff;
+}
+
+.logo-box.dark img {
+  opacity: 1;
+}
+
+.logo-box.light img {
+  opacity: 0.75;
 }
 
 .logo-box img {
