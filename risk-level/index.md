@@ -11,9 +11,9 @@ Risk level expresses situational downside risk in the current market context. It
 
 ## Bitcoin as the stress anchor
 
-Bitcoin serves both as an asset within the framework and as its reference point. For Bitcoin itself, risk level reflects timing-related downside: the magnitude of drawdowns that have historically occurred before durable recoveries. Pullbacks of around 30% are common across many cycle phases, while deeper declines in the 40–60% range tend to cluster near major cycle transitions. This observed behavior anchors the entire risk scale.
+Bitcoin functions both as an asset within the framework and as its reference point. For Bitcoin itself, the risk level reflects the depth of drawdowns that have historically occurred prior to durable recoveries. Declines on the order of 20–30% represent typical stress events observed across multiple phases of the cycle, while deeper drawdowns in the 40–60% range tend to occur near inflection points and transitional phases. This observed behavior serves as the foundation for the entire risk scale.
 
 ## Structural risk differences across assets
 
-Risk is structurally uneven across crypto assets. When Bitcoin weakens, assets with lower liquidity and smaller market capitalization tend to fall more, and faster. Under comparable Bitcoin drawdowns, Ethereum has historically declined more than Bitcoin, large-cap altcoins more than Ethereum, and lower-cap assets most aggressively. Mid- and small-cap altcoins have repeatedly experienced losses of 60–90% or more in similar stress events, particularly in late-cycle conditions. 
+Downside risk is structurally uneven across crypto assets. When Bitcoin declines, assets with lower liquidity and higher sensitivity to capital outflows tend to fall more sharply and more rapidly. Under comparable Bitcoin drawdowns, Ethereum has historically experienced deeper declines than Bitcoin, while altcoins have repeatedly experienced drawdowns in the 60–90% range, particularly in later stages of the cycle.
 
