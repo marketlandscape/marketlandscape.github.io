@@ -37,7 +37,7 @@ This project is published exclusively at [marketlandscape.github.io](https://mar
 
 marketlandscape [at] proton [dot] me
 
-<!-- Markdown-compatible HTML block -->
+<!-- Markdown-compatible HTML block with top padding added -->
 
 <style>
   .logo-box {
@@ -48,6 +48,9 @@ marketlandscape [at] proton [dot] me
     align-items: center;
     justify-content: center;
     background: transparent;
+
+    padding-top: 8px;          /* ← added */
+    box-sizing: border-box;    /* keeps overall size stable */
   }
 
   .theme-logo {
@@ -67,14 +70,15 @@ marketlandscape [at] proton [dot] me
 <div class="logo-box">
   <picture>
     <source
-      srcset="/assets/img/logo-ml-dark-box.svg"
+      srcset="./assets/img/logo-ml-dark-box.svg"
       media="(prefers-color-scheme: dark)"
     >
     <img
       class="theme-logo"
-      src="/assets/img/logo-ml-light-box.svg"
+      src="./assets/img/logo-ml-light-box.svg"
       alt="Theme-aware logo"
     >
   </picture>
 </div>
+
 
