@@ -37,56 +37,46 @@ This project is published exclusively at [marketlandscape.github.io](https://mar
 
 marketlandscape [at] proton [dot] me
 
+<br>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Theme-aware logo opacity</title>
+<!-- Markdown-compatible HTML block -->
 
-  <style>
-    /* container */
-    .logo-box {
-      width: 60px;
-      height: 60px;
-      border-radius: 10%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: transparent;
-    }
+<style>
+  .logo-box {
+    width: 60px;
+    height: 60px;
+    border-radius: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+  }
 
-    /* shared image rules */
+  .theme-logo {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    opacity: 0.95; /* light */
+  }
+
+  @media (prefers-color-scheme: dark) {
     .theme-logo {
-      max-width: 100%;
-      max-height: 100%;
-      display: block;
-      opacity: 0.95; /* light theme default */
+      opacity: 0.85; /* dark */
     }
+  }
+</style>
 
-    /* dark theme override */
-    @media (prefers-color-scheme: dark) {
-      .theme-logo {
-        opacity: 0.85;
-      }
-    }
-  </style>
-</head>
+<div class="logo-box">
+  <picture>
+    <source
+      srcset="./assets/img/logo-ml-dark-box.svg"
+      media="(prefers-color-scheme: dark)"
+    >
+    <img
+      class="theme-logo"
+      src="./assets/img/logo-ml-light-box.svg"
+      alt="Theme-aware logo"
+    >
+  </picture>
+</div>
 
-<body>
-  <div class="logo-box">
-    <picture>
-      <source
-        srcset="/assets/img/logo-ml-dark-box.svg"
-        media="(prefers-color-scheme: dark)"
-      >
-      <img
-        class="theme-logo"
-        src="/assets/img/logo-ml-light-box.svg"
-        alt="Theme-aware logo"
-      >
-    </picture>
-  </div>
-</body>
-</html>
