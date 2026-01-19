@@ -37,8 +37,6 @@ This project is published exclusively at [marketlandscape.github.io](https://mar
 
 marketlandscape [at] proton [dot] me
 
-<br>
-
 <!-- Markdown-compatible HTML block -->
 
 <style>
