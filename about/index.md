@@ -7,15 +7,15 @@ lang: en
 
 # Purpose
 
-Market Landscape exists to reduce decision pressure in market interpretation. Periods of drawdowns and late-cycle advances often amplify emotional responses and reactive behaviour. The purpose of the project is to counter this by providing stable reference points that help frame market conditions without relying on short-term signals.
+Market Landscape is intended to provide a calmer, context-oriented way of looking at markets, where decision pressure and behavioural distortions tend to increase during both drawdowns and late-cycle advances. Many decisions made by retail participants are shaped by pressure rather than analysis: fear, excitement, and constant noise in between. The goal is to counter this by providing stable reference points that help frame market conditions using data interpreted in a broader cyclical context.
 
 # Approach
 
-The site uses slow-moving frameworks to describe market positioning within broader historical and cyclical structures. The core framework, the Market Navigation Index, expresses positioning on a 25-point scale relative to the market’s own cycle rather than absolute price levels. Tools are intended to be read directionally and as ranges, making regime shifts and risk–reward asymmetries visible while discouraging unnecessary precision and frequent action.
+The primary framework developed within Market Landscape is the Market Navigation Index. It expresses market positioning on a 25-point contextual scale, describing where the market sits relative to its own historical and cyclical position rather than absolute price levels. More broadly, Market Landscape functions as a strategic navigation framework, helping distinguish market regimes and clarify risk–reward asymmetries across a cycle.
 
 # Scope
 
-Market Landscape is an interpretative framework, not a trading platform, and does not provide financial or investment advice. Its scope is cycle-level orientation and analysis, supporting understanding and focusing on structural market context.
+This project is not a trading platform and does not provide financial or investment advice. It is an interpretative framework designed to support practical market decisions through cycle-level perspective and contextual understanding.
 
 ## Publication and versioning
 
