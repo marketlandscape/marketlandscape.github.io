@@ -15,7 +15,7 @@ The primary framework developed within Market Landscape is the Market Navigation
 
 # Scope
 
-This project is not a trading platform and does not provide financial or investment advice. It is an interpretative framework designed to support practical market decisions through cycle-level perspective and contextual understanding.
+This project is not a trading platform and does not provide financial or investment advice. It is an interpretative framework designed to inform practical market decisions through cycle-level perspective and contextual understanding.
 
 ## Publication and versioning
 
