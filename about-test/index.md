@@ -49,7 +49,7 @@ marketlandscape [at] proton [dot] me
     justify-content: center;
     background: transparent;
 
-    padding-top: 8px;          /* ← added */
+    padding-top: 12px;          /* ← added */
     box-sizing: border-box;    /* keeps overall size stable */
   }
 
