@@ -78,12 +78,12 @@ marketlandscape [at] proton [dot] me
   <div class="logo-box">
     <picture>
       <source
-        srcset="assets/img/logo-ml-dark-box.svg"
+        srcset="/assets/img/logo-ml-dark-box.svg"
         media="(prefers-color-scheme: dark)"
       >
       <img
         class="theme-logo"
-        src="assets/img/logo-ml-light-box.svg"
+        src="/assets/img/logo-ml-light-box.svg"
         alt="Theme-aware logo"
       >
     </picture>
