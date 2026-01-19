@@ -5,7 +5,7 @@ lang: en
 
 # Scale
 
-The index uses a 1–25 scale organised into five zones, designed to describe market conditions within a broader cycle rather than fine-grained timing. The scale is read directionally and comparatively, with emphasis on regime context. The five zones are defined below. 
+The index uses a 1–25 scale organised into five zones, designed to describe market conditions within a broader market cycle rather than fine-grained timing. The scale is read directionally and comparatively, with emphasis on regime context. The five zones are defined below. 
 
 - Favorable (1–5) — historically strong risk–reward conditions, where downside is more contained and conditions have tended to favour patient positioning.
 - Improving (6–10) — conditions are strengthening; participation and confidence build gradually.
@@ -17,4 +17,4 @@ On the altcoin scale, these zones are expressed through practical positioning la
 
 Within this structure, each zone spans five positions, which indicate how mature the current environment is. Early values reflect entry into a zone, mid-zone values typically capture consolidation or digestion where conditions persist without directional progress, and later values signal increasing proximity to a transition into the next zone.
 
-For Bitcoin, the same structural scale is used, though the upper-zone labels are framed differently to reflect its distinct role. Instead of reduce and exit, the later stages emphasise conviction and HODL, aligning with the never sell your Bitcoin long-term holding principle across cycles.
+For Bitcoin, the same structural scale is applied, with upper-zone labels adjusted to reflect its distinct long-term role. Rather than emphasising reduction or exit, later stages describe sustained conviction and long-term holding, indicating environments where structural ownership has historically been maintained under elevated volatility, with an expectation of significant short-term drawdowns. These labels describe positioning tendencies under specific market regimes, not prescriptive holding behaviour.
