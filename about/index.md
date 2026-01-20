@@ -37,7 +37,7 @@ This project is published exclusively at [marketlandscape.github.io](https://mar
 
 marketlandscape [at] proton [dot] me
 
-
+<!--
 <style>
   .logo-box {
     display: inline-flex;
@@ -66,7 +66,7 @@ marketlandscape [at] proton [dot] me
 </style>
 
 <div class="logo-box">
-  <!-- ML logo -->
+
   <picture>
     <source srcset="/assets/img/ml-dark-standard.svg"
             media="(prefers-color-scheme: dark)">
@@ -75,7 +75,6 @@ marketlandscape [at] proton [dot] me
          alt="ML logo">
   </picture>
 
-  <!-- NI logo -->
   <picture>
     <source srcset="/assets/img/ni-dark-standard.svg"
             media="(prefers-color-scheme: dark)">
@@ -84,4 +83,5 @@ marketlandscape [at] proton [dot] me
          alt="NI logo">
   </picture>
 </div>
+-->
 
