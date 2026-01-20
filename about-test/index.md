@@ -39,44 +39,62 @@ marketlandscape [at] proton [dot] me
 
 <!-- Markdown-compatible HTML block with top padding added -->
 
+<!-- Markdown-compatible HTML block with two theme-aware logos -->
+
 <style>
   .logo-box {
-    width: 60px;
+    width: auto;
     height: 60px;
     border-radius: 10%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: transparent;
 
-    padding-top: 12px;          /* ← added */
-    box-sizing: border-box;    /* keeps overall size stable */
+    padding-top: 8px;
+    box-sizing: border-box;
+
+    gap: 8px;                 /* space between images */
+    background: transparent;
   }
 
   .theme-logo {
-    max-width: 100%;
+    max-width: 60px;
     max-height: 100%;
     display: block;
-    opacity: 0.95; /* light */
+    opacity: 0.95;            /* light */
   }
 
   @media (prefers-color-scheme: dark) {
     .theme-logo {
-      opacity: 0.85; /* dark */
+      opacity: 0.85;          /* dark */
     }
   }
 </style>
 
 <div class="logo-box">
+  <!-- first logo -->
   <picture>
     <source
-      srcset="/assets/img/logo-ml-dark-box.svg"
+      srcset="/assets/img/ml-dark-standard.svg"
       media="(prefers-color-scheme: dark)"
     >
     <img
       class="theme-logo"
-      src="/assets/img/logo-ml-light-box.svg"
-      alt="Theme-aware logo"
+      src="/assets/img/ml-light-standard.svg"
+      alt="ML logo"
+    >
+  </picture>
+
+  <!-- second logo -->
+  <picture>
+    <source
+      srcset="/assets/img/ni-dark-standard.svg"
+      media="(prefers-color-scheme: dark)"
+    >
+    <img
+      class="theme-logo"
+      src="/assets/img/ni-light-standard.svg"
+      alt="NI logo"
     >
   </picture>
 </div>
