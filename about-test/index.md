@@ -37,23 +37,18 @@ This project is published exclusively at [marketlandscape.github.io](https://mar
 
 marketlandscape [at] proton [dot] me
 
-<!-- Markdown-compatible HTML block with top padding added -->
-
-<!-- Markdown-compatible HTML block with two theme-aware logos -->
+<!-- fixed, stable, left-aligned, text-like -->
 
 <style>
   .logo-box {
-    width: auto;
-    height: 60px;
-    border-radius: 10%;
-    display: flex;
+    display: inline-flex;      /* behave like text */
     align-items: center;
-    justify-content: center;
 
+    height: 60px;
     padding-top: 8px;
     box-sizing: border-box;
 
-    gap: 8px;                 /* space between images */
+    gap: 24px;                 /* larger gap */
     background: transparent;
   }
 
@@ -61,42 +56,31 @@ marketlandscape [at] proton [dot] me
     max-width: 60px;
     max-height: 100%;
     display: block;
-    opacity: 0.95;            /* light */
+    opacity: 0.95;             /* light */
   }
 
   @media (prefers-color-scheme: dark) {
     .theme-logo {
-      opacity: 0.85;          /* dark */
+      opacity: 0.85;           /* dark */
     }
   }
 </style>
 
 <div class="logo-box">
-  <!-- first logo -->
   <picture>
-    <source
-      srcset="/assets/img/ml-dark-standard.svg"
-      media="(prefers-color-scheme: dark)"
-    >
-    <img
-      class="theme-logo"
-      src="/assets/img/ml-light-standard.svg"
-      alt="ML logo"
-    >
+    <source srcset="/assets/img/ml-dark-standard.svg"
+            media="(prefers-color-scheme: dark)">
+    <img class="theme-logo"
+         src="/assets/img/ml-light-standard.svg"
+         alt="ML logo">
   </picture>
 
-  <!-- second logo -->
   <picture>
-    <source
-      srcset="/assets/img/ni-dark-standard.svg"
-      media="(prefers-color-scheme: dark)"
-    >
-    <img
-      class="theme-logo"
-      src="/assets/img/ni-light-standard.svg"
-      alt="NI logo"
-    >
+    <source srcset="/assets/img/ni-dark-standard.svg"
+            media="(prefers-color-scheme: dark)">
+    <img class="theme-logo"
+         src="/assets/img/ni-light-standard.svg"
+         alt="NI logo">
   </picture>
 </div>
-
 
