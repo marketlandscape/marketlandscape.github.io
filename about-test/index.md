@@ -37,18 +37,18 @@ This project is published exclusively at [marketlandscape.github.io](https://mar
 
 marketlandscape [at] proton [dot] me
 
-<!-- fixed, stable, left-aligned, text-like -->
+<!-- fixed, stable, left-aligned, three logos -->
 
 <style>
   .logo-box {
-    display: inline-flex;      /* behave like text */
+    display: inline-flex;
     align-items: center;
 
     height: 60px;
     padding-top: 24px;
     box-sizing: border-box;
 
-    gap: 16px;                 /* larger gap */
+    gap: 16px;
     background: transparent;
   }
 
@@ -67,6 +67,16 @@ marketlandscape [at] proton [dot] me
 </style>
 
 <div class="logo-box">
+  <!-- new first (box) logo -->
+  <picture>
+    <source srcset="/assets/img/logo-dark-box.svg"
+            media="(prefers-color-scheme: dark)">
+    <img class="theme-logo"
+         src="/assets/img/logo-light-box.svg"
+         alt="Box logo">
+  </picture>
+
+  <!-- ML logo -->
   <picture>
     <source srcset="/assets/img/ml-dark-standard.svg"
             media="(prefers-color-scheme: dark)">
@@ -75,6 +85,7 @@ marketlandscape [at] proton [dot] me
          alt="ML logo">
   </picture>
 
+  <!-- NI logo -->
   <picture>
     <source srcset="/assets/img/ni-dark-standard.svg"
             media="(prefers-color-scheme: dark)">
@@ -83,4 +94,5 @@ marketlandscape [at] proton [dot] me
          alt="NI logo">
   </picture>
 </div>
+
 
