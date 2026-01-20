@@ -45,7 +45,7 @@ marketlandscape [at] proton [dot] me
     align-items: center;
 
     height: 60px;
-    padding-top: 8px;
+    padding-top: 16px;
     box-sizing: border-box;
 
     gap: 16px;                 /* larger gap */
