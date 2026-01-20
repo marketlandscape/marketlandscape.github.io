@@ -43,7 +43,7 @@ marketlandscape [at] proton [dot] me
     display: inline-flex;
     align-items: center;
 
-    height: 50px;
+    height: 60px;
     padding-top: 24px;
     box-sizing: border-box;
 
@@ -52,7 +52,7 @@ marketlandscape [at] proton [dot] me
   }
 
   .theme-logo {
-    max-width: 50px;
+    max-width: 60px;
     max-height: 100%;
     display: block;
     opacity: 0.75;             /* light */
