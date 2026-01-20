@@ -56,7 +56,7 @@ marketlandscape [at] proton [dot] me
     max-width: 60px;
     max-height: 100%;
     display: block;
-    opacity: 0.8;             /* light */
+    opacity: 0.85;             /* light */
   }
 
   @media (prefers-color-scheme: dark) {
