@@ -1,8 +1,8 @@
-<!-- index2.html (FULL FILE, PAGE-LOCAL GRID ONLY) -->
+<!-- experimental.html (FULL FILE, PAGE-LOCAL GRID ONLY) -->
 
 <style>
   /* =====================================================
-     index2-only layout (does NOT affect original page)
+     experimental-only layout (inside this file only)
      ===================================================== */
 
   .v2 .indexes{
@@ -117,12 +117,14 @@
     </div>
 
     <!-- =========================
-         BOX 3 — GREY
+         BOX 3 — GREY (experimental title key)
          ========================= -->
     <div>
       <div class="entity-box" data-box="3">
 
-        <div class="entity-title">{% include t.html key="index.box3.title" %}</div>
+        <div class="entity-title">
+          {% include t.html key="experimental.box3.title" default="Altcoin Navigation Index" %}
+        </div>
 
         <picture style="position:absolute; inset:0; width:360px; height:150px; z-index:1; pointer-events:none;" aria-hidden="true">
           <source media="(prefers-color-scheme: dark)" srcset="/assets/img/bar-updated-grey.svg">
@@ -160,12 +162,14 @@
     </div>
 
     <!-- =========================
-         BOX 4 — GREY (same assets for now)
+         BOX 4 — GREY (experimental title key)
          ========================= -->
     <div>
       <div class="entity-box" data-box="4">
 
-        <div class="entity-title">{% include t.html key="index.box4.title" default="Box 4" %}</div>
+        <div class="entity-title">
+          {% include t.html key="experimental.box4.title" default="Box 4" %}
+        </div>
 
         <picture style="position:absolute; inset:0; width:360px; height:150px; z-index:1; pointer-events:none;" aria-hidden="true">
           <source media="(prefers-color-scheme: dark)" srcset="/assets/img/bar-updated-grey.svg">
@@ -203,12 +207,14 @@
     </div>
 
     <!-- =========================
-         BOX 5 — GREY (same assets for now)
+         BOX 5 — GREY (experimental title key)
          ========================= -->
     <div>
       <div class="entity-box" data-box="5">
 
-        <div class="entity-title">{% include t.html key="index.box5.title" default="Box 5" %}</div>
+        <div class="entity-title">
+          {% include t.html key="experimental.box5.title" default="Box 5" %}
+        </div>
 
         <picture style="position:absolute; inset:0; width:360px; height:150px; z-index:1; pointer-events:none;" aria-hidden="true">
           <source media="(prefers-color-scheme: dark)" srcset="/assets/img/bar-updated-grey.svg">
