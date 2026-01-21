@@ -14,12 +14,12 @@
   "box3_risk": 34.0,
   "box3_risk_updated_utc": "2026-01-15 04:54 UTC",
 
-  "box4": 50,
+  "box4": 0,
   "box4_updated_utc": "2026-01-01 00:00 UTC",
   "box4_risk": 45,
   "box4_risk_updated_utc": "2026-01-01 00:00 UTC",
 
-  "box5": 50,
+  "box5": 0,
   "box5_updated_utc": "2026-01-01 00:00 UTC",
   "box5_risk": 60,
   "box5_risk_updated_utc": "2026-01-01 00:00 UTC"
