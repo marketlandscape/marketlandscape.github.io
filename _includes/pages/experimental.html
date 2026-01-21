@@ -3,6 +3,11 @@
 <style>
   /* =====================================================
      experimental-only layout (inside this file only)
+     Layout:
+       Row 1: box1 (left) + empty (right)
+       Row 2: box2 (left) + box3 (right)
+       Row 3: box4 (left) + box5 (right)
+     Mobile: 1 → 2 → 3 → 4 → 5 (normal DOM order)
      ===================================================== */
 
   .v2 .indexes{
@@ -18,10 +23,21 @@
     margin-bottom: 0 !important;
   }
 
+  /* spacer cell to keep box1 alone on the first row */
+  .v2 .grid-spacer{
+    width: 360px;
+    height: 150px; /* match box height so the row feels intentional */
+    pointer-events: none;
+    user-select: none;
+  }
+
   /* optional mobile fallback */
   @media (max-width: 780px){
     .v2 .indexes{
       grid-template-columns: 360px;
+    }
+    .v2 .grid-spacer{
+      display: none; /* remove the empty cell on mobile */
     }
   }
 </style>
@@ -32,6 +48,7 @@
 
     <!-- =========================
          BOX 1 — YELLOW
+         (top-left)
          ========================= -->
     <div>
       <div class="entity-box" data-box="1">
@@ -73,8 +90,12 @@
       </div>
     </div>
 
+    <!-- spacer (top-right empty) -->
+    <div class="grid-spacer" aria-hidden="true"></div>
+
     <!-- =========================
          BOX 2 — BLUE
+         (row 2 left)
          ========================= -->
     <div>
       <div class="entity-box" data-box="2">
@@ -118,6 +139,7 @@
 
     <!-- =========================
          BOX 3 — GREY (experimental title key)
+         (row 2 right)
          ========================= -->
     <div>
       <div class="entity-box" data-box="3">
@@ -163,6 +185,7 @@
 
     <!-- =========================
          BOX 4 — GREY (experimental title key)
+         (row 3 left)
          ========================= -->
     <div>
       <div class="entity-box" data-box="4">
@@ -208,6 +231,7 @@
 
     <!-- =========================
          BOX 5 — GREY (experimental title key)
+         (row 3 right)
          ========================= -->
     <div>
       <div class="entity-box" data-box="5">
