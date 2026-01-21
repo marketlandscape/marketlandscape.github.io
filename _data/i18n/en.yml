@@ -20,11 +20,11 @@ index:
 
 experimental:
   box3:
-    title: "Altcoin Navigation Index (Experimental)"
+    title: "Larg-Cap Altcoin Navigation Index"
   box4:
-    title: "Market Breadth Index"
+    title: "Mid-Cap Altcoin Navigation Index"
   box5:
-    title: "Liquidity Context Index"
+    title: "Small-Cap Altcoin Navigation Index"
 
 footer:
   disclaimer: "This material is provided for informational purposes only and does not constitute financial or investment advice."
