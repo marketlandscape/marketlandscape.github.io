@@ -18,6 +18,13 @@ index:
   risk:
     label: "Risk level:"
 
+experimental:
+  box3:
+    title: "Altcoin Navigation Index (Experimental)"
+  box4:
+    title: "Market Breadth Index"
+  box5:
+    title: "Liquidity Context Index"
+
 footer:
   disclaimer: "This material is provided for informational purposes only and does not constitute financial or investment advice."
-
