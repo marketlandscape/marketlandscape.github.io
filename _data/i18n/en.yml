@@ -22,9 +22,9 @@ experimental:
   box3:
     title: "Larg-Cap Altcoin Navigation Index"
   box4:
-    title: "Mid-Cap Altcoin Navigation Index"
+    title: "Mid-Cap Altcoin Navigation Index (Experimental)"
   box5:
-    title: "Small-Cap Altcoin Navigation Index"
+    title: "Small-Cap Altcoin Navigation Index (Experimental)"
 
 footer:
   disclaimer: "This material is provided for informational purposes only and does not constitute financial or investment advice."
