@@ -90,8 +90,25 @@
       </div>
     </div>
 
-    <!-- spacer (top-right empty) -->
-    <div class="grid-spacer" aria-hidden="true"></div>
+    <!-- =========================
+         HISTORY CHART (top-right)
+         inline-only styling
+         ========================= -->
+    <div>
+      <div style="width:360px;height:150px;position:relative;">
+        <div style="position:absolute;left:14px;top:10px;z-index:3;font-size:13px;letter-spacing:0.2px;color:rgba(255,255,255,0.65);pointer-events:none;user-select:none;">
+          History
+        </div>
+
+        <div id="navChart" style="position:absolute;inset:0;padding:10px 10px 8px 10px;z-index:2;"></div>
+
+        <!-- reuse existing frame styling (no new CSS) -->
+        <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true" style="position:absolute;inset:0;z-index:1;pointer-events:none;">
+          <rect class="entity-frame-bg" x="0" y="0" width="360" height="150" rx="14" ry="14"></rect>
+          <rect class="entity-frame-stroke" x="0.5" y="0.5" width="359" height="149" rx="13.5" ry="13.5"></rect>
+        </svg>
+      </div>
+    </div>
 
     <!-- =========================
          BOX 2 — BLUE
@@ -370,5 +387,136 @@ function setEntityWarn(boxEl, show){
   document.readyState === "loading"
     ? document.addEventListener("DOMContentLoaded", load)
     : load();
+})();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+<script>
+(function(){
+  // Keep everything isolated; do not touch existing box logic.
+  function clamp2(v, lo, hi){ return Math.max(lo, Math.min(hi, v)); }
+
+  function pctToStep(x){
+    const n = Number(x);
+    if (!Number.isFinite(n)) return null;
+    const pct = clamp2(n, 0, 100);
+    const TOTAL = 25;
+    return Math.round((pct / 100) * (TOTAL - 1)) + 1;
+  }
+
+  function fmtX(iso){
+    const d = new Date(iso);
+    const mm = String(d.getUTCMonth() + 1).padStart(2, "0");
+    const dd = String(d.getUTCDate()).padStart(2, "0");
+    return mm + "-" + dd;
+  }
+
+  async function init(){
+    const el = document.getElementById("navChart");
+    if (!el || !window.echarts) return;
+
+    const res = await fetch("/data/charts/nav_2w.json", { cache: "no-store" });
+    if (!res.ok) return;
+    const rows = await res.json();
+
+    const times = rows.map(r => r.t);
+    const s1 = rows.map(r => pctToStep(r.box1));
+    const s2 = rows.map(r => pctToStep(r.box2));
+    const s3 = rows.map(r => pctToStep(r.box3));
+
+    const chart = echarts.init(el, null, { renderer: "canvas" });
+
+    chart.setOption({
+      backgroundColor: "transparent",
+      grid: { left: 6, right: 6, top: 22, bottom: 10, containLabel: false },
+
+      tooltip: {
+        trigger: "axis",
+        axisPointer: { type: "line" },
+        backgroundColor: "rgba(20,20,20,0.92)",
+        borderWidth: 0,
+        textStyle: { color: "rgba(255,255,255,0.86)", fontSize: 12 },
+        extraCssText: "border-radius:12px; padding:10px;",
+        valueFormatter: (v) => (v == null ? "—" : String(v))
+      },
+
+      xAxis: {
+        type: "category",
+        data: times,
+        boundaryGap: false,
+        axisLine: { show: false },
+        axisTick: { show: false },
+        splitLine: { show: false },
+        axisLabel: {
+          color: "rgba(255,255,255,0.40)",
+          fontSize: 10,
+          interval: (idx) => {
+            const n = times.length || 1;
+            return idx % Math.ceil(n / 4) !== 0; // ~4 labels
+          },
+          formatter: fmtX
+        }
+      },
+
+      yAxis: {
+        type: "value",
+        min: 1,
+        max: 25,
+        axisLine: { show: false },
+        axisTick: { show: false },
+        splitLine: { show: false },
+        axisLabel: { show: false }
+      },
+
+      series: [
+        {
+          name: "box1",
+          type: "line",
+          data: s1,
+          smooth: true,
+          showSymbol: false,
+          lineStyle: { width: 2, color: "rgba(216,165,56,0.95)" },
+          emphasis: { focus: "series" },
+          markArea: {
+            silent: true,
+            itemStyle: { color: "rgba(255,255,255,0.035)" },
+            data: [
+              [{ yAxis: 1 },  { yAxis: 5 }],
+              [{ yAxis: 5 },  { yAxis: 10 }],
+              [{ yAxis: 10 }, { yAxis: 15 }],
+              [{ yAxis: 15 }, { yAxis: 20 }],
+              [{ yAxis: 20 }, { yAxis: 25 }]
+            ]
+          }
+        },
+        {
+          name: "box2",
+          type: "line",
+          data: s2,
+          smooth: true,
+          showSymbol: false,
+          lineStyle: { width: 2, color: "rgba(74,141,255,0.95)" },
+          emphasis: { focus: "series" }
+        },
+        {
+          name: "box3",
+          type: "line",
+          data: s3,
+          smooth: true,
+          showSymbol: false,
+          lineStyle: { width: 2, color: "rgba(190,190,190,0.60)" },
+          emphasis: { focus: "series" }
+        }
+      ],
+
+      legend: { show: false }
+    });
+
+    window.addEventListener("resize", () => chart.resize(), { passive: true });
+  }
+
+  document.readyState === "loading"
+    ? document.addEventListener("DOMContentLoaded", () => { init().catch(() => {}); })
+    : init().catch(() => {});
 })();
 </script>
