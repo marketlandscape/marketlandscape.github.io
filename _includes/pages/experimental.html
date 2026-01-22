@@ -4,10 +4,10 @@
   /* =====================================================
      experimental-only layout (inside this file only)
      Layout:
-       Row 1: box1 (left) + chart (right)
+       Row 1: box1 (left) + empty (right)
        Row 2: box2 (left) + box3 (right)
        Row 3: box4 (left) + box5 (right)
-     Mobile: natural DOM order
+     Mobile: 1 → 2 → 3 → 4 → 5 (normal DOM order)
      ===================================================== */
 
   .v2 .indexes{
@@ -18,13 +18,26 @@
     align-items: start;
   }
 
+  /* neutralise existing inline margins so grid gaps win */
   .v2 .indexes > div{
     margin-bottom: 0 !important;
   }
 
+  /* spacer cell to keep box1 alone on the first row */
+  .v2 .grid-spacer{
+    width: 360px;
+    height: 150px; /* match box height so the row feels intentional */
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* optional mobile fallback */
   @media (max-width: 780px){
     .v2 .indexes{
       grid-template-columns: 360px;
+    }
+    .v2 .grid-spacer{
+      display: none; /* remove the empty cell on mobile */
     }
   }
 </style>
@@ -33,21 +46,24 @@
 
   <div class="indexes">
 
-    <!-- BOX 1 -->
+    <!-- =========================
+         BOX 1 — YELLOW
+         (top-left)
+         ========================= -->
     <div>
       <div class="entity-box" data-box="1">
 
         <div class="entity-title">{% include t.html key="index.box1.title" %}</div>
 
-        <picture style="position:absolute; inset:0; width:360px; height:150px; z-index:1; pointer-events:none;">
+        <picture style="position:absolute; inset:0; width:360px; height:150px; z-index:1; pointer-events:none;" aria-hidden="true">
           <source media="(prefers-color-scheme: dark)" srcset="/assets/img/bar-orange-dark.svg">
           <img src="/assets/img/bar-orange-light.svg" alt=""
-               style="position:absolute; left:19.1px; top:116.7px; width:322.6px; height:9px;">
+               style="position:absolute; left:19.1025px; top:116.7px; width:322.6125px; height:9px;">
         </picture>
 
-        <svg class="entity-frame" viewBox="0 0 360 150">
-          <rect class="entity-frame-bg" width="360" height="150" rx="14"></rect>
-          <rect class="entity-frame-stroke" x="0.5" y="0.5" width="359" height="149" rx="13.5"></rect>
+        <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true">
+          <rect class="entity-frame-bg" x="0" y="0" width="360" height="150" rx="14" ry="14"></rect>
+          <rect class="entity-frame-stroke" x="0.5" y="0.5" width="359" height="149" rx="13.5" ry="13.5"></rect>
         </svg>
 
         <div class="entity-steps">
@@ -66,7 +82,7 @@
           <span class="entity-risk-val" data-role="risk">–%</span>
         </div>
 
-        <svg class="entity-dot-layer" viewBox="0 0 360 150">
+        <svg class="entity-dot-layer" viewBox="0 0 360 150" aria-hidden="true">
           <circle class="entity-dot-outer" cx="29.76" cy="121.2" r="9"></circle>
           <circle class="entity-dot-inner" cx="29.76" cy="121.2" r="6"></circle>
         </svg>
@@ -74,34 +90,42 @@
       </div>
     </div>
 
-    <!-- CHART (top-right, inline-only) -->
+    <!-- =========================
+         CHART (top-right)
+         inline-only, no title
+         ========================= -->
     <div>
       <div style="width:360px;height:150px;position:relative;">
-        <div id="navChart"
-             style="position:absolute;inset:0;padding:8px 10px 8px 10px;z-index:2;"></div>
+        <div id="navChart" style="position:absolute; inset:0; padding:8px 10px 8px 10px; z-index:2;"></div>
 
-        <svg class="entity-frame"
-             viewBox="0 0 360 150"
-             style="position:absolute;inset:0;z-index:1;pointer-events:none;">
-          <rect class="entity-frame-bg" width="360" height="150" rx="14"></rect>
-          <rect class="entity-frame-stroke" x="0.5" y="0.5" width="359" height="149" rx="13.5"></rect>
+        <!-- reuse existing frame styles -->
+        <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true" style="position:absolute; inset:0; z-index:1; pointer-events:none;">
+          <rect class="entity-frame-bg" x="0" y="0" width="360" height="150" rx="14" ry="14"></rect>
+          <rect class="entity-frame-stroke" x="0.5" y="0.5" width="359" height="149" rx="13.5" ry="13.5"></rect>
         </svg>
       </div>
     </div>
 
-    <!-- BOX 2 -->
+    <!-- =========================
+         BOX 2 — BLUE
+         (row 2 left)
+         ========================= -->
     <div>
       <div class="entity-box" data-box="2">
+
         <div class="entity-title">{% include t.html key="index.box2.title" %}</div>
-        <picture style="position:absolute; inset:0; width:360px; height:150px; z-index:1; pointer-events:none;">
+
+        <picture style="position:absolute; inset:0; width:360px; height:150px; z-index:1; pointer-events:none;" aria-hidden="true">
           <source media="(prefers-color-scheme: dark)" srcset="/assets/img/bar-blue-dark.svg">
           <img src="/assets/img/bar-blue-light.svg" alt=""
-               style="position:absolute; left:19.1px; top:116.7px; width:322.6px; height:9px;">
+               style="position:absolute; left:19.1025px; top:116.7px; width:322.6125px; height:9px;">
         </picture>
-        <svg class="entity-frame" viewBox="0 0 360 150">
-          <rect class="entity-frame-bg" width="360" height="150" rx="14"></rect>
-          <rect class="entity-frame-stroke" x="0.5" y="0.5" width="359" height="149" rx="13.5"></rect>
+
+        <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true">
+          <rect class="entity-frame-bg" x="0" y="0" width="360" height="150" rx="14" ry="14"></rect>
+          <rect class="entity-frame-stroke" x="0.5" y="0.5" width="359" height="149" rx="13.5" ry="13.5"></rect>
         </svg>
+
         <div class="entity-steps">
           <span>{% include t.html key="index.step.entry" %}</span>
           <span>{% include t.html key="index.step.scale_in" %}</span>
@@ -109,34 +133,45 @@
           <span>{% include t.html key="index.step.reduce" %}</span>
           <span>{% include t.html key="index.step.exit" %}</span>
         </div>
+
         <div class="entity-value" data-role="val">–</div>
+
         <div class="entity-risk">
           <span class="entity-warn" data-role="warn">⚠</span>
           <span class="entity-risk-label">{% include t.html key="index.risk.label" %}</span>
           <span class="entity-risk-val" data-role="risk">–%</span>
         </div>
-        <svg class="entity-dot-layer" viewBox="0 0 360 150">
+
+        <svg class="entity-dot-layer" viewBox="0 0 360 150" aria-hidden="true">
           <circle class="entity-dot-outer" cx="29.76" cy="121.2" r="9"></circle>
           <circle class="entity-dot-inner" cx="29.76" cy="121.2" r="6"></circle>
         </svg>
+
       </div>
     </div>
 
-    <!-- BOX 3 -->
+    <!-- =========================
+         BOX 3 — GREY (experimental title key)
+         (row 2 right)
+         ========================= -->
     <div>
       <div class="entity-box" data-box="3">
+
         <div class="entity-title">
           {% include t.html key="experimental.box3.title" default="Altcoin Navigation Index" %}
         </div>
-        <picture style="position:absolute; inset:0; width:360px; height:150px; z-index:1; pointer-events:none;">
+
+        <picture style="position:absolute; inset:0; width:360px; height:150px; z-index:1; pointer-events:none;" aria-hidden="true">
           <source media="(prefers-color-scheme: dark)" srcset="/assets/img/bar-updated-grey.svg">
           <img src="/assets/img/bar-grey-light.svg" alt=""
-               style="position:absolute; left:19.1px; top:116.7px; width:322.6px; height:9px;">
+               style="position:absolute; left:19.1025px; top:116.7px; width:322.6125px; height:9px;">
         </picture>
-        <svg class="entity-frame" viewBox="0 0 360 150">
-          <rect class="entity-frame-bg" width="360" height="150" rx="14"></rect>
-          <rect class="entity-frame-stroke" x="0.5" y="0.5" width="359" height="149" rx="13.5"></rect>
+
+        <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true">
+          <rect class="entity-frame-bg" x="0" y="0" width="360" height="150" rx="14" ry="14"></rect>
+          <rect class="entity-frame-stroke" x="0.5" y="0.5" width="359" height="149" rx="13.5" ry="13.5"></rect>
         </svg>
+
         <div class="entity-steps">
           <span>{% include t.html key="index.step.entry" %}</span>
           <span>{% include t.html key="index.step.scale_in" %}</span>
@@ -144,83 +179,345 @@
           <span>{% include t.html key="index.step.reduce" %}</span>
           <span>{% include t.html key="index.step.exit" %}</span>
         </div>
+
         <div class="entity-value" data-role="val">–</div>
+
         <div class="entity-risk">
           <span class="entity-warn" data-role="warn">⚠</span>
           <span class="entity-risk-label">{% include t.html key="index.risk.label" %}</span>
           <span class="entity-risk-val" data-role="risk">–%</span>
         </div>
-        <svg class="entity-dot-layer" viewBox="0 0 360 150">
+
+        <svg class="entity-dot-layer" viewBox="0 0 360 150" aria-hidden="true">
           <circle class="entity-dot-outer" cx="29.76" cy="121.2" r="9"></circle>
           <circle class="entity-dot-inner" cx="29.76" cy="121.2" r="6"></circle>
         </svg>
+
+      </div>
+    </div>
+
+    <!-- =========================
+         BOX 4 — GREY (experimental title key)
+         (row 3 left)
+         ========================= -->
+    <div>
+      <div class="entity-box" data-box="4">
+
+        <div class="entity-title">
+          {% include t.html key="experimental.box4.title" default="Box 4" %}
+        </div>
+
+        <picture style="position:absolute; inset:0; width:360px; height:150px; z-index:1; pointer-events:none;" aria-hidden="true">
+          <source media="(prefers-color-scheme: dark)" srcset="/assets/img/bar-updated-grey.svg">
+          <img src="/assets/img/bar-grey-light.svg" alt=""
+               style="position:absolute; left:19.1025px; top:116.7px; width:322.6125px; height:9px;">
+        </picture>
+
+        <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true">
+          <rect class="entity-frame-bg" x="0" y="0" width="360" height="150" rx="14" ry="14"></rect>
+          <rect class="entity-frame-stroke" x="0.5" y="0.5" width="359" height="149" rx="13.5" ry="13.5"></rect>
+        </svg>
+
+        <div class="entity-steps">
+          <span>{% include t.html key="index.step.entry" %}</span>
+          <span>{% include t.html key="index.step.scale_in" %}</span>
+          <span>{% include t.html key="index.step.hold" %}</span>
+          <span>{% include t.html key="index.step.reduce" %}</span>
+          <span>{% include t.html key="index.step.exit" %}</span>
+        </div>
+
+        <div class="entity-value" data-role="val">–</div>
+
+        <div class="entity-risk">
+          <span class="entity-warn" data-role="warn">⚠</span>
+          <span class="entity-risk-label">{% include t.html key="index.risk.label" %}</span>
+          <span class="entity-risk-val" data-role="risk">–%</span>
+        </div>
+
+        <svg class="entity-dot-layer" viewBox="0 0 360 150" aria-hidden="true">
+          <circle class="entity-dot-outer" cx="29.76" cy="121.2" r="9"></circle>
+          <circle class="entity-dot-inner" cx="29.76" cy="121.2" r="6"></circle>
+        </svg>
+
+      </div>
+    </div>
+
+    <!-- =========================
+         BOX 5 — GREY (experimental title key)
+         (row 3 right)
+         ========================= -->
+    <div>
+      <div class="entity-box" data-box="5">
+
+        <div class="entity-title">
+          {% include t.html key="experimental.box5.title" default="Box 5" %}
+        </div>
+
+        <picture style="position:absolute; inset:0; width:360px; height:150px; z-index:1; pointer-events:none;" aria-hidden="true">
+          <source media="(prefers-color-scheme: dark)" srcset="/assets/img/bar-updated-grey.svg">
+          <img src="/assets/img/bar-grey-light.svg" alt=""
+               style="position:absolute; left:19.1025px; top:116.7px; width:322.6125px; height:9px;">
+        </picture>
+
+        <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true">
+          <rect class="entity-frame-bg" x="0" y="0" width="360" height="150" rx="14" ry="14"></rect>
+          <rect class="entity-frame-stroke" x="0.5" y="0.5" width="359" height="149" rx="13.5" ry="13.5"></rect>
+        </svg>
+
+        <div class="entity-steps">
+          <span>{% include t.html key="index.step.entry" %}</span>
+          <span>{% include t.html key="index.step.scale_in" %}</span>
+          <span>{% include t.html key="index.step.hold" %}</span>
+          <span>{% include t.html key="index.step.reduce" %}</span>
+          <span>{% include t.html key="index.step.exit" %}</span>
+        </div>
+
+        <div class="entity-value" data-role="val">–</div>
+
+        <div class="entity-risk">
+          <span class="entity-warn" data-role="warn">⚠</span>
+          <span class="entity-risk-label">{% include t.html key="index.risk.label" %}</span>
+          <span class="entity-risk-val" data-role="risk">–%</span>
+        </div>
+
+        <svg class="entity-dot-layer" viewBox="0 0 360 150" aria-hidden="true">
+          <circle class="entity-dot-outer" cx="29.76" cy="121.2" r="9"></circle>
+          <circle class="entity-dot-inner" cx="29.76" cy="121.2" r="6"></circle>
+        </svg>
+
       </div>
     </div>
 
   </div>
 
+  {%- capture fn -%}{% include t.html key="index.footnotes.footnote1" default="" %}{%- endcapture -%}
+  {%- assign fn = fn | strip -%}
+  {%- if fn != "" -%}
+    <div class="index-footnote">
+      <span class="fn-mark">*</span>
+      {{ fn }}
+    </div>
+  {%- endif -%}
+
 </div>
+
+<script>
+function clamp(v, lo, hi){ return Math.max(lo, Math.min(hi, v)); }
+
+function setEntityValue(boxEl, x){
+  const n = Number(x);
+  if (!Number.isFinite(n)) return;
+
+  const pct = clamp(n, 0, 100);
+  const TOTAL = 25;
+  const step = Math.round((pct / 100) * (TOTAL - 1)) + 1;
+
+  const START = 23.5;
+  const END   = 336.5;
+  const BIN   = (END - START) / TOTAL;
+  const cx = START + (step - 0.5) * BIN;
+
+  boxEl.querySelector(".entity-dot-outer")?.setAttribute("cx", cx);
+  boxEl.querySelector(".entity-dot-inner")?.setAttribute("cx", cx);
+
+  const val = boxEl.querySelector('[data-role="val"]');
+  if (val){
+    val.innerHTML = step + '<span class="entity-total">/' + TOTAL + '</span>';
+  }
+}
+
+function setEntityRisk(boxEl, r){
+  const n = Number(r);
+  if (!Number.isFinite(n)) return;
+  const el = boxEl.querySelector('[data-role="risk"]');
+  if (el) el.textContent = Math.round(clamp(n, 0, 100)) + "%";
+}
+
+function setEntityWarn(boxEl, show){
+  const el = boxEl.querySelector('[data-role="warn"]');
+  if (el) el.style.visibility = show ? "visible" : "hidden";
+}
+
+(function(){
+  const KEY = "dashboard_indexes_cache_v6";
+
+  function applyAll(d){
+    const boxes = {
+      1: document.querySelector('.v2 .entity-box[data-box="1"]'),
+      2: document.querySelector('.v2 .entity-box[data-box="2"]'),
+      3: document.querySelector('.v2 .entity-box[data-box="3"]'),
+      4: document.querySelector('.v2 .entity-box[data-box="4"]'),
+      5: document.querySelector('.v2 .entity-box[data-box="5"]')
+    };
+
+    // values
+    for (const k in boxes){
+      const b = boxes[k];
+      if (!b) continue;
+      if (d['box'+k] !== undefined) setEntityValue(b, d['box'+k]);
+      if (d['box'+k+'_risk'] !== undefined) setEntityRisk(b, d['box'+k+'_risk']);
+    }
+
+    // warning rules (keep same behaviour style)
+    if (boxes[1]) setEntityWarn(boxes[1], false);
+    if (boxes[2]) setEntityWarn(boxes[2], Number(d.box2) >= 80);
+    if (boxes[3]) setEntityWarn(boxes[3], Number(d.box3) >= 80);
+    if (boxes[4]) setEntityWarn(boxes[4], Number(d.box4) >= 80);
+    if (boxes[5]) setEntityWarn(boxes[5], Number(d.box5) >= 80);
+  }
+
+  async function load(){
+    try{
+      const cached = sessionStorage.getItem(KEY);
+      if (cached) applyAll(JSON.parse(cached));
+
+      const res = await fetch("/data/indexes.json", { cache:"no-store" });
+      if (!res.ok) return;
+      const data = await res.json();
+
+      applyAll(data);
+      sessionStorage.setItem(KEY, JSON.stringify(data));
+    }catch(e){}
+  }
+
+  document.readyState === "loading"
+    ? document.addEventListener("DOMContentLoaded", load)
+    : load();
+})();
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
 <script>
 (function(){
-  function clamp(v,l,h){return Math.max(l,Math.min(h,v));}
+  // Chart is isolated from the box logic above.
+  function clamp2(v, lo, hi){ return Math.max(lo, Math.min(hi, v)); }
+
+  // Same 0–100 -> 1–25 step mapping as your boxes.
   function pctToStep(x){
-    const n=Number(x); if(!Number.isFinite(n)) return null;
-    return Math.round((clamp(n,0,100)/100)*24)+1;
+    const n = Number(x);
+    if (!Number.isFinite(n)) return null;
+    const pct = clamp2(n, 0, 100);
+    const TOTAL = 25;
+    return Math.round((pct / 100) * (TOTAL - 1)) + 1;
   }
+
+  // Robust MM-DD label without Date parsing (works for "2026-01-21T.." and "2026-01-21 15:00 UTC")
   function fmtX(s){
-    const m=String(s).match(/^(\d{4})-(\d{2})-(\d{2})/);
-    return m ? (m[2]+"-"+m[3]) : "";
+    const str = String(s || "");
+    const m = str.match(/^(\d{4})-(\d{2})-(\d{2})/);
+    if (m) return m[2] + "-" + m[3];
+    return "";
   }
 
   async function init(){
-    const el=document.getElementById("navChart");
-    if(!el||!window.echarts) return;
+    const el = document.getElementById("navChart");
+    if (!el || !window.echarts) return;
 
-    const r=await fetch("/data/charts/nav_2w.json",{cache:"no-store"});
-    if(!r.ok) return;
-    const rows=await r.json();
+    const res = await fetch("/data/charts/nav_2w.json", { cache: "no-store" });
+    if (!res.ok) return;
+    const rows = await res.json();
 
-    const times=rows.map(x=>x.t);
-    const s1=rows.map(x=>pctToStep(x.box1));
-    const s2=rows.map(x=>pctToStep(x.box2));
-    const s3=rows.map(x=>pctToStep(x.box3));
+    const times = rows.map(r => r.t);
+    const s1 = rows.map(r => pctToStep(r.box1));
+    const s2 = rows.map(r => pctToStep(r.box2));
+    const s3 = rows.map(r => pctToStep(r.box3));
 
-    const c=echarts.init(el);
-    c.setOption({
-      backgroundColor:"transparent",
-      grid:{left:6,right:6,top:8,bottom:8},
-      xAxis:{
-        type:"category",data:times,boundaryGap:false,
-        axisLine:{show:false},axisTick:{show:false},
-        axisLabel:{
-          fontSize:10,color:"rgba(255,255,255,0.4)",
-          interval:(i)=> i%Math.ceil(times.length/4)!==0,
-          formatter:fmtX
+    const chart = echarts.init(el, null, { renderer: "canvas" });
+
+    chart.setOption({
+      backgroundColor: "transparent",
+      grid: { left: 6, right: 6, top: 8, bottom: 8, containLabel: false },
+
+      tooltip: {
+        trigger: "axis",
+        axisPointer: { type: "line" },
+        backgroundColor: "rgba(20,20,20,0.92)",
+        borderWidth: 0,
+        textStyle: { color: "rgba(255,255,255,0.86)", fontSize: 12 },
+        extraCssText: "border-radius:12px; padding:10px;",
+        valueFormatter: (v) => (v == null ? "—" : String(v))
+      },
+
+      xAxis: {
+        type: "category",
+        data: times,
+        boundaryGap: false,
+        axisLine: { show: false },
+        axisTick: { show: false },
+        splitLine: { show: false },
+        axisLabel: {
+          color: "rgba(255,255,255,0.40)",
+          fontSize: 10,
+          interval: (idx) => {
+            const n = times.length || 1;
+            return idx % Math.ceil(n / 4) !== 0; // ~4 labels
+          },
+          formatter: fmtX
         }
       },
-      yAxis:{type:"value",min:1,max:25,axisLabel:{show:false},
-             axisLine:{show:false},axisTick:{show:false}},
-      series:[
-        {type:"line",data:s1,smooth:true,showSymbol:false,
-         lineStyle:{width:2,color:"rgba(216,165,56,0.95)"},
-         markArea:{silent:true,itemStyle:{color:"rgba(255,255,255,0.035)"},
-           data:[[{yAxis:1},{yAxis:5}],[{yAxis:5},{yAxis:10}],
-                 [{yAxis:10},{yAxis:15}],[{yAxis:15},{yAxis:20}],
-                 [{yAxis:20},{yAxis:25}]]}},
-        {type:"line",data:s2,smooth:true,showSymbol:false,
-         lineStyle:{width:2,color:"rgba(74,141,255,0.95)"}},
-        {type:"line",data:s3,smooth:true,showSymbol:false,
-         lineStyle:{width:2,color:"rgba(190,190,190,0.6)"}}
-      ]
+
+      yAxis: {
+        type: "value",
+        min: 1,
+        max: 25,
+        axisLine: { show: false },
+        axisTick: { show: false },
+        splitLine: { show: false },
+        axisLabel: { show: false }
+      },
+
+      series: [
+        // BTC (gold) + 5 zone bands
+        {
+          name: "box1",
+          type: "line",
+          data: s1,
+          smooth: true,
+          showSymbol: false,
+          lineStyle: { width: 2, color: "rgba(216,165,56,0.95)" },
+          emphasis: { focus: "series" },
+          markArea: {
+            silent: true,
+            itemStyle: { color: "rgba(255,255,255,0.035)" },
+            data: [
+              [{ yAxis: 1 },  { yAxis: 5 }],
+              [{ yAxis: 5 },  { yAxis: 10 }],
+              [{ yAxis: 10 }, { yAxis: 15 }],
+              [{ yAxis: 15 }, { yAxis: 20 }],
+              [{ yAxis: 20 }, { yAxis: 25 }]
+            ]
+          }
+        },
+        // ETH (blue)
+        {
+          name: "box2",
+          type: "line",
+          data: s2,
+          smooth: true,
+          showSymbol: false,
+          lineStyle: { width: 2, color: "rgba(74,141,255,0.95)" },
+          emphasis: { focus: "series" }
+        },
+        // Alts (grey)
+        {
+          name: "box3",
+          type: "line",
+          data: s3,
+          smooth: true,
+          showSymbol: false,
+          lineStyle: { width: 2, color: "rgba(190,190,190,0.60)" },
+          emphasis: { focus: "series" }
+        }
+      ],
+
+      legend: { show: false }
     });
 
-    window.addEventListener("resize",()=>c.resize(),{passive:true});
+    window.addEventListener("resize", () => chart.resize(), { passive: true });
   }
 
-  document.readyState==="loading"
-    ? document.addEventListener("DOMContentLoaded",init)
-    : init();
+  document.readyState === "loading"
+    ? document.addEventListener("DOMContentLoaded", () => { init().catch(() => {}); })
+    : init().catch(() => {});
 })();
 </script>
