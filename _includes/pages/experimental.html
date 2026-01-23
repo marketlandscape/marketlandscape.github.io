@@ -40,6 +40,30 @@
       display: none; /* remove the empty cell on mobile */
     }
   }
+
+  /* =====================================================
+     NAV HISTORY labels (top-right box only)
+     Flex equal spacing, edges justified
+     ===================================================== */
+  .nav-xlabels{
+    position:absolute;
+    left:0; right:0;
+    bottom:8px;
+    z-index:3;                 /* above the svg image */
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    padding:0 10px;            /* inset so text doesn't touch the frame */
+    pointer-events:none;
+    user-select:none;
+  }
+  .nav-xlabels span{
+    font-size:11px;
+    line-height:1;
+    color:#8c8c8c;
+    opacity:.75;
+    white-space:nowrap;
+  }
 </style>
 
 <div class="v2">
@@ -113,6 +137,9 @@
             user-select:none;
           "
         >
+
+        <!-- labels reconstructed from nav-meta in the svg -->
+        <div class="nav-xlabels" aria-hidden="true"></div>
 
         <!-- reuse the same frame style as boxes -->
         <svg class="entity-frame"
@@ -409,5 +436,40 @@ function setEntityWarn(boxEl, show){
   document.readyState === "loading"
     ? document.addEventListener("DOMContentLoaded", load)
     : load();
+})();
+
+/* =====================================================
+   NAV HISTORY label extraction (top-right chart only)
+   Reads <desc id="nav-meta">{"labels":[...]}</desc>
+   and renders them as equally spaced flex labels.
+   ===================================================== */
+(async function(){
+  try{
+    const svgUrl = "/assets/img/charts/nav_2w.svg";
+    const host = document.querySelector(".v2 .nav-xlabels");
+    if (!host) return;
+
+    const res = await fetch(svgUrl, { cache:"no-store" });
+    if (!res.ok) return;
+
+    const text = await res.text();
+    const doc = new DOMParser().parseFromString(text, "image/svg+xml");
+
+    const desc = doc.querySelector('desc#nav-meta');
+    if (!desc) return;
+
+    const meta = JSON.parse(desc.textContent.trim() || "{}");
+    const labels = Array.isArray(meta.labels) ? meta.labels : [];
+    if (!labels.length) return;
+
+    host.innerHTML = "";
+    for (const lab of labels){
+      const s = document.createElement("span");
+      s.textContent = String(lab);
+      host.appendChild(s);
+    }
+
+    host.style.justifyContent = (labels.length === 1) ? "center" : "space-between";
+  }catch(e){}
 })();
 </script>
