@@ -123,11 +123,9 @@ p, ul, ol, table, pre, dl{
   margin:0 0 20px;
 }
 
-
 main p{
   text-align: justify;
 }
-
 
 small{
   font-size:11px;
@@ -595,7 +593,112 @@ kbd{
   fill-opacity: var(--entity-dot-inner-opacity);
 }
 
+/* =========================================================
+   V2 shared helpers (remove inline styles)
+   ========================================================= */
 
+/* Bar overlay picture (all entity boxes) */
+.v2 .entity-bar{
+  position:absolute;
+  inset:0;
+  width:360px;
+  height:150px;
+  z-index:1;
+  pointer-events:none;
+}
+
+.v2 .entity-bar-img{
+  position:absolute;
+  left:19.1025px;
+  top:116.7px;
+  width:322.6125px;
+  height:9px;
+}
+
+/* History SVG image (top-right chart) */
+.v2 .history-img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  z-index:2;
+  pointer-events:none;
+  user-select:none;
+}
+
+/* =========================================================
+   V2 grid page (grid.html) — page-local layout only
+   - gated by .v2-grid to avoid affecting other .v2 pages
+   ========================================================= */
+
+.v2-grid .indexes{
+  display:grid;
+  grid-template-columns: repeat(2, 360px);
+  grid-template-areas:
+    "box1 history"
+    "box2 box3"
+    "box4 box5";
+  column-gap: 28px;
+  row-gap: 28px;
+  align-items: start;
+}
+
+/* neutralise existing inline margins so grid gaps win */
+.v2-grid .indexes > div{
+  margin-bottom: 0 !important;
+}
+
+.v2-grid .cell-box1{ grid-area: box1; }
+.v2-grid .cell-history{ grid-area: history; }
+.v2-grid .cell-box2{ grid-area: box2; }
+.v2-grid .cell-box3{ grid-area: box3; }
+.v2-grid .cell-box4{ grid-area: box4; }
+.v2-grid .cell-box5{ grid-area: box5; }
+
+/* mobile */
+@media (max-width: 780px){
+  .v2-grid .indexes{
+    grid-template-columns: 360px;
+    grid-template-areas:
+      "box1"
+      "history"
+      "box2"
+      "box3"
+      "box4"
+      "box5";
+  }
+}
+
+/* =========================================================
+   NAV HISTORY labels (top-right box only)
+   Flex equal spacing, edges justified
+   ========================================================= */
+
+.v2-grid .nav-xlabels{
+  position:absolute;
+  left:0; right:0;
+  bottom:14px;
+  z-index:3;                 /* above the svg image */
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  padding:0 14px;            /* inset so text doesn't touch the frame */
+  pointer-events:none;
+  user-select:none;
+}
+
+.v2-grid .nav-xlabels span{
+  font-size:13px;     /* keep size fixed */
+  color:inherit;      /* use global text color */
+  opacity:.5;         /* keep subtlety */
+  line-height:1;
+  white-space:nowrap;
+}
+
+/* =========================================================
+   V2 footnote
+   ========================================================= */
 
 .v2 .index-footnote{
   margin-top: 28px;   /* more air above */
@@ -611,8 +714,6 @@ kbd{
 .v2 .index-footnote .fn-mark{
   margin-right: 0px;
 }
-
-
 
 /* =========================================================
    Print
