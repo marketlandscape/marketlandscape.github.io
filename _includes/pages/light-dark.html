@@ -1,0 +1,568 @@
+<!-- grid.html (FULL FILE, PAGE-LOCAL GRID ONLY) -->
+
+<style>
+  /* =====================================================
+     PAGE-LOCAL GRID ONLY
+     Goal:
+       - Page stays LIGHT (inherits site light theme)
+       - ONLY the boxes (and history box) render as DARK,
+         independent of prefers-color-scheme / site theme.
+     ===================================================== */
+
+  .v2.v2-grid .indexes{
+    display: grid;
+    grid-template-columns: repeat(2, 360px);
+    column-gap: 28px;
+    row-gap: 28px;
+    align-items: start;
+  }
+
+  /* neutralise existing margins so grid gaps win */
+  .v2.v2-grid .indexes > div{
+    margin-bottom: 0 !important;
+  }
+
+  /* grid placement */
+  .v2.v2-grid .cell-box1{ grid-column: 1; grid-row: 1; }
+  .v2.v2-grid .cell-history{ grid-column: 2; grid-row: 1; }
+  .v2.v2-grid .cell-box2{ grid-column: 1; grid-row: 2; }
+  .v2.v2-grid .cell-box3{ grid-column: 2; grid-row: 2; }
+  .v2.v2-grid .cell-box4{ grid-column: 1; grid-row: 3; }
+  .v2.v2-grid .cell-box5{ grid-column: 2; grid-row: 3; }
+
+  /* =====================================================
+     DARK-INSET OVERRIDES (boxes only)
+     ===================================================== */
+
+  /* Make ONLY the boxes behave like dark theme */
+  .v2.v2-grid .entity-box,
+  .v2.v2-grid .entity-history-box{
+    position: relative;
+    color: #ffffff;
+  }
+
+  /* Text inside boxes */
+  .v2.v2-grid .entity-box .entity-title,
+  .v2.v2-grid .entity-box .entity-steps,
+  .v2.v2-grid .entity-box .entity-steps span,
+  .v2.v2-grid .entity-box .entity-risk,
+  .v2.v2-grid .entity-box .entity-risk-label,
+  .v2.v2-grid .entity-box .entity-risk-val,
+  .v2.v2-grid .entity-box .entity-value,
+  .v2.v2-grid .entity-box .entity-total{
+    color: rgba(255,255,255,0.92) !important;
+  }
+
+  .v2.v2-grid .entity-box .entity-steps span{
+    opacity: 0.85;
+  }
+
+  .v2.v2-grid .entity-box .entity-total{
+    opacity: 0.65;
+  }
+
+  /* Frame always dark (background + stroke), regardless of global theme */
+  .v2.v2-grid .entity-frame{
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .v2.v2-grid .entity-frame .entity-frame-bg{
+    fill: #242424 !important;
+  }
+
+  .v2.v2-grid .entity-frame .entity-frame-stroke{
+    fill: none !important;
+    stroke: rgba(255,255,255,0.18) !important;
+    stroke-width: 1 !important;
+  }
+
+  /* Keep bar visible above dark background */
+  .v2.v2-grid .entity-bar{
+    position: relative;
+    z-index: 2;
+    display: block;
+  }
+
+  /* Ensure content stacks above the frame bg */
+  .v2.v2-grid .entity-box > *:not(.entity-frame),
+  .v2.v2-grid .entity-history-box > *:not(.entity-frame){
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Dot styling for dark inset */
+  .v2.v2-grid .entity-dot-layer{
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 3;
+  }
+
+  .v2.v2-grid .entity-dot-outer{
+    fill: rgba(0,0,0,0.55) !important;
+    stroke: rgba(255,255,255,0.70) !important;
+    stroke-width: 2 !important;
+  }
+
+  .v2.v2-grid .entity-dot-inner{
+    fill: rgba(255,255,255,0.90) !important;
+    stroke: none !important;
+  }
+
+  /* History chart label row: readable on dark inset */
+  .v2.v2-grid .nav-xlabels{
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 10px;
+    display: flex;
+    gap: 10px;
+    font-size: 12px;
+    line-height: 1;
+    color: rgba(255,255,255,0.65) !important;
+    z-index: 4;
+    pointer-events: none;
+  }
+
+  .v2.v2-grid .nav-xlabels span{
+    white-space: nowrap;
+  }
+
+  /* Make sure history img sits nicely in the same 360x150 frame */
+  .v2.v2-grid .entity-history-box{
+    width: 360px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 14px;
+  }
+
+  .v2.v2-grid .history-img{
+    position: absolute;
+    inset: 0;
+    width: 360px;
+    height: 150px;
+    object-fit: cover;
+    z-index: 2;
+  }
+
+  /* Optional: keep warning icon readable */
+  .v2.v2-grid .entity-warn{
+    filter: drop-shadow(0 0 2px rgba(0,0,0,0.6));
+  }
+
+  /* Mobile: stack in DOM order */
+  @media (max-width: 820px){
+    .v2.v2-grid .indexes{
+      grid-template-columns: 360px;
+    }
+    .v2.v2-grid .cell-box1,
+    .v2.v2-grid .cell-history,
+    .v2.v2-grid .cell-box2,
+    .v2.v2-grid .cell-box3,
+    .v2.v2-grid .cell-box4,
+    .v2.v2-grid .cell-box5{
+      grid-column: 1;
+      grid-row: auto;
+    }
+  }
+</style>
+
+<div class="v2 v2-grid">
+
+  <div class="indexes">
+
+    <!-- =========================
+         BOX 1 — YELLOW
+         (top-left)
+         ========================= -->
+    <div class="cell-box1">
+      <div class="entity-box" data-box="1">
+
+        <div class="entity-title">{% include t.html key="index.box1.title" %}</div>
+
+        <!-- force DARK bar inside box (independent of theme) -->
+        <img class="entity-bar-img entity-bar" src="/assets/img/bar-orange-dark.svg" alt="" aria-hidden="true">
+
+        <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true">
+          <rect class="entity-frame-bg" x="0" y="0" width="360" height="150" rx="14" ry="14"></rect>
+          <rect class="entity-frame-stroke" x="0.5" y="0.5" width="359" height="149" rx="13.5" ry="13.5"></rect>
+        </svg>
+
+        <div class="entity-steps">
+          <span>{% include t.html key="index.step.entry" %}</span>
+          <span>{% include t.html key="index.step.scale_in" %}</span>
+          <span>{% include t.html key="index.step.hold" %}</span>
+          <span>{% include t.html key="index.step.conviction" %}</span>
+          <span>{% include t.html key="index.step.hodl" %}</span>
+        </div>
+
+        <div class="entity-value" data-role="val">–</div>
+
+        <div class="entity-risk">
+          <span class="entity-warn" data-role="warn">⚠</span>
+          <span class="entity-risk-label">{% include t.html key="index.risk.label" %}</span>
+          <span class="entity-risk-val" data-role="risk">–%</span>
+        </div>
+
+        <svg class="entity-dot-layer" viewBox="0 0 360 150" aria-hidden="true">
+          <circle class="entity-dot-outer" cx="29.76" cy="121.2" r="9"></circle>
+          <circle class="entity-dot-inner" cx="29.76" cy="121.2" r="6"></circle>
+        </svg>
+
+      </div>
+    </div>
+
+    <!-- =========================
+         NAV HISTORY (top-right)
+         pre-rendered SVG (no JS)
+         ========================= -->
+    <div class="cell-history">
+      <div class="entity-history-box">
+
+        <img
+          class="history-img"
+          src="/assets/img/charts/nav_2w.svg"
+          alt=""
+          loading="eager"
+          decoding="async"
+        >
+
+        <!-- labels reconstructed from nav-meta in the svg -->
+        <div class="nav-xlabels" aria-hidden="true"></div>
+
+        <!-- reuse the same frame style as boxes -->
+        <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true">
+          <rect class="entity-frame-bg" x="0" y="0" width="360" height="150" rx="14" ry="14"></rect>
+          <rect class="entity-frame-stroke" x="0.5" y="0.5" width="359" height="149" rx="13.5" ry="13.5"></rect>
+        </svg>
+
+      </div>
+    </div>
+
+    <!-- =========================
+         BOX 2 — BLUE
+         (row 2 left)
+         ========================= -->
+    <div class="cell-box2">
+      <div class="entity-box" data-box="2">
+
+        <div class="entity-title">{% include t.html key="index.box2.title" %}</div>
+
+        <!-- force DARK bar inside box (independent of theme) -->
+        <img class="entity-bar-img entity-bar" src="/assets/img/bar-blue-dark.svg" alt="" aria-hidden="true">
+
+        <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true">
+          <rect class="entity-frame-bg" x="0" y="0" width="360" height="150" rx="14" ry="14"></rect>
+          <rect class="entity-frame-stroke" x="0.5" y="0.5" width="359" height="149" rx="13.5" ry="13.5"></rect>
+        </svg>
+
+        <div class="entity-steps">
+          <span>{% include t.html key="index.step.entry" %}</span>
+          <span>{% include t.html key="index.step.scale_in" %}</span>
+          <span>{% include t.html key="index.step.hold" %}</span>
+          <span>{% include t.html key="index.step.reduce" %}</span>
+          <span>{% include t.html key="index.step.exit" %}</span>
+        </div>
+
+        <div class="entity-value" data-role="val">–</div>
+
+        <div class="entity-risk">
+          <span class="entity-warn" data-role="warn">⚠</span>
+          <span class="entity-risk-label">{% include t.html key="index.risk.label" %}</span>
+          <span class="entity-risk-val" data-role="risk">–%</span>
+        </div>
+
+        <svg class="entity-dot-layer" viewBox="0 0 360 150" aria-hidden="true">
+          <circle class="entity-dot-outer" cx="29.76" cy="121.2" r="9"></circle>
+          <circle class="entity-dot-inner" cx="29.76" cy="121.2" r="6"></circle>
+        </svg>
+
+      </div>
+    </div>
+
+    <!-- =========================
+         BOX 3 — GREY (experimental title key)
+         (row 2 right)
+         ========================= -->
+    <div class="cell-box3">
+      <div class="entity-box" data-box="3">
+
+        <div class="entity-title">
+          {% include t.html key="experimental.box3.title" default="Altcoin Navigation Index" %}
+        </div>
+
+        <!-- force DARK-ish bar inside box (independent of theme) -->
+        <img class="entity-bar-img entity-bar" src="/assets/img/bar-updated-grey.svg" alt="" aria-hidden="true">
+
+        <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true">
+          <rect class="entity-frame-bg" x="0" y="0" width="360" height="150" rx="14" ry="14"></rect>
+          <rect class="entity-frame-stroke" x="0.5" y="0.5" width="359" height="149" rx="13.5" ry="13.5"></rect>
+        </svg>
+
+        <div class="entity-steps">
+          <span>{% include t.html key="index.step.entry" %}</span>
+          <span>{% include t.html key="index.step.scale_in" %}</span>
+          <span>{% include t.html key="index.step.hold" %}</span>
+          <span>{% include t.html key="index.step.reduce" %}</span>
+          <span>{% include t.html key="index.step.exit" %}</span>
+        </div>
+
+        <div class="entity-value" data-role="val">–</div>
+
+        <div class="entity-risk">
+          <span class="entity-warn" data-role="warn">⚠</span>
+          <span class="entity-risk-label">{% include t.html key="index.risk.label" %}</span>
+          <span class="entity-risk-val" data-role="risk">–%</span>
+        </div>
+
+        <svg class="entity-dot-layer" viewBox="0 0 360 150" aria-hidden="true">
+          <circle class="entity-dot-outer" cx="29.76" cy="121.2" r="9"></circle>
+          <circle class="entity-dot-inner" cx="29.76" cy="121.2" r="6"></circle>
+        </svg>
+
+      </div>
+    </div>
+
+    <!-- =========================
+         BOX 4 — GREY (experimental title key)
+         (row 3 left)
+         ========================= -->
+    <div class="cell-box4">
+      <div class="entity-box" data-box="4">
+
+        <div class="entity-title">
+          {% include t.html key="experimental.box4.title" default="Box 4" %}
+        </div>
+
+        <!-- force DARK-ish bar inside box (independent of theme) -->
+        <img class="entity-bar-img entity-bar" src="/assets/img/bar-updated-grey.svg" alt="" aria-hidden="true">
+
+        <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true">
+          <rect class="entity-frame-bg" x="0" y="0" width="360" height="150" rx="14" ry="14"></rect>
+          <rect class="entity-frame-stroke" x="0.5" y="0.5" width="359" height="149" rx="13.5" ry="13.5"></rect>
+        </svg>
+
+        <div class="entity-steps">
+          <span>{% include t.html key="index.step.entry" %}</span>
+          <span>{% include t.html key="index.step.scale_in" %}</span>
+          <span>{% include t.html key="index.step.hold" %}</span>
+          <span>{% include t.html key="index.step.reduce" %}</span>
+          <span>{% include t.html key="index.step.exit" %}</span>
+        </div>
+
+        <div class="entity-value" data-role="val">–</div>
+
+        <div class="entity-risk">
+          <span class="entity-warn" data-role="warn">⚠</span>
+          <span class="entity-risk-label">{% include t.html key="index.risk.label" %}</span>
+          <span class="entity-risk-val" data-role="risk">–%</span>
+        </div>
+
+        <svg class="entity-dot-layer" viewBox="0 0 360 150" aria-hidden="true">
+          <circle class="entity-dot-outer" cx="29.76" cy="121.2" r="9"></circle>
+          <circle class="entity-dot-inner" cx="29.76" cy="121.2" r="6"></circle>
+        </svg>
+
+      </div>
+    </div>
+
+    <!-- =========================
+         BOX 5 — GREY (experimental title key)
+         (row 3 right)
+         ========================= -->
+    <div class="cell-box5">
+      <div class="entity-box" data-box="5">
+
+        <div class="entity-title">
+          {% include t.html key="experimental.box5.title" default="Box 5" %}
+        </div>
+
+        <!-- force DARK-ish bar inside box (independent of theme) -->
+        <img class="entity-bar-img entity-bar" src="/assets/img/bar-updated-grey.svg" alt="" aria-hidden="true">
+
+        <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true">
+          <rect class="entity-frame-bg" x="0" y="0" width="360" height="150" rx="14" ry="14"></rect>
+          <rect class="entity-frame-stroke" x="0.5" y="0.5" width="359" height="149" rx="13.5" ry="13.5"></rect>
+        </svg>
+
+        <div class="entity-steps">
+          <span>{% include t.html key="index.step.entry" %}</span>
+          <span>{% include t.html key="index.step.scale_in" %}</span>
+          <span>{% include t.html key="index.step.hold" %}</span>
+          <span>{% include t.html key="index.step.reduce" %}</span>
+          <span>{% include t.html key="index.step.exit" %}</span>
+        </div>
+
+        <div class="entity-value" data-role="val">–</div>
+
+        <div class="entity-risk">
+          <span class="entity-warn" data-role="warn">⚠</span>
+          <span class="entity-risk-label">{% include t.html key="index.risk.label" %}</span>
+          <span class="entity-risk-val" data-role="risk">–%</span>
+        </div>
+
+        <svg class="entity-dot-layer" viewBox="0 0 360 150" aria-hidden="true">
+          <circle class="entity-dot-outer" cx="29.76" cy="121.2" r="9"></circle>
+          <circle class="entity-dot-inner" cx="29.76" cy="121.2" r="6"></circle>
+        </svg>
+
+      </div>
+    </div>
+
+  </div>
+
+  {%- capture fn -%}{% include t.html key="index.footnotes.footnote1" default="" %}{%- endcapture -%}
+  {%- assign fn = fn | strip -%}
+  {%- if fn != "" -%}
+    <div class="index-footnote">
+      <span class="fn-mark">*</span>
+      {{ fn }}
+    </div>
+  {%- endif -%}
+
+</div>
+
+<script>
+function clamp(v, lo, hi){ return Math.max(lo, Math.min(hi, v)); }
+
+function setEntityValue(boxEl, x){
+  const n = Number(x);
+  if (!Number.isFinite(n)) return;
+
+  const pct = clamp(n, 0, 100);
+  const TOTAL = 25;
+  const step = Math.round((pct / 100) * (TOTAL - 1)) + 1;
+
+  const START = 23.5;
+  const END   = 336.5;
+  const BIN   = (END - START) / TOTAL;
+  const cx = START + (step - 0.5) * BIN;
+
+  boxEl.querySelector(".entity-dot-outer")?.setAttribute("cx", cx);
+  boxEl.querySelector(".entity-dot-inner")?.setAttribute("cx", cx);
+
+  const val = boxEl.querySelector('[data-role="val"]');
+  if (val){
+    val.innerHTML = step + '<span class="entity-total">/' + TOTAL + '</span>';
+  }
+}
+
+function setEntityRisk(boxEl, r){
+  const n = Number(r);
+  if (!Number.isFinite(n)) return;
+  const el = boxEl.querySelector('[data-role="risk"]');
+  if (el) el.textContent = Math.round(clamp(n, 0, 100)) + "%";
+}
+
+function setEntityWarn(boxEl, show){
+  const el = boxEl.querySelector('[data-role="warn"]');
+  if (el) el.style.visibility = show ? "visible" : "hidden";
+}
+
+(function(){
+  const KEY = "dashboard_indexes_cache_v6";
+
+  function applyAll(d){
+    const boxes = {
+      1: document.querySelector('.v2 .entity-box[data-box="1"]'),
+      2: document.querySelector('.v2 .entity-box[data-box="2"]'),
+      3: document.querySelector('.v2 .entity-box[data-box="3"]'),
+      4: document.querySelector('.v2 .entity-box[data-box="4"]'),
+      5: document.querySelector('.v2 .entity-box[data-box="5"]')
+    };
+
+    // values
+    for (const k in boxes){
+      const b = boxes[k];
+      if (!b) continue;
+      if (d['box'+k] !== undefined) setEntityValue(b, d['box'+k]);
+      if (d['box'+k+'_risk'] !== undefined) setEntityRisk(b, d['box'+k+'_risk']);
+    }
+
+    // warning rules (keep same behaviour style)
+    if (boxes[1]) setEntityWarn(boxes[1], false);
+    if (boxes[2]) setEntityWarn(boxes[2], Number(d.box2) >= 80);
+    if (boxes[3]) setEntityWarn(boxes[3], Number(d.box3) >= 80);
+    if (boxes[4]) setEntityWarn(boxes[4], Number(d.box4) >= 80);
+    if (boxes[5]) setEntityWarn(boxes[5], Number(d.box5) >= 80);
+  }
+
+  async function load(){
+    try{
+      const cached = sessionStorage.getItem(KEY);
+      if (cached) applyAll(JSON.parse(cached));
+
+      const res = await fetch("/data/indexes.json", { cache:"no-store" });
+      if (!res.ok) return;
+      const data = await res.json();
+
+      applyAll(data);
+      sessionStorage.setItem(KEY, JSON.stringify(data));
+    }catch(e){}
+  }
+
+  document.readyState === "loading"
+    ? document.addEventListener("DOMContentLoaded", load)
+    : load();
+})();
+
+/* =====================================================
+   NAV HISTORY label extraction (top-right chart only)
+   - render immediately from sessionStorage to avoid flicker
+   - fetch + update only if labels changed
+   ===================================================== */
+(async function(){
+  try{
+    const svgUrl = "/assets/img/charts/nav_2w.svg";
+    const host = document.querySelector(".v2 .nav-xlabels");
+    if (!host) return;
+
+    const CACHE_KEY = "nav_labels_cache_2w_v1";
+
+    function render(labels){
+      if (!Array.isArray(labels) || labels.length === 0) return;
+
+      const current = Array.from(host.querySelectorAll("span")).map(s => s.textContent);
+      const same = current.length === labels.length && current.every((v, i) => v === String(labels[i]));
+      if (same) return;
+
+      host.textContent = "";
+      for (const lab of labels){
+        const s = document.createElement("span");
+        s.textContent = String(lab);
+        host.appendChild(s);
+      }
+      host.style.justifyContent = (labels.length === 1) ? "center" : "space-between";
+    }
+
+    // instant render from cache
+    try{
+      const cached = sessionStorage.getItem(CACHE_KEY);
+      if (cached){
+        render(JSON.parse(cached));
+      }
+    }catch(e){}
+
+    // fetch latest meta, update only if changed
+    const res = await fetch(svgUrl, { cache:"no-store" });
+    if (!res.ok) return;
+
+    const text = await res.text();
+    const doc = new DOMParser().parseFromString(text, "image/svg+xml");
+
+    const desc = doc.querySelector('desc#nav-meta');
+    if (!desc) return;
+
+    const meta = JSON.parse(desc.textContent.trim() || "{}");
+    const labels = Array.isArray(meta.labels) ? meta.labels : [];
+    if (!labels.length) return;
+
+    render(labels);
+    try{
+      sessionStorage.setItem(CACHE_KEY, JSON.stringify(labels));
+    }catch(e){}
+  }catch(e){}
+})();
+</script>
