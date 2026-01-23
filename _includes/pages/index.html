@@ -1,10 +1,8 @@
+<!-- v2-3boxes.html (FULL FILE, REPLACEMENT) -->
+
 <div class="v2">
 
   <div class="indexes">
-
-    <!-- =====================================================
-         Geometry (fixed, do not touch in CSS)
-         ===================================================== -->
 
     <!-- =========================
          BOX 1 — YELLOW
@@ -14,19 +12,9 @@
 
         <div class="entity-title">{% include t.html key="index.box1.title" %}</div>
 
-        <picture
-          style="position:absolute; inset:0; width:360px; height:150px; z-index:1; pointer-events:none;"
-          aria-hidden="true"
-        >
-          <source
-            media="(prefers-color-scheme: dark)"
-            srcset="/assets/img/bar-orange-dark.svg"
-          >
-          <img
-            src="/assets/img/bar-orange-light.svg"
-            alt=""
-            style="position:absolute; left:19.1025px; top:116.7px; width:322.6125px; height:9px;"
-          >
+        <picture class="entity-bar" aria-hidden="true">
+          <source media="(prefers-color-scheme: dark)" srcset="/assets/img/bar-orange-dark.svg">
+          <img class="entity-bar-img" src="/assets/img/bar-orange-light.svg" alt="">
         </picture>
 
         <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true">
@@ -66,19 +54,9 @@
 
         <div class="entity-title">{% include t.html key="index.box2.title" %}</div>
 
-        <picture
-          style="position:absolute; inset:0; width:360px; height:150px; z-index:1; pointer-events:none;"
-          aria-hidden="true"
-        >
-          <source
-            media="(prefers-color-scheme: dark)"
-            srcset="/assets/img/bar-blue-dark.svg"
-          >
-          <img
-            src="/assets/img/bar-blue-light.svg"
-            alt=""
-            style="position:absolute; left:19.1025px; top:116.7px; width:322.6125px; height:9px;"
-          >
+        <picture class="entity-bar" aria-hidden="true">
+          <source media="(prefers-color-scheme: dark)" srcset="/assets/img/bar-blue-dark.svg">
+          <img class="entity-bar-img" src="/assets/img/bar-blue-light.svg" alt="">
         </picture>
 
         <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true">
@@ -118,19 +96,9 @@
 
         <div class="entity-title">{% include t.html key="index.box3.title" %}</div>
 
-        <picture
-          style="position:absolute; inset:0; width:360px; height:150px; z-index:1; pointer-events:none;"
-          aria-hidden="true"
-        >
-          <source
-            media="(prefers-color-scheme: dark)"
-            srcset="/assets/img/bar-updated-grey.svg"
-          >
-          <img
-            src="/assets/img/bar-grey-light.svg"
-            alt=""
-            style="position:absolute; left:19.1025px; top:116.7px; width:322.6125px; height:9px;"
-          >
+        <picture class="entity-bar" aria-hidden="true">
+          <source media="(prefers-color-scheme: dark)" srcset="/assets/img/bar-updated-grey.svg">
+          <img class="entity-bar-img" src="/assets/img/bar-grey-light.svg" alt="">
         </picture>
 
         <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true">
@@ -165,13 +133,13 @@
   </div>
 
   {%- capture fn -%}{% include t.html key="index.footnotes.footnote1" default="" %}{%- endcapture -%}
-{%- assign fn = fn | strip -%}
-{%- if fn != "" -%}
-  <div class="index-footnote">
-    <span class="fn-mark">*</span>
-    {{ fn }}
-  </div>
-{%- endif -%}
+  {%- assign fn = fn | strip -%}
+  {%- if fn != "" -%}
+    <div class="index-footnote">
+      <span class="fn-mark">*</span>
+      {{ fn }}
+    </div>
+  {%- endif -%}
 
 </div>
 
