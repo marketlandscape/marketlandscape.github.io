@@ -60,9 +60,9 @@
   .nav-xlabels span{
     font-size:13px;     /* keep size fixed */
     color:inherit;      /* use global text color */
-    opacity:.5;        /* keep subtlety */
+    opacity:.5;         /* keep subtlety */
     line-height:1;
-     white-space:nowrap;
+    white-space:nowrap;
   }
 </style>
 
@@ -440,8 +440,8 @@ function setEntityWarn(boxEl, show){
 
 /* =====================================================
    NAV HISTORY label extraction (top-right chart only)
-   Reads <desc id="nav-meta">{"labels":[...]}</desc>
-   and renders them as equally spaced flex labels.
+   - render immediately from sessionStorage to avoid flicker
+   - fetch + update only if labels changed
    ===================================================== */
 (async function(){
   try{
@@ -449,6 +449,33 @@ function setEntityWarn(boxEl, show){
     const host = document.querySelector(".v2 .nav-xlabels");
     if (!host) return;
 
+    const CACHE_KEY = "nav_labels_cache_2w_v1";
+
+    function render(labels){
+      if (!Array.isArray(labels) || labels.length === 0) return;
+
+      const current = Array.from(host.querySelectorAll("span")).map(s => s.textContent);
+      const same = current.length === labels.length && current.every((v, i) => v === String(labels[i]));
+      if (same) return;
+
+      host.textContent = "";
+      for (const lab of labels){
+        const s = document.createElement("span");
+        s.textContent = String(lab);
+        host.appendChild(s);
+      }
+      host.style.justifyContent = (labels.length === 1) ? "center" : "space-between";
+    }
+
+    // instant render from cache
+    try{
+      const cached = sessionStorage.getItem(CACHE_KEY);
+      if (cached){
+        render(JSON.parse(cached));
+      }
+    }catch(e){}
+
+    // fetch latest meta, update only if changed
     const res = await fetch(svgUrl, { cache:"no-store" });
     if (!res.ok) return;
 
@@ -462,14 +489,10 @@ function setEntityWarn(boxEl, show){
     const labels = Array.isArray(meta.labels) ? meta.labels : [];
     if (!labels.length) return;
 
-    host.innerHTML = "";
-    for (const lab of labels){
-      const s = document.createElement("span");
-      s.textContent = String(lab);
-      host.appendChild(s);
-    }
-
-    host.style.justifyContent = (labels.length === 1) ? "center" : "space-between";
+    render(labels);
+    try{
+      sessionStorage.setItem(CACHE_KEY, JSON.stringify(labels));
+    }catch(e){}
   }catch(e){}
 })();
 </script>
