@@ -1,5 +1,174 @@
 <!-- grid.html (FULL FILE, PAGE-LOCAL GRID ONLY) -->
 
+<style>
+  /* =====================================================
+     PAGE-LOCAL GRID ONLY
+     Goal:
+       - Page stays LIGHT (inherits site light theme)
+       - ONLY the boxes (and history box) render as DARK,
+         independent of prefers-color-scheme / site theme.
+     ===================================================== */
+
+  .v2.v2-grid .indexes{
+    display: grid;
+    grid-template-columns: repeat(2, 360px);
+    column-gap: 28px;
+    row-gap: 28px;
+    align-items: start;
+  }
+
+  /* neutralise existing margins so grid gaps win */
+  .v2.v2-grid .indexes > div{
+    margin-bottom: 0 !important;
+  }
+
+  /* grid placement */
+  .v2.v2-grid .cell-box1{ grid-column: 1; grid-row: 1; }
+  .v2.v2-grid .cell-history{ grid-column: 2; grid-row: 1; }
+  .v2.v2-grid .cell-box2{ grid-column: 1; grid-row: 2; }
+  .v2.v2-grid .cell-box3{ grid-column: 2; grid-row: 2; }
+  .v2.v2-grid .cell-box4{ grid-column: 1; grid-row: 3; }
+  .v2.v2-grid .cell-box5{ grid-column: 2; grid-row: 3; }
+
+  /* =====================================================
+     DARK-INSET OVERRIDES (boxes only)
+     ===================================================== */
+
+  /* Make ONLY the boxes behave like dark theme */
+  .v2.v2-grid .entity-box,
+  .v2.v2-grid .entity-history-box{
+    position: relative;
+    color: #ffffff;
+  }
+
+  /* Text inside boxes */
+  .v2.v2-grid .entity-box .entity-title,
+  .v2.v2-grid .entity-box .entity-steps,
+  .v2.v2-grid .entity-box .entity-steps span,
+  .v2.v2-grid .entity-box .entity-risk,
+  .v2.v2-grid .entity-box .entity-risk-label,
+  .v2.v2-grid .entity-box .entity-risk-val,
+  .v2.v2-grid .entity-box .entity-value,
+  .v2.v2-grid .entity-box .entity-total{
+    color: rgba(255,255,255,0.92) !important;
+  }
+
+  .v2.v2-grid .entity-box .entity-steps span{
+    opacity: 0.85;
+  }
+
+  .v2.v2-grid .entity-box .entity-total{
+    opacity: 0.65;
+  }
+
+  /* Frame always dark (background + stroke), regardless of global theme */
+  .v2.v2-grid .entity-frame{
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .v2.v2-grid .entity-frame .entity-frame-bg{
+    fill: #242424 !important;
+  }
+
+  .v2.v2-grid .entity-frame .entity-frame-stroke{
+    fill: none !important;
+    stroke: rgba(255,255,255,0.18) !important;
+    stroke-width: 1 !important;
+  }
+
+  /* Keep bar visible above dark background */
+  .v2.v2-grid .entity-bar{
+    position: relative;
+    z-index: 2;
+    display: block;
+  }
+
+  /* Ensure content stacks above the frame bg */
+  .v2.v2-grid .entity-box > *:not(.entity-frame),
+  .v2.v2-grid .entity-history-box > *:not(.entity-frame){
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Dot styling for dark inset */
+  .v2.v2-grid .entity-dot-layer{
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 3;
+  }
+
+  .v2.v2-grid .entity-dot-outer{
+    fill: rgba(0,0,0,0.55) !important;
+    stroke: rgba(255,255,255,0.70) !important;
+    stroke-width: 2 !important;
+  }
+
+  .v2.v2-grid .entity-dot-inner{
+    fill: rgba(255,255,255,0.90) !important;
+    stroke: none !important;
+  }
+
+  /* History chart label row: readable on dark inset */
+  .v2.v2-grid .nav-xlabels{
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 10px;
+    display: flex;
+    gap: 10px;
+    font-size: 12px;
+    line-height: 1;
+    color: rgba(255,255,255,0.65) !important;
+    z-index: 4;
+    pointer-events: none;
+  }
+
+  .v2.v2-grid .nav-xlabels span{
+    white-space: nowrap;
+  }
+
+  /* Make sure history img sits nicely in the same 360x150 frame */
+  .v2.v2-grid .entity-history-box{
+    width: 360px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 14px;
+  }
+
+  .v2.v2-grid .history-img{
+    position: absolute;
+    inset: 0;
+    width: 360px;
+    height: 150px;
+    object-fit: cover;
+    z-index: 2;
+  }
+
+  /* Optional: keep warning icon readable */
+  .v2.v2-grid .entity-warn{
+    filter: drop-shadow(0 0 2px rgba(0,0,0,0.6));
+  }
+
+  /* Mobile: stack in DOM order */
+  @media (max-width: 820px){
+    .v2.v2-grid .indexes{
+      grid-template-columns: 360px;
+    }
+    .v2.v2-grid .cell-box1,
+    .v2.v2-grid .cell-history,
+    .v2.v2-grid .cell-box2,
+    .v2.v2-grid .cell-box3,
+    .v2.v2-grid .cell-box4,
+    .v2.v2-grid .cell-box5{
+      grid-column: 1;
+      grid-row: auto;
+    }
+  }
+</style>
+
 <div class="v2 v2-grid">
 
   <div class="indexes">
@@ -13,10 +182,8 @@
 
         <div class="entity-title">{% include t.html key="index.box1.title" %}</div>
 
-        <picture class="entity-bar" aria-hidden="true">
-          <source media="(prefers-color-scheme: dark)" srcset="/assets/img/bar-orange-dark.svg">
-          <img class="entity-bar-img" src="/assets/img/bar-orange-light.svg" alt="">
-        </picture>
+        <!-- force DARK bar inside box (independent of theme) -->
+        <img class="entity-bar-img entity-bar" src="/assets/img/bar-orange-dark.svg" alt="" aria-hidden="true">
 
         <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true">
           <rect class="entity-frame-bg" x="0" y="0" width="360" height="150" rx="14" ry="14"></rect>
@@ -83,10 +250,8 @@
 
         <div class="entity-title">{% include t.html key="index.box2.title" %}</div>
 
-        <picture class="entity-bar" aria-hidden="true">
-          <source media="(prefers-color-scheme: dark)" srcset="/assets/img/bar-blue-dark.svg">
-          <img class="entity-bar-img" src="/assets/img/bar-blue-light.svg" alt="">
-        </picture>
+        <!-- force DARK bar inside box (independent of theme) -->
+        <img class="entity-bar-img entity-bar" src="/assets/img/bar-blue-dark.svg" alt="" aria-hidden="true">
 
         <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true">
           <rect class="entity-frame-bg" x="0" y="0" width="360" height="150" rx="14" ry="14"></rect>
@@ -128,10 +293,8 @@
           {% include t.html key="experimental.box3.title" default="Altcoin Navigation Index" %}
         </div>
 
-        <picture class="entity-bar" aria-hidden="true">
-          <source media="(prefers-color-scheme: dark)" srcset="/assets/img/bar-updated-grey.svg">
-          <img class="entity-bar-img" src="/assets/img/bar-grey-light.svg" alt="">
-        </picture>
+        <!-- force DARK-ish bar inside box (independent of theme) -->
+        <img class="entity-bar-img entity-bar" src="/assets/img/bar-updated-grey.svg" alt="" aria-hidden="true">
 
         <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true">
           <rect class="entity-frame-bg" x="0" y="0" width="360" height="150" rx="14" ry="14"></rect>
@@ -173,10 +336,8 @@
           {% include t.html key="experimental.box4.title" default="Box 4" %}
         </div>
 
-        <picture class="entity-bar" aria-hidden="true">
-          <source media="(prefers-color-scheme: dark)" srcset="/assets/img/bar-updated-grey.svg">
-          <img class="entity-bar-img" src="/assets/img/bar-grey-light.svg" alt="">
-        </picture>
+        <!-- force DARK-ish bar inside box (independent of theme) -->
+        <img class="entity-bar-img entity-bar" src="/assets/img/bar-updated-grey.svg" alt="" aria-hidden="true">
 
         <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true">
           <rect class="entity-frame-bg" x="0" y="0" width="360" height="150" rx="14" ry="14"></rect>
@@ -218,10 +379,8 @@
           {% include t.html key="experimental.box5.title" default="Box 5" %}
         </div>
 
-        <picture class="entity-bar" aria-hidden="true">
-          <source media="(prefers-color-scheme: dark)" srcset="/assets/img/bar-updated-grey.svg">
-          <img class="entity-bar-img" src="/assets/img/bar-grey-light.svg" alt="">
-        </picture>
+        <!-- force DARK-ish bar inside box (independent of theme) -->
+        <img class="entity-bar-img entity-bar" src="/assets/img/bar-updated-grey.svg" alt="" aria-hidden="true">
 
         <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true">
           <rect class="entity-frame-bg" x="0" y="0" width="360" height="150" rx="14" ry="14"></rect>
