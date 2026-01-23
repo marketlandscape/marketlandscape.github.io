@@ -260,4 +260,82 @@ a:focus-visible{
 .v2 .entity-title{
   top:18px;
   left:20px;
-  right:17px
+  right:17px;
+  font-size:15px;
+  font-weight:500;
+  line-height:1.2;
+}
+
+.v2 .entity-steps{
+  left:20px;
+  bottom:41px;
+  width:320px;
+  display:flex;
+  font-size:13px;
+  opacity:0.5;
+  height:36px;
+  align-items:flex-end;
+}
+
+.v2 .entity-steps > span{
+  flex:1;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+}
+
+.v2 .entity-value{
+  top:44%;
+  left:20px;
+  transform:translateY(-50%);
+  font-size:17px;
+}
+
+.v2 .entity-risk{
+  top:44%;
+  right:20px;
+  transform:translateY(-50%);
+  font-size:14px;
+  white-space:nowrap;
+}
+
+.v2 .entity-warn{
+  opacity:0.5;
+  margin-right:6px;
+  visibility:hidden;
+}
+
+.v2 .entity-risk-label{ opacity:0.5; }
+.v2 .entity-risk-val{ opacity:0.75; }
+
+/* Dot colors */
+
+.v2 .entity-dot-outer{ fill: var(--entity-dot-outer); }
+.v2 .entity-dot-inner{
+  fill: var(--entity-dot-inner);
+  fill-opacity: var(--entity-dot-inner-opacity);
+}
+
+/* =========================================================
+   Footnote
+   ========================================================= */
+
+.v2 .index-footnote{
+  margin-top:28px;
+  max-width:360px;
+  font-size:11px;
+  line-height:1.35;
+  opacity:0.7;
+}
+
+/* =========================================================
+   Print
+   ========================================================= */
+
+@media print{
+  body{
+    padding:0.4in;
+    font-size:12pt;
+  }
+}
