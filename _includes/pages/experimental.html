@@ -26,7 +26,10 @@ test
     <div class="cell-box1">
       <div class="entity-box" data-box="1">
 
-        <div class="entity-title">{% include t.html key="index.box1.title" %}</div>
+        <div class="entity-title">
+  {% include t.html key="index.box1.title" %}
+  <span style="color:#ff00ff;margin-left:8px;">TEST-123</span>
+</div>
 
         <!-- force dark bar (HTML, no prefers-color-scheme) -->
         <img class="entity-bar entity-bar-img"
