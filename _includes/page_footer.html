@@ -1,0 +1,30 @@
+{%- assign lang = page.lang | default: site.lang | default: "en" -%}
+
+{%- assign signature = nil -%}
+{%- assign official  = nil -%}
+
+{%- if site.data.i18n and site.data.i18n[lang] and site.data.i18n[lang].footer -%}
+  {%- assign signature = site.data.i18n[lang].footer.signature -%}
+  {%- assign official  = site.data.i18n[lang].footer.official -%}
+{%- elsif site.data.i18n and site.data.i18n.en and site.data.i18n.en.footer -%}
+  {%- assign signature = site.data.i18n.en.footer.signature -%}
+  {%- assign official  = site.data.i18n.en.footer.official -%}
+{%- endif -%}
+
+<footer class="page-footer" role="contentinfo">
+  <p class="page-footer__signature">
+    {%- if signature -%}
+      {{ signature }}
+    {%- else -%}
+      Market Landscape · Independent research framework · Educational use only
+    {%- endif -%}
+  </p>
+
+  <p class="page-footer__official">
+    {%- if official -%}
+      {{ official }}
+    {%- else -%}
+      Published exclusively at marketlandscape.github.io
+    {%- endif -%}
+  </p>
+</footer>
