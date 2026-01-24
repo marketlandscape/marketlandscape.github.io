@@ -53,7 +53,7 @@ marketlandscape [at] proton [dot] me
   }
 
   .theme-logo {
-    max-width: 60px;
+    max-width: 40px;
     max-height: 100%;
     display: block;
     opacity: 0.85;             /* light */
