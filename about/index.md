@@ -32,7 +32,7 @@ Altcoin — v0.1 · Initial release · 2026-01
 
 ## Data sources
 
-Price and market data are obtained from public APIs and processed into index values. Availability and accuracy depend on upstream sources, occasional gaps or revisions may occur.
+Price and market data are obtained from public APIs and processed into index values. Availability and accuracy depend on upstream sources; occasional gaps or revisions may occur.
 
 
 ## Official presence
