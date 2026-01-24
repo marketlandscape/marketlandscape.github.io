@@ -271,6 +271,35 @@ header{
   opacity: 0.75;
 }
 
+
+/* =========================================================
+   Page footer (bottom of main content)
+   ========================================================= */
+
+.page-footer{
+  margin-top: 38px;        /* match sidebar footer spacing */
+  padding-top: 12px;       /* match */
+  padding-bottom: 40px;    /* match sidebar bottom air */
+  border-top: none;        /* no line (you requested) */
+}
+
+.page-footer__signature{
+  margin: 0;
+  font-size: 11px;         /* match .footer-disclaimer */
+  line-height: 1.4;
+  color: var(--text);
+  opacity: 0.75;           /* match .footer-disclaimer */
+}
+
+.page-footer__official{
+  margin: 6px 0 0;         /* small separation like your mini-time */
+  font-size: 11px;         /* keep same scale */
+  line-height: 1.2;
+  color: var(--text);
+  opacity: 0.55;           /* slightly more subtle than signature */
+}
+
+
 /* =========================================================
    Main content
    ========================================================= */
