@@ -5,8 +5,6 @@ title: Contact
 
 <h1>Contact</h1>
 
-<p>For questions, feedback, or collaboration.</p>
-
 <style>
   .contact-form{
     max-width: 520px;
