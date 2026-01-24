@@ -11,15 +11,16 @@ Market Landscape is intended to provide a calmer, context-oriented way of lookin
 
 ## Approach
 
-The primary framework developed within Market Landscape is the Market Navigation Index. It expresses market positioning on a 25-point contextual scale, describing where the market sits relative to its own historical and cyclical position rather than absolute price levels. More broadly, Market Landscape functions as a strategic navigation framework, helping distinguish market regimes and clarify risk–reward asymmetries across a cycle.
+The primary framework developed within Market Landscape is the Market Navigation Index. It expresses market positioning on a 25-point contextual scale, describing where the market sits relative to its own historical and cyclical position rather than absolute price levels. More broadly, Market Landscape functions as a strategic navigation framework, helping distinguish market regimes and clarify risk–reward asymmetries across a cycle. The output is a bounded score on a 25-point scale intended to represent relative cycle position and risk context; it is not designed for short-term trading signals.
 
 ## Scope
 
-This project is not a trading platform and does not provide financial or investment advice. It is an interpretative framework designed to inform practical market decisions through cycle-level perspective and contextual understanding.
+This project is not a trading platform and does not provide financial or investment advice. It is an interpretative framework designed to inform practical market decisions through cycle-level perspective and contextual understanding. Market Landscape is an independent framework with no affiliations, sponsorships, or paid promotions.
 
 ## Publication and versioning
 
 First published: 2026-01  
+Last updated: 2026-01  
 
 Included in the first publication:  
 BTC Index v0.1 · ETH Index v0.1 · Altcoin Index v0.1  
@@ -29,12 +30,18 @@ BTC — v0.1 · Initial release · 2026-01
 ETH — v0.1 · Initial release · 2026-01  
 Altcoin — v0.1 · Initial release · 2026-01
 
+## Data sources
+
+Price and market data are obtained from public APIs and processed into index values. Availability and accuracy depend on upstream sources, occasional gaps or revisions may occur.
+
+
 ## Official presence
 
 This project is published exclusively at [marketlandscape.github.io](https://marketlandscape.github.io/). No other websites or domains represent this project.
 
 ## Contact
 
+For methodology, corrections, or publication issues:  
 marketlandscape [at] proton [dot] me
 
 <!--
