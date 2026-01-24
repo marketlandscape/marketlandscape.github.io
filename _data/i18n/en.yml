@@ -22,6 +22,11 @@ experimental:
   box3:
     title: "Large-Cap Altcoin Navigation Index"
   box4:
+
+footer:
+  signature: "Market Landscape · Independent research framework · Educational use only"
+  official: "Published exclusively at marketlandscape.github.io"
+
     title: "Mid-Cap Altcoin Navigation Index"
   box5:
     title: "Small-Cap Altcoin Navigation Index"
