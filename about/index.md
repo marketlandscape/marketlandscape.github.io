@@ -11,7 +11,7 @@ Market Landscape is intended to provide a calmer, context-oriented way of lookin
 
 ## Approach
 
-The primary framework developed within Market Landscape is the Market Navigation Index. It expresses market positioning on a 25-point contextual scale, describing where the market sits relative to its own historical and cyclical position rather than absolute price levels. More broadly, Market Landscape functions as a strategic navigation framework, helping distinguish market regimes and clarify risk–reward asymmetries across a cycle. The output is a bounded score on a 25-point scale intended to represent relative cycle position and risk context and is not designed for short-term trading signals.
+The primary framework developed within Market Landscape is the Market Navigation Index. It expresses market positioning on a 25-point contextual scale, describing where the market sits relative to its own historical and cyclical position rather than absolute price levels. More broadly, Market Landscape functions as a strategic navigation framework, helping distinguish market regimes and clarify risk–reward asymmetries across a cycle. The output is a normalised bounded score intended to represent relative cycle position and risk context and is not designed for short-term trading signals.
 
 ## Scope
 
