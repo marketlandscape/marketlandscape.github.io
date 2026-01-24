@@ -48,7 +48,7 @@ marketlandscape [at] proton [dot] me
     padding-top: 24px;
     box-sizing: border-box;
 
-    gap: 14px;
+    gap: 16px;
     background: transparent;
   }
 
