@@ -268,7 +268,7 @@ header{
   font-size: 11px;
   line-height: 1.4;
   color: var(--text);
-  opacity: 0.5;
+  opacity: 0.75;
 }
 
 
@@ -288,7 +288,7 @@ header{
   font-size: 11px;         /* match .footer-disclaimer */
   line-height: 1.4;
   color: var(--text);
-  opacity: 0.5;           /* match .footer-disclaimer */
+  opacity: 0.75;           /* match .footer-disclaimer */
 }
 
 .page-footer__official{
@@ -296,7 +296,7 @@ header{
   font-size: 11px;         /* keep same scale */
   line-height: 1.2;
   color: var(--text);
-  opacity: 0.5;           /* slightly more subtle than signature */
+  opacity: 0.75;           /* slightly more subtle than signature */
 }
 
 
