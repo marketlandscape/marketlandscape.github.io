@@ -35,5 +35,5 @@ Altcoin — v0.1 · Initial release · 2026-01
 
 ## Контакт
 
-marketlandscape [at] proton [dot] me
+marketlandscape@proton.me
 
