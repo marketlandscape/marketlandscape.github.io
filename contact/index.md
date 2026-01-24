@@ -7,7 +7,54 @@ title: Contact
 
 <p>For questions, feedback, or collaboration.</p>
 
-<form action="https://formspree.io/f/mnjpydrq" method="POST">
+<style>
+  .contact-form{
+    max-width: 520px;
+  }
+
+  .contact-form label{
+    display: block;
+    margin-bottom: 18px;
+    font-size: 0.9rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea{
+    width: 100%;
+    padding: 10px 12px;
+    margin-top: 6px;
+    font-size: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--bg);
+    color: var(--text);
+  }
+
+  .contact-form textarea{
+    min-height: 140px;
+    resize: vertical;
+  }
+
+  .contact-form button{
+    margin-top: 8px;
+    padding: 10px 18px;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+  }
+
+  .contact-form button:hover{
+    background: rgba(0,0,0,0.03);
+  }
+</style>
+
+<form class="contact-form"
+      action="https://formspree.io/f/abcdwxyz"
+      method="POST">
+
   <label>
     Name
     <input type="text" name="name" required>
@@ -20,31 +67,11 @@ title: Contact
 
   <label>
     Message
-    <textarea name="message" rows="5" required></textarea>
+    <textarea name="message" required></textarea>
   </label>
 
   <input type="text" name="_gotcha" style="display:none">
-
   <input type="hidden" name="_redirect" value="/contact/thanks/">
 
   <button type="submit">Send</button>
 </form>
-
-<hr>
-
-<p>
-  You can also email us directly at  
-  <span id="email"></span>
-  <button type="button" onclick="copyEmail()">Copy email</button>
-</p>
-
-<script>
-  const user = "marketlandscape";
-  const domain = "proton.me";
-  const email = user + "@" + domain;
-  document.getElementById("email").textContent = email;
-
-  function copyEmail(){
-    navigator.clipboard.writeText(email);
-  }
-</script>
