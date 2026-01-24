@@ -42,7 +42,7 @@ This project is published exclusively at [marketlandscape.github.io](https://mar
 ## Contact
 
 For methodology, corrections, or publication issues:  
-marketlandscape [at] proton [dot] me
+marketlandscape@proton.me
 
 <!--
 <style>
