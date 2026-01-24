@@ -27,5 +27,7 @@ experimental:
     title: "Small-Cap Altcoin Navigation Index"
 
 footer:
-  signature: "Market Landscape · Independent research framework · Educational use only"
+  disclaimer: "This material is provided for informational purposes only and does not constitute financial or investment advice."
+  signature: "Market Landscape · Independent research framework"
   official: "Published exclusively at marketlandscape.github.io"
+
