@@ -37,7 +37,7 @@ Price and market data are obtained from public APIs and processed into index val
 
 ## Official presence
 
-This project is published exclusively at [marketlandscape.github.io](https://marketlandscape.github.io/). No other websites or domains represent this project.
+This project is published exclusively at [marketlandscape.github.io](https://marketlandscape.github.io/). No other websites or domains are affiliated with this project.
 
 ## Contact
 
