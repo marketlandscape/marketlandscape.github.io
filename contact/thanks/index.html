@@ -11,7 +11,8 @@ title: Thanks!
   flex-direction: column;
 }
 
-.thanks-wrap .page-footer{
+/* Push the EXISTING layout footer down when page is short */
+.thanks-wrap + .page-footer{
   margin-top: auto;
 }
 </style>
@@ -21,9 +22,5 @@ title: Thanks!
 <h1>Thanks!</h1>
 
 <p>Your message has been sent.</p>
-
-<div class="page-footer">
-  <p class="page-footer__signature">Market Landscape</p>
-</div>
 
 </div>
