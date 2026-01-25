@@ -1,6 +1,5 @@
-{% include t.html %}
-
-{% assign lang = page.lang | default: "en" %}
+{%- assign lang = page.lang | default: "en" -%}
+{%- assign t = site.data.i18n[lang] | default: site.data.i18n.en -%}
 
 {% if lang == "en" %}
   {% assign thanks_url = "/contact/thanks/" %}
@@ -57,7 +56,8 @@
 <form id="contactForm"
       class="contact-form"
       action="https://formspree.io/f/mnjpydrq"
-      method="POST">
+      method="POST"
+      novalidate>
 
   <label>
     {{ t.contact.name | default: "Name" }}
