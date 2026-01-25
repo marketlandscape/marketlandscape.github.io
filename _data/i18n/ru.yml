@@ -10,7 +10,7 @@ index:
     entry: "Вход"
     scale_in: "Наращ."
     hold: "Удерж."
-    conviction: "Осн."
+    conviction: "Осн.поз."
     hodl: "HODL"
     reduce: "Сокр."
     exit: "Выход"
