@@ -1,8 +1,29 @@
 ---
 layout: default
-title: Thank you
+title: Thanks!
 ---
+
+<style>
+/* Page-local sticky footer (THANKS PAGE ONLY) */
+.thanks-wrap{
+  min-height: calc(100vh - (2 * clamp(14px, 4vw, 50px)));
+  display: flex;
+  flex-direction: column;
+}
+
+.thanks-wrap .page-footer{
+  margin-top: auto;
+}
+</style>
+
+<div class="thanks-wrap">
 
 <h1>Thanks!</h1>
 
 <p>Your message has been sent.</p>
+
+<div class="page-footer">
+  <p class="page-footer__signature">Market Landscape</p>
+</div>
+
+</div>
