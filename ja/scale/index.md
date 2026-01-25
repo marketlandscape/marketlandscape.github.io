@@ -1,5 +1,6 @@
 ---
 layout: default
+title: 指数スケール
 lang: ja
 ---
 
