@@ -1,5 +1,6 @@
 ---
 layout: default
+title: О проекте
 lang: ru
 ---
 
