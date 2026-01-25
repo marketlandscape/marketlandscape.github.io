@@ -30,3 +30,4 @@ contact:
   email: "Email"
   message: "Сообщение"
   send: "Отправить"
+  email_before: "Вы также можете написать по email:"
