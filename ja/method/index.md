@@ -1,5 +1,6 @@
 ---
 layout: default
+title: 手法
 lang: ja
 ---
 
