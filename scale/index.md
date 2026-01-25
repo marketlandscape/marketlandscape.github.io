@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Scale
 lang: en
 ---
 
