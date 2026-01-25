@@ -29,3 +29,4 @@ contact:
   email: "メールアドレス"
   message: "メッセージ"
   send: "送信"
+  email_before: "メールでもご連絡いただけます："
