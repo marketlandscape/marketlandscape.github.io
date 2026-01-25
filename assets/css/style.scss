@@ -238,14 +238,15 @@ header{
 
 /* Simple text links (no "button" styling) */
 .nav-link{
-  display:block;      /* makes the whole row clickable */
-  padding: 4px 0;     /* minimal hit-area increase */
-  margin: -2px 0;     /* cancels visual spacing */
-  line-height:1.4;
+  display: block;      /* full-row clickable */
+  padding: 4px 0;      /* hit area */
+  margin: 0;           /* NO dead zones */
+  line-height: 1.4;
   color: var(--text);
-  background:none;
-  border:none;
+  background: none;
+  border: none;
 }
+
 
 .nav-link:hover,
 .nav-link:focus{
