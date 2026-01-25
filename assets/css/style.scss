@@ -236,10 +236,11 @@ header{
   gap:8px;
 }
 
-/* Option A: simple text links (no "button" styling) */
+/* Simple text links (no "button" styling) */
 .nav-link{
-  display:inline;
-  padding:0;
+  display:block;           /* makes the whole row clickable */
+  padding: 6px 0;          /* increases hit area without changing style */
+  margin: -2px 0;          /* keeps overall vertical spacing close to before */
   border:none;
   border-radius:0;
   line-height:1.4;
