@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Risk level
 lang: en
 ---
 
