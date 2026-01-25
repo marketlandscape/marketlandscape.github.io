@@ -49,7 +49,8 @@ title: Contact
   }
 </style>
 
-<form class="contact-form"
+<form id="contactForm"
+      class="contact-form"
       action="https://formspree.io/f/mnjpydrq"
       method="POST">
 
@@ -68,8 +69,34 @@ title: Contact
     <textarea name="message" required></textarea>
   </label>
 
+  <!-- honeypot -->
   <input type="text" name="_gotcha" style="display:none">
-  <input type="hidden" name="_redirect" value="/contact/thanks/">
 
   <button type="submit">Send</button>
 </form>
+
+<script>
+  const form = document.getElementById("contactForm");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const data = new FormData(form);
+
+    try {
+      const res = await fetch(form.action, {
+        method: "POST",
+        body: data,
+        headers: { "Accept": "application/json" }
+      });
+
+      if (res.ok) {
+        window.location.href = "/contact/thanks/";
+      } else {
+        alert("Submission failed. Please try again.");
+      }
+    } catch (err) {
+      alert("Submission failed. Please try again.");
+    }
+  });
+</script>
