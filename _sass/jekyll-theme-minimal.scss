@@ -97,13 +97,6 @@ html{
   background: var(--bg);
 }
 
-/* =========================================================
-   Sticky footer base (NEW)
-   ========================================================= */
-html, body{
-  height: 100%;
-}
-
 body{
   margin:0;
   padding: clamp(14px, 4vw, 50px);
@@ -111,11 +104,6 @@ body{
   color: var(--text);
   background: var(--bg);
   word-wrap: break-word;
-
-  /* NEW: make short pages push footer to bottom */
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 
 /* =========================================================
@@ -179,9 +167,6 @@ a small{
 .wrapper{
   max-width: 980px;
   margin: 0 auto;
-
-  /* NEW: wrapper is the growing area so footer can sit at bottom */
-  flex: 1;
 }
 
 /* Desktop layout */
@@ -294,7 +279,7 @@ header{
 .page-footer{
   margin-top: 46px;        /* match sidebar footer spacing */
   padding-top: 12px;       /* match */
-  padding-bottom: 24px;    /* CHANGED: was 72px; looks odd on short pages */
+  padding-bottom: 72px;    /* match sidebar bottom air */
   border-top: none;        /* no line (you requested) */
 }
 
@@ -322,16 +307,6 @@ header{
 main{
   max-width: 640px;
   padding-bottom: 0px;
-
-  /* NEW: allow footer-inside-main pages (like thanks) to stick low */
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-/* NEW: if your footer lives inside <main>, this pushes it to bottom on short pages */
-main .page-footer{
-  margin-top: auto;
 }
 
 /* =========================================================
