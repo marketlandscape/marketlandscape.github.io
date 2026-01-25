@@ -233,20 +233,17 @@ header{
   margin:0;
   display:flex;
   flex-direction:column;
-  gap:8px;
+  gap: 4px;
 }
 
-/* Simple text links (no "button" styling) */
 .nav-link{
-  display: block;      /* full-row clickable */
-  padding: 4px 0;      /* hit area */
-  margin: 0;           /* NO dead zones */
-  line-height: 1.4;
+  display:block;
+  padding: 4px 0;
+  line-height:1.4;
   color: var(--text);
-  background: none;
-  border: none;
+  background:none;
+  border:none;
 }
-
 
 .nav-link:hover,
 .nav-link:focus{
