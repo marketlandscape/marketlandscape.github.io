@@ -4,19 +4,15 @@ title: Thanks!
 ---
 
 <style>
-/* Page-local sticky footer (THANKS PAGE ONLY) */
 .thanks-wrap{
   min-height: calc(100vh - (2 * clamp(14px, 4vw, 50px)));
   display: flex;
   flex-direction: column;
-
-  /* space after footer (because footer sits after this wrapper) */
-  margin-bottom: 46px;
 }
 
-/* Push the EXISTING layout footer down when page is short */
 .thanks-wrap + .page-footer{
   margin-top: auto;
+  margin-bottom: 46px;
 }
 </style>
 
