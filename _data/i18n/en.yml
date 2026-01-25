@@ -37,6 +37,4 @@ contact:
   email: "Email"
   message: "Message"
   send: "Send"
-  fail: "Submission failed. Please try again."
-  email_before: "You can also reach us by email:"
 
