@@ -1,12 +1,6 @@
 {%- assign lang = page.lang | default: "en" -%}
 {%- assign t = site.data.i18n[lang] | default: site.data.i18n.en -%}
 
-{% if lang == "en" %}
-  {% assign thanks_url = "/contact/thanks/" %}
-{% else %}
-  {% assign thanks_url = "/" | append: lang | append: "/contact/thanks/" %}
-{% endif %}
-
 <h1>{{ t.contact.title | default: "Contact" }}</h1>
 
 <style>
@@ -82,15 +76,14 @@
 </form>
 
 <script>
-  (function(){
-    const form = document.getElementById("contactForm");
-    if(!form) return;
+  const form = document.getElementById("contactForm");
 
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-      const data = new FormData(form);
+    const data = new FormData(form);
 
+    try {
       const res = await fetch(form.action, {
         method: "POST",
         body: data,
@@ -98,10 +91,14 @@
       });
 
       if (res.ok) {
-        window.location.href = {{ thanks_url | relative_url | jsonify }};
+        window.location.href = "/contact/thanks/";
+      } else {
+        alert("Submission failed. Please try again.");
       }
-    });
-  })();
+    } catch (err) {
+      alert("Submission failed. Please try again.");
+    }
+  });
 </script>
 
 <p style="margin-top: 24px; font-size: 0.9rem; opacity: 0.8;">
