@@ -22,3 +22,12 @@ footer:
   disclaimer: "本サイトの情報は情報提供を目的としたものであり、投資助言を行うものではありません。"
   signature: "Market Landscape | ナビゲーション・フレームワーク | marketlandscape.github.io"
   official: "公式公開先は marketlandscape.github.io のみです"
+
+contact:
+  title: "お問い合わせ"
+  name: "お名前"
+  email: "メールアドレス"
+  message: "メッセージ"
+  send: "送信"
+  fail: "送信に失敗しました。時間をおいて再度お試しください。"
+  email_before: "メールでもご連絡いただけます："
