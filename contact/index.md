@@ -50,7 +50,7 @@ title: Contact
 </style>
 
 <form class="contact-form"
-      action="https://formspree.io/f/abcdwxyz"
+      action="https://formspree.io/f/mnjpydrq"
       method="POST">
 
   <label>
