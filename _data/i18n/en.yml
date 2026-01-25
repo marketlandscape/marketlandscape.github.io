@@ -31,3 +31,12 @@ footer:
   signature: "Market Landscape | Market navigation framework | marketlandscape.github.io"
   official: "Published exclusively at marketlandscape.github.io"
 
+contact:
+  title: "Contact"
+  name: "Name"
+  email: "Email"
+  message: "Message"
+  send: "Send"
+  fail: "Submission failed. Please try again."
+  email_before: "You can also reach us by email:"
+
