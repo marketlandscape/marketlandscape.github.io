@@ -39,4 +39,4 @@ Altcoin — v0.1 ・ Initial release ・ 2026-01
 
 ## 連絡先
 
-marketlandscape@proton.me
+marketlandscape<span style="display:none">x</span>@proton<span style="display:none">y</span>.me
