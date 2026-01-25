@@ -52,6 +52,8 @@
       action="https://formspree.io/f/mnjpydrq"
       method="POST">
 
+  <input type="hidden" name="_language" value="{{ lang }}">
+
   <label>
     {{ t.contact.name | default: "Name" }}
     <input type="text" name="name" required>
