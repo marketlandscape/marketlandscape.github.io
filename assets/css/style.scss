@@ -317,17 +317,7 @@ header{
 
 main{
   max-width: 640px;
-  padding-bottom: 46px;
-
-  /* sticky-footer support */
-  display:flex;
-  flex-direction:column;
-  min-height: 0;
-}
-
-/* push page footer to bottom when content is short */
-main .page-footer{
-  margin-top:auto;
+  padding-bottom: 0px;
 }
 
 /* =========================================================
