@@ -41,23 +41,25 @@
             <span id="ethPrice" class="market-mini-value">--</span>
           </div>
 
-          {%- assign lang = page.lang | default: site.lang | default: "en" -%}
+         {%- assign lang = page.lang | default: site.lang | default: "en" -%}
 
-          <div
-            id="marketUpdated"
-            class="market-mini-time"
-            data-show-source="false"
-            data-updated-label="{%- if site.data.i18n and site.data.i18n[lang] and site.data.i18n[lang].ui and site.data.i18n[lang].ui.updated -%}{{ site.data.i18n[lang].ui.updated }}{%- else -%}Updated{%- endif -%}"
-          >
-            Updated -- UTC
-          </div>
+<div
+  id="marketUpdated"
+  class="market-mini-time"
+  data-show-source="false"
+  data-updated-label="{%- if site.data.i18n and site.data.i18n[lang] and site.data.i18n[lang].ui and site.data.i18n[lang].ui.updated -%}{{ site.data.i18n[lang].ui.updated }}{%- else -%}Updated{%- endif -%}"
+>
+  Updated -- UTC
+</div>
 
         </div>
 
         <!-- =========================
              INCLUDE MENU
              ========================= -->
-        {% include nav.html %}
+        
+          {% include nav.html %}
+        
 
         <!-- =========================
              INCLUDE FOOTER
