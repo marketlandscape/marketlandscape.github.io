@@ -91,20 +91,14 @@
 
       const data = new FormData(form);
 
-      try {
-        const res = await fetch(form.action, {
-          method: "POST",
-          body: data,
-          headers: { "Accept": "application/json" }
-        });
+      const res = await fetch(form.action, {
+        method: "POST",
+        body: data,
+        headers: { "Accept": "application/json" }
+      });
 
-        if (res.ok) {
-          window.location.href = {{ thanks_url | relative_url | jsonify }};
-        } else {
-          alert({{ t.contact.fail | default: "Submission failed. Please try again." | jsonify }});
-        }
-      } catch (err) {
-        alert({{ t.contact.fail | default: "Submission failed. Please try again." | jsonify }});
+      if (res.ok) {
+        window.location.href = {{ thanks_url | relative_url | jsonify }};
       }
     });
   })();
