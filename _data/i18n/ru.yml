@@ -8,11 +8,11 @@ index:
 
   step:
     entry: "Вход"
-    scale_in: "Добав."
+    scale_in: "Наращ."
     hold: "Удерж."
-    conviction: "Резерв"
+    conviction: "Осн."
     hodl: "HODL"
-    reduce: "Убав.лест."
+    reduce: "Сокр."
     exit: "Выход"
 
   risk:
