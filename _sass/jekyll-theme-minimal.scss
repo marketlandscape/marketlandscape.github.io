@@ -1,6 +1,3 @@
----
----
-
 @import "fonts";
 @import "rouge-github";
 
@@ -274,32 +271,34 @@ header{
   opacity: 0.5;
 }
 
+
 /* =========================================================
    Page footer (bottom of main content)
    ========================================================= */
 
 .page-footer{
-  margin-top: 46px;
-  padding-top: 12px;
-  padding-bottom: 72px;
-  border-top: none;
+  margin-top: 46px;        /* match sidebar footer spacing */
+  padding-top: 12px;       /* match */
+  padding-bottom: 72px;    /* match sidebar bottom air */
+  border-top: none;        /* no line (you requested) */
 }
 
 .page-footer__signature{
   margin: 0;
-  font-size: 11px;
+  font-size: 11px;         /* match .footer-disclaimer */
   line-height: 1.4;
   color: var(--text);
-  opacity: 0.5;
+  opacity: 0.5;           /* match .footer-disclaimer */
 }
 
 .page-footer__official{
-  margin: 6px 0 0;
-  font-size: 11px;
+  margin: 6px 0 0;         /* small separation like your mini-time */
+  font-size: 11px;         /* keep same scale */
   line-height: 1.2;
   color: var(--text);
-  opacity: 0.5;
+  opacity: 0.5;           /* slightly more subtle than signature */
 }
+
 
 /* =========================================================
    Main content
@@ -460,6 +459,7 @@ kbd{
   z-index:1;
 }
 
+/* Optional: force dot colors via CSS (overrides inline fill if present) */
 .dot-layer circle[id^="dotOuter"]{ fill: var(--index-dot-outer) !important; }
 .dot-layer circle[id^="dotInner"]{ fill: var(--index-dot-inner) !important; }
 
@@ -482,6 +482,10 @@ kbd{
   }
 }
 
+/* =========================================================
+   V2 history box (top-right chart wrapper)
+   ========================================================= */
+
 .v2 .entity-history-box{
   position:relative;
   width:360px;
@@ -496,6 +500,7 @@ kbd{
   }
 }
 
+/* Layers */
 .v2 .entity-frame,
 .v2 .entity-scale,
 .v2 .entity-dot-layer{
@@ -518,6 +523,7 @@ kbd{
   z-index:3;
 }
 
+/* Internal SVG theming */
 .v2 .entity-frame-bg{
   fill: var(--entity-box-bg);
 }
@@ -528,6 +534,7 @@ kbd{
   stroke-width: 1;
 }
 
+/* Text blocks */
 .v2 .entity-title{
   top:18px;
   left:20px;
@@ -538,10 +545,17 @@ kbd{
   line-height:1.2;
 }
 
+/* =========================================================
+   V2 scale labels
+   - anchored to the bar via bottom
+   - fixed label row height (headroom for wraps)
+   - multi-line labels grow upward, baseline stays consistent
+   ========================================================= */
+
 .v2 .entity-steps{
   left:20px;
   top:auto;
-  bottom:41px;
+  bottom:41px;          /* increase to move labels higher */
   width:320px;
   display:flex;
   font-size:13px;
@@ -550,8 +564,8 @@ kbd{
   letter-spacing:0.02em;
   pointer-events:none;
 
-  height:36px;
-  align-items:flex-end;
+  height:36px;          /* vertical room for wrapping */
+  align-items:flex-end; /* bottom-align each label block */
 }
 
 .v2 .entity-steps > span{
@@ -560,7 +574,7 @@ kbd{
 
   display:flex;
   flex-direction:column;
-  justify-content:flex-end;
+  justify-content:flex-end; /* make wrapped lines stack upward */
   line-height:1.05;
 }
 
@@ -601,12 +615,18 @@ kbd{
   opacity:0.75;
 }
 
+/* Dot colors (theme-controlled) */
 .v2 .entity-dot-outer{ fill: var(--entity-dot-outer); }
 .v2 .entity-dot-inner{
   fill: var(--entity-dot-inner);
   fill-opacity: var(--entity-dot-inner-opacity);
 }
 
+/* =========================================================
+   V2 shared helpers (remove inline styles)
+   ========================================================= */
+
+/* Bar overlay picture (all entity boxes) */
 .v2 .entity-bar{
   position:absolute;
   inset:0;
@@ -624,6 +644,7 @@ kbd{
   height:9px;
 }
 
+/* History SVG image (top-right chart) */
 .v2 .history-img{
   position:absolute;
   inset:0;
@@ -634,6 +655,11 @@ kbd{
   pointer-events:none;
   user-select:none;
 }
+
+/* =========================================================
+   V2 grid page (grid.html) — page-local layout only
+   - gated by .v2-grid to avoid affecting other .v2 pages
+   ========================================================= */
 
 .v2-grid .indexes{
   display:grid;
@@ -647,6 +673,7 @@ kbd{
   align-items: start;
 }
 
+/* neutralise existing inline margins so grid gaps win */
 .v2-grid .indexes > div{
   margin-bottom: 0 !important;
 }
@@ -658,6 +685,7 @@ kbd{
 .v2-grid .cell-box4{ grid-area: box4; }
 .v2-grid .cell-box5{ grid-area: box5; }
 
+/* mobile */
 @media (max-width: 780px){
   .v2-grid .indexes{
     grid-template-columns: 360px;
@@ -671,32 +699,41 @@ kbd{
   }
 }
 
+/* =========================================================
+   NAV HISTORY labels (top-right box only)
+   Flex equal spacing, edges justified
+   ========================================================= */
+
 .v2-grid .nav-xlabels{
   position:absolute;
   left:0; right:0;
   bottom:14px;
-  z-index:3;
+  z-index:3;                 /* above the svg image */
   display:flex;
   justify-content:space-between;
   align-items:flex-end;
-  padding:0 14px;
+  padding:0 14px;            /* inset so text doesn't touch the frame */
   pointer-events:none;
   user-select:none;
 }
 
 .v2-grid .nav-xlabels span{
-  font-size:13px;
-  color:inherit;
-  opacity:.5;
+  font-size:13px;     /* keep size fixed */
+  color:inherit;      /* use global text color */
+  opacity:.5;         /* keep subtlety */
   line-height:1;
   white-space:nowrap;
 }
 
+/* =========================================================
+   V2 footnote
+   ========================================================= */
+
 .v2 .index-footnote{
-  margin-top: 28px;
-  max-width: 360px;
-  padding-top: 0;
-  border-top: none;
+  margin-top: 28px;   /* more air above */
+  max-width: 360px;   /* same as box width */
+  padding-top: 0;    /* no fake separator */
+  border-top: none;  /* remove line */
   font-size: 11px;
   line-height: 1.35;
   color: inherit;
@@ -706,6 +743,10 @@ kbd{
 .v2 .index-footnote .fn-mark{
   margin-right: 0px;
 }
+
+/* =========================================================
+   Print
+   ========================================================= */
 
 @media print{
   body{
