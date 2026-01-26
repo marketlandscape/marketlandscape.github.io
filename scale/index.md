@@ -8,11 +8,15 @@ lang: en
 
 The index uses a 1–25 scale organised into five zones, designed to describe market conditions within a broader market cycle rather than fine-grained timing. The scale is read directionally and comparatively, with emphasis on regime context. The five zones are defined below. 
 
-- Favorable (1–5) — historically strong risk–reward conditions, where downside is more contained and conditions have tended to favour patient positioning.
-- Improving (6–10) — conditions are strengthening; participation and confidence build gradually.
-- Neutral (11–15) — risk and reward are more balanced; outcomes become increasingly sensitive to positioning and time horizon.
-- Elevated Risk (16–20) — conditions become stretched; sensitivity to volatility and adverse moves rises.
-- Excess (21–25) — increasingly speculative environments where fragility dominates despite strong narratives. 
+Favorable (1–5) — historically strong risk–reward conditions, where downside is more contained and conditions have tended to favour patient positioning.
+
+Improving (6–10) — conditions are strengthening; participation and confidence build gradually.  
+
+Neutral (11–15) — risk and reward are more balanced; outcomes become increasingly sensitive to positioning and time horizon.  
+
+Elevated Risk (16–20) — conditions become stretched; sensitivity to volatility and adverse moves rises.  
+
+Excess (21–25) — increasingly speculative environments where fragility dominates despite strong narratives.  
 
 On the altcoin scale, these zones are expressed through practical positioning labels that mirror this progression: entry, scale in, hold, reduce / scale out, and exit. 
 
