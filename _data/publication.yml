@@ -1,5 +1,9 @@
 first_published: 2026-01
 
+separators:
+  list: " | "
+  row: " · "
+
 included_first_publication:
   - BTC Navigation Index v0.1
   - ETH Navigation Index v0.1
