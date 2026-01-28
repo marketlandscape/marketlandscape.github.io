@@ -18,7 +18,7 @@ Market Landscape is a cycle-level navigation system built on a relative normalis
 
 This project is not a trading platform and does not provide financial or investment advice. It is an interpretative framework designed to inform practical market decisions through cycle-level perspective and contextual understanding. Market Landscape is an independent framework with no affiliations, sponsorships, or paid promotions.
 
-## Publication and versioning
+## Publication and versions
 
 First published: {{ site.data.publication.first_published }}  
 
