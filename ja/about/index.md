@@ -28,14 +28,15 @@ Market Landscape における主要なフレームワークは Market Navigation
 
 <div class="included-publication">
 初回公開時に含まれていた内容： <br>
-{{ site.data.publication.included_first_publication | join: " | " }}<br>
+{{ site.data.publication.included_first_publication
+   | join: site.data.publication.separators.list }}<br>
 <br>
 </div> 
 
 <div class="active-versions">
 有効なバージョン：<br>
 {% for v in site.data.publication.active_versions -%}
-{{ v.name }} | {{ v.status }} | {{ v.date }}<br>
+{{ v.name }}{{ site.data.publication.separators.row }}{{ v.status }}{{ site.data.publication.separators.row }}{{ v.date }}<br>
 {% endfor -%}
 <br>
 </div>
