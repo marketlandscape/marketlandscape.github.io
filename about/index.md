@@ -31,6 +31,18 @@ ETH Navigation Index v0.1 | Initial release | 2026-01
 Altcoin Navigation Index v0.1 | Initial release | 2026-01  
 Risk Level Indicator v0.1 | Initial release | 2026-01  
 
+## Publication and versioning
+
+First published: {{ site.data.publication.first_published }}  
+
+Included in the first publication:  
+{{ site.data.publication.included_first_publication | join: " | " }}  
+
+Active versions:  
+{% for v in site.data.publication.active_versions %}  
+{{ v.name }} | {{ v.status }} | {{ v.date }}{% unless forloop.last %}<br>{% endunless %}
+{% endfor %}  
+
 ## Data sources
 
 Price and market data are obtained from public APIs and processed into index values. Availability and accuracy depend on upstream sources; occasional gaps or revisions may occur.
