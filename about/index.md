@@ -20,19 +20,6 @@ This project is not a trading platform and does not provide financial or investm
 
 ## Publication and versioning
 
-First published: 2026-01  
-
-Included in the first publication:  
-BTC Navigation Index v0.1 | ETH Navigation Index v0.1 | Altcoin Navigation Index v0.1 | Risk Level Indicator v0.1  
-
-Active versions:  
-BTC Navigation Index v0.1 | Initial release | 2026-01  
-ETH Navigation Index v0.1 | Initial release | 2026-01  
-Altcoin Navigation Index v0.1 | Initial release | 2026-01  
-Risk Level Indicator v0.1 | Initial release | 2026-01  
-
-## Publication and versioning
-
 First published: {{ site.data.publication.first_published }}  
 
 <div class="included-publication">
@@ -48,7 +35,6 @@ Active versions:<br>
 {% endfor -%}
 <br>
 </div>
-
 
 ## Data sources
 
