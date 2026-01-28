@@ -24,14 +24,15 @@ First published: {{ site.data.publication.first_published }}
 
 <div class="included-publication">
 Included in the first publication: <br>
-{{ site.data.publication.included_first_publication · join: " · " }}<br>
+{{ site.data.publication.included_first_publication
+   | join: site.data.publication.separators.list }}<br>
 <br>
 </div> 
 
 <div class="active-versions">
 Active versions:<br>
 {% for v in site.data.publication.active_versions -%}
-{{ v.name }} · {{ v.status }} · {{ v.date }}<br>
+{{ v.name }}{{ site.data.publication.separators.row }}{{ v.status }}{{ site.data.publication.separators.row }}{{ v.date }}<br>
 {% endfor -%}
 <br>
 </div>
