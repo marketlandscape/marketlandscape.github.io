@@ -1,4 +1,4 @@
-first_published: 2026-01
+first_published: 2026-01-14
 
 separators:
   list: " | "
@@ -16,16 +16,16 @@ included_first_publication:
 active_versions:
   - name: BTC Navigation Index v0.1
     status: Initial release
-    date: 2026-01
+    date: 2026-01-14
   - name: ETH Navigation Index v0.1
     status: Initial release
-    date: 2026-01
+    date: 2026-01-14
   - name: Large-Cap Altcoin Navigation Index v0.1
     status: Initial release
-    date: 2026-01
+    date: 2026-01-14
   - name: Mid-Cap Altcoin Navigation Index v0.1
     status: Initial release
-    date: 2026-01
+    date: 2026-01-28
   - name: Risk Level Indicator v0.2
     status: Experimental
-    date: 2026-01
+    date: 2026-01-28
