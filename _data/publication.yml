@@ -1,0 +1,21 @@
+first_published: 2026-01
+
+included_first_publication:
+  - BTC Navigation Index v0.1
+  - ETH Navigation Index v0.1
+  - Altcoin Navigation Index v0.1
+  - Risk Level Indicator v0.1
+
+active_versions:
+  - name: BTC Navigation Index v0.1
+    status: Initial release
+    date: 2026-01
+  - name: ETH Navigation Index v0.1
+    status: Initial release
+    date: 2026-01
+  - name: Altcoin Navigation Index v0.1
+    status: Initial release
+    date: 2026-01
+  - name: Risk Level Indicator v0.1
+    status: Initial release
+    date: 2026-01
