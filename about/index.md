@@ -39,9 +39,11 @@ Included in the first publication:
 {{ site.data.publication.included_first_publication · join: " · " }}  
 
 Active versions:  
-{% for v in site.data.publication.active_versions %}  
-{{ v.name }} · {{ v.status }} · {{ v.date }}{% unless forloop.last %}<br>{% endunless %}
-{% endfor %}  
+<div class="active-versions">
+{% for v in site.data.publication.active_versions -%}
+{{ v.name }} · {{ v.status }} · {{ v.date }}<br>
+{% endfor -%}
+</div>
 
 ## Data sources
 
