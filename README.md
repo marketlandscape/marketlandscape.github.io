@@ -1,5 +1,8 @@
 ## Configuration map
 
+### Main CSS (layout, typography, colors)
+assets/css/style.scss
+
 ### Versioning, publication dates, release status
 _data/publication.yml
 
