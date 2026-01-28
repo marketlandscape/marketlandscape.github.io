@@ -24,17 +24,19 @@ Market Landscape предназначен для более спокойного
 
 <div class="included-publication">
 Включено в первую публикацию: <br>
-{{ site.data.publication.included_first_publication | join: " | " }}<br>
+{{ site.data.publication.included_first_publication
+   | join: site.data.publication.separators.list }}<br>
 <br>
 </div> 
 
 <div class="active-versions">
-Активные версии: <br>
+Активные версии:<br>
 {% for v in site.data.publication.active_versions -%}
-{{ v.name }} | {{ v.status }} | {{ v.date }}<br>
+{{ v.name }}{{ site.data.publication.separators.row }}{{ v.status }}{{ site.data.publication.separators.row }}{{ v.date }}<br>
 {% endfor -%}
 <br>
 </div>
+
 
 ## Официальный сайт
 
