@@ -36,11 +36,11 @@ Risk Level Indicator v0.1 | Initial release | 2026-01
 First published: {{ site.data.publication.first_published }}  
 
 Included in the first publication:  
-{{ site.data.publication.included_first_publication | join: " | " }}  
+{{ site.data.publication.included_first_publication · join: " · " }}  
 
 Active versions:  
 {% for v in site.data.publication.active_versions %}  
-{{ v.name }} | {{ v.status }} | {{ v.date }}{% unless forloop.last %}<br>{% endunless %}
+{{ v.name }} · {{ v.status }} · {{ v.date }}{% unless forloop.last %}<br>{% endunless %}
 {% endfor %}  
 
 ## Data sources
