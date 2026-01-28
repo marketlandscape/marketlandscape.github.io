@@ -36,7 +36,8 @@ Risk Level Indicator v0.1 | Initial release | 2026-01
 First published: {{ site.data.publication.first_published }}  
 
 <div class="included-publication">
-Included in the first publication: {{ site.data.publication.included_first_publication | join: " | " }}<br>
+Included in the first publication: <br>
+{{ site.data.publication.included_first_publication | join: " | " }}<br>
 <br>
 </div> 
 
