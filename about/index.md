@@ -24,12 +24,13 @@ First published: 2026-01
 Last updated: 2026-01  
 
 Included in the first publication:  
-BTC Index v0.1 · ETH Index v0.1 · Altcoin Index v0.1  
+BTC Navigation Index v0.1 · ETH Navigation Index v0.1 · Altcoin Navigation Index v0.1 · Risk Level Indicator v0.1  
 
 Active index versions:  
-BTC — v0.1 · Initial release · 2026-01  
-ETH — v0.1 · Initial release · 2026-01  
-Altcoin — v0.1 · Initial release · 2026-01
+BTC Navigation Index — v0.1 · Initial release · 2026-01  
+ETH Navigation Index — v0.1 · Initial release · 2026-01  
+Altcoin Navigation Index — v0.1 · Initial release · 2026-01  
+Risk Level Indicator — v0.1 · Initial release · 2026-01  
 
 ## Data sources
 
