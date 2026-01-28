@@ -20,16 +20,21 @@ Market Landscape предназначен для более спокойного
 
 ## Публикация и версии
 
-Впервые опубликовано: 2026-01  
+Впервые опубликовано: {{ site.data.publication.first_published }}  
 
-Включено в первую публикацию:  
-BTC Navigation Index v0.1 | ETH Navigation Index v0.1 | Altcoin Navigation Index v0.1 | Risk Level Indicator v0.1  
+<div class="included-publication">
+Включено в первую публикацию: <br>
+{{ site.data.publication.included_first_publication | join: " | " }}<br>
+<br>
+</div> 
 
-Активные версии:  
-BTC Navigation Index v0.1 | Initial release | 2026-01  
-ETH Navigation Index v0.1 | Initial release | 2026-01  
-Altcoin Navigation Index v0.1 | Initial release | 2026-01  
-Risk Level Indicator v0.1 | Initial release | 2026-01  
+<div class="active-versions">
+Активные версии: <br>
+{% for v in site.data.publication.active_versions -%}
+{{ v.name }} | {{ v.status }} | {{ v.date }}<br>
+{% endfor -%}
+<br>
+</div>
 
 ## Официальный сайт
 
