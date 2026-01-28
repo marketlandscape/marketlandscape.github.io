@@ -37,6 +37,7 @@ First published: {{ site.data.publication.first_published }}
 
 <div class="included-publication">
 Included in the first publication: {{ site.data.publication.included_first_publication | join: " | " }}
+<br>
 </div> 
 
 <div class="active-versions">
