@@ -7,7 +7,7 @@ separators:
 included_first_publication:
   - BTC Navigation Index v0.1
   - ETH Navigation Index v0.1
-  - Altcoin Navigation Index v0.1
+  - Large-Cap Altcoin Navigation Index v0.1  
   - Risk Level Indicator v0.1
 
 # Version status ladder:
@@ -20,8 +20,11 @@ active_versions:
   - name: ETH Navigation Index v0.1
     status: Initial release
     date: 2026-01
-  - name: Altcoin Navigation Index v0.1
+  - name: Large-Cap Altcoin Navigation Index v0.1
     status: Initial release
+    date: 2026-01
+  - name: Mid-Cap Altcoin Navigation Index v0.1
+    status: Experimental
     date: 2026-01
   - name: Risk Level Indicator v0.2
     status: Experimental
