@@ -1,11 +1,11 @@
 {
-  "box1": 26.78,
-  "box2": 37.38,
+  "box1": 25.36,
+  "box2": 35.96,
   "box3": 25.73,
   "box4": 12.62,
   "box5": 0,
-  "box1_updated_utc": "2026-01-29 09:09 UTC",
-  "box2_updated_utc": "2026-01-29 09:09 UTC",
+  "box1_updated_utc": "2026-01-29 15:08 UTC",
+  "box2_updated_utc": "2026-01-29 15:08 UTC",
   "box3_updated_utc": "2026-01-29 09:24 UTC",
   "box1_risk": 15.0,
   "box1_risk_updated_utc": "2026-01-19 05:04 UTC",
@@ -13,8 +13,8 @@
   "box2_risk_updated_utc": "2026-01-29 04:19 UTC",
   "box3_risk": 35.0,
   "box3_risk_updated_utc": "2026-01-28 01:39 UTC",
-  "box4_risk": 45.0,
+  "box4_risk": 50.0,
   "box5_risk": 0,
-  "box4_risk_updated_utc": "2026-01-28 01:39 UTC",
+  "box4_risk_updated_utc": "2026-01-29 15:08 UTC",
   "box4_updated_utc": "2026-01-28 09:06 UTC"
 }
