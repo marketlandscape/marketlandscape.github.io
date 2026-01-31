@@ -26,6 +26,9 @@ active_versions:
   - name: Mid-Cap Altcoin Navigation Index v0.1
     status: Initial release
     date: 2026-01-28
-  - name: Risk Level Indicator v0.3
+  - name: Small-Cap Altcoin Navigation Index v0.1
+    status: Initial release
+    date: 2026-01-31
+  - name: Risk Level Indicator v0.4
     status: Experimental
-    date: 2026-01-29
+    date: 2026-01-31
