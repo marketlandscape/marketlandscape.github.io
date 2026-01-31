@@ -18,6 +18,14 @@ index:
   risk:
     label: "リスクレベル:"
 
+experimental:
+  box3:
+    title: "Навигационный индекс – Круп. альткоины"
+  box4:
+    title: "Навигационный индекс – Сред. альткоины"
+  box5:
+    title: "Навигационный индекс – Мал. альткоины"
+
 footer:
   disclaimer: "本サイトの情報は情報提供を目的としたものであり、投資助言を行うものではありません。"
   signature: "Market Landscape | ナビゲーション・フレームワーク | marketlandscape.github.io"
