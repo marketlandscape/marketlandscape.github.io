@@ -22,6 +22,15 @@ index:
   risk:
     label: "Уровень риска:"
 
+experimental:
+  box3:
+    title: "Large-Cap Altcoin Navigation Index"
+  box4:
+    title: "Mid-Cap Altcoin Navigation Index"
+  box5:
+    title: "Small-Cap Altcoin Navigation Index"
+
+
 
 footer:
   disclaimer: "Материалы на сайте носят информационный характер и не являются рекомендациями по инвестициям."
