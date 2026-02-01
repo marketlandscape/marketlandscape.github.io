@@ -1,10 +1,10 @@
 index:
   box1:
-    title: "BTCナビゲーション指数"
+    title: "BTCナビ指数"
   box2:
-    title: "ETHナビゲーション指数"
+    title: "ETHナビ指数"
   box3:
-    title: "大型アルトコイン・ナビゲーション指数"
+    title: "アルトコインナビ指数"
 
   step:
     entry: "開始"
@@ -20,11 +20,11 @@ index:
 
 experimental:
   box3:
-    title: "大型アルトコイン・ナビゲーション指数"
+    title: "大型アルトコインナビ指数"
   box4:
-    title: "中型アルトコイン・ナビゲーション指数"
+    title: "中型アルトコインナビ指数"
   box5:
-    title: "小型アルトコイン・ナビゲーション指数"
+    title: "小型アルトコインナビ指数"
 
 footer:
   disclaimer: "本サイトの情報は情報提供を目的としたものであり、投資助言を行うものではありません。"
