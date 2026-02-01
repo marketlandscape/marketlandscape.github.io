@@ -3,7 +3,7 @@
   "box2": 29.76,
   "box3": 21.28,
   "box4": 9.44,
-  "box5": 12.4,
+  "box5": 12.57,
   "box1_updated_utc": "2026-02-01 13:35 UTC",
   "box2_updated_utc": "2026-02-01 13:35 UTC",
   "box3_updated_utc": "2026-02-01 13:36 UTC",
@@ -17,6 +17,6 @@
   "box5_risk": 65.0,
   "box4_risk_updated_utc": "2026-01-29 15:08 UTC",
   "box4_updated_utc": "2026-02-01 13:38 UTC",
-  "box5_updated_utc": "2026-02-01 09:04 UTC",
+  "box5_updated_utc": "2026-02-01 13:39 UTC",
   "box5_risk_updated_utc": "2026-02-01 03:08 UTC"
 }
