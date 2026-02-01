@@ -15,13 +15,13 @@ included_first_publication:
 
 active_versions:
   - name: BTC Navigation Index v0.2
-    status: Preliminary release
+    status: Preliminary
     date: 2026-02-01
   - name: ETH Navigation Index v0.2
-    status: Preliminary release
+    status: Preliminary
     date: 2026-02-01
   - name: Large-Cap Altcoin Navigation Index v0.2
-    status: Preliminary release
+    status: Preliminar
     date: 2026-02-01
   - name: Mid-Cap Altcoin Navigation Index v0.1
     status: Initial release
