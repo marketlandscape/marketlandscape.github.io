@@ -16,7 +16,7 @@ Bitcoin functions both as an asset within the framework and as its reference poi
 
 ## Risk level ranges by asset class
 
-Downside risk is structurally uneven across crypto assets. Each asset class operates within a bounded downside envelope:  
+Downside risk is structurally uneven across crypto assets. Each asset class operates within a bounded downside envelope.  
 
 Bitcoin: 15–60%  
 Ethereum: 25–70%  
