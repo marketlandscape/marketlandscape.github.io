@@ -3,5 +3,5 @@ layout: default
 lang: ja
 ---
 
-{% include pages/grid.html %}
+{% include pages/index.html %}
 
