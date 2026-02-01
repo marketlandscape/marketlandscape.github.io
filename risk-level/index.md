@@ -23,8 +23,7 @@ Ethereum: 25–70%
 Large-cap altcoins: 35–80%  
 Mid-cap assets: 50–90%  
 Small-cap assets: 65–95%  
-Micro-cap assets: 80–99%  
 
-When Bitcoin declines, assets with lower liquidity and higher sensitivity to capital outflows tend to fall more sharply and more rapidly. Under comparable Bitcoin drawdowns, Ethereum has historically experienced deeper declines than Bitcoin, while altcoins have repeatedly experienced drawdowns in the 35–99% range, particularly in later stages of the cycle. These ranges describe structural downside capacity under stress, not isolated events.
+When Bitcoin declines, assets with lower liquidity and higher sensitivity to capital outflows tend to fall more sharply and more rapidly. Under comparable Bitcoin drawdowns, Ethereum has historically experienced deeper declines than Bitcoin, while altcoins have repeatedly experienced drawdowns in the 35–95% range, particularly in later stages of the cycle. These ranges describe structural downside capacity under stress, not isolated events.
 
 
