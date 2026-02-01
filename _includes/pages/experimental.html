@@ -1,6 +1,6 @@
 <!-- grid.html (FULL FILE, PAGE-LOCAL GRID ONLY) -->
 
-<div class="v2 v2-grid">
+<div class="v2 v2-grid" data-lang="{{ page.lang | default: site.lang | default: 'en' }}">
 
   <div class="indexes">
 
@@ -265,6 +265,9 @@
 
 </div>
 
+<!-- date i18n for chart x-labels (expects DD.MM input) -->
+<script src="/assets/js/i18n-date.js"></script>
+
 <script>
 function clamp(v, lo, hi){ return Math.max(lo, Math.min(hi, v)); }
 
@@ -365,17 +368,27 @@ function setEntityWarn(boxEl, show){
     function render(labels){
       if (!Array.isArray(labels) || labels.length === 0) return;
 
+      const grid = document.querySelector(".v2.v2-grid");
+      const lang = (grid?.dataset?.lang || document.documentElement.lang || "en");
+
+      const formatted = labels.map(lab => {
+        // expects DD.MM from nav-meta (e.g. "18.01")
+        return (typeof window.formatNavDate === "function")
+          ? window.formatNavDate(String(lab), lang)
+          : String(lab);
+      });
+
       const current = Array.from(host.querySelectorAll("span")).map(s => s.textContent);
-      const same = current.length === labels.length && current.every((v, i) => v === String(labels[i]));
+      const same = current.length === formatted.length && current.every((v, i) => v === formatted[i]);
       if (same) return;
 
       host.textContent = "";
-      for (const lab of labels){
+      for (const text of formatted){
         const s = document.createElement("span");
-        s.textContent = String(lab);
+        s.textContent = text;
         host.appendChild(s);
       }
-      host.style.justifyContent = (labels.length === 1) ? "center" : "space-between";
+      host.style.justifyContent = (formatted.length === 1) ? "center" : "space-between";
     }
 
     // instant render from cache
