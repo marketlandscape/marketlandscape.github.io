@@ -11,17 +11,17 @@ included_first_publication:
   - Risk Level Indicator v0.1
 
 # Version status ladder:
-# Experimental → Preliminary → Initial release → Stable
+# Experimental → Preliminary → Stable (v1.0)
 
 active_versions:
-  - name: BTC Navigation Index v0.1
-    status: Initial release
+  - name: BTC Navigation Index v0.2
+    status: Preliminary release
     date: 2026-01-14
-  - name: ETH Navigation Index v0.1
-    status: Initial release
+  - name: ETH Navigation Index v0.2
+    status: Preliminary release
     date: 2026-01-14
-  - name: Large-Cap Altcoin Navigation Index v0.1
-    status: Initial release
+  - name: Large-Cap Altcoin Navigation Index v0.2
+    status: Preliminary release
     date: 2026-01-14
   - name: Mid-Cap Altcoin Navigation Index v0.1
     status: Initial release
