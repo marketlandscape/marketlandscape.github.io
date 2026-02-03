@@ -702,10 +702,11 @@ kbd{
 }
 
 /* =========================================================
-   NAV HISTORY labels (top-right box only)
+   NAV HISTORY labels (grid + wide history page)
    ========================================================= */
 
-.v2-grid .nav-xlabels{
+.v2-grid .nav-xlabels,
+.v2-history-page .nav-xlabels{
   position:absolute;
   left:0; right:0;
   bottom:14px;
@@ -718,7 +719,8 @@ kbd{
   user-select:none;
 }
 
-.v2-grid .nav-xlabels span{
+.v2-grid .nav-xlabels span,
+.v2-history-page .nav-xlabels span{
   font-size:13px;
   color:inherit;
   opacity:.5;
