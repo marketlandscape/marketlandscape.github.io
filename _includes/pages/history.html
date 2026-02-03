@@ -3,6 +3,8 @@
 <div class="v2 v2-history-page" data-lang="{{ page.lang | default: site.lang | default: 'en' }}">
 
   <div class="history-topbar">
+    <div class="history-spacer"></div>
+
     <div class="history-controls" role="group" aria-label="Time range">
       <button class="nav-range-btn is-active" data-range="1w" type="button">1w</button>
       <button class="nav-range-btn" data-range="2w" type="button">2w</button>
@@ -15,28 +17,25 @@
 
   <div class="entity-history-box wide" data-default-range="1w">
 
-    <div class="history-media">
-      <img
-        class="history-img"
-        src="/assets/img/charts/nav_1w.svg"
-        alt=""
-        loading="eager"
-        decoding="async"
-      >
-    </div>
+    <img
+      class="history-img"
+      src="/assets/img/charts/nav_1w.svg"
+      alt=""
+      loading="eager"
+      decoding="async"
+    >
 
     <!-- labels reconstructed from nav-meta inside the SVG -->
     <div class="nav-xlabels" aria-hidden="true"></div>
 
-    <!-- frame (same theme behaviour as the small chart box, but scaled up) -->
-    <svg class="entity-frame" viewBox="0 0 740 308" aria-hidden="true">
-      <rect class="entity-frame-bg" x="0" y="0" width="740" height="308" rx="18" ry="18"></rect>
-      <rect class="entity-frame-stroke" x="0.5" y="0.5" width="739" height="307" rx="17.5" ry="17.5"></rect>
+    <!-- frame (same styling as the box1 right chart, but wide) -->
+    <svg class="entity-frame" viewBox="0 0 740 150" aria-hidden="true">
+      <rect class="entity-frame-bg" x="0" y="0" width="740" height="150" rx="14" ry="14"></rect>
+      <rect class="entity-frame-stroke" x="0.5" y="0.5" width="739" height="149" rx="13.5" ry="13.5"></rect>
     </svg>
 
   </div>
 
 </div>
 
-<script src="/assets/js/i18n-date.js"></script>
 <script src="/assets/js/nav-history-switch.js" defer></script>
