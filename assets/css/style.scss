@@ -740,9 +740,10 @@ kbd{
 
 .v2-history-page .history-topbar{
   display:flex;
-  align-items:center;
   justify-content:flex-end;
+  align-items:center;
   margin: 0 0 10px 0;
+  width: 740px; /* lock to box width so right edges align */
 }
 
 .v2-history-page .history-controls{
