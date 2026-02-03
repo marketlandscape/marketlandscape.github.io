@@ -10,6 +10,7 @@ index:
     entry: "開始"
     scale_in: "段階追加"
     hold: "保有"
+    wait: "保有"
     conviction: "コア保有"
     hodl: "HODL"
     reduce: "段階縮小"
