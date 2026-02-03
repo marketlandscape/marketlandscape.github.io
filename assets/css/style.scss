@@ -727,7 +727,7 @@ kbd{
 }
 
 /* =========================================================
-   **NEW**: Single NAV history page (wide, proportionally scaled)
+   Single NAV history page (wide box + range buttons)
    ========================================================= */
 
 .v2-history-page{
@@ -761,61 +761,30 @@ kbd{
   cursor: pointer;
 }
 
-.v2-history-page .nav-range-btn:hover{ opacity: .9; }
-.v2-history-page .nav-range-btn.is-active{ opacity: 1; }
+.v2-history-page .nav-range-btn:hover{
+  opacity: .9;
+}
 
-/* Wide history box: scale proportionally from 360x150 -> 740x308 */
+.v2-history-page .nav-range-btn.is-active{
+  opacity: 1;
+}
+
+/* Wide history box */
 .v2-history-page .entity-history-box.wide{
   width: 740px;
-  height: 308px;
-  position: relative;
+  height: 150px;
 }
 
-.v2-history-page .entity-history-box.wide .history-media{
-  position: absolute;
-  inset: 0;
-  border-radius: 18px;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.v2-history-page .entity-history-box.wide img.history-img{
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: contain; /* proportional scaling, no cropping */
-}
-
-.v2-history-page .entity-history-box.wide .entity-frame{
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 3;
-}
-
-/* Labels (reconstructed from nav-meta inside SVG) */
-.v2-history-page .entity-history-box.wide .nav-xlabels{
-  position: absolute;
-  left: 14px;
-  right: 14px;
-  bottom: 10px;
-  display: flex;
-  justify-content: space-between;
-  font-size: 12px;
-  opacity: .65;
-  z-index: 4;
-  pointer-events: none;
-}
-
+/* Ensure it scales down on narrow screens */
 @media (max-width: 780px){
   .v2-history-page{
     max-width: 100%;
   }
   .v2-history-page .entity-history-box.wide{
     width: 100%;
-    height: auto;
-    aspect-ratio: 740 / 308;
+  }
+  .v2-history-page .entity-frame{
+    width: 100%;
   }
 }
 
