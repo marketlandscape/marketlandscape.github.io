@@ -790,6 +790,28 @@ kbd{
   }
 }
 
+/* NAV HISTORY labels (single history page) */
+.v2-history-page .nav-xlabels{
+  position:absolute;
+  left:0; right:0;
+  bottom:14px;
+  z-index:3;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  padding:0 14px;
+  pointer-events:none;
+  user-select:none;
+}
+
+.v2-history-page .nav-xlabels span{
+  font-size:13px;
+  color:inherit;
+  opacity:.5;
+  line-height:1;
+  white-space:nowrap;
+}
+
 /* =========================================================
    V2 footnote
    ========================================================= */
