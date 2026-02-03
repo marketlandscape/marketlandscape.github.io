@@ -769,10 +769,10 @@ kbd{
   opacity: 1;
 }
 
-/* Wide history box */
+/* Wide history box (scaled proportionally from 360x150 -> 740x308) */
 .v2-history-page .entity-history-box.wide{
   width: 740px;
-  height: 150px;
+  height: 308px;
 }
 
 /* Ensure it scales down on narrow screens */
@@ -782,6 +782,8 @@ kbd{
   }
   .v2-history-page .entity-history-box.wide{
     width: 100%;
+    height: auto;
+    aspect-ratio: 740 / 308;
   }
   .v2-history-page .entity-frame{
     width: 100%;
