@@ -727,6 +727,68 @@ kbd{
 }
 
 /* =========================================================
+   Single NAV history page (wide box + range buttons)
+   ========================================================= */
+
+.v2-history-page{
+  max-width: 740px;
+  margin: 24px auto 0;
+  padding: 0 10px;
+}
+
+.v2-history-page .history-topbar{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  margin: 0 0 10px 0;
+}
+
+.v2-history-page .history-controls{
+  display:flex;
+  gap:8px;
+}
+
+.v2-history-page .nav-range-btn{
+  appearance:none;
+  border:1px solid var(--entity-box-stroke);
+  background: transparent;
+  color: inherit;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 13px;
+  line-height: 1;
+  opacity: .7;
+  cursor: pointer;
+}
+
+.v2-history-page .nav-range-btn:hover{
+  opacity: .9;
+}
+
+.v2-history-page .nav-range-btn.is-active{
+  opacity: 1;
+}
+
+/* Wide history box */
+.v2-history-page .entity-history-box.wide{
+  width: 740px;
+  height: 150px;
+}
+
+/* Ensure it scales down on narrow screens */
+@media (max-width: 780px){
+  .v2-history-page{
+    max-width: 100%;
+  }
+  .v2-history-page .entity-history-box.wide{
+    width: 100%;
+  }
+  .v2-history-page .entity-frame{
+    width: 100%;
+  }
+}
+
+/* =========================================================
    V2 footnote
    ========================================================= */
 
