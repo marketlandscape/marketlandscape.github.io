@@ -48,10 +48,31 @@
     </div>
 
     <!-- =========================
-         EMPTY PLACEHOLDER (top-right)
-         keeps grid geometry unchanged
+         NAV HISTORY (top-right)
+         pre-rendered SVG (no JS)
          ========================= -->
-    <div class="cell-history cell-history--empty" aria-hidden="true"></div>
+    <div class="cell-history">
+      <div class="entity-history-box">
+
+        <img
+          class="history-img"
+          src="/assets/img/charts/nav_2w.svg"
+          alt=""
+          loading="eager"
+          decoding="async"
+        >
+
+        <!-- labels reconstructed from nav-meta in the svg -->
+        <div class="nav-xlabels" aria-hidden="true"></div>
+
+        <!-- reuse the same frame style as boxes -->
+        <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true">
+          <rect class="entity-frame-bg" x="0" y="0" width="360" height="150" rx="14" ry="14"></rect>
+          <rect class="entity-frame-stroke" x="0.5" y="0.5" width="359" height="149" rx="13.5" ry="13.5"></rect>
+        </svg>
+
+      </div>
+    </div>
 
     <!-- =========================
          BOX 2 — BLUE
@@ -247,19 +268,6 @@
 <!-- date i18n for chart x-labels (expects DD.MM input) -->
 <script src="/assets/js/i18n-date.js"></script>
 
-<style>
-/* keep the grid cell, but render nothing */
-.cell-history--empty{
-  background: transparent;
-  border: 0;
-  box-shadow: none;
-  padding: 0;
-  margin: 0;
-  pointer-events: none;
-  min-height: 150px; /* match your box height */
-}
-</style>
-
 <script>
 function clamp(v, lo, hi){ return Math.max(lo, Math.min(hi, v)); }
 
@@ -342,5 +350,73 @@ function setEntityWarn(boxEl, show){
   document.readyState === "loading"
     ? document.addEventListener("DOMContentLoaded", load)
     : load();
+})();
+
+/* =====================================================
+   NAV HISTORY label extraction (top-right chart only)
+   - render immediately from sessionStorage to avoid flicker
+   - fetch + update only if labels changed
+   ===================================================== */
+(async function(){
+  try{
+    const svgUrl = "/assets/img/charts/nav_2w.svg";
+    const host = document.querySelector(".v2 .nav-xlabels");
+    if (!host) return;
+
+    const CACHE_KEY = "nav_labels_cache_2w_v1";
+
+    function render(labels){
+      if (!Array.isArray(labels) || labels.length === 0) return;
+
+      const grid = document.querySelector(".v2.v2-grid");
+      const lang = (grid?.dataset?.lang || document.documentElement.lang || "en");
+
+      const formatted = labels.map(lab => {
+        // expects DD.MM from nav-meta (e.g. "18.01")
+        return (typeof window.formatNavDate === "function")
+          ? window.formatNavDate(String(lab), lang)
+          : String(lab);
+      });
+
+      const current = Array.from(host.querySelectorAll("span")).map(s => s.textContent);
+      const same = current.length === formatted.length && current.every((v, i) => v === formatted[i]);
+      if (same) return;
+
+      host.textContent = "";
+      for (const text of formatted){
+        const s = document.createElement("span");
+        s.textContent = text;
+        host.appendChild(s);
+      }
+      host.style.justifyContent = (formatted.length === 1) ? "center" : "space-between";
+    }
+
+    // instant render from cache
+    try{
+      const cached = sessionStorage.getItem(CACHE_KEY);
+      if (cached){
+        render(JSON.parse(cached));
+      }
+    }catch(e){}
+
+    // fetch latest meta, update only if changed
+    const res = await fetch(svgUrl, { cache:"no-store" });
+    if (!res.ok) return;
+
+    const text = await res.text();
+    const doc = new DOMParser().parseFromString(text, "image/svg+xml");
+
+    const desc = doc.querySelector('desc#nav-meta');
+    if (!desc) return;
+
+    const meta = JSON.parse(desc.textContent.trim() || "{}");
+    const labels = Array.isArray(meta.labels) ? meta.labels : [];
+    if (!labels.length) return;
+
+    render(labels);
+    try{
+      sessionStorage.setItem(CACHE_KEY, JSON.stringify(labels));
+    }catch(e){}
+  }catch(e){}
 })();
 </script>
