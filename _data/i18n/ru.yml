@@ -14,6 +14,7 @@ index:
     entry: "Вход"
     scale_in: "Наращ."
     hold: "Удерж."
+    wait: "Удерж."
     conviction: "Осн.поз."
     hodl: "HODL"
     reduce: "Сокр."
