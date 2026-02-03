@@ -734,8 +734,8 @@ kbd{
 
 .v2-history-page{
   max-width: 740px;
-  margin: 24px auto 0;
-  padding: 0 10px;
+  margin: 24px 0 0;   /* no auto-centering */
+  padding: 0;         /* remove side padding */
 }
 
 .v2-history-page .history-topbar{
