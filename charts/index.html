@@ -1,37 +1,6 @@
 ---
 layout: default
-title: Charts
+lang: en
 ---
 
-<div class="v2 v2-single" data-lang="{{ page.lang | default: site.lang | default: 'en' }}">
-  <div class="v2-single-wrap">
-
-    <div class="v2-single-controls" aria-label="Chart window">
-      <button class="v2-win is-active" type="button" data-win="1w">1w</button>
-      <button class="v2-win" type="button" data-win="2w">2w</button>
-      <button class="v2-win" type="button" data-win="1m">1m</button>
-      <button class="v2-win" type="button" data-win="3m">3m</button>
-      <button class="v2-win" type="button" data-win="6m">6m</button>
-      <button class="v2-win" type="button" data-win="1y">1y</button>
-    </div>
-
-    <div class="entity-history-box wide" data-nav-history>
-      <img
-        class="history-img"
-        src="/assets/img/charts/nav_1w.svg"
-        alt=""
-        loading="eager"
-        decoding="async"
-      >
-      <div class="nav-xlabels" aria-hidden="true"></div>
-
-      <svg class="entity-frame" viewBox="0 0 740 150" aria-hidden="true">
-        <rect class="entity-frame-bg" x="0" y="0" width="740" height="150" rx="14" ry="14"></rect>
-        <rect class="entity-frame-stroke" x="0.5" y="0.5" width="739" height="149" rx="13.5" ry="13.5"></rect>
-      </svg>
-    </div>
-
-  </div>
-</div>
-
-<script src="/assets/js/nav-history.js" defer></script>
+{% include pages/history.html %}
