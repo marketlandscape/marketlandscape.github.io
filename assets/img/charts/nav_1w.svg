@@ -2,13 +2,13 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="144pt" height="60pt" viewBox="0 0 144 60" xmlns="http://www.w3.org/2000/svg" version="1.1">
-  <desc id="nav-meta">{"window":"1w","count":4,"labels":["28.01","31.01","03.02","03.02"],"idxs":[0,3,7,10]}</desc>
+  <desc id="nav-meta">{"window":"1w","count":4,"labels":["28.01","01.02","03.02","03.02"],"idxs":[0,4,7,11]}</desc>
 
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-02-03T19:01:36.556923</dc:date>
+    <dc:date>2026-02-03T20:00:54.948011</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -46,69 +46,72 @@ z
    <g id="line2d_1">
     <path d="M 5.76 42.96 
 L 138.24 42.96 
-" clip-path="url(#p6dc0e426d7)" style="fill: none; stroke: #b2b2b2; stroke-opacity: 0.35; stroke-width: 0.5; stroke-linecap: square"/>
+" clip-path="url(#pe4dcce806f)" style="fill: none; stroke: #b2b2b2; stroke-opacity: 0.35; stroke-width: 0.5; stroke-linecap: square"/>
    </g>
    <g id="line2d_2">
     <path d="M 5.76 33.12 
 L 138.24 33.12 
-" clip-path="url(#p6dc0e426d7)" style="fill: none; stroke: #b2b2b2; stroke-opacity: 0.35; stroke-width: 0.5; stroke-linecap: square"/>
+" clip-path="url(#pe4dcce806f)" style="fill: none; stroke: #b2b2b2; stroke-opacity: 0.35; stroke-width: 0.5; stroke-linecap: square"/>
    </g>
    <g id="line2d_3">
     <path d="M 5.76 23.28 
 L 138.24 23.28 
-" clip-path="url(#p6dc0e426d7)" style="fill: none; stroke: #b2b2b2; stroke-opacity: 0.35; stroke-width: 0.5; stroke-linecap: square"/>
+" clip-path="url(#pe4dcce806f)" style="fill: none; stroke: #b2b2b2; stroke-opacity: 0.35; stroke-width: 0.5; stroke-linecap: square"/>
    </g>
    <g id="line2d_4">
     <path d="M 5.76 13.44 
 L 138.24 13.44 
-" clip-path="url(#p6dc0e426d7)" style="fill: none; stroke: #b2b2b2; stroke-opacity: 0.35; stroke-width: 0.5; stroke-linecap: square"/>
+" clip-path="url(#pe4dcce806f)" style="fill: none; stroke: #b2b2b2; stroke-opacity: 0.35; stroke-width: 0.5; stroke-linecap: square"/>
    </g>
    <g id="line2d_5">
     <path d="M 5.76 45.06084 
-L 19.008 45.33144 
-L 32.256 46.30068 
-L 45.504 46.34496 
-L 58.752 47.89476 
-L 72 48.26376 
-L 85.248 47.96364 
-L 98.496 48.2736 
-L 111.744 48.31788 
-L 124.992 48.4212 
-L 138.24 48.58848 
-" clip-path="url(#p6dc0e426d7)" style="fill: none; stroke: #bebebe; stroke-width: 0.6; stroke-linecap: round"/>
+L 17.803636 45.33144 
+L 29.847273 46.30068 
+L 41.890909 46.34496 
+L 53.934545 47.89476 
+L 65.978182 48.26376 
+L 78.021818 47.96364 
+L 90.065455 48.2736 
+L 102.109091 48.31788 
+L 114.152727 48.4212 
+L 126.196364 48.58848 
+L 138.24 48.42612 
+" clip-path="url(#pe4dcce806f)" style="fill: none; stroke: #bebebe; stroke-width: 0.6; stroke-linecap: round"/>
    </g>
    <g id="line2d_6">
     <path d="M 5.76 36.95268 
-L 19.008 37.05108 
-L 32.256 38.37948 
-L 45.504 39.20604 
-L 58.752 41.03136 
-L 72 42.26628 
-L 85.248 41.73492 
-L 98.496 42.46308 
-L 111.744 42.53688 
-L 124.992 42.74844 
-L 138.24 43.31424 
-" clip-path="url(#p6dc0e426d7)" style="fill: none; stroke: #4a8dff; stroke-width: 0.7; stroke-linecap: round"/>
+L 17.803636 37.05108 
+L 29.847273 38.37948 
+L 41.890909 39.20604 
+L 53.934545 41.03136 
+L 65.978182 42.26628 
+L 78.021818 41.73492 
+L 90.065455 42.46308 
+L 102.109091 42.53688 
+L 114.152727 42.74844 
+L 126.196364 43.31424 
+L 138.24 42.73368 
+" clip-path="url(#pe4dcce806f)" style="fill: none; stroke: #4a8dff; stroke-width: 0.7; stroke-linecap: round"/>
    </g>
    <g id="line2d_7">
     <path d="M 5.76 41.49384 
-L 19.008 41.51352 
-L 32.256 43.78164 
-L 45.504 43.9932 
-L 58.752 46.66968 
-L 72 47.55036 
-L 85.248 46.64508 
-L 98.496 47.7078 
-L 111.744 47.96364 
-L 124.992 48.17028 
-L 138.24 48.57864 
-" clip-path="url(#p6dc0e426d7)" style="fill: none; stroke: #f5841e; stroke-width: 0.8; stroke-linecap: round"/>
+L 17.803636 41.51352 
+L 29.847273 43.78164 
+L 41.890909 43.9932 
+L 53.934545 46.66968 
+L 65.978182 47.55036 
+L 78.021818 46.64508 
+L 90.065455 47.7078 
+L 102.109091 47.96364 
+L 114.152727 48.17028 
+L 126.196364 48.57864 
+L 138.24 48.21456 
+" clip-path="url(#pe4dcce806f)" style="fill: none; stroke: #f5841e; stroke-width: 0.8; stroke-linecap: round"/>
    </g>
   </g>
  </g>
  <defs>
-  <clipPath id="p6dc0e426d7">
+  <clipPath id="pe4dcce806f">
    <rect x="5.76" y="3.6" width="132.48" height="49.2"/>
   </clipPath>
  </defs>
