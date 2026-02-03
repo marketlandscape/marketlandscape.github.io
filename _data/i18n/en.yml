@@ -10,6 +10,7 @@ index:
     entry: "Entry"
     scale_in: "Scale In"
     hold: "Hold"
+    wait: "Wait"
     conviction: "Conviction"
     hodl: "HODL"
     reduce: "Scale Out"
