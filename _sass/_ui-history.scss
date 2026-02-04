@@ -97,7 +97,7 @@
 @media (prefers-color-scheme: dark){
   .v2-history-page .nav-range-btn.is-active,
   .v2-nav-history-wide .nav-range-btn.is-active{
-    background: color-mix(in srgb, var(--bg) 25%, white);
+    background: color-mix(in srgb, var(--bg) 85%, transparent);
   }
 }
 
