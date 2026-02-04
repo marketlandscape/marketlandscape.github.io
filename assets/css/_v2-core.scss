@@ -1,0 +1,187 @@
+/* =========================================================
+   V2 (new internal-SVG entity boxes)
+   Everything is gated by .v2
+   ========================================================= */
+
+.v2 .entity-box{
+  position:relative;
+  width:360px;
+  height:150px;
+  font-family:system-ui,-apple-system,sans-serif;
+}
+
+@media (prefers-color-scheme: light){
+  .v2 .entity-box{
+    border-radius: 14px;
+    box-shadow: var(--entity-box-shadow);
+  }
+}
+
+/* =========================================================
+   V2 history box (top-right chart wrapper)
+   ========================================================= */
+
+.v2 .entity-history-box{
+  position:relative;
+  width:360px;
+  height:150px;
+  border-radius:14px;
+  overflow:hidden;
+}
+
+@media (prefers-color-scheme: light){
+  .v2 .entity-history-box{
+    box-shadow: var(--entity-box-shadow);
+  }
+}
+
+/* Layers */
+.v2 .entity-frame,
+.v2 .entity-scale,
+.v2 .entity-dot-layer{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+}
+
+.v2 .entity-frame{ z-index:0; }
+.v2 .entity-scale{ z-index:1; }
+.v2 .entity-dot-layer{ z-index:2; }
+
+.v2 .entity-title,
+.v2 .entity-value,
+.v2 .entity-risk,
+.v2 .entity-steps{
+  position:absolute;
+  z-index:3;
+}
+
+/* Internal SVG theming */
+.v2 .entity-frame-bg{
+  fill: var(--entity-box-bg);
+}
+
+.v2 .entity-frame-stroke{
+  fill: transparent;
+  stroke: var(--entity-box-stroke);
+  stroke-width: 1;
+}
+
+/* Text blocks */
+.v2 .entity-title{
+  top:18px;
+  left:20px;
+  right:17px;
+  font-size:15px;
+  font-weight:500;
+  color: inherit;
+  line-height:1.2;
+}
+
+/* =========================================================
+   V2 scale labels
+   ========================================================= */
+
+.v2 .entity-steps{
+  left:20px;
+  top:auto;
+  bottom:41px;
+  width:320px;
+  display:flex;
+  font-size:13px;
+  color: inherit;
+  opacity:0.5;
+  letter-spacing:0.02em;
+  pointer-events:none;
+
+  height:36px;
+  align-items:flex-end;
+}
+
+.v2 .entity-steps > span{
+  flex:1;
+  text-align:center;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  line-height:1.05;
+}
+
+.v2 .entity-value{
+  top:44%;
+  left:20px;
+  transform:translateY(-50%);
+  font-size:17px;
+  font-weight:500;
+  color: inherit;
+}
+
+.v2 .entity-value .entity-total{
+  opacity:0.5;
+}
+
+.v2 .entity-risk{
+  top:44%;
+  right:20px;
+  transform:translateY(-50%);
+  font-size:14px;
+  color: inherit;
+  white-space:nowrap;
+}
+
+.v2 .entity-warn{
+  opacity:0.5;
+  margin-right:6px;
+  font-size:16px;
+  visibility:hidden;
+}
+
+.v2 .entity-risk-label{
+  opacity:0.5;
+}
+
+.v2 .entity-risk-val{
+  opacity:0.75;
+}
+
+/* Dot colors (theme-controlled) */
+.v2 .entity-dot-outer{ fill: var(--entity-dot-outer); }
+.v2 .entity-dot-inner{
+  fill: var(--entity-dot-inner);
+  fill-opacity: var(--entity-dot-inner-opacity);
+}
+
+/* =========================================================
+   V2 shared helpers
+   ========================================================= */
+
+.v2 .entity-bar{
+  position:absolute;
+  inset:0;
+  width:360px;
+  height:150px;
+  z-index:1;
+  pointer-events:none;
+}
+
+.v2 .entity-bar-img{
+  position:absolute;
+  left:19.1025px;
+  top:116.7px;
+  width:322.6125px;
+  height:9px;
+}
+
+.v2 .history-img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  z-index:2;
+  pointer-events:none;
+  user-select:none;
+}

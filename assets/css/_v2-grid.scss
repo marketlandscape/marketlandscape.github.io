@@ -1,0 +1,66 @@
+/* =========================================================
+   V2 grid page(grid.html) — page-local layout only
+   ========================================================= */
+
+.v2-grid .indexes{
+  display:grid;
+  grid-template-columns: repeat(2, 360px);
+  grid-template-areas:
+    "box1 history"
+    "box2 box4"
+    "box3 box5";
+  column-gap: 28px;
+  row-gap: 28px;
+  align-items: start;
+}
+
+.v2-grid .indexes > div{
+  margin-bottom: 0 !important;
+}
+
+.v2-grid .cell-box1{ grid-area: box1; }
+.v2-grid .cell-history{ grid-area: history; }
+.v2-grid .cell-box2{ grid-area: box2; }
+.v2-grid .cell-box3{ grid-area: box3; }
+.v2-grid .cell-box4{ grid-area: box4; }
+.v2-grid .cell-box5{ grid-area: box5; }
+
+@media (max-width: 780px){
+  .v2-grid .indexes{
+    grid-template-columns: 360px;
+    grid-template-areas:
+      "box1"
+      "box2"
+      "box3"
+      "box4"
+      "box5"
+      "history";
+  }
+}
+
+/* =========================================================
+   NAV HISTORY labels (grid + wide history page)
+   ========================================================= */
+
+.v2-grid .nav-xlabels,
+.v2-history-page .nav-xlabels{
+  position:absolute;
+  left:0; right:0;
+  bottom:14px;
+  z-index:3;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  padding:0 14px;
+  pointer-events:none;
+  user-select:none;
+}
+
+.v2-grid .nav-xlabels span,
+.v2-history-page .nav-xlabels span{
+  font-size:13px;
+  color:inherit;
+  opacity:.5;
+  line-height:1;
+  white-space:nowrap;
+}
