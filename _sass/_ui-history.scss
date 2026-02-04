@@ -28,28 +28,55 @@
   gap:8px;
 }
 
+/* Range buttons — rounded rectangles, equal size, transparent,
+   border uses the same “accent” color as the large box (fallbacks included) */
 .v2-history-page .nav-range-btn,
 .v2-nav-history-wide .nav-range-btn{
   appearance:none;
-  border:1px solid var(--entity-box-stroke);
+
+  /* equal sizing */
+  box-sizing: border-box;
+  min-width: 52px;     /* same width for 1W/2W/1M/… */
+  height: 30px;
+  padding: 0 12px;
+
+  /* rounded-rectangle (not pill) */
+  border-radius: 10px;
+
+  /* transparent fill */
   background: transparent;
+
+  /* match box edge color (try accent first, then stroke) */
+  border: 1px solid var(--entity-accent, var(--box-accent, var(--entity-box-stroke)));
+
   color: inherit;
-  border-radius: 999px;
-  padding: 6px 10px;
   font-size: 13px;
   line-height: 1;
-  opacity: .7;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: .78;
   cursor: pointer;
 }
 
 .v2-history-page .nav-range-btn:hover,
 .v2-nav-history-wide .nav-range-btn:hover{
-  opacity: .9;
+  opacity: .92;
 }
 
+/* active = still transparent, but “locked in” and a touch stronger */
 .v2-history-page .nav-range-btn.is-active,
 .v2-nav-history-wide .nav-range-btn.is-active{
   opacity: 1;
+  border-width: 2px;
+}
+
+/* keyboard focus */
+.v2-history-page .nav-range-btn:focus-visible,
+.v2-nav-history-wide .nav-range-btn:focus-visible{
+  outline: 2px solid var(--entity-accent, var(--box-accent, var(--entity-box-stroke)));
+  outline-offset: 2px;
 }
 
 /* Wide history box (scaled proportionally from 360x150 -> 740x308) */
