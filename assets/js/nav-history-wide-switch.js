@@ -89,7 +89,8 @@ const res = await fetch(bust, { cache: "no-store" });
   function setRange(range) {
     setActive(range);
     const url = svgUrlFor(range);
-    img.src = `${url}${url.includes("?") ? "&" : "?"}v=${Date.now()}`;
+img.src = `${url}${url.includes("?") ? "&" : "?"}v=${Date.now()}`;
+
     loadMetaAndRender(range);
   }
 
