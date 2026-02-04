@@ -93,11 +93,11 @@
   background: #ffffff;
 }
 
-/* dark theme: pressed state, 20% black */
+/* dark theme: pressed state */
 @media (prefers-color-scheme: dark){
   .v2-history-page .nav-range-btn.is-active,
   .v2-nav-history-wide .nav-range-btn.is-active{
-    background: var(--bg);
+    background: color-mix(in srgb, var(--bg) 75%, white);
   }
 }
 
