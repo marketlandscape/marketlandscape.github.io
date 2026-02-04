@@ -1,0 +1,40 @@
+/* =========================================================
+   V1 (existing index.md) — move inline <style> here
+   ========================================================= */
+
+.indexes{
+  display:flex;
+  flex-direction:column;
+}
+
+.index-box{
+  position:relative;
+  width:360px;
+  height:150px;
+  background-repeat:no-repeat;
+  background-size:360px 150px;
+  font-family:system-ui,-apple-system,sans-serif;
+}
+
+.box-title{
+  position:absolute;
+  top:18px;
+  left:20px;
+  right:17px;
+  font-size:15px;
+  font-weight:500;
+  color: var(--index-ui-text);
+  line-height:1.2;
+  z-index:2;
+}
+
+.dot-layer{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:1;
+}
+
+/* Optional: force dot colors via CSS (overrides inline fill if present) */
+.dot-layer circle[id^="dotOuter"]{ fill: var(--index-dot-outer) !important; }
+.dot-layer circle[id^="dotInner"]{ fill: var(--index-dot-inner) !important; }

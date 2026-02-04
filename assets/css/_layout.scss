@@ -1,0 +1,262 @@
+/* =========================================================
+   Layout
+   ========================================================= */
+
+.wrapper{
+  max-width: 980px;
+  margin: 0 auto;
+
+  /* sticky-footer support (accounts for body padding top+bottom) */
+  min-height: calc(100vh - (2 * clamp(14px, 4vw, 50px)));
+}
+
+/* Desktop layout */
+@media (min-width: 961px){
+  .wrapper{
+    display:grid;
+    grid-template-columns: 180px 1fr;
+    gap: 32px;
+    align-items: stretch; /* was start */
+  }
+
+  header{
+    position: sticky;
+    top: 24px;
+    align-self: start;
+  }
+}
+
+/* Mobile/tablet */
+@media (max-width: 960px){
+  header, main{
+    position:static;
+    width:auto;
+  }
+}
+
+/* =========================================================
+   Header / sidebar
+   ========================================================= */
+
+header{
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+/* =========================================================
+   Menu (nav.html)
+   ========================================================= */
+
+.site-nav{
+  margin: 16px 0 20px;
+}
+
+@media (max-width: 960px){
+  .site-nav{
+    margin-bottom: 36px;
+  }
+}
+
+.nav-list{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:flex;
+  flex-direction:column;
+  gap: 0px;
+}
+
+.nav-link{
+  display:block;
+  padding: 6px 0;
+  line-height:1.4;
+  color: var(--text);
+  background:none;
+  border:none;
+}
+
+.nav-link:hover,
+.nav-link:focus{
+  color: var(--text);
+  background:none;
+  text-decoration: none;
+}
+
+/* Ensure menu links stay neutral */
+.site-nav a{
+  color: var(--text);
+}
+
+.site-nav a:hover,
+.site-nav a:focus{
+  color: var(--text);
+}
+
+/* =========================================================
+   Sidebar footer (after menu)
+   ========================================================= */
+
+.site-footer{
+  margin-top: 38px;
+  margin-bottom: 40px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.footer-disclaimer{
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--text);
+  opacity: 0.5;
+}
+
+/* =========================================================
+   Page footer (bottom of main content)
+   ========================================================= */
+
+.page-footer{
+  margin-top: 46px;
+  padding-top: 12px;
+  padding-bottom: 72px;
+  border-top: none;
+}
+
+.page-footer__signature{
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--text);
+  opacity: 0.5;
+  text-align: left;
+}
+
+.page-footer__official{
+  margin: 6px 0 0;
+  font-size: 11px;
+  line-height: 1.2;
+  color: var(--text);
+  opacity: 0.5;
+  text-align: left;
+}
+
+/* =========================================================
+   Main content
+   ========================================================= */
+
+main{
+  max-width: 640px;
+  padding-bottom: 0px;
+}
+
+/* =========================================================
+   Blocks / elements
+   ========================================================= */
+
+blockquote{
+  border-left:1px solid var(--border);
+  margin:0;
+  padding:0 0 0 20px;
+  font-style:italic;
+}
+
+code, pre{
+  font-family: Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  color: var(--text);
+}
+
+pre{
+  padding:8px 15px;
+  background: var(--pre-bg);
+  border-radius:5px;
+  border:1px solid var(--border);
+  overflow-x:auto;
+}
+
+/* Tables */
+table{
+  width:100%;
+  border-collapse:collapse;
+  display:block;
+  overflow-x:auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+th, td{
+  text-align:left;
+  padding:5px 10px;
+  border-bottom:1px solid var(--border);
+}
+
+dt{
+  font-weight:700;
+}
+
+img{
+  max-width:100%;
+}
+
+kbd{
+  background-color: var(--pre-bg);
+  border:1px solid var(--border);
+  border-radius:3px;
+  box-shadow: inset 0 -1px 0 var(--border);
+  font-size:11px;
+  line-height:10px;
+  padding:3px 5px;
+}
+
+/* =========================================================
+   Index row (custom) — 180 × 180 boxes
+   ========================================================= */
+
+.index-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+  align-items:flex-start;
+}
+
+.index-row .left{
+  flex: 0 0 180px;
+}
+
+.index-row .right{
+  flex:1 1 260px;
+  max-width:420px;
+  line-height:1.5;
+}
+
+@media (max-width:520px){
+  .index-row .right{
+    flex-basis:100%;
+    max-width:none;
+  }
+}
+
+/* =========================================================
+   Market context (BTC / ETH) — sidebar text only
+   ========================================================= */
+
+.market-mini{
+  margin: 0 0 14px 0;
+  padding: 0 0 12px 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.9em;
+  line-height: 1.2;
+  opacity: 0.75;
+}
+
+.market-mini-row{
+  margin: 6px 0;
+}
+
+.market-mini-label,
+.market-mini-value{
+  letter-spacing: 0.3px;
+}
+
+.market-mini-time{
+  margin-top: 8px;
+  font-size: 11px;
+  line-height: 1.2;
+}
