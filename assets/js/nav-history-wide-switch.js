@@ -86,7 +86,8 @@
 
   function setRange(range) {
     setActive(range);
-    img.src = svgUrlFor(range);
+    const url = svgUrlFor(range);
+    img.src = `${url}${url.includes("?") ? "&" : "?"}v=${Date.now()}`;
     loadMetaAndRender(range);
   }
 
