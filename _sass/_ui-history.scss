@@ -18,9 +18,13 @@
   display:flex;
   justify-content:flex-end;
   align-items:center;
-  margin: 0 0 10px 0;
+  margin: 0 0 10px 0;   /* space between buttons and box */
   width: 740px;
 }
+
+/* =========================================================
+   Panel around range buttons (only container styling)
+   ========================================================= */
 
 .v2-history-page .history-controls,
 .v2-nav-history-wide .history-controls{
@@ -30,13 +34,16 @@
   /* panel */
   padding: 5px;
   border-radius: 12px;
-  background: rgba(0,0,0,.06);
+
+  /* light theme panel */
+  background: rgba(0,0,0,0.06);
 }
 
 @media (prefers-color-scheme: dark){
   .v2-history-page .history-controls,
   .v2-nav-history-wide .history-controls{
-    background: rgba(255,255,255,.10);
+    /* dark theme panel */
+    background: rgba(255,255,255,0.10);
   }
 }
 
@@ -76,32 +83,36 @@
   opacity: .92;
 }
 
-/* active = darker “pressed” button, no text color change */
+/* =========================================================
+   Active (pressed) button
+   ========================================================= */
+
+/* light theme: soft pressed state */
 .v2-history-page .nav-range-btn.is-active,
 .v2-nav-history-wide .nav-range-btn.is-active{
   opacity: 1;
-
-  /* light theme: darker than panel */
-  background: rgba(0,0,0,.10);
+  background: rgba(0,0,0,0.08);
 }
 
-/* focus (kept minimal, no border) */
-.v2-history-page .nav-range-btn:focus-visible,
-.v2-nav-history-wide .nav-range-btn:focus-visible{
-  outline: 2px solid rgba(0,0,0,.25);
-  outline-offset: 2px;
-}
-
-/* Dark mode: pressed button darker, close to box background */
+/* dark theme: pressed state, 25% black over panel */
 @media (prefers-color-scheme: dark){
   .v2-history-page .nav-range-btn.is-active,
   .v2-nav-history-wide .nav-range-btn.is-active{
-    background: rgba(0,0,0,.35);
+    background: rgba(0,0,0,0.25);
   }
+}
 
+/* focus (kept minimal, no borders) */
+.v2-history-page .nav-range-btn:focus-visible,
+.v2-nav-history-wide .nav-range-btn:focus-visible{
+  outline: 2px solid rgba(0,0,0,0.25);
+  outline-offset: 2px;
+}
+
+@media (prefers-color-scheme: dark){
   .v2-history-page .nav-range-btn:focus-visible,
   .v2-nav-history-wide .nav-range-btn:focus-visible{
-    outline-color: rgba(255,255,255,.35);
+    outline-color: rgba(255,255,255,0.35);
   }
 }
 
@@ -115,6 +126,7 @@
   height: 308px;
 }
 
+/* Responsive */
 @media (max-width: 780px){
   .v2-history-page,
   .v2-nav-history-wide{
