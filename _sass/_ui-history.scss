@@ -28,8 +28,9 @@
   gap:8px;
 }
 
-/* Range buttons — rounded rectangles, equal size, transparent (light),
-   border uses box edge token in light; dark overrides below. */
+/* Range buttons — rounded rectangles, equal size, transparent.
+   Light: edge matches box stroke.
+   Dark: edge matches box fill (see dark override below). */
 .v2-history-page .nav-range-btn,
 .v2-nav-history-wide .nav-range-btn{
   appearance:none;
@@ -43,10 +44,10 @@
   /* rounded-rectangle (not pill) */
   border-radius: 10px;
 
-  /* default (light): transparent fill */
+  /* transparent fill */
   background: transparent;
 
-  /* light: match box edge (stroke) */
+  /* light: match box edge */
   border: 1px solid var(--entity-box-stroke);
 
   color: inherit;
@@ -65,7 +66,7 @@
   opacity: .92;
 }
 
-/* active */
+/* active = still transparent, but “locked in” and a touch stronger */
 .v2-history-page .nav-range-btn.is-active,
 .v2-nav-history-wide .nav-range-btn.is-active{
   opacity: 1;
@@ -80,19 +81,16 @@
 }
 
 /* Dark mode:
-   - button fill matches large box fill: --entity-box-bg
-   - button edge uses standard dark border token: --border
-   (because --entity-box-stroke is transparent in dark in your theme tokens) */
+   Buttons stay transparent, but the *edge* matches the large box fill. */
 @media (prefers-color-scheme: dark){
   .v2-history-page .nav-range-btn,
   .v2-nav-history-wide .nav-range-btn{
-    background: var(--entity-box-bg);
-    border-color: var(--border);
+    border-color: var(--entity-box-bg);
   }
 
   .v2-history-page .nav-range-btn:focus-visible,
   .v2-nav-history-wide .nav-range-btn:focus-visible{
-    outline-color: var(--border);
+    outline-color: var(--entity-box-bg);
   }
 }
 
