@@ -492,24 +492,6 @@ kbd{
   }
 }
 
-/* =========================================================
-   V2 history box (top-right chart wrapper)
-   ========================================================= */
-
-.v2 .entity-history-box{
-  position:relative;
-  width:360px;
-  height:150px;
-  border-radius:14px;
-  overflow:hidden;
-}
-
-@media (prefers-color-scheme: light){
-  .v2 .entity-history-box{
-    box-shadow: var(--entity-box-shadow);
-  }
-}
-
 /* Layers */
 .v2 .entity-frame,
 .v2 .entity-scale,
@@ -650,17 +632,6 @@ kbd{
   height:9px;
 }
 
-.v2 .history-img{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  z-index:2;
-  pointer-events:none;
-  user-select:none;
-}
-
 /* =========================================================
    V2 grid page (grid.html) — page-local layout only
    ========================================================= */
@@ -702,11 +673,36 @@ kbd{
 }
 
 /* =========================================================
-   NAV HISTORY labels (grid + wide history page)
+   V2 surface: GRID (small history gadget)
    ========================================================= */
 
-.v2-grid .nav-xlabels,
-.v2-history-page .nav-xlabels{
+.v2-grid .entity-history-box{
+  position:relative;
+  width:360px;
+  height:150px;
+  border-radius:14px;
+  overflow:hidden;
+}
+
+@media (prefers-color-scheme: light){
+  .v2-grid .entity-history-box{
+    box-shadow: var(--entity-box-shadow);
+  }
+}
+
+.v2-grid .history-img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  z-index:2;
+  pointer-events:none;
+  user-select:none;
+}
+
+/* NAV HISTORY labels (grid gadget only) */
+.v2-grid .nav-xlabels{
   position:absolute;
   left:0; right:0;
   bottom:14px;
@@ -719,8 +715,7 @@ kbd{
   user-select:none;
 }
 
-.v2-grid .nav-xlabels span,
-.v2-history-page .nav-xlabels span{
+.v2-grid .nav-xlabels span{
   font-size:13px;
   color:inherit;
   opacity:.5;
@@ -729,7 +724,7 @@ kbd{
 }
 
 /* =========================================================
-   Single NAV history page (wide box + range buttons)
+   V2 surface: HISTORY PAGE (large chart + controls)
    ========================================================= */
 
 .v2-history-page{
@@ -774,26 +769,31 @@ kbd{
 
 /* Wide history box (scaled proportionally from 360x150 -> 740x308) */
 .v2-history-page .entity-history-box.wide{
-  width: 740px;
-  height: 308px;
+  position:relative;
+  width:740px;
+  height:308px;
+  border-radius:14px;
+  overflow:hidden;
 }
 
-/* Ensure it scales down on narrow screens */
-@media (max-width: 780px){
-  .v2-history-page{
-    max-width: 100%;
-  }
+@media (prefers-color-scheme: light){
   .v2-history-page .entity-history-box.wide{
-    width: 100%;
-    height: auto;
-    aspect-ratio: 740 / 308;
-  }
-  .v2-history-page .entity-frame{
-    width: 100%;
+    box-shadow: var(--entity-box-shadow);
   }
 }
 
-/* NAV HISTORY labels (single history page) */
+.v2-history-page .history-img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  z-index:2;
+  pointer-events:none;
+  user-select:none;
+}
+
+/* NAV HISTORY labels (history page only) */
 .v2-history-page .nav-xlabels{
   position:absolute;
   left:0; right:0;
@@ -813,6 +813,24 @@ kbd{
   opacity:.5;
   line-height:1;
   white-space:nowrap;
+}
+
+/* Ensure it scales down on narrow screens */
+@media (max-width: 780px){
+  .v2-history-page{
+    max-width: 100%;
+  }
+  .v2-history-page .entity-history-box.wide{
+    width: 100%;
+    height: auto;
+    aspect-ratio: 740 / 308;
+  }
+  .v2-history-page .entity-frame{
+    width: 100%;
+  }
+  .v2-history-page .history-topbar{
+    width: 100%;
+  }
 }
 
 /* =========================================================
