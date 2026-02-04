@@ -65,7 +65,9 @@
 
     // fetch latest meta, update only if changed
     try {
-      const res = await fetch(svgUrl, { cache: "no-store" });
+      const bust = `${svgUrl}${svgUrl.includes("?") ? "&" : "?"}v=${Date.now()}`;
+const res = await fetch(bust, { cache: "no-store" });
+
       if (!res.ok) return;
 
       const text = await res.text();
