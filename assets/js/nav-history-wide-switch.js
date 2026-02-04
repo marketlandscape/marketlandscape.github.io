@@ -18,6 +18,8 @@
 
   if (!img || !host || buttons.length === 0) return;
 
+  const STORAGE_KEY = "nav_history_range_v1";
+
   function svgUrlFor(range) {
     return `/assets/img/charts/wide/nav_${range}.svg`;
   }
@@ -34,7 +36,6 @@
     const lang = (page?.dataset?.lang || document.documentElement.lang || "en");
 
     const formatted = labels.map(lab => {
-      // expects DD.MM from nav-meta (e.g. "18.01")
       return (typeof window.formatNavDate === "function")
         ? window.formatNavDate(String(lab), lang)
         : String(lab);
@@ -57,17 +58,14 @@
     const svgUrl = svgUrlFor(range);
     const CACHE_KEY = `nav_labels_cache_${range}_v1`;
 
-    // instant render from cache (same as grid)
     try {
       const cached = sessionStorage.getItem(CACHE_KEY);
       if (cached) render(JSON.parse(cached));
     } catch (e) {}
 
-    // fetch latest meta, update only if changed
     try {
       const bust = `${svgUrl}${svgUrl.includes("?") ? "&" : "?"}v=${Date.now()}`;
-const res = await fetch(bust, { cache: "no-store" });
-
+      const res = await fetch(bust, { cache: "no-store" });
       if (!res.ok) return;
 
       const text = await res.text();
@@ -89,8 +87,7 @@ const res = await fetch(bust, { cache: "no-store" });
   function setRange(range) {
     setActive(range);
     const url = svgUrlFor(range);
-img.src = `${url}${url.includes("?") ? "&" : "?"}v=${Date.now()}`;
-
+    img.src = `${url}${url.includes("?") ? "&" : "?"}v=${Date.now()}`;
     loadMetaAndRender(range);
   }
 
@@ -99,11 +96,19 @@ img.src = `${url}${url.includes("?") ? "&" : "?"}v=${Date.now()}`;
     b.addEventListener("click", () => {
       const r = b.dataset.range;
       if (!r) return;
+
+      try { localStorage.setItem(STORAGE_KEY, r); } catch (e) {}  // ← ADDED
+
       setRange(r);
     });
   }
 
-  // init
-  const initial = box.dataset.defaultRange || "1w";
+  // init (restore saved range; fall back to data-defaultRange; then "1w")
+  let initial = box.dataset.defaultRange || "1w";
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) initial = saved;
+  } catch (e) {}
+
   setRange(initial);
 })();
