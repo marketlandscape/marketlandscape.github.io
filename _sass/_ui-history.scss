@@ -1,33 +1,121 @@
 /* =========================================================
-   _ui-history.scss
-   History range buttons — minimal override only
+   Single NAV history page (wide box + range buttons)
+   NOTE:
+   - legacy wrapper: .v2-history-page
+   - current wrapper: .v2-nav-history-wide
+   Keep both selectors so either wrapper works.
    ========================================================= */
 
-/* base button: rectangular, light, visible edge */
-.nav-range-btn {
-  border-radius: 6px;                    /* rectangle, not pill */
-  background-color: rgba(0, 0, 0, 0.04); /* lighter than before */
-  border: 1px solid rgba(0, 0, 0, 0.22); /* visible edge */
-
-  /* intentionally NOT touching:
-     - font
-     - font color
-     - padding
-     - size
-     - layout
-     - transitions
-  */
+.v2-history-page,
+.v2-nav-history-wide{
+  max-width: 740px;
+  margin: 24px 0 0;   /* no auto-centering */
+  padding: 0;         /* remove side padding */
 }
 
-/* hover: subtle contrast increase */
-.nav-range-btn:hover {
-  background-color: rgba(0, 0, 0, 0.07);
-  border-color: rgba(0, 0, 0, 0.30);
+.v2-history-page .history-topbar,
+.v2-nav-history-wide .history-topbar{
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  margin: 0 0 10px 0;
+  width: 740px; /* lock to box width so right edges align */
 }
 
-/* active: different grey, still light */
-.nav-range-btn.is-active {
-  background-color: rgba(0, 0, 0, 0.12);
-  border-color: rgba(0, 0, 0, 0.38);
+.v2-history-page .history-controls,
+.v2-nav-history-wide .history-controls{
+  display:flex;
+  gap:8px;
 }
 
+.v2-history-page .nav-range-btn,
+.v2-nav-history-wide .nav-range-btn{
+  appearance:none;
+  border:1px solid var(--entity-box-stroke);
+  background: transparent;
+  color: inherit;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 13px;
+  line-height: 1;
+  opacity: .7;
+  cursor: pointer;
+}
+
+.v2-history-page .nav-range-btn:hover,
+.v2-nav-history-wide .nav-range-btn:hover{
+  opacity: .9;
+}
+
+.v2-history-page .nav-range-btn.is-active,
+.v2-nav-history-wide .nav-range-btn.is-active{
+  opacity: 1;
+}
+
+/* Wide history box (scaled proportionally from 360x150 -> 740x308) */
+.v2-history-page .entity-history-box.wide,
+.v2-nav-history-wide .entity-history-box.wide{
+  width: 740px;
+  height: 308px;
+}
+
+/* Ensure it scales down on narrow screens */
+@media (max-width: 780px){
+  .v2-history-page,
+  .v2-nav-history-wide{
+    max-width: 100%;
+  }
+  .v2-history-page .entity-history-box.wide,
+  .v2-nav-history-wide .entity-history-box.wide{
+    width: 100%;
+    height: auto;
+    aspect-ratio: 740 / 308;
+  }
+  .v2-history-page .entity-frame,
+  .v2-nav-history-wide .entity-frame{
+    width: 100%;
+  }
+}
+
+/* NAV HISTORY labels (single history page) */
+.v2-history-page .nav-xlabels,
+.v2-nav-history-wide .nav-xlabels{
+  position:absolute;
+  left:0; right:0;
+  bottom:14px;
+  z-index:3;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  padding:0 14px;
+  pointer-events:none;
+  user-select:none;
+}
+
+.v2-history-page .nav-xlabels span,
+.v2-nav-history-wide .nav-xlabels span{
+  font-size:13px;
+  color:inherit;
+  opacity:.5;
+  line-height:1;
+  white-space:nowrap;
+}
+
+/* =========================================================
+   V2 footnote
+   ========================================================= */
+
+.v2 .index-footnote{
+  margin-top: 28px;
+  max-width: 360px;
+  padding-top: 0;
+  border-top: none;
+  font-size: 11px;
+  line-height: 1.35;
+  color: inherit;
+  opacity: 0.75;
+}
+
+.v2 .index-footnote .fn-mark{
+  margin-right: 0px;
+}
