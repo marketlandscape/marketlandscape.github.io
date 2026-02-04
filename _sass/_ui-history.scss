@@ -1,118 +1,33 @@
 /* =========================================================
    _ui-history.scss
-   History page – wide NAV history box + range switch
-   Full replacement file
+   History range buttons — minimal override only
    ========================================================= */
 
-/* =========================
-   Layout
-   ========================= */
-
-.v2-nav-history-wide {
-  position: relative;
-}
-
-.history-topbar {
-  display: flex;
-  align-items: center;
-  margin-bottom: 8px;
-}
-
-.history-spacer {
-  flex: 1 1 auto;
-}
-
-/* =========================
-   Range switch controls
-   ========================= */
-
-.history-controls {
-  display: flex;
-  gap: 6px;
-}
-
-/* rectangular buttons, visible edge */
+/* base button: rectangular, light, visible edge */
 .nav-range-btn {
-  appearance: none;
-  border: 1px solid var(--ui-border-muted, rgba(0, 0, 0, 0.30));
-  background: var(--ui-bg-muted, rgba(0, 0, 0, 0.05));
-  color: var(--ui-text-muted, #666);
+  border-radius: 6px;                    /* rectangle, not pill */
+  background-color: rgba(0, 0, 0, 0.04); /* lighter than before */
+  border: 1px solid rgba(0, 0, 0, 0.22); /* visible edge */
 
-  padding: 6px 12px;
-  min-width: 44px;
-
-  border-radius: 6px; /* not pill / not ellipse */
-  font-size: 12px;
-  line-height: 1;
-  cursor: pointer;
-
-  transition:
-    background-color 0.15s ease,
-    border-color 0.15s ease,
-    color 0.15s ease;
+  /* intentionally NOT touching:
+     - font
+     - font color
+     - padding
+     - size
+     - layout
+     - transitions
+  */
 }
 
+/* hover: subtle contrast increase */
 .nav-range-btn:hover {
-  background: var(--ui-bg-hover, rgba(0, 0, 0, 0.10));
-  border-color: var(--ui-border, rgba(0, 0, 0, 0.45));
+  background-color: rgba(0, 0, 0, 0.07);
+  border-color: rgba(0, 0, 0, 0.30);
 }
 
-/* active (current range) */
+/* active: different grey, still light */
 .nav-range-btn.is-active {
-  background: var(--ui-bg-active, rgba(0, 0, 0, 0.20));
-  border-color: var(--ui-border-strong, rgba(0, 0, 0, 0.60));
-  color: var(--ui-text, #111);
+  background-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.38);
 }
 
-/* =========================
-   History box
-   ========================= */
-
-.entity-history-box.wide {
-  position: relative;
-  width: 100%;
-  max-width: 740px;
-}
-
-/* chart image */
-.history-img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-/* reconstructed x-axis labels */
-.nav-xlabels {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 6px;
-
-  display: flex;
-  justify-content: space-between;
-
-  padding: 0 18px;
-  font-size: 11px;
-  color: var(--ui-text-muted, #777);
-  pointer-events: none;
-}
-
-/* =========================
-   Frame (geometry unchanged)
-   ========================= */
-
-.entity-frame {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.entity-frame-bg {
-  fill: var(--ui-frame-bg, transparent);
-}
-
-.entity-frame-stroke {
-  fill: none;
-  stroke: var(--ui-frame-stroke, rgba(0, 0, 0, 0.20));
-  stroke-width: 1;
-}
