@@ -91,12 +91,12 @@
 @media (prefers-color-scheme: dark){
   .v2-history-page .nav-range-btn,
   .v2-nav-history-wide .nav-range-btn{
-    border-color: color-mix(in srgb, currentColor 50%, transparent);
+    border-color: color-mix(in srgb, currentColor 40%, transparent);
   }
 
   .v2-history-page .nav-range-btn:focus-visible,
   .v2-nav-history-wide .nav-range-btn:focus-visible{
-    outline-color: color-mix(in srgb, currentColor 50%, transparent);
+    outline-color: color-mix(in srgb, currentColor 40%, transparent);
   }
 }
 
