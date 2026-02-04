@@ -1,59 +1,38 @@
 /* =========================================================
-   Single NAV history page (wide box + range buttons)
-   NOTE:
-   - legacy wrapper: .v2-history-page
-   - current wrapper: .v2-nav-history-wide
-   Keep both selectors so either wrapper works.
+   Coingecko-style range control:
+   - a soft panel around buttons (≈5px padding)
+   - buttons: transparent, no borders
+   - active: “pressed” chip (light: white on light-grey panel;
+             dark: chip is between page bg and panel, close to box bg)
    ========================================================= */
 
-.v2-history-page,
-.v2-nav-history-wide{
-  max-width: 740px;
-  margin: 0px 0 0;   /* no auto-centering */
-  padding: 0;         /* remove side padding */
-}
-
-.v2-history-page .history-topbar,
-.v2-nav-history-wide .history-topbar{
-  display:flex;
-  justify-content:flex-end;
-  align-items:center;
-  margin: 0 0 10px 0;
-  width: 740px; /* lock to box width so right edges align */
-}
-
+/* Panel (wraps the buttons) */
 .v2-history-page .history-controls,
 .v2-nav-history-wide .history-controls{
-  display:flex;
-  gap:8px;
+  gap: 6px;
+  padding: 5px;
+  border-radius: 12px;
+
+  /* light theme panel */
+  background: rgba(0,0,0,.06);
 }
 
-/* =========================================================
-   Range buttons
-   - transparent in both themes
-   - equal size, rounded rectangles
-   - light: edge = box stroke
-   - dark: edge = SAME COLOR as time-point labels
-           (derived from currentColor + same opacity)
-   - active button does NOT change text color
-   ========================================================= */
-
+/* Buttons */
 .v2-history-page .nav-range-btn,
 .v2-nav-history-wide .nav-range-btn{
-  appearance:none;
-
+  appearance: none;
   box-sizing: border-box;
-  min-width: 42px;
+
+  min-width: 46px;
   height: 30px;
   padding: 0 12px;
 
+  border: 0;
   border-radius: 10px;
+
   background: transparent;
-
-  /* light theme default */
-  border: 1px solid var(--entity-box-stroke);
-
   color: inherit;
+
   font-size: 13px;
   line-height: 1;
 
@@ -61,117 +40,53 @@
   align-items: center;
   justify-content: center;
 
-  opacity: .78;
+  opacity: .85;
   cursor: pointer;
 }
 
 .v2-history-page .nav-range-btn:hover,
 .v2-nav-history-wide .nav-range-btn:hover{
-  opacity: .92;
+  opacity: 1;
 }
 
-/* active: stronger edge only, NO text color change */
+/* Active = pressed chip, no text color change */
 .v2-history-page .nav-range-btn.is-active,
 .v2-nav-history-wide .nav-range-btn.is-active{
   opacity: 1;
-  border-width: 1.8px;
+
+  /* light theme: white chip on light-grey panel */
+  background: #fff;
+
+  /* subtle lift (optional, very light) */
+  box-shadow: 0 1px 2px rgba(0,0,0,.08);
 }
 
-/* focus */
+/* Focus (no border, but visible) */
 .v2-history-page .nav-range-btn:focus-visible,
 .v2-nav-history-wide .nav-range-btn:focus-visible{
-  outline: 2px solid var(--entity-box-stroke);
+  outline: 2px solid rgba(0,0,0,.18);
   outline-offset: 2px;
 }
 
-/* Dark mode:
-   Use EXACT same color logic as time-point labels:
-   labels = currentColor with opacity .5
-   → replicate via color-mix, no guessing variables */
+/* Dark mode */
 @media (prefers-color-scheme: dark){
-  .v2-history-page .nav-range-btn,
-  .v2-nav-history-wide .nav-range-btn{
-    border-color: color-mix(in srgb, currentColor 40%, transparent);
+  .v2-history-page .history-controls,
+  .v2-nav-history-wide .history-controls{
+    /* dark panel */
+    background: rgba(255,255,255,.10);
+  }
+
+  .v2-history-page .nav-range-btn.is-active,
+  .v2-nav-history-wide .nav-range-btn.is-active{
+    /* “between background and panel”, close to box bg */
+    background: color-mix(in srgb, var(--entity-box-bg) 65%, transparent);
+
+    /* keep it soft (no hard border) */
+    box-shadow: none;
   }
 
   .v2-history-page .nav-range-btn:focus-visible,
   .v2-nav-history-wide .nav-range-btn:focus-visible{
-    outline-color: color-mix(in srgb, currentColor 40%, transparent);
+    outline-color: rgba(255,255,255,.22);
   }
-}
-
-/* =========================================================
-   Wide history box
-   ========================================================= */
-
-.v2-history-page .entity-history-box.wide,
-.v2-nav-history-wide .entity-history-box.wide{
-  width: 740px;
-  height: 308px;
-}
-
-/* Responsive */
-@media (max-width: 780px){
-  .v2-history-page,
-  .v2-nav-history-wide{
-    max-width: 100%;
-  }
-
-  .v2-history-page .entity-history-box.wide,
-  .v2-nav-history-wide .entity-history-box.wide{
-    width: 100%;
-    height: auto;
-    aspect-ratio: 740 / 308;
-  }
-
-  .v2-history-page .entity-frame,
-  .v2-nav-history-wide .entity-frame{
-    width: 100%;
-  }
-}
-
-/* =========================================================
-   NAV history time-point labels
-   ========================================================= */
-
-.v2-history-page .nav-xlabels,
-.v2-nav-history-wide .nav-xlabels{
-  position:absolute;
-  left:0; right:0;
-  bottom:14px;
-  z-index:3;
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-end;
-  padding:0 14px;
-  pointer-events:none;
-  user-select:none;
-}
-
-.v2-history-page .nav-xlabels span,
-.v2-nav-history-wide .nav-xlabels span{
-  font-size:13px;
-  color:inherit;
-  opacity:.5;
-  line-height:1;
-  white-space:nowrap;
-}
-
-/* =========================================================
-   V2 footnote
-   ========================================================= */
-
-.v2 .index-footnote{
-  margin-top: 28px;
-  max-width: 360px;
-  padding-top: 0;
-  border-top: none;
-  font-size: 11px;
-  line-height: 1.35;
-  color: inherit;
-  opacity: 0.75;
-}
-
-.v2 .index-footnote .fn-mark{
-  margin-right: 0px;
 }
