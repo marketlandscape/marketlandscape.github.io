@@ -4,7 +4,18 @@
 @import "fonts";
 @import "rouge-github";
 
+/* =========================================================
+   Foundations
+   ========================================================= */
+
 @import "theme";
 @import "base";
 @import "layout";
-@import "v2";
+
+/* =========================================================
+   UI (entity boxes, grid, history)
+   ========================================================= */
+
+@import "ui-core";
+@import "ui-grid";
+@import "ui-history";
