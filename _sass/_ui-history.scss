@@ -23,7 +23,7 @@
 }
 
 /* =========================================================
-   Panel around range buttons (only container styling)
+   Panel around range buttons
    ========================================================= */
 
 .v2-history-page .history-controls,
@@ -31,7 +31,6 @@
   display:flex;
   gap:8px;
 
-  /* panel */
   padding: 5px;
   border-radius: 12px;
 
@@ -87,18 +86,18 @@
    Active (pressed) button
    ========================================================= */
 
-/* light theme: soft pressed state */
+/* light theme: white pressed chip */
 .v2-history-page .nav-range-btn.is-active,
 .v2-nav-history-wide .nav-range-btn.is-active{
   opacity: 1;
-  background: rgba(0,0,0,0.08);
+  background: #ffffff;
 }
 
-/* dark theme: pressed state, 25% black over panel */
+/* dark theme: pressed state, 20% black */
 @media (prefers-color-scheme: dark){
   .v2-history-page .nav-range-btn.is-active,
   .v2-nav-history-wide .nav-range-btn.is-active{
-    background: rgba(0,0,0,0.25);
+    background: rgba(0,0,0,0.20);
   }
 }
 
