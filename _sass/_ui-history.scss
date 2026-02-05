@@ -8,7 +8,8 @@
 
 .v2-history-page,
 .v2-nav-history-wide{
-  max-width: 740px;
+  width: min(740px, 100%);
+  max-width: none;
   margin: 0;
   padding: 0;
 }
@@ -121,24 +122,13 @@
 
 .v2-history-page .entity-history-box.wide,
 .v2-nav-history-wide .entity-history-box.wide{
-  width: 740px;
-  height: 308px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 740 / 308;
 }
 
 /* Responsive */
 @media (max-width: 780px){
-  .v2-history-page,
-  .v2-nav-history-wide{
-    max-width: 100%;
-  }
-
-  .v2-history-page .entity-history-box.wide,
-  .v2-nav-history-wide .entity-history-box.wide{
-    width: 100%;
-    height: auto;
-    aspect-ratio: 740 / 308;
-  }
-
   .v2-history-page .entity-frame,
   .v2-nav-history-wide .entity-frame{
     width: 100%;
