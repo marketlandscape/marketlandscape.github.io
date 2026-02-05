@@ -27,6 +27,15 @@ experimental:
   box5:
     title: "小型アルトコインナビ指数"
 
+history:
+  range:
+    w1: "1週"
+    w2: "2週"
+    m1: "1か月"
+    m3: "3か月"
+    m6: "6か月"
+    y1: "1年"
+
 footer:
   disclaimer: "本サイトの情報は情報提供を目的としたものであり、投資助言を行うものではありません。"
   signature: "Market Landscape | ナビゲーション・フレームワーク | marketlandscape.github.io"
