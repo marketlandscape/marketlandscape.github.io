@@ -1,15 +1,10 @@
 /* =========================================================
    Single NAV history page (wide box + range buttons)
-   NOTE:
-   - legacy wrapper: .v2-history-page
-   - current wrapper: .v2-nav-history-wide
-   Keep both selectors so either wrapper works.
    ========================================================= */
 
 .v2-history-page,
 .v2-nav-history-wide{
-  width: min(740px, 100%);
-  max-width: none;
+  width: 100%;
   margin: 0;
   padding: 0;
 }
@@ -19,7 +14,7 @@
   display:flex;
   justify-content:flex-end;
   align-items:center;
-  margin: 0 0 10px 0;   /* space between buttons and box */
+  margin: 0 0 10px 0;
   width: 100%;
 }
 
@@ -62,7 +57,6 @@
 
   border-radius: 8px;
 
-  /* transparent button, no visible edge */
   background: transparent;
   border: 1px solid transparent;
 
@@ -87,14 +81,14 @@
    Active (pressed) button
    ========================================================= */
 
-/* light theme: white pressed chip */
+/* light theme */
 .v2-history-page .nav-range-btn.is-active,
 .v2-nav-history-wide .nav-range-btn.is-active{
   opacity: 1;
   background: #ffffff;
 }
 
-/* dark theme: pressed state */
+/* dark theme */
 @media (prefers-color-scheme: dark){
   .v2-history-page .nav-range-btn.is-active,
   .v2-nav-history-wide .nav-range-btn.is-active{
@@ -102,7 +96,7 @@
   }
 }
 
-/* focus (kept minimal, no borders) */
+/* focus */
 .v2-history-page .nav-range-btn:focus-visible,
 .v2-nav-history-wide .nav-range-btn:focus-visible{
   outline: 2px solid rgba(0,0,0,0.25);
@@ -125,14 +119,6 @@
   width: 100%;
   height: auto;
   aspect-ratio: 740 / 308;
-}
-
-/* Responsive */
-@media (max-width: 780px){
-  .v2-history-page .entity-frame,
-  .v2-nav-history-wide .entity-frame{
-    width: 100%;
-  }
 }
 
 /* =========================================================
