@@ -27,6 +27,15 @@ experimental:
   box5:
     title: "Small-Cap Altcoin Navigation Index"
 
+history:
+  range:
+    w1: "1W"
+    w2: "2W"
+    m1: "1M"
+    m3: "3M"
+    m6: "6M"
+    y1: "1Y"
+
 footer:
   disclaimer: "This material is provided for informational purposes only and does not constitute financial or investment advice."
   signature: "Market Landscape | Market navigation framework | marketlandscape.github.io"
