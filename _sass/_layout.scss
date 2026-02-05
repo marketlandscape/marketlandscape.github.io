@@ -3,7 +3,7 @@
    ========================================================= */
 
 .wrapper{
-  max-width: 980px;
+  max-width: 1120px;   /* was 980px */
   margin: 0 auto;
 
   /* sticky-footer support (accounts for body padding top+bottom) */
@@ -143,9 +143,23 @@ header{
    Main content
    ========================================================= */
 
+/* Fallback (older browsers): keep text pages readable */
 main{
   max-width: 640px;
   padding-bottom: 0px;
+}
+
+/* Modern browsers:
+   - Tool pages (contain .v2): main can use full available width
+   - Text pages (no .v2): keep narrower for readability */
+@supports selector(main:has(.v2)){
+  main{
+    max-width: none;
+  }
+
+  main:not(:has(.v2)){
+    max-width: 640px;
+  }
 }
 
 /* =========================================================
@@ -218,45 +232,4 @@ kbd{
 
 .index-row .left{
   flex: 0 0 180px;
-}
-
-.index-row .right{
-  flex:1 1 260px;
-  max-width:420px;
-  line-height:1.5;
-}
-
-@media (max-width:520px){
-  .index-row .right{
-    flex-basis:100%;
-    max-width:none;
-  }
-}
-
-/* =========================================================
-   Market context (BTC / ETH) — sidebar text only
-   ========================================================= */
-
-.market-mini{
-  margin: 0 0 14px 0;
-  padding: 0 0 12px 0;
-  font-family: system-ui, -apple-system, sans-serif;
-  font-size: 0.9em;
-  line-height: 1.2;
-  opacity: 0.75;
-}
-
-.market-mini-row{
-  margin: 6px 0;
-}
-
-.market-mini-label,
-.market-mini-value{
-  letter-spacing: 0.3px;
-}
-
-.market-mini-time{
-  margin-top: 8px;
-  font-size: 11px;
-  line-height: 1.2;
 }
