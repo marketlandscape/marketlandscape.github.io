@@ -1,6 +1,8 @@
 
 - title: Dashboard
   url: /
+- title: Chart
+  url: /chart/
 - title: Scale
   url: /scale/
 - title: Risk Level
