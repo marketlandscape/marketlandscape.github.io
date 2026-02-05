@@ -149,6 +149,28 @@ main{
 }
 
 /* =========================================================
+   Readable text measure (only prose, not tools)
+   ========================================================= */
+
+main p,
+main ul,
+main ol,
+main blockquote,
+main dl{
+  max-width: 70ch;
+}
+
+/* keep text aligned with the main column */
+main p,
+main ul,
+main ol,
+main blockquote,
+main dl{
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* =========================================================
    Blocks / elements
    ========================================================= */
 
