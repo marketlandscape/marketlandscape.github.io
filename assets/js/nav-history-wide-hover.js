@@ -80,6 +80,7 @@
   }
 
   function dot(color) {
+    // filled dot (no white center)
     return (
       `<span style="display:inline-block;width:9px;height:9px;border-radius:99px;` +
       `background:${color};vertical-align:middle;margin-right:6px;"></span>`
@@ -121,16 +122,16 @@
           lineStyle: { color: "rgba(255,255,255,0.25)", width: 1 },
 
           /* =================================================
-             CROSSHAIR DOT / KNOB (the one you see)
-             - Make it larger and neutral
-             - No orange border, no white fill
+             CROSSHAIR KNOB
+             - Match tooltip dot style: solid fill, no ring
+             - Neutral color (same as tooltip text vibe)
              ================================================= */
           handle: {
             show: true,
-            size: 26,                        // larger dot/knob (try 24–30)
-            margin: 8,
-            color: "rgba(255,255,255,0.18)", // fill (neutral)
-            borderColor: "rgba(255,255,255,0.45)",
+            size: 26,
+            // solid filled dot, no outline (like tooltip dots)
+            color: "rgba(255,255,255,0.40)",
+            borderColor: "rgba(255,255,255,0.40)",
             borderWidth: 1
           }
         },
