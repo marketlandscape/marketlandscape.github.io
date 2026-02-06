@@ -162,9 +162,36 @@
 
       // Invisible lines; tooltip + crosshair only
       series: [
-        { name: "ALTS", type: "line", data: b3, showSymbol: false, lineStyle: { width: 0, opacity: 0 }, emphasis: { disabled: true }, silent: true },
-        { name: "ETH",  type: "line", data: b2, showSymbol: false, lineStyle: { width: 0, opacity: 0 }, emphasis: { disabled: true }, silent: true },
-        { name: "BTC",  type: "line", data: b1, showSymbol: false, lineStyle: { width: 0, opacity: 0 }, emphasis: { disabled: true }, silent: true }
+        {
+          name: "ALTS",
+          type: "line",
+          data: b3,
+          showSymbol: false,
+          lineStyle: { width: 0, opacity: 0 },
+          silent: true,
+          itemStyle: { color: COL_ALTS },
+          emphasis: { itemStyle: { color: COL_ALTS } }
+        },
+        {
+          name: "ETH",
+          type: "line",
+          data: b2,
+          showSymbol: false,
+          lineStyle: { width: 0, opacity: 0 },
+          silent: true,
+          itemStyle: { color: COL_ETH },
+          emphasis: { itemStyle: { color: COL_ETH } }
+        },
+        {
+          name: "BTC",
+          type: "line",
+          data: b1,
+          showSymbol: false,
+          lineStyle: { width: 0, opacity: 0 },
+          silent: true,
+          itemStyle: { color: COL_BTC },
+          emphasis: { itemStyle: { color: COL_BTC } }
+        }
       ]
     };
 
