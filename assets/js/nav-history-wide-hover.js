@@ -27,6 +27,27 @@
   // Same key used by the SVG/button switcher (nav-history-wide-switch.js)
   const STORAGE_KEY = "nav_history_range_v1";
 
+  // Theme-aware tooltip styling (light vs dark)
+  const mql = (typeof window !== "undefined" && window.matchMedia)
+    ? window.matchMedia("(prefers-color-scheme: dark)")
+    : null;
+
+  function isDark() {
+    return !!(mql && mql.matches);
+  }
+
+  function tooltipBg() {
+    return isDark() ? "#2c2c2c" : "#ffffff";
+  }
+
+  function tooltipBorderColor() {
+    return isDark() ? "rgba(255,255,255,0.08)" : "#e5e5e5";
+  }
+
+  function tooltipTextColor() {
+    return isDark() ? "rgba(255,255,255,0.92)" : "rgba(0,0,0,0.85)";
+  }
+
   function clamp(v, lo, hi) {
     return Math.max(lo, Math.min(hi, v));
   }
@@ -221,9 +242,14 @@
             borderWidth: 1
           }
         },
-        backgroundColor: "#2c2c2c",
-        borderWidth: 0,
-        textStyle: { color: "rgba(255,255,255,0.92)", fontSize: 14 },
+
+        backgroundColor: tooltipBg(),
+
+        borderWidth: 1,
+        borderColor: tooltipBorderColor(),
+
+        textStyle: { color: tooltipTextColor(), fontSize: 14 },
+
         extraCssText: "border-radius:10px; padding:10px 12px;",
         formatter: function (params) {
           const arr = Array.isArray(params) ? params : [];
@@ -329,6 +355,20 @@
       if (!r) return;
 
       setTimeout(() => { mountForRange(r).catch(() => {}); }, 0);
+    });
+  }
+
+  // Re-apply tooltip theme if OS theme changes while page is open
+  if (mql && typeof mql.addEventListener === "function") {
+    mql.addEventListener("change", () => {
+      const layer = page.querySelector(".nav-echarts-layer");
+      const chart = layer && layer.__echarts;
+      if (chart) chart.setOption({ tooltip: {
+        backgroundColor: tooltipBg(),
+        borderWidth: 1,
+        borderColor: tooltipBorderColor(),
+        textStyle: { color: tooltipTextColor(), fontSize: 14 }
+      }});
     });
   }
 
