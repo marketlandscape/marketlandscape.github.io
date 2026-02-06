@@ -127,7 +127,7 @@
         },
         backgroundColor: "rgba(20,20,20,0.92)",
         borderWidth: 0,
-        textStyle: { color: "rgba(255,255,255,0.92)", fontSize: 14 }, // (1) larger font
+        textStyle: { color: "rgba(255,255,255,0.92)", fontSize: 11 }, // (1) larger font
         extraCssText: "border-radius:10px; padding:10px 12px;",
         formatter: function (params) {
           const idx = params?.[0]?.dataIndex ?? 0;
