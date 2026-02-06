@@ -47,12 +47,96 @@
     return await res.json();
   }
 
+  function parseUtcMs(ts) {
+    const s = String(ts || "");
+    const ms = Date.parse(s);
+    return Number.isFinite(ms) ? ms : null;
+  }
+
+  function utcDayKey(ms) {
+    const d = new Date(ms);
+    const y = d.getUTCFullYear();
+    const m = String(d.getUTCMonth() + 1).padStart(2, "0");
+    const da = String(d.getUTCDate()).padStart(2, "0");
+    return `${y}-${m}-${da}`;
+  }
+
+  function downsampleDailyLastUtc(sortedRows) {
+    // rows must be sorted by ms ascending
+    const lastByDay = new Map();
+    for (const r of sortedRows) {
+      const key = utcDayKey(r.ms);
+      lastByDay.set(key, r); // overwrites => "daily last"
+    }
+    // preserve chronological day order
+    const days = Array.from(lastByDay.keys()).sort();
+    return days.map(d => lastByDay.get(d));
+  }
+
+  function fillLinearTime(msArr, vArr) {
+    // Interpolate null runs between two known values (time-weighted).
+    const out = vArr.slice();
+    const n = out.length;
+    let i = 0;
+    while (i < n) {
+      if (out[i] != null && Number.isFinite(out[i])) { i++; continue; }
+
+      const start = i;
+      while (i < n && (out[i] == null || !Number.isFinite(out[i]))) i++;
+      const end = i - 1;
+
+      const left = start - 1;
+      const right = i;
+
+      if (left >= 0 && right < n && out[left] != null && out[right] != null &&
+          Number.isFinite(out[left]) && Number.isFinite(out[right])) {
+        const t0 = msArr[left];
+        const t1 = msArr[right];
+        const v0 = out[left];
+        const v1 = out[right];
+        const dt = t1 - t0;
+
+        if (Number.isFinite(dt) && dt > 0) {
+          for (let k = start; k <= end; k++) {
+            const tk = msArr[k];
+            const f = (tk - t0) / dt;
+            out[k] = v0 + (v1 - v0) * f;
+          }
+        }
+      }
+      // leading/trailing null runs stay null
+    }
+    return out;
+  }
+
   function toSeries(rows) {
-    const t = rows.map(r => String(r.t || ""));
-    const b1 = rows.map(r => (r.box1 == null ? null : clamp(Number(r.box1), 0, 100)));
-    const b2 = rows.map(r => (r.box2 == null ? null : clamp(Number(r.box2), 0, 100)));
-    const b3 = rows.map(r => (r.box3 == null ? null : clamp(Number(r.box3), 0, 100)));
-    return { t, b1, b2, b3 };
+    // Parse → sort → daily-last (UTC) → clamp → interpolate (time) → [ms,val] pairs
+    const parsed = [];
+    for (const r of rows) {
+      const ms = parseUtcMs(r.t);
+      if (ms == null) continue;
+      parsed.push({
+        ms,
+        b1: (r.box1 == null ? null : clamp(Number(r.box1), 0, 100)),
+        b2: (r.box2 == null ? null : clamp(Number(r.box2), 0, 100)),
+        b3: (r.box3 == null ? null : clamp(Number(r.box3), 0, 100))
+      });
+    }
+
+    parsed.sort((a, b) => a.ms - b.ms);
+
+    const daily = downsampleDailyLastUtc(parsed);
+
+    const msArr = daily.map(r => r.ms);
+    const b1 = fillLinearTime(msArr, daily.map(r => r.b1));
+    const b2 = fillLinearTime(msArr, daily.map(r => r.b2));
+    const b3 = fillLinearTime(msArr, daily.map(r => r.b3));
+
+    const s1 = msArr.map((ms, i) => [ms, b1[i] == null ? null : b1[i]]);
+    const s2 = msArr.map((ms, i) => [ms, b2[i] == null ? null : b2[i]]);
+    const s3 = msArr.map((ms, i) => [ms, b3[i] == null ? null : b3[i]]);
+
+    return { s1, s2, s3 };
   }
 
   function ensureChart(layerEl) {
@@ -69,9 +153,12 @@
     return chart;
   }
 
-  function dateOnly(ts) {
-    const s = String(ts || "");
-    return (s.length >= 10 && s[4] === "-" && s[7] === "-") ? s.slice(0, 10) : s;
+  function dateOnlyFromMs(ms) {
+    const d = new Date(ms);
+    const y = d.getUTCFullYear();
+    const m = String(d.getUTCMonth() + 1).padStart(2, "0");
+    const da = String(d.getUTCDate()).padStart(2, "0");
+    return `${y}-${m}-${da}`;
   }
 
   function nav100_to_25(v100) {
@@ -87,7 +174,7 @@
     );
   }
 
-  function setOption(chart, t, b1, b2, b3) {
+  function setOption(chart, s1, s2, s3) {
     const option = {
       animation: false,
       backgroundColor: "rgba(0,0,0,0)",
@@ -95,8 +182,7 @@
       grid: GRID,
 
       xAxis: {
-        type: "category",
-        data: t,
+        type: "time",
         boundaryGap: false,
         axisLine: { show: false },
         axisTick: { show: false },
@@ -140,12 +226,21 @@
         textStyle: { color: "rgba(255,255,255,0.92)", fontSize: 14 },
         extraCssText: "border-radius:10px; padding:10px 12px;",
         formatter: function (params) {
-          const idx = params?.[0]?.dataIndex ?? 0;
+          const arr = Array.isArray(params) ? params : [];
+          const first = arr[0];
+          const ms = first?.value?.[0];
+          const ts = Number.isFinite(ms) ? dateOnlyFromMs(ms) : "–";
 
-          const ts = dateOnly(t[idx]);
-          const v1 = nav100_to_25(b1[idx]);
-          const v2 = nav100_to_25(b2[idx]);
-          const v3 = nav100_to_25(b3[idx]);
+          const byName = new Map();
+          for (const p of arr) byName.set(p?.seriesName, p);
+
+          const pBTC = byName.get("BTC");
+          const pETH = byName.get("ETH");
+          const pALT = byName.get("ALTS");
+
+          const v1 = nav100_to_25(pBTC?.value?.[1]);
+          const v2 = nav100_to_25(pETH?.value?.[1]);
+          const v3 = nav100_to_25(pALT?.value?.[1]);
 
           const fmt = (v) => (v == null ? "–" : v.toFixed(1));
 
@@ -165,7 +260,7 @@
         {
           name: "ALTS",
           type: "line",
-          data: b3,
+          data: s3,
           showSymbol: false,
           lineStyle: { width: 0, opacity: 0 },
           silent: true,
@@ -175,7 +270,7 @@
         {
           name: "ETH",
           type: "line",
-          data: b2,
+          data: s2,
           showSymbol: false,
           lineStyle: { width: 0, opacity: 0 },
           silent: true,
@@ -185,7 +280,7 @@
         {
           name: "BTC",
           type: "line",
-          data: b1,
+          data: s1,
           showSymbol: false,
           lineStyle: { width: 0, opacity: 0 },
           silent: true,
@@ -205,10 +300,10 @@
     layer.setAttribute("data-range", range);
 
     const rows = await loadWindow(range);
-    const { t, b1, b2, b3 } = toSeries(rows);
+    const { s1, s2, s3 } = toSeries(rows);
 
     const chart = ensureChart(layer);
-    setOption(chart, t, b1, b2, b3);
+    setOption(chart, s1, s2, s3);
   }
 
   function getActiveRange() {
