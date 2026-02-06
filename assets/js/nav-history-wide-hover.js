@@ -165,7 +165,7 @@
             scale: false,
             showSymbol: true,
             symbol: "circle",
-            symbolSize: 12,
+            symbolSize: 6,
             itemStyle: {
              color: COL_ALTS,
              borderColor: COL_ALTS,
@@ -185,7 +185,7 @@
             scale: false,
             showSymbol: true,
             symbol: "circle",
-            symbolSize: 12,
+            symbolSize: 6,
             itemStyle: {
              color: COL_ETH,
              borderColor: COL_ETH,
@@ -205,7 +205,7 @@
             scale: false,
             showSymbol: true,
             symbol: "circle",
-            symbolSize: 12,
+            symbolSize: 6,
             itemStyle: {
              color: COL_BTC,              // fill
              borderColor: COL_BTC,        // edge = same color
