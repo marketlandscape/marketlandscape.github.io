@@ -20,7 +20,7 @@
   };
 
   // Match private renderer colors (render_nav_svgs_wide.py)
-  const COL_BTC = "rgb(216,165,56)";   // gold
+  const COL_BTC  = "#f5841e";   // gold
   const COL_ETH = "rgb(74,141,255)";   // blue
   const COL_ALTS = "rgb(190,190,190)"; // grey
 
