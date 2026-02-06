@@ -166,7 +166,11 @@
             showSymbol: true,
             symbol: "circle",
             symbolSize: 6,
-            itemStyle: { color: COL_ALTS, borderWidth: 0 }
+            itemStyle: {
+             color: COL_ALTS,
+             borderColor: COL_ALTS,
+             borderWidth: 1
+            }
           }
         },
         {
@@ -182,7 +186,11 @@
             showSymbol: true,
             symbol: "circle",
             symbolSize: 6,
-            itemStyle: { color: COL_ETH, borderWidth: 0 }
+            itemStyle: {
+             color: COL_ETH,
+             borderColor: COL_ETH,
+             borderWidth: 1
+            }
           }
         },
         {
@@ -198,7 +206,11 @@
             showSymbol: true,
             symbol: "circle",
             symbolSize: 6,
-            itemStyle: { color: COL_BTC, borderWidth: 0 }
+            itemStyle: {
+             color: COL_BTC,              // fill
+             borderColor: COL_BTC,        // edge = same color
+             borderWidth: 1
+            }
           }
         }
       ]
