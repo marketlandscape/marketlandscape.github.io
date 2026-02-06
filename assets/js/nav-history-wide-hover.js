@@ -3,11 +3,19 @@
    - SVG is the visible chart
    - ECharts is ONLY tooltip + crosshair
    - Reads window JSON from: /assets/data/wide/nav_<range>.json
+   - Syncs to whatever SVG range is currently shown (incl. restored range)
    ===================================================== */
 
 (function () {
   const page = document.querySelector(".v2-nav-history-wide");
   if (!page) return;
+
+  const box = page.querySelector(".entity-history-box.wide");
+  if (!box) return;
+
+  const img = box.querySelector("img.history-img");
+  const layer = box.querySelector(".nav-echarts-layer");
+  if (!img || !layer) return;
 
   // Must match render_nav_svgs_wide.py:
   // ax = fig.add_axes([0.03, 0.10, 0.94, 0.86])
@@ -58,21 +66,16 @@
   }
 
   function dateOnly(ts) {
-    // If ts is ISO: "YYYY-MM-DDTHH:MM:SSZ" -> "YYYY-MM-DD"
-    // If ts already is "YYYY-MM-DD", this keeps it.
     const s = String(ts || "");
     return (s.length >= 10 && s[4] === "-" && s[7] === "-") ? s.slice(0, 10) : s;
   }
 
   function nav100_to_25(v100) {
-    // 0..100 -> 1..25 continuous
-    // 1 + (v/100)*24
     if (v100 == null || !Number.isFinite(v100)) return null;
     return 1 + (clamp(v100, 0, 100) / 100) * 24;
   }
 
   function dot(color) {
-    // filled dot (no white center)
     return (
       `<span style="display:inline-block;width:9px;height:9px;border-radius:99px;` +
       `background:${color};vertical-align:middle;margin-right:6px;"></span>`
@@ -115,13 +118,13 @@
         },
         backgroundColor: "rgba(20,20,20,0.92)",
         borderWidth: 0,
-        textStyle: { color: "rgba(255,255,255,0.92)", fontSize: 14 }, // (1) larger font
+        textStyle: { color: "rgba(255,255,255,0.92)", fontSize: 14 },
         extraCssText: "border-radius:10px; padding:10px 12px;",
         formatter: function (params) {
           const idx = params?.[0]?.dataIndex ?? 0;
 
-          const ts = dateOnly(t[idx]); // (2) date only
-          const v1 = nav100_to_25(b1[idx]); // (3) 1..25
+          const ts = dateOnly(t[idx]);
+          const v1 = nav100_to_25(b1[idx]);
           const v2 = nav100_to_25(b2[idx]);
           const v3 = nav100_to_25(b3[idx]);
 
@@ -130,7 +133,7 @@
           return (
             `<div style="line-height:1.25;">` +
               `<div style="opacity:.85; margin-bottom:8px;">${ts}</div>` +
-              `<div>${dot(COL_BTC)}BTC: ${fmt(v1)}</div>` +   // (4) filled colored dots
+              `<div>${dot(COL_BTC)}BTC: ${fmt(v1)}</div>` +
               `<div>${dot(COL_ETH)}ETH: ${fmt(v2)}</div>` +
               `<div>${dot(COL_ALTS)}ALTS: ${fmt(v3)}</div>` +
             `</div>`
@@ -149,9 +152,18 @@
     chart.setOption(option, true);
   }
 
+  function parseRangeFromSvgSrc(src) {
+    const s = String(src || "");
+    const m = s.match(/nav_([a-z0-9]+)\.svg/i);
+    return m ? m[1] : null;
+  }
+
+  let currentRange = null;
+
   async function mountForRange(range) {
-    const layer = page.querySelector(".nav-echarts-layer");
-    if (!layer) return;
+    if (!range) return;
+    if (range === currentRange) return;
+    currentRange = range;
 
     layer.setAttribute("data-range", range);
 
@@ -162,27 +174,35 @@
     setOption(chart, t, b1, b2, b3);
   }
 
-  function getActiveRange() {
-    const btn = page.querySelector(".nav-range-btn.is-active");
+  function inferInitialRange() {
+    // Prefer the actual SVG currently shown (switch.js may have already restored it)
     return (
-      btn?.getAttribute("data-range") ||
-      page.querySelector(".entity-history-box.wide")?.getAttribute("data-default-range") ||
+      parseRangeFromSvgSrc(img.getAttribute("src")) ||
+      (page.querySelector(".nav-range-btn.is-active")?.getAttribute("data-range")) ||
+      box.getAttribute("data-default-range") ||
       "1w"
     );
   }
 
-  async function init() {
+  function init() {
     if (typeof echarts === "undefined") return;
 
-    try { await mountForRange(getActiveRange()); } catch (e) {}
+    // Initial mount (use SVG src if already restored)
+    mountForRange(inferInitialRange()).catch(() => {});
 
-    page.addEventListener("click", async (ev) => {
+    // Stay synced with SVG changes (covers restore-on-load + any switch.js action)
+    const mo = new MutationObserver(() => {
+      const r = parseRangeFromSvgSrc(img.getAttribute("src"));
+      if (r) mountForRange(r).catch(() => {});
+    });
+    mo.observe(img, { attributes: true, attributeFilter: ["src"] });
+
+    // Also react to button clicks (fast path; still harmless if switch.js also runs)
+    page.addEventListener("click", (ev) => {
       const b = ev.target?.closest?.(".nav-range-btn");
       if (!b) return;
       const r = b.getAttribute("data-range");
-      if (!r) return;
-
-      setTimeout(() => { mountForRange(r).catch(() => {}); }, 0);
+      if (r) mountForRange(r).catch(() => {});
     });
   }
 
