@@ -221,7 +221,7 @@
             borderWidth: 1
           }
         },
-        backgroundColor: "rgba(20,20,20,0.92)",
+        backgroundColor: "#2c2c2c",
         borderWidth: 0,
         textStyle: { color: "rgba(255,255,255,0.92)", fontSize: 14 },
         extraCssText: "border-radius:10px; padding:10px 12px;",
