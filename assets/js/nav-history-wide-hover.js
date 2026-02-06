@@ -1,161 +1,186 @@
 /* =====================================================
    Wide history hover layer (ECharts, transparent)
-   - Uses SVG as the visible chart (already on the page)
-   - Uses ECharts ONLY for hover tooltip + crosshair
+   - SVG is the visible chart
+   - ECharts is ONLY tooltip + crosshair
    - Reads window JSON from: /assets/data/wide/nav_<range>.json
    ===================================================== */
 
 (function () {
-  const page = document.querySelector(".v2.v2-nav-history-wide");
+  const page = document.querySelector(".v2-nav-history-wide");
   if (!page) return;
 
-  const box = page.querySelector(".entity-history-box.wide");
-  if (!box) return;
+  // Must match render_nav_svgs_wide.py:
+  // ax = fig.add_axes([0.03, 0.10, 0.94, 0.86])
+  // => left 3%, right 3%, bottom 10%, top 4%
+  const GRID = {
+    left: "3%",
+    right: "3%",
+    top: "4%",
+    bottom: "10%",
+    containLabel: false
+  };
 
-  const layer = box.querySelector(".nav-echarts-layer");
-  const buttons = Array.from(page.querySelectorAll(".nav-range-btn"));
-  if (!layer || buttons.length === 0) return;
-
-  // Ensure overlay sits on top and captures mouse, without changing visuals
-  layer.style.position = "absolute";
-  layer.style.inset = "0";
-  layer.style.zIndex = "2";
-  layer.style.opacity = "0";
-  layer.style.pointerEvents = "auto"; // must receive hover
-
-  function jsonUrlFor(range) {
-    return `/assets/data/wide/nav_${range}.json`;
+  function clamp(v, lo, hi) {
+    return Math.max(lo, Math.min(hi, v));
   }
 
-  function getActiveRange() {
-    const active = buttons.find(b => b.classList.contains("is-active"));
-    return active?.dataset?.range || box.dataset.defaultRange || "1w";
+  async function loadWindow(range) {
+    const url = `/assets/data/wide/nav_${range}.json`;
+    const res = await fetch(url, { cache: "no-store" });
+    if (!res.ok) throw new Error(`Failed to load ${url}`);
+    return await res.json();
   }
 
-  function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
-
-  // Tooltip shows 1–25 (same meaning as your UI), but uses underlying 0–100 values
-  function toStep25(v) {
-    const n = Number(v);
-    if (!Number.isFinite(n)) return null;
-    const pct = clamp(n, 0, 100);
-    return Math.round((pct / 100) * (25 - 1)) + 1;
+  function toSeries(rows) {
+    const t = rows.map(r => String(r.t || ""));
+    const b1 = rows.map(r => (r.box1 == null ? null : clamp(Number(r.box1), 0, 100)));
+    const b2 = rows.map(r => (r.box2 == null ? null : clamp(Number(r.box2), 0, 100)));
+    const b3 = rows.map(r => (r.box3 == null ? null : clamp(Number(r.box3), 0, 100)));
+    return { t, b1, b2, b3 };
   }
 
-  let chart = null;
-
-  function ensureChart() {
-    if (!window.echarts) return null;
+  function ensureChart(layerEl) {
+    let chart = layerEl.__echarts;
     if (chart) return chart;
-    chart = window.echarts.init(layer, null, { renderer: "svg" });
 
-    // Resize on window resize
-    window.addEventListener("resize", () => {
-      try { chart.resize(); } catch (e) {}
-    }, { passive: true });
+    chart = echarts.init(layerEl, null, { renderer: "canvas" });
+    layerEl.__echarts = chart;
+
+    // Keep it responsive
+    const ro = new ResizeObserver(() => chart.resize());
+    ro.observe(layerEl);
+    layerEl.__echarts_ro = ro;
 
     return chart;
   }
 
-  async function loadAndRender(range) {
-    const c = ensureChart();
-    if (!c) return;
+  function setOption(chart, t, b1, b2, b3) {
+    const option = {
+      animation: false,
+      backgroundColor: "rgba(0,0,0,0)",
 
-    try {
-      const res = await fetch(jsonUrlFor(range), { cache: "no-store" });
-      if (!res.ok) throw new Error("missing json");
-      const rows = await res.json();
-      if (!Array.isArray(rows) || rows.length < 2) throw new Error("bad json");
+      grid: GRID,
 
-      const t = rows.map(r => String(r.t || ""));
-      const b1 = rows.map(r => (r.box1 == null ? null : Number(r.box1)));
-      const b2 = rows.map(r => (r.box2 == null ? null : Number(r.box2)));
-      const b3 = rows.map(r => (r.box3 == null ? null : Number(r.box3)));
+      xAxis: {
+        type: "category",
+        data: t,
+        boundaryGap: false,
+        axisLine: { show: false },
+        axisTick: { show: false },
+        axisLabel: { show: false },
+        splitLine: { show: false }
+      },
 
-      const option = {
-        animation: false,
-        backgroundColor: "rgba(0,0,0,0)",
+      yAxis: {
+        type: "value",
+        min: 0,
+        max: 100,
+        axisLine: { show: false },
+        axisTick: { show: false },
+        axisLabel: { show: false },
+        splitLine: { show: false }
+      },
 
-        grid: { left: 0, right: 0, top: 0, bottom: 0, containLabel: false },
-
-        xAxis: {
-          type: "category",
-          data: t,
-          boundaryGap: false,
-          axisLine: { show: false },
-          axisTick: { show: false },
-          axisLabel: { show: false },
-          splitLine: { show: false }
+      tooltip: {
+        trigger: "axis",
+        confine: true,
+        axisPointer: {
+          type: "line",
+          lineStyle: { color: "rgba(255,255,255,0.25)", width: 1 }
         },
+        backgroundColor: "rgba(20,20,20,0.92)",
+        borderWidth: 0,
+        textStyle: { color: "rgba(255,255,255,0.92)", fontSize: 11 },
+        formatter: function (params) {
+          const idx = params?.[0]?.dataIndex ?? 0;
+          const ts = t[idx] || "";
+          const v1 = b1[idx], v2 = b2[idx], v3 = b3[idx];
 
-        yAxis: {
-          type: "value",
-          min: 0,
-          max: 100,
-          axisLine: { show: false },
-          axisTick: { show: false },
-          axisLabel: { show: false },
-          splitLine: { show: false }
+          // Keep it minimal. Values are 0–100 (same as SVG).
+          const f = (v) => (v == null || !Number.isFinite(v)) ? "–" : String(Math.round(v));
+
+          return (
+            `<div style="line-height:1.25;">` +
+              `<div style="opacity:.85; margin-bottom:4px;">${ts}</div>` +
+              `<div>BTC: ${f(v1)}</div>` +
+              `<div>ETH: ${f(v2)}</div>` +
+              `<div>ALTS: ${f(v3)}</div>` +
+            `</div>`
+          );
+        }
+      },
+
+      // Invisible series: we only want tooltip + crosshair
+      series: [
+        {
+          name: "ALTS",
+          type: "line",
+          data: b3,
+          showSymbol: false,
+          lineStyle: { width: 0, opacity: 0 },
+          emphasis: { disabled: true },
+          silent: true
         },
-
-        tooltip: {
-          trigger: "axis",
-          axisPointer: {
-            type: "line",
-            lineStyle: { color: "rgba(255,255,255,0.25)", width: 1 }
-          },
-          backgroundColor: "rgba(20,20,20,0.92)",
-          borderWidth: 0,
-          textStyle: { color: "rgba(255,255,255,0.92)", fontSize: 11 },
-          formatter: function (params) {
-            const idx = params?.[0]?.dataIndex ?? 0;
-            const ts = t[idx] || "";
-            const v1 = b1[idx], v2 = b2[idx], v3 = b3[idx];
-
-            const s1 = v1 == null ? "–" : `${toStep25(v1)}/25`;
-            const s2 = v2 == null ? "–" : `${toStep25(v2)}/25`;
-            const s3 = v3 == null ? "–" : `${toStep25(v3)}/25`;
-
-            return `${ts}<br/>BTC: ${s1}<br/>ETH: ${s2}<br/>Alts: ${s3}`;
-          }
+        {
+          name: "ETH",
+          type: "line",
+          data: b2,
+          showSymbol: false,
+          lineStyle: { width: 0, opacity: 0 },
+          emphasis: { disabled: true },
+          silent: true
         },
+        {
+          name: "BTC",
+          type: "line",
+          data: b1,
+          showSymbol: false,
+          lineStyle: { width: 0, opacity: 0 },
+          emphasis: { disabled: true },
+          silent: true
+        }
+      ]
+    };
 
-        // Series are INVISIBLE (so your SVG remains the only visible chart)
-        // But they provide geometry for the tooltip.
-        series: [
-          { name: "Alts", type: "line", data: b3, showSymbol: false, connectNulls: true,
-            lineStyle: { width: 2, color: "rgba(0,0,0,0)" } },
-          { name: "ETH", type: "line", data: b2, showSymbol: false, connectNulls: true,
-            lineStyle: { width: 2, color: "rgba(0,0,0,0)" } },
-          { name: "BTC", type: "line", data: b1, showSymbol: false, connectNulls: true,
-            lineStyle: { width: 2, color: "rgba(0,0,0,0)" } }
-        ]
-      };
-
-      layer.style.opacity = "0";
-      c.setOption(option, { notMerge: true, lazyUpdate: true });
-
-      c.off("finished");
-      c.on("finished", () => {
-        // After ECharts is ready, enable the hover layer (still visually invisible)
-        layer.style.opacity = "1";
-      });
-    } catch (e) {
-      // If JSON missing, keep SVG only (no hover)
-      layer.style.opacity = "0";
-    }
+    chart.setOption(option, true);
   }
 
-  // Initial render
-  const initRange = getActiveRange();
-  loadAndRender(initRange);
+  async function mountForRange(range) {
+    const layer = page.querySelector(".nav-echarts-layer");
+    if (!layer) return;
 
-  // Update on range clicks (after the SVG switcher updates active class)
-  for (const b of buttons) {
-    b.addEventListener("click", () => {
-      const r = b.dataset.range || "1w";
-      // slight delay so nav-history-wide-switch.js applies is-active + swaps SVG
-      setTimeout(() => loadAndRender(r), 0);
+    layer.setAttribute("data-range", range);
+
+    const rows = await loadWindow(range);
+    const { t, b1, b2, b3 } = toSeries(rows);
+
+    const chart = ensureChart(layer);
+    setOption(chart, t, b1, b2, b3);
+  }
+
+  function getActiveRange() {
+    const btn = page.querySelector(".nav-range-btn.is-active");
+    return btn?.getAttribute("data-range") || page.querySelector(".entity-history-box.wide")?.getAttribute("data-default-range") || "1w";
+  }
+
+  async function init() {
+    if (typeof echarts === "undefined") return;
+
+    // initial
+    try { await mountForRange(getActiveRange()); } catch (e) {}
+
+    // re-mount after range switch
+    page.addEventListener("click", async (ev) => {
+      const b = ev.target?.closest?.(".nav-range-btn");
+      if (!b) return;
+      const r = b.getAttribute("data-range");
+      if (!r) return;
+      // allow the SVG switch script to run; then rebuild hover
+      setTimeout(() => { mountForRange(r).catch(() => {}); }, 0);
     });
   }
+
+  document.readyState === "loading"
+    ? document.addEventListener("DOMContentLoaded", init)
+    : init();
 })();
