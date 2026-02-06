@@ -1,0 +1,58 @@
+<!-- wide.html — experimental wide NAV history (SVG + transparent hover layer) -->
+
+<div class="v2 v2-nav-history-wide" data-lang="{{ page.lang | default: site.lang | default: 'en' }}">
+
+  <div class="history-topbar">
+    <div class="history-spacer"></div>
+
+    <div class="history-controls" role="group" aria-label="Time range">
+      <button class="nav-range-btn is-active" data-range="1w" type="button">{% include t.html key="history.range.w1" %}</button>
+      <button class="nav-range-btn" data-range="2w" type="button">{% include t.html key="history.range.w2" %}</button>
+      <button class="nav-range-btn" data-range="1m" type="button">{% include t.html key="history.range.m1" %}</button>
+      <button class="nav-range-btn" data-range="3m" type="button">{% include t.html key="history.range.m3" %}</button>
+      <button class="nav-range-btn" data-range="6m" type="button">{% include t.html key="history.range.m6" %}</button>
+      <button class="nav-range-btn" data-range="1y" type="button">{% include t.html key="history.range.y1" %}</button>
+    </div>
+  </div>
+
+  <div
+    class="entity-history-box wide"
+    data-default-range="1w"
+    style="position: relative; width: 740px; height: 308px;"
+  >
+
+    <!-- Static SVG (visual layer) -->
+    <img
+      class="history-img"
+      src="/assets/img/charts/wide/nav_1w.svg"
+      alt=""
+      loading="eager"
+      decoding="async"
+      style="position:absolute; inset:0; width:100%; height:100%; z-index:1;"
+    >
+
+    <!-- Transparent ECharts hover layer -->
+    <div
+      class="nav-echarts-layer"
+      style="position:absolute; inset:0; z-index:2; pointer-events:auto;"
+      data-range="1w"
+    ></div>
+
+    <!-- frame -->
+    <svg class="entity-frame" viewBox="0 0 740 308" aria-hidden="true"
+         style="position:absolute; inset:0; z-index:3; pointer-events:none;">
+      <rect class="entity-frame-bg" x="0" y="0" width="740" height="308" rx="14" ry="14"></rect>
+      <rect class="entity-frame-stroke" x="0.5" y="0.5" width="739" height="307" rx="13.5" ry="13.5"></rect>
+    </svg>
+
+  </div>
+</div>
+
+<!-- Apache ECharts (CDN, no bundler) -->
+<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+
+<!-- Your hover-only logic -->
+<script src="/assets/js/nav-history-wide-hover.js" defer></script>
+
+<!-- Existing range switching (already swaps SVG src) -->
+<script src="/assets/js/nav-history-wide-switch.js" defer></script>
