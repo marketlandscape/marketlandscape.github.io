@@ -275,7 +275,7 @@
               `<div style="opacity:.85; margin-bottom:8px;">${ts}</div>` +
               `<div>${dot(COL_BTC)}BTC: ${fmt(v1)}</div>` +
               `<div>${dot(COL_ETH)}ETH: ${fmt(v2)}</div>` +
-              `<div>${dot(COL_ALTS)}ALTS: ${fmt(v3)}</div>` +
+              `<div>${dot(COL_ALTS)}Large Alts: ${fmt(v3)}</div>` +
             `</div>`
           );
         }
