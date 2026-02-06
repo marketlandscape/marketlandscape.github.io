@@ -127,13 +127,13 @@
         },
         backgroundColor: "rgba(20,20,20,0.92)",
         borderWidth: 0,
-        textStyle: { color: "rgba(255,255,255,0.92)", fontSize: 11 }, // (1) larger font
+        textStyle: { color: "rgba(255,255,255,0.92)", fontSize: 14 },
         extraCssText: "border-radius:10px; padding:10px 12px;",
         formatter: function (params) {
           const idx = params?.[0]?.dataIndex ?? 0;
 
-          const ts = dateOnly(t[idx]); // (2) date only
-          const v1 = nav100_to_25(b1[idx]); // (3) 1..25
+          const ts = dateOnly(t[idx]);
+          const v1 = nav100_to_25(b1[idx]);
           const v2 = nav100_to_25(b2[idx]);
           const v3 = nav100_to_25(b3[idx]);
 
@@ -142,7 +142,7 @@
           return (
             `<div style="line-height:1.25;">` +
               `<div style="opacity:.85; margin-bottom:8px;">${ts}</div>` +
-              `<div>${dot(COL_BTC)}BTC: ${fmt(v1)}</div>` +   // (4) filled colored dots
+              `<div>${dot(COL_BTC)}BTC: ${fmt(v1)}</div>` +
               `<div>${dot(COL_ETH)}ETH: ${fmt(v2)}</div>` +
               `<div>${dot(COL_ALTS)}ALTS: ${fmt(v3)}</div>` +
             `</div>`
@@ -150,11 +150,57 @@
         }
       },
 
-      // Invisible series: tooltip + crosshair only
+      // Invisible lines; BUT keep per-series hover dots (emphasis symbols) colored.
       series: [
-        { name: "ALTS", type: "line", data: b3, showSymbol: false, lineStyle: { width: 0, opacity: 0 }, emphasis: { disabled: true }, silent: true },
-        { name: "ETH",  type: "line", data: b2, showSymbol: false, lineStyle: { width: 0, opacity: 0 }, emphasis: { disabled: true }, silent: true },
-        { name: "BTC",  type: "line", data: b1, showSymbol: false, lineStyle: { width: 0, opacity: 0 }, emphasis: { disabled: true }, silent: true }
+        {
+          name: "ALTS",
+          type: "line",
+          data: b3,
+          showSymbol: false,
+          lineStyle: { width: 0, opacity: 0 },
+          silent: true,
+
+          // --- colored intersection dot on crosshair ---
+          emphasis: {
+            scale: false,
+            showSymbol: true,
+            symbol: "circle",
+            symbolSize: 6,
+            itemStyle: { color: COL_ALTS, borderWidth: 0 }
+          }
+        },
+        {
+          name: "ETH",
+          type: "line",
+          data: b2,
+          showSymbol: false,
+          lineStyle: { width: 0, opacity: 0 },
+          silent: true,
+
+          emphasis: {
+            scale: false,
+            showSymbol: true,
+            symbol: "circle",
+            symbolSize: 6,
+            itemStyle: { color: COL_ETH, borderWidth: 0 }
+          }
+        },
+        {
+          name: "BTC",
+          type: "line",
+          data: b1,
+          showSymbol: false,
+          lineStyle: { width: 0, opacity: 0 },
+          silent: true,
+
+          emphasis: {
+            scale: false,
+            showSymbol: true,
+            symbol: "circle",
+            symbolSize: 6,
+            itemStyle: { color: COL_BTC, borderWidth: 0 }
+          }
+        }
       ]
     };
 
@@ -186,7 +232,6 @@
   async function init() {
     if (typeof echarts === "undefined") return;
 
-    // ✅ Prefer the remembered range (same as the SVG/button switcher), otherwise use active button/default.
     const initial = getSavedRange() || getActiveRange();
 
     try { await mountForRange(initial); } catch (e) {}
