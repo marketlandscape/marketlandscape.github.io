@@ -75,7 +75,7 @@
         borderWidth: 0,
         textStyle: {
           color: "#fff",
-          fontSize: 14
+          fontSize: 11
         },
         formatter(params) {
           const d = params[0].axisValue;
