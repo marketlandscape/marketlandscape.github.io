@@ -177,7 +177,7 @@
   function setOption(chart, s1, s2, s3) {
     const option = {
       animation: false,
-      backgroundColor: "#242424",
+      backgroundColor: "rgba(0,0,0,0)",
 
       grid: GRID,
 
