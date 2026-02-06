@@ -4,11 +4,6 @@
   include pages/wide.html: loaded
 </div>
 
-<div id="wideDebug"
-     style="font-size:12px; opacity:.75; margin-bottom:10px;">
-  wide debug: checking svg…
-</div>
-
 <div class="v2 v2-nav-history-wide" data-lang="{{ page.lang | default: site.lang | default: 'en' }}">
 
   <div class="history-topbar">
@@ -24,7 +19,6 @@
     </div>
   </div>
 
-  <!-- Robust box: fixed geometry + visible styling -->
   <div
     class="entity-history-box wide"
     data-default-range="1w"
@@ -34,27 +28,25 @@
       max-width: 740px;
       aspect-ratio: 740 / 308;
       overflow: hidden;
-      background: rgba(255,255,255,0.03);
-      outline: 1px solid rgba(255,255,255,0.12);
       border-radius: 14px;
     "
   >
-    <!-- Static SVG (visual layer) -->
+
+    <!-- Frame goes BEHIND (so it cannot cover the chart) -->
+    <svg class="entity-frame" viewBox="0 0 740 308" aria-hidden="true"
+         style="position:absolute; inset:0; z-index:0; pointer-events:none;">
+      <!-- IMPORTANT: do NOT draw the bg rect (it is opaque in your CSS) -->
+      <rect class="entity-frame-stroke" x="0.5" y="0.5" width="739" height="307" rx="13.5" ry="13.5"></rect>
+    </svg>
+
+    <!-- Static SVG chart (visible layer) -->
     <img
-      id="wideSvgImg"
       class="history-img"
       src="/assets/img/charts/wide/nav_1w.svg"
-      alt="nav wide svg"
+      alt=""
       loading="eager"
       decoding="async"
-      style="
-        position:absolute; inset:0;
-        width:100%; height:100%;
-        z-index:1;
-        display:block;
-        object-fit: contain;
-      "
-      onerror="this.style.display='none'; (function(){var d=document.getElementById('wideDebug'); if(d){d.textContent='wide debug: SVG failed to load (404/blocked): ' + '/assets/img/charts/wide/nav_1w.svg';}})();"
+      style="position:absolute; inset:0; width:100%; height:100%; z-index:1; display:block; object-fit:contain;"
     >
 
     <!-- Transparent ECharts hover layer -->
@@ -64,35 +56,9 @@
       style="position:absolute; inset:0; z-index:2; pointer-events:auto;"
     ></div>
 
-    <!-- frame -->
-    <svg class="entity-frame" viewBox="0 0 740 308" aria-hidden="true"
-         style="position:absolute; inset:0; z-index:3; pointer-events:none;">
-      <rect class="entity-frame-bg" x="0" y="0" width="740" height="308" rx="14" ry="14"></rect>
-      <rect class="entity-frame-stroke" x="0.5" y="0.5" width="739" height="307" rx="13.5" ry="13.5"></rect>
-    </svg>
-  </div>
-
-  <div style="margin-top:8px; font-size:12px; opacity:.70;">
-    svg url: <a href="/assets/img/charts/wide/nav_1w.svg" style="text-decoration:underline;">/assets/img/charts/wide/nav_1w.svg</a>
   </div>
 
 </div>
-
-<script>
-(function(){
-  const url = "/assets/img/charts/wide/nav_1w.svg";
-  const d = document.getElementById("wideDebug");
-  if (!d) return;
-
-  fetch(url, { method: "GET", cache: "no-store" })
-    .then(r => {
-      d.textContent = "wide debug: svg fetch " + r.status + " (" + url + ")";
-    })
-    .catch(() => {
-      d.textContent = "wide debug: svg fetch failed (" + url + ")";
-    });
-})();
-</script>
 
 <!-- Apache ECharts -->
 <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js" defer></script>
