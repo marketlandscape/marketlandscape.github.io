@@ -70,21 +70,16 @@
   }
 
   function dateOnly(ts) {
-    // If ts is ISO: "YYYY-MM-DDTHH:MM:SSZ" -> "YYYY-MM-DD"
-    // If ts already is "YYYY-MM-DD", this keeps it.
     const s = String(ts || "");
     return (s.length >= 10 && s[4] === "-" && s[7] === "-") ? s.slice(0, 10) : s;
   }
 
   function nav100_to_25(v100) {
-    // 0..100 -> 1..25 continuous
-    // 1 + (v/100)*24
     if (v100 == null || !Number.isFinite(v100)) return null;
     return 1 + (clamp(v100, 0, 100) / 100) * 24;
   }
 
   function dot(color) {
-    // filled dot (no white center)
     return (
       `<span style="display:inline-block;width:9px;height:9px;border-radius:99px;` +
       `background:${color};vertical-align:middle;margin-right:6px;"></span>`
@@ -123,7 +118,21 @@
         confine: true,
         axisPointer: {
           type: "line",
-          lineStyle: { color: "rgba(255,255,255,0.25)", width: 1 }
+          lineStyle: { color: "rgba(255,255,255,0.25)", width: 1 },
+
+          /* =================================================
+             CROSSHAIR DOT / KNOB (the one you see)
+             - Make it larger and neutral
+             - No orange border, no white fill
+             ================================================= */
+          handle: {
+            show: true,
+            size: 26,                        // larger dot/knob (try 24–30)
+            margin: 8,
+            color: "rgba(255,255,255,0.18)", // fill (neutral)
+            borderColor: "rgba(255,255,255,0.45)",
+            borderWidth: 1
+          }
         },
         backgroundColor: "rgba(20,20,20,0.92)",
         borderWidth: 0,
@@ -150,69 +159,11 @@
         }
       },
 
-      // Invisible lines; BUT keep per-series hover dots (emphasis symbols) colored.
+      // Invisible lines; tooltip + crosshair only
       series: [
-        {
-          name: "ALTS",
-          type: "line",
-          data: b3,
-          showSymbol: false,
-          lineStyle: { width: 0, opacity: 0 },
-          silent: true,
-
-          // --- colored intersection dot on crosshair ---
-          emphasis: {
-            scale: false,
-            showSymbol: true,
-            symbol: "circle",
-            symbolSize: 6,
-            itemStyle: {
-             color: COL_ALTS,
-             borderColor: COL_ALTS,
-             borderWidth: 1
-            }
-          }
-        },
-        {
-          name: "ETH",
-          type: "line",
-          data: b2,
-          showSymbol: false,
-          lineStyle: { width: 0, opacity: 0 },
-          silent: true,
-
-          emphasis: {
-            scale: false,
-            showSymbol: true,
-            symbol: "circle",
-            symbolSize: 6,
-            itemStyle: {
-             color: COL_ETH,
-             borderColor: COL_ETH,
-             borderWidth: 1
-            }
-          }
-        },
-        {
-          name: "BTC",
-          type: "line",
-          data: b1,
-          showSymbol: false,
-          lineStyle: { width: 0, opacity: 0 },
-          silent: true,
-
-          emphasis: {
-            scale: false,
-            showSymbol: true,
-            symbol: "circle",
-            symbolSize: 6,
-            itemStyle: {
-             color: COL_BTC,              // fill
-             borderColor: COL_BTC,        // edge = same color
-             borderWidth: 1
-            }
-          }
-        }
+        { name: "ALTS", type: "line", data: b3, showSymbol: false, lineStyle: { width: 0, opacity: 0 }, emphasis: { disabled: true }, silent: true },
+        { name: "ETH",  type: "line", data: b2, showSymbol: false, lineStyle: { width: 0, opacity: 0 }, emphasis: { disabled: true }, silent: true },
+        { name: "BTC",  type: "line", data: b1, showSymbol: false, lineStyle: { width: 0, opacity: 0 }, emphasis: { disabled: true }, silent: true }
       ]
     };
 
