@@ -4,16 +4,17 @@
   viewBox="25.47 156 430.15 12"
   xmlns="http://www.w3.org/2000/svg">
 
-  <g id="scale-blue" transform="translate(-13.33, 0)">
+  <!-- Height reduced by 25%: 12 → 9; vertically centered (center y = 162) -->
+  <g id="scale-blue-compact" transform="translate(-13.33, 0)">
 
-    <rect x="44.8"    y="157.5" width="83.63" height="9" fill="#DCE9FF"/>
-    <rect x="128.43"  y="157.5" width="83.63" height="9" fill="#B9D3FF"/>
-    <rect x="212.06"  y="157.5" width="83.63" height="9" fill="#8FB9FF"/>
-    <rect x="295.69"  y="157.5" width="83.63" height="9" fill="#5F9CFF"/>
-    <rect x="379.32"  y="157.5" width="83.63" height="9" fill="#2F7FFF"/>
+    <rect x="44.8"   y="157.5" width="83.63" height="9" fill="#D6E4FF"/>
+    <rect x="128.43" y="157.5" width="83.63" height="9" fill="#BFD4FF"/>
+    <rect x="212.06" y="157.5" width="83.63" height="9" fill="#9FB9FF"/>
+    <rect x="295.69" y="157.5" width="83.63" height="9" fill="#7F9EFF"/>
+    <rect x="379.32" y="157.5" width="83.63" height="9" fill="#5F82E6"/>
 
-    <circle cx="44.8"   cy="162" r="4.5" fill="#DCE9FF"/>
-    <circle cx="462.95" cy="162" r="4.5" fill="#2F7FFF"/>
+    <circle cx="44.8"   cy="162" r="4.5" fill="#D6E4FF"/>
+    <circle cx="462.95" cy="162" r="4.5" fill="#5F82E6"/>
 
   </g>
 
