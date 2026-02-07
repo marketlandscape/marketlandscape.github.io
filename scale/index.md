@@ -6,7 +6,7 @@ lang: en
 
 # Scale
 
-This page describes how market conditions are mapped onto a 1–25 navigation scale used across all indexes on this site. The index uses a 1–25 scale organised into five zones, designed to describe market conditions within a broader market cycle rather than fine-grained timing. The scale is read directionally and comparatively, with emphasis on regime context. The five zones are defined below. 
+This page describes how market conditions are mapped onto a 1–25 navigation scale used across all indexes on this site. The scale is organised into five zones, designed to describe market conditions within a broader market cycle rather than fine-grained timing. The scale is read directionally and comparatively, with emphasis on regime context. The five zones are defined below. 
 
 1–5 — favorable — historically strong risk–reward conditions, where downside is more contained and conditions have tended to favour patient positioning.
 
