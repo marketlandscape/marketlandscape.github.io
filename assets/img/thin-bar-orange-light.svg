@@ -1,20 +1,21 @@
-<svg viewBox="25.47 156 430.15 12" width="430.15" height="12"
-     xmlns="http://www.w3.org/2000/svg">
-  <g id="scale-yellow-orange" transform="translate(-13.33, 5)">
+<svg
+  width="430.15"
+  height="12"
+  viewBox="25.47 156 430.15 12"
+  xmlns="http://www.w3.org/2000/svg">
 
-    <rect x="44.8"   y="151" width="83.63" height="12" fill="#FFE8B0"/>
-    <rect x="128.43" y="151" width="83.63" height="12" fill="#FFD98A"/>
-    <rect x="212.06" y="151" width="83.63" height="12" fill="#FFC35F"/>
-    <rect x="295.69" y="151" width="83.63" height="12" fill="#FFAB43"/>
-    <rect x="379.32" y="151" width="83.63" height="12" fill="#FF8C1A"/>
+  <!-- Height reduced by 25%: 12 → 9; centered vertically (center y = 162) -->
+  <g id="scale-yellow-orange" transform="translate(-13.33, 0)">
 
-    <circle cx="44.8"   cy="157" r="6" fill="#FFE8B0"/>
-    <circle cx="462.95" cy="157" r="6" fill="#FF8C1A"/>
+    <rect x="44.8"    y="157.5" width="83.63" height="9" fill="#FFE8B0"/>
+    <rect x="128.43"  y="157.5" width="83.63" height="9" fill="#FFD98A"/>
+    <rect x="212.06"  y="157.5" width="83.63" height="9" fill="#FFC35F"/>
+    <rect x="295.69"  y="157.5" width="83.63" height="9" fill="#FFAB43"/>
+    <rect x="379.32"  y="157.5" width="83.63" height="9" fill="#FF8C1A"/>
+
+    <circle cx="44.8"   cy="162" r="4.5" fill="#FFE8B0"/>
+    <circle cx="462.95" cy="162" r="4.5" fill="#FF8C1A"/>
 
   </g>
 
-  <g id="scale-compact">
-    <!-- geometry adjustment done manually in previous version -->
-  </g>
 </svg>
-
