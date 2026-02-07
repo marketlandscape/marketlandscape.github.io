@@ -8,7 +8,7 @@ lang: en
 
 ## Purpose
 
-Market Landscape is intended to provide a calmer, context-oriented way of looking at markets, where decision pressure and behavioural distortions tend to increase during both drawdowns and late-cycle advances. Many decisions made by retail participants are shaped by pressure rather than analysis: fear, excitement, and constant noise in between. The goal is to counter this by providing stable reference points that help frame market conditions using data interpreted in a broader cycle context.
+Market Landscape publishes a set of contextual market indexes and reference scales designed to describe market conditions across a full cycle. Market Landscape is intended to provide a calmer, context-oriented way of looking at markets, where decision pressure and behavioural distortions tend to increase during both drawdowns and late-cycle advances. Many decisions made by retail participants are shaped by pressure rather than analysis: fear, excitement, and constant noise in between. The goal is to counter this by providing stable reference points that help frame market conditions using data interpreted in a broader cycle context.
 
 ## Approach
 
