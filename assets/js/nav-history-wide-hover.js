@@ -245,8 +245,8 @@
 
         backgroundColor: tooltipBg(),
 
-        borderWidth: 1,
-        borderColor: tooltipBorderColor(),
+        borderWidth: isDark() ? 0 : 1,
+        borderColor: isDark() ? "transparent" : "#e5e5e5",
 
         textStyle: { color: tooltipTextColor(), fontSize: 14 },
 
