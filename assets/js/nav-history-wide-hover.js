@@ -225,9 +225,9 @@
         trigger: "axis",
         confine: true,
         axisPointer: {
+          z: 1, // keep hairline behind hover dots
           type: "line",
           lineStyle: { color: isDark() ? "rgba(255,255,255,0.25)" : "rgba(0,0,0,0.25)", width: 1 },
-
 
           /* =================================================
              CROSSHAIR KNOB
@@ -287,6 +287,7 @@
         {
           name: "ALTS",
           type: "line",
+          z: 2, // keep hover dots above hairline
           data: s3,
           showSymbol: false,
           lineStyle: { width: 0, opacity: 0 },
@@ -297,6 +298,7 @@
         {
           name: "ETH",
           type: "line",
+          z: 2, // keep hover dots above hairline
           data: s2,
           showSymbol: false,
           lineStyle: { width: 0, opacity: 0 },
@@ -307,6 +309,7 @@
         {
           name: "BTC",
           type: "line",
+          z: 2, // keep hover dots above hairline
           data: s1,
           showSymbol: false,
           lineStyle: { width: 0, opacity: 0 },
@@ -366,8 +369,8 @@
       const chart = layer && layer.__echarts;
       if (chart) chart.setOption({ tooltip: {
         backgroundColor: tooltipBg(),
-        borderWidth: 1,
-        borderColor: tooltipBorderColor(),
+        borderWidth: isDark() ? 0 : 1,
+        borderColor: isDark() ? "transparent" : "#e5e5e5",
         textStyle: { color: tooltipTextColor(), fontSize: 14 }
       }});
     });
