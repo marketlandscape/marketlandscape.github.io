@@ -271,13 +271,13 @@
           const fmt = (v) => (v == null ? "–" : v.toFixed(1));
 
           return (
-            `<div style="line-height:1.25;">` +
-              `<div style="opacity:.85; margin-bottom:8px;">${ts}</div>` +
-              `<div>${dot(COL_BTC)}BTC: ${fmt(v1)}</div>` +
-              `<div>${dot(COL_ETH)}ETH: ${fmt(v2)}</div>` +
-              `<div>${dot(COL_ALTS)}L-ALTS: ${fmt(v3)}</div>` +
-            `</div>`
-          );
+            `<div style="line-height:1.25; opacity:.85;">` +
+               `<div style="margin-bottom:8px;">${ts}</div>` +
+               `<div>${dot(COL_BTC)}BTC: ${fmt(v1)}</div>` +
+               `<div>${dot(COL_ETH)}ETH: ${fmt(v2)}</div>` +
+               `<div>${dot(COL_ALTS)}L-ALTS: ${fmt(v3)}</div>` +
+             `</div>`
+           );
         }
       },
 
