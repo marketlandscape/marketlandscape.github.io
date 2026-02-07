@@ -226,7 +226,8 @@
         confine: true,
         axisPointer: {
           type: "line",
-          lineStyle: { color: "rgba(255,255,255,0.25)", width: 1 },
+          lineStyle: { color: isDark() ? "rgba(255,255,255,0.25)" : "rgba(0,0,0,0.25)", width: 1 },
+
 
           /* =================================================
              CROSSHAIR KNOB
