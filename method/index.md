@@ -8,7 +8,7 @@ lang: en
 
 ## What the indexes represent  
 
-The indexes express market conditions as a relative, normalised position within a recurring market cycle. Rather than measuring absolute price levels, they describe where the market sits in relation to its own historical range and structural phases. This creates a common reference scale for interpreting different assets and market segments within the same contextual framework.
+This page explains how the navigation indexes are constructed and what their values represent. The indexes express market conditions as a relative, normalised position within a recurring market cycle. Rather than measuring absolute price levels, they describe where the market sits in relation to its own historical range and structural phases. This creates a common reference scale for interpreting different assets and market segments within the same contextual framework.
 
 ## Cycle-first construction
 
