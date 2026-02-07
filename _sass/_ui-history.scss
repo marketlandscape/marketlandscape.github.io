@@ -81,6 +81,11 @@
 .v2-nav-history-wide .nav-range-btn.is-active{
   opacity: 1;
   background: #ffffff;
+
+  /* subtle elevation */
+  box-shadow:
+    0 1px 1px rgba(0,0,0,0.06),
+    0 2px 4px rgba(0,0,0,0.08);
 }
 
 /* dark theme */
