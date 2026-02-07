@@ -164,7 +164,10 @@
     let chart = layerEl.__echarts;
     if (chart) return chart;
 
-    chart = echarts.init(layerEl, null, { renderer: "canvas" });
+    chart = echarts.init(layerEl, null, {
+      renderer: "canvas",
+      devicePixelRatio: window.devicePixelRatio || 1
+    });
     layerEl.__echarts = chart;
 
     const ro = new ResizeObserver(() => chart.resize());
