@@ -5,8 +5,7 @@
   <div class="indexes">
 
     <!-- =========================
-         BOX 1 — YELLOW
-         (top-left)
+         BOX 1
          ========================= -->
     <div class="cell-box1">
       <div class="entity-box" data-box="1">
@@ -14,8 +13,8 @@
         <div class="entity-title">{% include t.html key="index.box1.title" %}</div>
 
         <picture class="entity-bar" aria-hidden="true">
-          <source media="(prefers-color-scheme: dark)" srcset="/assets/img/thin-bar-orange-light.svg">
-          <img class="entity-bar-img" src="/assets/img/thin-bar-orange-light.svg" alt="">
+          <source media="(prefers-color-scheme: dark)" srcset="/assets/img/bar-orange-dark.svg">
+          <img class="entity-bar-img" src="/assets/img/bar-orange-light.svg" alt="">
         </picture>
 
         <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true">
@@ -48,8 +47,7 @@
     </div>
 
     <!-- =========================
-         NAV HISTORY (top-right)
-         pre-rendered SVG (no JS)
+         NAV HISTORY
          ========================= -->
     <div class="cell-history">
       <div class="entity-history-box">
@@ -62,10 +60,8 @@
           decoding="async"
         >
 
-        <!-- labels reconstructed from nav-meta in the svg -->
         <div class="nav-xlabels" aria-hidden="true"></div>
 
-        <!-- reuse the same frame style as boxes -->
         <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true">
           <rect class="entity-frame-bg" x="0" y="0" width="360" height="150" rx="14" ry="14"></rect>
           <rect class="entity-frame-stroke" x="0.5" y="0.5" width="359" height="149" rx="13.5" ry="13.5"></rect>
@@ -75,8 +71,7 @@
     </div>
 
     <!-- =========================
-         BOX 2 — BLUE
-         (row 2 left)
+         BOX 2
          ========================= -->
     <div class="cell-box2">
       <div class="entity-box" data-box="2">
@@ -84,8 +79,8 @@
         <div class="entity-title">{% include t.html key="index.box2.title" %}</div>
 
         <picture class="entity-bar" aria-hidden="true">
-          <source media="(prefers-color-scheme: dark)" srcset="/assets/img/thin-bar-blue-light.svg">
-          <img class="entity-bar-img" src="/assets/img/thin-bar-blue-light.svg" alt="">
+          <source media="(prefers-color-scheme: dark)" srcset="/assets/img/bar-blue-dark.svg">
+          <img class="entity-bar-img" src="/assets/img/bar-blue-light.svg" alt="">
         </picture>
 
         <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true">
@@ -118,19 +113,16 @@
     </div>
 
     <!-- =========================
-         BOX 3 — GREY (experimental title key)
-         (row 2 right)
+         BOX 3
          ========================= -->
     <div class="cell-box3">
       <div class="entity-box" data-box="3">
 
-        <div class="entity-title">
-          {% include t.html key="experimental.box3.title" default="Altcoin Navigation Index" %}
-        </div>
+        <div class="entity-title">{% include t.html key="index.box3.title" %}</div>
 
         <picture class="entity-bar" aria-hidden="true">
-          <source media="(prefers-color-scheme: dark)" srcset="/assets/img/thin-bar-grey-light.svg">
-          <img class="entity-bar-img" src="/assets/img/thin-bar-grey-light.svg" alt="">
+          <source media="(prefers-color-scheme: dark)" srcset="/assets/img/bar-grey-dark.svg">
+          <img class="entity-bar-img" src="/assets/img/bar-grey-light.svg" alt="">
         </picture>
 
         <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true">
@@ -163,19 +155,16 @@
     </div>
 
     <!-- =========================
-         BOX 4 — GREY (experimental title key)
-         (row 3 left)
+         BOX 4
          ========================= -->
     <div class="cell-box4">
       <div class="entity-box" data-box="4">
 
-        <div class="entity-title">
-          {% include t.html key="experimental.box4.title" default="Box 4" %}
-        </div>
+        <div class="entity-title">{% include t.html key="index.box4.title" %}</div>
 
         <picture class="entity-bar" aria-hidden="true">
-          <source media="(prefers-color-scheme: dark)" srcset="/assets/img/thin-bar-grey-light.svg">
-          <img class="entity-bar-img" src="/assets/img/thin-bar-grey-light.svg" alt="">
+          <source media="(prefers-color-scheme: dark)" srcset="/assets/img/bar-grey-dark.svg">
+          <img class="entity-bar-img" src="/assets/img/bar-grey-light.svg" alt="">
         </picture>
 
         <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true">
@@ -187,4 +176,68 @@
           <span>{% include t.html key="index.step.entry" %}</span>
           <span>{% include t.html key="index.step.scale_in" %}</span>
           <span>{% include t.html key="index.step.wait" %}</span>
-          <span>{% include t.html
+          <span>{% include t.html key="index.step.reduce" %}</span>
+          <span>{% include t.html key="index.step.exit" %}</span>
+        </div>
+
+        <div class="entity-value" data-role="val">–</div>
+
+        <div class="entity-risk">
+          <span class="entity-warn" data-role="warn">⚠</span>
+          <span class="entity-risk-label">{% include t.html key="index.risk.label" %}</span>
+          <span class="entity-risk-val" data-role="risk">–%</span>
+        </div>
+
+        <svg class="entity-dot-layer" viewBox="0 0 360 150" aria-hidden="true">
+          <circle class="entity-dot-outer" cx="29.76" cy="121.2" r="8.5"></circle>
+          <circle class="entity-dot-inner" cx="29.76" cy="121.2" r="5.5"></circle>
+        </svg>
+
+      </div>
+    </div>
+
+    <!-- =========================
+         BOX 5
+         ========================= -->
+    <div class="cell-box5">
+      <div class="entity-box" data-box="5">
+
+        <div class="entity-title">{% include t.html key="index.box5.title" %}</div>
+
+        <picture class="entity-bar" aria-hidden="true">
+          <source media="(prefers-color-scheme: dark)" srcset="/assets/img/bar-grey-dark.svg">
+          <img class="entity-bar-img" src="/assets/img/bar-grey-light.svg" alt="">
+        </picture>
+
+        <svg class="entity-frame" viewBox="0 0 360 150" aria-hidden="true">
+          <rect class="entity-frame-bg" x="0" y="0" width="360" height="150" rx="14" ry="14"></rect>
+          <rect class="entity-frame-stroke" x="0.5" y="0.5" width="359" height="149" rx="13.5" ry="13.5"></rect>
+        </svg>
+
+        <div class="entity-steps">
+          <span>{% include t.html key="index.step.entry" %}</span>
+          <span>{% include t.html key="index.step.scale_in" %}</span>
+          <span>{% include t.html key="index.step.wait" %}</span>
+          <span>{% include t.html key="index.step.reduce" %}</span>
+          <span>{% include t.html key="index.step.exit" %}</span>
+        </div>
+
+        <div class="entity-value" data-role="val">–</div>
+
+        <div class="entity-risk">
+          <span class="entity-warn" data-role="warn">⚠</span>
+          <span class="entity-risk-label">{% include t.html key="index.risk.label" %}</span>
+          <span class="entity-risk-val" data-role="risk">–%</span>
+        </div>
+
+        <svg class="entity-dot-layer" viewBox="0 0 360 150" aria-hidden="true">
+          <circle class="entity-dot-outer" cx="29.76" cy="121.2" r="8.5"></circle>
+          <circle class="entity-dot-inner" cx="29.76" cy="121.2" r="5.5"></circle>
+        </svg>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
