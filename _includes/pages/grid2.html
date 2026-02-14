@@ -2,6 +2,46 @@
 
 <div class="v2 v2-grid" data-lang="{{ page.lang | default: site.lang | default: 'en' }}">
 
+  <!-- PAGE-LOCAL layout override: stack all boxes in left column, keep history on right -->
+  <style>
+    /* Desktop: left column = box1..box5, right column = history (top only) */
+    .v2.v2-grid .indexes{
+      display: grid !important;
+      grid-template-columns: 360px 360px !important;
+      grid-template-areas:
+        "box1 history"
+        "box2 ."
+        "box3 ."
+        "box4 ."
+        "box5 ." !important;
+      column-gap: 28px !important;
+      row-gap: 28px !important;
+      align-items: start !important;
+    }
+
+    /* Keep existing named areas */
+    .v2.v2-grid .cell-box1{ grid-area: box1 !important; }
+    .v2.v2-grid .cell-history{ grid-area: history !important; align-self: start !important; }
+    .v2.v2-grid .cell-box2{ grid-area: box2 !important; }
+    .v2.v2-grid .cell-box3{ grid-area: box3 !important; }
+    .v2.v2-grid .cell-box4{ grid-area: box4 !important; }
+    .v2.v2-grid .cell-box5{ grid-area: box5 !important; }
+
+    /* Mobile: keep your current single-column order */
+    @media (max-width: 780px){
+      .v2.v2-grid .indexes{
+        grid-template-columns: 360px !important;
+        grid-template-areas:
+          "box1"
+          "box2"
+          "box3"
+          "box4"
+          "box5"
+          "history" !important;
+      }
+    }
+  </style>
+
   <div class="indexes">
 
     <!-- =========================
