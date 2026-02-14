@@ -14,6 +14,27 @@
   align-items: start;
 }
 
+/* =========================================================
+   Grid page variant — stack ALL boxes in left column
+   (index.html unaffected; only pages with .v2-grid-leftcol)
+   ========================================================= */
+
+.v2-grid.v2-grid-leftcol .indexes{
+  grid-template-columns: 360px 360px;
+  grid-template-areas:
+    "box1 history"
+    "box2 ."
+    "box3 ."
+    "box4 ."
+    "box5 .";
+}
+
+/* Keep history pinned at the top-right */
+.v2-grid.v2-grid-leftcol .cell-history{
+  align-self: start;
+}
+
+
 .v2-grid .indexes > div{
   margin-bottom: 0 !important;
 }
