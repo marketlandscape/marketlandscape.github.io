@@ -9,6 +9,7 @@ index:
   step:
     entry: "Entry"
     scale_in: "Scale In"
+    caution: "Caution"
     hold: "Hold"
     wait: "Hold"
     conviction: "Conviction"
