@@ -9,6 +9,7 @@ index:
   step:
     entry: "開始"
     scale_in: "段階追加"
+    caution: "注意"
     hold: "保有"
     wait: "保有"
     conviction: "コア保有"
