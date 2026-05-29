@@ -18,7 +18,7 @@ This page describes how market conditions are mapped onto a 1–25 navigation sc
 
 21–25 — excess — increasingly speculative environments where fragility dominates despite strong narratives.  
 
-On the altcoin scale, these zones are expressed through practical positioning labels that mirror this progression: entry, scale in, hold, scale out and exit. 
+On the altcoin scale, these zones are expressed through practical positioning labels that mirror this progression: entry, caution/scale in, hold, scale out and exit. 
 
 Within this structure, each zone spans five positions, which indicate how mature the current environment is. Early values reflect entry into a zone, mid-zone values typically capture consolidation or digestion where conditions persist without directional progress, and later values signal increasing proximity to a transition into the next zone.
 
