@@ -13,7 +13,7 @@ index:
   step:
     entry: "Вход"
     scale_in: "Наращ."
-    caution: "Осторож."
+    caution: "Остор."
     hold: "Удерж."
     wait: "Удерж."
     conviction: "Осн.поз."
