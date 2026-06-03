@@ -1,8 +1,8 @@
 {
-  "updated_utc": "2026-06-03 17:33 UTC",
+  "updated_utc": "2026-06-03 21:37 UTC",
   "source": "kraken",
   "prices": {
-    "BTC": 65909.9,
-    "ETH": 1831.0
+    "BTC": 65490.0,
+    "ETH": 1816.34
   }
 }
